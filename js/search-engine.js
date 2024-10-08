@@ -5,13 +5,13 @@ let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 
 // const endpoint = 'json/search.json';
-const endpoint = 'https://animeroman.github.io/Source/json/search.json';
+const endpoint_engine = 'https://animeroman.github.io/Source/json/search.json';
 
-const searchData = [];
-fetch(endpoint)
+const searchDataEngine = [];
+fetch(endpoint_engine)
   .then(blob => blob.json())
   .then(data => {
-    searchData.push(...data);
+    searchDataEngine.push(...data);
     const keyword = getQueryParam('keyword');
     if (keyword) {
       displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
@@ -24,84 +24,100 @@ function getQueryParam(param) {
   return urlParams.get(param);
 }
 
-// Fuzzy match function
 function fuzzyMatch(input, target) {
-  input = input.toLowerCase();
-  target = target.toLowerCase();
+  try {
+    input = input.toLowerCase();
+    target = target.toLowerCase();
 
-  let inputIndex = 0;
-  let targetIndex = 0;
+    let inputIndex = 0;
+    let targetIndex = 0;
 
-  while (inputIndex < input.length && targetIndex < target.length) {
-    if (input[inputIndex] === target[targetIndex]) {
-      inputIndex++;
+    while (inputIndex < input.length && targetIndex < target.length) {
+      if (input[inputIndex] === target[targetIndex]) {
+        inputIndex++;
+      }
+      targetIndex++;
     }
-    targetIndex++;
-  }
 
-  return inputIndex === input.length; // Return true if all characters in input are matched in target
+    return inputIndex === input.length; // Return true if all characters in input are matched in target
+  } catch (err) {
+    throw err;
+  }
 }
 
 // Transposition match function (for input character swaps)
 function transpositionMatch(input, target) {
-  if (fuzzyMatch(input, target)) return true;
+  try {
+    if (fuzzyMatch(input, target)) return true;
 
-  for (let i = 0; i < input.length - 1; i++) {
-    let transposed =
-      input.slice(0, i) + input[i + 1] + input[i] + input.slice(i + 2);
+    for (let i = 0; i < input.length - 1; i++) {
+      let transposed =
+        input.slice(0, i) + input[i + 1] + input[i] + input.slice(i + 2);
 
-    if (fuzzyMatch(transposed, target)) return true;
+      if (fuzzyMatch(transposed, target)) return true;
+    }
+
+    return false;
+  } catch (err) {
+    throw err;
   }
-
-  return false;
 }
 
 // Match words with transposition
 function matchWords(inputWords, target) {
-  return inputWords.every(inputWord => {
-    return target
-      .split(' ')
-      .some(targetWord => transpositionMatch(inputWord, targetWord));
-  });
+  try {
+    return inputWords.every(inputWord => {
+      return target
+        .split(' ')
+        .some(targetWord => transpositionMatch(inputWord, targetWord));
+    });
+  } catch (err) {
+    throw err;
+  }
 }
 
 // Find matches based on the input word
-function findMatches(wordToMatch, searchData) {
-  const inputWords = wordToMatch.toLowerCase().split(' ');
+function findMatches(wordToMatch, searchDataEngine) {
+  try {
+    const inputWords = wordToMatch.toLowerCase().split(' ');
 
-  return searchData.filter(place => {
-    const animeEnglishWords = place.animeEnglish.toLowerCase().split(' ');
-    const animeOriginalWords = place.animeOriginal.toLowerCase().split(' ');
+    return searchDataEngine.filter(place => {
+      const animeEnglishWords = place.animeEnglish.toLowerCase().split(' ');
+      const animeOriginalWords = place.animeOriginal.toLowerCase().split(' ');
 
-    // Check if all input words match any part of the animeEnglish or animeOriginal
-    return (
-      matchWords(inputWords, place.animeEnglish) ||
-      matchWords(inputWords, place.animeOriginal)
-    );
-  });
+      // Check if all input words match any part of the animeEnglish or animeOriginal
+      return (
+        matchWords(inputWords, place.animeEnglish) ||
+        matchWords(inputWords, place.animeOriginal)
+      );
+    });
+  } catch (err) {
+    throw err;
+  }
 }
 
 // Display matches for the search input with pagination
 function displayMatches(inputValue, page) {
-  const matchArray = findMatches(inputValue, searchData);
+  try {
+    const matchArray = findMatches(inputValue, searchDataEngine);
 
-  totalPages = Math.ceil(matchArray.length / resultsPerPage); // Calculate total pages
-  const startIndex = (page - 1) * resultsPerPage;
-  const endIndex = startIndex + resultsPerPage;
-  const paginatedResults = matchArray.slice(startIndex, endIndex); // Get results for the current page
+    totalPages = Math.ceil(matchArray.length / resultsPerPage); // Calculate total pages
+    const startIndex = (page - 1) * resultsPerPage;
+    const endIndex = startIndex + resultsPerPage;
+    const paginatedResults = matchArray.slice(startIndex, endIndex); // Get results for the current page
 
-  const html = paginatedResults
-    .map(place => {
-      let animeEnglishName = place.animeEnglish;
-      let animeOriginalName = place.animeOriginal;
-      let animeDuration = place.duration;
-      let animeType = place.type;
-      let animeDate = place.date;
-      let posterLink = place.poster;
-      let pageLink = place.page;
-      let episodes = place.episodes;
+    const html = paginatedResults
+      .map(place => {
+        let animeEnglishName = place.animeEnglish;
+        let animeOriginalName = place.animeOriginal;
+        let animeDuration = place.duration;
+        let animeType = place.type;
+        let animeDate = place.date;
+        let posterLink = place.poster;
+        let pageLink = place.page;
+        let episodes = place.episodes;
 
-      return `
+        return `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
           <div class="tick ltr">
@@ -131,90 +147,101 @@ function displayMatches(inputValue, page) {
         <div class="clearfix"></div>
       </div>
     `;
-    })
-    .join('');
+      })
+      .join('');
 
-  resultsContainer.innerHTML = html;
+    resultsContainerEngine.innerHTML = html;
 
-  if (inputValue === '') {
-    resultsContainer.innerHTML = ''; // Clear the suggestions if input is empty
+    if (inputValue === '') {
+      resultsContainerEngine.innerHTML = ''; // Clear the suggestions if input is empty
+    }
+
+    updatePagination(page); // Update pagination controls
+  } catch (err) {
+    throw err;
   }
-
-  updatePagination(page); // Update pagination controls
 }
 
 // Update pagination controls
 function updatePagination(currentPage) {
-  const paginationPlace = document.querySelector('.pagination-pages');
-  let paginationHTML = '';
+  try {
+    const paginationPlace = document.querySelector('.pagination-pages');
+    let paginationHTML = '';
 
-  // Calculate the starting and ending page numbers for pagination
-  let startPage = Math.max(currentPage - 1, 1); // Start 1 page before current, minimum 1
-  let endPage = Math.min(currentPage + 1, totalPages); // End 1 page after current, maximum totalPages
+    // Calculate the starting and ending page numbers for pagination
+    let startPage = Math.max(currentPage - 1, 1); // Start 1 page before current, minimum 1
+    let endPage = Math.min(currentPage + 1, totalPages); // End 1 page after current, maximum totalPages
 
-  // Ensure that there are exactly 3 pages displayed (if possible)
-  if (endPage - startPage < 2) {
-    if (startPage === 1) {
-      endPage = Math.min(3, totalPages);
-    } else if (endPage === totalPages) {
-      startPage = Math.max(totalPages - 2, 1);
+    // Ensure that there are exactly 3 pages displayed (if possible)
+    if (endPage - startPage < 2) {
+      if (startPage === 1) {
+        endPage = Math.min(3, totalPages);
+      } else if (endPage === totalPages) {
+        startPage = Math.max(totalPages - 2, 1);
+      }
     }
-  }
 
-  // First page button
-  if (currentPage > 1) {
-    paginationHTML += `
+    // First page button
+    if (currentPage > 1) {
+      paginationHTML += `
       <li class="page-item">
         <a title="First" class="page-link" href="#" onclick="goToPage(1)">&laquo;</a>
       </li>`;
-  }
+    }
 
-  // Previous page button
-  if (currentPage > 1) {
-    paginationHTML += `
+    // Previous page button
+    if (currentPage > 1) {
+      paginationHTML += `
       <li class="page-item">
         <a title="Previous" class="page-link" href="#" onclick="goToPage(${currentPage -
           1})">&lsaquo;</a>
       </li>`;
-  }
-
-  // Page numbers (display only 3 pages)
-  for (let i = startPage; i <= endPage; i++) {
-    if (i === currentPage) {
-      paginationHTML += `
-        <li class="page-item active"><a class="page-link">${i}</a></li>`;
-    } else {
-      paginationHTML += `
-        <li class="page-item"><a class="page-link" href="#" onclick="goToPage(${i})">${i}</a></li>`;
     }
-  }
 
-  // Next page button
-  if (currentPage < totalPages) {
-    paginationHTML += `
+    // Page numbers (display only 3 pages)
+    for (let i = startPage; i <= endPage; i++) {
+      if (i === currentPage) {
+        paginationHTML += `
+        <li class="page-item active"><a class="page-link">${i}</a></li>`;
+      } else {
+        paginationHTML += `
+        <li class="page-item"><a class="page-link" href="#" onclick="goToPage(${i})">${i}</a></li>`;
+      }
+    }
+
+    // Next page button
+    if (currentPage < totalPages) {
+      paginationHTML += `
       <li class="page-item">
         <a title="Next" class="page-link" href="#" onclick="goToPage(${currentPage +
           1})">&rsaquo;</a>
       </li>`;
-  }
+    }
 
-  // Last page button
-  if (currentPage < totalPages) {
-    paginationHTML += `
+    // Last page button
+    if (currentPage < totalPages) {
+      paginationHTML += `
       <li class="page-item">
         <a title="Last" class="page-link" href="#" onclick="goToPage(${totalPages})">&raquo;</a>
       </li>`;
-  }
+    }
 
-  paginationPlace.innerHTML = paginationHTML;
+    paginationPlace.innerHTML = paginationHTML;
+  } catch (err) {
+    throw err;
+  }
 }
 
 // Go to the specified page
 function goToPage(page) {
-  currentPage = page;
-  const keyword = getQueryParam('keyword'); // Get the current search keyword
-  if (keyword) {
-    displayMatches(keyword, page); // Display matches for the new page
+  try {
+    currentPage = page;
+    const keyword = getQueryParam('keyword'); // Get the current search keyword
+    if (keyword) {
+      displayMatches(keyword, page); // Display matches for the new page
+    }
+  } catch (err) {
+    throw err;
   }
 }
 
@@ -230,7 +257,7 @@ window.onload = function() {
 /*
 const searchInput = document.querySelector('.search-input');
 */
-const resultsContainer = document.querySelector('.film_list-wrap');
+const resultsContainerEngine = document.querySelector('.film_list-wrap');
 /*
 searchInput.addEventListener('change', function() {
   displayMatches(this.value, currentPage);

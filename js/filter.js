@@ -44,7 +44,7 @@ document
   });
 
 function displayMatches(inputValue, page) {
-  const matchArray = findMatches(inputValue, searchData); // Get matches
+  const matchArray = findMatches(inputValue, searchDataEngine); // Get matches
 
   // Get filters from URL
   const typeFilter = getQueryParam('type');
