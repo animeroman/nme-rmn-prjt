@@ -343,7 +343,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="genre/vampire.html">HamVampire</a>
+                <a class="nav-link" href="genre/vampire.html">Vampire</a>
               </li>
 
               <li class="nav-item nav-more">
@@ -367,7 +367,7 @@
           <div id="search">
             <div class="search-content">
               <form action="filter.html" autocomplete="off">
-                <a href="filter.html" class="filter-icon">Milter</a>
+                <a href="filter.html" class="filter-icon">Filter</a>
                 <input
                   type="text"
                   class="form-control search-input"
@@ -411,7 +411,7 @@
           <div class="header-group">
             <div class="anw-group">
               <div class="zrg-title">
-                <span class="top">Join npowow</span
+                <span class="top">Join now</span
                 ><span class="bottom">HiAnime Group</span>
               </div>
               <div class="zrg-list">
@@ -1713,30 +1713,35 @@
                 <div class="pre-pagination mt-5 mb-5">
                   <nav aria-label="Page navigation">
                     <ul class="pagination pagination-lg justify-content-center">
-                      <li class="page-item active">
-                        <a class="page-link">1</a>
-                      </li>
-                      <li class="page-item">
-                        <a
-                          title="Page 2"
-                          class="page-link"
-                          href="filter4658.html?page=2"
-                          >2</a
+                      <!-- <li class="page-item">
+                        <a title="First" class="page-link" href="filter.html"
+                          >&laquo;</a
                         >
                       </li>
                       <li class="page-item">
                         <a
-                          title="Page 3"
+                          title="Previous"
                           class="page-link"
-                          href="filter9ba9.html?page=3"
-                          >3</a
+                          href="filter2679.html?page=1"
+                          >&lsaquo;</a
                         >
-                      </li>
-                      <li class="page-item">
+                      </li> -->
+                      <div class="pagination-pages pagination pagination-lg">
+                        <li class="page-item active">
+                          <a title="Page 1" class="page-link" href="">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a title="Page 2" class="page-link" href="">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a title="Page 3" class="page-link" href="">3</a>
+                        </li>
+                      </div>
+                      <!-- <li class="page-item">
                         <a
                           title="Next"
                           class="page-link"
-                          href="filter4658.html?page=2"
+                          href="filter9ba9.html?page=3"
                           >&rsaquo;</a
                         >
                       </li>
@@ -1747,7 +1752,7 @@
                           href="filterc3e9.html?page=200"
                           >&raquo;</a
                         >
-                      </li>
+                      </li> -->
                     </ul>
                   </nav>
                 </div>
@@ -1885,13 +1890,7 @@
                     >Terms of service</a
                   >
                 </li>
-                <li><a href="dmca.html" title="DMCA">DMCA</a></li>
                 <li><a href="contact.html" title="Contact">Contact</a></li>
-                <li>
-                  <a href="app-download.html" title="HiAnime App"
-                    >HiAnime App</a
-                  >
-                </li>
               </ul>
               <div class="clearfix"></div>
             </div>
@@ -2281,6 +2280,11 @@
     ></script>
     <script type="text/javascript" src="js/app.minffaf.js?v=1.4"></script>
     <script>
+      var lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazyload'
+      });
+    </script>
+    <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
           navigator.serviceWorker.register('sw1f6b.js?v=0.5');
@@ -2295,7 +2299,12 @@
         }
       });
     </script>
-    <script type="text/javascript" src="js/search.js" async="async"></script>
+    <script
+      type="text/javascript"
+      src="js/search-engine.js"
+      async="async"
+    ></script>
+    <!-- <script type="text/javascript" src="js/filter.js" async="async"></script> -->
   </body>
 
   <!-- Mirrored from hianime.to/filter by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Aug 2024 02:24:43 GMT -->
