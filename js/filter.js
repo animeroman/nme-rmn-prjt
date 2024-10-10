@@ -5,18 +5,32 @@ document
   .addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
 
-    // Get the search keyword from the input or URL
+    // Get the search keyword from the input
     let keyword = document.querySelector('input[name="keyword"]').value.trim();
 
     // Get existing parameters from the URL (this preserves the current ones)
     let params = new URLSearchParams(window.location.search);
 
-    // If keyword is found in the URL but not in the input (e.g., refreshed page), retain it
-    if (!keyword) {
-      keyword = params.get('keyword') || '';
+    // Reset filters if the keyword changes
+    if (keyword) {
+      // Clear all filter parameters
+      params.delete('type');
+      params.delete('status');
+      params.delete('rated');
+      params.delete('genres');
+      params.delete('season');
+      params.delete('language');
+      params.delete('score');
+      params.delete('sort'); // Reset sort
+      params.delete('sy'); // Start year
+      params.delete('sm'); // Start month
+      params.delete('sd'); // Start day
+      params.delete('ey'); // End year
+      params.delete('em'); // End month
+      params.delete('ed'); // End day
     }
 
-    // Update the 'keyword' parameter, or delete it if empty
+    // Update the 'keyword' parameter
     if (keyword) {
       params.set('keyword', keyword);
     } else {
@@ -32,7 +46,17 @@ document
     const languageFilter = document.querySelector('select[name="language"]')
       .value;
     const scoreFilter = document.querySelector('select[name="score"]').value;
-    const sortFilter = document.querySelector('select[name="sort"]').value;
+    const sortFilter = document.querySelector('select[name="sort"]').value; // Include sorting
+
+    // Get Start Date filters
+    const startYear = document.querySelector('select[name="sy"]').value;
+    const startMonth = document.querySelector('select[name="sm"]').value;
+    const startDay = document.querySelector('select[name="sd"]').value;
+
+    // Get End Date filters
+    const endYear = document.querySelector('select[name="ey"]').value;
+    const endMonth = document.querySelector('select[name="em"]').value;
+    const endDay = document.querySelector('select[name="ed"]').value;
 
     // Update or remove URL parameters based on filter values
     typeFilter ? params.set('type', typeFilter) : params.delete('type');
@@ -44,7 +68,13 @@ document
       ? params.set('language', languageFilter)
       : params.delete('language');
     scoreFilter ? params.set('score', scoreFilter) : params.delete('score');
-    sortFilter ? params.set('sort', sortFilter) : params.delete('sort');
+    sortFilter ? params.set('sort', sortFilter) : params.delete('sort'); // Include sorting
+    params.set('sy', startYear); // Start Year
+    params.set('sm', startMonth); // Start Month
+    params.set('sd', startDay); // Start Day
+    params.set('ey', endYear); // End Year
+    params.set('em', endMonth); // End Month
+    params.set('ed', endDay); // End Day
 
     // Update the URL without reloading the page
     window.history.replaceState(
@@ -100,6 +130,28 @@ function setFilterValuesFromURL() {
   if (params.get('keyword')) {
     keywordInput.value = params.get('keyword');
   }
+
+  // Set Start Date values
+  if (params.get('sy')) {
+    document.querySelector('select[name="sy"]').value = params.get('sy');
+  }
+  if (params.get('sm')) {
+    document.querySelector('select[name="sm"]').value = params.get('sm');
+  }
+  if (params.get('sd')) {
+    document.querySelector('select[name="sd"]').value = params.get('sd');
+  }
+
+  // Set End Date values
+  if (params.get('ey')) {
+    document.querySelector('select[name="ey"]').value = params.get('ey');
+  }
+  if (params.get('em')) {
+    document.querySelector('select[name="em"]').value = params.get('em');
+  }
+  if (params.get('ed')) {
+    document.querySelector('select[name="ed"]').value = params.get('ed');
+  }
 }
 
 // Call the function to set the filter values on page load
@@ -117,6 +169,22 @@ function displayMatches(inputValue, page) {
   const languageFilter = getQueryParam('language');
   const scoreFilter = getQueryParam('score');
   const sortFilter = getQueryParam('sort');
+
+  // Get Start Date filters
+  const startYear = getQueryParam('sy');
+  const startMonth = getQueryParam('sm');
+  const startDay = getQueryParam('sd');
+
+  // Get End Date filters
+  const endYear = getQueryParam('ey');
+  const endMonth = getQueryParam('em');
+  const endDay = getQueryParam('ed');
+
+  // Parse Start Date and End Date into Date objects for comparison
+  const startDate = new Date(
+    `${startYear}-${startMonth || '1'}-${startDay || '1'}`
+  );
+  const endDate = new Date(`${endYear}-${endMonth || '12'}-${endDay || '31'}`);
 
   // Filter results
   const filteredArray = matchArray.filter(anime => {
@@ -145,6 +213,18 @@ function displayMatches(inputValue, page) {
     const genreMatch =
       !genreFilter || (anime.genres && anime.genres.includes(genreFilter));
 
+    // Parse anime dates for comparison
+    const animeStartDate = new Date(anime.dateStart);
+    const animeEndDate = new Date(anime.dateEnd);
+
+    // Check for 'start date' filter
+    const startDateMatch =
+      (!startYear && !startMonth && !startDay) || animeStartDate >= startDate;
+
+    // Check for 'end date' filter
+    const endDateMatch =
+      (!endYear && !endMonth && !endDay) || animeEndDate <= endDate;
+
     // Return true if all filters match
     return (
       typeMatch &&
@@ -153,13 +233,22 @@ function displayMatches(inputValue, page) {
       seasonMatch &&
       languageMatch &&
       scoreMatch &&
-      genreMatch
+      genreMatch &&
+      startDateMatch &&
+      endDateMatch
     );
   });
 
   // Sort results
   if (sortFilter) {
     filteredArray.sort((a, b) => applySorting(sortFilter, a, b));
+  }
+
+  // Check for results
+  if (filteredArray.length === 0) {
+    document.querySelector('.film_list-wrap').innerHTML =
+      '<p>No results found.</p>';
+    return;
   }
 
   // Pagination logic
