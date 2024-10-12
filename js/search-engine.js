@@ -5,7 +5,7 @@ let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 
 // const endpoint = 'json/search.json';
-const endpoint_engine = 'https://animeroman.github.io/Source/json/search.json';
+const endpoint_engine = 'https://animeroman.github.io/Source/json/main-search.json';
 
 const searchDataEngine = [];
 fetch(endpoint_engine)
