@@ -1,5 +1,6 @@
 'use strict';
 
+// Add event listener for form submission
 document
   .querySelector('#filter-form')
   .addEventListener('submit', function(event) {
@@ -8,7 +9,7 @@ document
     // Get the search keyword from the input
     let keyword = document.querySelector('input[name="keyword"]').value.trim();
 
-    // Get existing parameters from the URL (this preserves the current ones)
+    // Get existing parameters from the URL (preserving the current ones)
     let params = new URLSearchParams(window.location.search);
 
     // Reset filters if the keyword changes
@@ -41,12 +42,12 @@ document
     const typeFilter = document.querySelector('select[name="type"]').value;
     const statusFilter = document.querySelector('select[name="status"]').value;
     const ratedFilter = document.querySelector('select[name="rated"]').value;
-    const genreFilter = document.querySelector('input#f-genre-ids').value;
+    const genreFilter = document.querySelector('input#f-genre-ids').value; // Genres
     const seasonFilter = document.querySelector('select[name="season"]').value;
     const languageFilter = document.querySelector('select[name="language"]')
       .value;
     const scoreFilter = document.querySelector('select[name="score"]').value;
-    const sortFilter = document.querySelector('select[name="sort"]').value; // Include sorting
+    const sortFilter = document.querySelector('select[name="sort"]').value;
 
     // Get Start Date filters
     const startYear = document.querySelector('select[name="sy"]').value;
@@ -62,19 +63,19 @@ document
     typeFilter ? params.set('type', typeFilter) : params.delete('type');
     statusFilter ? params.set('status', statusFilter) : params.delete('status');
     ratedFilter ? params.set('rated', ratedFilter) : params.delete('rated');
-    genreFilter ? params.set('genres', genreFilter) : params.delete('genres');
+    genreFilter ? params.set('genres', genreFilter) : params.delete('genres'); // Add genres to params
     seasonFilter ? params.set('season', seasonFilter) : params.delete('season');
     languageFilter
       ? params.set('language', languageFilter)
       : params.delete('language');
     scoreFilter ? params.set('score', scoreFilter) : params.delete('score');
-    sortFilter ? params.set('sort', sortFilter) : params.delete('sort'); // Include sorting
-    params.set('sy', startYear); // Start Year
-    params.set('sm', startMonth); // Start Month
-    params.set('sd', startDay); // Start Day
-    params.set('ey', endYear); // End Year
-    params.set('em', endMonth); // End Month
-    params.set('ed', endDay); // End Day
+    sortFilter ? params.set('sort', sortFilter) : params.delete('sort');
+    params.set('sy', startYear);
+    params.set('sm', startMonth);
+    params.set('sd', startDay);
+    params.set('ey', endYear);
+    params.set('em', endMonth);
+    params.set('ed', endDay);
 
     // Update the URL without reloading the page
     window.history.replaceState(
@@ -85,7 +86,37 @@ document
 
     // Re-run the search and apply filters
     displayMatches(keyword, 1); // Reset to the first page
+
+    //Console Logging Genre Filter
+    console.log('Genre Filter Value:', genreFilter);
   });
+
+// Toggle 'active' class for genre buttons and update genre filters
+document.querySelectorAll('.f-genre-item').forEach(item => {
+  item.addEventListener('click', function() {
+    // Toggle 'active' class
+    this.classList.toggle('active');
+
+    // Update the hidden input field for genres
+    updateSelectedGenres();
+  });
+});
+
+// Function to update selected genres in the hidden input
+function updateSelectedGenres() {
+  const selectedGenres = [];
+
+  // Get all active genre buttons
+  document.querySelectorAll('.f-genre-item.active').forEach(item => {
+    selectedGenres.push(item.getAttribute('data-id'));
+  });
+
+  // Log the selected genres
+  console.log('Selected Genres:', selectedGenres);
+
+  // Update the hidden input with selected genre IDs (comma-separated)
+  document.getElementById('f-genre-ids').value = selectedGenres.join(',');
+}
 
 // Function to set selected values in the filters based on URL parameters
 function setFilterValuesFromURL() {
@@ -157,6 +188,7 @@ function setFilterValuesFromURL() {
 // Call the function to set the filter values on page load
 window.addEventListener('load', setFilterValuesFromURL);
 
+// Function to apply filtering and display results
 function displayMatches(inputValue, page) {
   const matchArray = findMatches(inputValue, searchDataEngine); // Get matches
 
@@ -164,7 +196,10 @@ function displayMatches(inputValue, page) {
   const typeFilter = getQueryParam('type');
   const statusFilter = getQueryParam('status');
   const ratedFilter = getQueryParam('rated');
-  const genreFilter = getQueryParam('genres');
+  const genreFilter = getQueryParam('genres'); // Get selected genres from URL
+  const genreArray = genreFilter
+    ? genreFilter.split(',').map(genre => genre.trim())
+    : [];
   const seasonFilter = getQueryParam('season');
   const languageFilter = getQueryParam('language');
   const scoreFilter = getQueryParam('score');
@@ -186,7 +221,7 @@ function displayMatches(inputValue, page) {
   );
   const endDate = new Date(`${endYear}-${endMonth || '12'}-${endDay || '31'}`);
 
-  // Filter results
+  // Filter results based on selected filters
   const filteredArray = matchArray.filter(anime => {
     // Check for 'type' filter
     const typeMatch = !typeFilter || anime.type === mapType(typeFilter);
@@ -209,9 +244,16 @@ function displayMatches(inputValue, page) {
     // Check for 'score' filter
     const scoreMatch = !scoreFilter || anime.score >= parseFloat(scoreFilter);
 
-    // Check for 'genres' filter
+    // Match genre (assuming anime.genres is an array of genre names)
     const genreMatch =
-      !genreFilter || (anime.genres && anime.genres.includes(genreFilter));
+      genreArray.length === 0 ||
+      genreArray.every(genre => {
+        console.log(
+          `Checking genre: ${genre} against anime genres:`,
+          anime.genres
+        );
+        return anime.genres.includes(mapGenres(genre)); // Use mapGenres if you're comparing IDs
+      });
 
     // Parse anime dates for comparison
     const animeStartDate = new Date(anime.dateStart);
@@ -261,22 +303,22 @@ function displayMatches(inputValue, page) {
   const html = paginatedResults
     .map(anime => {
       return `
-            <div class="flw-item flw-item-big">
-                <div class="film-poster">
-                    <img data-src="${anime.poster}" class="film-poster-img lazyload" src="${anime.poster}" />
-                    <a href="watch/${anime.page}.html" class="film-poster-ahref"><i class="fas fa-play"></i></a>
-                </div>
-                <div class="film-detail">
-                    <h3 class="film-name">
-                        <a href="watch/${anime.page}.html">${anime.animeEnglish}</a>
-                    </h3>
-                    <div class="fd-infor">
-                        <span>${anime.type}</span>
-                        <span class="dot"></span>
-                        <span>${anime.duration}</span>
-                    </div>
-                </div>
-            </div>`;
+      <div class="flw-item flw-item-big">
+        <div class="film-poster">
+          <img data-src="${anime.poster}" class="film-poster-img lazyload" src="${anime.poster}" />
+          <a href="watch/${anime.page}.html" class="film-poster-ahref"><i class="fas fa-play"></i></a>
+        </div>
+        <div class="film-detail">
+          <h3 class="film-name">
+            <a href="watch/${anime.page}.html">${anime.animeEnglish}</a>
+          </h3>
+          <div class="fd-infor">
+            <span>${anime.type}</span>
+            <span class="dot"></span>
+            <span>${anime.duration}</span>
+          </div>
+        </div>
+      </div>`;
     })
     .join('');
 
@@ -284,6 +326,7 @@ function displayMatches(inputValue, page) {
   updatePagination(page); // Update pagination controls
 }
 
+// Utility functions
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
@@ -330,6 +373,21 @@ function mapSeason(seasonValue) {
     '4': 'Winter'
   };
   return seasonMap[seasonValue] || '';
+}
+
+function mapGenres(genreValue) {
+  const genreMap = {
+    '1': 'Action',
+    '2': 'Adventure',
+    '3': 'Cars',
+    '4': 'Drama',
+    '5': 'Fantasy',
+    '6': 'Horror',
+    '7': 'Romance',
+    '8': 'Sci-Fi'
+    // Add other genres as necessary
+  };
+  return genreMap[genreValue] || genreValue; // Return the name or original value
 }
 
 function mapLanguage(languageValue) {
