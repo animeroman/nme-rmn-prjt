@@ -145,6 +145,17 @@ function setFilterValuesFromURL() {
   }
   if (params.get('genres')) {
     inputGenre.value = params.get('genres');
+    const selectedGenres = params.get('genres').split(',');
+
+    // Add 'active' class to the buttons that match the selected genres
+    document.querySelectorAll('.f-genre-item').forEach(item => {
+      const genreId = item.getAttribute('data-id');
+      if (selectedGenres.includes(genreId)) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
   }
   if (params.get('season')) {
     selectSeason.value = params.get('season');
