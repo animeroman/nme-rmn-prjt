@@ -259,10 +259,10 @@ function displayMatches(inputValue, page) {
     const genreMatch =
       genreArray.length === 0 ||
       genreArray.every(genre => {
-        console.log(
-          `Checking genre: ${genre} against anime genres:`,
-          anime.genres
-        );
+        // console.log(
+        //   `Checking genre: ${genre} against anime genres:`,
+        //   anime.genres
+        // );
         return anime.genres.includes(mapGenres(genre)); // Use mapGenres if you're comparing IDs
       });
 
