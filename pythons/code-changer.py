@@ -2,12 +2,25 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-eski_kod = '''<script type="text/javascript" src="../js/search.js"'''
+eski_kod = '''<!--/End: trending-->
+      <div class="share-buttons share-buttons-home">
+        <div class="container">
+          <div class="share-buttons-block">
+            <div class="share-icon"></div>
+            <div class="sbb-title mr-3">
+              <span>Share HiAnime</span>
+              <p class="mb-0">to your friends</p>
+            </div>
+            <div class="sharethis-inline-share-buttons"></div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>'''
 
-yeni_kod = ''' '''
+yeni_kod = '''<!--/End: trending-->'''
 
 # Klasör yolunu belirtin
-klasor_yolu = 'C:/Users/aydin_000/Desktop/hiRoman'  # İlgili klasörün yolu
+klasor_yolu = 'C:/Users/aydin_000/projects/nme-rmn-prjt'  # İlgili klasörün yolu
 
 # Boşluk karakterlerini ve çok satırlı içeriği ele almak için regex'i düzeltin
 eski_kod_regex = re.escape(eski_kod).replace(r'\ ', r'\s')
