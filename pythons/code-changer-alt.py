@@ -2,11 +2,11 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-eski_kod = '"../../js/search.js"'
-yeni_kod = '"../js/search.js"'
+eski_kod = '''<link rel="stylesheet" href="css/styles.minc619.css?v=1.0" />'''
+yeni_kod = '''<link rel="stylesheet" href="../css/styles.minc619.css?v=1.0" />'''
 
 # Klasör yolunu belirtin
-ana_klasor_yolu = 'C:/Users/aydin_000/Desktop/hiRoman'  # İlgili klasörün yolu
+ana_klasor_yolu = 'C:/Users/aydin_000/projects/nme-rmn-prjt'  # İlgili klasörün yolu
 
 # Eski kodu regex ile hazırlayın
 eski_kod_regex = re.escape(eski_kod)

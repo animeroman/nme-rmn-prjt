@@ -2,22 +2,9 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-eski_kod = '''<!--/End: trending-->
-      <div class="share-buttons share-buttons-home">
-        <div class="container">
-          <div class="share-buttons-block">
-            <div class="share-icon"></div>
-            <div class="sbb-title mr-3">
-              <span>Share HiAnime</span>
-              <p class="mb-0">to your friends</p>
-            </div>
-            <div class="sharethis-inline-share-buttons"></div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-      </div>'''
+eski_kod = '''<link rel="stylesheet" href="../../css/styles.minc619.css?v=1.0" />'''
 
-yeni_kod = '''<!--/End: trending-->'''
+yeni_kod = '''<link rel="stylesheet" href="../css/styles.minc619.css?v=1.0" />'''
 
 # Klasör yolunu belirtin
 klasor_yolu = 'C:/Users/aydin_000/projects/nme-rmn-prjt'  # İlgili klasörün yolu
