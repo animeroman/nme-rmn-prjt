@@ -1924,7 +1924,23 @@
                   </div>
                   <div class="clearfix"></div>
                   <div class="pre-pagination mt-5 mb-5">
-                    <nav aria-label="Page navigation"></nav>
+                    <nav aria-label="Page navigation">
+                      <ul
+                        class="pagination pagination-lg justify-content-center"
+                      >
+                        <div class="pagination-pages pagination pagination-lg">
+                          <li class="page-item active">
+                            <a title="Page 1" class="page-link" href="">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a title="Page 2" class="page-link" href="">2</a>
+                          </li>
+                          <li class="page-item">
+                            <a title="Page 3" class="page-link" href="">3</a>
+                          </li>
+                        </div>
+                      </ul>
+                    </nav>
                   </div>
                 </div>
               </div>
@@ -2466,6 +2482,12 @@
       });
     </script>
   <script type="text/javascript" src="../js/search.js" async="async"></script>
+  <script type="text/javascript" src="../js/lister.js" async="async"></script>
+<script>
+  window.onload = function() {
+      setFilterLetter('0-9');
+    };
+    </script>
   </body>
 
   <!-- Mirrored from hianime.to/az-list/0-9 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Aug 2024 02:27:15 GMT -->

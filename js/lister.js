@@ -1,6 +1,7 @@
 const resultsPerPage = 36; // Number of results per page
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
+let filterLetter = ''; // Default filter by letter
 
 const jsonDataUrl = 'https://animeroman.github.io/Source/json/main-search.json';
 const searchDataEngine = [];
@@ -20,7 +21,7 @@ fetch(jsonDataUrl)
     console.error('Error fetching the anime data:', error);
   });
 
-// Display matches for the current page
+// Display matches for the current page with the filter applied
 function displayMatches(animeList, page) {
   const filmListWrap = document.querySelector('.film_list-wrap');
   if (!filmListWrap) {
@@ -28,11 +29,28 @@ function displayMatches(animeList, page) {
     return;
   }
 
+  // Filter the animeList based on the filterLetter
+  let filteredAnimeList = animeList.filter(anime => {
+    const animeFirstChar = anime.animeEnglish
+      ? anime.animeEnglish.charAt(0).toLowerCase()
+      : '';
+
+    if (filterLetter === '0-9') {
+      return /\d/.test(animeFirstChar); // Check if the first character is a number
+    } else if (filterLetter === '#') {
+      return /[^a-z0-9]/i.test(animeFirstChar); // Check if the first character is a special character
+    } else if (filterLetter === 'all') {
+      return true; // Show all results
+    } else {
+      return animeFirstChar === filterLetter.toLowerCase(); // Normal letter filter
+    }
+  });
+
   // Calculate total pages and the results for the current page
-  totalPages = Math.ceil(animeList.length / resultsPerPage);
+  totalPages = Math.ceil(filteredAnimeList.length / resultsPerPage);
   const startIndex = (page - 1) * resultsPerPage;
   const endIndex = startIndex + resultsPerPage;
-  const paginatedResults = animeList.slice(startIndex, endIndex); // Get results for the current page
+  const paginatedResults = filteredAnimeList.slice(startIndex, endIndex); // Get results for the current page
 
   // Clear previous content
   filmListWrap.innerHTML = '';
@@ -156,4 +174,11 @@ function updatePagination(currentPage) {
 function goToPage(page) {
   currentPage = page;
   displayMatches(searchDataEngine, page); // Redisplay matches for the new page
+}
+
+// Function to change the filter letter dynamically
+function setFilterLetter(letter) {
+  filterLetter = letter;
+  currentPage = 1; // Reset to the first page
+  displayMatches(searchDataEngine, currentPage); // Update the results based on the new filter
 }
