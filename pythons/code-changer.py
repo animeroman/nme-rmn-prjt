@@ -2,20 +2,12 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-eski_kod = '''<a
-                href="../star-blazers-space-battleship-yamato-2199-162.html"
-                class="hst-item"
-                data-toggle="tooltip"
-                data-original-title="Watch random anime"
-              >'''
+eski_kod = '''<!--Begin: main-content-->'''
 
-yeni_kod = '''<a
-                href=""
-                class="hst-item"
-                id="random"
-                data-toggle="tooltip"
-                data-original-title="Watch random anime"
-              >'''
+yeni_kod = '''<!--Begin: Main-->
+      <div id="main-wrapper" class="layout-page">
+        <div class="container">
+      <!--Begin: main-content-->'''
 
 # Klasör yolunu belirtin
 klasor_yolu = 'C:/Users/aydin_000/projects/nme-rmn-prjt'  # İlgili klasörün yolu
