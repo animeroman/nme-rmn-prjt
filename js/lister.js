@@ -3,6 +3,7 @@ let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 let filterLetter = ''; // Default filter by letter
 let filterCategory = { genres: [] }; // Default filter by category, including genres as an array
+let sortCriteria = { field: '', order: 'asc' }; // Default sorting by field and order
 
 const jsonDataUrl = 'https://animeroman.github.io/Source/json/main-search.json';
 const searchDataLister = [];
@@ -64,6 +65,31 @@ function displayMatches(animeList, page) {
 
     return letterMatch && categoryMatch;
   });
+
+  // Apply sorting before pagination
+  if (sortCriteria.field) {
+    filteredAnimeList.sort((a, b) => {
+      let fieldA = a[sortCriteria.field];
+      let fieldB = b[sortCriteria.field];
+
+      if (sortCriteria.field === 'animeEnglish') {
+        fieldA = fieldA ? fieldA.toLowerCase() : '';
+        fieldB = fieldB ? fieldB.toLowerCase() : '';
+      } else if (sortCriteria.field === 'dateStart') {
+        fieldA = new Date(fieldA);
+        fieldB = new Date(fieldB);
+      } else if (sortCriteria.field === 'score') {
+        fieldA = parseFloat(fieldA);
+        fieldB = parseFloat(fieldB);
+      }
+
+      if (sortCriteria.order === 'asc') {
+        return fieldA < fieldB ? -1 : fieldA > fieldB ? 1 : 0;
+      } else {
+        return fieldA > fieldB ? -1 : fieldA < fieldB ? 1 : 0;
+      }
+    });
+  }
 
   // Calculate total pages and the results for the current page
   totalPages = Math.ceil(filteredAnimeList.length / resultsPerPage);
@@ -217,4 +243,12 @@ function setFilter(category, value) {
   }
   currentPage = 1; // Reset to the first page
   displayMatches(searchDataLister, currentPage); // Update the results based on the new filter
+}
+
+// Function to set sorting criteria
+function setSort(field, order = 'asc') {
+  sortCriteria.field = field;
+  sortCriteria.order = order;
+  currentPage = 1; // Reset to the first page
+  displayMatches(searchDataLister, currentPage); // Update the results based on the new sorting
 }
