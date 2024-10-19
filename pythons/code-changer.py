@@ -3,14 +3,11 @@ import re
 
 # Değiştirmek istediğiniz HTML kodu
 eski_kod = '''<a
-                href="star-blazers-space-battleship-yamato-2199-162.html"
+                href="../star-blazers-space-battleship-yamato-2199-162.html"
                 class="hst-item"
                 data-toggle="tooltip"
                 data-original-title="Watch random anime"
-              >
-                <div class="hst-icon"><i class="fas fa-random"></i></div>
-                <div class="name"><span>Random</span></div>
-              </a>'''
+              >'''
 
 yeni_kod = '''<a
                 href=""
@@ -18,10 +15,7 @@ yeni_kod = '''<a
                 id="random"
                 data-toggle="tooltip"
                 data-original-title="Watch random anime"
-              >
-                <div class="hst-icon"><i class="fas fa-random"></i></div>
-                <div class="name"><span>Random</span></div>
-              </a>'''
+              >'''
 
 # Klasör yolunu belirtin
 klasor_yolu = 'C:/Users/aydin_000/projects/nme-rmn-prjt'  # İlgili klasörün yolu
