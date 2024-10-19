@@ -2,9 +2,10 @@ const resultsPerPage = 36; // Number of results per page
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 let filterLetter = ''; // Default filter by letter
+let filterCategory = { genres: [] }; // Default filter by category, including genres as an array
 
 const jsonDataUrl = 'https://animeroman.github.io/Source/json/main-search.json';
-const searchDataEngine = [];
+const searchDataLister = [];
 
 fetch(jsonDataUrl)
   .then(response => {
@@ -14,8 +15,8 @@ fetch(jsonDataUrl)
     return response.json(); // Parse the JSON
   })
   .then(data => {
-    searchDataEngine.push(...data); // Store the data
-    displayMatches(searchDataEngine, currentPage); // Display results for the first page
+    searchDataLister.push(...data); // Store the data
+    displayMatches(searchDataLister, currentPage); // Display results for the first page
   })
   .catch(error => {
     console.error('Error fetching the anime data:', error);
@@ -29,21 +30,39 @@ function displayMatches(animeList, page) {
     return;
   }
 
-  // Filter the animeList based on the filterLetter
+  // Filter the animeList based on the filterLetter and filterCategory
   let filteredAnimeList = animeList.filter(anime => {
     const animeFirstChar = anime.animeEnglish
       ? anime.animeEnglish.charAt(0).toLowerCase()
       : '';
 
+    // Letter filter
+    let letterMatch = true;
     if (filterLetter === '0-9') {
-      return /\d/.test(animeFirstChar); // Check if the first character is a number
+      letterMatch = /\d/.test(animeFirstChar); // Check if the first character is a number
     } else if (filterLetter === '#') {
-      return /[^a-z0-9]/i.test(animeFirstChar); // Check if the first character is a special character
-    } else if (filterLetter === 'all') {
-      return true; // Show all results
-    } else {
-      return animeFirstChar === filterLetter.toLowerCase(); // Normal letter filter
+      letterMatch = /[^a-z0-9]/i.test(animeFirstChar); // Check if the first character is a special character
+    } else if (filterLetter !== 'all') {
+      letterMatch = animeFirstChar === filterLetter.toLowerCase(); // Normal letter filter
     }
+
+    // Category filter (based on filterCategory object)
+    let categoryMatch = Object.keys(filterCategory).every(key => {
+      if (key === 'genres') {
+        // If genre filter is active, check if any genre matches
+        if (filterCategory.genres.length === 0) return true; // No genre filter applied
+        return (
+          anime.genres &&
+          filterCategory.genres.some(genre => anime.genres.includes(genre))
+        );
+      } else {
+        // Normal category filters
+        if (!filterCategory[key]) return true; // Ignore empty filters
+        return anime[key] && anime[key] === filterCategory[key];
+      }
+    });
+
+    return letterMatch && categoryMatch;
   });
 
   // Calculate total pages and the results for the current page
@@ -173,12 +192,29 @@ function updatePagination(currentPage) {
 // Go to the specified page
 function goToPage(page) {
   currentPage = page;
-  displayMatches(searchDataEngine, page); // Redisplay matches for the new page
+  displayMatches(searchDataLister, page); // Redisplay matches for the new page
 }
 
 // Function to change the filter letter dynamically
 function setFilterLetter(letter) {
   filterLetter = letter;
   currentPage = 1; // Reset to the first page
-  displayMatches(searchDataEngine, currentPage); // Update the results based on the new filter
+  displayMatches(searchDataLister, currentPage); // Update the results based on the new filter
+}
+
+// Function to change the filter category dynamically
+function setFilter(category, value) {
+  if (category === 'genres') {
+    if (!filterCategory.genres.includes(value)) {
+      filterCategory.genres.push(value); // Add genre if not already present
+    } else {
+      filterCategory.genres = filterCategory.genres.filter(
+        genre => genre !== value
+      ); // Remove genre if already present
+    }
+  } else {
+    filterCategory[category] = value; // Set other filters
+  }
+  currentPage = 1; // Reset to the first page
+  displayMatches(searchDataLister, currentPage); // Update the results based on the new filter
 }
