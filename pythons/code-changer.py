@@ -2,12 +2,9 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-eski_kod = '''<!--Begin: main-content-->'''
+eski_kod = '''<script type="text/javascript" src="../js/random.js" async="async"></script></script>'''
 
-yeni_kod = '''<!--Begin: Main-->
-      <div id="main-wrapper" class="layout-page">
-        <div class="container">
-      <!--Begin: main-content-->'''
+yeni_kod = '''<script type="text/javascript" src="../js/random.js" async="async"></script>'''
 
 # Klasör yolunu belirtin
 klasor_yolu = 'C:/Users/aydin_000/projects/nme-rmn-prjt'  # İlgili klasörün yolu
