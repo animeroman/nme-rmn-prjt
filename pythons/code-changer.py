@@ -2,9 +2,9 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-eski_kod = '''<script type="text/javascript" src="../js/random.js" async="async"></script></script>'''
+eski_kod = '''src="images/thumbnail'''
 
-yeni_kod = '''<script type="text/javascript" src="../js/random.js" async="async"></script>'''
+yeni_kod = '''src="https://cdn.noitatnemucod.net/thumbnail'''
 
 # Klasör yolunu belirtin
 klasor_yolu = 'C:/Users/aydin_000/projects/nme-rmn-prjt'  # İlgili klasörün yolu
