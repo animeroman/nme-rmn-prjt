@@ -21,9 +21,20 @@ fetch(endpoint)
 
     // Select the anchor element by ID
     const randomAnimeLink = document.getElementById('random');
+    const randomAnimeLink2 = document.getElementById('random2');
 
     // Add an event listener to the anchor element for the click event
-    randomAnimeLink.addEventListener('click', function(event) {
+    randomAnimeLink.addEventListener('click', function (event) {
+      // Prevent the default action of the anchor element
+      event.preventDefault();
+
+      // Get a random anime (this will keep searching until it finds one)
+      const randomAnime = getRandomAnime();
+
+      // Navigate to the page link of the found anime
+      window.location.href = `https://myanime.com/anime/${randomAnime.page}`;
+    });
+    randomAnimeLink2.addEventListener('click', function (event) {
       // Prevent the default action of the anchor element
       event.preventDefault();
 
