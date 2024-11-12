@@ -3,8 +3,8 @@ import json
 import time
 
 # Manually set the file paths for input and output files
-input_file_path = 'C:/Users/aydin_000/Downloads/export-bibi.json'
-output_file_path = 'C:/Users/aydin_000/Downloads/anvenced-data2.json'
+input_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export.json'
+output_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_fixed.json'
 
 # Initialize the converted data list
 converted_data = []

@@ -91,8 +91,8 @@ def get_anime_details(anime_id):
     return (None, None, None, None, None, None, None, None, None, None)
 
 # Process the large JSON file
-input_file_path = 'C:/Users/aydin_000/Desktop/hiRoman/json/export.json'
-output_file_path = 'C:/Users/aydin_000/Desktop/hiRoman/json/export_updated.json'
+input_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_fixed.json'
+output_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_updated.json'
 
 updated_data = []
 
