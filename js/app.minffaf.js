@@ -38578,7 +38578,7 @@ grecaptcha.ready(() => {
         }),
         []);
     function r() {
-      $('.f-genre-item').each(function () {
+      $('.f-genre-iiitem').each(function () {
         const t = $(this).data('id');
         $(this).hasClass('active')
           ? a.push(t)
@@ -38589,10 +38589,10 @@ grecaptcha.ready(() => {
         (a = [...new Set(a)]),
         $('#f-genre-ids').val(a.join(','));
     }
-    $('.f-genre-item').click(function () {
+    $('.f-genre-iiitem').click(function () {
       $(this).toggleClass('active'), r();
     }),
-      0 < $('.f-genre-item').length && r(),
+      0 < $('.f-genre-iiitem').length && r(),
       $('#filter-form').submit(function (e) {
         e.preventDefault();
         var t,
