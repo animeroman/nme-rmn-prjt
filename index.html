@@ -132,7 +132,7 @@
               <div id="xsearch" class="home-search">
                 <div class="search-content">
                   <form
-                    action="https://hianime.to/search"
+                    action="filter.html"
                     autocomplete="off"
                     id="search-form"
                   >
@@ -147,7 +147,7 @@
                     <div
                       class="nav search-result-pop"
                       id="search-suggest"
-                      style="display: none;"
+                      style="display: none"
                     >
                       <div class="result"></div>
                     </div>
@@ -292,29 +292,21 @@
     ></script>
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
           navigator.serviceWorker.register('sw1f6b.js?v=0.5');
         });
       }
-      $(document).ready(function() {
-        $('#xheader_browser').click(function(e) {
+      $(document).ready(function () {
+        $('#xheader_browser').click(function (e) {
           $('#xheader_menu, #xheader_browser').toggleClass('active');
         });
-        $('.btn-search').click(function() {
-          if (
-            $('.search-input')
-              .val()
-              .trim() !== ''
-          ) {
+        $('.btn-search').click(function () {
+          if ($('.search-input').val().trim() !== '') {
             $('#search-form').submit();
           }
         });
       });
     </script>
-    <script
-      type="text/javascript"
-      src="js/searchindex.js"
-      async="async"
-    ></script>
+    <script type="text/javascript" src="js/search.js" async="async"></script>
   </body>
 </html>
