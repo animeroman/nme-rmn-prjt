@@ -2307,7 +2307,10 @@ ul.az-list li.active a {
 }
 .anif-block-ul li .film-poster {
   width: 60px;
-  .anis-content .anisc-detail;
+  flex-shrink: 0;
+  padding-bottom: 76px;
+  border-radius: 0.3rem;
+  z-index: 2;
 }
 .anif-block-ul li .film-detail {
   font-size: 0.9em;

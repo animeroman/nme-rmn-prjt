@@ -1,14 +1,14 @@
-!(function(e, t) {
+!(function (e, t) {
   'use strict';
   'object' == typeof module && 'object' == typeof module.exports
     ? (module.exports = e.document
         ? t(e, !0)
-        : function(e) {
+        : function (e) {
             if (e.document) return t(e);
             throw new Error('jQuery requires a window with a document');
           })
     : t(e);
-})('undefined' != typeof window ? window : this, function(w, A) {
+})('undefined' != typeof window ? window : this, function (w, A) {
   'use strict';
   function y(e) {
     return (
@@ -24,10 +24,10 @@
     $ = Object.getPrototypeOf,
     o = t.slice,
     W = t.flat
-      ? function(e) {
+      ? function (e) {
           return t.flat.call(e);
         }
-      : function(e) {
+      : function (e) {
           return t.concat.apply([], e);
         },
     N = t.push,
@@ -58,7 +58,7 @@
       : typeof e;
   }
   var e = '3.6.0',
-    T = function(e, t) {
+    T = function (e, t) {
       return new T.fn.init(e, t);
     };
   function X(e) {
@@ -72,108 +72,114 @@
         ('number' == typeof t && 0 < t && t - 1 in e))
     );
   }
-  (T.fn = T.prototype = {
-    jquery: e,
-    constructor: T,
-    length: 0,
-    toArray: function() {
-      return o.call(this);
-    },
-    get: function(e) {
-      return null == e ? o.call(this) : e < 0 ? this[e + this.length] : this[e];
-    },
-    pushStack: function(e) {
-      e = T.merge(this.constructor(), e);
-      return (e.prevObject = this), e;
-    },
-    each: function(e) {
-      return T.each(this, e);
-    },
-    map: function(i) {
-      return this.pushStack(
-        T.map(this, function(e, t) {
-          return i.call(e, t, e);
-        })
-      );
-    },
-    slice: function() {
-      return this.pushStack(o.apply(this, arguments));
-    },
-    first: function() {
-      return this.eq(0);
-    },
-    last: function() {
-      return this.eq(-1);
-    },
-    even: function() {
-      return this.pushStack(
-        T.grep(this, function(e, t) {
-          return (t + 1) % 2;
-        })
-      );
-    },
-    odd: function() {
-      return this.pushStack(
-        T.grep(this, function(e, t) {
-          return t % 2;
-        })
-      );
-    },
-    eq: function(e) {
-      var t = this.length,
-        e = +e + (e < 0 ? t : 0);
-      return this.pushStack(0 <= e && e < t ? [this[e]] : []);
-    },
-    end: function() {
-      return this.prevObject || this.constructor();
-    },
-    push: N,
-    sort: t.sort,
-    splice: t.splice
-  }),
-    (T.extend = T.fn.extend = function() {
-      var e,
-        t,
-        i,
-        n,
-        s,
-        a = arguments[0] || {},
-        r = 1,
-        o = arguments.length,
-        l = !1;
-      for (
-        'boolean' == typeof a && ((l = a), (a = arguments[r] || {}), r++),
-          'object' == typeof a || y(a) || (a = {}),
-          r === o && ((a = this), r--);
-        r < o;
-        r++
-      )
-        if (null != (e = arguments[r]))
-          for (t in e)
-            (i = e[t]),
-              '__proto__' !== t &&
-                a !== i &&
-                (l && i && (T.isPlainObject(i) || (n = Array.isArray(i)))
-                  ? ((s = a[t]),
-                    (s =
-                      n && !Array.isArray(s)
-                        ? []
-                        : n || T.isPlainObject(s)
-                        ? s
-                        : {}),
-                    (n = !1),
-                    (a[t] = T.extend(l, s, i)))
-                  : void 0 !== i && (a[t] = i));
-      return a;
+  (T.fn = T.prototype =
+    {
+      jquery: e,
+      constructor: T,
+      length: 0,
+      toArray: function () {
+        return o.call(this);
+      },
+      get: function (e) {
+        return null == e
+          ? o.call(this)
+          : e < 0
+          ? this[e + this.length]
+          : this[e];
+      },
+      pushStack: function (e) {
+        e = T.merge(this.constructor(), e);
+        return (e.prevObject = this), e;
+      },
+      each: function (e) {
+        return T.each(this, e);
+      },
+      map: function (i) {
+        return this.pushStack(
+          T.map(this, function (e, t) {
+            return i.call(e, t, e);
+          })
+        );
+      },
+      slice: function () {
+        return this.pushStack(o.apply(this, arguments));
+      },
+      first: function () {
+        return this.eq(0);
+      },
+      last: function () {
+        return this.eq(-1);
+      },
+      even: function () {
+        return this.pushStack(
+          T.grep(this, function (e, t) {
+            return (t + 1) % 2;
+          })
+        );
+      },
+      odd: function () {
+        return this.pushStack(
+          T.grep(this, function (e, t) {
+            return t % 2;
+          })
+        );
+      },
+      eq: function (e) {
+        var t = this.length,
+          e = +e + (e < 0 ? t : 0);
+        return this.pushStack(0 <= e && e < t ? [this[e]] : []);
+      },
+      end: function () {
+        return this.prevObject || this.constructor();
+      },
+      push: N,
+      sort: t.sort,
+      splice: t.splice,
     }),
+    (T.extend = T.fn.extend =
+      function () {
+        var e,
+          t,
+          i,
+          n,
+          s,
+          a = arguments[0] || {},
+          r = 1,
+          o = arguments.length,
+          l = !1;
+        for (
+          'boolean' == typeof a && ((l = a), (a = arguments[r] || {}), r++),
+            'object' == typeof a || y(a) || (a = {}),
+            r === o && ((a = this), r--);
+          r < o;
+          r++
+        )
+          if (null != (e = arguments[r]))
+            for (t in e)
+              (i = e[t]),
+                '__proto__' !== t &&
+                  a !== i &&
+                  (l && i && (T.isPlainObject(i) || (n = Array.isArray(i)))
+                    ? ((s = a[t]),
+                      (s =
+                        n && !Array.isArray(s)
+                          ? []
+                          : n || T.isPlainObject(s)
+                          ? s
+                          : {}),
+                      (n = !1),
+                      (a[t] = T.extend(l, s, i)))
+                    : void 0 !== i && (a[t] = i));
+        return a;
+      }),
     T.extend({
       expando: 'jQuery' + (e + Math.random()).replace(/\D/g, ''),
       isReady: !0,
-      error: function(e) {
+      error: function (e) {
         throw new Error(e);
       },
-      noop: function() {},
-      isPlainObject: function(e) {
+      noop: function () {},
+      isPlainObject: function (e) {
         return !(
           !e ||
           '[object Object]' !== F.call(e) ||
@@ -183,14 +189,14 @@
               q.call(e) !== B))
         );
       },
-      isEmptyObject: function(e) {
+      isEmptyObject: function (e) {
         for (var t in e) return !1;
         return !0;
       },
-      globalEval: function(e, t, i) {
+      globalEval: function (e, t, i) {
         G(e, { nonce: t && t.nonce }, i);
       },
-      each: function(e, t) {
+      each: function (e, t) {
         var i,
           n = 0;
         if (X(e))
@@ -198,7 +204,7 @@
         else for (n in e) if (!1 === t.call(e[n], n, e[n])) break;
         return e;
       },
-      makeArray: function(e, t) {
+      makeArray: function (e, t) {
         t = t || [];
         return (
           null != e &&
@@ -208,19 +214,19 @@
           t
         );
       },
-      inArray: function(e, t, i) {
+      inArray: function (e, t, i) {
         return null == t ? -1 : I.call(t, e, i);
       },
-      merge: function(e, t) {
+      merge: function (e, t) {
         for (var i = +t.length, n = 0, s = e.length; n < i; n++) e[s++] = t[n];
         return (e.length = s), e;
       },
-      grep: function(e, t, i) {
+      grep: function (e, t, i) {
         for (var n = [], s = 0, a = e.length, r = !i; s < a; s++)
           !t(e[s], s) != r && n.push(e[s]);
         return n;
       },
-      map: function(e, t, i) {
+      map: function (e, t, i) {
         var n,
           s,
           a = 0,
@@ -232,14 +238,14 @@
         return W(r);
       },
       guid: 1,
-      support: _
+      support: _,
     }),
     'function' == typeof Symbol && (T.fn[Symbol.iterator] = t[Symbol.iterator]),
     T.each(
       'Boolean Number String Function Array Date RegExp Object Error Symbol'.split(
         ' '
       ),
-      function(e, t) {
+      function (e, t) {
         z['[object ' + t + ']'] = t.toLowerCase();
       }
     );
@@ -256,7 +262,7 @@
       1 === e.nodeType && e !== t && i.push(e);
     return i;
   }
-  var e = (function(A) {
+  var e = (function (A) {
       function c(e, t) {
         return (
           (e = '0x' + e.slice(1) - 65536),
@@ -306,7 +312,7 @@
         q = C(),
         B = C(),
         _ = C(),
-        V = function(e, t) {
+        V = function (e, t) {
           return e === t && (d = !0), 0;
         },
         G = {}.hasOwnProperty,
@@ -315,7 +321,7 @@
         U = t.push,
         D = t.push,
         J = t.slice,
-        y = function(e, t) {
+        y = function (e, t) {
           for (var i = 0, n = e.length; i < n; i++) if (e[i] === t) return i;
           return -1;
         },
@@ -381,7 +387,7 @@
               r +
               '*\\)|)(?=[^-]|$)',
             'i'
-          )
+          ),
         },
         re = /HTML$/i,
         oe = /^(?:input|select|textarea|button)$/i,
@@ -395,7 +401,7 @@
         ),
         ce = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
         he = ye(
-          function(e) {
+          function (e) {
             return !0 === e.disabled && 'fieldset' === e.nodeName.toLowerCase();
           },
           { dir: 'parentNode', next: 'legend' }
@@ -406,13 +412,13 @@
       } catch (e) {
         D = {
           apply: t.length
-            ? function(e, t) {
+            ? function (e, t) {
                 U.apply(e, J.call(t));
               }
-            : function(e, t) {
+            : function (e, t) {
                 for (var i = e.length, n = 0; (e[i++] = t[n++]); );
                 e.length = i - 1;
-              }
+              },
         };
       }
       function E(e, t, i, n) {
@@ -519,7 +525,7 @@
         return e ? 1 : -1;
       }
       function fe(t) {
-        return function(e) {
+        return function (e) {
           return 'form' in e
             ? e.parentNode && !1 === e.disabled
               ? 'label' in e
@@ -532,10 +538,10 @@
         };
       }
       function P(r) {
-        return H(function(a) {
+        return H(function (a) {
           return (
             (a = +a),
-            H(function(e, t) {
+            H(function (e, t) {
               for (var i, n = r([], e.length, a), s = n.length; s--; )
                 e[(i = n[s])] && (e[i] = !(t[i] = e[i]));
             })
@@ -546,247 +552,256 @@
         return e && void 0 !== e.getElementsByTagName && e;
       }
       for (e in ((h = E.support = {}),
-      (N = E.isXML = function(e) {
-        var t = e && e.namespaceURI,
-          e = e && (e.ownerDocument || e).documentElement;
-        return !re.test(t || (e && e.nodeName) || 'HTML');
-      }),
-      (w = E.setDocument = function(e) {
-        var e = e ? e.ownerDocument || e : u;
-        return (
-          e != L &&
-            9 === e.nodeType &&
-            e.documentElement &&
-            ((i = (L = e).documentElement),
-            (T = !N(L)),
-            u != L &&
-              (e = L.defaultView) &&
-              e.top !== e &&
-              (e.addEventListener
-                ? e.addEventListener('unload', W, !1)
-                : e.attachEvent && e.attachEvent('onunload', W)),
-            (h.scope = j(function(e) {
-              return (
-                i.appendChild(e).appendChild(L.createElement('div')),
-                void 0 !== e.querySelectorAll &&
-                  !e.querySelectorAll(':scope fieldset div').length
-              );
-            })),
-            (h.attributes = j(function(e) {
-              return (e.className = 'i'), !e.getAttribute('className');
-            })),
-            (h.getElementsByTagName = j(function(e) {
-              return (
-                e.appendChild(L.createComment('')),
-                !e.getElementsByTagName('*').length
-              );
-            })),
-            (h.getElementsByClassName = x.test(L.getElementsByClassName)),
-            (h.getById = j(function(e) {
-              return (
-                (i.appendChild(e).id = Y),
-                !L.getElementsByName || !L.getElementsByName(Y).length
-              );
-            })),
-            h.getById
-              ? ((M.filter.ID = function(e) {
-                  var t = e.replace(S, c);
-                  return function(e) {
-                    return e.getAttribute('id') === t;
-                  };
-                }),
-                (M.find.ID = function(e, t) {
-                  if (void 0 !== t.getElementById && T)
-                    return (t = t.getElementById(e)) ? [t] : [];
-                }))
-              : ((M.filter.ID = function(e) {
-                  var t = e.replace(S, c);
-                  return function(e) {
-                    e =
-                      void 0 !== e.getAttributeNode && e.getAttributeNode('id');
-                    return e && e.value === t;
-                  };
-                }),
-                (M.find.ID = function(e, t) {
-                  if (void 0 !== t.getElementById && T) {
-                    var i,
-                      n,
-                      s,
-                      a = t.getElementById(e);
-                    if (a) {
-                      if ((i = a.getAttributeNode('id')) && i.value === e)
-                        return [a];
-                      for (s = t.getElementsByName(e), n = 0; (a = s[n++]); )
+      (N = E.isXML =
+        function (e) {
+          var t = e && e.namespaceURI,
+            e = e && (e.ownerDocument || e).documentElement;
+          return !re.test(t || (e && e.nodeName) || 'HTML');
+        }),
+      (w = E.setDocument =
+        function (e) {
+          var e = e ? e.ownerDocument || e : u;
+          return (
+            e != L &&
+              9 === e.nodeType &&
+              e.documentElement &&
+              ((i = (L = e).documentElement),
+              (T = !N(L)),
+              u != L &&
+                (e = L.defaultView) &&
+                e.top !== e &&
+                (e.addEventListener
+                  ? e.addEventListener('unload', W, !1)
+                  : e.attachEvent && e.attachEvent('onunload', W)),
+              (h.scope = j(function (e) {
+                return (
+                  i.appendChild(e).appendChild(L.createElement('div')),
+                  void 0 !== e.querySelectorAll &&
+                    !e.querySelectorAll(':scope fieldset div').length
+                );
+              })),
+              (h.attributes = j(function (e) {
+                return (e.className = 'i'), !e.getAttribute('className');
+              })),
+              (h.getElementsByTagName = j(function (e) {
+                return (
+                  e.appendChild(L.createComment('')),
+                  !e.getElementsByTagName('*').length
+                );
+              })),
+              (h.getElementsByClassName = x.test(L.getElementsByClassName)),
+              (h.getById = j(function (e) {
+                return (
+                  (i.appendChild(e).id = Y),
+                  !L.getElementsByName || !L.getElementsByName(Y).length
+                );
+              })),
+              h.getById
+                ? ((M.filter.ID = function (e) {
+                    var t = e.replace(S, c);
+                    return function (e) {
+                      return e.getAttribute('id') === t;
+                    };
+                  }),
+                  (M.find.ID = function (e, t) {
+                    if (void 0 !== t.getElementById && T)
+                      return (t = t.getElementById(e)) ? [t] : [];
+                  }))
+                : ((M.filter.ID = function (e) {
+                    var t = e.replace(S, c);
+                    return function (e) {
+                      e =
+                        void 0 !== e.getAttributeNode &&
+                        e.getAttributeNode('id');
+                      return e && e.value === t;
+                    };
+                  }),
+                  (M.find.ID = function (e, t) {
+                    if (void 0 !== t.getElementById && T) {
+                      var i,
+                        n,
+                        s,
+                        a = t.getElementById(e);
+                      if (a) {
                         if ((i = a.getAttributeNode('id')) && i.value === e)
                           return [a];
+                        for (s = t.getElementsByName(e), n = 0; (a = s[n++]); )
+                          if ((i = a.getAttributeNode('id')) && i.value === e)
+                            return [a];
+                      }
+                      return [];
                     }
-                    return [];
+                  })),
+              (M.find.TAG = h.getElementsByTagName
+                ? function (e, t) {
+                    return void 0 !== t.getElementsByTagName
+                      ? t.getElementsByTagName(e)
+                      : h.qsa
+                      ? t.querySelectorAll(e)
+                      : void 0;
                   }
-                })),
-            (M.find.TAG = h.getElementsByTagName
-              ? function(e, t) {
-                  return void 0 !== t.getElementsByTagName
-                    ? t.getElementsByTagName(e)
-                    : h.qsa
-                    ? t.querySelectorAll(e)
-                    : void 0;
-                }
-              : function(e, t) {
-                  var i,
-                    n = [],
-                    s = 0,
-                    a = t.getElementsByTagName(e);
-                  if ('*' !== e) return a;
-                  for (; (i = a[s++]); ) 1 === i.nodeType && n.push(i);
-                  return n;
-                }),
-            (M.find.CLASS =
-              h.getElementsByClassName &&
-              function(e, t) {
-                if (void 0 !== t.getElementsByClassName && T)
-                  return t.getElementsByClassName(e);
-              }),
-            (n = []),
-            (p = []),
-            (h.qsa = x.test(L.querySelectorAll)) &&
-              (j(function(e) {
-                var t;
-                (i.appendChild(e).innerHTML =
-                  "<a id='" +
-                  Y +
-                  "'></a><select id='" +
-                  Y +
-                  "-\r\\' msallowcapture=''><option selected=''></option></select>"),
-                  e.querySelectorAll("[msallowcapture^='']").length &&
-                    p.push('[*^$]=' + r + '*(?:\'\'|"")'),
-                  e.querySelectorAll('[selected]').length ||
-                    p.push('\\[' + r + '*(?:value|' + Q + ')'),
-                  e.querySelectorAll('[id~=' + Y + '-]').length || p.push('~='),
-                  (t = L.createElement('input')).setAttribute('name', ''),
-                  e.appendChild(t),
-                  e.querySelectorAll("[name='']").length ||
-                    p.push('\\[' + r + '*name' + r + '*=' + r + '*(?:\'\'|"")'),
-                  e.querySelectorAll(':checked').length || p.push(':checked'),
-                  e.querySelectorAll('a#' + Y + '+*').length ||
-                    p.push('.#.+[+~]'),
-                  e.querySelectorAll('\\\f'),
-                  p.push('[\\r\\n\\f]');
-              }),
-              j(function(e) {
-                e.innerHTML =
-                  "<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>";
-                var t = L.createElement('input');
-                t.setAttribute('type', 'hidden'),
-                  e.appendChild(t).setAttribute('name', 'D'),
-                  e.querySelectorAll('[name=d]').length &&
-                    p.push('name' + r + '*[*^$|!~]?='),
-                  2 !== e.querySelectorAll(':enabled').length &&
-                    p.push(':enabled', ':disabled'),
-                  (i.appendChild(e).disabled = !0),
-                  2 !== e.querySelectorAll(':disabled').length &&
-                    p.push(':enabled', ':disabled'),
-                  e.querySelectorAll('*,:x'),
-                  p.push(',.*:');
-              })),
-            (h.matchesSelector = x.test(
-              (s =
-                i.matches ||
-                i.webkitMatchesSelector ||
-                i.mozMatchesSelector ||
-                i.oMatchesSelector ||
-                i.msMatchesSelector)
-            )) &&
-              j(function(e) {
-                (h.disconnectedMatch = s.call(e, '*')),
-                  s.call(e, "[s!='']:x"),
-                  n.push('!=', Z);
-              }),
-            (p = p.length && new RegExp(p.join('|'))),
-            (n = n.length && new RegExp(n.join('|'))),
-            (e = x.test(i.compareDocumentPosition)),
-            (f =
-              e || x.test(i.contains)
-                ? function(e, t) {
-                    var i = 9 === e.nodeType ? e.documentElement : e,
-                      t = t && t.parentNode;
-                    return (
-                      e === t ||
-                      !(
-                        !t ||
-                        1 !== t.nodeType ||
-                        !(i.contains
-                          ? i.contains(t)
-                          : e.compareDocumentPosition &&
-                            16 & e.compareDocumentPosition(t))
-                      )
-                    );
-                  }
-                : function(e, t) {
-                    if (t) for (; (t = t.parentNode); ) if (t === e) return !0;
-                    return !1;
+                : function (e, t) {
+                    var i,
+                      n = [],
+                      s = 0,
+                      a = t.getElementsByTagName(e);
+                    if ('*' !== e) return a;
+                    for (; (i = a[s++]); ) 1 === i.nodeType && n.push(i);
+                    return n;
                   }),
-            (V = e
-              ? function(e, t) {
-                  var i;
-                  return e === t
-                    ? ((d = !0), 0)
-                    : !e.compareDocumentPosition - !t.compareDocumentPosition ||
-                        (1 &
-                          (i =
-                            (e.ownerDocument || e) == (t.ownerDocument || t)
-                              ? e.compareDocumentPosition(t)
-                              : 1) ||
-                        (!h.sortDetached && t.compareDocumentPosition(e) === i)
-                          ? e == L || (e.ownerDocument == u && f(u, e))
-                            ? -1
-                            : t == L || (t.ownerDocument == u && f(u, t))
-                            ? 1
-                            : l
-                            ? y(l, e) - y(l, t)
-                            : 0
-                          : 4 & i
-                          ? -1
-                          : 1);
-                }
-              : function(e, t) {
-                  if (e === t) return (d = !0), 0;
-                  var i,
-                    n = 0,
-                    s = e.parentNode,
-                    a = t.parentNode,
-                    r = [e],
-                    o = [t];
-                  if (!s || !a)
-                    return e == L
-                      ? -1
-                      : t == L
-                      ? 1
-                      : s
-                      ? -1
-                      : a
-                      ? 1
-                      : l
-                      ? y(l, e) - y(l, t)
-                      : 0;
-                  if (s === a) return pe(e, t);
-                  for (i = e; (i = i.parentNode); ) r.unshift(i);
-                  for (i = t; (i = i.parentNode); ) o.unshift(i);
-                  for (; r[n] === o[n]; ) n++;
-                  return n
-                    ? pe(r[n], o[n])
-                    : r[n] == u
-                    ? -1
-                    : o[n] == u
-                    ? 1
-                    : 0;
+              (M.find.CLASS =
+                h.getElementsByClassName &&
+                function (e, t) {
+                  if (void 0 !== t.getElementsByClassName && T)
+                    return t.getElementsByClassName(e);
+                }),
+              (n = []),
+              (p = []),
+              (h.qsa = x.test(L.querySelectorAll)) &&
+                (j(function (e) {
+                  var t;
+                  (i.appendChild(e).innerHTML =
+                    "<a id='" +
+                    Y +
+                    "'></a><select id='" +
+                    Y +
+                    "-\r\\' msallowcapture=''><option selected=''></option></select>"),
+                    e.querySelectorAll("[msallowcapture^='']").length &&
+                      p.push('[*^$]=' + r + '*(?:\'\'|"")'),
+                    e.querySelectorAll('[selected]').length ||
+                      p.push('\\[' + r + '*(?:value|' + Q + ')'),
+                    e.querySelectorAll('[id~=' + Y + '-]').length ||
+                      p.push('~='),
+                    (t = L.createElement('input')).setAttribute('name', ''),
+                    e.appendChild(t),
+                    e.querySelectorAll("[name='']").length ||
+                      p.push(
+                        '\\[' + r + '*name' + r + '*=' + r + '*(?:\'\'|"")'
+                      ),
+                    e.querySelectorAll(':checked').length || p.push(':checked'),
+                    e.querySelectorAll('a#' + Y + '+*').length ||
+                      p.push('.#.+[+~]'),
+                    e.querySelectorAll('\\\f'),
+                    p.push('[\\r\\n\\f]');
+                }),
+                j(function (e) {
+                  e.innerHTML =
+                    "<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>";
+                  var t = L.createElement('input');
+                  t.setAttribute('type', 'hidden'),
+                    e.appendChild(t).setAttribute('name', 'D'),
+                    e.querySelectorAll('[name=d]').length &&
+                      p.push('name' + r + '*[*^$|!~]?='),
+                    2 !== e.querySelectorAll(':enabled').length &&
+                      p.push(':enabled', ':disabled'),
+                    (i.appendChild(e).disabled = !0),
+                    2 !== e.querySelectorAll(':disabled').length &&
+                      p.push(':enabled', ':disabled'),
+                    e.querySelectorAll('*,:x'),
+                    p.push(',.*:');
                 })),
-          L
-        );
-      }),
-      (E.matches = function(e, t) {
+              (h.matchesSelector = x.test(
+                (s =
+                  i.matches ||
+                  i.webkitMatchesSelector ||
+                  i.mozMatchesSelector ||
+                  i.oMatchesSelector ||
+                  i.msMatchesSelector)
+              )) &&
+                j(function (e) {
+                  (h.disconnectedMatch = s.call(e, '*')),
+                    s.call(e, "[s!='']:x"),
+                    n.push('!=', Z);
+                }),
+              (p = p.length && new RegExp(p.join('|'))),
+              (n = n.length && new RegExp(n.join('|'))),
+              (e = x.test(i.compareDocumentPosition)),
+              (f =
+                e || x.test(i.contains)
+                  ? function (e, t) {
+                      var i = 9 === e.nodeType ? e.documentElement : e,
+                        t = t && t.parentNode;
+                      return (
+                        e === t ||
+                        !(
+                          !t ||
+                          1 !== t.nodeType ||
+                          !(i.contains
+                            ? i.contains(t)
+                            : e.compareDocumentPosition &&
+                              16 & e.compareDocumentPosition(t))
+                        )
+                      );
+                    }
+                  : function (e, t) {
+                      if (t)
+                        for (; (t = t.parentNode); ) if (t === e) return !0;
+                      return !1;
+                    }),
+              (V = e
+                ? function (e, t) {
+                    var i;
+                    return e === t
+                      ? ((d = !0), 0)
+                      : !e.compareDocumentPosition -
+                          !t.compareDocumentPosition ||
+                          (1 &
+                            (i =
+                              (e.ownerDocument || e) == (t.ownerDocument || t)
+                                ? e.compareDocumentPosition(t)
+                                : 1) ||
+                          (!h.sortDetached &&
+                            t.compareDocumentPosition(e) === i)
+                            ? e == L || (e.ownerDocument == u && f(u, e))
+                              ? -1
+                              : t == L || (t.ownerDocument == u && f(u, t))
+                              ? 1
+                              : l
+                              ? y(l, e) - y(l, t)
+                              : 0
+                            : 4 & i
+                            ? -1
+                            : 1);
+                  }
+                : function (e, t) {
+                    if (e === t) return (d = !0), 0;
+                    var i,
+                      n = 0,
+                      s = e.parentNode,
+                      a = t.parentNode,
+                      r = [e],
+                      o = [t];
+                    if (!s || !a)
+                      return e == L
+                        ? -1
+                        : t == L
+                        ? 1
+                        : s
+                        ? -1
+                        : a
+                        ? 1
+                        : l
+                        ? y(l, e) - y(l, t)
+                        : 0;
+                    if (s === a) return pe(e, t);
+                    for (i = e; (i = i.parentNode); ) r.unshift(i);
+                    for (i = t; (i = i.parentNode); ) o.unshift(i);
+                    for (; r[n] === o[n]; ) n++;
+                    return n
+                      ? pe(r[n], o[n])
+                      : r[n] == u
+                      ? -1
+                      : o[n] == u
+                      ? 1
+                      : 0;
+                  })),
+            L
+          );
+        }),
+      (E.matches = function (e, t) {
         return E(e, null, null, t);
       }),
-      (E.matchesSelector = function(e, t) {
+      (E.matchesSelector = function (e, t) {
         if (
           (w(e),
           h.matchesSelector &&
@@ -808,10 +823,10 @@
           }
         return 0 < E(t, L, null, [e]).length;
       }),
-      (E.contains = function(e, t) {
+      (E.contains = function (e, t) {
         return (e.ownerDocument || e) != L && w(e), f(e, t);
       }),
-      (E.attr = function(e, t) {
+      (E.attr = function (e, t) {
         (e.ownerDocument || e) != L && w(e);
         var i = M.attrHandle[t.toLowerCase()],
           i = i && G.call(M.attrHandle, t.toLowerCase()) ? i(e, t, !T) : void 0;
@@ -823,13 +838,13 @@
           ? i.value
           : null;
       }),
-      (E.escape = function(e) {
+      (E.escape = function (e) {
         return (e + '').replace(ce, $);
       }),
-      (E.error = function(e) {
+      (E.error = function (e) {
         throw new Error('Syntax error, unrecognized expression: ' + e);
       }),
-      (E.uniqueSort = function(e) {
+      (E.uniqueSort = function (e) {
         var t,
           i = [],
           n = 0,
@@ -845,354 +860,360 @@
         }
         return (l = null), e;
       }),
-      (a = E.getText = function(e) {
-        var t,
-          i = '',
-          n = 0,
-          s = e.nodeType;
-        if (s) {
-          if (1 === s || 9 === s || 11 === s) {
-            if ('string' == typeof e.textContent) return e.textContent;
-            for (e = e.firstChild; e; e = e.nextSibling) i += a(e);
-          } else if (3 === s || 4 === s) return e.nodeValue;
-        } else for (; (t = e[n++]); ) i += a(t);
-        return i;
-      }),
-      ((M = E.selectors = {
-        cacheLength: 50,
-        createPseudo: H,
-        match: v,
-        attrHandle: {},
-        find: {},
-        relative: {
-          '>': { dir: 'parentNode', first: !0 },
-          ' ': { dir: 'parentNode' },
-          '+': { dir: 'previousSibling', first: !0 },
-          '~': { dir: 'previousSibling' }
-        },
-        preFilter: {
-          ATTR: function(e) {
-            return (
-              (e[1] = e[1].replace(S, c)),
-              (e[3] = (e[3] || e[4] || e[5] || '').replace(S, c)),
-              '~=' === e[2] && (e[3] = ' ' + e[3] + ' '),
-              e.slice(0, 4)
-            );
+      (a = E.getText =
+        function (e) {
+          var t,
+            i = '',
+            n = 0,
+            s = e.nodeType;
+          if (s) {
+            if (1 === s || 9 === s || 11 === s) {
+              if ('string' == typeof e.textContent) return e.textContent;
+              for (e = e.firstChild; e; e = e.nextSibling) i += a(e);
+            } else if (3 === s || 4 === s) return e.nodeValue;
+          } else for (; (t = e[n++]); ) i += a(t);
+          return i;
+        }),
+      ((M = E.selectors =
+        {
+          cacheLength: 50,
+          createPseudo: H,
+          match: v,
+          attrHandle: {},
+          find: {},
+          relative: {
+            '>': { dir: 'parentNode', first: !0 },
+            ' ': { dir: 'parentNode' },
+            '+': { dir: 'previousSibling', first: !0 },
+            '~': { dir: 'previousSibling' },
           },
-          CHILD: function(e) {
-            return (
-              (e[1] = e[1].toLowerCase()),
-              'nth' === e[1].slice(0, 3)
-                ? (e[3] || E.error(e[0]),
-                  (e[4] = +(e[4]
-                    ? e[5] + (e[6] || 1)
-                    : 2 * ('even' === e[3] || 'odd' === e[3]))),
-                  (e[5] = +(e[7] + e[8] || 'odd' === e[3])))
-                : e[3] && E.error(e[0]),
-              e
-            );
+          preFilter: {
+            ATTR: function (e) {
+              return (
+                (e[1] = e[1].replace(S, c)),
+                (e[3] = (e[3] || e[4] || e[5] || '').replace(S, c)),
+                '~=' === e[2] && (e[3] = ' ' + e[3] + ' '),
+                e.slice(0, 4)
+              );
+            },
+            CHILD: function (e) {
+              return (
+                (e[1] = e[1].toLowerCase()),
+                'nth' === e[1].slice(0, 3)
+                  ? (e[3] || E.error(e[0]),
+                    (e[4] = +(e[4]
+                      ? e[5] + (e[6] || 1)
+                      : 2 * ('even' === e[3] || 'odd' === e[3]))),
+                    (e[5] = +(e[7] + e[8] || 'odd' === e[3])))
+                  : e[3] && E.error(e[0]),
+                e
+              );
+            },
+            PSEUDO: function (e) {
+              var t,
+                i = !e[6] && e[2];
+              return v.CHILD.test(e[0])
+                ? null
+                : (e[3]
+                    ? (e[2] = e[4] || e[5] || '')
+                    : i &&
+                      se.test(i) &&
+                      (t =
+                        (t = m(i, !0)) &&
+                        i.indexOf(')', i.length - t) - i.length) &&
+                      ((e[0] = e[0].slice(0, t)), (e[2] = i.slice(0, t))),
+                  e.slice(0, 3));
+            },
           },
-          PSEUDO: function(e) {
-            var t,
-              i = !e[6] && e[2];
-            return v.CHILD.test(e[0])
-              ? null
-              : (e[3]
-                  ? (e[2] = e[4] || e[5] || '')
-                  : i &&
-                    se.test(i) &&
-                    (t =
-                      (t = m(i, !0)) &&
-                      i.indexOf(')', i.length - t) - i.length) &&
-                    ((e[0] = e[0].slice(0, t)), (e[2] = i.slice(0, t))),
-                e.slice(0, 3));
-          }
-        },
-        filter: {
-          TAG: function(e) {
-            var t = e.replace(S, c).toLowerCase();
-            return '*' === e
-              ? function() {
-                  return !0;
-                }
-              : function(e) {
-                  return e.nodeName && e.nodeName.toLowerCase() === t;
-                };
-          },
-          CLASS: function(e) {
-            var t = R[e + ' '];
-            return (
-              t ||
-              ((t = new RegExp('(^|' + r + ')' + e + '(' + r + '|$)')) &&
-                R(e, function(e) {
-                  return t.test(
-                    ('string' == typeof e.className && e.className) ||
-                      (void 0 !== e.getAttribute && e.getAttribute('class')) ||
-                      ''
-                  );
-                }))
-            );
-          },
-          ATTR: function(t, i, n) {
-            return function(e) {
-              e = E.attr(e, t);
-              return null == e
-                ? '!=' === i
-                : !i ||
-                    ((e += ''),
-                    '=' === i
-                      ? e === n
-                      : '!=' === i
-                      ? e !== n
-                      : '^=' === i
-                      ? n && 0 === e.indexOf(n)
-                      : '*=' === i
-                      ? n && -1 < e.indexOf(n)
-                      : '$=' === i
-                      ? n && e.slice(-n.length) === n
-                      : '~=' === i
-                      ? -1 < (' ' + e.replace(ee, ' ') + ' ').indexOf(n)
-                      : '|=' === i &&
-                        (e === n || e.slice(0, n.length + 1) === n + '-'));
-            };
-          },
-          CHILD: function(p, e, t, f, _) {
-            var g = 'nth' !== p.slice(0, 3),
-              y = 'last' !== p.slice(-4),
-              v = 'of-type' === e;
-            return 1 === f && 0 === _
-              ? function(e) {
-                  return !!e.parentNode;
-                }
-              : function(e, t, i) {
-                  var n,
-                    s,
-                    a,
-                    r,
-                    o,
-                    l,
-                    d = g != y ? 'nextSibling' : 'previousSibling',
-                    u = e.parentNode,
-                    c = v && e.nodeName.toLowerCase(),
-                    h = !i && !v,
-                    m = !1;
-                  if (u) {
-                    if (g) {
-                      for (; d; ) {
-                        for (r = e; (r = r[d]); )
-                          if (
-                            v
-                              ? r.nodeName.toLowerCase() === c
-                              : 1 === r.nodeType
-                          )
-                            return !1;
-                        l = d = 'only' === p && !l && 'nextSibling';
-                      }
-                      return !0;
-                    }
-                    if (((l = [y ? u.firstChild : u.lastChild]), y && h)) {
-                      for (
-                        m =
-                          (o =
-                            (n =
-                              (s =
-                                (a = (r = u)[Y] || (r[Y] = {}))[r.uniqueID] ||
-                                (a[r.uniqueID] = {}))[p] || [])[0] === k &&
-                            n[1]) && n[2],
-                          r = o && u.childNodes[o];
-                        (r = (++o && r && r[d]) || ((m = o = 0), l.pop()));
-
-                      )
-                        if (1 === r.nodeType && ++m && r === e) {
-                          s[p] = [k, o, m];
-                          break;
-                        }
-                    } else if (
-                      !1 ===
-                      (m = h
-                        ? (o =
-                            (n =
-                              (s =
-                                (a = (r = e)[Y] || (r[Y] = {}))[r.uniqueID] ||
-                                (a[r.uniqueID] = {}))[p] || [])[0] === k &&
-                            n[1])
-                        : m)
-                    )
-                      for (
-                        ;
-                        (r = (++o && r && r[d]) || ((m = o = 0), l.pop())) &&
-                        ((v
-                          ? r.nodeName.toLowerCase() !== c
-                          : 1 !== r.nodeType) ||
-                          !++m ||
-                          (h &&
-                            ((s =
-                              (a = r[Y] || (r[Y] = {}))[r.uniqueID] ||
-                              (a[r.uniqueID] = {}))[p] = [k, m]),
-                          r !== e));
-
-                      );
-                    return (m -= _) === f || (m % f == 0 && 0 <= m / f);
+          filter: {
+            TAG: function (e) {
+              var t = e.replace(S, c).toLowerCase();
+              return '*' === e
+                ? function () {
+                    return !0;
                   }
-                };
-          },
-          PSEUDO: function(e, a) {
-            var t,
-              r =
-                M.pseudos[e] ||
-                M.setFilters[e.toLowerCase()] ||
-                E.error('unsupported pseudo: ' + e);
-            return r[Y]
-              ? r(a)
-              : 1 < r.length
-              ? ((t = [e, e, '', a]),
-                M.setFilters.hasOwnProperty(e.toLowerCase())
-                  ? H(function(e, t) {
-                      for (var i, n = r(e, a), s = n.length; s--; )
-                        e[(i = y(e, n[s]))] = !(t[i] = n[s]);
-                    })
-                  : function(e) {
-                      return r(e, 0, t);
-                    })
-              : r;
-          }
-        },
-        pseudos: {
-          not: H(function(e) {
-            var n = [],
-              s = [],
-              o = I(e.replace(g, '$1'));
-            return o[Y]
-              ? H(function(e, t, i, n) {
-                  for (var s, a = o(e, null, n, []), r = e.length; r--; )
-                    (s = a[r]) && (e[r] = !(t[r] = s));
-                })
-              : function(e, t, i) {
-                  return (n[0] = e), o(n, null, i, s), (n[0] = null), !s.pop();
-                };
-          }),
-          has: H(function(t) {
-            return function(e) {
-              return 0 < E(t, e).length;
-            };
-          }),
-          contains: H(function(t) {
-            return (
-              (t = t.replace(S, c)),
-              function(e) {
-                return -1 < (e.textContent || a(e)).indexOf(t);
-              }
-            );
-          }),
-          lang: H(function(i) {
-            return (
-              ae.test(i || '') || E.error('unsupported lang: ' + i),
-              (i = i.replace(S, c).toLowerCase()),
-              function(e) {
-                var t;
-                do {
-                  if (
-                    (t = T
-                      ? e.lang
-                      : e.getAttribute('xml:lang') || e.getAttribute('lang'))
-                  )
-                    return (
-                      (t = t.toLowerCase()) === i || 0 === t.indexOf(i + '-')
+                : function (e) {
+                    return e.nodeName && e.nodeName.toLowerCase() === t;
+                  };
+            },
+            CLASS: function (e) {
+              var t = R[e + ' '];
+              return (
+                t ||
+                ((t = new RegExp('(^|' + r + ')' + e + '(' + r + '|$)')) &&
+                  R(e, function (e) {
+                    return t.test(
+                      ('string' == typeof e.className && e.className) ||
+                        (void 0 !== e.getAttribute &&
+                          e.getAttribute('class')) ||
+                        ''
                     );
-                } while ((e = e.parentNode) && 1 === e.nodeType);
-                return !1;
-              }
-            );
-          }),
-          target: function(e) {
-            var t = A.location && A.location.hash;
-            return t && t.slice(1) === e.id;
+                  }))
+              );
+            },
+            ATTR: function (t, i, n) {
+              return function (e) {
+                e = E.attr(e, t);
+                return null == e
+                  ? '!=' === i
+                  : !i ||
+                      ((e += ''),
+                      '=' === i
+                        ? e === n
+                        : '!=' === i
+                        ? e !== n
+                        : '^=' === i
+                        ? n && 0 === e.indexOf(n)
+                        : '*=' === i
+                        ? n && -1 < e.indexOf(n)
+                        : '$=' === i
+                        ? n && e.slice(-n.length) === n
+                        : '~=' === i
+                        ? -1 < (' ' + e.replace(ee, ' ') + ' ').indexOf(n)
+                        : '|=' === i &&
+                          (e === n || e.slice(0, n.length + 1) === n + '-'));
+              };
+            },
+            CHILD: function (p, e, t, f, _) {
+              var g = 'nth' !== p.slice(0, 3),
+                y = 'last' !== p.slice(-4),
+                v = 'of-type' === e;
+              return 1 === f && 0 === _
+                ? function (e) {
+                    return !!e.parentNode;
+                  }
+                : function (e, t, i) {
+                    var n,
+                      s,
+                      a,
+                      r,
+                      o,
+                      l,
+                      d = g != y ? 'nextSibling' : 'previousSibling',
+                      u = e.parentNode,
+                      c = v && e.nodeName.toLowerCase(),
+                      h = !i && !v,
+                      m = !1;
+                    if (u) {
+                      if (g) {
+                        for (; d; ) {
+                          for (r = e; (r = r[d]); )
+                            if (
+                              v
+                                ? r.nodeName.toLowerCase() === c
+                                : 1 === r.nodeType
+                            )
+                              return !1;
+                          l = d = 'only' === p && !l && 'nextSibling';
+                        }
+                        return !0;
+                      }
+                      if (((l = [y ? u.firstChild : u.lastChild]), y && h)) {
+                        for (
+                          m =
+                            (o =
+                              (n =
+                                (s =
+                                  (a = (r = u)[Y] || (r[Y] = {}))[r.uniqueID] ||
+                                  (a[r.uniqueID] = {}))[p] || [])[0] === k &&
+                              n[1]) && n[2],
+                            r = o && u.childNodes[o];
+                          (r = (++o && r && r[d]) || ((m = o = 0), l.pop()));
+
+                        )
+                          if (1 === r.nodeType && ++m && r === e) {
+                            s[p] = [k, o, m];
+                            break;
+                          }
+                      } else if (
+                        !1 ===
+                        (m = h
+                          ? (o =
+                              (n =
+                                (s =
+                                  (a = (r = e)[Y] || (r[Y] = {}))[r.uniqueID] ||
+                                  (a[r.uniqueID] = {}))[p] || [])[0] === k &&
+                              n[1])
+                          : m)
+                      )
+                        for (
+                          ;
+                          (r = (++o && r && r[d]) || ((m = o = 0), l.pop())) &&
+                          ((v
+                            ? r.nodeName.toLowerCase() !== c
+                            : 1 !== r.nodeType) ||
+                            !++m ||
+                            (h &&
+                              ((s =
+                                (a = r[Y] || (r[Y] = {}))[r.uniqueID] ||
+                                (a[r.uniqueID] = {}))[p] = [k, m]),
+                            r !== e));
+
+                        );
+                      return (m -= _) === f || (m % f == 0 && 0 <= m / f);
+                    }
+                  };
+            },
+            PSEUDO: function (e, a) {
+              var t,
+                r =
+                  M.pseudos[e] ||
+                  M.setFilters[e.toLowerCase()] ||
+                  E.error('unsupported pseudo: ' + e);
+              return r[Y]
+                ? r(a)
+                : 1 < r.length
+                ? ((t = [e, e, '', a]),
+                  M.setFilters.hasOwnProperty(e.toLowerCase())
+                    ? H(function (e, t) {
+                        for (var i, n = r(e, a), s = n.length; s--; )
+                          e[(i = y(e, n[s]))] = !(t[i] = n[s]);
+                      })
+                    : function (e) {
+                        return r(e, 0, t);
+                      })
+                : r;
+            },
           },
-          root: function(e) {
-            return e === i;
+          pseudos: {
+            not: H(function (e) {
+              var n = [],
+                s = [],
+                o = I(e.replace(g, '$1'));
+              return o[Y]
+                ? H(function (e, t, i, n) {
+                    for (var s, a = o(e, null, n, []), r = e.length; r--; )
+                      (s = a[r]) && (e[r] = !(t[r] = s));
+                  })
+                : function (e, t, i) {
+                    return (
+                      (n[0] = e), o(n, null, i, s), (n[0] = null), !s.pop()
+                    );
+                  };
+            }),
+            has: H(function (t) {
+              return function (e) {
+                return 0 < E(t, e).length;
+              };
+            }),
+            contains: H(function (t) {
+              return (
+                (t = t.replace(S, c)),
+                function (e) {
+                  return -1 < (e.textContent || a(e)).indexOf(t);
+                }
+              );
+            }),
+            lang: H(function (i) {
+              return (
+                ae.test(i || '') || E.error('unsupported lang: ' + i),
+                (i = i.replace(S, c).toLowerCase()),
+                function (e) {
+                  var t;
+                  do {
+                    if (
+                      (t = T
+                        ? e.lang
+                        : e.getAttribute('xml:lang') || e.getAttribute('lang'))
+                    )
+                      return (
+                        (t = t.toLowerCase()) === i || 0 === t.indexOf(i + '-')
+                      );
+                  } while ((e = e.parentNode) && 1 === e.nodeType);
+                  return !1;
+                }
+              );
+            }),
+            target: function (e) {
+              var t = A.location && A.location.hash;
+              return t && t.slice(1) === e.id;
+            },
+            root: function (e) {
+              return e === i;
+            },
+            focus: function (e) {
+              return (
+                e === L.activeElement &&
+                (!L.hasFocus || L.hasFocus()) &&
+                !!(e.type || e.href || ~e.tabIndex)
+              );
+            },
+            enabled: fe(!1),
+            disabled: fe(!0),
+            checked: function (e) {
+              var t = e.nodeName.toLowerCase();
+              return (
+                ('input' === t && !!e.checked) ||
+                ('option' === t && !!e.selected)
+              );
+            },
+            selected: function (e) {
+              return (
+                e.parentNode && e.parentNode.selectedIndex, !0 === e.selected
+              );
+            },
+            empty: function (e) {
+              for (e = e.firstChild; e; e = e.nextSibling)
+                if (e.nodeType < 6) return !1;
+              return !0;
+            },
+            parent: function (e) {
+              return !M.pseudos.empty(e);
+            },
+            header: function (e) {
+              return le.test(e.nodeName);
+            },
+            input: function (e) {
+              return oe.test(e.nodeName);
+            },
+            button: function (e) {
+              var t = e.nodeName.toLowerCase();
+              return ('input' === t && 'button' === e.type) || 'button' === t;
+            },
+            text: function (e) {
+              return (
+                'input' === e.nodeName.toLowerCase() &&
+                'text' === e.type &&
+                (null == (e = e.getAttribute('type')) ||
+                  'text' === e.toLowerCase())
+              );
+            },
+            first: P(function () {
+              return [0];
+            }),
+            last: P(function (e, t) {
+              return [t - 1];
+            }),
+            eq: P(function (e, t, i) {
+              return [i < 0 ? i + t : i];
+            }),
+            even: P(function (e, t) {
+              for (var i = 0; i < t; i += 2) e.push(i);
+              return e;
+            }),
+            odd: P(function (e, t) {
+              for (var i = 1; i < t; i += 2) e.push(i);
+              return e;
+            }),
+            lt: P(function (e, t, i) {
+              for (var n = i < 0 ? i + t : t < i ? t : i; 0 <= --n; ) e.push(n);
+              return e;
+            }),
+            gt: P(function (e, t, i) {
+              for (var n = i < 0 ? i + t : i; ++n < t; ) e.push(n);
+              return e;
+            }),
           },
-          focus: function(e) {
-            return (
-              e === L.activeElement &&
-              (!L.hasFocus || L.hasFocus()) &&
-              !!(e.type || e.href || ~e.tabIndex)
-            );
-          },
-          enabled: fe(!1),
-          disabled: fe(!0),
-          checked: function(e) {
-            var t = e.nodeName.toLowerCase();
-            return (
-              ('input' === t && !!e.checked) || ('option' === t && !!e.selected)
-            );
-          },
-          selected: function(e) {
-            return (
-              e.parentNode && e.parentNode.selectedIndex, !0 === e.selected
-            );
-          },
-          empty: function(e) {
-            for (e = e.firstChild; e; e = e.nextSibling)
-              if (e.nodeType < 6) return !1;
-            return !0;
-          },
-          parent: function(e) {
-            return !M.pseudos.empty(e);
-          },
-          header: function(e) {
-            return le.test(e.nodeName);
-          },
-          input: function(e) {
-            return oe.test(e.nodeName);
-          },
-          button: function(e) {
-            var t = e.nodeName.toLowerCase();
-            return ('input' === t && 'button' === e.type) || 'button' === t;
-          },
-          text: function(e) {
-            return (
-              'input' === e.nodeName.toLowerCase() &&
-              'text' === e.type &&
-              (null == (e = e.getAttribute('type')) ||
-                'text' === e.toLowerCase())
-            );
-          },
-          first: P(function() {
-            return [0];
-          }),
-          last: P(function(e, t) {
-            return [t - 1];
-          }),
-          eq: P(function(e, t, i) {
-            return [i < 0 ? i + t : i];
-          }),
-          even: P(function(e, t) {
-            for (var i = 0; i < t; i += 2) e.push(i);
-            return e;
-          }),
-          odd: P(function(e, t) {
-            for (var i = 1; i < t; i += 2) e.push(i);
-            return e;
-          }),
-          lt: P(function(e, t, i) {
-            for (var n = i < 0 ? i + t : t < i ? t : i; 0 <= --n; ) e.push(n);
-            return e;
-          }),
-          gt: P(function(e, t, i) {
-            for (var n = i < 0 ? i + t : i; ++n < t; ) e.push(n);
-            return e;
-          })
-        }
-      }).pseudos.nth = M.pseudos.eq),
+        }).pseudos.nth = M.pseudos.eq),
       { radio: !0, checkbox: !0, file: !0, password: !0, image: !0 }))
-        M.pseudos[e] = (function(t) {
-          return function(e) {
+        M.pseudos[e] = (function (t) {
+          return function (e) {
             return 'input' === e.nodeName.toLowerCase() && e.type === t;
           };
         })(e);
       for (e in { submit: !0, reset: !0 })
-        M.pseudos[e] = (function(i) {
-          return function(e) {
+        M.pseudos[e] = (function (i) {
+          return function (e) {
             var t = e.nodeName.toLowerCase();
             return ('input' === t || 'button' === t) && e.type === i;
           };
@@ -1209,11 +1230,11 @@
           u = t && 'parentNode' === d,
           c = F++;
         return e.first
-          ? function(e, t, i) {
+          ? function (e, t, i) {
               for (; (e = e[o]); ) if (1 === e.nodeType || u) return r(e, t, i);
               return !1;
             }
-          : function(e, t, i) {
+          : function (e, t, i) {
               var n,
                 s,
                 a = [k, c];
@@ -1240,7 +1261,7 @@
       }
       function ve(s) {
         return 1 < s.length
-          ? function(e, t, i) {
+          ? function (e, t, i) {
               for (var n = s.length; n--; ) if (!s[n](e, t, i)) return !1;
               return !0;
             }
@@ -1261,25 +1282,25 @@
             r = a || M.relative[' '],
             o = a ? 1 : 0,
             l = ye(
-              function(e) {
+              function (e) {
                 return e === n;
               },
               r,
               !0
             ),
             d = ye(
-              function(e) {
+              function (e) {
                 return -1 < y(n, e);
               },
               r,
               !0
             ),
             u = [
-              function(e, t, i) {
+              function (e, t, i) {
                 e =
                   (!a && (i || t !== b)) || ((n = t).nodeType ? l : d)(e, t, i);
                 return (n = null), e;
-              }
+              },
             ];
           o < s;
           o++
@@ -1292,7 +1313,7 @@
                 return (
                   _ && !_[Y] && (_ = e(_)),
                   g && !g[Y] && (g = e(g, t)),
-                  H(function(e, t, i, n) {
+                  H(function (e, t, i, n) {
                     var s,
                       a,
                       r,
@@ -1301,7 +1322,7 @@
                       d = t.length,
                       u =
                         e ||
-                        (function(e, t, i) {
+                        (function (e, t, i) {
                           for (var n = 0, s = t.length; n < s; n++)
                             E(e, t[n], i);
                           return i;
@@ -1347,184 +1368,185 @@
       return (
         (ge.prototype = M.filters = M.pseudos),
         (M.setFilters = new ge()),
-        (m = E.tokenize = function(e, t) {
-          var i,
-            n,
-            s,
-            a,
-            r,
-            o,
-            l,
-            d = q[e + ' '];
-          if (d) return t ? 0 : d.slice(0);
-          for (r = e, o = [], l = M.preFilter; r; ) {
-            for (a in ((i && !(n = te.exec(r))) ||
-              (n && (r = r.slice(n[0].length) || r), o.push((s = []))),
-            (i = !1),
-            (n = ie.exec(r)) &&
-              ((i = n.shift()),
-              s.push({ value: i, type: n[0].replace(g, ' ') }),
-              (r = r.slice(i.length))),
-            M.filter))
-              !(n = v[a].exec(r)) ||
-                (l[a] && !(n = l[a](n))) ||
-                ((i = n.shift()),
-                s.push({ value: i, type: a, matches: n }),
-                (r = r.slice(i.length)));
-            if (!i) break;
-          }
-          return t ? r.length : r ? E.error(e) : q(e, o).slice(0);
-        }),
-        (I = E.compile = function(e, t) {
-          var i,
-            _,
-            g,
-            y,
-            v,
-            n,
-            s = [],
-            a = [],
-            r = B[e + ' '];
-          if (!r) {
-            for (i = (t = t || m(e)).length; i--; )
-              ((r = be(t[i]))[Y] ? s : a).push(r);
-            (r = B(
-              e,
-              ((y = 0 < (g = s).length),
-              (v = 0 < (_ = a).length),
-              (n = function(e, t, i, n, s) {
-                var a,
-                  r,
-                  o,
-                  l = 0,
-                  d = '0',
-                  u = e && [],
-                  c = [],
-                  h = b,
-                  m = e || (v && M.find.TAG('*', s)),
-                  p = (k += null == h ? 1 : Math.random() || 0.1),
-                  f = m.length;
-                for (
-                  s && (b = t == L || t || s);
-                  d !== f && null != (a = m[d]);
-                  d++
-                ) {
-                  if (v && a) {
-                    for (
-                      r = 0, t || a.ownerDocument == L || (w(a), (i = !T));
-                      (o = _[r++]);
-
-                    )
-                      if (o(a, t || L, i)) {
-                        n.push(a);
-                        break;
-                      }
-                    s && (k = p);
-                  }
-                  y && ((a = !o && a) && l--, e) && u.push(a);
-                }
-                if (((l += d), y && d !== l)) {
-                  for (r = 0; (o = g[r++]); ) o(u, c, t, i);
-                  if (e) {
-                    if (0 < l) for (; d--; ) u[d] || c[d] || (c[d] = X.call(n));
-                    c = Me(c);
-                  }
-                  D.apply(n, c),
-                    s &&
-                      !e &&
-                      0 < c.length &&
-                      1 < l + g.length &&
-                      E.uniqueSort(n);
-                }
-                return s && ((k = p), (b = h)), u;
-              }),
-              y ? H(n) : n)
-            )).selector = e;
-          }
-          return r;
-        }),
-        (z = E.select = function(e, t, i, n) {
-          var s,
-            a,
-            r,
-            o,
-            l,
-            d = 'function' == typeof e && e,
-            u = !n && m((e = d.selector || e));
-          if (((i = i || []), 1 === u.length)) {
-            if (
-              2 < (a = u[0] = u[0].slice(0)).length &&
-              'ID' === (r = a[0]).type &&
-              9 === t.nodeType &&
-              T &&
-              M.relative[a[1].type]
-            ) {
-              if (!(t = (M.find.ID(r.matches[0].replace(S, c), t) || [])[0]))
-                return i;
-              d && (t = t.parentNode), (e = e.slice(a.shift().value.length));
-            }
-            for (
-              s = v.needsContext.test(e) ? 0 : a.length;
-              s-- && ((r = a[s]), !M.relative[(o = r.type)]);
-
-            )
-              if (
-                (l = M.find[o]) &&
-                (n = l(
-                  r.matches[0].replace(S, c),
-                  (ue.test(a[0].type) && _e(t.parentNode)) || t
-                ))
-              ) {
-                if ((a.splice(s, 1), (e = n.length && O(a)))) break;
-                return D.apply(i, n), i;
-              }
-          }
-          return (
-            (d || I(e, u))(
+        (m = E.tokenize =
+          function (e, t) {
+            var i,
               n,
-              t,
-              !T,
-              i,
-              !t || (ue.test(e) && _e(t.parentNode)) || t
-            ),
-            i
-          );
-        }),
-        (h.sortStable =
-          Y.split('')
-            .sort(V)
-            .join('') === Y),
+              s,
+              a,
+              r,
+              o,
+              l,
+              d = q[e + ' '];
+            if (d) return t ? 0 : d.slice(0);
+            for (r = e, o = [], l = M.preFilter; r; ) {
+              for (a in ((i && !(n = te.exec(r))) ||
+                (n && (r = r.slice(n[0].length) || r), o.push((s = []))),
+              (i = !1),
+              (n = ie.exec(r)) &&
+                ((i = n.shift()),
+                s.push({ value: i, type: n[0].replace(g, ' ') }),
+                (r = r.slice(i.length))),
+              M.filter))
+                !(n = v[a].exec(r)) ||
+                  (l[a] && !(n = l[a](n))) ||
+                  ((i = n.shift()),
+                  s.push({ value: i, type: a, matches: n }),
+                  (r = r.slice(i.length)));
+              if (!i) break;
+            }
+            return t ? r.length : r ? E.error(e) : q(e, o).slice(0);
+          }),
+        (I = E.compile =
+          function (e, t) {
+            var i,
+              _,
+              g,
+              y,
+              v,
+              n,
+              s = [],
+              a = [],
+              r = B[e + ' '];
+            if (!r) {
+              for (i = (t = t || m(e)).length; i--; )
+                ((r = be(t[i]))[Y] ? s : a).push(r);
+              (r = B(
+                e,
+                ((y = 0 < (g = s).length),
+                (v = 0 < (_ = a).length),
+                (n = function (e, t, i, n, s) {
+                  var a,
+                    r,
+                    o,
+                    l = 0,
+                    d = '0',
+                    u = e && [],
+                    c = [],
+                    h = b,
+                    m = e || (v && M.find.TAG('*', s)),
+                    p = (k += null == h ? 1 : Math.random() || 0.1),
+                    f = m.length;
+                  for (
+                    s && (b = t == L || t || s);
+                    d !== f && null != (a = m[d]);
+                    d++
+                  ) {
+                    if (v && a) {
+                      for (
+                        r = 0, t || a.ownerDocument == L || (w(a), (i = !T));
+                        (o = _[r++]);
+
+                      )
+                        if (o(a, t || L, i)) {
+                          n.push(a);
+                          break;
+                        }
+                      s && (k = p);
+                    }
+                    y && ((a = !o && a) && l--, e) && u.push(a);
+                  }
+                  if (((l += d), y && d !== l)) {
+                    for (r = 0; (o = g[r++]); ) o(u, c, t, i);
+                    if (e) {
+                      if (0 < l)
+                        for (; d--; ) u[d] || c[d] || (c[d] = X.call(n));
+                      c = Me(c);
+                    }
+                    D.apply(n, c),
+                      s &&
+                        !e &&
+                        0 < c.length &&
+                        1 < l + g.length &&
+                        E.uniqueSort(n);
+                  }
+                  return s && ((k = p), (b = h)), u;
+                }),
+                y ? H(n) : n)
+              )).selector = e;
+            }
+            return r;
+          }),
+        (z = E.select =
+          function (e, t, i, n) {
+            var s,
+              a,
+              r,
+              o,
+              l,
+              d = 'function' == typeof e && e,
+              u = !n && m((e = d.selector || e));
+            if (((i = i || []), 1 === u.length)) {
+              if (
+                2 < (a = u[0] = u[0].slice(0)).length &&
+                'ID' === (r = a[0]).type &&
+                9 === t.nodeType &&
+                T &&
+                M.relative[a[1].type]
+              ) {
+                if (!(t = (M.find.ID(r.matches[0].replace(S, c), t) || [])[0]))
+                  return i;
+                d && (t = t.parentNode), (e = e.slice(a.shift().value.length));
+              }
+              for (
+                s = v.needsContext.test(e) ? 0 : a.length;
+                s-- && ((r = a[s]), !M.relative[(o = r.type)]);
+
+              )
+                if (
+                  (l = M.find[o]) &&
+                  (n = l(
+                    r.matches[0].replace(S, c),
+                    (ue.test(a[0].type) && _e(t.parentNode)) || t
+                  ))
+                ) {
+                  if ((a.splice(s, 1), (e = n.length && O(a)))) break;
+                  return D.apply(i, n), i;
+                }
+            }
+            return (
+              (d || I(e, u))(
+                n,
+                t,
+                !T,
+                i,
+                !t || (ue.test(e) && _e(t.parentNode)) || t
+              ),
+              i
+            );
+          }),
+        (h.sortStable = Y.split('').sort(V).join('') === Y),
         (h.detectDuplicates = !!d),
         w(),
-        (h.sortDetached = j(function(e) {
+        (h.sortDetached = j(function (e) {
           return 1 & e.compareDocumentPosition(L.createElement('fieldset'));
         })),
-        j(function(e) {
+        j(function (e) {
           return (
             (e.innerHTML = "<a href='#'></a>"),
             '#' === e.firstChild.getAttribute('href')
           );
         }) ||
-          me('type|href|height|width', function(e, t, i) {
+          me('type|href|height|width', function (e, t, i) {
             if (!i)
               return e.getAttribute(t, 'type' === t.toLowerCase() ? 1 : 2);
           }),
         (h.attributes &&
-          j(function(e) {
+          j(function (e) {
             return (
               (e.innerHTML = '<input/>'),
               e.firstChild.setAttribute('value', ''),
               '' === e.firstChild.getAttribute('value')
             );
           })) ||
-          me('value', function(e, t, i) {
+          me('value', function (e, t, i) {
             if (!i && 'input' === e.nodeName.toLowerCase())
               return e.defaultValue;
           }),
-        j(function(e) {
+        j(function (e) {
           return null == e.getAttribute('disabled');
         }) ||
-          me(Q, function(e, t, i) {
+          me(Q, function (e, t, i) {
             if (!i)
               return !0 === e[t]
                 ? t.toLowerCase()
@@ -1551,20 +1573,20 @@
   var Q = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i;
   function K(e, i, n) {
     return y(i)
-      ? T.grep(e, function(e, t) {
+      ? T.grep(e, function (e, t) {
           return !!i.call(e, t, e) !== n;
         })
       : i.nodeType
-      ? T.grep(e, function(e) {
+      ? T.grep(e, function (e) {
           return (e === i) !== n;
         })
       : 'string' != typeof i
-      ? T.grep(e, function(e) {
+      ? T.grep(e, function (e) {
           return -1 < I.call(i, e) !== n;
         })
       : T.filter(i, e, n);
   }
-  (T.filter = function(e, t, i) {
+  (T.filter = function (e, t, i) {
     var n = t[0];
     return (
       i && (e = ':not(' + e + ')'),
@@ -1574,42 +1596,42 @@
           : []
         : T.find.matches(
             e,
-            T.grep(t, function(e) {
+            T.grep(t, function (e) {
               return 1 === e.nodeType;
             })
           )
     );
   }),
     T.fn.extend({
-      find: function(e) {
+      find: function (e) {
         var t,
           i,
           n = this.length,
           s = this;
         if ('string' != typeof e)
           return this.pushStack(
-            T(e).filter(function() {
+            T(e).filter(function () {
               for (t = 0; t < n; t++) if (T.contains(s[t], this)) return !0;
             })
           );
         for (i = this.pushStack([]), t = 0; t < n; t++) T.find(e, s[t], i);
         return 1 < n ? T.uniqueSort(i) : i;
       },
-      filter: function(e) {
+      filter: function (e) {
         return this.pushStack(K(this, e || [], !1));
       },
-      not: function(e) {
+      not: function (e) {
         return this.pushStack(K(this, e || [], !0));
       },
-      is: function(e) {
+      is: function (e) {
         return !!K(this, 'string' == typeof e && J.test(e) ? T(e) : e || [], !1)
           .length;
-      }
+      },
     });
   var Z,
     ee = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/,
     te =
-      (((T.fn.init = function(e, t, i) {
+      (((T.fn.init = function (e, t, i) {
         if (e) {
           if (((i = i || Z), 'string' != typeof e))
             return e.nodeType
@@ -1654,14 +1676,14 @@
     return e;
   }
   T.fn.extend({
-    has: function(e) {
+    has: function (e) {
       var t = T(e, this),
         i = t.length;
-      return this.filter(function() {
+      return this.filter(function () {
         for (var e = 0; e < i; e++) if (T.contains(this, t[e])) return !0;
       });
     },
-    closest: function(e, t) {
+    closest: function (e, t) {
       var i,
         n = 0,
         s = this.length,
@@ -1681,7 +1703,7 @@
             }
       return this.pushStack(1 < a.length ? T.uniqueSort(a) : a);
     },
-    index: function(e) {
+    index: function (e) {
       return e
         ? 'string' == typeof e
           ? I.call(T(e), this[0])
@@ -1690,58 +1712,58 @@
         ? this.first().prevAll().length
         : -1;
     },
-    add: function(e, t) {
+    add: function (e, t) {
       return this.pushStack(T.uniqueSort(T.merge(this.get(), T(e, t))));
     },
-    addBack: function(e) {
+    addBack: function (e) {
       return this.add(null == e ? this.prevObject : this.prevObject.filter(e));
-    }
+    },
   }),
     T.each(
       {
-        parent: function(e) {
+        parent: function (e) {
           e = e.parentNode;
           return e && 11 !== e.nodeType ? e : null;
         },
-        parents: function(e) {
+        parents: function (e) {
           return n(e, 'parentNode');
         },
-        parentsUntil: function(e, t, i) {
+        parentsUntil: function (e, t, i) {
           return n(e, 'parentNode', i);
         },
-        next: function(e) {
+        next: function (e) {
           return ne(e, 'nextSibling');
         },
-        prev: function(e) {
+        prev: function (e) {
           return ne(e, 'previousSibling');
         },
-        nextAll: function(e) {
+        nextAll: function (e) {
           return n(e, 'nextSibling');
         },
-        prevAll: function(e) {
+        prevAll: function (e) {
           return n(e, 'previousSibling');
         },
-        nextUntil: function(e, t, i) {
+        nextUntil: function (e, t, i) {
           return n(e, 'nextSibling', i);
         },
-        prevUntil: function(e, t, i) {
+        prevUntil: function (e, t, i) {
           return n(e, 'previousSibling', i);
         },
-        siblings: function(e) {
+        siblings: function (e) {
           return U((e.parentNode || {}).firstChild, e);
         },
-        children: function(e) {
+        children: function (e) {
           return U(e.firstChild);
         },
-        contents: function(e) {
+        contents: function (e) {
           return null != e.contentDocument && $(e.contentDocument)
             ? e.contentDocument
             : (l(e, 'template') && (e = e.content || e),
               T.merge([], e.childNodes));
-        }
+        },
       },
-      function(n, s) {
-        T.fn[n] = function(e, t) {
+      function (n, s) {
+        T.fn[n] = function (e, t) {
           var i = T.map(this, s, e);
           return (
             (t = 'Until' !== n.slice(-5) ? e : t) &&
@@ -1766,10 +1788,7 @@
     var s;
     try {
       e && y((s = e.promise))
-        ? s
-            .call(e)
-            .done(t)
-            .fail(i)
+        ? s.call(e).done(t).fail(i)
         : e && y((s = e.then))
         ? s.call(e, t, i)
         : t.apply(void 0, [e].slice(n));
@@ -1777,13 +1796,13 @@
       i.apply(void 0, [e]);
     }
   }
-  (T.Callbacks = function(n) {
+  (T.Callbacks = function (n) {
     var e, i;
     n =
       'string' == typeof n
         ? ((e = n),
           (i = {}),
-          T.each(e.match(Y) || [], function(e, t) {
+          T.each(e.match(Y) || [], function (e, t) {
             i[t] = !0;
           }),
           i)
@@ -1804,12 +1823,12 @@
       d = [],
       u = -1,
       c = {
-        add: function() {
+        add: function () {
           return (
             l &&
               (t && !a && ((u = l.length - 1), d.push(t)),
               (function i(e) {
-                T.each(e, function(e, t) {
+                T.each(e, function (e, t) {
                   y(t)
                     ? (n.unique && c.has(t)) || l.push(t)
                     : t && t.length && 'string' !== p(t) && i(t);
@@ -1821,34 +1840,34 @@
             this
           );
         },
-        remove: function() {
+        remove: function () {
           return (
-            T.each(arguments, function(e, t) {
+            T.each(arguments, function (e, t) {
               for (var i; -1 < (i = T.inArray(t, l, i)); )
                 l.splice(i, 1), i <= u && u--;
             }),
             this
           );
         },
-        has: function(e) {
+        has: function (e) {
           return e ? -1 < T.inArray(e, l) : 0 < l.length;
         },
-        empty: function() {
+        empty: function () {
           return (l = l && []), this;
         },
-        disable: function() {
+        disable: function () {
           return (o = d = []), (l = t = ''), this;
         },
-        disabled: function() {
+        disabled: function () {
           return !l;
         },
-        lock: function() {
+        lock: function () {
           return (o = d = []), t || a || (l = t = ''), this;
         },
-        locked: function() {
+        locked: function () {
           return !!o;
         },
-        fireWith: function(e, t) {
+        fireWith: function (e, t) {
           return (
             o ||
               ((t = [e, (t = t || []).slice ? t.slice() : t]), d.push(t), a) ||
@@ -1856,24 +1875,24 @@
             this
           );
         },
-        fire: function() {
+        fire: function () {
           return c.fireWith(this, arguments), this;
         },
-        fired: function() {
+        fired: function () {
           return !!r;
-        }
+        },
       };
     return c;
   }),
     T.extend({
-      Deferred: function(e) {
+      Deferred: function (e) {
         var a = [
             [
               'notify',
               'progress',
               T.Callbacks('memory'),
               T.Callbacks('memory'),
-              2
+              2,
             ],
             [
               'resolve',
@@ -1881,7 +1900,7 @@
               T.Callbacks('once memory'),
               T.Callbacks('once memory'),
               0,
-              'resolved'
+              'resolved',
             ],
             [
               'reject',
@@ -1889,26 +1908,26 @@
               T.Callbacks('once memory'),
               T.Callbacks('once memory'),
               1,
-              'rejected'
-            ]
+              'rejected',
+            ],
           ],
           s = 'pending',
           r = {
-            state: function() {
+            state: function () {
               return s;
             },
-            always: function() {
+            always: function () {
               return o.done(arguments).fail(arguments), this;
             },
-            catch: function(e) {
+            catch: function (e) {
               return r.then(null, e);
             },
-            pipe: function() {
+            pipe: function () {
               var s = arguments;
-              return T.Deferred(function(n) {
-                T.each(a, function(e, t) {
+              return T.Deferred(function (n) {
+                T.each(a, function (e, t) {
                   var i = y(s[t[4]]) && s[t[4]];
-                  o[t[1]](function() {
+                  o[t[1]](function () {
                     var e = i && i.apply(this, arguments);
                     e && y(e.promise)
                       ? e
@@ -1922,10 +1941,10 @@
                   (s = null);
               }).promise();
             },
-            then: function(t, i, n) {
+            then: function (t, i, n) {
               var l = 0;
               function d(s, a, r, o) {
-                return function() {
+                return function () {
                   function e() {
                     var e, t;
                     if (!(s < l)) {
@@ -1953,7 +1972,7 @@
                     n = arguments,
                     t = o
                       ? e
-                      : function() {
+                      : function () {
                           try {
                             e();
                           } catch (e) {
@@ -1971,25 +1990,25 @@
                       w.setTimeout(t));
                 };
               }
-              return T.Deferred(function(e) {
+              return T.Deferred(function (e) {
                 a[0][3].add(d(0, e, y(n) ? n : u, e.notifyWith)),
                   a[1][3].add(d(0, e, y(t) ? t : u)),
                   a[2][3].add(d(0, e, y(i) ? i : se));
               }).promise();
             },
-            promise: function(e) {
+            promise: function (e) {
               return null != e ? T.extend(e, r) : r;
-            }
+            },
           },
           o = {};
         return (
-          T.each(a, function(e, t) {
+          T.each(a, function (e, t) {
             var i = t[2],
               n = t[5];
             (r[t[1]] = i.add),
               n &&
                 i.add(
-                  function() {
+                  function () {
                     s = n;
                   },
                   a[3 - e][2].disable,
@@ -1998,7 +2017,7 @@
                   a[0][3].lock
                 ),
               i.add(t[3].fire),
-              (o[t[0]] = function() {
+              (o[t[0]] = function () {
                 return (
                   o[t[0] + 'With'](this === o ? void 0 : this, arguments), this
                 );
@@ -2010,9 +2029,9 @@
           o
         );
       },
-      when: function(e) {
+      when: function (e) {
         function t(t) {
-          return function(e) {
+          return function (e) {
             (s[t] = this),
               (a[t] = 1 < arguments.length ? o.call(arguments) : e),
               --i || r.resolveWith(s, a);
@@ -2031,19 +2050,19 @@
           return r.then();
         for (; n--; ) ae(a[n], t(n), r.reject);
         return r.promise();
-      }
+      },
     });
   var re = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/,
     oe =
-      ((T.Deferred.exceptionHook = function(e, t) {
+      ((T.Deferred.exceptionHook = function (e, t) {
         w.console &&
           w.console.warn &&
           e &&
           re.test(e.name) &&
           w.console.warn('jQuery.Deferred exception: ' + e.message, e.stack, t);
       }),
-      (T.readyException = function(e) {
-        w.setTimeout(function() {
+      (T.readyException = function (e) {
+        w.setTimeout(function () {
           throw e;
         });
       }),
@@ -2053,9 +2072,9 @@
       w.removeEventListener('load', le),
       T.ready();
   }
-  (T.fn.ready = function(e) {
+  (T.fn.ready = function (e) {
     return (
-      oe.then(e).catch(function(e) {
+      oe.then(e).catch(function (e) {
         T.readyException(e);
       }),
       this
@@ -2064,11 +2083,11 @@
     T.extend({
       isReady: !1,
       readyWait: 1,
-      ready: function(e) {
+      ready: function (e) {
         (!0 === e ? --T.readyWait : T.isReady) ||
           ((T.isReady = !0) !== e && 0 < --T.readyWait) ||
           oe.resolveWith(L, [T]);
-      }
+      },
     }),
     (T.ready.then = oe.then),
     'complete' === L.readyState ||
@@ -2089,7 +2108,7 @@
         ? r
           ? (t.call(e, n), null)
           : ((d = t),
-            function(e, t, i) {
+            function (e, t, i) {
               return d.call(T(e), i);
             })
         : t))
@@ -2113,7 +2132,7 @@
   }
   (he.uid = 1),
     (he.prototype = {
-      cache: function(e) {
+      cache: function (e) {
         var t = e[this.expando];
         return (
           t ||
@@ -2123,29 +2142,29 @@
                 ? (e[this.expando] = t)
                 : Object.defineProperty(e, this.expando, {
                     value: t,
-                    configurable: !0
+                    configurable: !0,
                   }))),
           t
         );
       },
-      set: function(e, t, i) {
+      set: function (e, t, i) {
         var n,
           s = this.cache(e);
         if ('string' == typeof t) s[v(t)] = i;
         else for (n in t) s[v(n)] = t[n];
         return s;
       },
-      get: function(e, t) {
+      get: function (e, t) {
         return void 0 === t
           ? this.cache(e)
           : e[this.expando] && e[this.expando][v(t)];
       },
-      access: function(e, t, i) {
+      access: function (e, t, i) {
         return void 0 === t || (t && 'string' == typeof t && void 0 === i)
           ? this.get(e, t)
           : (this.set(e, t, i), void 0 !== i ? i : t);
       },
-      remove: function(e, t) {
+      remove: function (e, t) {
         var i,
           n = e[this.expando];
         if (void 0 !== n) {
@@ -2161,10 +2180,10 @@
             (e.nodeType ? (e[this.expando] = void 0) : delete e[this.expando]);
         }
       },
-      hasData: function(e) {
+      hasData: function (e) {
         e = e[this.expando];
         return void 0 !== e && !T.isEmptyObject(e);
-      }
+      },
     });
   var M = new he(),
     d = new he(),
@@ -2194,24 +2213,24 @@
     return i;
   }
   T.extend({
-    hasData: function(e) {
+    hasData: function (e) {
       return d.hasData(e) || M.hasData(e);
     },
-    data: function(e, t, i) {
+    data: function (e, t, i) {
       return d.access(e, t, i);
     },
-    removeData: function(e, t) {
+    removeData: function (e, t) {
       d.remove(e, t);
     },
-    _data: function(e, t, i) {
+    _data: function (e, t, i) {
       return M.access(e, t, i);
     },
-    _removeData: function(e, t) {
+    _removeData: function (e, t) {
       M.remove(e, t);
-    }
+    },
   }),
     T.fn.extend({
-      data: function(i, e) {
+      data: function (i, e) {
         var t,
           n,
           s,
@@ -2219,19 +2238,19 @@
           r = a && a.attributes;
         if (void 0 !== i)
           return 'object' == typeof i
-            ? this.each(function() {
+            ? this.each(function () {
                 d.set(this, i);
               })
             : c(
                 this,
-                function(e) {
+                function (e) {
                   var t;
                   if (a && void 0 === e)
                     return void 0 !== (t = d.get(a, i)) ||
                       void 0 !== (t = fe(a, i))
                       ? t
                       : void 0;
-                  this.each(function() {
+                  this.each(function () {
                     d.set(this, i, e);
                   });
                 },
@@ -2254,14 +2273,14 @@
         }
         return s;
       },
-      removeData: function(e) {
-        return this.each(function() {
+      removeData: function (e) {
+        return this.each(function () {
           d.remove(this, e);
         });
-      }
+      },
     }),
     T.extend({
-      queue: function(e, t, i) {
+      queue: function (e, t, i) {
         var n;
         if (e)
           return (
@@ -2273,7 +2292,7 @@
             n || []
           );
       },
-      dequeue: function(e, t) {
+      dequeue: function (e, t) {
         t = t || 'fx';
         var i = T.queue(e, t),
           n = i.length,
@@ -2285,27 +2304,27 @@
             delete a.stop,
             s.call(
               e,
-              function() {
+              function () {
                 T.dequeue(e, t);
               },
               a
             )),
           !n && a && a.empty.fire();
       },
-      _queueHooks: function(e, t) {
+      _queueHooks: function (e, t) {
         var i = t + 'queueHooks';
         return (
           M.get(e, i) ||
           M.access(e, i, {
-            empty: T.Callbacks('once memory').add(function() {
+            empty: T.Callbacks('once memory').add(function () {
               M.remove(e, [t + 'queue', i]);
-            })
+            }),
           })
         );
-      }
+      },
     }),
     T.fn.extend({
-      queue: function(t, i) {
+      queue: function (t, i) {
         var e = 2;
         return (
           'string' != typeof t && ((i = t), (t = 'fx'), e--),
@@ -2313,22 +2332,22 @@
             ? T.queue(this[0], t)
             : void 0 === i
             ? this
-            : this.each(function() {
+            : this.each(function () {
                 var e = T.queue(this, t, i);
                 T._queueHooks(this, t),
                   'fx' === t && 'inprogress' !== e[0] && T.dequeue(this, t);
               })
         );
       },
-      dequeue: function(e) {
-        return this.each(function() {
+      dequeue: function (e) {
+        return this.each(function () {
           T.dequeue(this, e);
         });
       },
-      clearQueue: function(e) {
+      clearQueue: function (e) {
         return this.queue(e || 'fx', []);
       },
-      promise: function(e, t) {
+      promise: function (e, t) {
         function i() {
           --s || a.resolveWith(r, [r]);
         }
@@ -2346,7 +2365,7 @@
             n.empty &&
             (s++, n.empty.add(i));
         return i(), a.promise(t);
-      }
+      },
     });
   function _e(e, t) {
     return (
@@ -2358,12 +2377,12 @@
     ge = new RegExp('^(?:([+-])=|)(' + e + ')([a-z%]*)$', 'i'),
     h = ['Top', 'Right', 'Bottom', 'Left'],
     b = L.documentElement,
-    k = function(e) {
+    k = function (e) {
       return T.contains(e.ownerDocument, e);
     },
     ye = { composed: !0 };
   b.getRootNode &&
-    (k = function(e) {
+    (k = function (e) {
       return (
         T.contains(e.ownerDocument, e) || e.getRootNode(ye) === e.ownerDocument
       );
@@ -2373,10 +2392,10 @@
       a,
       r = 20,
       o = n
-        ? function() {
+        ? function () {
             return n.cur();
           }
-        : function() {
+        : function () {
             return T.css(e, t, '');
           },
       l = o(),
@@ -2424,21 +2443,21 @@
     return e;
   }
   T.fn.extend({
-    show: function() {
+    show: function () {
       return D(this, !0);
     },
-    hide: function() {
+    hide: function () {
       return D(this);
     },
-    toggle: function(e) {
+    toggle: function (e) {
       return 'boolean' == typeof e
         ? e
           ? this.show()
           : this.hide()
-        : this.each(function() {
+        : this.each(function () {
             _e(this) ? T(this).show() : T(this).hide();
           });
-    }
+    },
   });
   var be = /^(?:checkbox|radio)$/i,
     we = /<([a-z][^\/\0>\x20\t\r\n\f]*)/i,
@@ -2459,7 +2478,7 @@
         col: [2, '<table><colgroup>', '</colgroup></table>'],
         tr: [2, '<table><tbody>', '</tbody></table>'],
         td: [3, '<table><tbody><tr>', '</tr></tbody></table>'],
-        _default: [0, '', '']
+        _default: [0, '', ''],
       });
   function S(e, t) {
     var i =
@@ -2477,11 +2496,8 @@
   (x.tbody = x.tfoot = x.colgroup = x.caption = x.thead),
     (x.th = x.td),
     _.option ||
-      (x.optgroup = x.option = [
-        1,
-        "<select multiple='multiple'>",
-        '</select>'
-      ]);
+      (x.optgroup = x.option =
+        [1, "<select multiple='multiple'>", '</select>']);
   var Ye = /<|&#?\w+;/;
   function ke(e, t, i, n, s) {
     for (
@@ -2528,7 +2544,7 @@
   function xe(e, t) {
     return (
       (e ===
-        (function() {
+        (function () {
           try {
             return L.activeElement;
           } catch (e) {}
@@ -2557,10 +2573,10 @@
     return (
       1 === a &&
         ((r = s),
-        ((s = function(e) {
+        ((s = function (e) {
           return T().off(e), r.apply(this, arguments);
         }).guid = r.guid || (r.guid = T.guid++))),
-      e.each(function() {
+      e.each(function () {
         T.event.add(this, t, s, n, i);
       })
     );
@@ -2570,7 +2586,7 @@
       ? (M.set(e, s, !1),
         T.event.add(e, s, {
           namespace: !1,
-          handler: function(e) {
+          handler: function (e) {
             var t,
               i,
               n = M.get(this, s);
@@ -2595,16 +2611,16 @@
                     T.extend(n[0], T.Event.prototype),
                     n.slice(1),
                     this
-                  )
+                  ),
                 }),
                 e.stopImmediatePropagation());
-          }
+          },
         }))
       : void 0 === M.get(e, s) && T.event.add(e, s, r);
   }
   (T.event = {
     global: {},
-    add: function(t, e, i, n, s) {
+    add: function (t, e, i, n, s) {
       var a,
         r,
         o,
@@ -2623,7 +2639,7 @@
             o = (o = p.events) || (p.events = Object.create(null)),
             r =
               (r = p.handle) ||
-              (p.handle = function(e) {
+              (p.handle = function (e) {
                 return void 0 !== T && T.event.triggered !== e.type
                   ? T.event.dispatch.apply(t, arguments)
                   : void 0;
@@ -2647,7 +2663,7 @@
                   guid: i.guid,
                   selector: s,
                   needsContext: s && T.expr.match.needsContext.test(s),
-                  namespace: h.join('.')
+                  namespace: h.join('.'),
                 },
                 a
               )),
@@ -2660,7 +2676,7 @@
               s ? u.splice(u.delegateCount++, 0, m) : u.push(m),
               (T.event.global[c] = !0));
     },
-    remove: function(e, t, i, n, s) {
+    remove: function (e, t, i, n, s) {
       var a,
         r,
         o,
@@ -2707,7 +2723,7 @@
         T.isEmptyObject(l) && M.remove(e, 'handle events');
       }
     },
-    dispatch: function(e) {
+    dispatch: function (e) {
       var t,
         i,
         n,
@@ -2746,7 +2762,7 @@
         return l.postDispatch && l.postDispatch.call(this, o), o.result;
       }
     },
-    handlers: function(e, t) {
+    handlers: function (e, t) {
       var i,
         n,
         s,
@@ -2770,46 +2786,46 @@
         (d = this), l < t.length && o.push({ elem: d, handlers: t.slice(l) }), o
       );
     },
-    addProp: function(t, e) {
+    addProp: function (t, e) {
       Object.defineProperty(T.Event.prototype, t, {
         enumerable: !0,
         configurable: !0,
         get: y(e)
-          ? function() {
+          ? function () {
               if (this.originalEvent) return e(this.originalEvent);
             }
-          : function() {
+          : function () {
               if (this.originalEvent) return this.originalEvent[t];
             },
-        set: function(e) {
+        set: function (e) {
           Object.defineProperty(this, t, {
             enumerable: !0,
             configurable: !0,
             writable: !0,
-            value: e
+            value: e,
           });
-        }
+        },
       });
     },
-    fix: function(e) {
+    fix: function (e) {
       return e[T.expando] ? e : new T.Event(e);
     },
     special: {
       load: { noBubble: !0 },
       click: {
-        setup: function(e) {
+        setup: function (e) {
           e = this || e;
           return (
             be.test(e.type) && e.click && l(e, 'input') && Ee(e, 'click', r), !1
           );
         },
-        trigger: function(e) {
+        trigger: function (e) {
           e = this || e;
           return (
             be.test(e.type) && e.click && l(e, 'input') && Ee(e, 'click'), !0
           );
         },
-        _default: function(e) {
+        _default: function (e) {
           e = e.target;
           return (
             (be.test(e.type) &&
@@ -2818,21 +2834,21 @@
               M.get(e, 'click')) ||
             l(e, 'a')
           );
-        }
+        },
       },
       beforeunload: {
-        postDispatch: function(e) {
+        postDispatch: function (e) {
           void 0 !== e.result &&
             e.originalEvent &&
             (e.originalEvent.returnValue = e.result);
-        }
-      }
-    }
+        },
+      },
+    },
   }),
-    (T.removeEvent = function(e, t, i) {
+    (T.removeEvent = function (e, t, i) {
       e.removeEventListener && e.removeEventListener(t, i);
     }),
-    (T.Event = function(e, t) {
+    (T.Event = function (e, t) {
       if (!(this instanceof T.Event)) return new T.Event(e, t);
       e && e.type
         ? ((this.originalEvent = e),
@@ -2859,22 +2875,22 @@
       isPropagationStopped: m,
       isImmediatePropagationStopped: m,
       isSimulated: !1,
-      preventDefault: function() {
+      preventDefault: function () {
         var e = this.originalEvent;
         (this.isDefaultPrevented = r),
           e && !this.isSimulated && e.preventDefault();
       },
-      stopPropagation: function() {
+      stopPropagation: function () {
         var e = this.originalEvent;
         (this.isPropagationStopped = r),
           e && !this.isSimulated && e.stopPropagation();
       },
-      stopImmediatePropagation: function() {
+      stopImmediatePropagation: function () {
         var e = this.originalEvent;
         (this.isImmediatePropagationStopped = r),
           e && !this.isSimulated && e.stopImmediatePropagation(),
           this.stopPropagation();
-      }
+      },
     }),
     T.each(
       {
@@ -2908,22 +2924,22 @@
         targetTouches: !0,
         toElement: !0,
         touches: !0,
-        which: !0
+        which: !0,
       },
       T.event.addProp
     ),
-    T.each({ focus: 'focusin', blur: 'focusout' }, function(e, t) {
+    T.each({ focus: 'focusin', blur: 'focusout' }, function (e, t) {
       T.event.special[e] = {
-        setup: function() {
+        setup: function () {
           return Ee(this, e, xe), !1;
         },
-        trigger: function() {
+        trigger: function () {
           return Ee(this, e), !0;
         },
-        _default: function() {
+        _default: function () {
           return !0;
         },
-        delegateType: t
+        delegateType: t,
       };
     }),
     T.each(
@@ -2931,13 +2947,13 @@
         mouseenter: 'mouseover',
         mouseleave: 'mouseout',
         pointerenter: 'pointerover',
-        pointerleave: 'pointerout'
+        pointerleave: 'pointerout',
       },
-      function(e, s) {
+      function (e, s) {
         T.event.special[e] = {
           delegateType: s,
           bindType: s,
-          handle: function(e) {
+          handle: function (e) {
             var t,
               i = e.relatedTarget,
               n = e.handleObj;
@@ -2948,18 +2964,18 @@
                 (e.type = s)),
               t
             );
-          }
+          },
         };
       }
     ),
     T.fn.extend({
-      on: function(e, t, i, n) {
+      on: function (e, t, i, n) {
         return Se(this, e, t, i, n);
       },
-      one: function(e, t, i, n) {
+      one: function (e, t, i, n) {
         return Se(this, e, t, i, n, 1);
       },
-      off: function(e, t, i) {
+      off: function (e, t, i) {
         var n, s;
         if (e && e.preventDefault && e.handleObj)
           (n = e.handleObj),
@@ -2973,14 +2989,14 @@
             return (
               (!1 !== t && 'function' != typeof t) || ((i = t), (t = void 0)),
               !1 === i && (i = m),
-              this.each(function() {
+              this.each(function () {
                 T.event.remove(this, e, i, t);
               })
             );
           for (s in e) this.off(s, t, e[s]);
         }
         return this;
-      }
+      },
     });
   var Ce = /<script|<style|<link/i,
     He = /checked\s*(?:[^=]|=\s*.checked.)/i,
@@ -3027,7 +3043,7 @@
       m = n[0],
       p = y(m);
     if (p || (1 < c && 'string' == typeof m && !_.checkClone && He.test(m)))
-      return i.each(function(e) {
+      return i.each(function (e) {
         var t = i.eq(e);
         p && (n[0] = m.call(this, e, t.html())), E(t, n, s, a);
       });
@@ -3069,10 +3085,10 @@
     return e;
   }
   T.extend({
-    htmlPrefilter: function(e) {
+    htmlPrefilter: function (e) {
       return e;
     },
-    clone: function(e, t, i) {
+    clone: function (e, t, i) {
       var n,
         s,
         a,
@@ -3103,7 +3119,7 @@
         else $e(e, u);
       return 0 < (r = S(u, 'script')).length && Te(r, !c && S(e, 'script')), u;
     },
-    cleanData: function(e) {
+    cleanData: function (e) {
       for (var t, i, n, s = T.event.special, a = 0; void 0 !== (i = e[a]); a++)
         if (g(i)) {
           if ((t = i[M.expando])) {
@@ -3114,22 +3130,22 @@
           }
           i[d.expando] && (i[d.expando] = void 0);
         }
-    }
+    },
   }),
     T.fn.extend({
-      detach: function(e) {
+      detach: function (e) {
         return We(this, e, !0);
       },
-      remove: function(e) {
+      remove: function (e) {
         return We(this, e);
       },
-      text: function(e) {
+      text: function (e) {
         return c(
           this,
-          function(e) {
+          function (e) {
             return void 0 === e
               ? T.text(this)
-              : this.empty().each(function() {
+              : this.empty().each(function () {
                   (1 !== this.nodeType &&
                     11 !== this.nodeType &&
                     9 !== this.nodeType) ||
@@ -3141,16 +3157,16 @@
           arguments.length
         );
       },
-      append: function() {
-        return E(this, arguments, function(e) {
+      append: function () {
+        return E(this, arguments, function (e) {
           (1 !== this.nodeType &&
             11 !== this.nodeType &&
             9 !== this.nodeType) ||
             Pe(this, e).appendChild(e);
         });
       },
-      prepend: function() {
-        return E(this, arguments, function(e) {
+      prepend: function () {
+        return E(this, arguments, function (e) {
           var t;
           (1 !== this.nodeType &&
             11 !== this.nodeType &&
@@ -3158,34 +3174,34 @@
             (t = Pe(this, e)).insertBefore(e, t.firstChild);
         });
       },
-      before: function() {
-        return E(this, arguments, function(e) {
+      before: function () {
+        return E(this, arguments, function (e) {
           this.parentNode && this.parentNode.insertBefore(e, this);
         });
       },
-      after: function() {
-        return E(this, arguments, function(e) {
+      after: function () {
+        return E(this, arguments, function (e) {
           this.parentNode && this.parentNode.insertBefore(e, this.nextSibling);
         });
       },
-      empty: function() {
+      empty: function () {
         for (var e, t = 0; null != (e = this[t]); t++)
           1 === e.nodeType && (T.cleanData(S(e, !1)), (e.textContent = ''));
         return this;
       },
-      clone: function(e, t) {
+      clone: function (e, t) {
         return (
           (e = null != e && e),
           (t = null == t ? e : t),
-          this.map(function() {
+          this.map(function () {
             return T.clone(this, e, t);
           })
         );
       },
-      html: function(e) {
+      html: function (e) {
         return c(
           this,
-          function(e) {
+          function (e) {
             var t = this[0] || {},
               i = 0,
               n = this.length;
@@ -3210,12 +3226,12 @@
           arguments.length
         );
       },
-      replaceWith: function() {
+      replaceWith: function () {
         var i = [];
         return E(
           this,
           arguments,
-          function(e) {
+          function (e) {
             var t = this.parentNode;
             T.inArray(this, i) < 0 &&
               (T.cleanData(S(this)), t) &&
@@ -3223,7 +3239,7 @@
           },
           i
         );
-      }
+      },
     }),
     T.each(
       {
@@ -3231,10 +3247,10 @@
         prependTo: 'prepend',
         insertBefore: 'before',
         insertAfter: 'after',
-        replaceAll: 'replaceWith'
+        replaceAll: 'replaceWith',
       },
-      function(e, r) {
-        T.fn[e] = function(e) {
+      function (e, r) {
+        T.fn[e] = function (e) {
           for (var t, i = [], n = T(e), s = n.length - 1, a = 0; a <= s; a++)
             (t = a === s ? this : this.clone(!0)),
               T(n[a])[r](t),
@@ -3289,10 +3305,10 @@
   }
   function Qe(e, t) {
     return {
-      get: function() {
+      get: function () {
         if (!e()) return (this.get = t).apply(this, arguments);
         delete this.get;
-      }
+      },
     };
   }
   function Ke() {
@@ -3323,22 +3339,22 @@
       (s.cloneNode(!0).style.backgroundClip = ''),
       (_.clearCloneStyle = 'content-box' === s.style.backgroundClip),
       T.extend(_, {
-        boxSizingReliable: function() {
+        boxSizingReliable: function () {
           return Ke(), Fe;
         },
-        pixelBoxStyles: function() {
+        pixelBoxStyles: function () {
           return Ke(), qe;
         },
-        pixelPosition: function() {
+        pixelPosition: function () {
           return Ke(), ze;
         },
-        reliableMarginLeft: function() {
+        reliableMarginLeft: function () {
           return Ke(), Ve;
         },
-        scrollboxSize: function() {
+        scrollboxSize: function () {
           return Ke(), Re;
         },
-        reliableTrDimensions: function() {
+        reliableTrDimensions: function () {
           var e, t, i;
           return (
             null == Be &&
@@ -3351,10 +3367,7 @@
               (t.style.height = '1px'),
               (i.style.height = '9px'),
               (i.style.display = 'block'),
-              b
-                .appendChild(e)
-                .appendChild(t)
-                .appendChild(i),
+              b.appendChild(e).appendChild(t).appendChild(i),
               (i = w.getComputedStyle(t)),
               (Be =
                 parseInt(i.height, 10) +
@@ -3364,7 +3377,7 @@
               b.removeChild(e)),
             Be
           );
-        }
+        },
       }));
   var et = ['Webkit', 'Moz', 'ms'],
     tt = L.createElement('div').style,
@@ -3376,7 +3389,7 @@
       (e in tt
         ? e
         : (it[e] =
-            (function(e) {
+            (function (e) {
               for (
                 var t = e[0].toUpperCase() + e.slice(1), i = et.length;
                 i--;
@@ -3452,10 +3465,10 @@
   T.extend({
     cssHooks: {
       opacity: {
-        get: function(e, t) {
+        get: function (e, t) {
           if (t) return '' === (t = Je(e, 'opacity')) ? '1' : t;
-        }
-      }
+        },
+      },
     },
     cssNumber: {
       animationIterationCount: !0,
@@ -3477,10 +3490,10 @@
       orphans: !0,
       widows: !0,
       zIndex: !0,
-      zoom: !0
+      zoom: !0,
     },
     cssProps: {},
-    style: function(e, t, i, n) {
+    style: function (e, t, i, n) {
       if (e && 3 !== e.nodeType && 8 !== e.nodeType && e.style) {
         var s,
           a,
@@ -3509,7 +3522,7 @@
               (l ? d.setProperty(t, i) : (d[t] = i)));
       }
     },
-    css: function(e, t, i, n) {
+    css: function (e, t, i, n) {
       var s,
         a = v(t);
       return (
@@ -3529,20 +3542,20 @@
           ? a || 0
           : s
       );
-    }
+    },
   }),
-    T.each(['height', 'width'], function(e, r) {
+    T.each(['height', 'width'], function (e, r) {
       T.cssHooks[r] = {
-        get: function(e, t, i) {
+        get: function (e, t, i) {
           if (t)
             return !st.test(T.css(e, 'display')) ||
               (e.getClientRects().length && e.getBoundingClientRect().width)
               ? ut(e, r, i)
-              : Ie(e, rt, function() {
+              : Ie(e, rt, function () {
                   return ut(e, r, i);
                 });
         },
-        set: function(e, t, i) {
+        set: function (e, t, i) {
           var n = Ne(e),
             s = !_.scrollboxSize() && 'absolute' === n.position,
             a = (s || i) && 'border-box' === T.css(e, 'boxSizing', !1, n),
@@ -3562,22 +3575,22 @@
               ((e.style[r] = t), (t = T.css(e, r))),
             lt(0, t, i)
           );
-        }
+        },
       };
     }),
-    (T.cssHooks.marginLeft = Qe(_.reliableMarginLeft, function(e, t) {
+    (T.cssHooks.marginLeft = Qe(_.reliableMarginLeft, function (e, t) {
       if (t)
         return (
           (parseFloat(Je(e, 'marginLeft')) ||
             e.getBoundingClientRect().left -
-              Ie(e, { marginLeft: 0 }, function() {
+              Ie(e, { marginLeft: 0 }, function () {
                 return e.getBoundingClientRect().left;
               })) + 'px'
         );
     })),
-    T.each({ margin: '', padding: '', border: 'Width' }, function(s, a) {
+    T.each({ margin: '', padding: '', border: 'Width' }, function (s, a) {
       (T.cssHooks[s + a] = {
-        expand: function(e) {
+        expand: function (e) {
           for (
             var t = 0, i = {}, n = 'string' == typeof e ? e.split(' ') : [e];
             t < 4;
@@ -3585,15 +3598,15 @@
           )
             i[s + h[t] + a] = n[t] || n[t - 2] || n[0];
           return i;
-        }
+        },
       }),
         'margin' !== s && (T.cssHooks[s + a].set = lt);
     }),
     T.fn.extend({
-      css: function(e, t) {
+      css: function (e, t) {
         return c(
           this,
-          function(e, t, i) {
+          function (e, t, i) {
             var n,
               s,
               a = {},
@@ -3609,11 +3622,11 @@
           t,
           1 < arguments.length
         );
-      }
+      },
     }),
     (((T.Tween = a).prototype = {
       constructor: a,
-      init: function(e, t, i, n, s, a) {
+      init: function (e, t, i, n, s, a) {
         (this.elem = e),
           (this.prop = i),
           (this.easing = s || T.easing._default),
@@ -3622,22 +3635,23 @@
           (this.end = n),
           (this.unit = a || (T.cssNumber[i] ? '' : 'px'));
       },
-      cur: function() {
+      cur: function () {
         var e = a.propHooks[this.prop];
         return (e && e.get ? e : a.propHooks._default).get(this);
       },
-      run: function(e) {
+      run: function (e) {
         var t,
           i = a.propHooks[this.prop];
         return (
           this.options.duration
-            ? (this.pos = t = T.easing[this.easing](
-                e,
-                this.options.duration * e,
-                0,
-                1,
-                this.options.duration
-              ))
+            ? (this.pos = t =
+                T.easing[this.easing](
+                  e,
+                  this.options.duration * e,
+                  0,
+                  1,
+                  this.options.duration
+                ))
             : (this.pos = t = e),
           (this.now = (this.end - this.start) * t + this.start),
           this.options.step &&
@@ -3645,11 +3659,11 @@
           (i && i.set ? i : a.propHooks._default).set(this),
           this
         );
-      }
+      },
     }).init.prototype = a.prototype),
     ((a.propHooks = {
       _default: {
-        get: function(e) {
+        get: function (e) {
           return 1 !== e.elem.nodeType ||
             (null != e.elem[e.prop] && null == e.elem.style[e.prop])
             ? e.elem[e.prop]
@@ -3657,28 +3671,29 @@
             ? e
             : 0;
         },
-        set: function(e) {
+        set: function (e) {
           T.fx.step[e.prop]
             ? T.fx.step[e.prop](e)
             : 1 !== e.elem.nodeType ||
               (!T.cssHooks[e.prop] && null == e.elem.style[nt(e.prop)])
             ? (e.elem[e.prop] = e.now)
             : T.style(e.elem, e.prop, e.now + e.unit);
-        }
-      }
-    }).scrollTop = a.propHooks.scrollLeft = {
-      set: function(e) {
-        e.elem.nodeType && e.elem.parentNode && (e.elem[e.prop] = e.now);
-      }
-    }),
+        },
+      },
+    }).scrollTop = a.propHooks.scrollLeft =
+      {
+        set: function (e) {
+          e.elem.nodeType && e.elem.parentNode && (e.elem[e.prop] = e.now);
+        },
+      }),
     (T.easing = {
-      linear: function(e) {
+      linear: function (e) {
         return e;
       },
-      swing: function(e) {
+      swing: function (e) {
         return 0.5 - Math.cos(e * Math.PI) / 2;
       },
-      _default: 'swing'
+      _default: 'swing',
     }),
     (T.fx = a.prototype.init),
     (T.fx.step = {});
@@ -3696,7 +3711,7 @@
   }
   function ft() {
     return (
-      w.setTimeout(function() {
+      w.setTimeout(function () {
         C = void 0;
       }),
       (C = Date.now())
@@ -3731,10 +3746,10 @@
       d,
       u = 0,
       c = j.prefilters.length,
-      h = T.Deferred().always(function() {
+      h = T.Deferred().always(function () {
         delete m.elem;
       }),
-      m = function() {
+      m = function () {
         if (a) return !1;
         for (
           var e = C || ft(),
@@ -3762,7 +3777,7 @@
         startTime: C || ft(),
         duration: t.duration,
         tweens: [],
-        createTween: function(e, t) {
+        createTween: function (e, t) {
           t = T.Tween(
             s,
             p.opts,
@@ -3772,7 +3787,7 @@
           );
           return p.tweens.push(t), t;
         },
-        stop: function(e) {
+        stop: function (e) {
           var t = 0,
             i = e ? p.tweens.length : 0;
           if (!a) {
@@ -3782,7 +3797,7 @@
               : h.rejectWith(s, [p, e]);
           }
           return this;
-        }
+        },
       }),
       f = p.props,
       _ = f,
@@ -3820,13 +3835,13 @@
   (T.Animation = T.extend(j, {
     tweeners: {
       '*': [
-        function(e, t) {
+        function (e, t) {
           var i = this.createTween(e, t);
           return ve(i.elem, e, ge.exec(t), i), i;
-        }
-      ]
+        },
+      ],
     },
-    tweener: function(e, t) {
+    tweener: function (e, t) {
       for (
         var i, n = 0, s = (e = y(e) ? ((t = e), ['*']) : e.match(Y)).length;
         n < s;
@@ -3837,7 +3852,7 @@
           j.tweeners[i].unshift(t);
     },
     prefilters: [
-      function(e, t, i) {
+      function (e, t, i) {
         var n,
           s,
           a,
@@ -3855,12 +3870,12 @@
           (null == (r = T._queueHooks(e, 'fx')).unqueued &&
             ((r.unqueued = 0),
             (o = r.empty.fire),
-            (r.empty.fire = function() {
+            (r.empty.fire = function () {
               r.unqueued || o();
             })),
           r.unqueued++,
-          c.always(function() {
-            c.always(function() {
+          c.always(function () {
+            c.always(function () {
               r.unqueued--, T.queue(e, 'fx').length || r.empty.fire();
             });
           })),
@@ -3891,14 +3906,14 @@
             'inline' === u || ('inline-block' === u && null != d)) &&
             'none' === T.css(e, 'float') &&
             (l ||
-              (c.done(function() {
+              (c.done(function () {
                 m.display = d;
               }),
               null == d && ((u = m.display), (d = 'none' === u ? '' : u))),
             (m.display = 'inline-block')),
           i.overflow &&
             ((m.overflow = 'hidden'),
-            c.always(function() {
+            c.always(function () {
               (m.overflow = i.overflow[0]),
                 (m.overflowX = i.overflow[1]),
                 (m.overflowY = i.overflow[2]);
@@ -3911,27 +3926,27 @@
                 : (f = M.access(e, 'fxshow', { display: d })),
               a && (f.hidden = !p),
               p && D([e], !0),
-              c.done(function() {
+              c.done(function () {
                 for (n in (p || D([e]), M.remove(e, 'fxshow'), h))
                   T.style(e, n, h[n]);
               })),
               (l = gt(p ? f[n] : 0, n, c)),
               n in f ||
                 ((f[n] = l.start), p && ((l.end = l.start), (l.start = 0)));
-      }
+      },
     ],
-    prefilter: function(e, t) {
+    prefilter: function (e, t) {
       t ? j.prefilters.unshift(e) : j.prefilters.push(e);
-    }
+    },
   })),
-    (T.speed = function(e, t, i) {
+    (T.speed = function (e, t, i) {
       var n =
         e && 'object' == typeof e
           ? T.extend({}, e)
           : {
               complete: i || (!i && t) || (y(e) && e),
               duration: e,
-              easing: (i && t) || (t && !y(t) && t)
+              easing: (i && t) || (t && !y(t) && t),
             };
       return (
         T.fx.off
@@ -3942,21 +3957,21 @@
               : (n.duration = T.fx.speeds._default)),
         (null != n.queue && !0 !== n.queue) || (n.queue = 'fx'),
         (n.old = n.complete),
-        (n.complete = function() {
+        (n.complete = function () {
           y(n.old) && n.old.call(this), n.queue && T.dequeue(this, n.queue);
         }),
         n
       );
     }),
     T.fn.extend({
-      fadeTo: function(e, t, i, n) {
+      fadeTo: function (e, t, i, n) {
         return this.filter(_e)
           .css('opacity', 0)
           .show()
           .end()
           .animate({ opacity: t }, e, i, n);
       },
-      animate: function(t, e, i, n) {
+      animate: function (t, e, i, n) {
         function s() {
           var e = j(this, T.extend({}, t), r);
           (a || M.get(this, 'finish')) && e.stop(!0);
@@ -3968,7 +3983,7 @@
           a || !1 === r.queue ? this.each(s) : this.queue(r.queue, s)
         );
       },
-      stop: function(s, e, a) {
+      stop: function (s, e, a) {
         function r(e) {
           var t = e.stop;
           delete e.stop, t(a);
@@ -3976,7 +3991,7 @@
         return (
           'string' != typeof s && ((a = e), (e = s), (s = void 0)),
           e && this.queue(s || 'fx', []),
-          this.each(function() {
+          this.each(function () {
             var e = !0,
               t = null != s && s + 'queueHooks',
               i = T.timers,
@@ -3991,10 +4006,10 @@
           })
         );
       },
-      finish: function(r) {
+      finish: function (r) {
         return (
           !1 !== r && (r = r || 'fx'),
-          this.each(function() {
+          this.each(function () {
             var e,
               t = M.get(this),
               i = t[r + 'queue'],
@@ -4017,11 +4032,11 @@
             delete t.finish;
           })
         );
-      }
+      },
     }),
-    T.each(['toggle', 'show', 'hide'], function(e, n) {
+    T.each(['toggle', 'show', 'hide'], function (e, n) {
       var s = T.fn[n];
-      T.fn[n] = function(e, t, i) {
+      T.fn[n] = function (e, t, i) {
         return null == e || 'boolean' == typeof e
           ? s.apply(this, arguments)
           : this.animate(_t(n, !0), e, t, i);
@@ -4034,16 +4049,16 @@
         slideToggle: _t('toggle'),
         fadeIn: { opacity: 'show' },
         fadeOut: { opacity: 'hide' },
-        fadeToggle: { opacity: 'toggle' }
+        fadeToggle: { opacity: 'toggle' },
       },
-      function(e, n) {
-        T.fn[e] = function(e, t, i) {
+      function (e, n) {
+        T.fn[e] = function (e, t, i) {
           return this.animate(n, e, t, i);
         };
       }
     ),
     (T.timers = []),
-    (T.fx.tick = function() {
+    (T.fx.tick = function () {
       var e,
         t = 0,
         i = T.timers;
@@ -4051,23 +4066,23 @@
         (e = i[t])() || i[t] !== e || i.splice(t--, 1);
       i.length || T.fx.stop(), (C = void 0);
     }),
-    (T.fx.timer = function(e) {
+    (T.fx.timer = function (e) {
       T.timers.push(e), T.fx.start();
     }),
     (T.fx.interval = 13),
-    (T.fx.start = function() {
+    (T.fx.start = function () {
       ct || ((ct = !0), pt());
     }),
-    (T.fx.stop = function() {
+    (T.fx.stop = function () {
       ct = null;
     }),
     (T.fx.speeds = { slow: 600, fast: 200, _default: 400 }),
-    (T.fn.delay = function(n, e) {
+    (T.fn.delay = function (n, e) {
       return (
         (n = (T.fx && T.fx.speeds[n]) || n),
-        this.queue((e = e || 'fx'), function(e, t) {
+        this.queue((e = e || 'fx'), function (e, t) {
           var i = w.setTimeout(e, n);
-          t.stop = function() {
+          t.stop = function () {
             w.clearTimeout(i);
           };
         })
@@ -4085,17 +4100,17 @@
     vt = T.expr.attrHandle,
     Mt =
       (T.fn.extend({
-        attr: function(e, t) {
+        attr: function (e, t) {
           return c(this, T.attr, e, t, 1 < arguments.length);
         },
-        removeAttr: function(e) {
-          return this.each(function() {
+        removeAttr: function (e) {
+          return this.each(function () {
             T.removeAttr(this, e);
           });
-        }
+        },
       }),
       T.extend({
-        attr: function(e, t, i) {
+        attr: function (e, t, i) {
           var n,
             s,
             a = e.nodeType;
@@ -4119,7 +4134,7 @@
         },
         attrHooks: {
           type: {
-            set: function(e, t) {
+            set: function (e, t) {
               var i;
               if (!_.radioValue && 'radio' === t && l(e, 'input'))
                 return (
@@ -4128,25 +4143,25 @@
                   i && (e.value = i),
                   t
                 );
-            }
-          }
+            },
+          },
         },
-        removeAttr: function(e, t) {
+        removeAttr: function (e, t) {
           var i,
             n = 0,
             s = t && t.match(Y);
           if (s && 1 === e.nodeType)
             for (; (i = s[n++]); ) e.removeAttribute(i);
-        }
+        },
       }),
       (yt = {
-        set: function(e, t, i) {
+        set: function (e, t, i) {
           return !1 === t ? T.removeAttr(e, i) : e.setAttribute(i, i), i;
-        }
+        },
       }),
-      T.each(T.expr.match.bool.source.match(/\w+/g), function(e, t) {
+      T.each(T.expr.match.bool.source.match(/\w+/g), function (e, t) {
         var r = vt[t] || T.find.attr;
-        vt[t] = function(e, t, i) {
+        vt[t] = function (e, t, i) {
           var n,
             s,
             a = t.toLowerCase();
@@ -4172,17 +4187,17 @@
     return Array.isArray(e) ? e : ('string' == typeof e && e.match(Y)) || [];
   }
   T.fn.extend({
-    prop: function(e, t) {
+    prop: function (e, t) {
       return c(this, T.prop, e, t, 1 < arguments.length);
     },
-    removeProp: function(e) {
-      return this.each(function() {
+    removeProp: function (e) {
+      return this.each(function () {
         delete this[T.propFix[e] || e];
       });
-    }
+    },
   }),
     T.extend({
-      prop: function(e, t, i) {
+      prop: function (e, t, i) {
         var n,
           s,
           a = e.nodeType;
@@ -4201,28 +4216,28 @@
       },
       propHooks: {
         tabIndex: {
-          get: function(e) {
+          get: function (e) {
             var t = T.find.attr(e, 'tabindex');
             return t
               ? parseInt(t, 10)
               : Mt.test(e.nodeName) || (bt.test(e.nodeName) && e.href)
               ? 0
               : -1;
-          }
-        }
+          },
+        },
       },
-      propFix: { for: 'htmlFor', class: 'className' }
+      propFix: { for: 'htmlFor', class: 'className' },
     }),
     _.optSelected ||
       (T.propHooks.selected = {
-        get: function(e) {
+        get: function (e) {
           e = e.parentNode;
           return e && e.parentNode && e.parentNode.selectedIndex, null;
         },
-        set: function(e) {
+        set: function (e) {
           e = e.parentNode;
           e && (e.selectedIndex, e.parentNode) && e.parentNode.selectedIndex;
-        }
+        },
       }),
     T.each(
       [
@@ -4235,14 +4250,14 @@
         'colSpan',
         'useMap',
         'frameBorder',
-        'contentEditable'
+        'contentEditable',
       ],
-      function() {
+      function () {
         T.propFix[this.toLowerCase()] = this;
       }
     ),
     T.fn.extend({
-      addClass: function(t) {
+      addClass: function (t) {
         var e,
           i,
           n,
@@ -4251,7 +4266,7 @@
           r,
           o = 0;
         if (y(t))
-          return this.each(function(e) {
+          return this.each(function (e) {
             T(this).addClass(t.call(this, e, O(this)));
           });
         if ((e = wt(t)).length)
@@ -4263,7 +4278,7 @@
             }
         return this;
       },
-      removeClass: function(t) {
+      removeClass: function (t) {
         var e,
           i,
           n,
@@ -4272,7 +4287,7 @@
           r,
           o = 0;
         if (y(t))
-          return this.each(function(e) {
+          return this.each(function (e) {
             T(this).removeClass(t.call(this, e, O(this)));
           });
         if (!arguments.length) return this.attr('class', '');
@@ -4286,7 +4301,7 @@
             }
         return this;
       },
-      toggleClass: function(s, t) {
+      toggleClass: function (s, t) {
         var a = typeof s,
           r = 'string' == a || Array.isArray(s);
         return 'boolean' == typeof t && r
@@ -4294,10 +4309,10 @@
             ? this.addClass(s)
             : this.removeClass(s)
           : y(s)
-          ? this.each(function(e) {
+          ? this.each(function (e) {
               T(this).toggleClass(s.call(this, e, O(this), t), t);
             })
-          : this.each(function() {
+          : this.each(function () {
               var e, t, i, n;
               if (r)
                 for (t = 0, i = T(this), n = wt(s); (e = n[t++]); )
@@ -4312,12 +4327,12 @@
                     ));
             });
       },
-      hasClass: function(e) {
+      hasClass: function (e) {
         for (var t, i = 0, n = ' ' + e + ' '; (t = this[i++]); )
           if (1 === t.nodeType && -1 < (' ' + P(O(t)) + ' ').indexOf(n))
             return !0;
         return !1;
-      }
+      },
     });
   function Lt(e) {
     e.stopPropagation();
@@ -4325,21 +4340,21 @@
   var Tt = /\r/g,
     Yt =
       (T.fn.extend({
-        val: function(t) {
+        val: function (t) {
           var i,
             e,
             n,
             s = this[0];
           return arguments.length
             ? ((n = y(t)),
-              this.each(function(e) {
+              this.each(function (e) {
                 1 === this.nodeType &&
                   (null == (e = n ? t.call(this, e, T(this).val()) : t)
                     ? (e = '')
                     : 'number' == typeof e
                     ? (e += '')
                     : Array.isArray(e) &&
-                      (e = T.map(e, function(e) {
+                      (e = T.map(e, function (e) {
                         return null == e ? '' : e + '';
                       })),
                   ((i =
@@ -4361,18 +4376,18 @@
               ? ''
               : e
             : void 0;
-        }
+        },
       }),
       T.extend({
         valHooks: {
           option: {
-            get: function(e) {
+            get: function (e) {
               var t = T.find.attr(e, 'value');
               return null != t ? t : P(T.text(e));
-            }
+            },
           },
           select: {
-            get: function(e) {
+            get: function (e) {
               for (
                 var t,
                   i = e.options,
@@ -4394,7 +4409,7 @@
                 }
               return a;
             },
-            set: function(e, t) {
+            set: function (e, t) {
               for (
                 var i, n, s = e.options, a = T.makeArray(t), r = s.length;
                 r--;
@@ -4403,19 +4418,19 @@
                 ((n = s[r]).selected =
                   -1 < T.inArray(T.valHooks.option.get(n), a)) && (i = !0);
               return i || (e.selectedIndex = -1), a;
-            }
-          }
-        }
+            },
+          },
+        },
       }),
-      T.each(['radio', 'checkbox'], function() {
+      T.each(['radio', 'checkbox'], function () {
         (T.valHooks[this] = {
-          set: function(e, t) {
+          set: function (e, t) {
             if (Array.isArray(t))
               return (e.checked = -1 < T.inArray(T(e).val(), t));
-          }
+          },
         }),
           _.checkOn ||
-            (T.valHooks[this].get = function(e) {
+            (T.valHooks[this].get = function (e) {
               return null === e.getAttribute('value') ? 'on' : e.value;
             });
       }),
@@ -4423,7 +4438,7 @@
       /^(?:focusinfocus|focusoutblur)$/),
     kt =
       (T.extend(T.event, {
-        trigger: function(e, t, i, n) {
+        trigger: function (e, t, i, n) {
           var s,
             a,
             r,
@@ -4499,47 +4514,47 @@
             );
           }
         },
-        simulate: function(e, t, i) {
+        simulate: function (e, t, i) {
           i = T.extend(new T.Event(), i, { type: e, isSimulated: !0 });
           T.event.trigger(i, null, t);
-        }
+        },
       }),
       T.fn.extend({
-        trigger: function(e, t) {
-          return this.each(function() {
+        trigger: function (e, t) {
+          return this.each(function () {
             T.event.trigger(e, t, this);
           });
         },
-        triggerHandler: function(e, t) {
+        triggerHandler: function (e, t) {
           var i = this[0];
           if (i) return T.event.trigger(e, t, i, !0);
-        }
+        },
       }),
       _.focusin ||
-        T.each({ focus: 'focusin', blur: 'focusout' }, function(i, n) {
+        T.each({ focus: 'focusin', blur: 'focusout' }, function (i, n) {
           function s(e) {
             T.event.simulate(n, e.target, T.event.fix(e));
           }
           T.event.special[n] = {
-            setup: function() {
+            setup: function () {
               var e = this.ownerDocument || this.document || this,
                 t = M.access(e, n);
               t || e.addEventListener(i, s, !0), M.access(e, n, (t || 0) + 1);
             },
-            teardown: function() {
+            teardown: function () {
               var e = this.ownerDocument || this.document || this,
                 t = M.access(e, n) - 1;
               t
                 ? M.access(e, n, t)
                 : (e.removeEventListener(i, s, !0), M.remove(e, n));
-            }
+            },
           };
         }),
       w.location),
     Dt = { guid: Date.now() },
     xt = /\?/,
     St =
-      ((T.parseXML = function(e) {
+      ((T.parseXML = function (e) {
         var t, i;
         if (!e || 'string' != typeof e) return null;
         try {
@@ -4551,7 +4566,7 @@
             T.error(
               'Invalid XML: ' +
                 (i
-                  ? T.map(i.childNodes, function(e) {
+                  ? T.map(i.childNodes, function (e) {
                       return e.textContent;
                     }).join('\n')
                   : e)
@@ -4563,7 +4578,7 @@
     Et = /\r?\n/g,
     Ct = /^(?:submit|button|image|reset|file)$/i,
     Ht = /^(?:input|select|textarea|keygen)/i;
-  (T.param = function(e, t) {
+  (T.param = function (e, t) {
     function i(e, t) {
       (t = y(t) ? t() : t),
         (s[s.length] =
@@ -4573,14 +4588,14 @@
       s = [];
     if (null == e) return '';
     if (Array.isArray(e) || (e.jquery && !T.isPlainObject(e)))
-      T.each(e, function() {
+      T.each(e, function () {
         i(this.name, this.value);
       });
     else
       for (n in e)
         !(function i(n, e, s, a) {
           if (Array.isArray(e))
-            T.each(e, function(e, t) {
+            T.each(e, function (e, t) {
               s || St.test(n)
                 ? a(n, t)
                 : i(
@@ -4599,15 +4614,15 @@
     return s.join('&');
   }),
     T.fn.extend({
-      serialize: function() {
+      serialize: function () {
         return T.param(this.serializeArray());
       },
-      serializeArray: function() {
-        return this.map(function() {
+      serializeArray: function () {
+        return this.map(function () {
           var e = T.prop(this, 'elements');
           return e ? T.makeArray(e) : this;
         })
-          .filter(function() {
+          .filter(function () {
             var e = this.type;
             return (
               this.name &&
@@ -4617,18 +4632,18 @@
               (this.checked || !be.test(e))
             );
           })
-          .map(function(e, t) {
+          .map(function (e, t) {
             var i = T(this).val();
             return null == i
               ? null
               : Array.isArray(i)
-              ? T.map(i, function(e) {
+              ? T.map(i, function (e) {
                   return { name: t.name, value: e.replace(Et, '\r\n') };
                 })
               : { name: t.name, value: i.replace(Et, '\r\n') };
           })
           .get();
-      }
+      },
     });
   var jt = /%20/g,
     Pt = /#.*$/,
@@ -4641,7 +4656,7 @@
     zt = '*/'.concat('*'),
     Ft = L.createElement('a');
   function Rt(a) {
-    return function(e, t) {
+    return function (e, t) {
       'string' != typeof e && ((t = e), (e = '*'));
       var i,
         n = 0,
@@ -4660,7 +4675,7 @@
       var i;
       return (
         (r[e] = !0),
-        T.each(t[e] || [], function(e, t) {
+        T.each(t[e] || [], function (e, t) {
           t = t(n, s, a);
           return 'string' != typeof t || o || r[t]
             ? o
@@ -4688,9 +4703,10 @@
       ajaxSettings: {
         url: kt.href,
         type: 'GET',
-        isLocal: /^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(
-          kt.protocol
-        ),
+        isLocal:
+          /^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(
+            kt.protocol
+          ),
         global: !0,
         processData: !0,
         async: !0,
@@ -4700,28 +4716,28 @@
           text: 'text/plain',
           html: 'text/html',
           xml: 'application/xml, text/xml',
-          json: 'application/json, text/javascript'
+          json: 'application/json, text/javascript',
         },
         contents: { xml: /\bxml\b/, html: /\bhtml/, json: /\bjson\b/ },
         responseFields: {
           xml: 'responseXML',
           text: 'responseText',
-          json: 'responseJSON'
+          json: 'responseJSON',
         },
         converters: {
           '* text': String,
           'text html': !0,
           'text json': JSON.parse,
-          'text xml': T.parseXML
+          'text xml': T.parseXML,
         },
-        flatOptions: { url: !0, context: !0 }
+        flatOptions: { url: !0, context: !0 },
       },
-      ajaxSetup: function(e, t) {
+      ajaxSetup: function (e, t) {
         return t ? Bt(Bt(e, T.ajaxSettings), t) : Bt(T.ajaxSettings, e);
       },
       ajaxPrefilter: Rt(Nt),
       ajaxTransport: Rt(It),
-      ajax: function(e, t) {
+      ajax: function (e, t) {
         'object' == typeof e && ((t = e), (e = void 0));
         var l,
           d,
@@ -4743,7 +4759,7 @@
           o = 'canceled',
           M = {
             readyState: 0,
-            getResponseHeader: function(e) {
+            getResponseHeader: function (e) {
               var t;
               if (h) {
                 if (!i)
@@ -4755,10 +4771,10 @@
               }
               return null == t ? null : t.join(', ');
             },
-            getAllResponseHeaders: function() {
+            getAllResponseHeaders: function () {
               return h ? u : null;
             },
-            setRequestHeader: function(e, t) {
+            setRequestHeader: function (e, t) {
               return (
                 null == h &&
                   ((e = r[e.toLowerCase()] = r[e.toLowerCase()] || e),
@@ -4766,19 +4782,19 @@
                 this
               );
             },
-            overrideMimeType: function(e) {
+            overrideMimeType: function (e) {
               return null == h && (p.mimeType = e), this;
             },
-            statusCode: function(e) {
+            statusCode: function (e) {
               if (e)
                 if (h) M.always(e[M.status]);
                 else for (var t in e) v[t] = [v[t], e[t]];
               return this;
             },
-            abort: function(e) {
+            abort: function (e) {
               e = e || o;
               return l && l.abort(e), b(0, e), this;
-            }
+            },
           };
         if (
           (g.promise(M),
@@ -4859,7 +4875,7 @@
               return M;
             p.async &&
               0 < p.timeout &&
-              (c = w.setTimeout(function() {
+              (c = w.setTimeout(function () {
                 M.abort('timeout');
               }, p.timeout));
             try {
@@ -4884,7 +4900,7 @@
             (M.readyState = 0 < e ? 4 : 0),
             (n = (200 <= e && e < 300) || 304 === e),
             i &&
-              (r = (function(e, t, i) {
+              (r = (function (e, t, i) {
                 for (
                   var n, s, a, r, o = e.contents, l = e.dataTypes;
                   '*' === l[0];
@@ -4915,8 +4931,8 @@
             !n &&
               -1 < T.inArray('script', p.dataTypes) &&
               T.inArray('json', p.dataTypes) < 0 &&
-              (p.converters['text script'] = function() {}),
-            (r = (function(e, t, i, n) {
+              (p.converters['text script'] = function () {}),
+            (r = (function (e, t, i, n) {
               var s,
                 a,
                 r,
@@ -4956,7 +4972,7 @@
                             state: 'parsererror',
                             error: r
                               ? e
-                              : 'No conversion from ' + l + ' to ' + a
+                              : 'No conversion from ' + l + ' to ' + a,
                           };
                         }
                   }
@@ -4986,15 +5002,15 @@
               --T.active || T.event.trigger('ajaxStop')));
         }
       },
-      getJSON: function(e, t, i) {
+      getJSON: function (e, t, i) {
         return T.get(e, t, i, 'json');
       },
-      getScript: function(e, t) {
+      getScript: function (e, t) {
         return T.get(e, void 0, t, 'script');
-      }
+      },
     }),
-    T.each(['get', 'post'], function(e, s) {
-      T[s] = function(e, t, i, n) {
+    T.each(['get', 'post'], function (e, s) {
+      T[s] = function (e, t, i, n) {
         return (
           y(t) && ((n = n || i), (i = t), (t = void 0)),
           T.ajax(
@@ -5006,12 +5022,12 @@
         );
       };
     }),
-    T.ajaxPrefilter(function(e) {
+    T.ajaxPrefilter(function (e) {
       for (var t in e.headers)
         'content-type' === t.toLowerCase() &&
           (e.contentType = e.headers[t] || '');
     }),
-    (T._evalUrl = function(e, t, i) {
+    (T._evalUrl = function (e, t, i) {
       return T.ajax({
         url: e,
         type: 'GET',
@@ -5019,23 +5035,21 @@
         cache: !0,
         async: !1,
         global: !1,
-        converters: { 'text script': function() {} },
-        dataFilter: function(e) {
+        converters: { 'text script': function () {} },
+        dataFilter: function (e) {
           T.globalEval(e, t, i);
-        }
+        },
       });
     }),
     T.fn.extend({
-      wrapAll: function(e) {
+      wrapAll: function (e) {
         return (
           this[0] &&
             (y(e) && (e = e.call(this[0])),
-            (e = T(e, this[0].ownerDocument)
-              .eq(0)
-              .clone(!0)),
+            (e = T(e, this[0].ownerDocument).eq(0).clone(!0)),
             this[0].parentNode && e.insertBefore(this[0]),
             e
-              .map(function() {
+              .map(function () {
                 for (var e = this; e.firstElementChild; )
                   e = e.firstElementChild;
                 return e;
@@ -5044,41 +5058,41 @@
           this
         );
       },
-      wrapInner: function(i) {
+      wrapInner: function (i) {
         return y(i)
-          ? this.each(function(e) {
+          ? this.each(function (e) {
               T(this).wrapInner(i.call(this, e));
             })
-          : this.each(function() {
+          : this.each(function () {
               var e = T(this),
                 t = e.contents();
               t.length ? t.wrapAll(i) : e.append(i);
             });
       },
-      wrap: function(t) {
+      wrap: function (t) {
         var i = y(t);
-        return this.each(function(e) {
+        return this.each(function (e) {
           T(this).wrapAll(i ? t.call(this, e) : t);
         });
       },
-      unwrap: function(e) {
+      unwrap: function (e) {
         return (
           this.parent(e)
             .not('body')
-            .each(function() {
+            .each(function () {
               T(this).replaceWith(this.childNodes);
             }),
           this
         );
-      }
+      },
     }),
-    (T.expr.pseudos.hidden = function(e) {
+    (T.expr.pseudos.hidden = function (e) {
       return !T.expr.pseudos.visible(e);
     }),
-    (T.expr.pseudos.visible = function(e) {
+    (T.expr.pseudos.visible = function (e) {
       return !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
     }),
-    (T.ajaxSettings.xhr = function() {
+    (T.ajaxSettings.xhr = function () {
       try {
         return new w.XMLHttpRequest();
       } catch (e) {}
@@ -5087,11 +5101,11 @@
     Gt = T.ajaxSettings.xhr();
   (_.cors = !!Gt && 'withCredentials' in Gt),
     (_.ajax = Gt = !!Gt),
-    T.ajaxTransport(function(s) {
+    T.ajaxTransport(function (s) {
       var a, r;
       if (_.cors || (Gt && !s.crossDomain))
         return {
-          send: function(e, t) {
+          send: function (e, t) {
             var i,
               n = s.xhr();
             if (
@@ -5107,10 +5121,17 @@
               (e['X-Requested-With'] = 'XMLHttpRequest'),
             e))
               n.setRequestHeader(i, e[i]);
-            (a = function(e) {
-              return function() {
+            (a = function (e) {
+              return function () {
                 a &&
-                  ((a = r = n.onload = n.onerror = n.onabort = n.ontimeout = n.onreadystatechange = null),
+                  ((a =
+                    r =
+                    n.onload =
+                    n.onerror =
+                    n.onabort =
+                    n.ontimeout =
+                    n.onreadystatechange =
+                      null),
                   'abort' === e
                     ? n.abort()
                     : 'error' === e
@@ -5132,9 +5153,9 @@
               (r = n.onerror = n.ontimeout = a('error')),
               void 0 !== n.onabort
                 ? (n.onabort = r)
-                : (n.onreadystatechange = function() {
+                : (n.onreadystatechange = function () {
                     4 === n.readyState &&
-                      w.setTimeout(function() {
+                      w.setTimeout(function () {
                         a && r();
                       });
                   }),
@@ -5145,40 +5166,40 @@
               if (a) throw e;
             }
           },
-          abort: function() {
+          abort: function () {
             a && a();
-          }
+          },
         };
     }),
-    T.ajaxPrefilter(function(e) {
+    T.ajaxPrefilter(function (e) {
       e.crossDomain && (e.contents.script = !1);
     }),
     T.ajaxSetup({
       accepts: {
         script:
-          'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript'
+          'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript',
       },
       contents: { script: /\b(?:java|ecma)script\b/ },
       converters: {
-        'text script': function(e) {
+        'text script': function (e) {
           return T.globalEval(e), e;
-        }
-      }
+        },
+      },
     }),
-    T.ajaxPrefilter('script', function(e) {
+    T.ajaxPrefilter('script', function (e) {
       void 0 === e.cache && (e.cache = !1), e.crossDomain && (e.type = 'GET');
     }),
-    T.ajaxTransport('script', function(i) {
+    T.ajaxTransport('script', function (i) {
       var n, s;
       if (i.crossDomain || i.scriptAttrs)
         return {
-          send: function(e, t) {
+          send: function (e, t) {
             (n = T('<script>')
               .attr(i.scriptAttrs || {})
               .prop({ charset: i.scriptCharset, src: i.url })
               .on(
                 'load error',
-                (s = function(e) {
+                (s = function (e) {
                   n.remove(),
                     (s = null),
                     e && t('error' === e.type ? 404 : 200, e.type);
@@ -5186,9 +5207,9 @@
               )),
               L.head.appendChild(n[0]);
           },
-          abort: function() {
+          abort: function () {
             s && s();
-          }
+          },
         };
     });
   var Xt = [],
@@ -5196,12 +5217,12 @@
     Jt =
       (T.ajaxSetup({
         jsonp: 'callback',
-        jsonpCallback: function() {
+        jsonpCallback: function () {
           var e = Xt.pop() || T.expando + '_' + Dt.guid++;
           return (this[e] = !0), e;
-        }
+        },
       }),
-      T.ajaxPrefilter('json jsonp', function(e, t, i) {
+      T.ajaxPrefilter('json jsonp', function (e, t, i) {
         var n,
           s,
           a,
@@ -5218,22 +5239,21 @@
                 'data');
         if (r || 'jsonp' === e.dataTypes[0])
           return (
-            (n = e.jsonpCallback = y(e.jsonpCallback)
-              ? e.jsonpCallback()
-              : e.jsonpCallback),
+            (n = e.jsonpCallback =
+              y(e.jsonpCallback) ? e.jsonpCallback() : e.jsonpCallback),
             r
               ? (e[r] = e[r].replace(Ut, '$1' + n))
               : !1 !== e.jsonp &&
                 (e.url += (xt.test(e.url) ? '&' : '?') + e.jsonp + '=' + n),
-            (e.converters['script json'] = function() {
+            (e.converters['script json'] = function () {
               return a || T.error(n + ' was not called'), a[0];
             }),
             (e.dataTypes[0] = 'json'),
             (s = w[n]),
-            (w[n] = function() {
+            (w[n] = function () {
               a = arguments;
             }),
-            i.always(function() {
+            i.always(function () {
               void 0 === s ? T(w).removeProp(n) : (w[n] = s),
                 e[n] && ((e.jsonpCallback = t.jsonpCallback), Xt.push(n)),
                 a && y(s) && s(a[0]),
@@ -5246,15 +5266,16 @@
         (((e = L.implementation.createHTMLDocument('').body).innerHTML =
           '<form></form><form></form>'),
         2 === e.childNodes.length)),
-      (T.parseHTML = function(e, t, i) {
+      (T.parseHTML = function (e, t, i) {
         return 'string' != typeof e
           ? []
           : ('boolean' == typeof t && ((i = t), (t = !1)),
             t ||
               (_.createHTMLDocument
-                ? (((n = (t = L.implementation.createHTMLDocument(
-                    ''
-                  )).createElement('base')).href = L.location.href),
+                ? (((n = (t =
+                    L.implementation.createHTMLDocument('')).createElement(
+                    'base'
+                  )).href = L.location.href),
                   t.head.appendChild(n))
                 : (t = L)),
             (n = !i && []),
@@ -5265,7 +5286,7 @@
                 T.merge([], i.childNodes)));
         var n;
       }),
-      (T.fn.load = function(e, t, i) {
+      (T.fn.load = function (e, t, i) {
         var n,
           s,
           a,
@@ -5278,20 +5299,14 @@
             : t && 'object' == typeof t && (s = 'POST'),
           0 < r.length &&
             T.ajax({ url: e, type: s || 'GET', dataType: 'html', data: t })
-              .done(function(e) {
+              .done(function (e) {
                 (a = arguments),
-                  r.html(
-                    n
-                      ? T('<div>')
-                          .append(T.parseHTML(e))
-                          .find(n)
-                      : e
-                  );
+                  r.html(n ? T('<div>').append(T.parseHTML(e)).find(n) : e);
               })
               .always(
                 i &&
-                  function(e, t) {
-                    r.each(function() {
+                  function (e, t) {
+                    r.each(function () {
                       i.apply(this, a || [e.responseText, t, e]);
                     });
                   }
@@ -5299,13 +5314,13 @@
           this
         );
       }),
-      (T.expr.pseudos.animated = function(t) {
-        return T.grep(T.timers, function(e) {
+      (T.expr.pseudos.animated = function (t) {
+        return T.grep(T.timers, function (e) {
           return t === e.elem;
         }).length;
       }),
       (T.offset = {
-        setOffset: function(e, t, i) {
+        setOffset: function (e, t, i) {
           var n,
             s,
             a,
@@ -5326,15 +5341,15 @@
               (d.top = t.top - a.top + s),
             null != t.left && (d.left = t.left - a.left + o),
             'using' in t ? t.using.call(e, d) : l.css(d);
-        }
+        },
       }),
       T.fn.extend({
-        offset: function(t) {
+        offset: function (t) {
           var e, i;
           return arguments.length
             ? void 0 === t
               ? this
-              : this.each(function(e) {
+              : this.each(function (e) {
                   T.offset.setOffset(this, t, e);
                 })
             : (i = this[0])
@@ -5345,7 +5360,7 @@
               : { top: 0, left: 0 }
             : void 0;
         },
-        position: function() {
+        position: function () {
           if (this[0]) {
             var e,
               t,
@@ -5372,12 +5387,12 @@
             }
             return {
               top: t.top - s.top - T.css(n, 'marginTop', !0),
-              left: t.left - s.left - T.css(n, 'marginLeft', !0)
+              left: t.left - s.left - T.css(n, 'marginLeft', !0),
             };
           }
         },
-        offsetParent: function() {
-          return this.map(function() {
+        offsetParent: function () {
+          return this.map(function () {
             for (
               var e = this.offsetParent;
               e && 'static' === T.css(e, 'position');
@@ -5386,74 +5401,74 @@
               e = e.offsetParent;
             return e || b;
           });
+        },
+      }),
+      T.each(
+        { scrollLeft: 'pageXOffset', scrollTop: 'pageYOffset' },
+        function (t, s) {
+          var a = 'pageYOffset' === s;
+          T.fn[t] = function (e) {
+            return c(
+              this,
+              function (e, t, i) {
+                var n;
+                if (
+                  (f(e) ? (n = e) : 9 === e.nodeType && (n = e.defaultView),
+                  void 0 === i)
+                )
+                  return n ? n[s] : e[t];
+                n
+                  ? n.scrollTo(a ? n.pageXOffset : i, a ? i : n.pageYOffset)
+                  : (e[t] = i);
+              },
+              t,
+              e,
+              arguments.length
+            );
+          };
         }
-      }),
-      T.each({ scrollLeft: 'pageXOffset', scrollTop: 'pageYOffset' }, function(
-        t,
-        s
-      ) {
-        var a = 'pageYOffset' === s;
-        T.fn[t] = function(e) {
-          return c(
-            this,
-            function(e, t, i) {
-              var n;
-              if (
-                (f(e) ? (n = e) : 9 === e.nodeType && (n = e.defaultView),
-                void 0 === i)
-              )
-                return n ? n[s] : e[t];
-              n
-                ? n.scrollTo(a ? n.pageXOffset : i, a ? i : n.pageYOffset)
-                : (e[t] = i);
-            },
-            t,
-            e,
-            arguments.length
-          );
-        };
-      }),
-      T.each(['top', 'left'], function(e, i) {
-        T.cssHooks[i] = Qe(_.pixelPosition, function(e, t) {
+      ),
+      T.each(['top', 'left'], function (e, i) {
+        T.cssHooks[i] = Qe(_.pixelPosition, function (e, t) {
           if (t)
             return (t = Je(e, i)), Xe.test(t) ? T(e).position()[i] + 'px' : t;
         });
       }),
-      T.each({ Height: 'height', Width: 'width' }, function(r, o) {
-        T.each({ padding: 'inner' + r, content: o, '': 'outer' + r }, function(
-          n,
-          a
-        ) {
-          T.fn[a] = function(e, t) {
-            var i = arguments.length && (n || 'boolean' != typeof e),
-              s = n || (!0 === e || !0 === t ? 'margin' : 'border');
-            return c(
-              this,
-              function(e, t, i) {
-                var n;
-                return f(e)
-                  ? 0 === a.indexOf('outer')
-                    ? e['inner' + r]
-                    : e.document.documentElement['client' + r]
-                  : 9 === e.nodeType
-                  ? ((n = e.documentElement),
-                    Math.max(
-                      e.body['scroll' + r],
-                      n['scroll' + r],
-                      e.body['offset' + r],
-                      n['offset' + r],
-                      n['client' + r]
-                    ))
-                  : void 0 === i
-                  ? T.css(e, t, s)
-                  : T.style(e, t, i, s);
-              },
-              o,
-              i ? e : void 0,
-              i
-            );
-          };
-        });
+      T.each({ Height: 'height', Width: 'width' }, function (r, o) {
+        T.each(
+          { padding: 'inner' + r, content: o, '': 'outer' + r },
+          function (n, a) {
+            T.fn[a] = function (e, t) {
+              var i = arguments.length && (n || 'boolean' != typeof e),
+                s = n || (!0 === e || !0 === t ? 'margin' : 'border');
+              return c(
+                this,
+                function (e, t, i) {
+                  var n;
+                  return f(e)
+                    ? 0 === a.indexOf('outer')
+                      ? e['inner' + r]
+                      : e.document.documentElement['client' + r]
+                    : 9 === e.nodeType
+                    ? ((n = e.documentElement),
+                      Math.max(
+                        e.body['scroll' + r],
+                        n['scroll' + r],
+                        e.body['offset' + r],
+                        n['offset' + r],
+                        n['client' + r]
+                      ))
+                    : void 0 === i
+                    ? T.css(e, t, s)
+                    : T.style(e, t, i, s);
+                },
+                o,
+                i ? e : void 0,
+                i
+              );
+            };
+          }
+        );
       }),
       T.each(
         [
@@ -5462,39 +5477,39 @@
           'ajaxComplete',
           'ajaxError',
           'ajaxSuccess',
-          'ajaxSend'
+          'ajaxSend',
         ],
-        function(e, t) {
-          T.fn[t] = function(e) {
+        function (e, t) {
+          T.fn[t] = function (e) {
             return this.on(t, e);
           };
         }
       ),
       T.fn.extend({
-        bind: function(e, t, i) {
+        bind: function (e, t, i) {
           return this.on(e, null, t, i);
         },
-        unbind: function(e, t) {
+        unbind: function (e, t) {
           return this.off(e, null, t);
         },
-        delegate: function(e, t, i, n) {
+        delegate: function (e, t, i, n) {
           return this.on(t, e, i, n);
         },
-        undelegate: function(e, t, i) {
+        undelegate: function (e, t, i) {
           return 1 === arguments.length
             ? this.off(e, '**')
             : this.off(t, e || '**', i);
         },
-        hover: function(e, t) {
+        hover: function (e, t) {
           return this.mouseenter(e).mouseleave(t || e);
-        }
+        },
       }),
       T.each(
         'blur focus focusin focusout resize scroll click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup contextmenu'.split(
           ' '
         ),
-        function(e, i) {
-          T.fn[i] = function(e, t) {
+        function (e, i) {
+          T.fn[i] = function (e, t) {
             return 0 < arguments.length
               ? this.on(i, null, e, t)
               : this.trigger(i);
@@ -5503,18 +5518,19 @@
       ),
       /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g),
     Qt =
-      ((T.proxy = function(e, t) {
+      ((T.proxy = function (e, t) {
         var i, n;
         if (('string' == typeof t && ((n = e[t]), (t = e), (e = n)), y(e)))
           return (
             (i = o.call(arguments, 2)),
-            ((n = function() {
+            ((n = function () {
               return e.apply(t || this, i.concat(o.call(arguments)));
-            }).guid = e.guid = e.guid || T.guid++),
+            }).guid = e.guid =
+              e.guid || T.guid++),
             n
           );
       }),
-      (T.holdReady = function(e) {
+      (T.holdReady = function (e) {
         e ? T.readyWait++ : T.ready(!0);
       }),
       (T.isArray = Array.isArray),
@@ -5525,22 +5541,22 @@
       (T.camelCase = v),
       (T.type = p),
       (T.now = Date.now),
-      (T.isNumeric = function(e) {
+      (T.isNumeric = function (e) {
         var t = T.type(e);
         return ('number' === t || 'string' === t) && !isNaN(e - parseFloat(e));
       }),
-      (T.trim = function(e) {
+      (T.trim = function (e) {
         return null == e ? '' : (e + '').replace(Jt, '');
       }),
       'function' == typeof define &&
         define.amd &&
-        define('jquery', [], function() {
+        define('jquery', [], function () {
           return T;
         }),
       w.jQuery),
     Kt = w.$;
   return (
-    (T.noConflict = function(e) {
+    (T.noConflict = function (e) {
       return w.$ === T && (w.$ = Kt), e && w.jQuery === T && (w.jQuery = Qt), T;
     }),
     void 0 === A && (w.jQuery = w.$ = T),
@@ -5548,21 +5564,21 @@
   );
 }),
   void 0 === jQuery.migrateMute && (jQuery.migrateMute = !0),
-  (function(t) {
+  (function (t) {
     'use strict';
     'function' == typeof define && define.amd
-      ? define(['jquery'], function(e) {
+      ? define(['jquery'], function (e) {
           return t(e, window);
         })
       : 'object' == typeof module && module.exports
       ? (module.exports = t(require('jquery'), window))
       : t(jQuery, window);
-  })(function(o, n) {
+  })(function (o, n) {
     'use strict';
     function e(e) {
       return (
         0 <=
-        (function(e, t) {
+        (function (e, t) {
           for (
             var i = /^(\d+)\.(\d+)\.(\d+)/,
               n = i.exec(e) || [],
@@ -5608,23 +5624,23 @@
       Object.defineProperty(e, t, {
         configurable: !0,
         enumerable: !0,
-        get: function() {
+        get: function () {
           return l(n), i;
         },
-        set: function(e) {
+        set: function (e) {
           l(n), (i = e);
-        }
+        },
       });
     }
     function s(e, t, i, n) {
-      e[t] = function() {
+      e[t] = function () {
         return l(n), i.apply(this, arguments);
       };
     }
     (o.migrateDeduplicateWarnings = !0),
       (o.migrateWarnings = []),
       void 0 === o.migrateTrace && (o.migrateTrace = !0),
-      (o.migrateReset = function() {
+      (o.migrateReset = function () {
         (i = {}), (o.migrateWarnings.length = 0);
       }),
       'BackCompat' === n.document.compatMode &&
@@ -5638,7 +5654,7 @@
       m = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*\]/,
       p = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*\]/g,
       f = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-    for (a in ((o.fn.init = function(e) {
+    for (a in ((o.fn.init = function (e) {
       var t = Array.prototype.slice.call(arguments);
       return (
         'string' == typeof e &&
@@ -5648,13 +5664,13 @@
       );
     }),
     (o.fn.init.prototype = o.fn),
-    (o.find = function(t) {
+    (o.find = function (t) {
       var i = Array.prototype.slice.call(arguments);
       if ('string' == typeof t && m.test(t))
         try {
           n.document.querySelector(t);
         } catch (e) {
-          t = t.replace(p, function(e, t, i, n) {
+          t = t.replace(p, function (e, t, i, n) {
             return '[' + t + i + '"' + n + '"]';
           });
           try {
@@ -5672,7 +5688,7 @@
     s(
       o.fn,
       'size',
-      function() {
+      function () {
         return this.length;
       },
       'jQuery.fn.size() is deprecated and removed; use the .length property'
@@ -5680,7 +5696,7 @@
       s(
         o,
         'parseJSON',
-        function() {
+        function () {
           return JSON.parse.apply(null, arguments);
         },
         'jQuery.parseJSON is deprecated; use JSON.parse'
@@ -5708,7 +5724,7 @@
         s(
           o,
           'trim',
-          function(e) {
+          function (e) {
             return null == e ? '' : (e + '').replace(f, '');
           },
           'jQuery.trim is deprecated; use String.prototype.trim'
@@ -5717,7 +5733,7 @@
         (s(
           o,
           'nodeName',
-          function(e, t) {
+          function (e, t) {
             return e.nodeName && e.nodeName.toLowerCase() === t.toLowerCase();
           },
           'jQuery.nodeName is deprecated'
@@ -5732,7 +5748,7 @@
         (s(
           o,
           'isNumeric',
-          function(e) {
+          function (e) {
             var t = typeof e;
             return (
               ('number' == t || 'string' == t) && !isNaN(e - parseFloat(e))
@@ -5744,14 +5760,14 @@
           'Boolean Number String Function Array Date RegExp Object Error Symbol'.split(
             ' '
           ),
-          function(e, t) {
+          function (e, t) {
             u['[object ' + t + ']'] = t.toLowerCase();
           }
         ),
         s(
           o,
           'type',
-          function(e) {
+          function (e) {
             return null == e
               ? e + ''
               : 'object' == typeof e || 'function' == typeof e
@@ -5763,7 +5779,7 @@
         s(
           o,
           'isFunction',
-          function(e) {
+          function (e) {
             return 'function' == typeof e;
           },
           'jQuery.isFunction() is deprecated'
@@ -5771,7 +5787,7 @@
         s(
           o,
           'isWindow',
-          function(e) {
+          function (e) {
             return null != e && e === e.window;
           },
           'jQuery.isWindow() is deprecated'
@@ -5779,7 +5795,7 @@
       o.ajax &&
         ((r = o.ajax),
         (d = /(=)\?(?=&|$)|\?\?/),
-        (o.ajax = function() {
+        (o.ajax = function () {
           var e = r.apply(this, arguments);
           return (
             e.promise &&
@@ -5800,7 +5816,7 @@
           );
         }),
         e('4.0.0') ||
-          o.ajaxPrefilter('+json', function(e) {
+          o.ajaxPrefilter('+json', function (e) {
             !1 !== e.jsonp &&
               (d.test(e.url) ||
                 ('string' == typeof e.data &&
@@ -5815,14 +5831,14 @@
       g = o.fn.toggleClass,
       y = /\S+/g;
     function v(e) {
-      return e.replace(/-([a-z])/g, function(e, t) {
+      return e.replace(/-([a-z])/g, function (e, t) {
         return t.toUpperCase();
       });
     }
-    o.fn.removeAttr = function(e) {
+    o.fn.removeAttr = function (e) {
       var i = this;
       return (
-        o.each(e.match(y), function(e, t) {
+        o.each(e.match(y), function (e, t) {
           o.expr.match.bool.test(t) &&
             (l('jQuery.fn.removeAttr no longer sets boolean properties: ' + t),
             i.prop(t, !1));
@@ -5831,11 +5847,11 @@
       );
     };
     var M,
-      b = !(o.fn.toggleClass = function(t) {
+      b = !(o.fn.toggleClass = function (t) {
         return void 0 !== t && 'boolean' != typeof t
           ? g.apply(this, arguments)
           : (l('jQuery.fn.toggleClass( boolean ) is deprecated'),
-            this.each(function() {
+            this.each(function () {
               var e = (this.getAttribute && this.getAttribute('class')) || '';
               e && o.data(this, '__className__', e),
                 this.setAttribute &&
@@ -5846,17 +5862,18 @@
             }));
       }),
       w = /^[a-z]/,
-      L = /^(?:Border(?:Top|Right|Bottom|Left)?(?:Width|)|(?:Margin|Padding)?(?:Top|Right|Bottom|Left)?|(?:Min|Max)?(?:Width|Height))$/;
+      L =
+        /^(?:Border(?:Top|Right|Bottom|Left)?(?:Width|)|(?:Margin|Padding)?(?:Top|Right|Bottom|Left)?|(?:Min|Max)?(?:Width|Height))$/;
     o.swap &&
-      o.each(['height', 'width', 'reliableMarginRight'], function(e, t) {
+      o.each(['height', 'width', 'reliableMarginRight'], function (e, t) {
         var i = o.cssHooks[t] && o.cssHooks[t].get;
         i &&
-          (o.cssHooks[t].get = function() {
+          (o.cssHooks[t].get = function () {
             var e;
             return (b = !0), (e = i.apply(this, arguments)), (b = !1), e;
           });
       }),
-      (o.swap = function(e, t, i, n) {
+      (o.swap = function (e, t, i, n) {
         var s,
           a = {};
         for (s in (b || l('jQuery.swap() is undocumented and deprecated'), t))
@@ -5867,20 +5884,20 @@
       e('3.4.0') &&
         'undefined' != typeof Proxy &&
         (o.cssProps = new Proxy(o.cssProps || {}, {
-          set: function() {
+          set: function () {
             return (
               l('JQMIGRATE: jQuery.cssProps is deprecated'),
               Reflect.set.apply(this, arguments)
             );
-          }
+          },
         })),
       o.cssNumber || (o.cssNumber = {}),
       (M = o.fn.css),
-      (o.fn.css = function(e, t) {
+      (o.fn.css = function (e, t) {
         var i,
           n = this;
         return e && 'object' == typeof e && !Array.isArray(e)
-          ? (o.each(e, function(e, t) {
+          ? (o.each(e, function (e, t) {
               o.fn.css.call(n, e, t);
             }),
             this)
@@ -5901,7 +5918,7 @@
       D,
       x = o.data,
       S =
-        ((o.data = function(e, t, i) {
+        ((o.data = function (e, t, i) {
           var n, s, a;
           if (t && 'object' == typeof t && 2 === arguments.length) {
             for (a in ((n = o.hasData(e) && x.call(this, e)), (s = {}), t))
@@ -5923,10 +5940,10 @@
         }),
         o.fx &&
           ((k = o.Tween.prototype.run),
-          (D = function(e) {
+          (D = function (e) {
             return e;
           }),
-          (o.Tween.prototype.run = function() {
+          (o.Tween.prototype.run = function () {
             1 < o.easing[this.easing].length &&
               (l(
                 "'jQuery.easing." +
@@ -5942,12 +5959,12 @@
           Object.defineProperty(o.fx, 'interval', {
             configurable: !0,
             enumerable: !0,
-            get: function() {
+            get: function () {
               return n.document.hidden || l(Y), T;
             },
-            set: function(e) {
+            set: function (e) {
               l(Y), (T = e);
-            }
+            },
           }),
         o.fn.load),
       A = o.event.add,
@@ -5970,7 +5987,7 @@
         o.event.props.concat,
         'jQuery.event.props.concat() is deprecated and removed'
       ),
-      (o.event.fix = function(e) {
+      (o.event.fix = function (e) {
         var t = e.type,
           i = this.fixHooks[t],
           n = o.event.props;
@@ -5992,7 +6009,7 @@
           for (; n.length; ) o.event.addProp(n.pop());
         return (t = $.call(this, e)), i && i.filter ? i.filter(t, e) : t;
       }),
-      (o.event.add = function(e, t) {
+      (o.event.add = function (e, t) {
         return (
           e === n &&
             'load' === t &&
@@ -6001,8 +6018,8 @@
           A.apply(this, arguments)
         );
       }),
-      o.each(['load', 'unload', 'error'], function(e, t) {
-        o.fn[t] = function() {
+      o.each(['load', 'unload', 'error'], function (e, t) {
+        o.fn[t] = function () {
           var e = Array.prototype.slice.call(arguments, 0);
           return 'load' === t && 'string' == typeof e[0]
             ? S.apply(this, e)
@@ -6017,8 +6034,8 @@
         'blur focus focusin focusout resize scroll click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup contextmenu'.split(
           ' '
         ),
-        function(e, i) {
-          o.fn[i] = function(e, t) {
+        function (e, i) {
+          o.fn[i] = function (e, t) {
             return (
               l('jQuery.fn.' + i + '() event shorthand is deprecated'),
               0 < arguments.length ? this.on(i, null, e, t) : this.trigger(i)
@@ -6026,25 +6043,25 @@
           };
         }
       ),
-      o(function() {
+      o(function () {
         o(n.document).triggerHandler('ready');
       }),
       (o.event.special.ready = {
-        setup: function() {
+        setup: function () {
           this === n.document && l("'ready' event is deprecated");
-        }
+        },
       }),
       o.fn.extend({
-        bind: function(e, t, i) {
+        bind: function (e, t, i) {
           return l('jQuery.fn.bind() is deprecated'), this.on(e, null, t, i);
         },
-        unbind: function(e, t) {
+        unbind: function (e, t) {
           return l('jQuery.fn.unbind() is deprecated'), this.off(e, null, t);
         },
-        delegate: function(e, t, i, n) {
+        delegate: function (e, t, i, n) {
           return l('jQuery.fn.delegate() is deprecated'), this.on(t, e, i, n);
         },
-        undelegate: function(e, t, i) {
+        undelegate: function (e, t, i) {
           return (
             l('jQuery.fn.undelegate() is deprecated'),
             1 === arguments.length
@@ -6052,26 +6069,27 @@
               : this.off(t, e || '**', i)
           );
         },
-        hover: function(e, t) {
+        hover: function (e, t) {
           return (
             l('jQuery.fn.hover() is deprecated'),
             this.on('mouseenter', e).on('mouseleave', t || e)
           );
-        }
+        },
       });
-    var H = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\0>\x20\t\r\n\f]*)[^>]*)\/>/gi,
+    var H =
+        /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\0>\x20\t\r\n\f]*)[^>]*)\/>/gi,
       W = o.htmlPrefilter;
-    (o.UNSAFE_restoreLegacyHtmlPrefilter = function() {
-      o.htmlPrefilter = function(e) {
+    (o.UNSAFE_restoreLegacyHtmlPrefilter = function () {
+      o.htmlPrefilter = function (e) {
         return C(e), e.replace(H, '<$1></$2>');
       };
     }),
-      (o.htmlPrefilter = function(e) {
+      (o.htmlPrefilter = function (e) {
         return C(e), W(e);
       });
     var j,
       N = o.fn.offset;
-    (o.fn.offset = function() {
+    (o.fn.offset = function () {
       var e = this[0];
       return !e || (e.nodeType && e.getBoundingClientRect)
         ? N.apply(this, arguments)
@@ -6080,7 +6098,7 @@
     }),
       o.ajax &&
         ((j = o.param),
-        (o.param = function(e, t) {
+        (o.param = function (e, t) {
           var i = o.ajaxSettings && o.ajaxSettings.traditional;
           return (
             void 0 === t &&
@@ -6096,7 +6114,7 @@
       O,
       I = o.fn.andSelf || o.fn.addBack;
     return (
-      (o.fn.andSelf = function() {
+      (o.fn.andSelf = function () {
         return (
           l(
             'jQuery.fn.andSelf() is deprecated and removed, use jQuery.fn.addBack()'
@@ -6112,48 +6130,49 @@
             'done',
             o.Callbacks('once memory'),
             o.Callbacks('once memory'),
-            'resolved'
+            'resolved',
           ],
           [
             'reject',
             'fail',
             o.Callbacks('once memory'),
             o.Callbacks('once memory'),
-            'rejected'
+            'rejected',
           ],
-          ['notify', 'progress', o.Callbacks('memory'), o.Callbacks('memory')]
+          ['notify', 'progress', o.Callbacks('memory'), o.Callbacks('memory')],
         ]),
-        (o.Deferred = function(e) {
+        (o.Deferred = function (e) {
           var a = P(),
             r = a.promise();
           return (
-            (a.pipe = r.pipe = function() {
-              var s = arguments;
-              return (
-                l('deferred.pipe() is deprecated'),
-                o
-                  .Deferred(function(n) {
-                    o.each(O, function(e, t) {
-                      var i = 'function' == typeof s[e] && s[e];
-                      a[t[1]](function() {
-                        var e = i && i.apply(this, arguments);
-                        e && 'function' == typeof e.promise
-                          ? e
-                              .promise()
-                              .done(n.resolve)
-                              .fail(n.reject)
-                              .progress(n.notify)
-                          : n[t[0] + 'With'](
-                              this === r ? n.promise() : this,
-                              i ? [e] : arguments
-                            );
-                      });
-                    }),
-                      (s = null);
-                  })
-                  .promise()
-              );
-            }),
+            (a.pipe = r.pipe =
+              function () {
+                var s = arguments;
+                return (
+                  l('deferred.pipe() is deprecated'),
+                  o
+                    .Deferred(function (n) {
+                      o.each(O, function (e, t) {
+                        var i = 'function' == typeof s[e] && s[e];
+                        a[t[1]](function () {
+                          var e = i && i.apply(this, arguments);
+                          e && 'function' == typeof e.promise
+                            ? e
+                                .promise()
+                                .done(n.resolve)
+                                .fail(n.reject)
+                                .progress(n.notify)
+                            : n[t[0] + 'With'](
+                                this === r ? n.promise() : this,
+                                i ? [e] : arguments
+                              );
+                        });
+                      }),
+                        (s = null);
+                    })
+                    .promise()
+                );
+              }),
             e && e.call(a, a),
             a
           );
@@ -6162,7 +6181,7 @@
       o
     );
   }),
-  (function(e, t) {
+  (function (e, t) {
     'object' == typeof exports && 'undefined' != typeof module
       ? t(exports, require('jquery'))
       : 'function' == typeof define && define.amd
@@ -6174,7 +6193,7 @@
               : e || self).bootstrap = {}),
           e.jQuery
         );
-  })(this, function(e, t) {
+  })(this, function (e, t) {
     'use strict';
     var u =
       (t = t) && 'object' == typeof t && 'default' in t ? t : { default: t };
@@ -6193,7 +6212,7 @@
     function a() {
       return (a =
         Object.assign ||
-        function(e) {
+        function (e) {
           for (var t = 1; t < arguments.length; t++) {
             var i,
               n = arguments[t];
@@ -6205,11 +6224,11 @@
     }
     var c = {
         TRANSITION_END: 'bsTransitionEnd',
-        getUID: function(e) {
+        getUID: function (e) {
           for (; (e += ~~(1e6 * Math.random())), document.getElementById(e); );
           return e;
         },
-        getSelectorFromElement: function(e) {
+        getSelectorFromElement: function (e) {
           var t,
             i = e.getAttribute('data-target');
           (i && '#' !== i) ||
@@ -6220,7 +6239,7 @@
             return null;
           }
         },
-        getTransitionDurationFromElement: function(e) {
+        getTransitionDurationFromElement: function (e) {
           var t, i, n;
           return e &&
             ((t = u.default(e).css('transition-duration')),
@@ -6233,19 +6252,19 @@
               1e3 * (parseFloat(t) + parseFloat(e)))
             : 0;
         },
-        reflow: function(e) {
+        reflow: function (e) {
           return e.offsetHeight;
         },
-        triggerTransitionEnd: function(e) {
+        triggerTransitionEnd: function (e) {
           u.default(e).trigger('transitionend');
         },
-        supportsTransitionEnd: function() {
+        supportsTransitionEnd: function () {
           return Boolean('transitionend');
         },
-        isElement: function(e) {
+        isElement: function (e) {
           return (e[0] || e).nodeType;
         },
-        typeCheckConfig: function(e, t, i) {
+        typeCheckConfig: function (e, t, i) {
           for (var n in i)
             if (Object.prototype.hasOwnProperty.call(i, n)) {
               var s = i[n],
@@ -6272,7 +6291,7 @@
                 );
             }
         },
-        findShadowRoot: function(e) {
+        findShadowRoot: function (e) {
           var t;
           return document.documentElement.attachShadow
             ? 'function' == typeof e.getRootNode
@@ -6286,7 +6305,7 @@
               : null
             : null;
         },
-        jQueryDetection: function() {
+        jQueryDetection: function () {
           if (void 0 === u.default)
             throw new TypeError(
               "Bootstrap's JavaScript requires jQuery. jQuery must be included before Bootstrap's JavaScript."
@@ -6300,18 +6319,18 @@
             throw new Error(
               "Bootstrap's JavaScript requires at least jQuery v1.9.1 but less than v4.0.0"
             );
-        }
+        },
       },
       n =
         (c.jQueryDetection(),
-        (u.default.fn.emulateTransitionEnd = function(e) {
+        (u.default.fn.emulateTransitionEnd = function (e) {
           var t = this,
             i = !1;
           return (
-            u.default(this).one(c.TRANSITION_END, function() {
+            u.default(this).one(c.TRANSITION_END, function () {
               i = !0;
             }),
-            setTimeout(function() {
+            setTimeout(function () {
               i || c.triggerTransitionEnd(t);
             }, e),
             this
@@ -6320,36 +6339,36 @@
         (u.default.event.special[c.TRANSITION_END] = {
           bindType: 'transitionend',
           delegateType: 'transitionend',
-          handle: function(e) {
+          handle: function (e) {
             if (u.default(e.target).is(this))
               return e.handleObj.handler.apply(this, arguments);
-          }
+          },
         }),
         'alert'),
       $ = u.default.fn[n],
       s =
-        (((t = r.prototype).close = function(e) {
+        (((t = r.prototype).close = function (e) {
           var t = this._element;
           e && (t = this._getRootElement(e)),
             this._triggerCloseEvent(t).isDefaultPrevented() ||
               this._removeElement(t);
         }),
-        (t.dispose = function() {
+        (t.dispose = function () {
           u.default.removeData(this._element, 'bs.alert'),
             (this._element = null);
         }),
-        (t._getRootElement = function(e) {
+        (t._getRootElement = function (e) {
           var t = c.getSelectorFromElement(e),
             i = !1;
           return (i =
             (i = t ? document.querySelector(t) : i) ||
             u.default(e).closest('.alert')[0]);
         }),
-        (t._triggerCloseEvent = function(e) {
+        (t._triggerCloseEvent = function (e) {
           var t = u.default.Event('close.bs.alert');
           return u.default(e).trigger(t), t;
         }),
-        (t._removeElement = function(t) {
+        (t._removeElement = function (t) {
           var e,
             i = this;
           u.default(t).removeClass('show'),
@@ -6357,38 +6376,35 @@
               ? ((e = c.getTransitionDurationFromElement(t)),
                 u
                   .default(t)
-                  .one(c.TRANSITION_END, function(e) {
+                  .one(c.TRANSITION_END, function (e) {
                     return i._destroyElement(t, e);
                   })
                   .emulateTransitionEnd(e))
               : this._destroyElement(t);
         }),
-        (t._destroyElement = function(e) {
-          u.default(e)
-            .detach()
-            .trigger('closed.bs.alert')
-            .remove();
+        (t._destroyElement = function (e) {
+          u.default(e).detach().trigger('closed.bs.alert').remove();
         }),
-        (r._jQueryInterface = function(i) {
-          return this.each(function() {
+        (r._jQueryInterface = function (i) {
+          return this.each(function () {
             var e = u.default(this),
               t = e.data('bs.alert');
             t || ((t = new r(this)), e.data('bs.alert', t)),
               'close' === i && t[i](this);
           });
         }),
-        (r._handleDismiss = function(t) {
-          return function(e) {
+        (r._handleDismiss = function (t) {
+          return function (e) {
             e && e.preventDefault(), t.close(this);
           };
         }),
         i(r, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
-          }
+            },
+          },
         ]),
         r);
     function r(e) {
@@ -6403,12 +6419,12 @@
       ),
       (u.default.fn[n] = s._jQueryInterface),
       (u.default.fn[n].Constructor = s),
-      (u.default.fn[n].noConflict = function() {
+      (u.default.fn[n].noConflict = function () {
         return (u.default.fn[n] = $), s._jQueryInterface;
       });
     var W = u.default.fn.button,
       o =
-        (((t = l.prototype).toggle = function() {
+        (((t = l.prototype).toggle = function () {
           var e,
             t = !0,
             i = !0,
@@ -6435,12 +6451,12 @@
                 ),
               t && u.default(this._element).toggleClass('active'));
         }),
-        (t.dispose = function() {
+        (t.dispose = function () {
           u.default.removeData(this._element, 'bs.button'),
             (this._element = null);
         }),
-        (l._jQueryInterface = function(i, n) {
-          return this.each(function() {
+        (l._jQueryInterface = function (i, n) {
+          return this.each(function () {
             var e = u.default(this),
               t = e.data('bs.button');
             t || ((t = new l(this)), e.data('bs.button', t)),
@@ -6451,10 +6467,10 @@
         i(l, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
-          }
+            },
+          },
         ]),
         l);
     function l(e) {
@@ -6462,7 +6478,7 @@
     }
     u
       .default(document)
-      .on('click.bs.button.data-api', '[data-toggle^="button"]', function(e) {
+      .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
         var t,
           i = e.target,
           n = i;
@@ -6484,12 +6500,12 @@
       .on(
         'focus.bs.button.data-api blur.bs.button.data-api',
         '[data-toggle^="button"]',
-        function(e) {
+        function (e) {
           var t = u.default(e.target).closest('.btn')[0];
           u.default(t).toggleClass('focus', /^focus(in)?$/.test(e.type));
         }
       ),
-      u.default(window).on('load.bs.button.data-api', function() {
+      u.default(window).on('load.bs.button.data-api', function () {
         for (
           var e = [].slice.call(
               document.querySelectorAll('[data-toggle="buttons"] .btn')
@@ -6521,7 +6537,7 @@
       }),
       (u.default.fn.button = o._jQueryInterface),
       (u.default.fn.button.Constructor = o),
-      (u.default.fn.button.noConflict = function() {
+      (u.default.fn.button.noConflict = function () {
         return (u.default.fn.button = W), o._jQueryInterface;
       });
     var d = 'carousel',
@@ -6532,7 +6548,7 @@
         slide: !1,
         pause: 'hover',
         wrap: !0,
-        touch: !0
+        touch: !0,
       },
       z = {
         interval: '(number|boolean)',
@@ -6540,24 +6556,24 @@
         slide: '(boolean|string)',
         pause: '(string|boolean)',
         wrap: 'boolean',
-        touch: 'boolean'
+        touch: 'boolean',
       },
       F = { TOUCH: 'touch', PEN: 'pen' },
       h =
-        (((t = m.prototype).next = function() {
+        (((t = m.prototype).next = function () {
           this._isSliding || this._slide('next');
         }),
-        (t.nextWhenVisible = function() {
+        (t.nextWhenVisible = function () {
           var e = u.default(this._element);
           !document.hidden &&
             e.is(':visible') &&
             'hidden' !== e.css('visibility') &&
             this.next();
         }),
-        (t.prev = function() {
+        (t.prev = function () {
           this._isSliding || this._slide('prev');
         }),
-        (t.pause = function(e) {
+        (t.pause = function (e) {
           e || (this._isPaused = !0),
             this._element.querySelector(
               '.carousel-item-next, .carousel-item-prev'
@@ -6565,7 +6581,7 @@
             clearInterval(this._interval),
             (this._interval = null);
         }),
-        (t.cycle = function(e) {
+        (t.cycle = function (e) {
           e || (this._isPaused = !1),
             this._interval &&
               (clearInterval(this._interval), (this._interval = null)),
@@ -6579,7 +6595,7 @@
                 this._config.interval
               ));
         }),
-        (t.to = function(e) {
+        (t.to = function (e) {
           var t = this,
             i =
               ((this._activeElement = this._element.querySelector(
@@ -6589,14 +6605,14 @@
           e > this._items.length - 1 ||
             e < 0 ||
             (this._isSliding
-              ? u.default(this._element).one('slid.bs.carousel', function() {
+              ? u.default(this._element).one('slid.bs.carousel', function () {
                   return t.to(e);
                 })
               : i === e
               ? (this.pause(), this.cycle())
               : this._slide(i < e ? 'next' : 'prev', this._items[e]));
         }),
-        (t.dispose = function() {
+        (t.dispose = function () {
           u.default(this._element).off('.bs.carousel'),
             u.default.removeData(this._element, 'bs.carousel'),
             (this._items = null),
@@ -6608,45 +6624,45 @@
             (this._activeElement = null),
             (this._indicatorsElement = null);
         }),
-        (t._getConfig = function(e) {
+        (t._getConfig = function (e) {
           return (e = a({}, I, e)), c.typeCheckConfig(d, e, z), e;
         }),
-        (t._handleSwipe = function() {
+        (t._handleSwipe = function () {
           var e = Math.abs(this.touchDeltaX);
           e <= 40 ||
             ((e = e / this.touchDeltaX),
             (this.touchDeltaX = 0) < e && this.prev(),
             e < 0 && this.next());
         }),
-        (t._addEventListeners = function() {
+        (t._addEventListeners = function () {
           var t = this;
           this._config.keyboard &&
-            u.default(this._element).on('keydown.bs.carousel', function(e) {
+            u.default(this._element).on('keydown.bs.carousel', function (e) {
               return t._keydown(e);
             }),
             'hover' === this._config.pause &&
               u
                 .default(this._element)
-                .on('mouseenter.bs.carousel', function(e) {
+                .on('mouseenter.bs.carousel', function (e) {
                   return t.pause(e);
                 })
-                .on('mouseleave.bs.carousel', function(e) {
+                .on('mouseleave.bs.carousel', function (e) {
                   return t.cycle(e);
                 }),
             this._config.touch && this._addTouchEventListeners();
         }),
-        (t._addTouchEventListeners = function() {
+        (t._addTouchEventListeners = function () {
           var e,
             t,
             i = this;
           this._touchSupported &&
-            ((e = function(e) {
+            ((e = function (e) {
               i._pointerEvent && F[e.originalEvent.pointerType.toUpperCase()]
                 ? (i.touchStartX = e.originalEvent.clientX)
                 : i._pointerEvent ||
                   (i.touchStartX = e.originalEvent.touches[0].clientX);
             }),
-            (t = function(e) {
+            (t = function (e) {
               i._pointerEvent &&
                 F[e.originalEvent.pointerType.toUpperCase()] &&
                 (i.touchDeltaX = e.originalEvent.clientX - i.touchStartX),
@@ -6654,13 +6670,13 @@
                 'hover' === i._config.pause &&
                   (i.pause(),
                   i.touchTimeout && clearTimeout(i.touchTimeout),
-                  (i.touchTimeout = setTimeout(function(e) {
+                  (i.touchTimeout = setTimeout(function (e) {
                     return i.cycle(e);
                   }, 500 + i._config.interval)));
             }),
             u
               .default(this._element.querySelectorAll('.carousel-item img'))
-              .on('dragstart.bs.carousel', function(e) {
+              .on('dragstart.bs.carousel', function (e) {
                 return e.preventDefault();
               }),
             this._pointerEvent
@@ -6670,7 +6686,7 @@
               : (u.default(this._element).on('touchstart.bs.carousel', e),
                 u
                   .default(this._element)
-                  .on('touchmove.bs.carousel', function(e) {
+                  .on('touchmove.bs.carousel', function (e) {
                     (e = e).originalEvent.touches &&
                     1 < e.originalEvent.touches.length
                       ? (i.touchDeltaX = 0)
@@ -6679,7 +6695,7 @@
                   }),
                 u.default(this._element).on('touchend.bs.carousel', t)));
         }),
-        (t._keydown = function(e) {
+        (t._keydown = function (e) {
           if (!/input|textarea/i.test(e.target.tagName))
             switch (e.which) {
               case 37:
@@ -6689,7 +6705,7 @@
                 e.preventDefault(), this.next();
             }
         }),
-        (t._getItemIndex = function(e) {
+        (t._getItemIndex = function (e) {
           return (
             (this._items =
               e && e.parentNode
@@ -6698,7 +6714,7 @@
             this._items.indexOf(e)
           );
         }),
-        (t._getItemByDirection = function(e, t) {
+        (t._getItemByDirection = function (e, t) {
           var i = 'next' === e,
             n = 'prev' === e,
             s = this._getItemIndex(t),
@@ -6709,7 +6725,7 @@
             ? this._items[this._items.length - 1]
             : this._items[n];
         }),
-        (t._triggerSlideEvent = function(e, t) {
+        (t._triggerSlideEvent = function (e, t) {
           var i = this._getItemIndex(e),
             n = this._getItemIndex(
               this._element.querySelector('.active.carousel-item')
@@ -6718,11 +6734,11 @@
               relatedTarget: e,
               direction: t,
               from: n,
-              to: i
+              to: i,
             });
           return u.default(this._element).trigger(e), e;
         }),
-        (t._setActiveIndicatorElement = function(e) {
+        (t._setActiveIndicatorElement = function (e) {
           var t;
           this._indicatorsElement &&
             ((t = [].slice.call(
@@ -6732,7 +6748,7 @@
             (t = this._indicatorsElement.children[this._getItemIndex(e)])) &&
             u.default(t).addClass('active');
         }),
-        (t._slide = function(e, t) {
+        (t._slide = function (e, t) {
           var i,
             n,
             s,
@@ -6762,7 +6778,7 @@
                 relatedTarget: l,
                 direction: e,
                 from: o,
-                to: t
+                to: t,
               })),
               u.default(this._element).hasClass('slide')
                 ? (u.default(l).addClass(n),
@@ -6778,14 +6794,14 @@
                   (o = c.getTransitionDurationFromElement(r)),
                   u
                     .default(r)
-                    .one(c.TRANSITION_END, function() {
+                    .one(c.TRANSITION_END, function () {
                       u
                         .default(l)
                         .removeClass(i + ' ' + n)
                         .addClass('active'),
                         u.default(r).removeClass('active ' + n + ' ' + i),
                         (a._isSliding = !1),
-                        setTimeout(function() {
+                        setTimeout(function () {
                           return u.default(a._element).trigger(s);
                         }, 0);
                     })
@@ -6797,8 +6813,8 @@
               d) &&
               this.cycle();
         }),
-        (m._jQueryInterface = function(n) {
-          return this.each(function() {
+        (m._jQueryInterface = function (n) {
+          return this.each(function () {
             var e = u.default(this).data('bs.carousel'),
               t = a({}, I, u.default(this).data()),
               i =
@@ -6817,7 +6833,7 @@
             } else t.interval && t.ride && (e.pause(), e.cycle());
           });
         }),
-        (m._dataApiClickHandler = function(e) {
+        (m._dataApiClickHandler = function (e) {
           var t,
             i,
             n = c.getSelectorFromElement(this);
@@ -6827,26 +6843,22 @@
             ((t = a({}, u.default(n).data(), u.default(this).data())),
             (i = this.getAttribute('data-slide-to')) && (t.interval = !1),
             m._jQueryInterface.call(u.default(n), t),
-            i &&
-              u
-                .default(n)
-                .data('bs.carousel')
-                .to(i),
+            i && u.default(n).data('bs.carousel').to(i),
             e.preventDefault());
         }),
         i(m, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return I;
-            }
-          }
+            },
+          },
         ]),
         m);
     function m(e, t) {
@@ -6878,7 +6890,7 @@
         '[data-slide], [data-slide-to]',
         h._dataApiClickHandler
       ),
-      u.default(window).on('load.bs.carousel.data-api', function() {
+      u.default(window).on('load.bs.carousel.data-api', function () {
         for (
           var e = [].slice.call(
               document.querySelectorAll('[data-ride="carousel"]')
@@ -6894,7 +6906,7 @@
       }),
       (u.default.fn[d] = h._jQueryInterface),
       (u.default.fn[d].Constructor = h),
-      (u.default.fn[d].noConflict = function() {
+      (u.default.fn[d].noConflict = function () {
         return (u.default.fn[d] = N), h._jQueryInterface;
       });
     var p = 'collapse',
@@ -6902,10 +6914,10 @@
       q = { toggle: !0, parent: '' },
       B = { toggle: 'boolean', parent: '(string|element)' },
       f =
-        (((t = _.prototype).toggle = function() {
+        (((t = _.prototype).toggle = function () {
           u.default(this._element).hasClass('show') ? this.hide() : this.show();
         }),
-        (t.show = function() {
+        (t.show = function () {
           var e,
             t,
             i,
@@ -6918,17 +6930,14 @@
               0 ===
                 (e = [].slice
                   .call(this._parent.querySelectorAll('.show, .collapsing'))
-                  .filter(function(e) {
+                  .filter(function (e) {
                     return 'string' == typeof s._config.parent
                       ? e.getAttribute('data-parent') === s._config.parent
                       : e.classList.contains('collapse');
                   })).length
                 ? null
                 : e) &&
-              (n = u
-                .default(e)
-                .not(this._selector)
-                .data('bs.collapse')) &&
+              (n = u.default(e).not(this._selector).data('bs.collapse')) &&
               n._isTransitioning) ||
             ((i = u.default.Event('show.bs.collapse')),
             u.default(this._element).trigger(i),
@@ -6955,7 +6964,7 @@
               (n = c.getTransitionDurationFromElement(this._element)),
               u
                 .default(this._element)
-                .one(c.TRANSITION_END, function() {
+                .one(c.TRANSITION_END, function () {
                   u
                     .default(s._element)
                     .removeClass('collapsing')
@@ -6967,7 +6976,7 @@
                 .emulateTransitionEnd(n),
               (this._element.style[t] = this._element[i] + 'px')));
         }),
-        (t.hide = function() {
+        (t.hide = function () {
           var e = this;
           if (
             !this._isTransitioning &&
@@ -7003,7 +7012,7 @@
               this.setTransitioning(!0), (this._element.style[t] = '');
               t = c.getTransitionDurationFromElement(this._element);
               u.default(this._element)
-                .one(c.TRANSITION_END, function() {
+                .one(c.TRANSITION_END, function () {
                   e.setTransitioning(!1),
                     u
                       .default(e._element)
@@ -7015,10 +7024,10 @@
             }
           }
         }),
-        (t.setTransitioning = function(e) {
+        (t.setTransitioning = function (e) {
           this._isTransitioning = e;
         }),
-        (t.dispose = function() {
+        (t.dispose = function () {
           u.default.removeData(this._element, 'bs.collapse'),
             (this._config = null),
             (this._parent = null),
@@ -7026,19 +7035,19 @@
             (this._triggerArray = null),
             (this._isTransitioning = null);
         }),
-        (t._getConfig = function(e) {
+        (t._getConfig = function (e) {
           return (
             ((e = a({}, q, e)).toggle = Boolean(e.toggle)),
             c.typeCheckConfig(p, e, B),
             e
           );
         }),
-        (t._getDimension = function() {
+        (t._getDimension = function () {
           return u.default(this._element).hasClass('width')
             ? 'width'
             : 'height';
         }),
-        (t._getParent = function() {
+        (t._getParent = function () {
           var e,
             i = this,
             t =
@@ -7052,26 +7061,23 @@
                 '"]'),
             t = [].slice.call(e.querySelectorAll(t));
           return (
-            u.default(t).each(function(e, t) {
+            u.default(t).each(function (e, t) {
               i._addAriaAndCollapsedClass(_._getTargetFromElement(t), [t]);
             }),
             e
           );
         }),
-        (t._addAriaAndCollapsedClass = function(e, t) {
+        (t._addAriaAndCollapsedClass = function (e, t) {
           e = u.default(e).hasClass('show');
           t.length &&
-            u
-              .default(t)
-              .toggleClass('collapsed', !e)
-              .attr('aria-expanded', e);
+            u.default(t).toggleClass('collapsed', !e).attr('aria-expanded', e);
         }),
-        (_._getTargetFromElement = function(e) {
+        (_._getTargetFromElement = function (e) {
           e = c.getSelectorFromElement(e);
           return e ? document.querySelector(e) : null;
         }),
-        (_._jQueryInterface = function(n) {
-          return this.each(function() {
+        (_._jQueryInterface = function (n) {
+          return this.each(function () {
             var e = u.default(this),
               t = e.data('bs.collapse'),
               i = a({}, q, e.data(), 'object' == typeof n && n ? n : {});
@@ -7093,16 +7099,16 @@
         i(_, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return q;
-            }
-          }
+            },
+          },
         ]),
         _);
     function _(t, e) {
@@ -7129,7 +7135,7 @@
       ) {
         var a = i[n],
           r = c.getSelectorFromElement(a),
-          o = [].slice.call(document.querySelectorAll(r)).filter(function(e) {
+          o = [].slice.call(document.querySelectorAll(r)).filter(function (e) {
             return e === t;
           });
         null !== r &&
@@ -7143,29 +7149,31 @@
     }
     u
       .default(document)
-      .on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function(
-        e
-      ) {
-        'A' === e.currentTarget.tagName && e.preventDefault();
-        var i = u.default(this),
-          e = c.getSelectorFromElement(this),
-          e = [].slice.call(document.querySelectorAll(e));
-        u.default(e).each(function() {
-          var e = u.default(this),
-            t = e.data('bs.collapse') ? 'toggle' : i.data();
-          f._jQueryInterface.call(e, t);
-        });
-      }),
+      .on(
+        'click.bs.collapse.data-api',
+        '[data-toggle="collapse"]',
+        function (e) {
+          'A' === e.currentTarget.tagName && e.preventDefault();
+          var i = u.default(this),
+            e = c.getSelectorFromElement(this),
+            e = [].slice.call(document.querySelectorAll(e));
+          u.default(e).each(function () {
+            var e = u.default(this),
+              t = e.data('bs.collapse') ? 'toggle' : i.data();
+            f._jQueryInterface.call(e, t);
+          });
+        }
+      ),
       (u.default.fn[p] = f._jQueryInterface),
       (u.default.fn[p].Constructor = f),
-      (u.default.fn[p].noConflict = function() {
+      (u.default.fn[p].noConflict = function () {
         return (u.default.fn[p] = R), f._jQueryInterface;
       });
     var V =
         'undefined' != typeof window &&
         'undefined' != typeof document &&
         'undefined' != typeof navigator,
-      G = (function() {
+      G = (function () {
         for (
           var e = ['Edge', 'Trident', 'Firefox'], t = 0;
           t < e.length;
@@ -7176,22 +7184,22 @@
       })(),
       X =
         V && window.Promise
-          ? function(e) {
+          ? function (e) {
               var t = !1;
-              return function() {
+              return function () {
                 t ||
                   ((t = !0),
-                  window.Promise.resolve().then(function() {
+                  window.Promise.resolve().then(function () {
                     (t = !1), e();
                   }));
               };
             }
-          : function(e) {
+          : function (e) {
               var t = !1;
-              return function() {
+              return function () {
                 t ||
                   ((t = !0),
-                  setTimeout(function() {
+                  setTimeout(function () {
                     (t = !1), e();
                   }, G));
               };
@@ -7274,10 +7282,12 @@
             ? 'scrollTop'
             : 'scrollLeft',
         i = e.nodeName;
-      return ('BODY' === i || 'HTML' === i
-        ? ((i = e.ownerDocument.documentElement),
-          e.ownerDocument.scrollingElement || i)
-        : e)[t];
+      return (
+        'BODY' === i || 'HTML' === i
+          ? ((i = e.ownerDocument.documentElement),
+            e.ownerDocument.scrollingElement || i)
+          : e
+      )[t];
     }
     function ne(e, t) {
       var t = 'x' === t ? 'Left' : 'Top',
@@ -7314,18 +7324,18 @@
               value: i,
               enumerable: !0,
               configurable: !0,
-              writable: !0
+              writable: !0,
             })
           : (e[t] = i),
         e
       );
     }
-    var t = function(e, t, i) {
+    var t = function (e, t, i) {
         return t && re(e.prototype, t), i && re(e, i), e;
       },
       w =
         Object.assign ||
-        function(e) {
+        function (e) {
           for (var t = 1; t < arguments.length; t++) {
             var i,
               n = arguments[t];
@@ -7364,7 +7374,7 @@
           left: t.left,
           top: t.top,
           width: t.right - t.left,
-          height: t.bottom - t.top
+          height: t.bottom - t.top,
         },
         s = 'HTML' === e.nodeName ? ae(e.ownerDocument) : {},
         t = s.width || e.clientWidth || n.width,
@@ -7398,7 +7408,7 @@
             top: a.top - r.top - l,
             left: a.left - r.left - d,
             width: a.width,
-            height: a.height
+            height: a.height,
           }));
       return (
         (r.marginTop = 0),
@@ -7413,10 +7423,8 @@
           (r.right -= d - s),
           (r.marginTop = a),
           (r.marginLeft = s)),
-        (r = (n && !i
-        ? t.contains(e)
-        : t === e && 'BODY' !== e.nodeName)
-          ? (function(e, t, i) {
+        (r = (n && !i ? t.contains(e) : t === e && 'BODY' !== e.nodeName)
+          ? (function (e, t, i) {
               var i = 2 < arguments.length && void 0 !== i && i,
                 n = M(t, 'top'),
                 t = M(t, 'left'),
@@ -7445,7 +7453,7 @@
         o = s ? de(e) : ie(e, K(t)),
         o =
           ('viewport' === n
-            ? (r = (function(e, t) {
+            ? (r = (function (e, t) {
                 var t = 1 < arguments.length && void 0 !== t && t,
                   i = e.ownerDocument.documentElement,
                   e = le(e, i),
@@ -7457,7 +7465,7 @@
                   top: a - e.top + e.marginTop,
                   left: t - e.left + e.marginLeft,
                   width: n,
-                  height: s
+                  height: s,
                 });
               })(o, s))
             : ((a = void 0),
@@ -7501,16 +7509,16 @@
             top: { width: n.width, height: t.top - n.top },
             right: { width: n.right - t.right, height: n.height },
             bottom: { width: n.width, height: n.bottom - t.bottom },
-            left: { width: t.left - n.left, height: n.height }
+            left: { width: t.left - n.left, height: n.height },
           }),
           (0 <
           (s = (a = Object.keys(r)
-            .map(function(e) {
+            .map(function (e) {
               return w({ key: e }, r[e], { area: (e = r[e]).width * e.height });
             })
-            .sort(function(e, t) {
+            .sort(function (e, t) {
               return t.area - e.area;
-            })).filter(function(e) {
+            })).filter(function (e) {
             var t = e.width,
               e = e.height;
             return t >= i.clientWidth && e >= i.clientHeight;
@@ -7530,7 +7538,7 @@
     }
     function pe(e) {
       var t = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
-      return e.replace(/left|right|bottom|top/g, function(e) {
+      return e.replace(/left|right|bottom|top/g, function (e) {
         return t[e];
       });
     }
@@ -7561,15 +7569,15 @@
               ((e = e),
               (n = t),
               Array.prototype.findIndex
-                ? e.findIndex(function(e) {
+                ? e.findIndex(function (e) {
                     return e.name === n;
                   })
-                : ((t = _e(e, function(e) {
+                : ((t = _e(e, function (e) {
                     return e.name === n;
                   })),
                   e.indexOf(t)))
             )
-        ).forEach(function(e) {
+        ).forEach(function (e) {
           e.function &&
             console.warn(
               '`modifier.function` is deprecated, use `modifier.fn`!'
@@ -7586,7 +7594,7 @@
       var n;
     }
     function ye(e, i) {
-      return e.some(function(e) {
+      return e.some(function (e) {
         var t = e.name;
         return e.enabled && t === i;
       });
@@ -7634,7 +7642,7 @@
       return '' !== e && !isNaN(parseFloat(e)) && isFinite(e);
     }
     function Le(i, n) {
-      Object.keys(n).forEach(function(e) {
+      Object.keys(n).forEach(function (e) {
         var t = '';
         -1 !==
           ['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(e) &&
@@ -7646,12 +7654,12 @@
     var Te = V && /Firefox/i.test(navigator.userAgent);
     function Ye(e, t, i) {
       var n,
-        s = _e(e, function(e) {
+        s = _e(e, function (e) {
           return e.name === t;
         }),
         e =
           !!s &&
-          e.some(function(e) {
+          e.some(function (e) {
             return e.name === i && e.enabled && e.order < s.order;
           });
       return (
@@ -7685,7 +7693,7 @@
         'bottom-start',
         'left-end',
         'left',
-        'left-start'
+        'left-start',
       ],
       ke = T.slice(3);
     function De(e, t) {
@@ -7697,11 +7705,11 @@
     function xe(e, o, l, t) {
       var s = [0, 0],
         n = -1 !== ['right', 'left'].indexOf(t),
-        t = e.split(/(\+|\-)/).map(function(e) {
+        t = e.split(/(\+|\-)/).map(function (e) {
           return e.trim();
         }),
         e = t.indexOf(
-          _e(t, function(e) {
+          _e(t, function (e) {
             return -1 !== e.search(/,|\s/);
           })
         ),
@@ -7716,22 +7724,22 @@
         (-1 !== e
           ? [
               t.slice(0, e).concat([t[e].split(i)[0]]),
-              [t[e].split(i)[1]].concat(t.slice(e + 1))
+              [t[e].split(i)[1]].concat(t.slice(e + 1)),
             ]
           : [t]
         )
-          .map(function(e, t) {
+          .map(function (e, t) {
             var r = (1 === t ? !n : n) ? 'height' : 'width',
               i = !1;
             return e
-              .reduce(function(e, t) {
+              .reduce(function (e, t) {
                 return '' === e[e.length - 1] && -1 !== ['+', '-'].indexOf(t)
                   ? ((e[e.length - 1] = t), (i = !0), e)
                   : i
                   ? ((e[e.length - 1] += t), (i = !1), e)
                   : e.concat(t);
               }, [])
-              .map(function(e) {
+              .map(function (e) {
                 return (
                   (t = r),
                   (i = o),
@@ -7760,8 +7768,8 @@
                 var t, i, n, s, a;
               });
           })
-          .forEach(function(i, n) {
-            i.forEach(function(e, t) {
+          .forEach(function (i, n) {
+            i.forEach(function (e, t) {
               we(e) && (s[n] += e * ('-' === i[t - 1] ? -1 : 1));
             });
           }),
@@ -7773,13 +7781,13 @@
         positionFixed: !1,
         eventsEnabled: !0,
         removeOnDestroy: !1,
-        onCreate: function() {},
-        onUpdate: function() {},
+        onCreate: function () {},
+        onUpdate: function () {},
         modifiers: {
           shift: {
             order: 100,
             enabled: !0,
-            fn: function(e) {
+            fn: function (e) {
               var t,
                 i,
                 n,
@@ -7795,17 +7803,17 @@
                     : 'height'),
                   (a = {
                     start: b({}, (a = a ? 'left' : 'top'), t[a]),
-                    end: b({}, a, t[a] + t[n] - i[n])
+                    end: b({}, a, t[a] + t[n] - i[n]),
                   }),
                   (e.offsets.popper = w({}, i, a[s]))),
                 e
               );
-            }
+            },
           },
           offset: {
             order: 200,
             enabled: !0,
-            fn: function(e, t) {
+            fn: function (e, t) {
               var t = t.offset,
                 i = e.placement,
                 n = e.offsets,
@@ -7825,12 +7833,12 @@
                 e
               );
             },
-            offset: 0
+            offset: 0,
           },
           preventOverflow: {
             order: 300,
             enabled: !0,
-            fn: function(e, n) {
+            fn: function (e, n) {
               var t = n.boundariesElement || v(e.instance.popper),
                 i = (e.instance.reference === t && (t = v(t)), ve('transform')),
                 s = e.instance.popper.style,
@@ -7856,7 +7864,7 @@
                   n.priority),
                 d = e.offsets.popper,
                 u = {
-                  primary: function(e) {
+                  primary: function (e) {
                     var t = d[e];
                     return (
                       d[e] < l[e] &&
@@ -7865,7 +7873,7 @@
                       b({}, e, t)
                     );
                   },
-                  secondary: function(e) {
+                  secondary: function (e) {
                     var t = 'right' === e ? 'left' : 'top',
                       i = d[t];
                     return (
@@ -7877,10 +7885,10 @@
                         )),
                       b({}, t, i)
                     );
-                  }
+                  },
                 };
               return (
-                t.forEach(function(e) {
+                t.forEach(function (e) {
                   var t =
                     -1 !== ['left', 'top'].indexOf(e) ? 'primary' : 'secondary';
                   d = w({}, d, u[t](e));
@@ -7891,12 +7899,12 @@
             },
             priority: ['left', 'right', 'top', 'bottom'],
             padding: 5,
-            boundariesElement: 'scrollParent'
+            boundariesElement: 'scrollParent',
           },
           keepTogether: {
             order: 400,
             enabled: !0,
-            fn: function(e) {
+            fn: function (e) {
               var t = e.offsets,
                 i = t.popper,
                 t = t.reference,
@@ -7911,12 +7919,12 @@
                 i[r] > s(t[a]) && (e.offsets.popper[r] = s(t[a])),
                 e
               );
-            }
+            },
           },
           arrow: {
             order: 500,
             enabled: !0,
-            fn: function(e, t) {
+            fn: function (e, t) {
               if (Ye(e.instance.modifiers, 'arrow', 'keepTogether')) {
                 t = t.element;
                 if ('string' == typeof t) {
@@ -7956,12 +7964,12 @@
               }
               return e;
             },
-            element: '[x-arrow]'
+            element: '[x-arrow]',
           },
           flip: {
             order: 600,
             enabled: !0,
-            fn: function(d, u) {
+            fn: function (d, u) {
               if (
                 !(
                   ye(d.instance.modifiers, 'inner') ||
@@ -7992,7 +8000,7 @@
                   default:
                     f = u.behavior;
                 }
-                f.forEach(function(e, t) {
+                f.forEach(function (e, t) {
                   if (h !== e || f.length === t + 1) return d;
                   (h = d.placement.split('-')[0]), (m = pe(h));
                   var e = d.offsets.popper,
@@ -8046,12 +8054,12 @@
             padding: 5,
             boundariesElement: 'viewport',
             flipVariations: !1,
-            flipVariationsByContent: !1
+            flipVariationsByContent: !1,
           },
           inner: {
             order: 700,
             enabled: !1,
-            fn: function(e) {
+            fn: function (e) {
               var t = e.placement,
                 i = t.split('-')[0],
                 n = e.offsets,
@@ -8066,15 +8074,15 @@
                 (e.offsets.popper = L(s)),
                 e
               );
-            }
+            },
           },
           hide: {
             order: 800,
             enabled: !0,
-            fn: function(e) {
+            fn: function (e) {
               if (Ye(e.instance.modifiers, 'hide', 'preventOverflow')) {
                 var t = e.offsets.reference,
-                  i = _e(e.instance.modifiers, function(e) {
+                  i = _e(e.instance.modifiers, function (e) {
                     return 'preventOverflow' === e.name;
                   }).boundaries;
                 if (
@@ -8091,19 +8099,19 @@
                 }
               }
               return e;
-            }
+            },
           },
           computeStyle: {
             order: 850,
             enabled: !0,
-            fn: function(e, t) {
+            fn: function (e, t) {
               var i,
                 n,
                 s,
                 a = t.x,
                 r = t.y,
                 o = e.offsets.popper,
-                l = _e(e.instance.modifiers, function(e) {
+                l = _e(e.instance.modifiers, function (e) {
                   return 'applyStyle' === e.name;
                 }).gpuAcceleration,
                 l =
@@ -8135,7 +8143,7 @@
                     ),
                     top: n(f.top),
                     bottom: n(f.bottom),
-                    right: s(f.right)
+                    right: s(f.right),
                   }),
                 c = 'bottom' === a ? 'top' : 'bottom',
                 h = 'right' === r ? 'left' : 'right',
@@ -8174,18 +8182,18 @@
             },
             gpuAcceleration: !0,
             x: 'bottom',
-            y: 'right'
+            y: 'right',
           },
           applyStyle: {
             order: 900,
             enabled: !0,
-            fn: function(e) {
+            fn: function (e) {
               var t, i;
               return (
                 Le(e.instance.popper, e.styles),
                 (t = e.instance.popper),
                 (i = e.attributes),
-                Object.keys(i).forEach(function(e) {
+                Object.keys(i).forEach(function (e) {
                   !1 !== i[e] ? t.setAttribute(e, i[e]) : t.removeAttribute(e);
                 }),
                 e.arrowElement &&
@@ -8194,7 +8202,7 @@
                 e
               );
             },
-            onLoad: function(e, t, i, n, s) {
+            onLoad: function (e, t, i, n, s) {
               (s = he(s, t, e, i.positionFixed)),
                 (s = ce(
                   i.placement,
@@ -8210,16 +8218,16 @@
                 i
               );
             },
-            gpuAcceleration: void 0
-          }
-        }
+            gpuAcceleration: void 0,
+          },
+        },
       },
       k =
         (t(D, [
           {
             key: 'update',
-            value: function() {
-              return function() {
+            value: function () {
+              return function () {
                 var e;
                 this.state.isDestroyed ||
                   (((e = {
@@ -8228,7 +8236,7 @@
                     arrowStyles: {},
                     attributes: {},
                     flipped: !1,
-                    offsets: {}
+                    offsets: {},
                   }).offsets.reference = he(
                     this.state,
                     this.popper,
@@ -8258,12 +8266,12 @@
                     ? this.options.onUpdate(e)
                     : ((this.state.isCreated = !0), this.options.onCreate(e)));
               }.call(this);
-            }
+            },
           },
           {
             key: 'destroy',
-            value: function() {
-              return function() {
+            value: function () {
+              return function () {
                 return (
                   (this.state.isDestroyed = !0),
                   ye(this.modifiers, 'applyStyle') &&
@@ -8281,18 +8289,18 @@
                   this
                 );
               }.call(this);
-            }
+            },
           },
           {
             key: 'enableEventListeners',
-            value: function() {
+            value: function () {
               return be.call(this);
-            }
+            },
           },
           {
             key: 'disableEventListeners',
-            value: function() {
-              return function() {
+            value: function () {
+              return function () {
                 var e, t;
                 this.state.eventsEnabled &&
                   (cancelAnimationFrame(this.scheduleUpdate),
@@ -8300,7 +8308,7 @@
                     ((e = this.reference),
                     (t = this.state),
                     Me(e).removeEventListener('resize', t.updateBound),
-                    t.scrollParents.forEach(function(e) {
+                    t.scrollParents.forEach(function (e) {
                       e.removeEventListener('scroll', t.updateBound);
                     }),
                     (t.updateBound = null),
@@ -8309,8 +8317,8 @@
                     (t.eventsEnabled = !1),
                     t)));
               }.call(this);
-            }
-          }
+            },
+          },
         ]),
         D);
     function D(e, t) {
@@ -8320,7 +8328,7 @@
         a = D;
       if (!(s instanceof a))
         throw new TypeError('Cannot call a class as a function');
-      (this.scheduleUpdate = function() {
+      (this.scheduleUpdate = function () {
         return requestAnimationFrame(i.update);
       }),
         (this.update = X(this.update.bind(this))),
@@ -8329,7 +8337,7 @@
         (this.reference = e && e.jquery ? e[0] : e),
         (this.popper = t && t.jquery ? t[0] : t),
         (this.options.modifiers = {}),
-        Object.keys(w({}, D.Defaults.modifiers, n.modifiers)).forEach(function(
+        Object.keys(w({}, D.Defaults.modifiers, n.modifiers)).forEach(function (
           e
         ) {
           i.options.modifiers[e] = w(
@@ -8339,13 +8347,13 @@
           );
         }),
         (this.modifiers = Object.keys(this.options.modifiers)
-          .map(function(e) {
+          .map(function (e) {
             return w({ name: e }, i.options.modifiers[e]);
           })
-          .sort(function(e, t) {
+          .sort(function (e, t) {
             return e.order - t.order;
           })),
-        this.modifiers.forEach(function(e) {
+        this.modifiers.forEach(function (e) {
           e.enabled &&
             U(e.onLoad) &&
             e.onLoad(i.reference, i.popper, i.options, e, i.state);
@@ -8366,7 +8374,7 @@
         boundary: 'scrollParent',
         reference: 'toggle',
         display: 'dynamic',
-        popperConfig: null
+        popperConfig: null,
       },
       He = {
         offset: '(number|string|function)',
@@ -8374,10 +8382,10 @@
         boundary: '(string|element)',
         reference: '(string|element)',
         display: 'string',
-        popperConfig: '(null|object)'
+        popperConfig: '(null|object)',
       },
       S =
-        (((t = E.prototype).toggle = function() {
+        (((t = E.prototype).toggle = function () {
           var e;
           this._element.disabled ||
             u.default(this._element).hasClass('disabled') ||
@@ -8386,7 +8394,7 @@
             e) ||
             this.show(!0);
         }),
-        (t.show = function(e) {
+        (t.show = function (e) {
           if (
             (void 0 === e && (e = !1),
             !(
@@ -8435,7 +8443,7 @@
             }
           }
         }),
-        (t.hide = function() {
+        (t.hide = function () {
           var e, t, i;
           this._element.disabled ||
             u.default(this._element).hasClass('disabled') ||
@@ -8452,24 +8460,24 @@
               .toggleClass('show')
               .trigger(u.default.Event('hidden.bs.dropdown', e)));
         }),
-        (t.dispose = function() {
+        (t.dispose = function () {
           u.default.removeData(this._element, 'bs.dropdown'),
             u.default(this._element).off('.bs.dropdown'),
             (this._element = null),
             (this._menu = null) !== this._popper &&
               (this._popper.destroy(), (this._popper = null));
         }),
-        (t.update = function() {
+        (t.update = function () {
           (this._inNavbar = this._detectNavbar()),
             null !== this._popper && this._popper.scheduleUpdate();
         }),
-        (t._addEventListeners = function() {
+        (t._addEventListeners = function () {
           var t = this;
-          u.default(this._element).on('click.bs.dropdown', function(e) {
+          u.default(this._element).on('click.bs.dropdown', function (e) {
             e.preventDefault(), e.stopPropagation(), t.toggle();
           });
         }),
-        (t._getConfig = function(e) {
+        (t._getConfig = function (e) {
           return (
             (e = a(
               {},
@@ -8481,7 +8489,7 @@
             e
           );
         }),
-        (t._getMenuElement = function() {
+        (t._getMenuElement = function () {
           var e;
           return (
             this._menu ||
@@ -8490,7 +8498,7 @@
             this._menu
           );
         }),
-        (t._getPlacement = function() {
+        (t._getPlacement = function () {
           var e = u.default(this._element.parentNode),
             t = 'bottom-start';
           return (
@@ -8507,15 +8515,15 @@
             t
           );
         }),
-        (t._detectNavbar = function() {
+        (t._detectNavbar = function () {
           return 0 < u.default(this._element).closest('.navbar').length;
         }),
-        (t._getOffset = function() {
+        (t._getOffset = function () {
           var t = this,
             e = {};
           return (
             'function' == typeof this._config.offset
-              ? (e.fn = function(e) {
+              ? (e.fn = function (e) {
                   return (
                     (e.offsets = a(
                       {},
@@ -8529,14 +8537,14 @@
             e
           );
         }),
-        (t._getPopperConfig = function() {
+        (t._getPopperConfig = function () {
           var e = {
             placement: this._getPlacement(),
             modifiers: {
               offset: this._getOffset(),
               flip: { enabled: this._config.flip },
-              preventOverflow: { boundariesElement: this._config.boundary }
-            }
+              preventOverflow: { boundariesElement: this._config.boundary },
+            },
           };
           return (
             'static' === this._config.display &&
@@ -8544,8 +8552,8 @@
             a({}, e, this._config.popperConfig)
           );
         }),
-        (E._jQueryInterface = function(t) {
-          return this.each(function() {
+        (E._jQueryInterface = function (t) {
+          return this.each(function () {
             var e = u.default(this).data('bs.dropdown');
             if (
               (e ||
@@ -8559,7 +8567,7 @@
             }
           });
         }),
-        (E._clearMenus = function(e) {
+        (E._clearMenus = function (e) {
           if (!e || (3 !== e.which && ('keyup' !== e.type || 9 === e.which)))
             for (
               var t = [].slice.call(
@@ -8601,12 +8609,12 @@
                       .trigger(u.default.Event('hidden.bs.dropdown', l))));
             }
         }),
-        (E._getParentFromElement = function(e) {
+        (E._getParentFromElement = function (e) {
           var t,
             i = c.getSelectorFromElement(e);
           return (t = i ? document.querySelector(i) : t) || e.parentNode;
         }),
-        (E._dataApiKeydownHandler = function(e) {
+        (E._dataApiKeydownHandler = function (e) {
           var t, i, n;
           (/input|textarea/i.test(e.target.tagName)
             ? 32 === e.which ||
@@ -8628,7 +8636,7 @@
                         '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
                       )
                     )
-                    .filter(function(e) {
+                    .filter(function (e) {
                       return u.default(e).is(':visible');
                     })).length &&
                 ((n = i.indexOf(e.target)),
@@ -8644,22 +8652,22 @@
         i(E, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return Ce;
-            }
+            },
           },
           {
             key: 'DefaultType',
-            get: function() {
+            get: function () {
               return He;
-            }
-          }
+            },
+          },
         ]),
         E);
     function E(e, t) {
@@ -8686,19 +8694,21 @@
         'click.bs.dropdown.data-api keyup.bs.dropdown.data-api',
         S._clearMenus
       )
-      .on('click.bs.dropdown.data-api', '[data-toggle="dropdown"]', function(
-        e
-      ) {
-        e.preventDefault(),
-          e.stopPropagation(),
-          S._jQueryInterface.call(u.default(this), 'toggle');
-      })
-      .on('click.bs.dropdown.data-api', '.dropdown form', function(e) {
+      .on(
+        'click.bs.dropdown.data-api',
+        '[data-toggle="dropdown"]',
+        function (e) {
+          e.preventDefault(),
+            e.stopPropagation(),
+            S._jQueryInterface.call(u.default(this), 'toggle');
+        }
+      )
+      .on('click.bs.dropdown.data-api', '.dropdown form', function (e) {
         e.stopPropagation();
       }),
       (u.default.fn[x] = S._jQueryInterface),
       (u.default.fn[x].Constructor = S),
-      (u.default.fn[x].noConflict = function() {
+      (u.default.fn[x].noConflict = function () {
         return (u.default.fn[x] = Se), S._jQueryInterface;
       });
     var je = u.default.fn.modal,
@@ -8707,13 +8717,13 @@
         backdrop: '(boolean|string)',
         keyboard: 'boolean',
         focus: 'boolean',
-        show: 'boolean'
+        show: 'boolean',
       },
       Ae =
-        (((T = $e.prototype).toggle = function(e) {
+        (((T = $e.prototype).toggle = function (e) {
           return this._isShown ? this.hide() : this.show(e);
         }),
-        (T.show = function(e) {
+        (T.show = function (e) {
           var t,
             i = this;
           this._isShown ||
@@ -8732,26 +8742,29 @@
             this._setResizeEvent(),
             u
               .default(this._element)
-              .on('click.dismiss.bs.modal', '[data-dismiss="modal"]', function(
-                e
-              ) {
-                return i.hide(e);
-              }),
+              .on(
+                'click.dismiss.bs.modal',
+                '[data-dismiss="modal"]',
+                function (e) {
+                  return i.hide(e);
+                }
+              ),
             u
               .default(this._dialog)
-              .on('mousedown.dismiss.bs.modal', function() {
-                u.default(i._element).one('mouseup.dismiss.bs.modal', function(
-                  e
-                ) {
-                  u.default(e.target).is(i._element) &&
-                    (i._ignoreBackdropClick = !0);
-                });
+              .on('mousedown.dismiss.bs.modal', function () {
+                u.default(i._element).one(
+                  'mouseup.dismiss.bs.modal',
+                  function (e) {
+                    u.default(e.target).is(i._element) &&
+                      (i._ignoreBackdropClick = !0);
+                  }
+                );
               }),
-            this._showBackdrop(function() {
+            this._showBackdrop(function () {
               return i._showElement(e);
             }));
         }),
-        (T.hide = function(e) {
+        (T.hide = function (e) {
           var t = this;
           e && e.preventDefault(),
             this._isShown &&
@@ -8773,14 +8786,14 @@
                 ? ((e = c.getTransitionDurationFromElement(this._element)),
                   u
                     .default(this._element)
-                    .one(c.TRANSITION_END, function(e) {
+                    .one(c.TRANSITION_END, function (e) {
                       return t._hideModal(e);
                     })
                     .emulateTransitionEnd(e))
                 : this._hideModal());
         }),
-        (T.dispose = function() {
-          [window, this._element, this._dialog].forEach(function(e) {
+        (T.dispose = function () {
+          [window, this._element, this._dialog].forEach(function (e) {
             return u.default(e).off('.bs.modal');
           }),
             u.default(document).off('focusin.bs.modal'),
@@ -8795,13 +8808,13 @@
             (this._isTransitioning = null),
             (this._scrollbarWidth = null);
         }),
-        (T.handleUpdate = function() {
+        (T.handleUpdate = function () {
           this._adjustDialog();
         }),
-        (T._getConfig = function(e) {
+        (T._getConfig = function (e) {
           return (e = a({}, Pe, e)), c.typeCheckConfig('modal', e, Oe), e;
         }),
-        (T._triggerBackdropTransition = function() {
+        (T._triggerBackdropTransition = function () {
           var e,
             t,
             i,
@@ -8819,12 +8832,12 @@
                 u.default(this._element).off(c.TRANSITION_END),
                 u
                   .default(this._element)
-                  .one(c.TRANSITION_END, function() {
+                  .one(c.TRANSITION_END, function () {
                     n._element.classList.remove('modal-static'),
                       t ||
                         u
                           .default(n._element)
-                          .one(c.TRANSITION_END, function() {
+                          .one(c.TRANSITION_END, function () {
                             n._element.style.overflowY = '';
                           })
                           .emulateTransitionEnd(n._element, i);
@@ -8833,7 +8846,7 @@
                 this._element.focus()))
             : this.hide();
         }),
-        (T._showElement = function(e) {
+        (T._showElement = function (e) {
           function t() {
             i._config.focus && i._element.focus(),
               (i._isTransitioning = !1),
@@ -8865,23 +8878,23 @@
                 .emulateTransitionEnd(s))
             : t();
         }),
-        (T._enforceFocus = function() {
+        (T._enforceFocus = function () {
           var t = this;
           u.default(document)
             .off('focusin.bs.modal')
-            .on('focusin.bs.modal', function(e) {
+            .on('focusin.bs.modal', function (e) {
               document !== e.target &&
                 t._element !== e.target &&
                 0 === u.default(t._element).has(e.target).length &&
                 t._element.focus();
             });
         }),
-        (T._setEscapeEvent = function() {
+        (T._setEscapeEvent = function () {
           var t = this;
           this._isShown
             ? u
                 .default(this._element)
-                .on('keydown.dismiss.bs.modal', function(e) {
+                .on('keydown.dismiss.bs.modal', function (e) {
                   t._config.keyboard && 27 === e.which
                     ? (e.preventDefault(), t.hide())
                     : t._config.keyboard ||
@@ -8891,33 +8904,33 @@
             : this._isShown ||
               u.default(this._element).off('keydown.dismiss.bs.modal');
         }),
-        (T._setResizeEvent = function() {
+        (T._setResizeEvent = function () {
           var t = this;
           this._isShown
-            ? u.default(window).on('resize.bs.modal', function(e) {
+            ? u.default(window).on('resize.bs.modal', function (e) {
                 return t.handleUpdate(e);
               })
             : u.default(window).off('resize.bs.modal');
         }),
-        (T._hideModal = function() {
+        (T._hideModal = function () {
           var e = this;
           (this._element.style.display = 'none'),
             this._element.setAttribute('aria-hidden', !0),
             this._element.removeAttribute('aria-modal'),
             this._element.removeAttribute('role'),
             (this._isTransitioning = !1),
-            this._showBackdrop(function() {
+            this._showBackdrop(function () {
               u.default(document.body).removeClass('modal-open'),
                 e._resetAdjustments(),
                 e._resetScrollbar(),
                 u.default(e._element).trigger('hidden.bs.modal');
             });
         }),
-        (T._removeBackdrop = function() {
+        (T._removeBackdrop = function () {
           this._backdrop &&
             (u.default(this._backdrop).remove(), (this._backdrop = null));
         }),
-        (T._showBackdrop = function(e) {
+        (T._showBackdrop = function (e) {
           var t,
             i = this,
             n = u.default(this._element).hasClass('fade') ? 'fade' : '';
@@ -8928,7 +8941,7 @@
               u.default(this._backdrop).appendTo(document.body),
               u
                 .default(this._element)
-                .on('click.dismiss.bs.modal', function(e) {
+                .on('click.dismiss.bs.modal', function (e) {
                   i._ignoreBackdropClick
                     ? (i._ignoreBackdropClick = !1)
                     : e.target === e.currentTarget &&
@@ -8946,7 +8959,7 @@
                   : e()))
             : !this._isShown && this._backdrop
             ? (u.default(this._backdrop).removeClass('show'),
-              (n = function() {
+              (n = function () {
                 i._removeBackdrop(), e && e();
               }),
               u.default(this._element).hasClass('fade')
@@ -8958,7 +8971,7 @@
                 : n())
             : e && e();
         }),
-        (T._adjustDialog = function() {
+        (T._adjustDialog = function () {
           var e =
             this._element.scrollHeight > document.documentElement.clientHeight;
           !this._isBodyOverflowing &&
@@ -8968,17 +8981,17 @@
               !e &&
               (this._element.style.paddingRight = this._scrollbarWidth + 'px');
         }),
-        (T._resetAdjustments = function() {
+        (T._resetAdjustments = function () {
           (this._element.style.paddingLeft = ''),
             (this._element.style.paddingRight = '');
         }),
-        (T._checkScrollbar = function() {
+        (T._checkScrollbar = function () {
           var e = document.body.getBoundingClientRect();
           (this._isBodyOverflowing =
             Math.round(e.left + e.right) < window.innerWidth),
             (this._scrollbarWidth = this._getScrollbarWidth());
         }),
-        (T._setScrollbar = function() {
+        (T._setScrollbar = function () {
           var e,
             t,
             s = this;
@@ -8989,14 +9002,14 @@
               )
             )),
             (t = [].slice.call(document.querySelectorAll('.sticky-top'))),
-            u.default(e).each(function(e, t) {
+            u.default(e).each(function (e, t) {
               var i = t.style.paddingRight,
                 n = u.default(t).css('padding-right');
               u.default(t)
                 .data('padding-right', i)
                 .css('padding-right', parseFloat(n) + s._scrollbarWidth + 'px');
             }),
-            u.default(t).each(function(e, t) {
+            u.default(t).each(function (e, t) {
               var i = t.style.marginRight,
                 n = u.default(t).css('margin-right');
               u.default(t)
@@ -9014,21 +9027,21 @@
               )),
             u.default(document.body).addClass('modal-open');
         }),
-        (T._resetScrollbar = function() {
+        (T._resetScrollbar = function () {
           var e = [].slice.call(
               document.querySelectorAll(
                 '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top'
               )
             ),
             e =
-              (u.default(e).each(function(e, t) {
+              (u.default(e).each(function (e, t) {
                 var i = u.default(t).data('padding-right');
                 u.default(t).removeData('padding-right'),
                   (t.style.paddingRight = i || '');
               }),
               [].slice.call(document.querySelectorAll('.sticky-top'))),
             e =
-              (u.default(e).each(function(e, t) {
+              (u.default(e).each(function (e, t) {
                 var i = u.default(t).data('margin-right');
                 void 0 !== i &&
                   u
@@ -9040,7 +9053,7 @@
           u.default(document.body).removeData('padding-right'),
             (document.body.style.paddingRight = e || '');
         }),
-        (T._getScrollbarWidth = function() {
+        (T._getScrollbarWidth = function () {
           var e = document.createElement('div'),
             t =
               ((e.className = 'modal-scrollbar-measure'),
@@ -9048,8 +9061,8 @@
               e.getBoundingClientRect().width - e.clientWidth);
           return document.body.removeChild(e), t;
         }),
-        ($e._jQueryInterface = function(i, n) {
-          return this.each(function() {
+        ($e._jQueryInterface = function (i, n) {
+          return this.each(function () {
             var e = u.default(this).data('bs.modal'),
               t = a(
                 {},
@@ -9071,16 +9084,16 @@
         i($e, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return Pe;
-            }
-          }
+            },
+          },
         ]),
         $e);
     function $e(e, t) {
@@ -9096,7 +9109,7 @@
     }
     u
       .default(document)
-      .on('click.bs.modal.data-api', '[data-toggle="modal"]', function(e) {
+      .on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
         var t,
           i = this,
           n = c.getSelectorFromElement(this),
@@ -9108,9 +9121,9 @@
           s =
             (('A' !== this.tagName && 'AREA' !== this.tagName) ||
               e.preventDefault(),
-            u.default(t).one('show.bs.modal', function(e) {
+            u.default(t).one('show.bs.modal', function (e) {
               e.isDefaultPrevented() ||
-                s.one('hidden.bs.modal', function() {
+                s.one('hidden.bs.modal', function () {
                   u.default(i).is(':visible') && i.focus();
                 });
             }));
@@ -9118,7 +9131,7 @@
       }),
       (u.default.fn.modal = Ae._jQueryInterface),
       (u.default.fn.modal.Constructor = Ae),
-      (u.default.fn.modal.noConflict = function() {
+      (u.default.fn.modal.noConflict = function () {
         return (u.default.fn.modal = je), Ae._jQueryInterface;
       });
     var We = [
@@ -9129,10 +9142,11 @@
         'longdesc',
         'poster',
         'src',
-        'xlink:href'
+        'xlink:href',
       ],
       Ne = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/gi,
-      Ie = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
+      Ie =
+        /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
     function ze(e, s, t) {
       if (0 === e.length) return e;
       if (t && 'function' == typeof t) return t(e);
@@ -9145,15 +9159,15 @@
         i < n;
         i++
       )
-        !(function(e) {
+        !(function (e) {
           var t = r[e],
             e = t.nodeName.toLowerCase();
           if (-1 === a.indexOf(t.nodeName.toLowerCase()))
             return t.parentNode.removeChild(t);
           var i = [].slice.call(t.attributes),
             n = [].concat(s['*'] || [], s[e] || []);
-          i.forEach(function(e) {
-            !(function(e, t) {
+          i.forEach(function (e) {
+            !(function (e, t) {
               var i = e.nodeName.toLowerCase();
               if (-1 !== t.indexOf(i))
                 return (
@@ -9161,7 +9175,7 @@
                   Boolean(e.nodeValue.match(Ne) || e.nodeValue.match(Ie))
                 );
               for (
-                var n = t.filter(function(e) {
+                var n = t.filter(function (e) {
                     return e instanceof RegExp;
                   }),
                   s = 0,
@@ -9195,14 +9209,14 @@
         sanitize: 'boolean',
         sanitizeFn: '(null|function)',
         whiteList: 'object',
-        popperConfig: '(null|object)'
+        popperConfig: '(null|object)',
       },
       Ve = {
         AUTO: 'auto',
         TOP: 'top',
         RIGHT: 'right',
         BOTTOM: 'bottom',
-        LEFT: 'left'
+        LEFT: 'left',
       },
       Ge = {
         animation: !0,
@@ -9250,9 +9264,9 @@
           sup: [],
           strong: [],
           u: [],
-          ul: []
+          ul: [],
         },
-        popperConfig: null
+        popperConfig: null,
       },
       Xe = {
         HIDE: 'hide.bs.tooltip',
@@ -9264,19 +9278,19 @@
         FOCUSIN: 'focusin.bs.tooltip',
         FOCUSOUT: 'focusout.bs.tooltip',
         MOUSEENTER: 'mouseenter.bs.tooltip',
-        MOUSELEAVE: 'mouseleave.bs.tooltip'
+        MOUSELEAVE: 'mouseleave.bs.tooltip',
       },
       H =
-        (((Y = Ue.prototype).enable = function() {
+        (((Y = Ue.prototype).enable = function () {
           this._isEnabled = !0;
         }),
-        (Y.disable = function() {
+        (Y.disable = function () {
           this._isEnabled = !1;
         }),
-        (Y.toggleEnabled = function() {
+        (Y.toggleEnabled = function () {
           this._isEnabled = !this._isEnabled;
         }),
-        (Y.toggle = function(e) {
+        (Y.toggle = function (e) {
           var t, i;
           this._isEnabled &&
             (e
@@ -9295,7 +9309,7 @@
               ? this._leave(null, this)
               : this._enter(null, this));
         }),
-        (Y.dispose = function() {
+        (Y.dispose = function () {
           clearTimeout(this._timeout),
             u.default.removeData(this.element, this.constructor.DATA_KEY),
             u.default(this.element).off(this.constructor.EVENT_KEY),
@@ -9314,7 +9328,7 @@
             (this.config = null),
             (this.tip = null);
         }),
-        (Y.show = function() {
+        (Y.show = function () {
           var t = this;
           if ('none' === u.default(this.element).css('display'))
             throw new Error('Please use show on visible elements');
@@ -9357,7 +9371,7 @@
                 .default(document.body)
                 .children()
                 .on('mouseover', null, u.default.noop),
-            (e = function() {
+            (e = function () {
               t.config.animation && t._fixTransition();
               var e = t._hoverState;
               (t._hoverState = null),
@@ -9372,7 +9386,7 @@
                   .emulateTransitionEnd(i))
               : e());
         }),
-        (Y.hide = function(e) {
+        (Y.hide = function (e) {
           function t() {
             'show' !== i._hoverState &&
               n.parentNode &&
@@ -9399,29 +9413,26 @@
               (this._activeTrigger.hover = !1),
               u.default(this.tip).hasClass('fade')
                 ? ((s = c.getTransitionDurationFromElement(n)),
-                  u
-                    .default(n)
-                    .one(c.TRANSITION_END, t)
-                    .emulateTransitionEnd(s))
+                  u.default(n).one(c.TRANSITION_END, t).emulateTransitionEnd(s))
                 : t(),
               (this._hoverState = ''));
         }),
-        (Y.update = function() {
+        (Y.update = function () {
           null !== this._popper && this._popper.scheduleUpdate();
         }),
-        (Y.isWithContent = function() {
+        (Y.isWithContent = function () {
           return Boolean(this.getTitle());
         }),
-        (Y.addAttachmentClass = function(e) {
+        (Y.addAttachmentClass = function (e) {
           u.default(this.getTipElement()).addClass('bs-tooltip-' + e);
         }),
-        (Y.getTipElement = function() {
+        (Y.getTipElement = function () {
           return (
             (this.tip = this.tip || u.default(this.config.template)[0]),
             this.tip
           );
         }),
-        (Y.setContent = function() {
+        (Y.setContent = function () {
           var e = this.getTipElement();
           this.setElementContent(
             u.default(e.querySelectorAll('.tooltip-inner')),
@@ -9429,7 +9440,7 @@
           ),
             u.default(e).removeClass('fade show');
         }),
-        (Y.setElementContent = function(e, t) {
+        (Y.setElementContent = function (e, t) {
           'object' != typeof t || (!t.nodeType && !t.jquery)
             ? this.config.html
               ? (this.config.sanitize &&
@@ -9437,13 +9448,10 @@
                 e.html(t))
               : e.text(t)
             : this.config.html
-            ? u
-                .default(t)
-                .parent()
-                .is(e) || e.empty().append(t)
+            ? u.default(t).parent().is(e) || e.empty().append(t)
             : e.text(u.default(t).text());
         }),
-        (Y.getTitle = function() {
+        (Y.getTitle = function () {
           return (
             this.element.getAttribute('data-original-title') ||
             ('function' == typeof this.config.title
@@ -9451,7 +9459,7 @@
               : this.config.title)
           );
         }),
-        (Y._getPopperConfig = function(e) {
+        (Y._getPopperConfig = function (e) {
           var t = this;
           return a(
             {},
@@ -9461,25 +9469,25 @@
                 offset: this._getOffset(),
                 flip: { behavior: this.config.fallbackPlacement },
                 arrow: { element: '.arrow' },
-                preventOverflow: { boundariesElement: this.config.boundary }
+                preventOverflow: { boundariesElement: this.config.boundary },
               },
-              onCreate: function(e) {
+              onCreate: function (e) {
                 e.originalPlacement !== e.placement &&
                   t._handlePopperPlacementChange(e);
               },
-              onUpdate: function(e) {
+              onUpdate: function (e) {
                 return t._handlePopperPlacementChange(e);
-              }
+              },
             },
             this.config.popperConfig
           );
         }),
-        (Y._getOffset = function() {
+        (Y._getOffset = function () {
           var t = this,
             e = {};
           return (
             'function' == typeof this.config.offset
-              ? (e.fn = function(e) {
+              ? (e.fn = function (e) {
                   return (
                     (e.offsets = a(
                       {},
@@ -9493,28 +9501,30 @@
             e
           );
         }),
-        (Y._getContainer = function() {
+        (Y._getContainer = function () {
           return !1 === this.config.container
             ? document.body
             : c.isElement(this.config.container)
             ? u.default(this.config.container)
             : u.default(document).find(this.config.container);
         }),
-        (Y._getAttachment = function(e) {
+        (Y._getAttachment = function (e) {
           return Ve[e.toUpperCase()];
         }),
-        (Y._setListeners = function() {
+        (Y._setListeners = function () {
           var i = this;
-          this.config.trigger.split(' ').forEach(function(e) {
+          this.config.trigger.split(' ').forEach(function (e) {
             var t;
             'click' === e
               ? u
                   .default(i.element)
-                  .on(i.constructor.Event.CLICK, i.config.selector, function(
-                    e
-                  ) {
-                    return i.toggle(e);
-                  })
+                  .on(
+                    i.constructor.Event.CLICK,
+                    i.config.selector,
+                    function (e) {
+                      return i.toggle(e);
+                    }
+                  )
               : 'manual' !== e &&
                 ((t =
                   'hover' === e
@@ -9526,14 +9536,14 @@
                     : i.constructor.Event.FOCUSOUT),
                 u
                   .default(i.element)
-                  .on(t, i.config.selector, function(e) {
+                  .on(t, i.config.selector, function (e) {
                     return i._enter(e);
                   })
-                  .on(e, i.config.selector, function(e) {
+                  .on(e, i.config.selector, function (e) {
                     return i._leave(e);
                   }));
           }),
-            (this._hideModalHandler = function() {
+            (this._hideModalHandler = function () {
               i.element && i.hide();
             }),
             u
@@ -9543,11 +9553,11 @@
             this.config.selector
               ? (this.config = a({}, this.config, {
                   trigger: 'manual',
-                  selector: ''
+                  selector: '',
                 }))
               : this._fixTitle();
         }),
-        (Y._fixTitle = function() {
+        (Y._fixTitle = function () {
           var e = typeof this.element.getAttribute('data-original-title');
           (!this.element.getAttribute('title') && 'string' == e) ||
             (this.element.setAttribute(
@@ -9556,7 +9566,7 @@
             ),
             this.element.setAttribute('title', ''));
         }),
-        (Y._enter = function(e, t) {
+        (Y._enter = function (e, t) {
           var i = this.constructor.DATA_KEY;
           (t = t || u.default(e.currentTarget).data(i)) ||
             ((t = new this.constructor(
@@ -9572,12 +9582,12 @@
               : (clearTimeout(t._timeout),
                 (t._hoverState = 'show'),
                 t.config.delay && t.config.delay.show
-                  ? (t._timeout = setTimeout(function() {
+                  ? (t._timeout = setTimeout(function () {
                       'show' === t._hoverState && t.show();
                     }, t.config.delay.show))
                   : t.show());
         }),
-        (Y._leave = function(e, t) {
+        (Y._leave = function (e, t) {
           var i = this.constructor.DATA_KEY;
           (t = t || u.default(e.currentTarget).data(i)) ||
             ((t = new this.constructor(
@@ -9586,27 +9596,26 @@
             )),
             u.default(e.currentTarget).data(i, t)),
             e &&
-              (t._activeTrigger[
-                'focusout' === e.type ? 'focus' : 'hover'
-              ] = !1),
+              (t._activeTrigger['focusout' === e.type ? 'focus' : 'hover'] =
+                !1),
             t._isWithActiveTrigger() ||
               (clearTimeout(t._timeout),
               (t._hoverState = 'out'),
               t.config.delay && t.config.delay.hide
-                ? (t._timeout = setTimeout(function() {
+                ? (t._timeout = setTimeout(function () {
                     'out' === t._hoverState && t.hide();
                   }, t.config.delay.hide))
                 : t.hide());
         }),
-        (Y._isWithActiveTrigger = function() {
+        (Y._isWithActiveTrigger = function () {
           for (var e in this._activeTrigger)
             if (this._activeTrigger[e]) return !0;
           return !1;
         }),
-        (Y._getConfig = function(e) {
+        (Y._getConfig = function (e) {
           var t = u.default(this.element).data();
           return (
-            Object.keys(t).forEach(function(e) {
+            Object.keys(t).forEach(function (e) {
               -1 !== qe.indexOf(e) && delete t[e];
             }),
             'number' ==
@@ -9624,7 +9633,7 @@
             e
           );
         }),
-        (Y._getDelegateConfig = function() {
+        (Y._getDelegateConfig = function () {
           var e = {};
           if (this.config)
             for (var t in this.config)
@@ -9632,17 +9641,17 @@
                 (e[t] = this.config[t]);
           return e;
         }),
-        (Y._cleanTipClass = function() {
+        (Y._cleanTipClass = function () {
           var e = u.default(this.getTipElement()),
             t = e.attr('class').match(Re);
           null !== t && t.length && e.removeClass(t.join(''));
         }),
-        (Y._handlePopperPlacementChange = function(e) {
+        (Y._handlePopperPlacementChange = function (e) {
           (this.tip = e.instance.popper),
             this._cleanTipClass(),
             this.addAttachmentClass(this._getAttachment(e.placement));
         }),
-        (Y._fixTransition = function() {
+        (Y._fixTransition = function () {
           var e = this.getTipElement(),
             t = this.config.animation;
           null === e.getAttribute('x-placement') &&
@@ -9652,8 +9661,8 @@
             this.show(),
             (this.config.animation = t));
         }),
-        (Ue._jQueryInterface = function(n) {
-          return this.each(function() {
+        (Ue._jQueryInterface = function (n) {
+          return this.each(function () {
             var e = u.default(this),
               t = e.data('bs.tooltip'),
               i = 'object' == typeof n && n;
@@ -9671,46 +9680,46 @@
         i(Ue, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return Ge;
-            }
+            },
           },
           {
             key: 'NAME',
-            get: function() {
+            get: function () {
               return C;
-            }
+            },
           },
           {
             key: 'DATA_KEY',
-            get: function() {
+            get: function () {
               return 'bs.tooltip';
-            }
+            },
           },
           {
             key: 'Event',
-            get: function() {
+            get: function () {
               return Xe;
-            }
+            },
           },
           {
             key: 'EVENT_KEY',
-            get: function() {
+            get: function () {
               return '.bs.tooltip';
-            }
+            },
           },
           {
             key: 'DefaultType',
-            get: function() {
+            get: function () {
               return Be;
-            }
-          }
+            },
+          },
         ]),
         Ue);
     function Ue(e, t) {
@@ -9730,7 +9739,7 @@
     }
     (u.default.fn[C] = H._jQueryInterface),
       (u.default.fn[C].Constructor = H),
-      (u.default.fn[C].noConflict = function() {
+      (u.default.fn[C].noConflict = function () {
         return (u.default.fn[C] = Fe), H._jQueryInterface;
       });
     var Je,
@@ -9742,7 +9751,7 @@
         trigger: 'click',
         content: '',
         template:
-          '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+          '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
       }),
       et = a({}, H.DefaultType, { content: '(string|element|function)' }),
       tt = {
@@ -9755,25 +9764,25 @@
         FOCUSIN: 'focusin.bs.popover',
         FOCUSOUT: 'focusout.bs.popover',
         MOUSEENTER: 'mouseenter.bs.popover',
-        MOUSELEAVE: 'mouseleave.bs.popover'
+        MOUSELEAVE: 'mouseleave.bs.popover',
       },
       it =
         ((t = Je = H),
         ((T = P).prototype = Object.create(t.prototype)),
         ((T.prototype.constructor = T).__proto__ = t),
-        ((T = P.prototype).isWithContent = function() {
+        ((T = P.prototype).isWithContent = function () {
           return this.getTitle() || this._getContent();
         }),
-        (T.addAttachmentClass = function(e) {
+        (T.addAttachmentClass = function (e) {
           u.default(this.getTipElement()).addClass('bs-popover-' + e);
         }),
-        (T.getTipElement = function() {
+        (T.getTipElement = function () {
           return (
             (this.tip = this.tip || u.default(this.config.template)[0]),
             this.tip
           );
         }),
-        (T.setContent = function() {
+        (T.setContent = function () {
           var e = u.default(this.getTipElement()),
             t =
               (this.setElementContent(
@@ -9785,18 +9794,18 @@
             this.setElementContent(e.find('.popover-body'), t),
             e.removeClass('fade show');
         }),
-        (T._getContent = function() {
+        (T._getContent = function () {
           return (
             this.element.getAttribute('data-content') || this.config.content
           );
         }),
-        (T._cleanTipClass = function() {
+        (T._cleanTipClass = function () {
           var e = u.default(this.getTipElement()),
             t = e.attr('class').match(Ke);
           null !== t && 0 < t.length && e.removeClass(t.join(''));
         }),
-        (P._jQueryInterface = function(i) {
-          return this.each(function() {
+        (P._jQueryInterface = function (i) {
+          return this.each(function () {
             var e = u.default(this).data('bs.popover'),
               t = 'object' == typeof i ? i : null;
             if (
@@ -9814,46 +9823,46 @@
         i(P, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return Ze;
-            }
+            },
           },
           {
             key: 'NAME',
-            get: function() {
+            get: function () {
               return j;
-            }
+            },
           },
           {
             key: 'DATA_KEY',
-            get: function() {
+            get: function () {
               return 'bs.popover';
-            }
+            },
           },
           {
             key: 'Event',
-            get: function() {
+            get: function () {
               return tt;
-            }
+            },
           },
           {
             key: 'EVENT_KEY',
-            get: function() {
+            get: function () {
               return '.bs.popover';
-            }
+            },
           },
           {
             key: 'DefaultType',
-            get: function() {
+            get: function () {
               return et;
-            }
-          }
+            },
+          },
         ]),
         P);
     function P() {
@@ -9861,7 +9870,7 @@
     }
     (u.default.fn[j] = it._jQueryInterface),
       (u.default.fn[j].Constructor = it),
-      (u.default.fn[j].noConflict = function() {
+      (u.default.fn[j].noConflict = function () {
         return (u.default.fn[j] = Qe), it._jQueryInterface;
       });
     var O = 'scrollspy',
@@ -9869,7 +9878,7 @@
       st = { offset: 10, method: 'auto', target: '' },
       at = { offset: 'number', method: 'string', target: '(string|element)' },
       rt =
-        (((Y = ot.prototype).refresh = function() {
+        (((Y = ot.prototype).refresh = function () {
           var t = this,
             e =
               this._scrollElement === this._scrollElement.window
@@ -9882,7 +9891,7 @@
             (this._scrollHeight = this._getScrollHeight()),
             [].slice
               .call(document.querySelectorAll(this._selector))
-              .map(function(e) {
+              .map(function (e) {
                 var t,
                   e = c.getSelectorFromElement(e);
                 if ((t = e ? document.querySelector(e) : t)) {
@@ -9892,17 +9901,17 @@
                 }
                 return null;
               })
-              .filter(function(e) {
+              .filter(function (e) {
                 return e;
               })
-              .sort(function(e, t) {
+              .sort(function (e, t) {
                 return e[0] - t[0];
               })
-              .forEach(function(e) {
+              .forEach(function (e) {
                 t._offsets.push(e[0]), t._targets.push(e[1]);
               });
         }),
-        (Y.dispose = function() {
+        (Y.dispose = function () {
           u.default.removeData(this._element, 'bs.scrollspy'),
             u.default(this._scrollElement).off('.bs.scrollspy'),
             (this._element = null),
@@ -9914,7 +9923,7 @@
             (this._activeTarget = null),
             (this._scrollHeight = null);
         }),
-        (Y._getConfig = function(e) {
+        (Y._getConfig = function (e) {
           var t;
           return (
             'string' !=
@@ -9928,12 +9937,12 @@
             e
           );
         }),
-        (Y._getScrollTop = function() {
+        (Y._getScrollTop = function () {
           return this._scrollElement === window
             ? this._scrollElement.pageYOffset
             : this._scrollElement.scrollTop;
         }),
-        (Y._getScrollHeight = function() {
+        (Y._getScrollHeight = function () {
           return (
             this._scrollElement.scrollHeight ||
             Math.max(
@@ -9942,12 +9951,12 @@
             )
           );
         }),
-        (Y._getOffsetHeight = function() {
+        (Y._getOffsetHeight = function () {
           return this._scrollElement === window
             ? window.innerHeight
             : this._scrollElement.getBoundingClientRect().height;
         }),
-        (Y._process = function() {
+        (Y._process = function () {
           var e = this._getScrollTop() + this._config.offset,
             t = this._getScrollHeight(),
             i = this._config.offset + t - this._getOffsetHeight();
@@ -9967,9 +9976,9 @@
                 (void 0 === this._offsets[n + 1] || e < this._offsets[n + 1]) &&
                 this._activate(this._targets[n]);
         }),
-        (Y._activate = function(t) {
+        (Y._activate = function (t) {
           (this._activeTarget = t), this._clear();
-          var e = this._selector.split(',').map(function(e) {
+          var e = this._selector.split(',').map(function (e) {
               return (
                 e + '[data-target="' + t + '"],' + e + '[href="' + t + '"]'
               );
@@ -9997,18 +10006,18 @@
               .default(this._scrollElement)
               .trigger('activate.bs.scrollspy', { relatedTarget: t });
         }),
-        (Y._clear = function() {
+        (Y._clear = function () {
           [].slice
             .call(document.querySelectorAll(this._selector))
-            .filter(function(e) {
+            .filter(function (e) {
               return e.classList.contains('active');
             })
-            .forEach(function(e) {
+            .forEach(function (e) {
               return e.classList.remove('active');
             });
         }),
-        (ot._jQueryInterface = function(t) {
-          return this.each(function() {
+        (ot._jQueryInterface = function (t) {
+          return this.each(function () {
             var e = u.default(this).data('bs.scrollspy');
             if (
               (e ||
@@ -10025,16 +10034,16 @@
         i(ot, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return st;
-            }
-          }
+            },
+          },
         ]),
         ot);
     function ot(e, t) {
@@ -10053,13 +10062,13 @@
         (this._targets = []),
         (this._activeTarget = null),
         (this._scrollHeight = 0),
-        u.default(this._scrollElement).on('scroll.bs.scrollspy', function(e) {
+        u.default(this._scrollElement).on('scroll.bs.scrollspy', function (e) {
           return i._process(e);
         }),
         this.refresh(),
         this._process();
     }
-    u.default(window).on('load.bs.scrollspy.data-api', function() {
+    u.default(window).on('load.bs.scrollspy.data-api', function () {
       for (
         var e = [].slice.call(document.querySelectorAll('[data-spy="scroll"]')),
           t = e.length;
@@ -10072,12 +10081,12 @@
     }),
       (u.default.fn[O] = rt._jQueryInterface),
       (u.default.fn[O].Constructor = rt),
-      (u.default.fn[O].noConflict = function() {
+      (u.default.fn[O].noConflict = function () {
         return (u.default.fn[O] = nt), rt._jQueryInterface;
       });
     var lt = u.default.fn.tab,
       dt =
-        (((t = ut.prototype).show = function() {
+        (((t = ut.prototype).show = function () {
           var e,
             t,
             i,
@@ -10100,7 +10109,7 @@
                 n.length - 1
               ])),
             (s = u.default.Event('hide.bs.tab', {
-              relatedTarget: this._element
+              relatedTarget: this._element,
             })),
             (a = u.default.Event('show.bs.tab', { relatedTarget: n })),
             n && u.default(n).trigger(s),
@@ -10109,26 +10118,28 @@
             s.isDefaultPrevented() ||
             (i && (e = document.querySelector(i)),
             this._activate(this._element, t),
-            (a = function() {
+            (a = function () {
               var e = u.default.Event('hidden.bs.tab', {
-                  relatedTarget: r._element
+                  relatedTarget: r._element,
                 }),
                 t = u.default.Event('shown.bs.tab', { relatedTarget: n });
               u.default(n).trigger(e), u.default(r._element).trigger(t);
             }),
             e ? this._activate(e, e.parentNode, a) : a());
         }),
-        (t.dispose = function() {
+        (t.dispose = function () {
           u.default.removeData(this._element, 'bs.tab'), (this._element = null);
         }),
-        (t._activate = function(e, t, i) {
+        (t._activate = function (e, t, i) {
           function n() {
             return s._transitionComplete(e, a, i);
           }
           var s = this,
-            a = (!t || ('UL' !== t.nodeName && 'OL' !== t.nodeName)
-              ? u.default(t).children('.active')
-              : u.default(t).find('> li > .active'))[0],
+            a = (
+              !t || ('UL' !== t.nodeName && 'OL' !== t.nodeName)
+                ? u.default(t).children('.active')
+                : u.default(t).find('> li > .active')
+            )[0],
             t = i && a && u.default(a).hasClass('fade');
           a && t
             ? ((t = c.getTransitionDurationFromElement(a)),
@@ -10139,7 +10150,7 @@
                 .emulateTransitionEnd(t))
             : n();
         }),
-        (t._transitionComplete = function(e, t, i) {
+        (t._transitionComplete = function (e, t, i) {
           var n;
           t &&
             (u.default(t).removeClass('active'),
@@ -10160,8 +10171,8 @@
               e.setAttribute('aria-expanded', !0)),
             i && i();
         }),
-        (ut._jQueryInterface = function(i) {
-          return this.each(function() {
+        (ut._jQueryInterface = function (i) {
+          return this.each(function () {
             var e = u.default(this),
               t = e.data('bs.tab');
             if (
@@ -10177,10 +10188,10 @@
         i(ut, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
-          }
+            },
+          },
         ]),
         ut);
     function ut(e) {
@@ -10191,20 +10202,20 @@
       .on(
         'click.bs.tab.data-api',
         '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
-        function(e) {
+        function (e) {
           e.preventDefault(), dt._jQueryInterface.call(u.default(this), 'show');
         }
       ),
       (u.default.fn.tab = dt._jQueryInterface),
       (u.default.fn.tab.Constructor = dt),
-      (u.default.fn.tab.noConflict = function() {
+      (u.default.fn.tab.noConflict = function () {
         return (u.default.fn.tab = lt), dt._jQueryInterface;
       });
     var ct = u.default.fn.toast,
       ht = { animation: 'boolean', autohide: 'boolean', delay: 'number' },
       mt = { animation: !0, autohide: !0, delay: 500 },
       pt =
-        (((T = ft.prototype).show = function() {
+        (((T = ft.prototype).show = function () {
           var e,
             t = this,
             i = u.default.Event('show.bs.toast');
@@ -10212,12 +10223,12 @@
             i.isDefaultPrevented() ||
               (this._clearTimeout(),
               this._config.animation && this._element.classList.add('fade'),
-              (i = function() {
+              (i = function () {
                 t._element.classList.remove('showing'),
                   t._element.classList.add('show'),
                   u.default(t._element).trigger('shown.bs.toast'),
                   t._config.autohide &&
-                    (t._timeout = setTimeout(function() {
+                    (t._timeout = setTimeout(function () {
                       t.hide();
                     }, t._config.delay));
               }),
@@ -10232,14 +10243,14 @@
                     .emulateTransitionEnd(e))
                 : i());
         }),
-        (T.hide = function() {
+        (T.hide = function () {
           var e;
           this._element.classList.contains('show') &&
             ((e = u.default.Event('hide.bs.toast')),
             u.default(this._element).trigger(e),
             e.isDefaultPrevented() || this._close());
         }),
-        (T.dispose = function() {
+        (T.dispose = function () {
           this._clearTimeout(),
             this._element.classList.contains('show') &&
               this._element.classList.remove('show'),
@@ -10248,7 +10259,7 @@
             (this._element = null),
             (this._config = null);
         }),
-        (T._getConfig = function(e) {
+        (T._getConfig = function (e) {
           return (
             (e = a(
               {},
@@ -10260,17 +10271,17 @@
             e
           );
         }),
-        (T._setListeners = function() {
+        (T._setListeners = function () {
           var e = this;
           u.default(this._element).on(
             'click.dismiss.bs.toast',
             '[data-dismiss="toast"]',
-            function() {
+            function () {
               return e.hide();
             }
           );
         }),
-        (T._close = function() {
+        (T._close = function () {
           function e() {
             i._element.classList.add('hide'),
               u.default(i._element).trigger('hidden.bs.toast');
@@ -10286,11 +10297,11 @@
                   .emulateTransitionEnd(t))
               : e();
         }),
-        (T._clearTimeout = function() {
+        (T._clearTimeout = function () {
           clearTimeout(this._timeout), (this._timeout = null);
         }),
-        (ft._jQueryInterface = function(i) {
-          return this.each(function() {
+        (ft._jQueryInterface = function (i) {
+          return this.each(function () {
             var e = u.default(this),
               t = e.data('bs.toast');
             if (
@@ -10308,22 +10319,22 @@
         i(ft, null, [
           {
             key: 'VERSION',
-            get: function() {
+            get: function () {
               return '4.5.3';
-            }
+            },
           },
           {
             key: 'DefaultType',
-            get: function() {
+            get: function () {
               return ht;
-            }
+            },
           },
           {
             key: 'Default',
-            get: function() {
+            get: function () {
               return mt;
-            }
-          }
+            },
+          },
         ]),
         ft);
     function ft(e, t) {
@@ -10334,7 +10345,7 @@
     }
     (u.default.fn.toast = pt._jQueryInterface),
       (u.default.fn.toast.Constructor = pt),
-      (u.default.fn.toast.noConflict = function() {
+      (u.default.fn.toast.noConflict = function () {
         return (u.default.fn.toast = ct), pt._jQueryInterface;
       }),
       (e.Alert = s),
@@ -10351,7 +10362,7 @@
       (e.Util = c),
       Object.defineProperty(e, '__esModule', { value: !0 });
   }),
-  (function(e, t) {
+  (function (e, t) {
     var i, n;
     'object' == typeof exports && 'undefined' != typeof module
       ? (module.exports = t())
@@ -10359,10 +10370,10 @@
       ? define(t)
       : ((e = e || self),
         (i = e.Cookies),
-        ((n = e.Cookies = t()).noConflict = function() {
+        ((n = e.Cookies = t()).noConflict = function () {
           return (e.Cookies = i), n;
         }));
-  })(this, function() {
+  })(this, function () {
     'use strict';
     function r(e) {
       for (var t = 1; t < arguments.length; t++) {
@@ -10373,15 +10384,15 @@
       return e;
     }
     var l = {
-      read: function(e) {
+      read: function (e) {
         return e.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent);
       },
-      write: function(e) {
+      write: function (e) {
         return encodeURIComponent(e).replace(
           /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,
           decodeURIComponent
         );
-      }
+      },
     };
     return (function t(o, a) {
       function i(e, t, i) {
@@ -10405,7 +10416,7 @@
       return Object.create(
         {
           set: i,
-          get: function(e) {
+          get: function (e) {
             if ('undefined' != typeof document && (!arguments.length || e)) {
               for (
                 var t = document.cookie ? document.cookie.split('; ') : [],
@@ -10425,30 +10436,30 @@
               return e ? i[e] : i;
             }
           },
-          remove: function(e, t) {
+          remove: function (e, t) {
             i(e, '', r({}, t, { expires: -1 }));
           },
-          withAttributes: function(e) {
+          withAttributes: function (e) {
             return t(this.converter, r({}, this.attributes, e));
           },
-          withConverter: function(e) {
+          withConverter: function (e) {
             return t(r({}, this.converter, e), this.attributes);
-          }
+          },
         },
         {
           attributes: { value: Object.freeze(a) },
-          converter: { value: Object.freeze(o) }
+          converter: { value: Object.freeze(o) },
         }
       );
     })(l, { path: '/' });
   }),
-  (function(pe, fe, _e) {
-    !(function(e) {
+  (function (pe, fe, _e) {
+    !(function (e) {
       'use strict';
       'function' == typeof define && define.amd
         ? define(['jquery'], e)
         : jQuery && !jQuery.fn.qtip && e(jQuery);
-    })(function(Y) {
+    })(function (Y) {
       'use strict';
       function L(e, t, i, n) {
         (this.id = i),
@@ -10465,9 +10476,16 @@
             disabled: !1,
             attr: n,
             onTooltip: !1,
-            lastClass: ''
+            lastClass: '',
           }),
-          (this.rendered = this.destroyed = this.disabled = this.waiting = this.hiddenDuringWait = this.positioning = this.triggering = !1);
+          (this.rendered =
+            this.destroyed =
+            this.disabled =
+            this.waiting =
+            this.hiddenDuringWait =
+            this.positioning =
+            this.triggering =
+              !1);
       }
       function i(e) {
         return e === m || 'object' !== Y.type(e);
@@ -10493,16 +10511,16 @@
               ((a = t.ajax),
               (r = a && !1 !== a.once),
               delete t.ajax,
-              (t.text = function(e, n) {
+              (t.text = function (e, n) {
                 var t =
                     s || Y(this).attr(n.options.content.attr) || 'Loading...',
                   i = Y.ajax(Y.extend({}, a, { context: n }))
                     .then(a.success, m, a.error)
                     .then(
-                      function(e) {
+                      function (e) {
                         return e && r && n.set('content.text', e), e;
                       },
-                      function(e, t, i) {
+                      function (e, t, i) {
                         n.destroyed ||
                           0 === e.status ||
                           n.set('content.text', t + ': ' + i);
@@ -10529,7 +10547,7 @@
             i(e.hide) &&
             (e.hide = e.hide.jquery ? { target: e.hide } : { event: e.hide }),
           'style' in e && i(e.style) && (e.style = { classes: e.style }),
-          Y.each(A, function() {
+          Y.each(A, function () {
             this.sanitize && this.sanitize(e);
           }),
           e)
@@ -10562,7 +10580,7 @@
           clearTimeout(this.timers.hide),
           (this.timers.show = o.call(
             this,
-            function() {
+            function () {
               this.toggle(!0, e);
             },
             this.options.show.delay
@@ -10587,7 +10605,7 @@
           else
             this.timers.hide = o.call(
               this,
-              function() {
+              function () {
                 this.toggle(!1, e);
               },
               this.options.hide.delay,
@@ -10601,7 +10619,7 @@
           (clearTimeout(this.timers.inactive),
           (this.timers.inactive = o.call(
             this,
-            function() {
+            function () {
               this.hide(e);
             },
             this.options.hide.inactive
@@ -10614,7 +10632,7 @@
         Y(fe.body).delegate(
           e,
           (t.split ? t : t.join('.qtip ')) + '.' + f,
-          function() {
+          function () {
             var e = h.api[Y.attr(this, J)];
             e && !e.disabled && i.apply(e, arguments);
           }
@@ -10626,7 +10644,7 @@
       function a(e, t) {
         return Math.ceil(
           parseFloat(
-            (function(e, t) {
+            (function (e, t) {
               var i,
                 n,
                 s = t.charAt(0).toUpperCase() + t.slice(1),
@@ -10677,9 +10695,10 @@
         J = 'data-qtip-id',
         Q = ['ui-widget', 'ui-tooltip'],
         _ = '.' + f,
-        K = 'click dblclick mousedown mouseup mousemove mouseleave mouseenter'.split(
-          ' '
-        ),
+        K =
+          'click dblclick mousedown mouseup mousemove mouseleave mouseenter'.split(
+            ' '
+          ),
         Z = f + '-fixed',
         ee = f + '-default',
         l = f + '-focus',
@@ -10687,7 +10706,7 @@
         u = '_replacedByqTip',
         c = 'oldtitle',
         $ = {
-          ie: (function() {
+          ie: (function () {
             for (
               var e = 4, t = fe.createElement('div');
               (t.innerHTML =
@@ -10708,14 +10727,14 @@
                 .replace('undefined', '3_2')
                 .replace('_', '.')
                 .replace('_', '')
-            ) || !1
+            ) || !1,
         },
         t = L.prototype,
         te =
-          ((t._when = function(e) {
+          ((t._when = function (e) {
             return Y.when.apply(Y, e);
           }),
-          (t.render = function(e) {
+          (t.render = function (e) {
             var i, t, n, s, a, r, o, l, d;
             return (
               this.rendered ||
@@ -10732,29 +10751,30 @@
                 (n.posClass = this._createPosClass(
                   (this.position = { my: l.my, at: l.at }).my
                 )),
-                (this.tooltip = s.tooltip = Y('<div/>', {
-                  id: this._id,
-                  class: [f, ee, t.style.classes, n.posClass].join(' '),
-                  width: t.style.width || '',
-                  height: t.style.height || '',
-                  tracking: 'mouse' === l.target && l.adjust.mouse,
-                  role: 'alert',
-                  'aria-live': 'polite',
-                  'aria-atomic': !1,
-                  'aria-describedby': this._id + '-content',
-                  'aria-hidden': !0
-                })
-                  .toggleClass(g, this.disabled)
-                  .attr(J, this.id)
-                  .data(f, this)
-                  .appendTo(l.container)
-                  .append(
-                    (s.content = Y('<div />', {
-                      class: f + '-content',
-                      id: this._id + '-content',
-                      'aria-atomic': !0
-                    }))
-                  )),
+                (this.tooltip = s.tooltip =
+                  Y('<div/>', {
+                    id: this._id,
+                    class: [f, ee, t.style.classes, n.posClass].join(' '),
+                    width: t.style.width || '',
+                    height: t.style.height || '',
+                    tracking: 'mouse' === l.target && l.adjust.mouse,
+                    role: 'alert',
+                    'aria-live': 'polite',
+                    'aria-atomic': !1,
+                    'aria-describedby': this._id + '-content',
+                    'aria-hidden': !0,
+                  })
+                    .toggleClass(g, this.disabled)
+                    .attr(J, this.id)
+                    .data(f, this)
+                    .appendTo(l.container)
+                    .append(
+                      (s.content = Y('<div />', {
+                        class: f + '-content',
+                        id: this._id + '-content',
+                        'aria-atomic': !0,
+                      }))
+                    )),
                 (this.rendered = -1),
                 (this.positioning = !0),
                 r &&
@@ -10764,7 +10784,7 @@
                 Y.isFunction(a) || d.push(this._updateContent(a, !1)),
                 (this.rendered = !0),
                 this._setWidget(),
-                Y.each(A, function(e) {
+                Y.each(A, function (e) {
                   var t;
                   'render' === this.initialize &&
                     (t = this(i)) &&
@@ -10772,7 +10792,7 @@
                 }),
                 this._unassignEvents(),
                 this._assignEvents(),
-                this._when(d).then(function() {
+                this._when(d).then(function () {
                   i._trigger('render'),
                     (i.positioning = !1),
                     i.hiddenDuringWait ||
@@ -10784,7 +10804,7 @@
               this
             );
           }),
-          (t.destroy = function(e) {
+          (t.destroy = function (e) {
             function t() {
               if (!this.destroyed) {
                 this.destroyed = !0;
@@ -10792,13 +10812,8 @@
                   t = this.target,
                   i = t.attr(c);
                 for (e in (this.rendered &&
-                  this.tooltip
-                    .stop(1, 0)
-                    .find('*')
-                    .remove()
-                    .end()
-                    .remove(),
-                Y.each(this.plugins, function() {
+                  this.tooltip.stop(1, 0).find('*').remove().end().remove(),
+                Y.each(this.plugins, function () {
                   this.destroy && this.destroy();
                 }),
                 this.timers))
@@ -10812,7 +10827,13 @@
                     i &&
                     t.attr('title', i).removeAttr(c),
                   this._unassignEvents(),
-                  (this.options = this.elements = this.cache = this.timers = this.plugins = this.mouse = m),
+                  (this.options =
+                    this.elements =
+                    this.cache =
+                    this.timers =
+                    this.plugins =
+                    this.mouse =
+                      m),
                   delete h.api[this.id];
               }
             }
@@ -10825,84 +10846,90 @@
               this.target
             );
           }),
-          (e = t.checks = {
-            builtin: {
-              '^id$': function(e, t, i, n) {
-                var i = !0 === i ? h.nextid : i,
-                  s = f + '-' + i;
-                !1 !== i && 0 < i.length && !Y('#' + s).length
-                  ? ((this._id = s),
+          (e = t.checks =
+            {
+              builtin: {
+                '^id$': function (e, t, i, n) {
+                  var i = !0 === i ? h.nextid : i,
+                    s = f + '-' + i;
+                  !1 !== i && 0 < i.length && !Y('#' + s).length
+                    ? ((this._id = s),
+                      this.rendered &&
+                        ((this.tooltip[0].id = this._id),
+                        (this.elements.content[0].id = this._id + '-content'),
+                        (this.elements.title[0].id = this._id + '-title')))
+                    : (e[t] = n);
+                },
+                '^prerender': function (e, t, i) {
+                  i && !this.rendered && this.render(this.options.show.ready);
+                },
+                '^content.text$': function (e, t, i) {
+                  this._updateContent(i);
+                },
+                '^content.attr$': function (e, t, i, n) {
+                  this.options.content.text === this.target.attr(n) &&
+                    this._updateContent(this.target.attr(i));
+                },
+                '^content.title$': function (e, t, i) {
+                  return i
+                    ? (this.elements.title || this._createTitle(),
+                      void this._updateTitle(i))
+                    : this._removeTitle();
+                },
+                '^content.button$': function (e, t, i) {
+                  this._updateButton(i);
+                },
+                '^content.title.(text|button)$': function (e, t, i) {
+                  this.set('content.' + t, i);
+                },
+                '^position.(my|at)$': function (e, t, i) {
+                  'string' == typeof i &&
+                    (this.position[t] = e[t] = new p(i, 'at' === t));
+                },
+                '^position.container$': function (e, t, i) {
+                  this.rendered && this.tooltip.appendTo(i);
+                },
+                '^show.ready$': function (e, t, i) {
+                  !i || (!this.rendered && this.render(!0)) || this.toggle(!0);
+                },
+                '^style.classes$': function (e, t, i, n) {
+                  this.rendered && this.tooltip.removeClass(n).addClass(i);
+                },
+                '^style.(width|height)': function (e, t, i) {
+                  this.rendered && this.tooltip.css(t, i);
+                },
+                '^style.widget|content.title': function () {
+                  this.rendered && this._setWidget();
+                },
+                '^style.def': function (e, t, i) {
+                  this.rendered && this.tooltip.toggleClass(ee, !!i);
+                },
+                '^events.(render|show|move|hide|focus|blur)$': function (
+                  e,
+                  t,
+                  i
+                ) {
+                  this.rendered &&
+                    this.tooltip[(Y.isFunction(i) ? '' : 'un') + 'bind'](
+                      'tooltip' + t,
+                      i
+                    );
+                },
+                '^(show|hide|position).(event|target|fixed|inactive|leave|distance|viewport|adjust)':
+                  function () {
+                    var e;
                     this.rendered &&
-                      ((this.tooltip[0].id = this._id),
-                      (this.elements.content[0].id = this._id + '-content'),
-                      (this.elements.title[0].id = this._id + '-title')))
-                  : (e[t] = n);
+                      ((e = this.options.position),
+                      this.tooltip.attr(
+                        'tracking',
+                        'mouse' === e.target && e.adjust.mouse
+                      ),
+                      this._unassignEvents(),
+                      this._assignEvents());
+                  },
               },
-              '^prerender': function(e, t, i) {
-                i && !this.rendered && this.render(this.options.show.ready);
-              },
-              '^content.text$': function(e, t, i) {
-                this._updateContent(i);
-              },
-              '^content.attr$': function(e, t, i, n) {
-                this.options.content.text === this.target.attr(n) &&
-                  this._updateContent(this.target.attr(i));
-              },
-              '^content.title$': function(e, t, i) {
-                return i
-                  ? (this.elements.title || this._createTitle(),
-                    void this._updateTitle(i))
-                  : this._removeTitle();
-              },
-              '^content.button$': function(e, t, i) {
-                this._updateButton(i);
-              },
-              '^content.title.(text|button)$': function(e, t, i) {
-                this.set('content.' + t, i);
-              },
-              '^position.(my|at)$': function(e, t, i) {
-                'string' == typeof i &&
-                  (this.position[t] = e[t] = new p(i, 'at' === t));
-              },
-              '^position.container$': function(e, t, i) {
-                this.rendered && this.tooltip.appendTo(i);
-              },
-              '^show.ready$': function(e, t, i) {
-                !i || (!this.rendered && this.render(!0)) || this.toggle(!0);
-              },
-              '^style.classes$': function(e, t, i, n) {
-                this.rendered && this.tooltip.removeClass(n).addClass(i);
-              },
-              '^style.(width|height)': function(e, t, i) {
-                this.rendered && this.tooltip.css(t, i);
-              },
-              '^style.widget|content.title': function() {
-                this.rendered && this._setWidget();
-              },
-              '^style.def': function(e, t, i) {
-                this.rendered && this.tooltip.toggleClass(ee, !!i);
-              },
-              '^events.(render|show|move|hide|focus|blur)$': function(e, t, i) {
-                this.rendered &&
-                  this.tooltip[(Y.isFunction(i) ? '' : 'un') + 'bind'](
-                    'tooltip' + t,
-                    i
-                  );
-              },
-              '^(show|hide|position).(event|target|fixed|inactive|leave|distance|viewport|adjust)': function() {
-                var e;
-                this.rendered &&
-                  ((e = this.options.position),
-                  this.tooltip.attr(
-                    'tracking',
-                    'mouse' === e.target && e.adjust.mouse
-                  ),
-                  this._unassignEvents(),
-                  this._assignEvents());
-              }
-            }
-          }),
-          (t.get = function(e) {
+            }),
+          (t.get = function (e) {
             return this.destroyed
               ? this
               : (e = (e = W(this.options, e.toLowerCase()))[0][e[1]]).precedance
@@ -10912,7 +10939,7 @@
           /^position\.(my|at|adjust|target|container|viewport)|style|content|show\.ready/i),
         ie = /^prerender|show\.ready/i,
         n =
-          ((t.set = function(s, e) {
+          ((t.set = function (s, e) {
             var t, a, r, o;
             return (
               this.destroyed ||
@@ -10922,7 +10949,7 @@
                 'string' == typeof s
                   ? ((t = s), ((s = {})[t] = e))
                   : (s = Y.extend({}, s)),
-                Y.each(s, function(e, t) {
+                Y.each(s, function (e, t) {
                   var i, n;
                   a && ie.test(e)
                     ? delete s[e]
@@ -10944,7 +10971,7 @@
               this
             );
           }),
-          (t._update = function(e, t) {
+          (t._update = function (e, t) {
             var i = this,
               n = this.cache;
             return (
@@ -10954,11 +10981,11 @@
               Y.isFunction(e.then)
                 ? ((n.waiting = !0),
                   e.then(
-                    function(e) {
+                    function (e) {
                       return (n.waiting = !1), i._update(e, t);
                     },
                     m,
-                    function(e) {
+                    function (e) {
                       return i._update(e, t);
                     }
                   ))
@@ -10970,14 +10997,14 @@
                           e.css({ display: 'block', visibility: 'visible' })
                         )
                     : t.html(e),
-                  this._waitForContent(t).then(function(e) {
+                  this._waitForContent(t).then(function (e) {
                     i.rendered &&
                       0 < i.tooltip[0].offsetWidth &&
                       i.reposition(n.event, !e.length);
                   })))
             );
           }),
-          (t._waitForContent = function(e) {
+          (t._waitForContent = function (e) {
             var t = this.cache;
             return (
               (t.waiting = !0),
@@ -10985,20 +11012,20 @@
                 ? e.imagesLoaded()
                 : new Y.Deferred().resolve([])
               )
-                .done(function() {
+                .done(function () {
                   t.waiting = !1;
                 })
                 .promise()
             );
           }),
-          (t._updateContent = function(e, t) {
+          (t._updateContent = function (e, t) {
             this._update(e, this.elements.content, t);
           }),
-          (t._updateTitle = function(e, t) {
+          (t._updateTitle = function (e, t) {
             !1 === this._update(e, this.elements.title, t) &&
               this._removeTitle(!1);
           }),
-          (t._createTitle = function() {
+          (t._createTitle = function () {
             var e = this.elements,
               t = this._id + '-title';
             e.titlebar && this._removeTitle(),
@@ -11006,32 +11033,32 @@
                 class:
                   f +
                   '-titlebar ' +
-                  (this.options.style.widget ? s('header') : '')
+                  (this.options.style.widget ? s('header') : ''),
               })
                 .append(
                   (e.title = Y('<div />', {
                     id: t,
                     class: f + '-title',
-                    'aria-atomic': !0
+                    'aria-atomic': !0,
                   }))
                 )
                 .insertBefore(e.content)
                 .delegate(
                   '.qtip-close',
                   'mousedown keydown mouseup keyup mouseout',
-                  function(e) {
+                  function (e) {
                     Y(this).toggleClass(
                       'ui-state-active ui-state-focus',
                       'down' === e.type.substr(-4)
                     );
                   }
                 )
-                .delegate('.qtip-close', 'mouseover mouseout', function(e) {
+                .delegate('.qtip-close', 'mouseover mouseout', function (e) {
                   Y(this).toggleClass('ui-state-hover', 'mouseover' === e.type);
                 })),
               this.options.content.button && this._createButton();
           }),
-          (t._removeTitle = function(e) {
+          (t._removeTitle = function (e) {
             var t = this.elements;
             t.title &&
               (t.titlebar.remove(),
@@ -11039,10 +11066,10 @@
               !1 !== e) &&
               this.reposition();
           }),
-          (t._createPosClass = function(e) {
+          (t._createPosClass = function (e) {
             return f + '-pos-' + (e || this.options.position.my).abbrev();
           }),
-          (t.reposition = function(e, t) {
+          (t.reposition = function (e, t) {
             if (this.rendered && !this.positioning && !this.destroyed) {
               this.positioning = !0;
               var i,
@@ -11085,7 +11112,7 @@
                     (n = Y(fe.body).offset()),
                   (v = {
                     left: e.pageX - v.left + ((n && n.left) || 0),
-                    top: e.pageY - v.top + ((n && n.top) || 0)
+                    top: e.pageY - v.top + ((n && n.top) || 0),
                   }),
                   h.mouse &&
                     b &&
@@ -11113,7 +11140,7 @@
                     o[0] === pe &&
                       (v = {
                         top: (u || o).scrollTop(),
-                        left: (u || o).scrollLeft()
+                        left: (u || o).scrollLeft(),
                       }))
                   : A.imagemap && o.is('area')
                   ? (i = A.imagemap(this, o, d, !!A.viewport && m))
@@ -11157,7 +11184,7 @@
                     ? a.css(v)
                     : Y.isFunction(r.effect) &&
                       (r.effect.call(a, this, Y.extend({}, v)),
-                      a.queue(function(e) {
+                      a.queue(function (e) {
                         Y(this).css({ opacity: '', height: '' }),
                           $.ie && this.style.removeAttribute('filter'),
                           e();
@@ -11166,7 +11193,7 @@
             }
             return this;
           }),
-          (t.reposition.offset = function(e, i, t) {
+          (t.reposition.offset = function (e, i, t) {
             function n(e, t) {
               (i.left += t * e.scrollLeft()), (i.top += t * e.scrollTop());
             }
@@ -11198,24 +11225,25 @@
             }
             return i;
           }),
-          (p = t.reposition.Corner = function(e, t) {
-            (e = ('' + e)
-              .replace(/([A-Z])/, ' $1')
-              .replace(/middle/gi, P)
-              .toLowerCase()),
-              (this.x = (e.match(/left|right/i) ||
-                e.match(/center/) || ['inherit'])[0].toLowerCase()),
-              (this.y = (e.match(/top|bottom|center/i) || [
-                'inherit'
-              ])[0].toLowerCase()),
-              (this.forceY = !!t);
-            t = e.charAt(0);
-            this.precedance = 't' === t || 'b' === t ? D : k;
-          }).prototype);
-      (n.invert = function(e, t) {
+          (p = t.reposition.Corner =
+            function (e, t) {
+              (e = ('' + e)
+                .replace(/([A-Z])/, ' $1')
+                .replace(/middle/gi, P)
+                .toLowerCase()),
+                (this.x = (e.match(/left|right/i) ||
+                  e.match(/center/) || ['inherit'])[0].toLowerCase()),
+                (this.y = (e.match(/top|bottom|center/i) || [
+                  'inherit',
+                ])[0].toLowerCase()),
+                (this.forceY = !!t);
+              t = e.charAt(0);
+              this.precedance = 't' === t || 'b' === t ? D : k;
+            }).prototype);
+      (n.invert = function (e, t) {
         this[e] = this[e] === C ? j : this[e] === j ? C : t || this[e];
       }),
-        (n.string = function(e) {
+        (n.string = function (e) {
           var t = this.x,
             i = this.y,
             i =
@@ -11227,14 +11255,14 @@
                 : [t];
           return !1 !== e ? i.join(' ') : i;
         }),
-        (n.abbrev = function() {
+        (n.abbrev = function () {
           var e = this.string(!1);
           return e[0].charAt(0) + ((e[1] && e[1].charAt(0)) || '');
         }),
-        (n.clone = function() {
+        (n.clone = function () {
           return new p(this.string(), this.forceY);
         }),
-        (t.toggle = function(e, t) {
+        (t.toggle = function (e, t) {
           var i,
             n,
             s,
@@ -11303,7 +11331,7 @@
                             .length &&
                           (Y(fe).unbind('mousemove.' + f), (X = !1)),
                         this.blur(t)),
-                    (i = Y.proxy(function() {
+                    (i = Y.proxy(function () {
                       e
                         ? ($.ie && h[0].style.removeAttribute('filter'),
                           h.css('overflow', ''),
@@ -11317,7 +11345,7 @@
                             visibility: '',
                             opacity: '',
                             left: '',
-                            top: ''
+                            top: '',
                           }),
                         this._trigger(e ? 'visible' : 'hidden');
                     }, this)),
@@ -11326,7 +11354,7 @@
                       : Y.isFunction(n.effect)
                       ? (h.stop(1, 1),
                         n.effect.call(h, this),
-                        h.queue('fx', function(e) {
+                        h.queue('fx', function (e) {
                           i(), e();
                         }))
                       : h.fadeTo(90, e ? 1 : 0, i),
@@ -11338,13 +11366,13 @@
               : this
           );
         }),
-        (t.show = function(e) {
+        (t.show = function (e) {
           return this.toggle(!0, e);
         }),
-        (t.hide = function(e) {
+        (t.hide = function (e) {
           return this.toggle(!1, e);
         }),
-        (t.focus = function(e) {
+        (t.focus = function (e) {
           var t, i, n, s;
           return (
             !this.rendered ||
@@ -11356,7 +11384,7 @@
               i.hasClass(l)) ||
               (this._trigger('focus', [s], e) &&
                 (n !== s &&
-                  (t.each(function() {
+                  (t.each(function () {
                     this.style.zIndex > n &&
                       (this.style.zIndex = this.style.zIndex - 1);
                   }),
@@ -11365,7 +11393,7 @@
             this
           );
         }),
-        (t.blur = function(e) {
+        (t.blur = function (e) {
           return (
             !this.rendered ||
               this.destroyed ||
@@ -11374,7 +11402,7 @@
             this
           );
         }),
-        (t.disable = function(e) {
+        (t.disable = function (e) {
           return (
             this.destroyed ||
               ('toggle' === e
@@ -11388,10 +11416,10 @@
             this
           );
         }),
-        (t.enable = function() {
+        (t.enable = function () {
           return this.disable(!1);
         }),
-        (t._createButton = function() {
+        (t._createButton = function () {
           var t = this,
             e = this.elements,
             i = e.tooltip,
@@ -11405,26 +11433,26 @@
                     'qtip-close ' +
                     (this.options.style.widget ? '' : f + '-icon'),
                   title: s,
-                  'aria-label': s
+                  'aria-label': s,
                 }).prepend(
                   Y('<span />', {
                     class: 'ui-icon ui-icon-close',
-                    html: '&times;'
+                    html: '&times;',
                   })
                 )),
             e.button
               .appendTo(e.titlebar || i)
               .attr('role', 'button')
-              .click(function(e) {
+              .click(function (e) {
                 return i.hasClass(g) || t.hide(e), !1;
               });
         }),
-        (t._updateButton = function(e) {
+        (t._updateButton = function (e) {
           if (!this.rendered) return !1;
           var t = this.elements.button;
           e ? this._createButton() : t.remove();
         }),
-        (t._setWidget = function() {
+        (t._setWidget = function () {
           var e = this.options.style.widget,
             t = this.elements,
             i = t.tooltip,
@@ -11439,10 +11467,10 @@
             t.titlebar && t.titlebar.toggleClass(s('header'), e),
             t.button && t.button.toggleClass(f + '-icon', !e);
         }),
-        (t._storeMouse = function(e) {
+        (t._storeMouse = function (e) {
           return ((this.mouse = Y.event.fix(e)).type = 'mousemove'), this;
         }),
-        (t._bind = function(e, t, i, n, s) {
+        (t._bind = function (e, t, i, n, s) {
           if (e && i && t.length)
             return (
               (n = '.' + this._id + (n ? '-' + n : '')),
@@ -11453,10 +11481,10 @@
               this
             );
         }),
-        (t._unbind = function(e, t) {
+        (t._unbind = function (e, t) {
           return e && Y(e).unbind('.' + this._id + (t ? '-' + t : '')), this;
         }),
-        (t._trigger = function(e, t, i) {
+        (t._trigger = function (e, t, i) {
           var n = new Y.Event('tooltip' + e);
           return (
             (n.originalEvent = (i && Y.extend({}, i)) || this.cache.event || m),
@@ -11466,16 +11494,16 @@
             !n.isDefaultPrevented()
           );
         }),
-        (t._bindEvents = function(i, e, t, n, s, a) {
+        (t._bindEvents = function (i, e, t, n, s, a) {
           var r = t.filter(n).add(n.filter(t)),
             o = [];
           r.length &&
-            (Y.each(e, function(e, t) {
+            (Y.each(e, function (e, t) {
               t = Y.inArray(t, i);
               -1 < t && o.push(i.splice(t, 1)[0]);
             }),
             o.length) &&
-            (this._bind(r, o, function(e) {
+            (this._bind(r, o, function (e) {
               (!!this.rendered && 0 < this.tooltip[0].offsetWidth ? a : s).call(
                 this,
                 e
@@ -11486,7 +11514,7 @@
             this._bind(t, i, s),
             this._bind(n, e, a);
         }),
-        (t._assignInitialEvents = function(e) {
+        (t._assignInitialEvents = function (e) {
           function t(e) {
             return (
               !this.disabled &&
@@ -11496,7 +11524,7 @@
               clearTimeout(this.timers.show),
               void (this.timers.show = o.call(
                 this,
-                function() {
+                function () {
                   this.render('object' == typeof e || i.show.ready);
                 },
                 i.prerender ? 0 : i.show.delay
@@ -11511,7 +11539,7 @@
           this._bind(
             this.elements.target,
             ['remove', 'removeqtip'],
-            function() {
+            function () {
               this.destroy(!0);
             },
             'destroy'
@@ -11519,15 +11547,15 @@
             /mouse(over|enter)/i.test(i.show.event) &&
               !/mouse(out|leave)/i.test(i.hide.event) &&
               r.push('mouseleave'),
-            this._bind(n, 'mousemove', function(e) {
+            this._bind(n, 'mousemove', function (e) {
               this._storeMouse(e), (this.cache.onTarget = !0);
             }),
-            this._bindEvents(a, r, n, s, t, function() {
+            this._bindEvents(a, r, n, s, t, function () {
               return !!this.timers && void clearTimeout(this.timers.show);
             }),
             (i.show.ready || i.prerender) && t.call(this, e);
         }),
-        (t._assignEvents = function() {
+        (t._assignEvents = function () {
           var i = this,
             s = this.options,
             e = s.position,
@@ -11540,7 +11568,7 @@
             d = Y(pe),
             u = s.show.event ? Y.trim('' + s.show.event).split(' ') : [],
             c = s.hide.event ? Y.trim('' + s.hide.event).split(' ') : [];
-          Y.each(s.events, function(e, t) {
+          Y.each(s.events, function (e, t) {
             i._bind(
               n,
               'toggle' === e ? ['tooltipshow', 'tooltiphide'] : ['tooltip' + e],
@@ -11551,7 +11579,7 @@
           }),
             /mouse(out|leave)/i.test(s.hide.event) &&
               'window' === s.hide.leave &&
-              this._bind(l, ['mouseout', 'blur'], function(e) {
+              this._bind(l, ['mouseout', 'blur'], function (e) {
                 /select|option/.test(e.target.nodeName) ||
                   e.relatedTarget ||
                   this.hide(e);
@@ -11559,14 +11587,14 @@
             s.hide.fixed
               ? (a = a.add(n.addClass(Z)))
               : /mouse(over|enter)/i.test(s.show.event) &&
-                this._bind(a, 'mouseleave', function() {
+                this._bind(a, 'mouseleave', function () {
                   clearTimeout(this.timers.show);
                 }),
             -1 < ('' + s.hide.event).indexOf('unfocus') &&
               this._bind(
                 r.closest('html'),
                 ['mousedown', 'touchstart'],
-                function(e) {
+                function (e) {
                   var t = Y(e.target),
                     i =
                       this.rendered &&
@@ -11585,7 +11613,7 @@
               (this._bind(t, 'qtip-' + this.id + '-inactive', F, 'inactive'),
               this._bind(a.add(n), h.inactiveEvents, F)),
             this._bindEvents(u, c, t, a, I, z),
-            this._bind(t.add(n), 'mousemove', function(e) {
+            this._bind(t.add(n), 'mousemove', function (e) {
               var t, i, n;
               'number' == typeof s.hide.distance &&
                 ((t = this.cache.origin || {}),
@@ -11598,13 +11626,13 @@
             'mouse' === e.target &&
               e.adjust.mouse &&
               (s.hide.event &&
-                this._bind(t, ['mouseenter', 'mouseleave'], function(e) {
+                this._bind(t, ['mouseenter', 'mouseleave'], function (e) {
                   return (
                     !!this.cache &&
                     void (this.cache.onTarget = 'mouseenter' === e.type)
                   );
                 }),
-              this._bind(l, 'mousemove', function(e) {
+              this._bind(l, 'mousemove', function (e) {
                 this.rendered &&
                   this.cache.onTarget &&
                   !this.tooltip.hasClass(g) &&
@@ -11615,7 +11643,7 @@
               this._bind(Y.event.special.resize ? o : d, 'resize', R),
             e.adjust.scroll && this._bind(d.add(e.container), 'scroll', R);
         }),
-        (t._unassignEvents = function() {
+        (t._unassignEvents = function () {
           var e = this.options,
             t = e.show.target,
             i = e.hide.target,
@@ -11627,20 +11655,18 @@
                 e.position.viewport[0],
                 e.position.container.closest('html')[0],
                 pe,
-                fe
+                fe,
               ],
-              function(e) {
+              function (e) {
                 return 'object' == typeof e;
               }
             );
           t && t.toArray && (e = e.concat(t.toArray())),
             i && i.toArray && (e = e.concat(i.toArray())),
-            this._unbind(e)
-              ._unbind(e, 'destroy')
-              ._unbind(e, 'inactive');
+            this._unbind(e)._unbind(e, 'destroy')._unbind(e, 'inactive');
         }),
-        Y(function() {
-          q(_, ['mouseenter', 'mouseleave'], function(e) {
+        Y(function () {
+          q(_, ['mouseenter', 'mouseleave'], function (e) {
             var t = 'mouseenter' === e.type,
               i = Y(e.currentTarget),
               n = Y(e.relatedTarget || e.target),
@@ -11660,116 +11686,114 @@
           }),
             q('[' + J + ']', K, F);
         }),
-        (h = Y.fn.qtip = function(e, t, i) {
-          var n = ('' + e).toLowerCase(),
-            s = m,
-            a = Y.makeArray(arguments).slice(1),
-            r = a[a.length - 1],
-            o = this[0] ? Y.data(this[0], f) : m;
-          return (!arguments.length && o) || 'api' === n
-            ? o
-            : 'string' == typeof e
-            ? (this.each(function() {
-                var e = Y.data(this, f);
-                if (!e) return !0;
-                if (
-                  (r && r.timeStamp && (e.cache.event = r),
-                  !t || ('option' !== n && 'options' !== n))
-                )
-                  e[n] && e[n].apply(e, a);
-                else {
-                  if (i === _e && !Y.isPlainObject(t))
-                    return (s = e.get(t)), !1;
-                  e.set(t, i);
-                }
-              }),
-              s !== m ? s : this)
-            : 'object' != typeof e && arguments.length
-            ? void 0
-            : ((o = d(Y.extend(!0, {}, e))),
-              this.each(function(e) {
-                var t,
-                  e = Y.isArray(o.id) ? o.id[e] : o.id;
-                return (
-                  (e =
-                    !e || !1 === e || e.length < 1 || h.api[e]
-                      ? h.nextid++
-                      : e),
-                  !1 ===
-                    (t = (function(e, t, i) {
-                      var n,
-                        s = Y(fe.body),
-                        a = e[0] === fe ? s : e,
-                        r = e.metadata ? e.metadata(i.metadata) : m,
-                        o =
-                          'html5' === i.metadata.type && r
-                            ? r[i.metadata.name]
-                            : m,
-                        l = e.data(i.metadata.name || 'qtipopts');
-                      try {
-                        l = 'string' == typeof l ? Y.parseJSON(l) : l;
-                      } catch (e) {}
-                      if (
-                        ((l = (i = Y.extend(
-                          !0,
-                          {},
-                          h.defaults,
-                          i,
-                          'object' == typeof l ? d(l) : m,
-                          d(o || r)
-                        )).position),
-                        (i.id = t),
-                        'boolean' == typeof i.content.text)
-                      ) {
+        (h = Y.fn.qtip =
+          function (e, t, i) {
+            var n = ('' + e).toLowerCase(),
+              s = m,
+              a = Y.makeArray(arguments).slice(1),
+              r = a[a.length - 1],
+              o = this[0] ? Y.data(this[0], f) : m;
+            return (!arguments.length && o) || 'api' === n
+              ? o
+              : 'string' == typeof e
+              ? (this.each(function () {
+                  var e = Y.data(this, f);
+                  if (!e) return !0;
+                  if (
+                    (r && r.timeStamp && (e.cache.event = r),
+                    !t || ('option' !== n && 'options' !== n))
+                  )
+                    e[n] && e[n].apply(e, a);
+                  else {
+                    if (i === _e && !Y.isPlainObject(t))
+                      return (s = e.get(t)), !1;
+                    e.set(t, i);
+                  }
+                }),
+                s !== m ? s : this)
+              : 'object' != typeof e && arguments.length
+              ? void 0
+              : ((o = d(Y.extend(!0, {}, e))),
+                this.each(function (e) {
+                  var t,
+                    e = Y.isArray(o.id) ? o.id[e] : o.id;
+                  return (
+                    (e =
+                      !e || !1 === e || e.length < 1 || h.api[e]
+                        ? h.nextid++
+                        : e),
+                    !1 ===
+                      (t = (function (e, t, i) {
+                        var n,
+                          s = Y(fe.body),
+                          a = e[0] === fe ? s : e,
+                          r = e.metadata ? e.metadata(i.metadata) : m,
+                          o =
+                            'html5' === i.metadata.type && r
+                              ? r[i.metadata.name]
+                              : m,
+                          l = e.data(i.metadata.name || 'qtipopts');
+                        try {
+                          l = 'string' == typeof l ? Y.parseJSON(l) : l;
+                        } catch (e) {}
                         if (
-                          ((n = e.attr(i.content.attr)),
-                          !1 === i.content.attr || !n)
+                          ((l = (i = Y.extend(
+                            !0,
+                            {},
+                            h.defaults,
+                            i,
+                            'object' == typeof l ? d(l) : m,
+                            d(o || r)
+                          )).position),
+                          (i.id = t),
+                          'boolean' == typeof i.content.text)
+                        ) {
+                          if (
+                            ((n = e.attr(i.content.attr)),
+                            !1 === i.content.attr || !n)
+                          )
+                            return !1;
+                          i.content.text = n;
+                        }
+                        if (
+                          (l.container.length || (l.container = s),
+                          !1 === l.target && (l.target = a),
+                          !1 === i.show.target && (i.show.target = a),
+                          !0 === i.show.solo &&
+                            (i.show.solo = l.container.closest('body')),
+                          !1 === i.hide.target && (i.hide.target = a),
+                          !0 === i.position.viewport &&
+                            (i.position.viewport = l.container),
+                          (l.container = l.container.eq(0)),
+                          (l.at = new p(l.at, !0)),
+                          (l.my = new p(l.my)),
+                          e.data(f))
                         )
-                          return !1;
-                        i.content.text = n;
-                      }
-                      if (
-                        (l.container.length || (l.container = s),
-                        !1 === l.target && (l.target = a),
-                        !1 === i.show.target && (i.show.target = a),
-                        !0 === i.show.solo &&
-                          (i.show.solo = l.container.closest('body')),
-                        !1 === i.hide.target && (i.hide.target = a),
-                        !0 === i.position.viewport &&
-                          (i.position.viewport = l.container),
-                        (l.container = l.container.eq(0)),
-                        (l.at = new p(l.at, !0)),
-                        (l.my = new p(l.my)),
-                        e.data(f))
-                      )
-                        if (i.overwrite) e.qtip('destroy', !0);
-                        else if (!1 === i.overwrite) return !1;
-                      return (
-                        e.attr(U, t),
-                        i.suppress &&
-                          (o = e.attr('title')) &&
-                          e
-                            .removeAttr('title')
-                            .attr(c, o)
-                            .attr('title', ''),
-                        (r = new L(e, i, t, !!n)),
-                        e.data(f, r),
-                        r
-                      );
-                    })(Y(this), e, o)) ||
-                    ((h.api[e] = t),
-                    Y.each(A, function() {
-                      'initialize' === this.initialize && this(t);
-                    }),
-                    void t._assignInitialEvents(r))
-                );
-              }));
-        }),
+                          if (i.overwrite) e.qtip('destroy', !0);
+                          else if (!1 === i.overwrite) return !1;
+                        return (
+                          e.attr(U, t),
+                          i.suppress &&
+                            (o = e.attr('title')) &&
+                            e.removeAttr('title').attr(c, o).attr('title', ''),
+                          (r = new L(e, i, t, !!n)),
+                          e.data(f, r),
+                          r
+                        );
+                      })(Y(this), e, o)) ||
+                      ((h.api[e] = t),
+                      Y.each(A, function () {
+                        'initialize' === this.initialize && this(t);
+                      }),
+                      void t._assignInitialEvents(r))
+                  );
+                }));
+          }),
         (Y.qtip = L),
         (h.api = {}),
         Y.each(
           {
-            attr: function(e, t) {
+            attr: function (e, t) {
               if (this.length) {
                 var i = this[0],
                   n = Y.data(i, 'qtip');
@@ -11791,31 +11815,31 @@
               }
               return Y.fn['attr' + u].apply(this, arguments);
             },
-            clone: function(e) {
+            clone: function (e) {
               var t = Y.fn['clone' + u].apply(this, arguments);
               return (
                 e ||
                   t
                     .filter('[' + c + ']')
-                    .attr('title', function() {
+                    .attr('title', function () {
                       return Y.attr(this, c);
                     })
                     .removeAttr(c),
                 t
               );
-            }
+            },
           },
-          function(e, t) {
+          function (e, t) {
             if (!t || Y.fn[e + u]) return !0;
             var i = (Y.fn[e + u] = Y.fn[e]);
-            Y.fn[e] = function() {
+            Y.fn[e] = function () {
               return t.apply(this, arguments) || i.apply(this, arguments);
             };
           }
         ),
         Y.ui ||
           ((Y['cleanData' + u] = Y.cleanData),
-          (Y.cleanData = function(e) {
+          (Y.cleanData = function (e) {
             for (var t, i = 0; (t = Y(e[i])).length; i++)
               if (t.attr(U))
                 try {
@@ -11845,11 +11869,11 @@
               mouse: !0,
               scroll: !0,
               resize: !0,
-              method: 'flipinvert flipinvert'
+              method: 'flipinvert flipinvert',
             },
-            effect: function(e, t) {
+            effect: function (e, t) {
               Y(this).animate(t, { duration: 200, queue: !1 });
-            }
+            },
           },
           show: {
             target: !1,
@@ -11858,7 +11882,7 @@
             delay: 90,
             solo: !1,
             ready: !1,
-            autofocus: !1
+            autofocus: !1,
           },
           hide: {
             target: !1,
@@ -11868,7 +11892,7 @@
             fixed: !1,
             inactive: !1,
             leave: 'window',
-            distance: !1
+            distance: !1,
           },
           style: { classes: '', widget: !1, width: !1, height: !1, def: !0 },
           events: {
@@ -11880,8 +11904,8 @@
             visible: m,
             hidden: m,
             focus: m,
-            blur: m
-          }
+            blur: m,
+          },
         });
       var ne,
         y,
@@ -11906,7 +11930,7 @@
             t.oBackingStorePixelRatio ||
             1),
           (y = n / t))
-        : (ne = function(e, t, i) {
+        : (ne = function (e, t, i) {
             return (
               '<qtipvml:' +
               e +
@@ -11918,11 +11942,14 @@
             );
           }),
         Y.extend(B.prototype, {
-          init: function(e) {
+          init: function (e) {
             var t,
-              i = (this.element = e.elements.tip = Y('<div />', {
-                class: f + '-tip'
-              }).prependTo(e.tooltip));
+              i =
+                (this.element =
+                e.elements.tip =
+                  Y('<div />', {
+                    class: f + '-tip',
+                  }).prependTo(e.tooltip));
             le
               ? (((t = Y('<canvas />')
                   .appendTo(this.element)[0]
@@ -11934,7 +11961,7 @@
                 e._bind(
                   Y('*', i).add(i),
                   ['click', 'mousedown'],
-                  function(e) {
+                  function (e) {
                     e.stopPropagation();
                   },
                   this._ns
@@ -11948,15 +11975,15 @@
               ),
               this.create();
           },
-          _swapDimensions: function() {
+          _swapDimensions: function () {
             (this.size[0] = this.options.height),
               (this.size[1] = this.options.width);
           },
-          _resetDimensions: function() {
+          _resetDimensions: function () {
             (this.size[0] = this.options.width),
               (this.size[1] = this.options.height);
           },
-          _useTitle: function(e) {
+          _useTitle: function (e) {
             var t = this.qtip.elements.titlebar;
             return (
               t &&
@@ -11968,7 +11995,7 @@
                     t.outerHeight(!0)))
             );
           },
-          _parseCorner: function(e) {
+          _parseCorner: function (e) {
             var t = this.qtip.options.position.my;
             return (
               !1 === e || !1 === t
@@ -11979,7 +12006,7 @@
               e
             );
           },
-          _parseWidth: function(e, t, i) {
+          _parseWidth: function (e, t, i) {
             var n = this.qtip.elements,
               t = ae + r(t) + 'Width';
             return (
@@ -11990,7 +12017,7 @@
                   a(n.tooltip, t)) || 0
             );
           },
-          _parseRadius: function(e) {
+          _parseRadius: function (e) {
             var t = this.qtip.elements,
               i = ae + r(e.y) + r(e.x) + 'Radius';
             return (
@@ -12000,11 +12027,11 @@
               0
             );
           },
-          _invalidColour: function(e, t, i) {
+          _invalidColour: function (e, t, i) {
             t = e.css(t);
             return !(!t || (i && t === e.css(i)) || de.test(t)) && t;
           },
-          _parseColours: function(e) {
+          _parseColours: function (e) {
             var t = this.qtip.elements,
               i = this.element.css('cssText', ''),
               n = ae + r(e[e.precedance]) + r(v),
@@ -12030,7 +12057,7 @@
               a
             );
           },
-          _calculateSize: function(e) {
+          _calculateSize: function (e) {
             var t = e.precedance === D,
               i = this.options.width,
               n = this.options.height,
@@ -12045,12 +12072,12 @@
               (s[3] = Math.sqrt(a(s[1], 2) - a(this.border, 2))),
               (e = [
                 r((a = (o + s[2] + s[3] + (e ? 0 : s[0])) / o) * i),
-                r(a * n)
+                r(a * n),
               ]),
               t ? e : e.reverse()
             );
           },
-          _calculateTip: function(e, t, i) {
+          _calculateTip: function (e, t, i) {
             var n = (t = t || this.size)[0] * (i = i || 1),
               t = t[1] * i,
               i = Math.ceil(n / 2),
@@ -12063,7 +12090,7 @@
                 tc: [0, t, i, 0, n, t],
                 bc: [0, 0, n, 0, i, t],
                 rc: [0, 0, n, s, 0, t],
-                lc: [n, 0, n, t, 0, s]
+                lc: [n, 0, n, t, 0, s],
               };
             return (
               (i.lt = i.br),
@@ -12073,14 +12100,14 @@
               i[e.abbrev()]
             );
           },
-          _drawCoords: function(e, t) {
+          _drawCoords: function (e, t) {
             e.beginPath(),
               e.moveTo(t[0], t[1]),
               e.lineTo(t[2], t[3]),
               e.lineTo(t[4], t[5]),
               e.closePath();
           },
-          create: function() {
+          create: function () {
             var e = (this.corner =
               (le || $.ie) && this._parseCorner(this.options.corner));
             return (
@@ -12091,7 +12118,7 @@
               this.corner
             );
           },
-          update: function(e, t) {
+          update: function (e, t) {
             if (!this.enabled) return this;
             var i,
               n,
@@ -12135,7 +12162,7 @@
                           ? a[0] - c[0] - r
                           : (a[0] - c[0]) / 2
                       ),
-                      m(h.y === E ? a[1] - c[1] : 0)
+                      m(h.y === E ? a[1] - c[1] : 0),
                     ]
                   : [
                       m(h.x === C ? a[0] - c[0] : 0),
@@ -12145,7 +12172,7 @@
                           : h.y === H
                           ? a[1] - c[1] - r
                           : (a[1] - c[1]) / 2
-                      )
+                      ),
                     ]),
               le
                 ? ((l = d[0].getContext('2d')).restore(),
@@ -12185,16 +12212,16 @@
                       left: u[0] - u[2] * Number(n === k),
                       top: u[1] - u[2] * Number(n === D),
                       width: a[0] + r,
-                      height: a[1] + r
+                      height: a[1] + r,
                     })
-                    .each(function(e) {
+                    .each(function (e) {
                       var t = Y(this);
                       t[t.prop ? 'prop' : 'attr']({
                         coordsize: a[0] + r + ' ' + a[1] + r,
                         path: s,
                         fillcolor: i[0],
                         filled: !!e,
-                        stroked: !e
+                        stroked: !e,
                       }).toggle(!(!r && !e)),
                         e ||
                           t.html(
@@ -12209,12 +12236,12 @@
                           );
                     })),
               pe.opera &&
-                setTimeout(function() {
+                setTimeout(function () {
                   o.tip.css({ display: 'inline-block', visibility: 'visible' });
                 }, 1),
               !1 !== t && this.calculate(e, a);
           },
-          calculate: function(a, r) {
+          calculate: function (a, r) {
             var o, e, l, d, t, u, c;
             return (
               !!this.enabled &&
@@ -12227,7 +12254,7 @@
               (r = r || this._calculateSize(a)),
               (e = [a.x, a.y]),
               o === k && e.reverse(),
-              Y.each(e, function(e, t) {
+              Y.each(e, function (e, t) {
                 var i, n, s;
                 t === P
                   ? ((c[(i = o === D ? C : E)] = '50%'),
@@ -12244,7 +12271,7 @@
               c)
             );
           },
-          reposition: function(e, t, n) {
+          reposition: function (e, t, n) {
             function i(e, t, i, n, s) {
               e === O && l.precedance === t && d[n] && l[i] !== P
                 ? (l.precedance = l.precedance === k ? D : k)
@@ -12302,20 +12329,17 @@
               (o.cornerTop = d.top),
               (o.corner = l.clone()));
           },
-          destroy: function() {
+          destroy: function () {
             this.qtip._unbind(this.qtip.tooltip, this._ns),
               this.qtip.elements.tip &&
-                this.qtip.elements.tip
-                  .find('*')
-                  .remove()
-                  .end()
-                  .remove();
-          }
+                this.qtip.elements.tip.find('*').remove().end().remove();
+          },
         }),
-        ((n = A.tip = function(e) {
-          return new B(e, e.options.style.tip);
-        }).initialize = 'render'),
-        (n.sanitize = function(e) {
+        ((n = A.tip =
+          function (e) {
+            return new B(e, e.options.style.tip);
+          }).initialize = 'render'),
+        (n.sanitize = function (e) {
           var t;
           e.style &&
             'tip' in e.style &&
@@ -12324,17 +12348,17 @@
             /string|boolean/i.test(typeof t.corner) || (t.corner = !0));
         }),
         (e.tip = {
-          '^position.my|style.tip.(corner|mimic|border)$': function() {
+          '^position.my|style.tip.(corner|mimic|border)$': function () {
             this.create(), this.qtip.reposition();
           },
-          '^style.tip.(height|width)$': function(e) {
+          '^style.tip.(height|width)$': function (e) {
             (this.size = [e.width, e.height]),
               this.update(),
               this.qtip.reposition();
           },
-          '^content.title|style.(classes|widget)$': function() {
+          '^content.title|style.(classes|widget)$': function () {
             this.update();
-          }
+          },
         }),
         Y.extend(!0, h.defaults, {
           style: {
@@ -12344,13 +12368,13 @@
               width: 6,
               height: 6,
               border: !0,
-              offset: 0
-            }
-          }
+              offset: 0,
+            },
+          },
         });
       var he = 'qtip-modal',
         b = '.' + he,
-        w = function() {
+        w = function () {
           function l(e) {
             t.length < 1 && e.length ? e.not('body').blur() : t.first().focus();
           }
@@ -12371,32 +12395,33 @@
             h = this,
             t = {};
           Y.extend(h, {
-            init: function() {
+            init: function () {
               return (
-                (c = h.elem = Y('<div />', {
-                  id: 'qtip-overlay',
-                  html: '<div></div>',
-                  mousedown: function() {
-                    return !1;
-                  }
-                }).hide()),
+                (c = h.elem =
+                  Y('<div />', {
+                    id: 'qtip-overlay',
+                    html: '<div></div>',
+                    mousedown: function () {
+                      return !1;
+                    },
+                  }).hide()),
                 Y(fe.body).bind('focusin' + b, e),
-                Y(fe).bind('keydown' + b, function(e) {
+                Y(fe).bind('keydown' + b, function (e) {
                   d &&
                     d.options.show.modal.escape &&
                     27 === e.keyCode &&
                     d.hide(e);
                 }),
-                c.bind('click' + b, function(e) {
+                c.bind('click' + b, function (e) {
                   d && d.options.show.modal.blur && d.hide(e);
                 }),
                 h
               );
             },
-            update: function(e) {
+            update: function (e) {
               t =
                 !1 !== (d = e).options.show.modal.stealfocus
-                  ? e.tooltip.find('*').filter(function() {
+                  ? e.tooltip.find('*').filter(function () {
                       return (
                         (e = this),
                         Y.expr[':'].focusable ||
@@ -12418,15 +12443,13 @@
                     })
                   : [];
             },
-            toggle: function(e, t, i) {
+            toggle: function (e, t, i) {
               var n = e.tooltip,
                 s = e.options.show.modal,
                 a = s.effect,
                 r = t ? 'show' : 'hide',
                 o = c.is(':visible'),
-                n = Y(b)
-                  .filter(':visible:not(:animated)')
-                  .not(n);
+                n = Y(b).filter(':visible:not(:animated)').not(n);
               return (
                 h.update(e),
                 t && !1 !== s.stealfocus && l(Y(':focus')),
@@ -12439,11 +12462,11 @@
                     ? a.call(c, t)
                     : !1 === a
                     ? c[r]()
-                    : c.fadeTo(parseInt(i, 10) || 90, t ? 1 : 0, function() {
+                    : c.fadeTo(parseInt(i, 10) || 90, t ? 1 : 0, function () {
                         t || c.hide();
                       }),
                   t ||
-                    c.queue(function(e) {
+                    c.queue(function (e) {
                       c.css({ left: '', top: '' }),
                         Y(b).length || c.detach(),
                         e();
@@ -12452,13 +12475,13 @@
                   d.destroyed && (d = m)),
                 h
               );
-            }
+            },
           }),
             h.init();
         };
       (w = new w()),
         Y.extend(V.prototype, {
-          init: function(e) {
+          init: function (e) {
             var a = e.tooltip;
             return this.options.on
               ? ((e.elements.overlay = w.elem),
@@ -12466,7 +12489,7 @@
                 e._bind(
                   a,
                   ['tooltipshow', 'tooltiphide'],
-                  function(e, t, i) {
+                  function (e, t, i) {
                     var n = e.originalEvent;
                     if (e.target === a[0])
                       if (
@@ -12488,13 +12511,13 @@
                 e._bind(
                   a,
                   'tooltipfocus',
-                  function(e, t) {
+                  function (e, t) {
                     if (!e.isDefaultPrevented() && e.target === a[0]) {
                       var i = Y(b),
                         n = h.modal_zindex + i.length,
                         s = parseInt(a[0].style.zIndex, 10);
                       (w.elem[0].style.zIndex = n - 1),
-                        i.each(function() {
+                        i.each(function () {
                           this.style.zIndex > s && --this.style.zIndex;
                         }),
                         i.filter('.' + l).qtip('blur', e.originalEvent),
@@ -12511,34 +12534,31 @@
                 void e._bind(
                   a,
                   'tooltiphide',
-                  function(e) {
+                  function (e) {
                     e.target === a[0] &&
-                      Y(b)
-                        .filter(':visible')
-                        .not(a)
-                        .last()
-                        .qtip('focus', e);
+                      Y(b).filter(':visible').not(a).last().qtip('focus', e);
                   },
                   this._ns,
                   this
                 ))
               : this;
           },
-          toggle: function(e, t, i) {
+          toggle: function (e, t, i) {
             return e && e.isDefaultPrevented()
               ? this
               : void w.toggle(this.qtip, !!t, i);
           },
-          destroy: function() {
+          destroy: function () {
             this.qtip.tooltip.removeClass(he),
               this.qtip._unbind(this.qtip.tooltip, this._ns),
               w.toggle(this.qtip, !1),
               delete this.qtip.elements.overlay;
-          }
+          },
         }),
-        ((t = A.modal = function(e) {
-          return new V(e, e.options.show.modal);
-        }).sanitize = function(e) {
+        ((t = A.modal =
+          function (e) {
+            return new V(e, e.options.show.modal);
+          }).sanitize = function (e) {
           e.show &&
             ('object' != typeof e.show.modal
               ? (e.show.modal = { on: !!e.show.modal })
@@ -12547,20 +12567,20 @@
         (h.modal_zindex = h.zindex - 200),
         (t.initialize = 'render'),
         (e.modal = {
-          '^show.modal.(on|blur)$': function() {
+          '^show.modal.(on|blur)$': function () {
             this.destroy(),
               this.init(),
               this.qtip.elems.overlay.toggle(
                 0 < this.qtip.tooltip[0].offsetWidth
               );
-          }
+          },
         }),
         Y.extend(!0, h.defaults, {
           show: {
-            modal: { on: !1, effect: !0, blur: !0, stealfocus: !0, escape: !0 }
-          }
+            modal: { on: !1, effect: !0, blur: !0, stealfocus: !0, escape: !0 },
+          },
         }),
-        (A.viewport = function(e, f, t, i, n, s, a) {
+        (A.viewport = function (e, f, t, i, n, s, a) {
           function r(e, t, i, n, s, a, r, o, l) {
             var d = f[s],
               u = L[e],
@@ -12631,19 +12651,19 @@
               (M = c[0] === pe ? c.height() : c.outerHeight(!1)),
               (b = {
                 left: o ? 0 : c.scrollLeft(),
-                top: o ? 0 : c.scrollTop()
+                top: o ? 0 : c.scrollTop(),
               }),
               (w = c.offset() || h),
               ('shift' === u && 'shift' === d) || (_ = L.clone()),
               {
                 left: 'none' !== u ? r(k, D, u, l.x, C, j, x, i, s) : 0,
                 top: 'none' !== d ? r(D, k, d, l.y, E, H, S, n, a) : 0,
-                my: _
+                my: _,
               })
             : h;
         }),
         (A.polys = {
-          polygon: function(e, t) {
+          polygon: function (e, t) {
             for (
               var i,
                 n,
@@ -12654,7 +12674,7 @@
                   width: 0,
                   height: 0,
                   position: { top: 1e10, right: 0, bottom: 0, left: 1e10 },
-                  adjustable: !1
+                  adjustable: !1,
                 },
                 l = 0,
                 d = [],
@@ -12677,7 +12697,7 @@
             )
               o.position = {
                 left: o.position.left + o.width / 2,
-                top: o.position.top + o.height / 2
+                top: o.position.top + o.height / 2,
               };
             else {
               for (; 0 < n && 0 < s && 0 < u && 0 < c; )
@@ -12711,11 +12731,11 @@
             }
             return o;
           },
-          rect: function(e, t, i, n) {
+          rect: function (e, t, i, n) {
             return {
               width: Math.abs(i - e),
               height: Math.abs(n - t),
-              position: { left: Math.min(e, i), top: Math.min(t, n) }
+              position: { left: Math.min(e, i), top: Math.min(t, n) },
             };
           },
           _angles: {
@@ -12727,9 +12747,9 @@
             bl: 0.75,
             rc: 2,
             lc: 1,
-            c: 0
+            c: 0,
           },
-          ellipse: function(e, t, i, n, s) {
+          ellipse: function (e, t, i, n, s) {
             var s = A.polys._angles[s.abbrev()],
               a = 0 === s ? 0 : i * Math.cos(s * Math.PI),
               s = n * Math.sin(s * Math.PI);
@@ -12737,14 +12757,14 @@
               width: 2 * i - Math.abs(a),
               height: 2 * n - Math.abs(s),
               position: { left: e + a, top: t + s },
-              adjustable: !1
+              adjustable: !1,
             };
           },
-          circle: function(e, t, i, n) {
+          circle: function (e, t, i, n) {
             return A.polys.ellipse(e, t, i, i, n);
-          }
+          },
         }),
-        (A.svg = function(e, t, i) {
+        (A.svg = function (e, t, i) {
           for (
             var n,
               s,
@@ -12781,7 +12801,7 @@
                   s =
                     (o = d.points || [
                       { x: d.x1.baseVal.value, y: d.y1.baseVal.value },
-                      { x: d.x2.baseVal.value, y: d.y2.baseVal.value }
+                      { x: d.x2.baseVal.value, y: d.y2.baseVal.value },
                     ]).numberOfItems || o.length;
                 ++r < s;
 
@@ -12794,7 +12814,7 @@
               l = {
                 width: (l = d.getBBox()).width,
                 height: l.height,
-                position: { left: l.x, top: l.y }
+                position: { left: l.x, top: l.y },
               };
           }
           return (
@@ -12818,7 +12838,7 @@
             l
           );
         }),
-        (A.imagemap = function(e, t, i) {
+        (A.imagemap = function (e, t, i) {
           var n,
             s,
             a,
@@ -12827,9 +12847,7 @@
               .toLowerCase()
               .replace('poly', 'polygon'),
             l = Y('img[usemap="#' + t.parent('map').attr('name') + '"]'),
-            d = Y.trim(t.attr('coords'))
-              .replace(/,$/, '')
-              .split(',');
+            d = Y.trim(t.attr('coords')).replace(/,$/, '').split(',');
           if (!l.length) return !1;
           if ('polygon' === o) a = A.polys.polygon(d, i);
           else {
@@ -12850,19 +12868,20 @@
         });
       var me;
       Y.extend(G.prototype, {
-        _scroll: function() {
+        _scroll: function () {
           var e = this.qtip.elements.overlay;
           e && (e[0].style.top = Y(pe).scrollTop() + 'px');
         },
-        init: function(e) {
+        init: function (e) {
           var t = e.tooltip;
           Y('select, object').length < 1 &&
-            ((this.bgiframe = e.elements.bgiframe = Y(
-              '<iframe class="qtip-bgiframe" frameborder="0" tabindex="-1" src="javascript:\'\';"  style="display:block; position:absolute; z-index:-1; filter:alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";"></iframe>'
-            ).appendTo(t)),
+            ((this.bgiframe = e.elements.bgiframe =
+              Y(
+                '<iframe class="qtip-bgiframe" frameborder="0" tabindex="-1" src="javascript:\'\';"  style="display:block; position:absolute; z-index:-1; filter:alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";"></iframe>'
+              ).appendTo(t)),
             e._bind(t, 'tooltipmove', this.adjustBGIFrame, this._ns, this)),
             (this.redrawContainer = Y('<div/>', {
-              id: f + '-rcontainer'
+              id: f + '-rcontainer',
             }).appendTo(fe.body)),
             e.elements.overlay &&
               e.elements.overlay.addClass('qtipmodal-ie6fix') &&
@@ -12870,7 +12889,7 @@
               e._bind(t, ['tooltipshow'], this._scroll, this._ns, this)),
             this.redraw();
         },
-        adjustBGIFrame: function() {
+        adjustBGIFrame: function () {
           var e = this.qtip.tooltip,
             t = { height: e.outerHeight(!1), width: e.outerWidth(!1) },
             i = this.qtip.plugins.tip,
@@ -12879,12 +12898,11 @@
           (e = { left: -e, top: -e }),
             i &&
               n &&
-              (e[(i = 'x' === i.corner.precedance ? [x, C] : [S, E])[1]] -= n[
-                i[0]
-              ]()),
+              (e[(i = 'x' === i.corner.precedance ? [x, C] : [S, E])[1]] -=
+                n[i[0]]()),
             this.bgiframe.css(e).css(t);
         },
-        redraw: function() {
+        redraw: function () {
           var e, t, i, n, s, a;
           return (
             this.qtip.rendered < 1 ||
@@ -12916,28 +12934,29 @@
             this
           );
         },
-        destroy: function() {
+        destroy: function () {
           this.bgiframe && this.bgiframe.remove(),
             this.qtip._unbind([pe, this.qtip.tooltip], this._ns);
-        }
+        },
       }),
-        ((me = A.ie6 = function(e) {
-          return 6 === $.ie && new G(e);
-        }).initialize = 'render'),
+        ((me = A.ie6 =
+          function (e) {
+            return 6 === $.ie && new G(e);
+          }).initialize = 'render'),
         (e.ie6 = {
-          '^content|style$': function() {
+          '^content|style$': function () {
             this.redraw();
-          }
+          },
         });
     });
   })(window, document),
   ('function' == typeof define && define.amd
     ? define
-    : function(e, t) {
+    : function (e, t) {
         'undefined' != typeof module && module.exports
           ? (module.exports = t(require('jquery')))
           : (window.toastr = t(window.jQuery));
-      })(['jquery'], function(g) {
+      })(['jquery'], function (g) {
     return (
       (T = 0),
       (s = 'error'),
@@ -12945,13 +12964,13 @@
       (o = 'success'),
       (l = 'warning'),
       (e = {
-        clear: function(e, t) {
+        clear: function (e, t) {
           var i = M();
           if ((w || y(i), !r(e, i, t)))
             for (var n = i, s = w.children(), a = s.length - 1; 0 <= a; a--)
               r(g(s[a]), n);
         },
-        remove: function(e) {
+        remove: function (e) {
           var t = M();
           return (
             w || y(t),
@@ -12960,48 +12979,48 @@
               : void (w.children().length && w.remove())
           );
         },
-        error: function(e, t, i) {
+        error: function (e, t, i) {
           return n({
             type: s,
             iconClass: M().iconClasses.error,
             message: e,
             optionsOverride: i,
-            title: t
+            title: t,
           });
         },
         getContainer: y,
-        info: function(e, t, i) {
+        info: function (e, t, i) {
           return n({
             type: a,
             iconClass: M().iconClasses.info,
             message: e,
             optionsOverride: i,
-            title: t
+            title: t,
           });
         },
         options: {},
-        subscribe: function(e) {
+        subscribe: function (e) {
           t = e;
         },
-        success: function(e, t, i) {
+        success: function (e, t, i) {
           return n({
             type: o,
             iconClass: M().iconClasses.success,
             message: e,
             optionsOverride: i,
-            title: t
+            title: t,
           });
         },
         version: '2.1.3',
-        warning: function(e, t, i) {
+        warning: function (e, t, i) {
           return n({
             type: l,
             iconClass: M().iconClasses.warning,
             message: e,
             optionsOverride: i,
-            title: t
+            title: t,
           });
-        }
+        },
       })
     );
     function y(e, t) {
@@ -13024,9 +13043,9 @@
         (e[t.hideMethod]({
           duration: t.hideDuration,
           easing: t.hideEasing,
-          complete: function() {
+          complete: function () {
             b(e);
-          }
+          },
         }),
         1)
       );
@@ -13082,14 +13101,14 @@
             l[t]({
               duration: i,
               easing: n,
-              complete: function() {
+              complete: function () {
                 b(l),
                   clearTimeout(o),
                   f.onHidden && 'hidden' !== p.state && f.onHidden(),
                   (p.state = 'hidden'),
                   (p.endTime = new Date()),
                   v(p);
-              }
+              },
             })
           );
       }
@@ -13124,7 +13143,7 @@
         (void 0 !== i.optionsOverride &&
           ((f = g.extend(f, i.optionsOverride)),
           (_ = i.optionsOverride.iconClass || _)),
-        !(function(e, t) {
+        !(function (e, t) {
           if (e.preventDuplicates) {
             if (t.message === L) return 1;
             L = t.message;
@@ -13146,14 +13165,14 @@
             state: 'visible',
             startTime: new Date(),
             options: f,
-            map: i
+            map: i,
           }),
           e(),
           l.hide(),
           l[f.showMethod]({
             duration: f.showDuration,
             easing: f.showEasing,
-            complete: f.onShown
+            complete: f.onShown,
           }),
           0 < f.timeOut &&
             ((o = setTimeout(t, f.timeOut)),
@@ -13165,7 +13184,7 @@
           !f.onclick && f.tapToDismiss && l.click(t),
           f.closeButton &&
             h &&
-            h.click(function(e) {
+            h.click(function (e) {
               e.stopPropagation
                 ? e.stopPropagation()
                 : void 0 !== e.cancelBubble &&
@@ -13175,7 +13194,7 @@
                 t(!0);
             }),
           f.onclick &&
-            l.click(function(e) {
+            l.click(function (e) {
               f.onclick(e), t();
             }),
           v(p),
@@ -13208,7 +13227,7 @@
             error: 'toast-error',
             info: 'toast-info',
             success: 'toast-success',
-            warning: 'toast-warning'
+            warning: 'toast-warning',
           },
           iconClass: 'toast-info',
           positionClass: 'toast-top-right',
@@ -13223,7 +13242,7 @@
           preventDuplicates: !1,
           progressBar: !1,
           progressClass: 'toast-progress',
-          rtl: !1
+          rtl: !1,
         },
         e.options
       );
@@ -13237,8 +13256,8 @@
     }
     var w, t, L, T, s, a, o, l, e;
   }),
-  (function(e) {
-    var t = (function(n, h, a) {
+  (function (e) {
+    var t = (function (n, h, a) {
       'use strict';
       var m,
         p,
@@ -13328,7 +13347,7 @@
           loadMode: 2,
           loadHidden: !0,
           ricTimeout: 0,
-          throttleDelay: 125
+          throttleDelay: 125,
         };
       for (_e in ((p = n.lazySizesConfig || n.lazysizesConfig || {}), ge))
         _e in p || (p[_e] = ge[_e]);
@@ -13344,28 +13363,28 @@
           (N = ['load', 'error', 'lazyincluded', '_lazyloaded']),
           (i = {}),
           (I = Array.prototype.forEach),
-          (o = function(e, t) {
+          (o = function (e, t) {
             return (
               i[t] || (i[t] = new RegExp('(\\s|^)' + t + '(\\s|$)')),
               i[t].test(e[_]('class') || '') && i[t]
             );
           }),
-          (c = function(e, t) {
+          (c = function (e, t) {
             o(e, t) ||
               e.setAttribute('class', (e[_]('class') || '').trim() + ' ' + t);
           }),
-          (g = function(e, t) {
+          (g = function (e, t) {
             (t = o(e, t)) &&
               e.setAttribute('class', (e[_]('class') || '').replace(t, ' '));
           }),
-          (y = function(t, i, e) {
+          (y = function (t, i, e) {
             var n = e ? s : 'removeEventListener';
             e && y(t, i),
-              N.forEach(function(e) {
+              N.forEach(function (e) {
                 t[n](e, i);
               });
           }),
-          (v = function(e, t, i, n, s) {
+          (v = function (e, t, i, n, s) {
             var a = h.createEvent('Event');
             return (
               ((i = i || {}).instance = m),
@@ -13375,7 +13394,7 @@
               a
             );
           }),
-          (M = function(e, t) {
+          (M = function (e, t) {
             var i;
             !A && (i = n.picturefill || p.pf)
               ? (t &&
@@ -13385,10 +13404,10 @@
                 i({ reevaluate: !0, elements: [e] }))
               : t && t.src && (e.src = t.src);
           }),
-          (b = function(e, t) {
+          (b = function (e, t) {
             return (getComputedStyle(e, null) || {})[t];
           }),
-          (z = function(e, t, i) {
+          (z = function (e, t, i) {
             for (
               i = i || e.offsetWidth;
               i < p.minSize && t && !e._lazysizesWidth;
@@ -13401,30 +13420,30 @@
           (fe = me = []),
           (De._lsFlush = ke),
           (w = De),
-          (t = function(i, e) {
+          (t = function (i, e) {
             return e
-              ? function() {
+              ? function () {
                   w(i);
                 }
-              : function() {
+              : function () {
                   var e = this,
                     t = arguments;
-                  w(function() {
+                  w(function () {
                     i.apply(e, t);
                   });
                 };
           }),
-          (F = function(e) {
+          (F = function (e) {
             function t() {
               var e = a.now() - n;
               e < 99 ? u(t, 99 - e) : (r || s)(s);
             }
             var i,
               n,
-              s = function() {
+              s = function () {
                 (i = null), e();
               };
-            return function() {
+            return function () {
               (n = a.now()), (i = i || u(t, 99));
             };
           }),
@@ -13432,7 +13451,7 @@
           (se = /^iframe$/i),
           (ae = 'onscroll' in n && !/(gle|ing)bot/.test(navigator.userAgent)),
           (j = -1),
-          (re = function(e) {
+          (re = function (e) {
             return (
               (Q = null == Q ? 'hidden' == b(h.body, 'visibility') : Q) ||
               !(
@@ -13447,18 +13466,18 @@
           (E = p.ricTimeout),
           (ie =
             r && 49 < E
-              ? function() {
+              ? function () {
                   r(be, { timeout: E }),
                     E !== p.ricTimeout && (E = p.ricTimeout);
                 }
-              : t(function() {
+              : t(function () {
                   u(be);
                 }, !0)),
           (oe = t(we)),
-          (le = function(e) {
+          (le = function (e) {
             oe({ target: e.target });
           }),
-          (de = t(function(t, e, i, n, s) {
+          (de = t(function (t, e, i, n, s) {
             var a, r, o, l, d;
             (r = v(t, 'lazybeforeunveil', e)).defaultPrevented ||
               (n && (i ? c(t, p.autosizesClass) : t.setAttribute('sizes', n)),
@@ -13486,23 +13505,23 @@
               s && (i || a) && M(t, { src: n })),
               t._lazyRace && delete t._lazyRace,
               g(t, p.lazyClass),
-              w(function() {
+              w(function () {
                 var e = t.complete && 1 < t.naturalWidth;
                 (o && !e) ||
                   (e && c(t, p.fastLoadedClass),
                   we(r),
                   (t._lazyCache = !0),
-                  u(function() {
+                  u(function () {
                     '_lazyCache' in t && delete t._lazyCache;
                   }, 9)),
                   'lazy' == t.loading && H--;
               }, !0);
           })),
-          (ue = F(function() {
+          (ue = F(function () {
             (p.loadMode = 3), P();
           })),
           (R = {
-            _: function() {
+            _: function () {
               (X = a.now()),
                 (m.elements = h.getElementsByClassName(p.lazyClass)),
                 (L = h.getElementsByClassName(
@@ -13510,13 +13529,13 @@
                 )),
                 e('scroll', P, !0),
                 e('resize', P, !0),
-                e('pageshow', function(e) {
+                e('pageshow', function (e) {
                   var t;
                   e.persisted &&
                     (t = h.querySelectorAll('.' + p.loadingClass)).length &&
                     t.forEach &&
-                    $(function() {
-                      t.forEach(function(e) {
+                    $(function () {
+                      t.forEach(function (e) {
                         e.complete && O(e);
                       });
                     });
@@ -13525,7 +13544,7 @@
                   ? new MutationObserver(P).observe(f, {
                       childList: !0,
                       subtree: !0,
-                      attributes: !0
+                      attributes: !0,
                     })
                   : (f[s]('DOMNodeInserted', P, !0),
                     f[s]('DOMAttrModified', P, !0),
@@ -13537,8 +13556,8 @@
                   'click',
                   'load',
                   'transitionend',
-                  'animationend'
-                ].forEach(function(e) {
+                  'animationend',
+                ].forEach(function (e) {
                   h[s](e, P, !0);
                 }),
                 /d$|^c/.test(h.readyState)
@@ -13546,7 +13565,7 @@
                   : (e('load', Ye), h[s]('DOMContentLoaded', P), u(Ye, 2e4)),
                 m.elements.length ? (Me(), w._lsFlush()) : P();
             },
-            checkElems: (P = function(e) {
+            checkElems: (P = function (e) {
               var t;
               (e = !0 === e) && (E = 33),
                 Z ||
@@ -13554,7 +13573,7 @@
                   (t = te - (a.now() - ee)) < 0 && (t = 0),
                   e || t < 9 ? ie() : u(ie, t));
             }),
-            unveil: (O = function(e) {
+            unveil: (O = function (e) {
               var t, i, n, s;
               e._lazyRace ||
                 (!(
@@ -13576,9 +13595,9 @@
                 H++,
                 de(e, t, s, n, i));
             }),
-            _aLSL: Te
+            _aLSL: Te,
           }),
-          (B = t(function(e, t, i, n) {
+          (B = t(function (e, t, i, n) {
             var s, a, r;
             if (
               ((e._lazysizesWidth = n),
@@ -13594,20 +13613,20 @@
             i.detail.dataAttr || M(e, i.detail);
           })),
           (l = {
-            _: function() {
+            _: function () {
               (q = h.getElementsByClassName(p.autosizesClass)), e('resize', V);
             },
-            checkElems: (V = F(function() {
+            checkElems: (V = F(function () {
               var e,
                 t = q.length;
               if (t) for (e = 0; e < t; e++) ye(q[e]);
             })),
-            updateElem: ye
+            updateElem: ye,
           }),
-          (d = function() {
+          (d = function () {
             !d.i && h.getElementsByClassName && ((d.i = !0), l._(), R._());
           }),
-          u(function() {
+          u(function () {
             p.init && d();
           }),
           (m = {
@@ -13621,9 +13640,9 @@
             hC: o,
             fire: v,
             gW: z,
-            rAF: w
+            rAF: w,
           }))
-        : { init: function() {}, cfg: p, noSupport: !0 };
+        : { init: function () {}, cfg: p, noSupport: !0 };
       function ye(e, t, i) {
         var n = e.parentNode;
         n &&
@@ -13681,7 +13700,7 @@
                   (S || x || D || k) &&
                   (p.loadHidden || re(c[t])) &&
                   ((T && H < 3 && !r && (Y < 3 || j < 4)) ||
-                    (function(e, t) {
+                    (function (e, t) {
                       var i,
                         n = e,
                         s = re(e);
@@ -13760,13 +13779,13 @@
     (e.lazySizes = t),
       'object' == typeof module && module.exports && (module.exports = t);
   })('undefined' != typeof window ? window : {}),
-  (function(e, t) {
+  (function (e, t) {
     'object' == typeof exports && 'undefined' != typeof module
       ? (module.exports = t())
       : 'function' == typeof define && define.amd
       ? define(t)
       : ((e = e || self).Swiper = t());
-  })(this, function() {
+  })(this, function () {
     'use strict';
     function P(e) {
       return (
@@ -13779,7 +13798,7 @@
     function n(t, i) {
       void 0 === t && (t = {}),
         void 0 === i && (i = {}),
-        Object.keys(i).forEach(function(e) {
+        Object.keys(i).forEach(function (e) {
           void 0 === t[e]
             ? (t[e] = i[e])
             : P(i[e]) &&
@@ -13795,36 +13814,36 @@
     var c = 'undefined' != typeof document ? document : {},
       e = {
         body: {},
-        addEventListener: function() {},
-        removeEventListener: function() {},
-        activeElement: { blur: function() {}, nodeName: '' },
-        querySelector: function() {
+        addEventListener: function () {},
+        removeEventListener: function () {},
+        activeElement: { blur: function () {}, nodeName: '' },
+        querySelector: function () {
           return null;
         },
-        querySelectorAll: function() {
+        querySelectorAll: function () {
           return [];
         },
-        getElementById: function() {
+        getElementById: function () {
           return null;
         },
-        createEvent: function() {
-          return { initEvent: function() {} };
+        createEvent: function () {
+          return { initEvent: function () {} };
         },
-        createElement: function() {
+        createElement: function () {
           return {
             children: [],
             childNodes: [],
             style: {},
-            setAttribute: function() {},
-            getElementsByTagName: function() {
+            setAttribute: function () {},
+            getElementsByTagName: function () {
               return [];
-            }
+            },
           };
         },
-        createElementNS: function() {
+        createElementNS: function () {
           return {};
         },
-        importNode: function() {
+        importNode: function () {
           return null;
         },
         location: {
@@ -13835,8 +13854,8 @@
           origin: '',
           pathname: '',
           protocol: '',
-          search: ''
-        }
+          search: '',
+        },
       },
       X = (n(c, e), 'undefined' != typeof window ? window : {});
     n(X, {
@@ -13850,34 +13869,34 @@
         origin: '',
         pathname: '',
         protocol: '',
-        search: ''
+        search: '',
       },
       history: {
-        replaceState: function() {},
-        pushState: function() {},
-        go: function() {},
-        back: function() {}
+        replaceState: function () {},
+        pushState: function () {},
+        go: function () {},
+        back: function () {},
       },
-      CustomEvent: function() {
+      CustomEvent: function () {
         return this;
       },
-      addEventListener: function() {},
-      removeEventListener: function() {},
-      getComputedStyle: function() {
+      addEventListener: function () {},
+      removeEventListener: function () {},
+      getComputedStyle: function () {
         return {
-          getPropertyValue: function() {
+          getPropertyValue: function () {
             return '';
-          }
+          },
         };
       },
-      Image: function() {},
-      Date: function() {},
+      Image: function () {},
+      Date: function () {},
       screen: {},
-      setTimeout: function() {},
-      clearTimeout: function() {},
-      matchMedia: function() {
+      setTimeout: function () {},
+      clearTimeout: function () {},
+      matchMedia: function () {
         return {};
-      }
+      },
     });
     function w(e, t) {
       var i = [],
@@ -13931,7 +13950,7 @@
         (t.eventsListeners = {}),
         t.params &&
           t.params.on &&
-          Object.keys(t.params.on).forEach(function(e) {
+          Object.keys(t.params.on).forEach(function (e) {
             t.on(e, t.params.on[e]);
           });
     }
@@ -13940,7 +13959,7 @@
       O,
       r,
       A = {
-        addClass: function(e) {
+        addClass: function (e) {
           if (void 0 !== e)
             for (var t = e.split(' '), i = 0; i < t.length; i += 1)
               for (var n = 0; n < this.length; n += 1)
@@ -13949,7 +13968,7 @@
                   this[n].classList.add(t[i]);
           return this;
         },
-        removeClass: function(e) {
+        removeClass: function (e) {
           for (var t = e.split(' '), i = 0; i < t.length; i += 1)
             for (var n = 0; n < this.length; n += 1)
               void 0 !== this[n] &&
@@ -13957,10 +13976,10 @@
                 this[n].classList.remove(t[i]);
           return this;
         },
-        hasClass: function(e) {
+        hasClass: function (e) {
           return !!this[0] && this[0].classList.contains(e);
         },
-        toggleClass: function(e) {
+        toggleClass: function (e) {
           for (var t = e.split(' '), i = 0; i < t.length; i += 1)
             for (var n = 0; n < this.length; n += 1)
               void 0 !== this[n] &&
@@ -13968,7 +13987,7 @@
                 this[n].classList.toggle(t[i]);
           return this;
         },
-        attr: function(e, t) {
+        attr: function (e, t) {
           var i = arguments;
           if (1 === arguments.length && 'string' == typeof e)
             return this[0] ? this[0].getAttribute(e) : void 0;
@@ -13979,11 +13998,11 @@
                 (this[n][s] = e[s]), this[n].setAttribute(s, e[s]);
           return this;
         },
-        removeAttr: function(e) {
+        removeAttr: function (e) {
           for (var t = 0; t < this.length; t += 1) this[t].removeAttribute(e);
           return this;
         },
-        data: function(e, t) {
+        data: function (e, t) {
           var i;
           if (void 0 !== t) {
             for (var n = 0; n < this.length; n += 1)
@@ -13997,14 +14016,14 @@
               ? i.dom7ElementDataStorage[e]
               : i.getAttribute('data-' + e) || void 0;
         },
-        transform: function(e) {
+        transform: function (e) {
           for (var t = 0; t < this.length; t += 1) {
             var i = this[t].style;
             (i.webkitTransform = e), (i.transform = e);
           }
           return this;
         },
-        transition: function(e) {
+        transition: function (e) {
           'string' != typeof e && (e += 'ms');
           for (var t = 0; t < this.length; t += 1) {
             var i = this[t].style;
@@ -14012,7 +14031,7 @@
           }
           return this;
         },
-        on: function() {
+        on: function () {
           for (var e = [], t = arguments.length; t--; ) e[t] = arguments[t];
           var i = e[0],
             a = e[1],
@@ -14047,7 +14066,7 @@
                   c.dom7LiveListeners[h] || (c.dom7LiveListeners[h] = []),
                   c.dom7LiveListeners[h].push({
                     listener: r,
-                    proxyListener: s
+                    proxyListener: s,
                   }),
                   c.addEventListener(h, s, n);
               }
@@ -14062,7 +14081,7 @@
           }
           return this;
         },
-        off: function() {
+        off: function () {
           for (var e = [], t = arguments.length; t--; ) e[t] = arguments[t];
           var i = e[0],
             n = e[1],
@@ -14094,7 +14113,7 @@
             }
           return this;
         },
-        trigger: function() {
+        trigger: function () {
           for (var e = [], t = arguments.length; t--; ) e[t] = arguments[t];
           for (var i = e[0].split(' '), n = e[1], s = 0; s < i.length; s += 1)
             for (var a = i[s], r = 0; r < this.length; r += 1) {
@@ -14104,13 +14123,13 @@
                 l = new X.CustomEvent(a, {
                   detail: n,
                   bubbles: !0,
-                  cancelable: !0
+                  cancelable: !0,
                 });
               } catch (e) {
                 (l = c.createEvent('Event')).initEvent(a, !0, !0),
                   (l.detail = n);
               }
-              (o.dom7EventData = e.filter(function(e, t) {
+              (o.dom7EventData = e.filter(function (e, t) {
                 return 0 < t;
               })),
                 o.dispatchEvent(l),
@@ -14119,7 +14138,7 @@
             }
           return this;
         },
-        transitionEnd: function(t) {
+        transitionEnd: function (t) {
           var i,
             n = ['webkitTransitionEnd', 'transitionend'],
             s = this;
@@ -14130,7 +14149,7 @@
           if (t) for (i = 0; i < n.length; i += 1) s.on(n[i], a);
           return this;
         },
-        outerWidth: function(e) {
+        outerWidth: function (e) {
           return 0 < this.length
             ? e
               ? ((e = this.styles()),
@@ -14140,7 +14159,7 @@
               : this[0].offsetWidth
             : null;
         },
-        outerHeight: function(e) {
+        outerHeight: function (e) {
           return 0 < this.length
             ? e
               ? ((e = this.styles()),
@@ -14150,7 +14169,7 @@
               : this[0].offsetHeight
             : null;
         },
-        offset: function() {
+        offset: function () {
           var e, t, i, n, s;
           return 0 < this.length
             ? ((e = (s = this[0]).getBoundingClientRect()),
@@ -14162,7 +14181,7 @@
               { top: e.top + n - t, left: e.left + s - i })
             : null;
         },
-        css: function(e, t) {
+        css: function (e, t) {
           var i;
           if (1 === arguments.length) {
             if ('string' != typeof e) {
@@ -14177,23 +14196,23 @@
             for (i = 0; i < this.length; i += 1) this[i].style[e] = t;
           return this;
         },
-        each: function(e) {
+        each: function (e) {
           if (e)
             for (var t = 0; t < this.length; t += 1)
               if (!1 === e.call(this[t], t, this[t])) return this;
           return this;
         },
-        html: function(e) {
+        html: function (e) {
           if (void 0 === e) return this[0] ? this[0].innerHTML : void 0;
           for (var t = 0; t < this.length; t += 1) this[t].innerHTML = e;
           return this;
         },
-        text: function(e) {
+        text: function (e) {
           if (void 0 === e) return this[0] ? this[0].textContent.trim() : null;
           for (var t = 0; t < this.length; t += 1) this[t].textContent = e;
           return this;
         },
-        is: function(e) {
+        is: function (e) {
           var t,
             i,
             n = this[0];
@@ -14213,7 +14232,7 @@
             }
           return !1;
         },
-        index: function() {
+        index: function () {
           var e,
             t = this[0];
           if (t) {
@@ -14222,7 +14241,7 @@
             return e;
           }
         },
-        eq: function(e) {
+        eq: function (e) {
           var t;
           return void 0 === e
             ? this
@@ -14237,7 +14256,7 @@
                   : [this[e]]
               ));
         },
-        append: function() {
+        append: function () {
           for (var e = [], t = arguments.length; t--; ) e[t] = arguments[t];
           for (var i = 0; i < e.length; i += 1)
             for (var n = e[i], s = 0; s < this.length; s += 1)
@@ -14250,7 +14269,7 @@
               else this[s].appendChild(n);
           return this;
         },
-        prepend: function(e) {
+        prepend: function (e) {
           for (var t, i = 0; i < this.length; i += 1)
             if ('string' == typeof e) {
               var n = c.createElement('div');
@@ -14262,7 +14281,7 @@
             else this[i].insertBefore(e, this[i].childNodes[0]);
           return this;
         },
-        next: function(e) {
+        next: function (e) {
           return 0 < this.length
             ? e
               ? this[0].nextElementSibling &&
@@ -14274,7 +14293,7 @@
               : new l([])
             : new l([]);
         },
-        nextAll: function(e) {
+        nextAll: function (e) {
           var t = [],
             i = this[0];
           if (!i) return new l([]);
@@ -14284,7 +14303,7 @@
           }
           return new l(t);
         },
-        prev: function(e) {
+        prev: function (e) {
           var t;
           return 0 < this.length
             ? ((t = this[0]),
@@ -14297,7 +14316,7 @@
                 : new l([]))
             : new l([]);
         },
-        prevAll: function(e) {
+        prevAll: function (e) {
           var t = [],
             i = this[0];
           if (!i) return new l([]);
@@ -14307,26 +14326,26 @@
           }
           return new l(t);
         },
-        parent: function(e) {
+        parent: function (e) {
           for (var t = [], i = 0; i < this.length; i += 1)
             null === this[i].parentNode ||
               (e && !w(this[i].parentNode).is(e)) ||
               t.push(this[i].parentNode);
           return w(a(t));
         },
-        parents: function(e) {
+        parents: function (e) {
           for (var t = [], i = 0; i < this.length; i += 1)
             for (var n = this[i].parentNode; n; )
               (e && !w(n).is(e)) || t.push(n), (n = n.parentNode);
           return w(a(t));
         },
-        closest: function(e) {
+        closest: function (e) {
           var t = this;
           return void 0 === e
             ? new l([])
             : (t = t.is(e) ? t : t.parents(e).eq(0));
         },
-        find: function(e) {
+        find: function (e) {
           for (var t = [], i = 0; i < this.length; i += 1)
             for (
               var n = this[i].querySelectorAll(e), s = 0;
@@ -14336,7 +14355,7 @@
               t.push(n[s]);
           return new l(t);
         },
-        children: function(e) {
+        children: function (e) {
           for (var t = [], i = 0; i < this.length; i += 1)
             for (var n = this[i].childNodes, s = 0; s < n.length; s += 1)
               e
@@ -14344,35 +14363,35 @@
                 : 1 === n[s].nodeType && t.push(n[s]);
           return new l(a(t));
         },
-        filter: function(e) {
+        filter: function (e) {
           for (var t = [], i = 0; i < this.length; i += 1)
             e.call(this[i], i, this[i]) && t.push(this[i]);
           return new l(t);
         },
-        remove: function() {
+        remove: function () {
           for (var e = 0; e < this.length; e += 1)
             this[e].parentNode && this[e].parentNode.removeChild(this[e]);
           return this;
         },
-        add: function() {
+        add: function () {
           for (var e = [], t = arguments.length; t--; ) e[t] = arguments[t];
           for (var i = 0; i < e.length; i += 1)
             for (var n = w(e[i]), s = 0; s < n.length; s += 1)
               (this[this.length] = n[s]), (this.length += 1);
           return this;
         },
-        styles: function() {
+        styles: function () {
           return this[0] ? X.getComputedStyle(this[0], null) : {};
-        }
+        },
       },
       U =
-        (Object.keys(A).forEach(function(e) {
+        (Object.keys(A).forEach(function (e) {
           w.fn[e] = w.fn[e] || A[e];
         }),
         {
-          deleteProps: function(e) {
+          deleteProps: function (e) {
             var t = e;
-            Object.keys(t).forEach(function(e) {
+            Object.keys(t).forEach(function (e) {
               try {
                 t[e] = null;
               } catch (e) {}
@@ -14381,13 +14400,13 @@
               } catch (e) {}
             });
           },
-          nextTick: function(e, t) {
+          nextTick: function (e, t) {
             return void 0 === t && (t = 0), setTimeout(e, t);
           },
-          now: function() {
+          now: function () {
             return Date.now();
           },
-          getTranslate: function(e, t) {
+          getTranslate: function (e, t) {
             void 0 === t && (t = 'x');
             var i,
               n,
@@ -14399,7 +14418,7 @@
                     (n = e.transform || e.webkitTransform).split(',').length &&
                     (n = n
                       .split(', ')
-                      .map(function(e) {
+                      .map(function (e) {
                         return e.replace(',', '.');
                       })
                       .join(', ')),
@@ -14431,7 +14450,7 @@
                   : n) || 0
             );
           },
-          parseUrlQuery: function(e) {
+          parseUrlQuery: function (e) {
             var t,
               i,
               n,
@@ -14442,7 +14461,7 @@
               for (
                 s = (i = (e = -1 < e.indexOf('?') ? e.replace(/\S*\?/, '') : '')
                   .split('&')
-                  .filter(function(e) {
+                  .filter(function (e) {
                     return '' !== e;
                   })).length,
                   t = 0;
@@ -14454,7 +14473,7 @@
                     void 0 === n[1] ? void 0 : decodeURIComponent(n[1]) || '');
             return a;
           },
-          isObject: function(e) {
+          isObject: function (e) {
             return (
               'object' == typeof e &&
               null !== e &&
@@ -14462,7 +14481,7 @@
               e.constructor === Object
             );
           },
-          extend: function() {
+          extend: function () {
             for (var e = [], t = arguments.length; t--; ) e[t] = arguments[t];
             for (var i = Object(e[0]), n = 1; n < e.length; n += 1) {
               var s = e[n];
@@ -14484,7 +14503,7 @@
                 }
             }
             return i;
-          }
+          },
         }),
       M = {
         touch: !!(
@@ -14496,36 +14515,36 @@
           'maxTouchPoints' in X.navigator &&
           0 <= X.navigator.maxTouchPoints,
         observer: 'MutationObserver' in X || 'WebkitMutationObserver' in X,
-        passiveListener: (function() {
+        passiveListener: (function () {
           var e = !1;
           try {
             var t = Object.defineProperty({}, 'passive', {
-              get: function() {
+              get: function () {
                 e = !0;
-              }
+              },
             });
             X.addEventListener('testPassiveListener', null, t);
           } catch (e) {}
           return e;
         })(),
-        gestures: 'ongesturestart' in X
+        gestures: 'ongesturestart' in X,
       },
       e = { components: { configurable: !0 } },
       e =
-        ((t.prototype.on = function(e, t, i) {
+        ((t.prototype.on = function (e, t, i) {
           var n,
             s = this;
           return (
             'function' == typeof t &&
               ((n = i ? 'unshift' : 'push'),
-              e.split(' ').forEach(function(e) {
+              e.split(' ').forEach(function (e) {
                 s.eventsListeners[e] || (s.eventsListeners[e] = []),
                   s.eventsListeners[e][n](t);
               })),
             s
           );
         }),
-        (t.prototype.once = function(i, n, e) {
+        (t.prototype.once = function (i, n, e) {
           var s = this;
           return 'function' != typeof n ? s : ((a.f7proxy = n), s.on(i, a, e));
           function a() {
@@ -14533,16 +14552,16 @@
             s.off(i, a), a.f7proxy && delete a.f7proxy, n.apply(s, e);
           }
         }),
-        (t.prototype.off = function(e, n) {
+        (t.prototype.off = function (e, n) {
           var s = this;
           return (
             s.eventsListeners &&
-              e.split(' ').forEach(function(i) {
+              e.split(' ').forEach(function (i) {
                 void 0 === n
                   ? (s.eventsListeners[i] = [])
                   : s.eventsListeners[i] &&
                     s.eventsListeners[i].length &&
-                    s.eventsListeners[i].forEach(function(e, t) {
+                    s.eventsListeners[i].forEach(function (e, t) {
                       (e === n || (e.f7proxy && e.f7proxy === n)) &&
                         s.eventsListeners[i].splice(t, 1);
                     });
@@ -14550,7 +14569,7 @@
             s
           );
         }),
-        (t.prototype.emit = function() {
+        (t.prototype.emit = function () {
           for (var e = [], t = arguments.length; t--; ) e[t] = arguments[t];
           var i,
             n,
@@ -14562,53 +14581,53 @@
                 'string' == typeof e[0] || Array.isArray(e[0])
                   ? ((i = e[0]), (n = e.slice(1, e.length)), a)
                   : ((i = e[0].events), (n = e[0].data), e[0].context || a)),
-              (Array.isArray(i) ? i : i.split(' ')).forEach(function(e) {
+              (Array.isArray(i) ? i : i.split(' ')).forEach(function (e) {
                 var t;
                 a.eventsListeners &&
                   a.eventsListeners[e] &&
                   ((t = []),
-                  a.eventsListeners[e].forEach(function(e) {
+                  a.eventsListeners[e].forEach(function (e) {
                     t.push(e);
                   }),
-                  t.forEach(function(e) {
+                  t.forEach(function (e) {
                     e.apply(s, n);
                   }));
               })),
             a
           );
         }),
-        (t.prototype.useModulesParams = function(t) {
+        (t.prototype.useModulesParams = function (t) {
           var i = this;
           i.modules &&
-            Object.keys(i.modules).forEach(function(e) {
+            Object.keys(i.modules).forEach(function (e) {
               e = i.modules[e];
               e.params && U.extend(t, e.params);
             });
         }),
-        (t.prototype.useModules = function(t) {
+        (t.prototype.useModules = function (t) {
           void 0 === t && (t = {});
           var n = this;
           n.modules &&
-            Object.keys(n.modules).forEach(function(e) {
+            Object.keys(n.modules).forEach(function (e) {
               var i = n.modules[e],
                 e = t[e] || {};
               i.instance &&
-                Object.keys(i.instance).forEach(function(e) {
+                Object.keys(i.instance).forEach(function (e) {
                   var t = i.instance[e];
                   n[e] = 'function' == typeof t ? t.bind(n) : t;
                 }),
                 i.on &&
                   n.on &&
-                  Object.keys(i.on).forEach(function(e) {
+                  Object.keys(i.on).forEach(function (e) {
                     n.on(e, i.on[e]);
                   }),
                 i.create && i.create.bind(n)(e);
             });
         }),
-        (e.components.set = function(e) {
+        (e.components.set = function (e) {
           this.use && this.use(e);
         }),
-        (t.installModule = function(t) {
+        (t.installModule = function (t) {
           for (var e = [], i = arguments.length - 1; 0 < i--; )
             e[i] = arguments[i + 1];
           var n = this,
@@ -14618,23 +14637,23 @@
                 Object.keys(n.prototype.modules).length + '_' + U.now());
           return (
             (n.prototype.modules[s] = t).proto &&
-              Object.keys(t.proto).forEach(function(e) {
+              Object.keys(t.proto).forEach(function (e) {
                 n.prototype[e] = t.proto[e];
               }),
             t.static &&
-              Object.keys(t.static).forEach(function(e) {
+              Object.keys(t.static).forEach(function (e) {
                 n[e] = t.static[e];
               }),
             t.install && t.install.apply(n, e),
             n
           );
         }),
-        (t.use = function(e) {
+        (t.use = function (e) {
           for (var t = [], i = arguments.length - 1; 0 < i--; )
             t[i] = arguments[i + 1];
           var n = this;
           return Array.isArray(e)
-            ? (e.forEach(function(e) {
+            ? (e.forEach(function (e) {
                 return n.installModule(e);
               }),
               n)
@@ -14642,7 +14661,7 @@
         }),
         Object.defineProperties(t, e),
         {
-          updateSize: function() {
+          updateSize: function () {
             var e = this.$el,
               t =
                 void 0 !== this.params.width
@@ -14665,10 +14684,10 @@
               U.extend(this, {
                 width: t,
                 height: i,
-                size: this.isHorizontal() ? t : i
+                size: this.isHorizontal() ? t : i,
               }));
           },
-          updateSlides: function() {
+          updateSlides: function () {
             var t = this.params,
               e = this.$wrapperEl,
               i = this.size,
@@ -14767,7 +14786,7 @@
                         '-moz-box-ordinal-group': Y,
                         '-ms-flex-order': Y,
                         '-webkit-order': Y,
-                        order: Y
+                        order: Y,
                       }))
                     : 'column' === t.slidesPerColumnFill
                     ? ((D = b - (k = Math.floor(b / M)) * M),
@@ -14859,7 +14878,7 @@
                   (this.isHorizontal()
                     ? e.css({ width: this.virtualSize + t.spaceBetween + 'px' })
                     : e.css({
-                        height: this.virtualSize + t.spaceBetween + 'px'
+                        height: this.virtualSize + t.spaceBetween + 'px',
                       })),
                 1 < t.slidesPerColumn &&
                   ((this.virtualSize = (x + t.spaceBetween) * c),
@@ -14869,7 +14888,7 @@
                   this.isHorizontal()
                     ? e.css({ width: this.virtualSize + t.spaceBetween + 'px' })
                     : e.css({
-                        height: this.virtualSize + t.spaceBetween + 'px'
+                        height: this.virtualSize + t.spaceBetween + 'px',
                       }),
                   t.centeredSlides))
               ) {
@@ -14903,31 +14922,31 @@
                 t.centeredSlides &&
                   t.centeredSlidesBounds &&
                   ((y = 0),
-                  d.forEach(function(e) {
+                  d.forEach(function (e) {
                     y += e + (t.spaceBetween || 0);
                   }),
                   (N = (y -= t.spaceBetween) - i),
-                  (o = o.map(function(e) {
+                  (o = o.map(function (e) {
                     return e < 0 ? -h : N < e ? N + m : e;
                   }))),
                 t.centerInsufficientSlides &&
                   ((v = 0),
-                  d.forEach(function(e) {
+                  d.forEach(function (e) {
                     v += e + (t.spaceBetween || 0);
                   }),
                   (v -= t.spaceBetween) < i) &&
                   ((I = (i - v) / 2),
-                  o.forEach(function(e, t) {
+                  o.forEach(function (e, t) {
                     o[t] = e - I;
                   }),
-                  l.forEach(function(e, t) {
+                  l.forEach(function (e, t) {
                     l[t] = e + I;
                   })),
                 U.extend(this, {
                   slides: a,
                   snapGrid: o,
                   slidesGrid: l,
-                  slidesSizesGrid: d
+                  slidesSizesGrid: d,
                 }),
                 r !== $ && this.emit('slidesLengthChange'),
                 o.length !== s &&
@@ -14938,7 +14957,7 @@
                   this.updateSlidesOffset();
             }
           },
-          updateAutoHeight: function(e) {
+          updateAutoHeight: function (e) {
             var t,
               i,
               n = [],
@@ -14951,7 +14970,7 @@
                 1 < this.params.slidesPerView)
             )
               if (this.params.centeredSlides)
-                this.visibleSlides.each(function(e, t) {
+                this.visibleSlides.each(function (e, t) {
                   n.push(t);
                 });
               else
@@ -14965,13 +14984,13 @@
               void 0 !== n[t] && (s = s < (i = n[t].offsetHeight) ? i : s);
             s && this.$wrapperEl.css('height', s + 'px');
           },
-          updateSlidesOffset: function() {
+          updateSlidesOffset: function () {
             for (var e = this.slides, t = 0; t < e.length; t += 1)
               e[t].swiperSlideOffset = this.isHorizontal()
                 ? e[t].offsetLeft
                 : e[t].offsetTop;
           },
-          updateSlidesProgress: function(e) {
+          updateSlidesProgress: function (e) {
             void 0 === e && (e = (this && this.translate) || 0);
             var t = this.params,
               i = this.slides,
@@ -15006,7 +15025,7 @@
               this.visibleSlides = w(this.visibleSlides);
             }
           },
-          updateProgress: function(e) {
+          updateProgress: function (e) {
             void 0 === e &&
               ((t = this.rtlTranslate ? -1 : 1),
               (e = (this && this.translate && this.translate * t) || 0));
@@ -15030,7 +15049,7 @@
               ((a && !s) || (r && !o)) && this.emit('fromEdge'),
               this.emit('progress', n);
           },
-          updateSlidesClasses: function() {
+          updateSlidesClasses: function () {
             var e = this.slides,
               t = this.params,
               i = this.$wrapperEl,
@@ -15138,7 +15157,7 @@
                     )
                 ).addClass(t.slideDuplicatePrevClass));
           },
-          updateActiveIndex: function(e) {
+          updateActiveIndex: function (e) {
             var t = this.rtlTranslate ? this.translate : -this.translate,
               i = this.slidesGrid,
               n = this.snapGrid,
@@ -15171,7 +15190,7 @@
                     snapIndex: e,
                     realIndex: s,
                     previousIndex: a,
-                    activeIndex: l
+                    activeIndex: l,
                   }),
                   this.emit('activeIndexChange'),
                   this.emit('snapIndexChange'),
@@ -15181,7 +15200,7 @@
                 : e !== o &&
                   ((this.snapIndex = e), this.emit('snapIndexChange'));
           },
-          updateClickedSlide: function(e) {
+          updateClickedSlide: function (e) {
             var t = this.params,
               i = w(e.target).closest('.' + t.slideClass)[0],
               n = !1;
@@ -15201,10 +15220,10 @@
                   this.clickedIndex !== this.activeIndex &&
                   this.slideToClickedSlide())
               : ((this.clickedSlide = void 0), (this.clickedIndex = void 0));
-          }
+          },
         }),
       $ = {
-        getTranslate: function(e) {
+        getTranslate: function (e) {
           void 0 === e && (e = this.isHorizontal() ? 'x' : 'y');
           var t = this.params,
             i = this.rtlTranslate,
@@ -15218,7 +15237,7 @@
             ? n
             : ((t = U.getTranslate(s[0], e)), (t = i ? -t : t) || 0);
         },
-        setTranslate: function(e, t) {
+        setTranslate: function (e, t) {
           var i = this.rtlTranslate,
             n = this.params,
             s = this.$wrapperEl,
@@ -15230,9 +15249,8 @@
               (this.isHorizontal() ? (o = i ? -e : e) : (l = e),
               n.roundLengths && ((o = Math.floor(o)), (l = Math.floor(l))),
               n.cssMode
-                ? (a[
-                    this.isHorizontal() ? 'scrollLeft' : 'scrollTop'
-                  ] = this.isHorizontal() ? -o : -l)
+                ? (a[this.isHorizontal() ? 'scrollLeft' : 'scrollTop'] =
+                    this.isHorizontal() ? -o : -l)
                 : n.virtualTranslate ||
                   s.transform('translate3d(' + o + 'px, ' + l + 'px, 0px)'),
               (this.previousTranslate = this.translate),
@@ -15242,13 +15260,13 @@
             this.updateProgress(e),
             this.emit('setTranslate', this.translate, t);
         },
-        minTranslate: function() {
+        minTranslate: function () {
           return -this.snapGrid[0];
         },
-        maxTranslate: function() {
+        maxTranslate: function () {
           return -this.snapGrid[this.snapGrid.length - 1];
         },
-        translateTo: function(e, t, i, n, s) {
+        translateTo: function (e, t, i, n, s) {
           void 0 === e && (e = 0),
             void 0 === t && (t = this.params.speed),
             void 0 === i && (i = !0),
@@ -15286,7 +15304,7 @@
                 o.animating ||
                   ((o.animating = !0),
                   o.onTranslateToWrapperTransitionEnd ||
-                    (o.onTranslateToWrapperTransitionEnd = function(e) {
+                    (o.onTranslateToWrapperTransitionEnd = function (e) {
                       o &&
                         !o.destroyed &&
                         e.target === this &&
@@ -15313,10 +15331,10 @@
                   ))),
             0)
           );
-        }
+        },
       },
       W = {
-        slideTo: function(e, t, i, n) {
+        slideTo: function (e, t, i, n) {
           void 0 === t && (t = this.params.speed), void 0 === i && (i = !0);
           var s = this,
             a = (e = void 0 === e ? 0 : e),
@@ -15388,7 +15406,7 @@
                     s.animating ||
                       ((s.animating = !0),
                       s.onSlideToWrapperTransitionEnd ||
-                        (s.onSlideToWrapperTransitionEnd = function(e) {
+                        (s.onSlideToWrapperTransitionEnd = function (e) {
                           s &&
                             !s.destroyed &&
                             e.target === this &&
@@ -15415,7 +15433,7 @@
                 !0)
           );
         },
-        slideToLoop: function(e, t, i, n) {
+        slideToLoop: function (e, t, i, n) {
           void 0 === t && (t = this.params.speed);
           e = void 0 === e ? 0 : e;
           return (
@@ -15423,7 +15441,7 @@
             this.slideTo(e, t, (i = void 0 === i ? !0 : i), n)
           );
         },
-        slideNext: function(e, t, i) {
+        slideNext: function (e, t, i) {
           void 0 === e && (e = this.params.speed), void 0 === t && (t = !0);
           var n = this.params,
             s = this.animating,
@@ -15434,7 +15452,7 @@
           }
           return this.slideTo(this.activeIndex + a, e, t, i);
         },
-        slidePrev: function(e, t, i) {
+        slidePrev: function (e, t, i) {
           void 0 === e && (e = this.params.speed), void 0 === t && (t = !0);
           var n = this.params,
             s = this.animating,
@@ -15455,7 +15473,7 @@
           return (
             void 0 === c &&
               n.cssMode &&
-              a.forEach(function(e) {
+              a.forEach(function (e) {
                 !c && e <= u && (c = e);
               }),
             void 0 !== c &&
@@ -15464,13 +15482,13 @@
             this.slideTo(d, e, t, i)
           );
         },
-        slideReset: function(e, t, i) {
+        slideReset: function (e, t, i) {
           return (
             void 0 === e && (e = this.params.speed),
             this.slideTo(this.activeIndex, e, (t = void 0 === t ? !0 : t), i)
           );
         },
-        slideToClosest: function(e, t, i, n) {
+        slideToClosest: function (e, t, i, n) {
           void 0 === e && (e = this.params.speed),
             void 0 === t && (t = !0),
             void 0 === n && (n = 0.5);
@@ -15490,7 +15508,7 @@
             this.slideTo(a, e, t, i)
           );
         },
-        slideToClickedSlide: function() {
+        slideToClickedSlide: function () {
           var e,
             t = this,
             i = t.params,
@@ -15522,7 +15540,7 @@
                       )
                       .eq(0)
                       .index()),
-                    U.nextTick(function() {
+                    U.nextTick(function () {
                       t.slideTo(a);
                     }))
                   : t.slideTo(a)
@@ -15540,15 +15558,15 @@
                     )
                     .eq(0)
                     .index()),
-                  U.nextTick(function() {
+                  U.nextTick(function () {
                     t.slideTo(a);
                   }))
                 : t.slideTo(a))
             : t.slideTo(a);
-        }
+        },
       },
       N = {
-        loopCreate: function() {
+        loopCreate: function () {
           var n = this,
             e = n.params,
             t = n.$wrapperEl,
@@ -15579,7 +15597,7 @@
             n.loopedSlides > s.length && (n.loopedSlides = s.length);
           var o = [],
             l = [];
-          s.each(function(e, t) {
+          s.each(function (e, t) {
             var i = w(t);
             e < n.loopedSlides && l.push(t),
               e < s.length && e >= s.length - n.loopedSlides && o.push(t),
@@ -15590,7 +15608,7 @@
           for (var u = o.length - 1; 0 <= u; --u)
             t.prepend(w(o[u].cloneNode(!0)).addClass(e.slideDuplicateClass));
         },
-        loopFix: function() {
+        loopFix: function () {
           this.emit('beforeLoopFix');
           var e,
             t = this.activeIndex,
@@ -15617,7 +15635,7 @@
             (this.allowSlideNext = a),
             this.emit('loopFix');
         },
-        loopDestroy: function() {
+        loopDestroy: function () {
           var e = this.$wrapperEl,
             t = this.params,
             i = this.slides;
@@ -15634,10 +15652,10 @@
             )
             .remove(),
             i.removeAttr('data-swiper-slide-index');
-        }
+        },
       },
       I = {
-        setGrabCursor: function(e) {
+        setGrabCursor: function (e) {
           var t;
           M.touch ||
             !this.params.simulateTouch ||
@@ -15648,15 +15666,15 @@
             (t.style.cursor = e ? '-moz-grabbin' : '-moz-grab'),
             (t.style.cursor = e ? 'grabbing' : 'grab'));
         },
-        unsetGrabCursor: function() {
+        unsetGrabCursor: function () {
           M.touch ||
             (this.params.watchOverflow && this.isLocked) ||
             this.params.cssMode ||
             (this.el.style.cursor = '');
-        }
+        },
       },
       z = {
-        appendSlide: function(e) {
+        appendSlide: function (e) {
           var t = this.$wrapperEl,
             i = this.params;
           if (
@@ -15668,7 +15686,7 @@
           i.loop && this.loopCreate(),
             (i.observer && M.observer) || this.update();
         },
-        prependSlide: function(e) {
+        prependSlide: function (e) {
           var t = this.params,
             i = this.$wrapperEl,
             n = this.activeIndex,
@@ -15681,7 +15699,7 @@
             (t.observer && M.observer) || this.update(),
             this.slideTo(s, 0, !1);
         },
-        addSlide: function(e, t) {
+        addSlide: function (e, t) {
           var i = this.$wrapperEl,
             n = this.params,
             s = this.activeIndex,
@@ -15710,7 +15728,7 @@
                 : this.slideTo(r, 0, !1);
           }
         },
-        removeSlide: function(e) {
+        removeSlide: function (e) {
           var t = this.params,
             i = this.$wrapperEl,
             n = this.activeIndex;
@@ -15733,10 +15751,10 @@
               ? this.slideTo(a + this.loopedSlides, 0, !1)
               : this.slideTo(a, 0, !1);
         },
-        removeAllSlides: function() {
+        removeAllSlides: function () {
           for (var e = [], t = 0; t < this.slides.length; t += 1) e.push(t);
           this.removeSlide(e);
-        }
+        },
       },
       o =
         ((r = X.navigator.platform),
@@ -15756,7 +15774,7 @@
           windows: !1,
           cordova: !(!X.cordova && !X.phonegap),
           phonegap: !(!X.cordova && !X.phonegap),
-          electron: !1
+          electron: !1,
         }),
         (h = X.screen.width),
         (p = X.screen.height),
@@ -15797,10 +15815,7 @@
           i.osVersion &&
           0 <= j.indexOf('Version/') &&
           '10' === i.osVersion.split('.')[0] &&
-          (i.osVersion = j
-            .toLowerCase()
-            .split('version/')[1]
-            .split(' ')[0]),
+          (i.osVersion = j.toLowerCase().split('version/')[1].split(' ')[0]),
         (i.webView =
           !(
             !(g || v || b) ||
@@ -15940,17 +15955,17 @@
         slidePrevClass: 'swiper-slide-prev',
         slideDuplicatePrevClass: 'swiper-slide-duplicate-prev',
         wrapperClass: 'swiper-wrapper',
-        runCallbacksOnInit: !0
+        runCallbacksOnInit: !0,
       },
       V = {
         update: e,
         translate: $,
         transition: {
-          setTransition: function(e, t) {
+          setTransition: function (e, t) {
             this.params.cssMode || this.$wrapperEl.transition(e),
               this.emit('setTransition', e, t);
           },
-          transitionStart: function(e, t) {
+          transitionStart: function (e, t) {
             void 0 === e && (e = !0);
             var i = this.activeIndex,
               n = this.params,
@@ -15968,7 +15983,7 @@
                       ? this.emit('slideNextTransitionStart')
                       : this.emit('slidePrevTransitionStart'))));
           },
-          transitionEnd: function(e, t) {
+          transitionEnd: function (e, t) {
             void 0 === e && (e = !0);
             var i = this.activeIndex,
               n = this.previousIndex,
@@ -15986,21 +16001,21 @@
                       'next' === s
                         ? this.emit('slideNextTransitionEnd')
                         : this.emit('slidePrevTransitionEnd'))));
-          }
+          },
         },
         slide: W,
         loop: N,
         grabCursor: I,
         manipulation: z,
         events: {
-          attachEvents: function() {
+          attachEvents: function () {
             var e,
               t = this.params,
               i = this.touchEvents,
               n = this.el,
               s = this.wrapperEl,
               a =
-                ((this.onTouchStart = function(e) {
+                ((this.onTouchStart = function (e) {
                   var t,
                     i,
                     n,
@@ -16017,19 +16032,17 @@
                       !t.closest(this.wrapperEl).length) ||
                     ((r.isTouchEvent = 'touchstart' === e.type),
                     !r.isTouchEvent && 'which' in e && 3 === e.which) ||
-                    ((!r.isTouchEvent && 'button' in e && 0 < e.button) ||
-                      (r.isTouched && r.isMoved)) ||
+                    (!r.isTouchEvent && 'button' in e && 0 < e.button) ||
+                    (r.isTouched && r.isMoved) ||
                     (o.noSwiping &&
                     t.closest(o.noSwipingSelector || '.' + o.noSwipingClass)[0]
                       ? (this.allowClick = !0)
                       : (o.swipeHandler && !t.closest(o.swipeHandler)[0]) ||
-                        ((l.currentX = ('touchstart' === e.type
-                          ? e.targetTouches[0]
-                          : e
+                        ((l.currentX = (
+                          'touchstart' === e.type ? e.targetTouches[0] : e
                         ).pageX),
-                        (l.currentY = ('touchstart' === e.type
-                          ? e.targetTouches[0]
-                          : e
+                        (l.currentY = (
+                          'touchstart' === e.type ? e.targetTouches[0] : e
                         ).pageY),
                         (i = l.currentX),
                         (n = l.currentY),
@@ -16041,7 +16054,7 @@
                           isMoved: !1,
                           allowTouchCallbacks: !0,
                           isScrolling: void 0,
-                          startMoving: void 0
+                          startMoving: void 0,
                         }),
                         (l.startX = i),
                         (l.startY = n),
@@ -16065,7 +16078,7 @@
                           e.preventDefault(),
                         this.emit('touchStart', e)));
                 }.bind(this)),
-                (this.onTouchMove = function(e) {
+                (this.onTouchMove = function (e) {
                   var t = this.touchEventsData,
                     i = this.params,
                     n = this.touches,
@@ -16247,7 +16260,7 @@
                                             ? 'startX'
                                             : 'startY'
                                         ],
-                                      time: t.touchStartTime
+                                      time: t.touchStartTime,
                                     }),
                                   t.velocities.push({
                                     position:
@@ -16256,7 +16269,7 @@
                                           ? 'currentX'
                                           : 'currentY'
                                       ],
-                                    time: U.now()
+                                    time: U.now(),
                                   })),
                                 this.updateProgress(t.currentTranslate),
                                 this.setTranslate(t.currentTranslate));
@@ -16269,7 +16282,7 @@
                               startX: r,
                               startY: a,
                               currentX: r,
-                              currentY: a
+                              currentY: a,
                             }),
                             (t.touchStartTime = U.now()));
                     }
@@ -16278,7 +16291,7 @@
                       t.isScrolling &&
                       this.emit('touchMoveOpposite', e);
                 }.bind(this)),
-                (this.onTouchEnd = function(e) {
+                (this.onTouchEnd = function (e) {
                   var t = this,
                     i = t.touchEventsData,
                     n = t.params,
@@ -16309,7 +16322,7 @@
                         u - i.lastClickTime < 300 &&
                         t.emit('doubleTap doubleClick', e),
                       (i.lastClickTime = U.now()),
-                      U.nextTick(function() {
+                      U.nextTick(function () {
                         t.destroyed || (t.allowClick = !0);
                       }),
                       i.isTouched &&
@@ -16392,7 +16405,7 @@
                               }
                               if (
                                 (f &&
-                                  t.once('transitionEnd', function() {
+                                  t.once('transitionEnd', function () {
                                     t.loopFix();
                                   }),
                                 0 !== t.velocity)
@@ -16418,15 +16431,15 @@
                                   t.setTranslate(m),
                                   t.transitionStart(!0, t.swipeDirection),
                                   (t.animating = !0),
-                                  r.transitionEnd(function() {
+                                  r.transitionEnd(function () {
                                     t &&
                                       !t.destroyed &&
                                       i.allowMomentumBounce &&
                                       (t.emit('momentumBounce'),
                                       t.setTransition(n.speed),
-                                      setTimeout(function() {
+                                      setTimeout(function () {
                                         t.setTranslate(p),
-                                          r.transitionEnd(function() {
+                                          r.transitionEnd(function () {
                                             t &&
                                               !t.destroyed &&
                                               t.transitionEnd();
@@ -16440,7 +16453,7 @@
                                   t.transitionStart(!0, t.swipeDirection),
                                   t.animating ||
                                     ((t.animating = !0),
-                                    r.transitionEnd(function() {
+                                    r.transitionEnd(function () {
                                       t && !t.destroyed && t.transitionEnd();
                                     })))
                                 : t.updateProgress(m),
@@ -16509,7 +16522,7 @@
                       (i.startMoving = !1);
                 }.bind(this)),
                 t.cssMode &&
-                  (this.onScroll = function() {
+                  (this.onScroll = function () {
                     var e = this.wrapperEl,
                       t = this.rtlTranslate;
                     (this.previousTranslate = this.translate),
@@ -16530,7 +16543,7 @@
                         ),
                       this.emit('setTranslate', this.translate, !1);
                   }.bind(this)),
-                (this.onClick = function(e) {
+                (this.onClick = function (e) {
                   this.allowClick ||
                     (this.params.preventClicks && e.preventDefault(),
                     this.params.preventClicksPropagation &&
@@ -16575,7 +16588,7 @@
                   )
                 : this.on('observerUpdate', F, !0);
           },
-          detachEvents: function() {
+          detachEvents: function () {
             var e,
               t = this.params,
               i = this.touchEvents,
@@ -16611,10 +16624,10 @@
                   : 'resize observerUpdate',
                 F
               );
-          }
+          },
         },
         breakpoints: {
-          setBreakpoint: function() {
+          setBreakpoint: function () {
             var e,
               i,
               t,
@@ -16635,8 +16648,8 @@
                   'spaceBetween',
                   'slidesPerGroup',
                   'slidesPerGroupSkip',
-                  'slidesPerColumn'
-                ].forEach(function(e) {
+                  'slidesPerColumn',
+                ].forEach(function (e) {
                   var t = i[e];
                   void 0 !== t &&
                     (i[e] =
@@ -16668,7 +16681,7 @@
               U.extend(this, {
                 allowTouchMove: this.params.allowTouchMove,
                 allowSlideNext: this.params.allowSlideNext,
-                allowSlidePrev: this.params.allowSlidePrev
+                allowSlidePrev: this.params.allowSlidePrev,
               }),
               (this.currentBreakpoint = e),
               n &&
@@ -16679,17 +16692,17 @@
                 this.slideTo(s - r + this.loopedSlides, 0, !1)),
               this.emit('breakpoint', d));
           },
-          getBreakpoint: function(e) {
+          getBreakpoint: function (e) {
             if (e) {
               var t = !1,
-                i = Object.keys(e).map(function(e) {
+                i = Object.keys(e).map(function (e) {
                   var t;
                   return 'string' == typeof e && 0 === e.indexOf('@')
                     ? ((t = parseFloat(e.substr(1))),
                       { value: X.innerHeight * t, point: e })
                     : { value: e, point: e };
                 });
-              i.sort(function(e, t) {
+              i.sort(function (e, t) {
                 return parseInt(e.value, 10) - parseInt(t.value, 10);
               });
               for (var n = 0; n < i.length; n += 1) {
@@ -16699,10 +16712,10 @@
               }
               return t || 'max';
             }
-          }
+          },
         },
         checkOverflow: {
-          checkOverflow: function() {
+          checkOverflow: function () {
             var e = this.params,
               t = this.isLocked,
               i =
@@ -16720,10 +16733,10 @@
               t &&
                 t !== this.isLocked &&
                 ((this.isEnd = !1), this.navigation.update());
-          }
+          },
         },
         classes: {
-          addClasses: function() {
+          addClasses: function () {
             var t = this.classNames,
               i = this.params,
               e = this.rtl,
@@ -16740,19 +16753,19 @@
               o.android && s.push('android'),
               o.ios && s.push('ios'),
               i.cssMode && s.push('css-mode'),
-              s.forEach(function(e) {
+              s.forEach(function (e) {
                 t.push(i.containerModifierClass + e);
               }),
               n.addClass(t.join(' '));
           },
-          removeClasses: function() {
+          removeClasses: function () {
             var e = this.$el,
               t = this.classNames;
             e.removeClass(t.join(' '));
-          }
+          },
         },
         images: {
-          loadImage: function(e, t, i, n, s, a) {
+          loadImage: function (e, t, i, n, s, a) {
             function r() {
               a && a();
             }
@@ -16764,7 +16777,7 @@
                 t && (e.src = t))
               : r();
           },
-          preloadImages: function() {
+          preloadImages: function () {
             var e = this;
             function t() {
               null != e &&
@@ -16787,8 +16800,8 @@
                 t
               );
             }
-          }
-        }
+          },
+        },
       },
       G = {},
       m =
@@ -16797,11 +16810,10 @@
           extendedDefaults: { configurable: !0 },
           defaults: { configurable: !0 },
           Class: { configurable: !0 },
-          $: { configurable: !0 }
+          $: { configurable: !0 },
         }),
-        (((T.prototype = Object.create(
-          u && u.prototype
-        )).constructor = T).prototype.slidesPerViewDynamic = function() {
+        (((T.prototype = Object.create(u && u.prototype)).constructor =
+          T).prototype.slidesPerViewDynamic = function () {
           var e = this.params,
             t = this.slides,
             i = this.slidesGrid,
@@ -16828,7 +16840,7 @@
               i[u] - i[s] < n && (a += 1);
           return a;
         }),
-        (T.prototype.update = function() {
+        (T.prototype.update = function () {
           var e,
             t,
             i = this;
@@ -16856,7 +16868,7 @@
             t.watchOverflow && e !== i.snapGrid && i.checkOverflow(),
             i.emit('update'));
         }),
-        (T.prototype.changeDirection = function(i, e) {
+        (T.prototype.changeDirection = function (i, e) {
           void 0 === e && (e = !0);
           var t = this.params.direction;
           return (
@@ -16866,7 +16878,7 @@
                 .removeClass('' + this.params.containerModifierClass + t)
                 .addClass('' + this.params.containerModifierClass + i),
               (this.params.direction = i),
-              this.slides.each(function(e, t) {
+              this.slides.each(function (e, t) {
                 'vertical' === i ? (t.style.width = '') : (t.style.height = '');
               }),
               this.emit('changeDirection'),
@@ -16874,7 +16886,7 @@
             this
           );
         }),
-        (T.prototype.init = function() {
+        (T.prototype.init = function () {
           this.initialized ||
             (this.emit('beforeInit'),
             this.params.breakpoints && this.setBreakpoint(),
@@ -16900,7 +16912,7 @@
             (this.initialized = !0),
             this.emit('init'));
         }),
-        (T.prototype.destroy = function(e, t) {
+        (T.prototype.destroy = function (e, t) {
           void 0 === e && (e = !0), void 0 === t && (t = !0);
           var i = this,
             n = i.params,
@@ -16926,13 +16938,13 @@
                       n.slideVisibleClass,
                       n.slideActiveClass,
                       n.slideNextClass,
-                      n.slidePrevClass
+                      n.slidePrevClass,
                     ].join(' ')
                   )
                   .removeAttr('style')
                   .removeAttr('data-swiper-slide-index'),
               i.emit('destroy'),
-              Object.keys(i.eventsListeners).forEach(function(e) {
+              Object.keys(i.eventsListeners).forEach(function (e) {
                 i.off(e);
               }),
               !1 !== e &&
@@ -16943,19 +16955,19 @@
             null
           );
         }),
-        (T.extendDefaults = function(e) {
+        (T.extendDefaults = function (e) {
           U.extend(G, e);
         }),
-        (h.extendedDefaults.get = function() {
+        (h.extendedDefaults.get = function () {
           return G;
         }),
-        (h.defaults.get = function() {
+        (h.defaults.get = function () {
           return B;
         }),
-        (h.Class.get = function() {
+        (h.Class.get = function () {
           return u;
         }),
-        (h.$.get = function() {
+        (h.$.get = function () {
           return w;
         }),
         Object.defineProperties(T, h),
@@ -16970,56 +16982,56 @@
           d.indexOf('android') < 0,
         isUiWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(
           X.navigator.userAgent
-        )
+        ),
       },
       Q = { name: 'browser', proto: { browser: L }, static: { browser: L } },
       f = {
         name: 'resize',
-        create: function() {
+        create: function () {
           var e = this;
           U.extend(e, {
             resize: {
-              resizeHandler: function() {
+              resizeHandler: function () {
                 e &&
                   !e.destroyed &&
                   e.initialized &&
                   (e.emit('beforeResize'), e.emit('resize'));
               },
-              orientationChangeHandler: function() {
+              orientationChangeHandler: function () {
                 e &&
                   !e.destroyed &&
                   e.initialized &&
                   e.emit('orientationchange');
-              }
-            }
+              },
+            },
           });
         },
         on: {
-          init: function() {
+          init: function () {
             X.addEventListener('resize', this.resize.resizeHandler),
               X.addEventListener(
                 'orientationchange',
                 this.resize.orientationChangeHandler
               );
           },
-          destroy: function() {
+          destroy: function () {
             X.removeEventListener('resize', this.resize.resizeHandler),
               X.removeEventListener(
                 'orientationchange',
                 this.resize.orientationChangeHandler
               );
-          }
-        }
+          },
+        },
       },
       _ = {
         func: X.MutationObserver || X.WebkitMutationObserver,
-        attach: function(e, t) {
+        attach: function (e, t) {
           void 0 === t && (t = {});
           var i = this,
-            n = new _.func(function(e) {
+            n = new _.func(function (e) {
               var t;
               1 !== e.length
-                ? ((t = function() {
+                ? ((t = function () {
                     i.emit('observerUpdate', e[0]);
                   }),
                   X.requestAnimationFrame
@@ -17030,52 +17042,52 @@
           n.observe(e, {
             attributes: void 0 === t.attributes || t.attributes,
             childList: void 0 === t.childList || t.childList,
-            characterData: void 0 === t.characterData || t.characterData
+            characterData: void 0 === t.characterData || t.characterData,
           }),
             i.observer.observers.push(n);
         },
-        init: function() {
+        init: function () {
           if (M.observer && this.params.observer) {
             if (this.params.observeParents)
               for (var e = this.$el.parents(), t = 0; t < e.length; t += 1)
                 this.observer.attach(e[t]);
             this.observer.attach(this.$el[0], {
-              childList: this.params.observeSlideChildren
+              childList: this.params.observeSlideChildren,
             }),
               this.observer.attach(this.$wrapperEl[0], { attributes: !1 });
           }
         },
-        destroy: function() {
-          this.observer.observers.forEach(function(e) {
+        destroy: function () {
+          this.observer.observers.forEach(function (e) {
             e.disconnect();
           }),
             (this.observer.observers = []);
-        }
+        },
       },
       g = {
         name: 'observer',
         params: { observer: !1, observeParents: !1, observeSlideChildren: !1 },
-        create: function() {
+        create: function () {
           U.extend(this, {
             observer: {
               init: _.init.bind(this),
               attach: _.attach.bind(this),
               destroy: _.destroy.bind(this),
-              observers: []
-            }
+              observers: [],
+            },
           });
         },
         on: {
-          init: function() {
+          init: function () {
             this.observer.init();
           },
-          destroy: function() {
+          destroy: function () {
             this.observer.destroy();
-          }
-        }
+          },
+        },
       },
       y = {
-        update: function(e) {
+        update: function (e) {
           var t = this,
             i = t.params,
             n = i.slidesPerView,
@@ -17112,7 +17124,7 @@
               from: _,
               to: g,
               offset: n,
-              slidesGrid: t.slidesGrid
+              slidesGrid: t.slidesGrid,
             }),
             l !== _ || d !== g || e)
           ) {
@@ -17121,10 +17133,10 @@
                 offset: n,
                 from: _,
                 to: g,
-                slides: (function() {
+                slides: (function () {
                   for (var e = [], t = _; t <= g; t += 1) e.push(u[t]);
                   return e;
-                })()
+                })(),
               });
             else {
               var v = [],
@@ -17148,14 +17160,14 @@
                   (void 0 === d || e
                     ? M.push(w)
                     : (d < w && M.push(w), w < l && v.push(w)));
-              M.forEach(function(e) {
+              M.forEach(function (e) {
                 t.$wrapperEl.append(h(u[e], e));
               }),
                 v
-                  .sort(function(e, t) {
+                  .sort(function (e, t) {
                     return t - e;
                   })
-                  .forEach(function(e) {
+                  .forEach(function (e) {
                     t.$wrapperEl.prepend(h(u[e], e));
                   }),
                 t.$wrapperEl.children('.swiper-slide').css(f, n + 'px');
@@ -17165,7 +17177,7 @@
             t.slidesGrid !== c && n !== o && t.slides.css(f, n + 'px'),
               t.updateProgress();
         },
-        renderSlide: function(e, t) {
+        renderSlide: function (e, t) {
           var i = this.params.virtual;
           return i.cache && this.virtual.cache[t]
             ? this.virtual.cache[t]
@@ -17184,14 +17196,14 @@
               i.cache && (this.virtual.cache[t] = e),
               e);
         },
-        appendSlide: function(e) {
+        appendSlide: function (e) {
           if ('object' == typeof e && 'length' in e)
             for (var t = 0; t < e.length; t += 1)
               e[t] && this.virtual.slides.push(e[t]);
           else this.virtual.slides.push(e);
           this.virtual.update(!0);
         },
-        prependSlide: function(e) {
+        prependSlide: function (e) {
           var n,
             s,
             t = this.activeIndex,
@@ -17205,7 +17217,7 @@
           this.params.virtual.cache &&
             ((n = this.virtual.cache),
             (s = {}),
-            Object.keys(n).forEach(function(e) {
+            Object.keys(n).forEach(function (e) {
               var t = n[e],
                 i = t.attr('data-swiper-slide-index');
               i && t.attr('data-swiper-slide-index', parseInt(i, 10) + 1),
@@ -17215,7 +17227,7 @@
             this.virtual.update(!0),
             this.slideTo(i, 0);
         },
-        removeSlide: function(e) {
+        removeSlide: function (e) {
           if (null != e) {
             var t = this.activeIndex;
             if (Array.isArray(e))
@@ -17232,12 +17244,12 @@
             this.virtual.update(!0), this.slideTo(t, 0);
           }
         },
-        removeAllSlides: function() {
+        removeAllSlides: function () {
           (this.virtual.slides = []),
             this.params.virtual.cache && (this.virtual.cache = {}),
             this.virtual.update(!0),
             this.slideTo(0, 0);
-        }
+        },
       },
       v = {
         name: 'virtual',
@@ -17249,10 +17261,10 @@
             renderSlide: null,
             renderExternal: null,
             addSlidesBefore: 0,
-            addSlidesAfter: 0
-          }
+            addSlidesAfter: 0,
+          },
         },
-        create: function() {
+        create: function () {
           U.extend(this, {
             virtual: {
               update: y.update.bind(this),
@@ -17262,12 +17274,12 @@
               removeAllSlides: y.removeAllSlides.bind(this),
               renderSlide: y.renderSlide.bind(this),
               slides: this.params.virtual.slides,
-              cache: {}
-            }
+              cache: {},
+            },
           });
         },
         on: {
-          beforeInit: function() {
+          beforeInit: function () {
             var e;
             this.params.virtual.enabled &&
               (this.classNames.push(
@@ -17277,13 +17289,13 @@
               U.extend(this.originalParams, e),
               this.params.initialSlide || this.virtual.update());
           },
-          setTranslate: function() {
+          setTranslate: function () {
             this.params.virtual.enabled && this.virtual.update();
-          }
-        }
+          },
+        },
       },
       K = {
-        handle: function(e) {
+        handle: function (e) {
           var t = this.rtlTranslate,
             i =
               (e = e.originalEvent ? e.originalEvent : e).keyCode || e.charCode;
@@ -17338,7 +17350,7 @@
                     [r.left, r.top],
                     [r.left + this.width, r.top],
                     [r.left, r.top + this.height],
-                    [r.left + this.width, r.top + this.height]
+                    [r.left + this.width, r.top + this.height],
                   ],
                   l = 0;
                 l < o.length;
@@ -17369,38 +17381,38 @@
               this.emit('keyPress', i);
           }
         },
-        enable: function() {
+        enable: function () {
           this.keyboard.enabled ||
             (w(c).on('keydown', this.keyboard.handle),
             (this.keyboard.enabled = !0));
         },
-        disable: function() {
+        disable: function () {
           this.keyboard.enabled &&
             (w(c).off('keydown', this.keyboard.handle),
             (this.keyboard.enabled = !1));
-        }
+        },
       },
       b = {
         name: 'keyboard',
         params: { keyboard: { enabled: !1, onlyInViewport: !0 } },
-        create: function() {
+        create: function () {
           U.extend(this, {
             keyboard: {
               enabled: !1,
               enable: K.enable.bind(this),
               disable: K.disable.bind(this),
-              handle: K.handle.bind(this)
-            }
+              handle: K.handle.bind(this),
+            },
           });
         },
         on: {
-          init: function() {
+          init: function () {
             this.params.keyboard.enabled && this.keyboard.enable();
           },
-          destroy: function() {
+          destroy: function () {
             this.keyboard.enabled && this.keyboard.disable();
-          }
-        }
+          },
+        },
       };
     function T() {
       for (var i, e = [], t = arguments.length; t--; ) e[t] = arguments[t];
@@ -17412,8 +17424,8 @@
         (i = U.extend({}, i)),
         a && !i.el && (i.el = a),
         u.call(this, i),
-        Object.keys(V).forEach(function(t) {
-          Object.keys(V[t]).forEach(function(e) {
+        Object.keys(V).forEach(function (t) {
+          Object.keys(V[t]).forEach(function (e) {
             T.prototype[e] || (T.prototype[e] = V[t][e]);
           });
         });
@@ -17423,7 +17435,7 @@
         r = this,
         o =
           (void 0 === r.modules && (r.modules = {}),
-          Object.keys(r.modules).forEach(function(e) {
+          Object.keys(r.modules).forEach(function (e) {
             var t,
               e = r.modules[e];
             e.params &&
@@ -17448,7 +17460,7 @@
       if ((a = l[0]))
         return 1 < l.length
           ? ((n = []),
-            l.each(function(e, t) {
+            l.each(function (e, t) {
               t = U.extend({}, i, { el: t });
               n.push(new T(t));
             }),
@@ -17458,7 +17470,7 @@
             a && a.shadowRoot && a.shadowRoot.querySelector
               ? ((s = w(
                   a.shadowRoot.querySelector('.' + r.params.wrapperClass)
-                )).children = function(e) {
+                )).children = function (e) {
                   return l.children(e);
                 })
               : (s = l.children('.' + r.params.wrapperClass)),
@@ -17472,10 +17484,10 @@
               slidesGrid: [],
               snapGrid: [],
               slidesSizesGrid: [],
-              isHorizontal: function() {
+              isHorizontal: function () {
                 return 'horizontal' === r.params.direction;
               },
-              isVertical: function() {
+              isVertical: function () {
                 return 'vertical' === r.params.direction;
               },
               rtl:
@@ -17504,11 +17516,11 @@
                     'touchstart',
                     'touchmove',
                     'touchend',
-                    'touchcancel'
+                    'touchcancel',
                   ])[0],
                   move: a[1],
                   end: a[2],
-                  cancel: a[3]
+                  cancel: a[3],
                 }),
                 (r.touchEventsDesktop = { start: o[0], move: o[1], end: o[2] }),
                 M.touch || !r.params.simulateTouch
@@ -17530,7 +17542,7 @@
                 velocities: [],
                 allowMomentumBounce: void 0,
                 isTouchEvent: void 0,
-                startMoving: void 0
+                startMoving: void 0,
               },
               allowClick: !0,
               allowTouchMove: r.params.allowTouchMove,
@@ -17539,10 +17551,10 @@
                 startY: 0,
                 currentX: 0,
                 currentY: 0,
-                diff: 0
+                diff: 0,
               },
               imagesToLoad: [],
-              imagesLoaded: 0
+              imagesLoaded: 0,
             }),
             r.useModules(),
             r.params.init && r.init(),
@@ -17552,7 +17564,7 @@
         lastScrollTime: U.now(),
         lastEventBeforeSnap: void 0,
         recentWheelEvents: [],
-        event: function() {
+        event: function () {
           return -1 < X.navigator.userAgent.indexOf('firefox')
             ? 'DOMMouseScroll'
             : ((t = 'onwheel' in c) ||
@@ -17572,7 +17584,7 @@
                 : 'mousewheel');
           var e, t;
         },
-        normalize: function(e) {
+        normalize: function (e) {
           var t = 0,
             i = 0,
             n = 0,
@@ -17597,17 +17609,17 @@
               spinX: (t = n && !t ? (n < 1 ? -1 : 1) : t),
               spinY: (i = s && !i ? (s < 1 ? -1 : 1) : i),
               pixelX: n,
-              pixelY: s
+              pixelY: s,
             }
           );
         },
-        handleMouseEnter: function() {
+        handleMouseEnter: function () {
           this.mouseEntered = !0;
         },
-        handleMouseLeave: function() {
+        handleMouseLeave: function () {
           this.mouseEntered = !1;
         },
-        handle: function(e) {
+        handle: function (e) {
           var t = e,
             i = this,
             n = i.params.mousewheel,
@@ -17640,7 +17652,7 @@
             var o = {
                 time: U.now(),
                 delta: Math.abs(s),
-                direction: Math.sign(s)
+                direction: Math.sign(s),
               },
               a = i.mousewheel.lastEventBeforeSnap,
               r =
@@ -17683,11 +17695,11 @@
                       ((d = 0 < s ? 0.8 : 0.2),
                       (i.mousewheel.lastEventBeforeSnap = o),
                       l.splice(0),
-                      (i.mousewheel.timeout = U.nextTick(function() {
+                      (i.mousewheel.timeout = U.nextTick(function () {
                         i.slideToClosest(i.params.speed, !0, void 0, d);
                       }, 0))),
                   i.mousewheel.timeout ||
-                    (i.mousewheel.timeout = U.nextTick(function() {
+                    (i.mousewheel.timeout = U.nextTick(function () {
                       (i.mousewheel.lastEventBeforeSnap = o),
                         l.splice(0),
                         i.slideToClosest(i.params.speed, !0, void 0, 0.5);
@@ -17705,7 +17717,7 @@
               time: U.now(),
               delta: Math.abs(s),
               direction: Math.sign(s),
-              raw: e
+              raw: e,
             }),
               (u = i.mousewheel.recentWheelEvents),
               (r =
@@ -17726,7 +17738,7 @@
             t.preventDefault ? t.preventDefault() : (t.returnValue = !1), !1
           );
         },
-        animateSlider: function(e) {
+        animateSlider: function (e) {
           return (
             (6 <= e.delta && U.now() - this.mousewheel.lastScrollTime < 60) ||
             (e.direction < 0
@@ -17740,7 +17752,7 @@
             !1)
           );
         },
-        releaseScroll: function(e) {
+        releaseScroll: function (e) {
           var t = this.params.mousewheel;
           if (e.direction < 0) {
             if (this.isEnd && !this.params.loop && t.releaseOnEdges) return !0;
@@ -17748,7 +17760,7 @@
             return !0;
           return !1;
         },
-        enable: function() {
+        enable: function () {
           var e,
             t = Y.event();
           return this.params.cssMode
@@ -17765,7 +17777,7 @@
                 e.on(t, this.mousewheel.handle),
                 (this.mousewheel.enabled = !0));
         },
-        disable: function() {
+        disable: function () {
           var e,
             t = Y.event();
           return this.params.cssMode
@@ -17780,10 +17792,10 @@
                       : e).off(t, this.mousewheel.handle),
                   (this.mousewheel.enabled = !1))
                 );
-        }
+        },
       },
       k = {
-        update: function() {
+        update: function () {
           var e,
             t,
             i = this.params.navigation;
@@ -17810,15 +17822,15 @@
                   : 'removeClass'
               ](i.lockClass)));
         },
-        onPrevClick: function(e) {
+        onPrevClick: function (e) {
           e.preventDefault(),
             (this.isBeginning && !this.params.loop) || this.slidePrev();
         },
-        onNextClick: function(e) {
+        onNextClick: function (e) {
           e.preventDefault(),
             (this.isEnd && !this.params.loop) || this.slideNext();
         },
-        init: function() {
+        init: function () {
           var e,
             t,
             i = this.params.navigation;
@@ -17841,10 +17853,10 @@
               $nextEl: e,
               nextEl: e && e[0],
               $prevEl: t,
-              prevEl: t && t[0]
+              prevEl: t && t[0],
             }));
         },
-        destroy: function() {
+        destroy: function () {
           var e = this.navigation,
             t = e.$nextEl,
             e = e.$prevEl;
@@ -17856,10 +17868,10 @@
               e.length &&
               (e.off('click', this.navigation.onPrevClick),
               e.removeClass(this.params.navigation.disabledClass));
-        }
+        },
       },
       D = {
-        update: function() {
+        update: function () {
           var e = this.rtl,
             n = this.params.pagination;
           if (
@@ -17869,9 +17881,10 @@
             0 !== this.pagination.$el.length
           ) {
             var s,
-              t = (this.virtual && this.params.virtual.enabled
-                ? this.virtual
-                : this
+              t = (
+                this.virtual && this.params.virtual.enabled
+                  ? this.virtual
+                  : this
               ).slides.length,
               i = this.pagination.$el,
               a = this.params.loop
@@ -17944,7 +17957,7 @@
                 ),
                 1 < i.length)
               )
-                d.each(function(e, t) {
+                d.each(function (e, t) {
                   var t = w(t),
                     i = t.index();
                   i === s && t.addClass(n.bulletActiveClass),
@@ -18047,7 +18060,7 @@
               ](n.lockClass);
           }
         },
-        render: function() {
+        render: function () {
           var e = this.params.pagination;
           if (
             e.el &&
@@ -18055,9 +18068,10 @@
             this.pagination.$el &&
             0 !== this.pagination.$el.length
           ) {
-            var t = (this.virtual && this.params.virtual.enabled
-                ? this.virtual
-                : this
+            var t = (
+                this.virtual && this.params.virtual.enabled
+                  ? this.virtual
+                  : this
               ).slides.length,
               i = this.pagination.$el,
               n = '';
@@ -18103,7 +18117,7 @@
                 this.emit('paginationRender', this.pagination.$el[0]);
           }
         },
-        init: function() {
+        init: function () {
           var e,
             t = this,
             i = t.params.pagination;
@@ -18126,14 +18140,14 @@
               i.progressbarOpposite &&
               e.addClass(i.progressbarOppositeClass),
             i.clickable &&
-              e.on('click', '.' + i.bulletClass, function(e) {
+              e.on('click', '.' + i.bulletClass, function (e) {
                 e.preventDefault();
                 e = w(this).index() * t.params.slidesPerGroup;
                 t.params.loop && (e += t.loopedSlides), t.slideTo(e);
               }),
             U.extend(t.pagination, { $el: e, el: e[0] }));
         },
-        destroy: function() {
+        destroy: function () {
           var e,
             t = this.params.pagination;
           t.el &&
@@ -18146,10 +18160,10 @@
               this.pagination.bullets.removeClass(t.bulletActiveClass),
             t.clickable) &&
             e.off('click', '.' + t.bulletClass);
-        }
+        },
       },
       x = {
-        setTranslate: function() {
+        setTranslate: function () {
           var e, t, i, n, s, a, r, o;
           this.params.scrollbar.el &&
             this.scrollbar.el &&
@@ -18177,16 +18191,16 @@
             a.hide) &&
             (clearTimeout(this.scrollbar.timeout),
             (s[0].style.opacity = 1),
-            (this.scrollbar.timeout = setTimeout(function() {
+            (this.scrollbar.timeout = setTimeout(function () {
               (s[0].style.opacity = 0), s.transition(400);
             }, 1e3)));
         },
-        setTransition: function(e) {
+        setTransition: function (e) {
           this.params.scrollbar.el &&
             this.scrollbar.el &&
             this.scrollbar.$dragEl.transition(e);
         },
-        updateSize: function() {
+        updateSize: function () {
           var e, t, i, n, s, a, r;
           this.params.scrollbar.el &&
             this.scrollbar.el &&
@@ -18209,7 +18223,7 @@
               trackSize: n,
               divider: s,
               moveDivider: a,
-              dragSize: r
+              dragSize: r,
             }),
             e.$el[
               this.params.watchOverflow && this.isLocked
@@ -18217,7 +18231,7 @@
                 : 'removeClass'
             ](this.params.scrollbar.lockClass));
         },
-        getPointerPosition: function(e) {
+        getPointerPosition: function (e) {
           return this.isHorizontal()
             ? ('touchstart' === e.type || 'touchmove' === e.type
                 ? e.targetTouches[0]
@@ -18228,7 +18242,7 @@
                 : e
               ).clientY;
         },
-        setDragPosition: function(e) {
+        setDragPosition: function (e) {
           var t = this.scrollbar,
             i = this.rtlTranslate,
             n = t.$el,
@@ -18250,7 +18264,7 @@
             this.updateActiveIndex(),
             this.updateSlidesClasses();
         },
-        onDragStart: function(e) {
+        onDragStart: function (e) {
           var t = this.params.scrollbar,
             i = this.scrollbar,
             n = this.$wrapperEl,
@@ -18276,7 +18290,7 @@
               this.$wrapperEl.css('scroll-snap-type', 'none'),
             this.emit('scrollbarDragStart', e);
         },
-        onDragMove: function(e) {
+        onDragMove: function (e) {
           var t = this.scrollbar,
             i = this.$wrapperEl,
             n = t.$el,
@@ -18289,7 +18303,7 @@
             s.transition(0),
             this.emit('scrollbarDragMove', e));
         },
-        onDragEnd: function(e) {
+        onDragEnd: function (e) {
           var t = this.params.scrollbar,
             i = this.scrollbar,
             n = this.$wrapperEl,
@@ -18300,14 +18314,14 @@
               (this.$wrapperEl.css('scroll-snap-type', ''), n.transition('')),
             t.hide &&
               (clearTimeout(this.scrollbar.dragTimeout),
-              (this.scrollbar.dragTimeout = U.nextTick(function() {
+              (this.scrollbar.dragTimeout = U.nextTick(function () {
                 s.css('opacity', 0), s.transition(400);
               }, 1e3))),
             this.emit('scrollbarDragEnd', e),
             t.snapOnRelease) &&
             this.slideToClosest();
         },
-        enableDraggable: function() {
+        enableDraggable: function () {
           var e, t, i, n, s;
           this.params.scrollbar.el &&
             ((i = this.scrollbar),
@@ -18317,11 +18331,11 @@
             (i = i.$el[0]),
             (n = !(!M.passiveListener || !s.passiveListeners) && {
               passive: !1,
-              capture: !1
+              capture: !1,
             }),
             (s = !(!M.passiveListener || !s.passiveListeners) && {
               passive: !0,
-              capture: !1
+              capture: !1,
             }),
             M.touch
               ? (i.addEventListener(e.start, this.scrollbar.onDragStart, n),
@@ -18331,7 +18345,7 @@
                 c.addEventListener(t.move, this.scrollbar.onDragMove, n),
                 c.addEventListener(t.end, this.scrollbar.onDragEnd, s)));
         },
-        disableDraggable: function() {
+        disableDraggable: function () {
           var e, t, i, n, s;
           this.params.scrollbar.el &&
             ((i = this.scrollbar),
@@ -18341,11 +18355,11 @@
             (i = i.$el[0]),
             (n = !(!M.passiveListener || !s.passiveListeners) && {
               passive: !1,
-              capture: !1
+              capture: !1,
             }),
             (s = !(!M.passiveListener || !s.passiveListeners) && {
               passive: !0,
-              capture: !1
+              capture: !1,
             }),
             M.touch
               ? (i.removeEventListener(e.start, this.scrollbar.onDragStart, n),
@@ -18355,7 +18369,7 @@
                 c.removeEventListener(t.move, this.scrollbar.onDragMove, n),
                 c.removeEventListener(t.end, this.scrollbar.onDragEnd, s)));
         },
-        init: function() {
+        init: function () {
           var e, t, i, n;
           this.params.scrollbar.el &&
             ((e = this.scrollbar),
@@ -18377,12 +18391,12 @@
             t.draggable) &&
             e.enableDraggable();
         },
-        destroy: function() {
+        destroy: function () {
           this.scrollbar.disableDraggable();
-        }
+        },
       },
       Z = {
-        setTransform: function(e, t) {
+        setTransform: function (e, t) {
           var i = this.rtl,
             e = w(e),
             i = i ? -1 : 1,
@@ -18411,7 +18425,7 @@
                   'translate3d(' + s + ', ' + a + ', 0px) scale(' + i + ')'
                 ));
         },
-        setTranslate: function() {
+        setTranslate: function () {
           var n = this,
             e = n.$el,
             t = n.slides,
@@ -18421,10 +18435,10 @@
             .children(
               '[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]'
             )
-            .each(function(e, t) {
+            .each(function (e, t) {
               n.parallax.setTransform(t, s);
             }),
-            t.each(function(e, t) {
+            t.each(function (e, t) {
               var i = t.progress;
               1 < n.params.slidesPerGroup &&
                 'auto' !== n.params.slidesPerView &&
@@ -18434,27 +18448,27 @@
                   .find(
                     '[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]'
                   )
-                  .each(function(e, t) {
+                  .each(function (e, t) {
                     n.parallax.setTransform(t, i);
                   });
             });
         },
-        setTransition: function(n) {
+        setTransition: function (n) {
           void 0 === n && (n = this.params.speed),
             this.$el
               .find(
                 '[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]'
               )
-              .each(function(e, t) {
+              .each(function (e, t) {
                 var t = w(t),
                   i =
                     parseInt(t.attr('data-swiper-parallax-duration'), 10) || n;
                 0 === n && (i = 0), t.transition(i);
               });
-        }
+        },
       },
       ee = {
-        getDistanceBetweenTouches: function(e) {
+        getDistanceBetweenTouches: function (e) {
           var t, i, n;
           return e.targetTouches.length < 2
             ? 1
@@ -18464,7 +18478,7 @@
               (e = e.targetTouches[1].pageY),
               Math.sqrt(Math.pow(n - t, 2) + Math.pow(e - i, 2)));
         },
-        onGestureStart: function(e) {
+        onGestureStart: function (e) {
           var t = this.params.zoom,
             i = this.zoom,
             n = i.gesture;
@@ -18495,7 +18509,7 @@
               (this.zoom.isScaling = !0))
             : (n.$imageEl = void 0);
         },
-        onGestureChange: function(e) {
+        onGestureChange: function (e) {
           var t = this.params.zoom,
             i = this.zoom,
             n = i.gesture;
@@ -18521,7 +18535,7 @@
                 t.minRatio + 1 - Math.pow(t.minRatio - i.scale + 1, 0.5)),
             n.$imageEl.transform('translate3d(0,0,0) scale(' + i.scale + ')'));
         },
-        onGestureEnd: function(e) {
+        onGestureEnd: function (e) {
           var t = this.params.zoom,
             i = this.zoom,
             n = i.gesture;
@@ -18547,7 +18561,7 @@
             1 === i.scale) &&
             (n.$slideEl = void 0);
         },
-        onTouchStart: function(e) {
+        onTouchStart: function (e) {
           var t = this.zoom,
             i = t.gesture,
             t = t.image;
@@ -18556,16 +18570,14 @@
             !t.isTouched &&
             (o.android && e.cancelable && e.preventDefault(),
             (t.isTouched = !0),
-            (t.touchesStart.x = ('touchstart' === e.type
-              ? e.targetTouches[0]
-              : e
+            (t.touchesStart.x = (
+              'touchstart' === e.type ? e.targetTouches[0] : e
             ).pageX),
-            (t.touchesStart.y = ('touchstart' === e.type
-              ? e.targetTouches[0]
-              : e
+            (t.touchesStart.y = (
+              'touchstart' === e.type ? e.targetTouches[0] : e
             ).pageY));
         },
-        onTouchMove: function(e) {
+        onTouchMove: function (e) {
           var t = this.zoom,
             i = t.gesture,
             n = t.image,
@@ -18593,13 +18605,11 @@
                 (n.maxX = -n.minX),
                 (n.minY = Math.min(i.slideHeight / 2 - r / 2, 0)),
                 (n.maxY = -n.minY),
-                (n.touchesCurrent.x = ('touchmove' === e.type
-                  ? e.targetTouches[0]
-                  : e
+                (n.touchesCurrent.x = (
+                  'touchmove' === e.type ? e.targetTouches[0] : e
                 ).pageX),
-                (n.touchesCurrent.y = ('touchmove' === e.type
-                  ? e.targetTouches[0]
-                  : e
+                (n.touchesCurrent.y = (
+                  'touchmove' === e.type ? e.targetTouches[0] : e
                 ).pageY),
                 !n.isMoved && !t.isScaling)
               ) {
@@ -18659,7 +18669,7 @@
             }
           }
         },
-        onTouchEnd: function() {
+        onTouchEnd: function () {
           var e,
             t,
             i,
@@ -18697,7 +18707,7 @@
                   ))
               : ((r.isTouched = !1), (r.isMoved = !1)));
         },
-        onTransitionEnd: function() {
+        onTransitionEnd: function () {
           var e = this.zoom,
             t = e.gesture;
           t.$slideEl &&
@@ -18710,11 +18720,11 @@
             (t.$imageEl = void 0),
             (t.$imageWrapEl = void 0));
         },
-        toggle: function(e) {
+        toggle: function (e) {
           var t = this.zoom;
           t.scale && 1 !== t.scale ? t.out() : t.in(e);
         },
-        in: function(e) {
+        in: function (e) {
           var t,
             i,
             n,
@@ -18766,7 +18776,7 @@
                 .transition(300)
                 .transform('translate3d(0,0,0) scale(' + a.scale + ')'));
         },
-        out: function() {
+        out: function () {
           var e = this.zoom,
             t = this.params.zoom,
             i = e.gesture;
@@ -18791,7 +18801,7 @@
               i.$slideEl.removeClass('' + t.zoomedSlideClass),
               (i.$slideEl = void 0));
         },
-        enable: function() {
+        enable: function () {
           var e,
             t,
             i,
@@ -18837,7 +18847,7 @@
               t
             ));
         },
-        disable: function() {
+        disable: function () {
           var e,
             t,
             i,
@@ -18882,10 +18892,10 @@
               n.onTouchMove,
               t
             ));
-        }
+        },
       },
       te = {
-        loadInSlide: function(e, l) {
+        loadInSlide: function (e, l) {
           void 0 === l && (l = !0);
           var d,
             u = this,
@@ -18917,14 +18927,14 @@
                 d.hasClass(c.loadingClass)
                   ? e
                   : e.add(d[0])).length) &&
-            e.each(function(e, t) {
+            e.each(function (e, t) {
               var i = w(t),
                 n = (i.addClass(c.loadingClass), i.attr('data-background')),
                 s = i.attr('data-src'),
                 a = i.attr('data-srcset'),
                 r = i.attr('data-sizes'),
                 o = i.parent('picture');
-              u.loadImage(i[0], s || n, a, r, !1, function() {
+              u.loadImage(i[0], s || n, a, r, !1, function () {
                 var e, t;
                 null == u ||
                   !u ||
@@ -18936,7 +18946,7 @@
                     : (a && (i.attr('srcset', a), i.removeAttr('data-srcset')),
                       r && (i.attr('sizes', r), i.removeAttr('data-sizes')),
                       o.length &&
-                        o.children('source').each(function(e, t) {
+                        o.children('source').each(function (e, t) {
                           t = w(t);
                           t.attr('data-srcset') &&
                             (t.attr('srcset', t.attr('data-srcset')),
@@ -18971,7 +18981,7 @@
                 u.emit('lazyImageLoad', d[0], i[0]);
             });
         },
-        load: function() {
+        load: function () {
           var i = this,
             t = i.$wrapperEl,
             n = i.params,
@@ -18998,7 +19008,7 @@
             i.lazy.initialImageLoaded || (i.lazy.initialImageLoaded = !0),
             i.params.watchSlidesVisibility)
           )
-            t.children('.' + n.slideVisibleClass).each(function(e, t) {
+            t.children('.' + n.slideVisibleClass).each(function (e, t) {
               t = a ? w(t).attr('data-swiper-slide-index') : w(t).index();
               i.lazy.loadInSlide(t);
             });
@@ -19025,18 +19035,18 @@
                   t.children('.' + n.slidePrevClass)));
               0 < c.length && i.lazy.loadInSlide(d(c));
             }
-        }
+        },
       },
       S = {
-        LinearSpline: function(e, t) {
+        LinearSpline: function (e, t) {
           var i, n, s, a, r;
           return (
             (this.x = e),
             (this.y = t),
             (this.lastIndex = e.length - 1),
-            (this.interpolate = function(e) {
+            (this.interpolate = function (e) {
               return e
-                ? ((r = (function(e, t) {
+                ? ((r = (function (e, t) {
                     for (n = -1, i = e.length; 1 < i - n; )
                       e[(s = (i + n) >> 1)] <= t ? (n = s) : (i = s);
                     return i;
@@ -19050,13 +19060,13 @@
             this
           );
         },
-        getInterpolateFunction: function(e) {
+        getInterpolateFunction: function (e) {
           this.controller.spline ||
             (this.controller.spline = this.params.loop
               ? new S.LinearSpline(this.slidesGrid, e.slidesGrid)
               : new S.LinearSpline(this.snapGrid, e.snapGrid));
         },
-        setTranslate: function(e, t) {
+        setTranslate: function (e, t) {
           var i,
             n,
             s = this,
@@ -19082,7 +19092,7 @@
               a[o] !== t && a[o] instanceof m && r(a[o]);
           else a instanceof m && t !== a && r(a);
         },
-        setTransition: function(t, e) {
+        setTransition: function (t, e) {
           var i,
             n = this,
             s = n.controller.control;
@@ -19091,10 +19101,10 @@
               0 !== t &&
                 (e.transitionStart(),
                 e.params.autoHeight &&
-                  U.nextTick(function() {
+                  U.nextTick(function () {
                     e.updateAutoHeight();
                   }),
-                e.$wrapperEl.transitionEnd(function() {
+                e.$wrapperEl.transitionEnd(function () {
                   s &&
                     (e.params.loop &&
                       'slide' === n.params.controller.by &&
@@ -19106,28 +19116,28 @@
             for (i = 0; i < s.length; i += 1)
               s[i] !== e && s[i] instanceof m && a(s[i]);
           else s instanceof m && e !== s && a(s);
-        }
+        },
       },
       ie = {
-        makeElFocusable: function(e) {
+        makeElFocusable: function (e) {
           return e.attr('tabIndex', '0'), e;
         },
-        makeElNotFocusable: function(e) {
+        makeElNotFocusable: function (e) {
           return e.attr('tabIndex', '-1'), e;
         },
-        addElRole: function(e, t) {
+        addElRole: function (e, t) {
           return e.attr('role', t), e;
         },
-        addElLabel: function(e, t) {
+        addElLabel: function (e, t) {
           return e.attr('aria-label', t), e;
         },
-        disableEl: function(e) {
+        disableEl: function (e) {
           return e.attr('aria-disabled', !0), e;
         },
-        enableEl: function(e) {
+        enableEl: function (e) {
           return e.attr('aria-disabled', !1), e;
         },
-        onEnterKey: function(e) {
+        onEnterKey: function (e) {
           var t = this.params.a11y;
           13 === e.keyCode &&
             ((e = w(e.target)),
@@ -19149,11 +19159,11 @@
             e.is('.' + this.params.pagination.bulletClass) &&
             e[0].click();
         },
-        notify: function(e) {
+        notify: function (e) {
           var t = this.a11y.liveRegion;
           0 !== t.length && (t.html(''), t.html(e));
         },
-        updateNavigation: function() {
+        updateNavigation: function () {
           var e, t;
           !this.params.loop &&
             this.navigation &&
@@ -19169,14 +19179,14 @@
               ? (this.a11y.disableEl(e), this.a11y.makeElNotFocusable(e))
               : (this.a11y.enableEl(e), this.a11y.makeElFocusable(e)));
         },
-        updatePagination: function() {
+        updatePagination: function () {
           var i = this,
             n = i.params.a11y;
           i.pagination &&
             i.params.pagination.clickable &&
             i.pagination.bullets &&
             i.pagination.bullets.length &&
-            i.pagination.bullets.each(function(e, t) {
+            i.pagination.bullets.each(function (e, t) {
               t = w(t);
               i.a11y.makeElFocusable(t),
                 i.a11y.addElRole(t, 'button'),
@@ -19189,7 +19199,7 @@
                 );
             });
         },
-        init: function() {
+        init: function () {
           this.$el.append(this.a11y.liveRegion);
           var e,
             t,
@@ -19220,7 +19230,7 @@
                 this.a11y.onEnterKey
               );
         },
-        destroy: function() {
+        destroy: function () {
           var e, t;
           this.a11y.liveRegion &&
             0 < this.a11y.liveRegion.length &&
@@ -19242,10 +19252,10 @@
                 '.' + this.params.pagination.bulletClass,
                 this.a11y.onEnterKey
               );
-        }
+        },
       },
       E = {
-        init: function() {
+        init: function () {
           var e;
           this.params.history &&
             (X.history && X.history.pushState
@@ -19265,11 +19275,11 @@
               : ((this.params.history.enabled = !1),
                 (this.params.hashNavigation.enabled = !0)));
         },
-        destroy: function() {
+        destroy: function () {
           this.params.history.replaceState ||
             X.removeEventListener('popstate', this.history.setHistoryPopState);
         },
-        setHistoryPopState: function() {
+        setHistoryPopState: function () {
           (this.history.paths = E.getPathValues()),
             this.history.scrollToSlide(
               this.params.speed,
@@ -19277,17 +19287,17 @@
               !1
             );
         },
-        getPathValues: function() {
+        getPathValues: function () {
           var e = X.location.pathname
               .slice(1)
               .split('/')
-              .filter(function(e) {
+              .filter(function (e) {
                 return '' !== e;
               }),
             t = e.length;
           return { key: e[t - 2], value: e[t - 1] };
         },
-        setHistory: function(e, t) {
+        setHistory: function (e, t) {
           this.history.initialized &&
             this.params.history.enabled &&
             ((t = this.slides.eq(t)),
@@ -19298,7 +19308,7 @@
                 ? X.history.replaceState({ value: t }, null, t)
                 : X.history.pushState({ value: t }, null, t)));
         },
-        slugify: function(e) {
+        slugify: function (e) {
           return e
             .toString()
             .replace(/\s+/g, '-')
@@ -19307,7 +19317,7 @@
             .replace(/^-+/, '')
             .replace(/-+$/, '');
         },
-        scrollToSlide: function(e, t, i) {
+        scrollToSlide: function (e, t, i) {
           if (t)
             for (var n = 0, s = this.slides.length; n < s; n += 1) {
               var a = this.slides.eq(n);
@@ -19316,10 +19326,10 @@
                 ((a = a.index()), this.slideTo(a, e, i));
             }
           else this.slideTo(0, e, i);
-        }
+        },
       },
       C = {
-        onHashCange: function() {
+        onHashCange: function () {
           this.emit('hashChange');
           var e = c.location.hash.replace('#', '');
           e !== this.slides.eq(this.activeIndex).attr('data-hash') &&
@@ -19331,7 +19341,7 @@
                 .index()) &&
             this.slideTo(e);
         },
-        setHash: function() {
+        setHash: function () {
           var e;
           this.hashNavigation.initialized &&
             this.params.hashNavigation.enabled &&
@@ -19349,7 +19359,7 @@
                 (c.location.hash = e || '')),
             this.emit('hashSet'));
         },
-        init: function() {
+        init: function () {
           if (
             !(
               !this.params.hashNavigation.enabled ||
@@ -19370,20 +19380,20 @@
               w(X).on('hashchange', this.hashNavigation.onHashCange);
           }
         },
-        destroy: function() {
+        destroy: function () {
           this.params.hashNavigation.watchState &&
             w(X).off('hashchange', this.hashNavigation.onHashCange);
-        }
+        },
       },
       H = {
-        run: function() {
+        run: function () {
           var e = this,
             t = e.slides.eq(e.activeIndex),
             i = e.params.autoplay.delay;
           t.attr('data-swiper-autoplay') &&
             (i = t.attr('data-swiper-autoplay') || e.params.autoplay.delay),
             clearTimeout(e.autoplay.timeout),
-            (e.autoplay.timeout = U.nextTick(function() {
+            (e.autoplay.timeout = U.nextTick(function () {
               e.params.autoplay.reverseDirection
                 ? e.params.loop
                   ? (e.loopFix(),
@@ -19407,7 +19417,7 @@
                 e.params.cssMode && e.autoplay.running && e.autoplay.run();
             }, i));
         },
-        start: function() {
+        start: function () {
           return (
             void 0 === this.autoplay.timeout &&
             !this.autoplay.running &&
@@ -19417,7 +19427,7 @@
             !0)
           );
         },
-        stop: function() {
+        stop: function () {
           return (
             !!this.autoplay.running &&
             void 0 !== this.autoplay.timeout &&
@@ -19429,7 +19439,7 @@
             !0)
           );
         },
-        pause: function(e) {
+        pause: function (e) {
           !this.autoplay.running ||
             this.autoplay.paused ||
             (this.autoplay.timeout && clearTimeout(this.autoplay.timeout),
@@ -19444,10 +19454,10 @@
                   this.autoplay.onTransitionEnd
                 ))
               : ((this.autoplay.paused = !1), this.autoplay.run()));
-        }
+        },
       },
       ne = {
-        setTranslate: function() {
+        setTranslate: function () {
           for (var e = this.slides, t = 0; t < e.length; t += 1) {
             var i = this.slides.eq(t),
               n = -i[0].swiperSlideOffset,
@@ -19462,7 +19472,7 @@
             );
           }
         },
-        setTransition: function(e) {
+        setTransition: function (e) {
           var i,
             n = this,
             t = n.slides,
@@ -19471,7 +19481,7 @@
             n.params.virtualTranslate &&
               0 !== e &&
               ((i = !1),
-              t.transitionEnd(function() {
+              t.transitionEnd(function () {
                 if (!i && n && !n.destroyed) {
                   (i = !0), (n.animating = !1);
                   for (
@@ -19482,10 +19492,10 @@
                     s.trigger(e[t]);
                 }
               }));
-        }
+        },
       },
       se = {
-        setTranslate: function() {
+        setTranslate: function () {
           var e,
             t = this.$el,
             i = this.$wrapperEl,
@@ -19575,7 +19585,7 @@
             '-webkit-transform-origin': '50% 50% -' + o / 2 + 'px',
             '-moz-transform-origin': '50% 50% -' + o / 2 + 'px',
             '-ms-transform-origin': '50% 50% -' + o / 2 + 'px',
-            'transform-origin': '50% 50% -' + o / 2 + 'px'
+            'transform-origin': '50% 50% -' + o / 2 + 'px',
           }),
             l.shadow &&
               (d
@@ -19617,7 +19627,7 @@
                 'deg)'
             );
         },
-        setTransition: function(e) {
+        setTransition: function (e) {
           var t = this.$el;
           this.slides
             .transition(e)
@@ -19628,10 +19638,10 @@
             this.params.cubeEffect.shadow &&
               !this.isHorizontal() &&
               t.find('.swiper-cube-shadow').transition(e);
-        }
+        },
       },
       ae = {
-        setTranslate: function() {
+        setTranslate: function () {
           for (
             var e = this.slides, t = this.rtlTranslate, i = 0;
             i < e.length;
@@ -19690,7 +19700,7 @@
               );
           }
         },
-        setTransition: function(e) {
+        setTransition: function (e) {
           var i,
             n = this,
             t = n.slides,
@@ -19705,7 +19715,7 @@
             n.params.virtualTranslate &&
               0 !== e &&
               ((i = !1),
-              t.eq(s).transitionEnd(function() {
+              t.eq(s).transitionEnd(function () {
                 if (!i && n && !n.destroyed) {
                   (i = !0), (n.animating = !1);
                   for (
@@ -19716,10 +19726,10 @@
                     a.trigger(e[t]);
                 }
               }));
-        }
+        },
       },
       re = {
-        setTranslate: function() {
+        setTranslate: function () {
           for (
             var e = this.width,
               t = this.height,
@@ -19796,35 +19806,35 @@
           (M.pointerEvents || M.prefixedPointerEvents) &&
             (n[0].style.perspectiveOrigin = l + 'px 50%');
         },
-        setTransition: function(e) {
+        setTransition: function (e) {
           this.slides
             .transition(e)
             .find(
               '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left'
             )
             .transition(e);
-        }
+        },
       },
       oe = {
-        init: function() {
+        init: function () {
           var e = this.params.thumbs,
             t = this.constructor;
           e.swiper instanceof t
             ? ((this.thumbs.swiper = e.swiper),
               U.extend(this.thumbs.swiper.originalParams, {
                 watchSlidesProgress: !0,
-                slideToClickedSlide: !1
+                slideToClickedSlide: !1,
               }),
               U.extend(this.thumbs.swiper.params, {
                 watchSlidesProgress: !0,
-                slideToClickedSlide: !1
+                slideToClickedSlide: !1,
               }))
             : U.isObject(e.swiper) &&
               ((this.thumbs.swiper = new t(
                 U.extend({}, e.swiper, {
                   watchSlidesVisibility: !0,
                   watchSlidesProgress: !0,
-                  slideToClickedSlide: !1
+                  slideToClickedSlide: !1,
                 })
               )),
               (this.thumbs.swiperCreated = !0)),
@@ -19833,7 +19843,7 @@
             ),
             this.thumbs.swiper.on('tap', this.thumbs.onThumbClick);
         },
-        onThumbClick: function() {
+        onThumbClick: function () {
           var e,
             t,
             i,
@@ -19868,7 +19878,7 @@
                 (i = void 0 === e || (void 0 !== t && t - n < n - e) ? t : e)),
               this.slideTo(i)));
         },
-        update: function(e) {
+        update: function (e) {
           var t = this.thumbs.swiper;
           if (t) {
             var i,
@@ -19947,7 +19957,7 @@
               for (var c = 0; c < l; c += 1)
                 t.slides.eq(this.realIndex + c).addClass(d);
           }
-        }
+        },
       },
       j = [
         p,
@@ -19966,10 +19976,10 @@
               invert: !1,
               forceToAxis: !1,
               sensitivity: 1,
-              eventsTarged: 'container'
-            }
+              eventsTarged: 'container',
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               mousewheel: {
                 enabled: !1,
@@ -19982,22 +19992,22 @@
                 releaseScroll: Y.releaseScroll.bind(this),
                 lastScrollTime: U.now(),
                 lastEventBeforeSnap: void 0,
-                recentWheelEvents: []
-              }
+                recentWheelEvents: [],
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               !this.params.mousewheel.enabled &&
                 this.params.cssMode &&
                 this.mousewheel.disable(),
                 this.params.mousewheel.enabled && this.mousewheel.enable();
             },
-            destroy: function() {
+            destroy: function () {
               this.params.cssMode && this.mousewheel.enable(),
                 this.mousewheel.enabled && this.mousewheel.disable();
-            }
-          }
+            },
+          },
         },
         {
           name: 'navigation',
@@ -20008,34 +20018,34 @@
               hideOnClick: !1,
               disabledClass: 'swiper-button-disabled',
               hiddenClass: 'swiper-button-hidden',
-              lockClass: 'swiper-button-lock'
-            }
+              lockClass: 'swiper-button-lock',
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               navigation: {
                 init: k.init.bind(this),
                 update: k.update.bind(this),
                 destroy: k.destroy.bind(this),
                 onNextClick: k.onNextClick.bind(this),
-                onPrevClick: k.onPrevClick.bind(this)
-              }
+                onPrevClick: k.onPrevClick.bind(this),
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               this.navigation.init(), this.navigation.update();
             },
-            toEdge: function() {
+            toEdge: function () {
               this.navigation.update();
             },
-            fromEdge: function() {
+            fromEdge: function () {
               this.navigation.update();
             },
-            destroy: function() {
+            destroy: function () {
               this.navigation.destroy();
             },
-            click: function(e) {
+            click: function (e) {
               var t,
                 i = this.navigation,
                 n = i.$nextEl,
@@ -20051,8 +20061,8 @@
                   : this.emit('navigationHide', this),
                 n && n.toggleClass(this.params.navigation.hiddenClass),
                 i && i.toggleClass(this.params.navigation.hiddenClass));
-            }
-          }
+            },
+          },
         },
         {
           name: 'pagination',
@@ -20070,10 +20080,10 @@
               type: 'bullets',
               dynamicBullets: !1,
               dynamicMainBullets: 1,
-              formatFractionCurrent: function(e) {
+              formatFractionCurrent: function (e) {
                 return e;
               },
-              formatFractionTotal: function(e) {
+              formatFractionTotal: function (e) {
                 return e;
               },
               bulletClass: 'swiper-pagination-bullet',
@@ -20086,45 +20096,45 @@
               progressbarOppositeClass:
                 'swiper-pagination-progressbar-opposite',
               clickableClass: 'swiper-pagination-clickable',
-              lockClass: 'swiper-pagination-lock'
-            }
+              lockClass: 'swiper-pagination-lock',
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               pagination: {
                 init: D.init.bind(this),
                 render: D.render.bind(this),
                 update: D.update.bind(this),
                 destroy: D.destroy.bind(this),
-                dynamicBulletIndex: 0
-              }
+                dynamicBulletIndex: 0,
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               this.pagination.init(),
                 this.pagination.render(),
                 this.pagination.update();
             },
-            activeIndexChange: function() {
+            activeIndexChange: function () {
               (!this.params.loop && void 0 !== this.snapIndex) ||
                 this.pagination.update();
             },
-            snapIndexChange: function() {
+            snapIndexChange: function () {
               this.params.loop || this.pagination.update();
             },
-            slidesLengthChange: function() {
+            slidesLengthChange: function () {
               this.params.loop &&
                 (this.pagination.render(), this.pagination.update());
             },
-            snapGridLengthChange: function() {
+            snapGridLengthChange: function () {
               this.params.loop ||
                 (this.pagination.render(), this.pagination.update());
             },
-            destroy: function() {
+            destroy: function () {
               this.pagination.destroy();
             },
-            click: function(e) {
+            click: function (e) {
               this.params.pagination.el &&
                 this.params.pagination.hideOnClick &&
                 0 < this.pagination.$el.length &&
@@ -20136,8 +20146,8 @@
                 this.pagination.$el.toggleClass(
                   this.params.pagination.hiddenClass
                 ));
-            }
-          }
+            },
+          },
         },
         {
           name: 'scrollbar',
@@ -20149,10 +20159,10 @@
               draggable: !1,
               snapOnRelease: !0,
               lockClass: 'swiper-scrollbar-lock',
-              dragClass: 'swiper-scrollbar-drag'
-            }
+              dragClass: 'swiper-scrollbar-drag',
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               scrollbar: {
                 init: x.init.bind(this),
@@ -20169,64 +20179,64 @@
                 onDragEnd: x.onDragEnd.bind(this),
                 isTouched: !1,
                 timeout: null,
-                dragTimeout: null
-              }
+                dragTimeout: null,
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               this.scrollbar.init(),
                 this.scrollbar.updateSize(),
                 this.scrollbar.setTranslate();
             },
-            update: function() {
+            update: function () {
               this.scrollbar.updateSize();
             },
-            resize: function() {
+            resize: function () {
               this.scrollbar.updateSize();
             },
-            observerUpdate: function() {
+            observerUpdate: function () {
               this.scrollbar.updateSize();
             },
-            setTranslate: function() {
+            setTranslate: function () {
               this.scrollbar.setTranslate();
             },
-            setTransition: function(e) {
+            setTransition: function (e) {
               this.scrollbar.setTransition(e);
             },
-            destroy: function() {
+            destroy: function () {
               this.scrollbar.destroy();
-            }
-          }
+            },
+          },
         },
         {
           name: 'parallax',
           params: { parallax: { enabled: !1 } },
-          create: function() {
+          create: function () {
             U.extend(this, {
               parallax: {
                 setTransform: Z.setTransform.bind(this),
                 setTranslate: Z.setTranslate.bind(this),
-                setTransition: Z.setTransition.bind(this)
-              }
+                setTransition: Z.setTransition.bind(this),
+              },
             });
           },
           on: {
-            beforeInit: function() {
+            beforeInit: function () {
               this.params.parallax.enabled &&
                 ((this.params.watchSlidesProgress = !0),
                 (this.originalParams.watchSlidesProgress = !0));
             },
-            init: function() {
+            init: function () {
               this.params.parallax.enabled && this.parallax.setTranslate();
             },
-            setTranslate: function() {
+            setTranslate: function () {
               this.params.parallax.enabled && this.parallax.setTranslate();
             },
-            setTransition: function(e) {
+            setTransition: function (e) {
               this.params.parallax.enabled && this.parallax.setTransition(e);
-            }
-          }
+            },
+          },
         },
         {
           name: 'zoom',
@@ -20237,10 +20247,10 @@
               minRatio: 1,
               toggle: !0,
               containerClass: 'swiper-zoom-container',
-              zoomedSlideClass: 'swiper-slide-zoomed'
-            }
+              zoomedSlideClass: 'swiper-slide-zoomed',
+            },
           },
-          create: function() {
+          create: function () {
             var n = this,
               t = {
                 enabled: !1,
@@ -20253,7 +20263,7 @@
                   slideHeight: void 0,
                   $imageEl: void 0,
                   $imageWrapEl: void 0,
-                  maxRatio: 3
+                  maxRatio: 3,
                 },
                 image: {
                   isTouched: void 0,
@@ -20269,29 +20279,29 @@
                   startX: void 0,
                   startY: void 0,
                   touchesStart: {},
-                  touchesCurrent: {}
+                  touchesCurrent: {},
                 },
                 velocity: {
                   x: void 0,
                   y: void 0,
                   prevPositionX: void 0,
                   prevPositionY: void 0,
-                  prevTime: void 0
-                }
+                  prevTime: void 0,
+                },
               },
               s =
                 ('onGestureStart onGestureChange onGestureEnd onTouchStart onTouchMove onTouchEnd onTransitionEnd toggle enable disable in out'
                   .split(' ')
-                  .forEach(function(e) {
+                  .forEach(function (e) {
                     t[e] = ee[e].bind(n);
                   }),
                 U.extend(n, { zoom: t }),
                 1);
             Object.defineProperty(n.zoom, 'scale', {
-              get: function() {
+              get: function () {
                 return s;
               },
-              set: function(e) {
+              set: function (e) {
                 var t, i;
                 s !== e &&
                   ((t = n.zoom.gesture.$imageEl
@@ -20302,40 +20312,40 @@
                     : void 0),
                   n.emit('zoomChange', e, t, i)),
                   (s = e);
-              }
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               this.params.zoom.enabled && this.zoom.enable();
             },
-            destroy: function() {
+            destroy: function () {
               this.zoom.disable();
             },
-            touchStart: function(e) {
+            touchStart: function (e) {
               this.zoom.enabled && this.zoom.onTouchStart(e);
             },
-            touchEnd: function(e) {
+            touchEnd: function (e) {
               this.zoom.enabled && this.zoom.onTouchEnd(e);
             },
-            doubleTap: function(e) {
+            doubleTap: function (e) {
               this.params.zoom.enabled &&
                 this.zoom.enabled &&
                 this.params.zoom.toggle &&
                 this.zoom.toggle(e);
             },
-            transitionEnd: function() {
+            transitionEnd: function () {
               this.zoom.enabled &&
                 this.params.zoom.enabled &&
                 this.zoom.onTransitionEnd();
             },
-            slideChange: function() {
+            slideChange: function () {
               this.zoom.enabled &&
                 this.params.zoom.enabled &&
                 this.params.cssMode &&
                 this.zoom.onTransitionEnd();
-            }
-          }
+            },
+          },
         },
         {
           name: 'lazy',
@@ -20348,99 +20358,99 @@
               elementClass: 'swiper-lazy',
               loadingClass: 'swiper-lazy-loading',
               loadedClass: 'swiper-lazy-loaded',
-              preloaderClass: 'swiper-lazy-preloader'
-            }
+              preloaderClass: 'swiper-lazy-preloader',
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               lazy: {
                 initialImageLoaded: !1,
                 load: te.load.bind(this),
-                loadInSlide: te.loadInSlide.bind(this)
-              }
+                loadInSlide: te.loadInSlide.bind(this),
+              },
             });
           },
           on: {
-            beforeInit: function() {
+            beforeInit: function () {
               this.params.lazy.enabled &&
                 this.params.preloadImages &&
                 (this.params.preloadImages = !1);
             },
-            init: function() {
+            init: function () {
               this.params.lazy.enabled &&
                 !this.params.loop &&
                 0 === this.params.initialSlide &&
                 this.lazy.load();
             },
-            scroll: function() {
+            scroll: function () {
               this.params.freeMode &&
                 !this.params.freeModeSticky &&
                 this.lazy.load();
             },
-            resize: function() {
+            resize: function () {
               this.params.lazy.enabled && this.lazy.load();
             },
-            scrollbarDragMove: function() {
+            scrollbarDragMove: function () {
               this.params.lazy.enabled && this.lazy.load();
             },
-            transitionStart: function() {
+            transitionStart: function () {
               this.params.lazy.enabled &&
                 (this.params.lazy.loadOnTransitionStart ||
                   (!this.params.lazy.loadOnTransitionStart &&
                     !this.lazy.initialImageLoaded)) &&
                 this.lazy.load();
             },
-            transitionEnd: function() {
+            transitionEnd: function () {
               this.params.lazy.enabled &&
                 !this.params.lazy.loadOnTransitionStart &&
                 this.lazy.load();
             },
-            slideChange: function() {
+            slideChange: function () {
               this.params.lazy.enabled &&
                 this.params.cssMode &&
                 this.lazy.load();
-            }
-          }
+            },
+          },
         },
         {
           name: 'controller',
           params: { controller: { control: void 0, inverse: !1, by: 'slide' } },
-          create: function() {
+          create: function () {
             U.extend(this, {
               controller: {
                 control: this.params.controller.control,
                 getInterpolateFunction: S.getInterpolateFunction.bind(this),
                 setTranslate: S.setTranslate.bind(this),
-                setTransition: S.setTransition.bind(this)
-              }
+                setTransition: S.setTransition.bind(this),
+              },
             });
           },
           on: {
-            update: function() {
+            update: function () {
               this.controller.control &&
                 this.controller.spline &&
                 ((this.controller.spline = void 0),
                 delete this.controller.spline);
             },
-            resize: function() {
+            resize: function () {
               this.controller.control &&
                 this.controller.spline &&
                 ((this.controller.spline = void 0),
                 delete this.controller.spline);
             },
-            observerUpdate: function() {
+            observerUpdate: function () {
               this.controller.control &&
                 this.controller.spline &&
                 ((this.controller.spline = void 0),
                 delete this.controller.spline);
             },
-            setTranslate: function(e, t) {
+            setTranslate: function (e, t) {
               this.controller.control && this.controller.setTranslate(e, t);
             },
-            setTransition: function(e, t) {
+            setTransition: function (e, t) {
               this.controller.control && this.controller.setTransition(e, t);
-            }
-          }
+            },
+          },
         },
         {
           name: 'a11y',
@@ -20452,10 +20462,10 @@
               nextSlideMessage: 'Next slide',
               firstSlideMessage: 'This is the first slide',
               lastSlideMessage: 'This is the last slide',
-              paginationBulletMessage: 'Go to slide {{index}}'
-            }
+              paginationBulletMessage: 'Go to slide {{index}}',
+            },
           },
-          create: function() {
+          create: function () {
             var t = this;
             U.extend(t, {
               a11y: {
@@ -20463,103 +20473,103 @@
                   '<span class="' +
                     t.params.a11y.notificationClass +
                     '" aria-live="assertive" aria-atomic="true"></span>'
-                )
-              }
+                ),
+              },
             }),
-              Object.keys(ie).forEach(function(e) {
+              Object.keys(ie).forEach(function (e) {
                 t.a11y[e] = ie[e].bind(t);
               });
           },
           on: {
-            init: function() {
+            init: function () {
               this.params.a11y.enabled &&
                 (this.a11y.init(), this.a11y.updateNavigation());
             },
-            toEdge: function() {
+            toEdge: function () {
               this.params.a11y.enabled && this.a11y.updateNavigation();
             },
-            fromEdge: function() {
+            fromEdge: function () {
               this.params.a11y.enabled && this.a11y.updateNavigation();
             },
-            paginationUpdate: function() {
+            paginationUpdate: function () {
               this.params.a11y.enabled && this.a11y.updatePagination();
             },
-            destroy: function() {
+            destroy: function () {
               this.params.a11y.enabled && this.a11y.destroy();
-            }
-          }
+            },
+          },
         },
         {
           name: 'history',
           params: { history: { enabled: !1, replaceState: !1, key: 'slides' } },
-          create: function() {
+          create: function () {
             U.extend(this, {
               history: {
                 init: E.init.bind(this),
                 setHistory: E.setHistory.bind(this),
                 setHistoryPopState: E.setHistoryPopState.bind(this),
                 scrollToSlide: E.scrollToSlide.bind(this),
-                destroy: E.destroy.bind(this)
-              }
+                destroy: E.destroy.bind(this),
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               this.params.history.enabled && this.history.init();
             },
-            destroy: function() {
+            destroy: function () {
               this.params.history.enabled && this.history.destroy();
             },
-            transitionEnd: function() {
+            transitionEnd: function () {
               this.history.initialized &&
                 this.history.setHistory(
                   this.params.history.key,
                   this.activeIndex
                 );
             },
-            slideChange: function() {
+            slideChange: function () {
               this.history.initialized &&
                 this.params.cssMode &&
                 this.history.setHistory(
                   this.params.history.key,
                   this.activeIndex
                 );
-            }
-          }
+            },
+          },
         },
         {
           name: 'hash-navigation',
           params: {
-            hashNavigation: { enabled: !1, replaceState: !1, watchState: !1 }
+            hashNavigation: { enabled: !1, replaceState: !1, watchState: !1 },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               hashNavigation: {
                 initialized: !1,
                 init: C.init.bind(this),
                 destroy: C.destroy.bind(this),
                 setHash: C.setHash.bind(this),
-                onHashCange: C.onHashCange.bind(this)
-              }
+                onHashCange: C.onHashCange.bind(this),
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               this.params.hashNavigation.enabled && this.hashNavigation.init();
             },
-            destroy: function() {
+            destroy: function () {
               this.params.hashNavigation.enabled &&
                 this.hashNavigation.destroy();
             },
-            transitionEnd: function() {
+            transitionEnd: function () {
               this.hashNavigation.initialized && this.hashNavigation.setHash();
             },
-            slideChange: function() {
+            slideChange: function () {
               this.hashNavigation.initialized &&
                 this.params.cssMode &&
                 this.hashNavigation.setHash();
-            }
-          }
+            },
+          },
         },
         {
           name: 'autoplay',
@@ -20570,10 +20580,10 @@
               waitForTransition: !0,
               disableOnInteraction: !0,
               stopOnLastSlide: !1,
-              reverseDirection: !1
-            }
+              reverseDirection: !1,
+            },
           },
-          create: function() {
+          create: function () {
             var t = this;
             U.extend(t, {
               autoplay: {
@@ -20583,7 +20593,7 @@
                 start: H.start.bind(t),
                 stop: H.stop.bind(t),
                 pause: H.pause.bind(t),
-                onVisibilityChange: function() {
+                onVisibilityChange: function () {
                   'hidden' === document.visibilityState &&
                     t.autoplay.running &&
                     t.autoplay.pause(),
@@ -20591,7 +20601,7 @@
                       t.autoplay.paused &&
                       (t.autoplay.run(), (t.autoplay.paused = !1));
                 },
-                onTransitionEnd: function(e) {
+                onTransitionEnd: function (e) {
                   t &&
                     !t.destroyed &&
                     t.$wrapperEl &&
@@ -20606,12 +20616,12 @@
                     ),
                     (t.autoplay.paused = !1),
                     t.autoplay.running ? t.autoplay.run() : t.autoplay.stop());
-                }
-              }
+                },
+              },
             });
           },
           on: {
-            init: function() {
+            init: function () {
               this.params.autoplay.enabled &&
                 (this.autoplay.start(),
                 document.addEventListener(
@@ -20619,46 +20629,46 @@
                   this.autoplay.onVisibilityChange
                 ));
             },
-            beforeTransitionStart: function(e, t) {
+            beforeTransitionStart: function (e, t) {
               this.autoplay.running &&
                 (t || !this.params.autoplay.disableOnInteraction
                   ? this.autoplay.pause(e)
                   : this.autoplay.stop());
             },
-            sliderFirstMove: function() {
+            sliderFirstMove: function () {
               this.autoplay.running &&
                 (this.params.autoplay.disableOnInteraction
                   ? this.autoplay.stop()
                   : this.autoplay.pause());
             },
-            touchEnd: function() {
+            touchEnd: function () {
               this.params.cssMode &&
                 this.autoplay.paused &&
                 !this.params.autoplay.disableOnInteraction &&
                 this.autoplay.run();
             },
-            destroy: function() {
+            destroy: function () {
               this.autoplay.running && this.autoplay.stop(),
                 document.removeEventListener(
                   'visibilitychange',
                   this.autoplay.onVisibilityChange
                 );
-            }
-          }
+            },
+          },
         },
         {
           name: 'effect-fade',
           params: { fadeEffect: { crossFade: !1 } },
-          create: function() {
+          create: function () {
             U.extend(this, {
               fadeEffect: {
                 setTranslate: ne.setTranslate.bind(this),
-                setTransition: ne.setTransition.bind(this)
-              }
+                setTransition: ne.setTransition.bind(this),
+              },
             });
           },
           on: {
-            beforeInit: function() {
+            beforeInit: function () {
               var e;
               'fade' === this.params.effect &&
                 (this.classNames.push(
@@ -20672,18 +20682,18 @@
                     slidesPerGroup: 1,
                     watchSlidesProgress: !0,
                     spaceBetween: 0,
-                    virtualTranslate: !0
+                    virtualTranslate: !0,
                   })
                 ),
                 U.extend(this.originalParams, e));
             },
-            setTranslate: function() {
+            setTranslate: function () {
               'fade' === this.params.effect && this.fadeEffect.setTranslate();
             },
-            setTransition: function(e) {
+            setTransition: function (e) {
               'fade' === this.params.effect && this.fadeEffect.setTransition(e);
-            }
-          }
+            },
+          },
         },
         {
           name: 'effect-cube',
@@ -20692,19 +20702,19 @@
               slideShadows: !0,
               shadow: !0,
               shadowOffset: 20,
-              shadowScale: 0.94
-            }
+              shadowScale: 0.94,
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               cubeEffect: {
                 setTranslate: se.setTranslate.bind(this),
-                setTransition: se.setTransition.bind(this)
-              }
+                setTransition: se.setTransition.bind(this),
+              },
             });
           },
           on: {
-            beforeInit: function() {
+            beforeInit: function () {
               var e;
               'cube' === this.params.effect &&
                 (this.classNames.push(
@@ -20721,32 +20731,32 @@
                     resistanceRatio: 0,
                     spaceBetween: 0,
                     centeredSlides: !1,
-                    virtualTranslate: !0
+                    virtualTranslate: !0,
                   })
                 ),
                 U.extend(this.originalParams, e));
             },
-            setTranslate: function() {
+            setTranslate: function () {
               'cube' === this.params.effect && this.cubeEffect.setTranslate();
             },
-            setTransition: function(e) {
+            setTransition: function (e) {
               'cube' === this.params.effect && this.cubeEffect.setTransition(e);
-            }
-          }
+            },
+          },
         },
         {
           name: 'effect-flip',
           params: { flipEffect: { slideShadows: !0, limitRotation: !0 } },
-          create: function() {
+          create: function () {
             U.extend(this, {
               flipEffect: {
                 setTranslate: ae.setTranslate.bind(this),
-                setTransition: ae.setTransition.bind(this)
-              }
+                setTransition: ae.setTransition.bind(this),
+              },
             });
           },
           on: {
-            beforeInit: function() {
+            beforeInit: function () {
               var e;
               'flip' === this.params.effect &&
                 (this.classNames.push(
@@ -20761,18 +20771,18 @@
                     slidesPerGroup: 1,
                     watchSlidesProgress: !0,
                     spaceBetween: 0,
-                    virtualTranslate: !0
+                    virtualTranslate: !0,
                   })
                 ),
                 U.extend(this.originalParams, e));
             },
-            setTranslate: function() {
+            setTranslate: function () {
               'flip' === this.params.effect && this.flipEffect.setTranslate();
             },
-            setTransition: function(e) {
+            setTransition: function (e) {
               'flip' === this.params.effect && this.flipEffect.setTransition(e);
-            }
-          }
+            },
+          },
         },
         {
           name: 'effect-coverflow',
@@ -20782,19 +20792,19 @@
               stretch: 0,
               depth: 100,
               modifier: 1,
-              slideShadows: !0
-            }
+              slideShadows: !0,
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               coverflowEffect: {
                 setTranslate: re.setTranslate.bind(this),
-                setTransition: re.setTransition.bind(this)
-              }
+                setTransition: re.setTransition.bind(this),
+              },
             });
           },
           on: {
-            beforeInit: function() {
+            beforeInit: function () {
               'coverflow' === this.params.effect &&
                 (this.classNames.push(
                   this.params.containerModifierClass + 'coverflow'
@@ -20803,15 +20813,15 @@
                 (this.params.watchSlidesProgress = !0),
                 (this.originalParams.watchSlidesProgress = !0));
             },
-            setTranslate: function() {
+            setTranslate: function () {
               'coverflow' === this.params.effect &&
                 this.coverflowEffect.setTranslate();
             },
-            setTransition: function(e) {
+            setTransition: function (e) {
               'coverflow' === this.params.effect &&
                 this.coverflowEffect.setTransition(e);
-            }
-          }
+            },
+          },
         },
         {
           name: 'thumbs',
@@ -20821,46 +20831,46 @@
               multipleActiveThumbs: !0,
               autoScrollOffset: 0,
               slideThumbActiveClass: 'swiper-slide-thumb-active',
-              thumbsContainerClass: 'swiper-container-thumbs'
-            }
+              thumbsContainerClass: 'swiper-container-thumbs',
+            },
           },
-          create: function() {
+          create: function () {
             U.extend(this, {
               thumbs: {
                 swiper: null,
                 init: oe.init.bind(this),
                 update: oe.update.bind(this),
-                onThumbClick: oe.onThumbClick.bind(this)
-              }
+                onThumbClick: oe.onThumbClick.bind(this),
+              },
             });
           },
           on: {
-            beforeInit: function() {
+            beforeInit: function () {
               var e = this.params.thumbs;
               e && e.swiper && (this.thumbs.init(), this.thumbs.update(!0));
             },
-            slideChange: function() {
+            slideChange: function () {
               this.thumbs.swiper && this.thumbs.update();
             },
-            update: function() {
+            update: function () {
               this.thumbs.swiper && this.thumbs.update();
             },
-            resize: function() {
+            resize: function () {
               this.thumbs.swiper && this.thumbs.update();
             },
-            observerUpdate: function() {
+            observerUpdate: function () {
               this.thumbs.swiper && this.thumbs.update();
             },
-            setTransition: function(e) {
+            setTransition: function (e) {
               var t = this.thumbs.swiper;
               t && t.setTransition(e);
             },
-            beforeDestroy: function() {
+            beforeDestroy: function () {
               var e = this.thumbs.swiper;
               e && this.thumbs.swiperCreated && e && e.destroy();
-            }
-          }
-        }
+            },
+          },
+        },
       ];
     return (
       void 0 === m.use &&
@@ -20869,13 +20879,13 @@
       m
     );
   }),
-  (function(e, t) {
+  (function (e, t) {
     'object' == typeof exports && 'undefined' != typeof module
       ? (module.exports = t())
       : 'function' == typeof define && define.amd
       ? define(t)
       : ((e = e || self).PerfectScrollbar = t());
-  })(this, function() {
+  })(this, function () {
     'use strict';
     function m(e) {
       return getComputedStyle(e);
@@ -20904,7 +20914,7 @@
       e.remove ? e.remove() : e.parentNode && e.parentNode.removeChild(e);
     }
     function u(e, t) {
-      return Array.prototype.filter.call(e.children, function(e) {
+      return Array.prototype.filter.call(e.children, function (e) {
         return o(e, t);
       });
     }
@@ -20912,24 +20922,24 @@
         main: 'ps',
         rtl: 'ps__rtl',
         element: {
-          thumb: function(e) {
+          thumb: function (e) {
             return 'ps__thumb-' + e;
           },
-          rail: function(e) {
+          rail: function (e) {
             return 'ps__rail-' + e;
           },
-          consuming: 'ps__child--consume'
+          consuming: 'ps__child--consume',
         },
         state: {
           focus: 'ps--focus',
           clicking: 'ps--clicking',
-          active: function(e) {
+          active: function (e) {
             return 'ps--active-' + e;
           },
-          scrolling: function(e) {
+          scrolling: function (e) {
             return 'ps--scrolling-' + e;
-          }
-        }
+          },
+        },
       },
       n = { x: null, y: null };
     function v(e, t) {
@@ -20938,7 +20948,7 @@
       e.contains(i) ? clearTimeout(n[t]) : e.add(i);
     }
     function M(e, t) {
-      n[t] = setTimeout(function() {
+      n[t] = setTimeout(function () {
         return e.isAlive && e.element.classList.remove(y.state.scrolling(t));
       }, e.settings.scrollingThreshold);
     }
@@ -20949,25 +20959,25 @@
       this.eventElements = [];
     }
     var e = { isEmpty: { configurable: !0 } };
-    (s.prototype.bind = function(e, t) {
+    (s.prototype.bind = function (e, t) {
       void 0 === this.handlers[e] && (this.handlers[e] = []),
         this.handlers[e].push(t),
         this.element.addEventListener(e, t, !1);
     }),
-      (s.prototype.unbind = function(t, i) {
+      (s.prototype.unbind = function (t, i) {
         var n = this;
-        this.handlers[t] = this.handlers[t].filter(function(e) {
+        this.handlers[t] = this.handlers[t].filter(function (e) {
           return (
             !(!i || e === i) || (n.element.removeEventListener(t, e, !1), !1)
           );
         });
       }),
-      (s.prototype.unbindAll = function() {
+      (s.prototype.unbindAll = function () {
         for (var e in this.handlers) this.unbind(e);
       }),
-      (e.isEmpty.get = function() {
+      (e.isEmpty.get = function () {
         var t = this;
-        return Object.keys(this.handlers).every(function(e) {
+        return Object.keys(this.handlers).every(function (e) {
           return 0 === t.handlers[e].length;
         });
       }),
@@ -20993,7 +21003,7 @@
           'scrollTop',
           'y',
           'up',
-          'down'
+          'down',
         ];
       else {
         if ('left' !== t) throw new Error('A proper axis should be provided');
@@ -21003,7 +21013,7 @@
           'scrollLeft',
           'x',
           'left',
-          'right'
+          'right',
         ];
       }
       var t = e,
@@ -21034,30 +21044,30 @@
     function p(e) {
       return parseInt(e, 10) || 0;
     }
-    (c.prototype.eventElement = function(t) {
-      var e = this.eventElements.filter(function(e) {
+    (c.prototype.eventElement = function (t) {
+      var e = this.eventElements.filter(function (e) {
         return e.element === t;
       })[0];
       return e || ((e = new s(t)), this.eventElements.push(e)), e;
     }),
-      (c.prototype.bind = function(e, t, i) {
+      (c.prototype.bind = function (e, t, i) {
         this.eventElement(e).bind(t, i);
       }),
-      (c.prototype.unbind = function(e, t, i) {
+      (c.prototype.unbind = function (e, t, i) {
         e = this.eventElement(e);
         e.unbind(t, i),
           e.isEmpty &&
             this.eventElements.splice(this.eventElements.indexOf(e), 1);
       }),
-      (c.prototype.unbindAll = function() {
-        this.eventElements.forEach(function(e) {
+      (c.prototype.unbindAll = function () {
+        this.eventElements.forEach(function (e) {
           return e.unbindAll();
         }),
           (this.eventElements = []);
       }),
-      (c.prototype.once = function(e, t, i) {
+      (c.prototype.once = function (e, t, i) {
         var n = this.eventElement(e),
-          s = function(e) {
+          s = function (e) {
             n.unbind(t, s), i(e);
           };
         n.bind(t, s);
@@ -21076,7 +21086,7 @@
         'undefined' != typeof navigator && navigator.msMaxTouchPoints,
       isChrome:
         'undefined' != typeof navigator &&
-        /Chrome/i.test(navigator && navigator.userAgent)
+        /Chrome/i.test(navigator && navigator.userAgent),
     };
     function b(e) {
       var t = e.element,
@@ -21163,11 +21173,11 @@
         l(i.scrollbarYRail, s),
         l(i.scrollbarX, {
           left: i.scrollbarXLeft,
-          width: i.scrollbarXWidth - i.railBorderXWidth
+          width: i.scrollbarXWidth - i.railBorderXWidth,
         }),
         l(i.scrollbarY, {
           top: i.scrollbarYTop,
-          height: i.scrollbarYHeight - i.railBorderYWidth
+          height: i.scrollbarYHeight - i.railBorderYWidth,
         }),
         e.scrollbarXActive
           ? t.classList.add(y.state.active('x'))
@@ -21231,10 +21241,10 @@
           i[u].classList.add(y.state.clicking),
           e.stopPropagation();
       }
-      i.event.bind(i[t], 'mousedown', function(e) {
+      i.event.bind(i[t], 'mousedown', function (e) {
         g(e);
       }),
-        i.event.bind(i[t], 'touchstart', function(e) {
+        i.event.bind(i[t], 'touchstart', function (e) {
           g(e, !0);
         });
     }
@@ -21262,7 +21272,7 @@
         swipeEasing: !0,
         useBothWheelAxes: !1,
         wheelPropagation: !0,
-        wheelSpeed: 1
+        wheelSpeed: 1,
       }),
       t))
         this.settings[i] = t[i];
@@ -21354,26 +21364,26 @@
               ? 'start'
               : e.scrollTop >= this.contentHeight - this.containerHeight
               ? 'end'
-              : null
+              : null,
         }),
         (this.isAlive = !0),
-        this.settings.handlers.forEach(function(e) {
+        this.settings.handlers.forEach(function (e) {
           return w[e](n);
         }),
         (this.lastScrollTop = Math.floor(e.scrollTop)),
         (this.lastScrollLeft = e.scrollLeft),
-        this.event.bind(this.element, 'scroll', function(e) {
+        this.event.bind(this.element, 'scroll', function (e) {
           return n.onScroll(e);
         }),
         b(this);
     }
     var w = {
-      'click-rail': function(i) {
+      'click-rail': function (i) {
         i.element,
-          i.event.bind(i.scrollbarY, 'mousedown', function(e) {
+          i.event.bind(i.scrollbarY, 'mousedown', function (e) {
             return e.stopPropagation();
           }),
-          i.event.bind(i.scrollbarYRail, 'mousedown', function(e) {
+          i.event.bind(i.scrollbarYRail, 'mousedown', function (e) {
             var t =
               e.pageY -
                 window.pageYOffset -
@@ -21385,10 +21395,10 @@
               b(i),
               e.stopPropagation();
           }),
-          i.event.bind(i.scrollbarX, 'mousedown', function(e) {
+          i.event.bind(i.scrollbarX, 'mousedown', function (e) {
             return e.stopPropagation();
           }),
-          i.event.bind(i.scrollbarXRail, 'mousedown', function(e) {
+          i.event.bind(i.scrollbarXRail, 'mousedown', function (e) {
             var t =
               e.pageX -
                 window.pageXOffset -
@@ -21401,7 +21411,7 @@
               e.stopPropagation();
           });
       },
-      'drag-thumb': function(e) {
+      'drag-thumb': function (e) {
         a(e, [
           'containerWidth',
           'contentWidth',
@@ -21411,7 +21421,7 @@
           'scrollbarXWidth',
           'scrollLeft',
           'x',
-          'scrollbarXRail'
+          'scrollbarXRail',
         ]),
           a(e, [
             'containerHeight',
@@ -21422,12 +21432,12 @@
             'scrollbarYHeight',
             'scrollTop',
             'y',
-            'scrollbarYRail'
+            'scrollbarYRail',
           ]);
       },
-      keyboard: function(a) {
+      keyboard: function (a) {
         var r = a.element;
-        a.event.bind(a.ownerDocument, 'keydown', function(e) {
+        a.event.bind(a.ownerDocument, 'keydown', function (e) {
           if (
             !(
               (e.isDefaultPrevented && e.isDefaultPrevented()) ||
@@ -21504,7 +21514,7 @@
               ((r.scrollTop -= s),
               (r.scrollLeft += n),
               b(a),
-              !(function(e, t) {
+              !(function (e, t) {
                 var i = Math.floor(r.scrollTop);
                 if (0 === e) {
                   if (!a.scrollbarYActive) return;
@@ -21528,7 +21538,7 @@
           }
         });
       },
-      wheel: function(l) {
+      wheel: function (l) {
         var d = l.element;
         function e(e) {
           (r = (a = e).deltaX),
@@ -21544,7 +21554,7 @@
             a = a.shiftKey ? [-o, -r] : [r, o],
             r = a[0],
             o = a[1];
-          !(function(e, t, i) {
+          !(function (e, t, i) {
             if (!f.isWebKit && d.querySelector('select:focus')) return 1;
             if (d.contains(e))
               for (var n = e; n && n !== d; ) {
@@ -21603,7 +21613,7 @@
           ? l.event.bind(d, 'wheel', e)
           : void 0 !== window.onmousewheel && l.event.bind(d, 'mousewheel', e);
       },
-      touch: function(r) {
+      touch: function (r) {
         var o, a, l, d, t;
         function u(e, t) {
           (o.scrollTop -= t), (o.scrollLeft -= e), b(r);
@@ -21638,7 +21648,7 @@
               (n = { pageX: (n = c(e)).pageX, pageY: n.pageY }).pageX -
               a.pageX),
             (i = n.pageY - a.pageY),
-            !(function(e, t, i) {
+            !(function (e, t, i) {
               if (o.contains(e))
                 for (var n = e; n && n !== o; ) {
                   if (n.classList.contains(y.element.consuming)) return 1;
@@ -21667,7 +21677,7 @@
             (a = n),
             0 < (s = (n = new Date().getTime()) - l) &&
               ((d.x = t / s), (d.y = i / s), (l = n)),
-            (function(e, t) {
+            (function (e, t) {
               var i = Math.floor(o.scrollTop),
                 n = o.scrollLeft,
                 s = Math.abs(e),
@@ -21690,7 +21700,7 @@
         function n() {
           r.settings.swipeEasing &&
             (clearInterval(t),
-            (t = setInterval(function() {
+            (t = setInterval(function () {
               r.isInitialized ||
               (!d.x && !d.y) ||
               (Math.abs(d.x) < 0.01 && Math.abs(d.y) < 0.01)
@@ -21717,10 +21727,10 @@
                   (r.event.bind(o, 'MSPointerDown', e),
                   r.event.bind(o, 'MSPointerMove', i),
                   r.event.bind(o, 'MSPointerUp', n))));
-      }
+      },
     };
     return (
-      (g.prototype.update = function() {
+      (g.prototype.update = function () {
         this.isAlive &&
           ((this.negativeScrollAdjustment = this.isNegativeScroll
             ? this.element.scrollWidth - this.element.clientWidth
@@ -21741,7 +21751,7 @@
           l(this.scrollbarXRail, { display: '' }),
           l(this.scrollbarYRail, { display: '' }));
       }),
-      (g.prototype.onScroll = function(e) {
+      (g.prototype.onScroll = function (e) {
         this.isAlive &&
           (b(this),
           t(this, 'top', this.element.scrollTop - this.lastScrollTop),
@@ -21749,7 +21759,7 @@
           (this.lastScrollTop = Math.floor(this.element.scrollTop)),
           (this.lastScrollLeft = this.element.scrollLeft));
       }),
-      (g.prototype.destroy = function() {
+      (g.prototype.destroy = function () {
         this.isAlive &&
           (this.event.unbindAll(),
           r(this.scrollbarX),
@@ -21764,10 +21774,10 @@
           (this.scrollbarYRail = null),
           (this.isAlive = !1));
       }),
-      (g.prototype.removePsClasses = function() {
+      (g.prototype.removePsClasses = function () {
         this.element.className = this.element.className
           .split(' ')
-          .filter(function(e) {
+          .filter(function (e) {
             return !e.match(/^ps([-_].+|)$/);
           })
           .join(' ');
@@ -21775,16 +21785,16 @@
       g
     );
   }),
-  (function(e) {
+  (function (e) {
     'use strict';
     'function' == typeof define && define.amd
       ? define(['jquery'], e)
       : 'undefined' != typeof module && module.exports
       ? (module.exports = e(require('jquery')))
       : e(jQuery);
-  })(function(r) {
+  })(function (r) {
     'use strict';
-    var g = (r.scrollTo = function(e, t, i) {
+    var g = (r.scrollTo = function (e, t, i) {
       return r(window).scrollTo(e, t, i);
     });
     function y(e) {
@@ -21795,7 +21805,7 @@
             'iframe',
             '#document',
             'html',
-            'body'
+            'body',
           ])
       );
     }
@@ -21807,7 +21817,7 @@
     }
     return (
       (g.defaults = { axis: 'xy', duration: 0, limit: !0 }),
-      (r.fn.scrollTo = function(e, i, f) {
+      (r.fn.scrollTo = function (e, i, f) {
         'object' == typeof i && ((f = i), (i = 0)),
           'function' == typeof f && (f = { onAfter: f }),
           'max' === e && (e = 9e9),
@@ -21818,7 +21828,7 @@
           _ && (i /= 2),
           (f.offset = n(f.offset)),
           (f.over = n(f.over)),
-          this.each(function() {
+          this.each(function () {
             if (null !== e) {
               var o,
                 l = y(this),
@@ -21839,7 +21849,7 @@
                   (c.is || c.style) && (o = (c = r(c)).offset());
               }
               var m = (t(f.offset) && f.offset(d, c)) || f.offset;
-              r.each(f.axis.split(''), function(e, t) {
+              r.each(f.axis.split(''), function (e, t) {
                 var i = 'x' === t ? 'Left' : 'Top',
                   n = i.toLowerCase(),
                   s = 'scroll' + i,
@@ -21876,16 +21886,16 @@
                 duration: i,
                 complete:
                   e &&
-                  function() {
+                  function () {
                     e.call(d, c, f);
-                  }
+                  },
               });
               u.animate(h, t);
             }
           })
         );
       }),
-      (g.max = function(e, t) {
+      (g.max = function (e, t) {
         var i,
           n,
           s,
@@ -21898,28 +21908,29 @@
             Math.max(n[a], s[a]) - Math.min(n[i], s[i]))
           : e[a] - r(e)[t.toLowerCase()]();
       }),
-      (r.Tween.propHooks.scrollLeft = r.Tween.propHooks.scrollTop = {
-        get: function(e) {
-          return r(e.elem)[e.prop]();
-        },
-        set: function(e) {
-          var t = this.get(e);
-          if (e.options.interrupt && e._last && e._last !== t)
-            return r(e.elem).stop();
-          var i = Math.round(e.now);
-          t !== i && (r(e.elem)[e.prop](i), (e._last = this.get(e)));
-        }
-      }),
+      (r.Tween.propHooks.scrollLeft = r.Tween.propHooks.scrollTop =
+        {
+          get: function (e) {
+            return r(e.elem)[e.prop]();
+          },
+          set: function (e) {
+            var t = this.get(e);
+            if (e.options.interrupt && e._last && e._last !== t)
+              return r(e.elem).stop();
+            var i = Math.round(e.now);
+            t !== i && (r(e.elem)[e.prop](i), (e._last = this.get(e)));
+          },
+        }),
       g
     );
   }),
-  (function(e, t) {
+  (function (e, t) {
     'object' == typeof exports && 'undefined' != typeof module
       ? (module.exports = t())
       : 'function' == typeof define && define.amd
       ? define(t)
       : (e.moment = t());
-  })(this, function() {
+  })(this, function () {
     'use strict';
     var A;
     function f() {
@@ -21994,7 +22005,7 @@
             era: null,
             meridiem: null,
             rfc2822: !1,
-            weekdayMismatch: !1
+            weekdayMismatch: !1,
           }),
         e._pf
       );
@@ -22002,7 +22013,7 @@
     function B(e) {
       if (null == e._isValid) {
         var t = g(e),
-          i = G.call(t.parsedDateParts, function(e) {
+          i = G.call(t.parsedDateParts, function (e) {
             return null != e;
           }),
           i =
@@ -22037,7 +22048,7 @@
     }
     var G =
         Array.prototype.some ||
-        function(e) {
+        function (e) {
           for (var t = Object(this), i = t.length >>> 0, n = 0; n < i; n++)
             if (n in t && e.call(this, t[n], n, t)) return !0;
           return !1;
@@ -22082,7 +22093,7 @@
     }
     function e(a, r) {
       var o = !0;
-      return R(function() {
+      return R(function () {
         if (
           (null != f.deprecationHandler && f.deprecationHandler(null, a), o)
         ) {
@@ -22136,7 +22147,7 @@
     (f.suppressDeprecationWarnings = !1), (f.deprecationHandler = null);
     var ae =
       Object.keys ||
-      function(e) {
+      function (e) {
         var t,
           i = [];
         for (t in e) _(e, t) && i.push(t);
@@ -22152,24 +22163,25 @@
         n
       );
     }
-    var oe = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,
+    var oe =
+        /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N{1,5}|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,
       le = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g,
       de = {},
       ue = {};
     function n(e, t, i, n) {
       var s =
         'string' == typeof n
-          ? function() {
+          ? function () {
               return this[n]();
             }
           : n;
       e && (ue[e] = s),
         t &&
-          (ue[t[0]] = function() {
+          (ue[t[0]] = function () {
             return re(s.apply(this, arguments), t[1], t[2]);
           }),
         i &&
-          (ue[i] = function() {
+          (ue[i] = function () {
             return this.localeData().ordinal(s.apply(this, arguments), e);
           });
     }
@@ -22178,14 +22190,14 @@
         ? ((t = he(t, e.localeData())),
           (de[t] =
             de[t] ||
-            (function(n) {
+            (function (n) {
               for (var e, s = n.match(oe), t = 0, a = s.length; t < a; t++)
                 ue[s[t]]
                   ? (s[t] = ue[s[t]])
                   : (s[t] = (e = s[t]).match(/\[[\s\S]/)
                       ? e.replace(/^\[|\]$/g, '')
                       : e.replace(/\\/g, ''));
-              return function(e) {
+              return function (e) {
                 for (var t = '', i = 0; i < a; i++)
                   t += ie(s[i]) ? s[i].call(e, n) : s[i];
                 return t;
@@ -22232,7 +22244,7 @@
       return 0 != (e = +e) && isFinite(e) ? c(e) : 0;
     }
     function ge(t, i) {
-      return function(e) {
+      return function (e) {
         return null != e
           ? (ve(this, t, e), f.updateOffset(this, i), this)
           : ye(this, t);
@@ -22268,11 +22280,12 @@
       Ye = /[+-]?\d+/,
       ke = /Z|[+-]\d\d:?\d\d/gi,
       De = /Z|[+-]\d\d(?::?\d\d)?/gi,
-      y = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i;
+      y =
+        /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i;
     function v(e, i, n) {
       xe[e] = ie(i)
         ? i
-        : function(e, t) {
+        : function (e, t) {
             return e && n ? n : i;
           };
     }
@@ -22288,7 +22301,7 @@
       for (
         'string' == typeof e && (e = [e]),
           I(i) &&
-            (s = function(e, t) {
+            (s = function (e, t) {
               t[i] = u(e);
             }),
           n = e.length,
@@ -22299,7 +22312,7 @@
         Se[e[t]] = s;
     }
     function Ee(e, s) {
-      b(e, function(e, t, i, n) {
+      b(e, function (e, t, i, n) {
         (i._w = i._w || {}), s(e, i._w, i, n);
       });
     }
@@ -22321,40 +22334,41 @@
     }
     (w =
       Array.prototype.indexOf ||
-      function(e) {
+      function (e) {
         for (var t = 0; t < this.length; ++t) if (this[t] === e) return t;
         return -1;
       }),
-      n('M', ['MM', 2], 'Mo', function() {
+      n('M', ['MM', 2], 'Mo', function () {
         return this.month() + 1;
       }),
-      n('MMM', 0, 0, function(e) {
+      n('MMM', 0, 0, function (e) {
         return this.localeData().monthsShort(this, e);
       }),
-      n('MMMM', 0, 0, function(e) {
+      n('MMMM', 0, 0, function (e) {
         return this.localeData().months(this, e);
       }),
       t('month', 'M'),
       i('month', 8),
       v('M', d),
       v('MM', d, a),
-      v('MMM', function(e, t) {
+      v('MMM', function (e, t) {
         return t.monthsShortRegex(e);
       }),
-      v('MMMM', function(e, t) {
+      v('MMMM', function (e, t) {
         return t.monthsRegex(e);
       }),
-      b(['M', 'MM'], function(e, t) {
+      b(['M', 'MM'], function (e, t) {
         t[Ce] = u(e) - 1;
       }),
-      b(['MMM', 'MMMM'], function(e, t, i, n) {
+      b(['MMM', 'MMMM'], function (e, t, i, n) {
         null != (n = i._locale.monthsParse(e, n, i._strict))
           ? (t[Ce] = n)
           : (g(i).invalidMonth = e);
       });
-    var Ne = 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-        '_'
-      ),
+    var Ne =
+        'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+          '_'
+        ),
       Ie = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_'),
       ze = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/,
       Fe = y,
@@ -22398,11 +22412,11 @@
     function Ge(e) {
       return _e(e) ? 366 : 365;
     }
-    n('Y', 0, 0, function() {
+    n('Y', 0, 0, function () {
       var e = this.year();
       return e <= 9999 ? re(e, 4) : '+' + e;
     }),
-      n(0, ['YY', 2], 0, function() {
+      n(0, ['YY', 2], 0, function () {
         return this.year() % 100;
       }),
       n(0, ['YYYY', 4], 0, 'year'),
@@ -22416,16 +22430,16 @@
       v('YYYYY', p, l),
       v('YYYYYY', p, l),
       b(['YYYYY', 'YYYYYY'], L),
-      b('YYYY', function(e, t) {
+      b('YYYY', function (e, t) {
         t[L] = 2 === e.length ? f.parseTwoDigitYear(e) : u(e);
       }),
-      b('YY', function(e, t) {
+      b('YY', function (e, t) {
         t[L] = f.parseTwoDigitYear(e);
       }),
-      b('Y', function(e, t) {
+      b('Y', function (e, t) {
         t[L] = parseInt(e, 10);
       }),
-      (f.parseTwoDigitYear = function(e) {
+      (f.parseTwoDigitYear = function (e) {
         return u(e) + (68 < u(e) ? 1900 : 2e3);
       });
     var Xe = ge('FullYear', !0);
@@ -22494,17 +22508,17 @@
       v('ww', d, a),
       v('W', d),
       v('WW', d, a),
-      Ee(['w', 'ww', 'W', 'WW'], function(e, t, i, n) {
+      Ee(['w', 'ww', 'W', 'WW'], function (e, t, i, n) {
         t[n.substr(0, 1)] = u(e);
       }),
       n('d', 0, 'do', 'day'),
-      n('dd', 0, 0, function(e) {
+      n('dd', 0, 0, function (e) {
         return this.localeData().weekdaysMin(this, e);
       }),
-      n('ddd', 0, 0, function(e) {
+      n('ddd', 0, 0, function (e) {
         return this.localeData().weekdaysShort(this, e);
       }),
-      n('dddd', 0, 0, function(e) {
+      n('dddd', 0, 0, function (e) {
         return this.localeData().weekdays(this, e);
       }),
       n('e', 0, 0, 'weekday'),
@@ -22518,21 +22532,21 @@
       v('d', d),
       v('e', d),
       v('E', d),
-      v('dd', function(e, t) {
+      v('dd', function (e, t) {
         return t.weekdaysMinRegex(e);
       }),
-      v('ddd', function(e, t) {
+      v('ddd', function (e, t) {
         return t.weekdaysShortRegex(e);
       }),
-      v('dddd', function(e, t) {
+      v('dddd', function (e, t) {
         return t.weekdaysRegex(e);
       }),
-      Ee(['dd', 'ddd', 'dddd'], function(e, t, i, n) {
+      Ee(['dd', 'ddd', 'dddd'], function (e, t, i, n) {
         null != (n = i._locale.weekdaysParse(e, n, i._strict))
           ? (t.d = n)
           : (g(i).invalidWeekday = e);
       }),
-      Ee(['d', 'e', 'E'], function(e, t, i, n) {
+      Ee(['d', 'e', 'E'], function (e, t, i, n) {
         t[n] = u(e);
       });
     var it = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
@@ -22579,7 +22593,7 @@
       return this.hours() % 12 || 12;
     }
     function ut(e, t) {
-      n(e, 0, 0, function() {
+      n(e, 0, 0, function () {
         return this.localeData().meridiem(this.hours(), this.minutes(), t);
       });
     }
@@ -22588,21 +22602,21 @@
     }
     n('H', ['HH', 2], 0, 'hour'),
       n('h', ['hh', 2], 0, dt),
-      n('k', ['kk', 2], 0, function() {
+      n('k', ['kk', 2], 0, function () {
         return this.hours() || 24;
       }),
-      n('hmm', 0, 0, function() {
+      n('hmm', 0, 0, function () {
         return '' + dt.apply(this) + re(this.minutes(), 2);
       }),
-      n('hmmss', 0, 0, function() {
+      n('hmmss', 0, 0, function () {
         return (
           '' + dt.apply(this) + re(this.minutes(), 2) + re(this.seconds(), 2)
         );
       }),
-      n('Hmm', 0, 0, function() {
+      n('Hmm', 0, 0, function () {
         return '' + this.hours() + re(this.minutes(), 2);
       }),
-      n('Hmmss', 0, 0, function() {
+      n('Hmmss', 0, 0, function () {
         return (
           '' + this.hours() + re(this.minutes(), 2) + re(this.seconds(), 2)
         );
@@ -22624,22 +22638,22 @@
       v('Hmm', h),
       v('Hmmss', m),
       b(['H', 'HH'], T),
-      b(['k', 'kk'], function(e, t, i) {
+      b(['k', 'kk'], function (e, t, i) {
         (e = u(e)), (t[T] = 24 === e ? 0 : e);
       }),
-      b(['a', 'A'], function(e, t, i) {
+      b(['a', 'A'], function (e, t, i) {
         (i._isPm = i._locale.isPM(e)), (i._meridiem = e);
       }),
-      b(['h', 'hh'], function(e, t, i) {
+      b(['h', 'hh'], function (e, t, i) {
         (t[T] = u(e)), (g(i).bigHour = !0);
       }),
-      b('hmm', function(e, t, i) {
+      b('hmm', function (e, t, i) {
         var n = e.length - 2;
         (t[T] = u(e.substr(0, n))),
           (t[je] = u(e.substr(n))),
           (g(i).bigHour = !0);
       }),
-      b('hmmss', function(e, t, i) {
+      b('hmmss', function (e, t, i) {
         var n = e.length - 4,
           s = e.length - 2;
         (t[T] = u(e.substr(0, n))),
@@ -22647,11 +22661,11 @@
           (t[Pe] = u(e.substr(s))),
           (g(i).bigHour = !0);
       }),
-      b('Hmm', function(e, t, i) {
+      b('Hmm', function (e, t, i) {
         var n = e.length - 2;
         (t[T] = u(e.substr(0, n))), (t[je] = u(e.substr(n)));
       }),
-      b('Hmmss', function(e, t, i) {
+      b('Hmmss', function (e, t, i) {
         var n = e.length - 4,
           s = e.length - 2;
         (t[T] = u(e.substr(0, n))),
@@ -22667,7 +22681,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         longDateFormat: {
           LTS: 'h:mm:ss A',
@@ -22675,7 +22689,7 @@
           L: 'MM/DD/YYYY',
           LL: 'MMMM D, YYYY',
           LLL: 'MMMM D, YYYY h:mm A',
-          LLLL: 'dddd, MMMM D, YYYY h:mm A'
+          LLLL: 'dddd, MMMM D, YYYY h:mm A',
         },
         invalidDate: 'Invalid date',
         ordinal: '%d',
@@ -22696,7 +22710,7 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         months: Ne,
         monthsShort: Ie,
@@ -22704,7 +22718,7 @@
         weekdays: it,
         weekdaysMin: st,
         weekdaysShort: nt,
-        meridiemParse: /[ap]\.?m?\.?/i
+        meridiemParse: /[ap]\.?m?\.?/i,
       },
       Y = {},
       pt = {};
@@ -22764,7 +22778,7 @@
       return (
         (Y[e] = new se(ne(n, t))),
         pt[e] &&
-          pt[e].forEach(function(e) {
+          pt[e].forEach(function (e) {
             yt(e.name, e.config);
           }),
         gt(e),
@@ -22789,7 +22803,7 @@
             if (
               n &&
               n.length >= i &&
-              (function(e, t) {
+              (function (e, t) {
                 for (var i = Math.min(e.length, t.length), n = 0; n < i; n += 1)
                   if (e[n] !== t[n]) return n;
                 return i;
@@ -22832,8 +22846,10 @@
         e
       );
     }
-    var bt = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
-      wt = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
+    var bt =
+        /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
+      wt =
+        /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/,
       Lt = /Z|[+-]\d\d(?::?\d\d)?/,
       Tt = [
         ['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/],
@@ -22848,7 +22864,7 @@
         ['GGGG[W]WW', /\d{4}W\d{2}/, !1],
         ['YYYYDDD', /\d{7}/],
         ['YYYYMM', /\d{6}/, !1],
-        ['YYYY', /\d{4}/, !1]
+        ['YYYY', /\d{4}/, !1],
       ],
       Yt = [
         ['HH:mm:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/],
@@ -22859,10 +22875,11 @@
         ['HHmmss,SSSS', /\d\d\d\d\d\d,\d+/],
         ['HHmmss', /\d\d\d\d\d\d/],
         ['HHmm', /\d\d\d\d/],
-        ['HH', /\d\d/]
+        ['HH', /\d\d/],
       ],
       kt = /^\/?Date\((-?\d+)/i,
-      Dt = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/,
+      Dt =
+        /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/,
       xt = {
         UT: 0,
         GMT: 0,
@@ -22873,7 +22890,7 @@
         MDT: -360,
         MST: -420,
         PDT: -420,
-        PST: -480
+        PST: -480,
       };
     function St(e) {
       var t,
@@ -22939,7 +22956,7 @@
             Ie.indexOf(i),
             parseInt(n, 10),
             parseInt(s, 10),
-            parseInt(a, 10)
+            parseInt(a, 10),
           ]),
           r && t.push(parseInt(r, 10)),
           (i = o = t),
@@ -23068,7 +23085,7 @@
                         .replace('\\', '')
                         .replace(
                           /\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g,
-                          function(e, t, i, n, s) {
+                          function (e, t, i, n, s) {
                             return t || i || n || s;
                           }
                         )
@@ -23128,7 +23145,7 @@
               : (z(s)
                   ? (e._d = s)
                   : $(a)
-                  ? (function(e) {
+                  ? (function (e) {
                       var t,
                         i,
                         n,
@@ -23178,7 +23195,7 @@
                             ? (i._isValid = !1)
                             : f.createFromInputFallback(i))))
                   : $(a)
-                  ? ((s._a = F(a.slice(0), function(e) {
+                  ? ((s._a = F(a.slice(0), function (e) {
                       return parseInt(e, 10);
                     })),
                     Ht(s))
@@ -23193,9 +23210,9 @@
                         i.hour,
                         i.minute,
                         i.second,
-                        i.millisecond
+                        i.millisecond,
                       ],
-                      function(e) {
+                      function (e) {
                         return e && parseInt(e, 10);
                       }
                     )),
@@ -23236,22 +23253,22 @@
     }
     (f.createFromInputFallback = e(
       'value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.',
-      function(e) {
+      function (e) {
         e._d = new Date(e._i + (e._useUTC ? ' UTC' : ''));
       }
     )),
-      (f.ISO_8601 = function() {}),
-      (f.RFC_2822 = function() {}),
+      (f.ISO_8601 = function () {}),
+      (f.RFC_2822 = function () {}),
       (h = e(
         'moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/',
-        function() {
+        function () {
           var e = k.apply(null, arguments);
           return this.isValid() && e.isValid() ? (e < this ? this : e) : V();
         }
       )),
       (m = e(
         'moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/',
-        function() {
+        function () {
           var e = k.apply(null, arguments);
           return this.isValid() && e.isValid() ? (this < e ? this : e) : V();
         }
@@ -23265,7 +23282,7 @@
       'hour',
       'minute',
       'second',
-      'millisecond'
+      'millisecond',
     ];
     function Wt(e) {
       var t = (e = pe(e)).year || 0,
@@ -23277,7 +23294,7 @@
         o = e.minute || 0,
         l = e.second || 0,
         d = e.millisecond || 0;
-      (this._isValid = (function(e) {
+      (this._isValid = (function (e) {
         var t,
           i,
           n = !1,
@@ -23309,7 +23326,7 @@
       return e < 0 ? -1 * Math.round(-1 * e) : Math.round(e);
     }
     function zt(e, i) {
-      n(e, 0, 0, function() {
+      n(e, 0, 0, function () {
         var e = this.utcOffset(),
           t = '+';
         return (
@@ -23322,7 +23339,7 @@
       zt('ZZ', ''),
       v('Z', De),
       v('ZZ', De),
-      b(['Z', 'ZZ'], function(e, t, i) {
+      b(['Z', 'ZZ'], function (e, t, i) {
         (i._useUTC = !0), (i._tzm = Rt(De, e));
       });
     var Ft = /([\+\-]|\d\d)/gi;
@@ -23355,9 +23372,10 @@
     function Vt() {
       return !!this.isValid() && this._isUTC && 0 === this._offset;
     }
-    f.updateOffset = function() {};
+    f.updateOffset = function () {};
     var Gt = /^(-|\+)?(?:(\d*)[. ])?(\d+):(\d+)(?::(\d+)(\.\d*)?)?$/,
-      Xt = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
+      Xt =
+        /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
     function Ut(e, t) {
       var i,
         n,
@@ -23377,7 +23395,7 @@
               h: u(r[T]) * i,
               m: u(r[je]) * i,
               s: u(r[Pe]) * i,
-              ms: u(It(1e3 * r[Oe])) * i
+              ms: u(It(1e3 * r[Oe])) * i,
             }))
           : (r = Xt.exec(e))
           ? ((i = '-' === r[1] ? -1 : 1),
@@ -23388,7 +23406,7 @@
               d: Jt(r[5], i),
               h: Jt(r[6], i),
               m: Jt(r[7], i),
-              s: Jt(r[8], i)
+              s: Jt(r[8], i),
             }))
           : null == a
           ? (a = {})
@@ -23420,16 +23438,13 @@
       var i = {};
       return (
         (i.months = t.month() - e.month() + 12 * (t.year() - e.year())),
-        e
-          .clone()
-          .add(i.months, 'M')
-          .isAfter(t) && --i.months,
+        e.clone().add(i.months, 'M').isAfter(t) && --i.months,
         (i.milliseconds = +t - +e.clone().add(i.months, 'M')),
         i
       );
     }
     function Kt(n, s) {
-      return function(e, t) {
+      return function (e, t) {
         var i;
         return (
           null === t ||
@@ -23486,7 +23501,7 @@
       return this._locale;
     }
     (Ut.fn = Wt.prototype),
-      (Ut.invalid = function() {
+      (Ut.invalid = function () {
         return Ut(NaN);
       }),
       (Ne = Kt(1, 'add')),
@@ -23495,7 +23510,7 @@
       (f.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]'),
       (st = e(
         'moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.',
-        function(e) {
+        function (e) {
           return void 0 === e ? this.localeData() : this.locale(e);
         }
       ));
@@ -23546,7 +23561,7 @@
       return null == e
         ? Ze(this, n, s).year
         : ((a = et(e, n, s)),
-          function(e, t, i, n, s) {
+          function (e, t, i, n, s) {
             return (
               (t = Je((e = Ke(e, t, i, n, s)).year, 0, e.dayOfYear)),
               this.year(t.getUTCFullYear()),
@@ -23568,13 +23583,13 @@
       v('N', oi),
       v('NN', oi),
       v('NNN', oi),
-      v('NNNN', function(e, t) {
+      v('NNNN', function (e, t) {
         return t.erasNameRegex(e);
       }),
-      v('NNNNN', function(e, t) {
+      v('NNNNN', function (e, t) {
         return t.erasNarrowRegex(e);
       }),
-      b(['N', 'NN', 'NNN', 'NNNN', 'NNNNN'], function(e, t, i, n) {
+      b(['N', 'NN', 'NNN', 'NNNN', 'NNNNN'], function (e, t, i, n) {
         (n = i._locale.erasParse(e, n, i._strict))
           ? (g(i).era = n)
           : (g(i).invalidEra = e);
@@ -23583,11 +23598,11 @@
       v('yy', Te),
       v('yyy', Te),
       v('yyyy', Te),
-      v('yo', function(e, t) {
+      v('yo', function (e, t) {
         return t._eraYearOrdinalRegex || Te;
       }),
       b(['y', 'yy', 'yyy', 'yyyy'], L),
-      b(['yo'], function(e, t, i, n) {
+      b(['yo'], function (e, t, i, n) {
         var s;
         i._locale._eraYearOrdinalRegex &&
           (s = e.match(i._locale._eraYearOrdinalRegex)),
@@ -23595,10 +23610,10 @@
             ? (t[L] = i._locale.eraYearOrdinalParse(e, s))
             : (t[L] = parseInt(e, 10));
       }),
-      n(0, ['gg', 2], 0, function() {
+      n(0, ['gg', 2], 0, function () {
         return this.weekYear() % 100;
       }),
-      n(0, ['GG', 2], 0, function() {
+      n(0, ['GG', 2], 0, function () {
         return this.isoWeekYear() % 100;
       }),
       di('gggg', 'weekYear'),
@@ -23617,17 +23632,17 @@
       v('gggg', Le, be),
       v('GGGGG', p, l),
       v('ggggg', p, l),
-      Ee(['gggg', 'ggggg', 'GGGG', 'GGGGG'], function(e, t, i, n) {
+      Ee(['gggg', 'ggggg', 'GGGG', 'GGGGG'], function (e, t, i, n) {
         t[n.substr(0, 2)] = u(e);
       }),
-      Ee(['gg', 'GG'], function(e, t, i, n) {
+      Ee(['gg', 'GG'], function (e, t, i, n) {
         t[n] = f.parseTwoDigitYear(e);
       }),
       n('Q', 0, 'Qo', 'quarter'),
       t('quarter', 'Q'),
       i('quarter', 7),
       v('Q', s),
-      b('Q', function(e, t) {
+      b('Q', function (e, t) {
         t[Ce] = 3 * (u(e) - 1);
       }),
       n('D', ['DD', 2], 'Do', 'date'),
@@ -23635,13 +23650,13 @@
       i('date', 9),
       v('D', d),
       v('DD', d, a),
-      v('Do', function(e, t) {
+      v('Do', function (e, t) {
         return e
           ? t._dayOfMonthOrdinalParse || t._ordinalParse
           : t._dayOfMonthOrdinalParseLenient;
       }),
       b(['D', 'DD'], He),
-      b('Do', function(e, t) {
+      b('Do', function (e, t) {
         t[He] = u(e.match(d)[0]);
       }),
       (Le = ge('Date', !0)),
@@ -23650,7 +23665,7 @@
       i('dayOfYear', 4),
       v('DDD', we),
       v('DDDD', Me),
-      b(['DDD', 'DDDD'], function(e, t, i) {
+      b(['DDD', 'DDDD'], function (e, t, i) {
         i._dayOfYear = u(e);
       }),
       n('m', ['mm', 2], 0, 'minute'),
@@ -23670,29 +23685,29 @@
         b(['s', 'ss'], Pe),
         ge('Seconds', !1));
     for (
-      n('S', 0, 0, function() {
+      n('S', 0, 0, function () {
         return ~~(this.millisecond() / 100);
       }),
-        n(0, ['SS', 2], 0, function() {
+        n(0, ['SS', 2], 0, function () {
           return ~~(this.millisecond() / 10);
         }),
         n(0, ['SSS', 3], 0, 'millisecond'),
-        n(0, ['SSSS', 4], 0, function() {
+        n(0, ['SSSS', 4], 0, function () {
           return 10 * this.millisecond();
         }),
-        n(0, ['SSSSS', 5], 0, function() {
+        n(0, ['SSSSS', 5], 0, function () {
           return 100 * this.millisecond();
         }),
-        n(0, ['SSSSSS', 6], 0, function() {
+        n(0, ['SSSSSS', 6], 0, function () {
           return 1e3 * this.millisecond();
         }),
-        n(0, ['SSSSSSS', 7], 0, function() {
+        n(0, ['SSSSSSS', 7], 0, function () {
           return 1e4 * this.millisecond();
         }),
-        n(0, ['SSSSSSSS', 8], 0, function() {
+        n(0, ['SSSSSSSS', 8], 0, function () {
           return 1e5 * this.millisecond();
         }),
-        n(0, ['SSSSSSSSS', 9], 0, function() {
+        n(0, ['SSSSSSSSS', 9], 0, function () {
           return 1e6 * this.millisecond();
         }),
         t('millisecond', 'ms'),
@@ -23740,7 +23755,7 @@
       n('z', 0, 0, 'zoneAbbr'),
       n('zz', 0, 0, 'zoneName'),
       ((s = Q.prototype).add = Ne),
-      (s.calendar = function(e, t) {
+      (s.calendar = function (e, t) {
         1 === arguments.length &&
           (arguments[0]
             ? K((i = arguments[0])) ||
@@ -23752,11 +23767,11 @@
               a &&
                 (s =
                   0 ===
-                  n.filter(function(e) {
+                  n.filter(function (e) {
                     return !I(e) && ei(n);
                   }).length),
               a && s) ||
-              (function(e) {
+              (function (e) {
                 for (
                   var t = W(e) && !N(e),
                     i = !1,
@@ -23784,7 +23799,7 @@
                       's',
                       'milliseconds',
                       'millisecond',
-                      'ms'
+                      'ms',
                     ],
                     s = n.length,
                     a = 0;
@@ -23796,7 +23811,7 @@
               })(i) ||
               null == i
               ? ((e = arguments[0]), (t = void 0))
-              : (function(e) {
+              : (function (e) {
                   for (
                     var t = W(e) && !N(e),
                       i = !1,
@@ -23806,7 +23821,7 @@
                         'lastDay',
                         'nextWeek',
                         'lastWeek',
-                        'sameElse'
+                        'sameElse',
                       ],
                       s = 0;
                     s < n.length;
@@ -23825,10 +23840,10 @@
           t = t && (ie(t[a]) ? t[a].call(this, e) : t[a]);
         return this.format(t || this.localeData().calendar(a, this, k(e)));
       }),
-      (s.clone = function() {
+      (s.clone = function () {
         return new Q(this);
       }),
-      (s.diff = function(e, t, i) {
+      (s.diff = function (e, t, i) {
         var n, s, a;
         if (!this.isValid()) return NaN;
         if (!(n = qt(e, this)).isValid()) return NaN;
@@ -23862,7 +23877,7 @@
         }
         return i ? a : c(a);
       }),
-      (s.endOf = function(e) {
+      (s.endOf = function (e) {
         var t, i;
         if (void 0 !== (e = o(e)) && 'millisecond' !== e && this.isValid()) {
           switch (((i = this._isUTC ? ri : ai), e)) {
@@ -23909,63 +23924,54 @@
         }
         return this;
       }),
-      (s.format = function(e) {
+      (s.format = function (e) {
         return (
           (e = e || (this.isUtc() ? f.defaultFormatUtc : f.defaultFormat)),
           (e = ce(this, e)),
           this.localeData().postformat(e)
         );
       }),
-      (s.from = function(e, t) {
+      (s.from = function (e, t) {
         return this.isValid() && ((K(e) && e.isValid()) || k(e).isValid())
-          ? Ut({ to: this, from: e })
-              .locale(this.locale())
-              .humanize(!t)
+          ? Ut({ to: this, from: e }).locale(this.locale()).humanize(!t)
           : this.localeData().invalidDate();
       }),
-      (s.fromNow = function(e) {
+      (s.fromNow = function (e) {
         return this.from(k(), e);
       }),
-      (s.to = function(e, t) {
+      (s.to = function (e, t) {
         return this.isValid() && ((K(e) && e.isValid()) || k(e).isValid())
-          ? Ut({ from: this, to: e })
-              .locale(this.locale())
-              .humanize(!t)
+          ? Ut({ from: this, to: e }).locale(this.locale()).humanize(!t)
           : this.localeData().invalidDate();
       }),
-      (s.toNow = function(e) {
+      (s.toNow = function (e) {
         return this.to(k(), e);
       }),
-      (s.get = function(e) {
+      (s.get = function (e) {
         return ie(this[(e = o(e))]) ? this[e]() : this;
       }),
-      (s.invalidAt = function() {
+      (s.invalidAt = function () {
         return g(this).overflow;
       }),
-      (s.isAfter = function(e, t) {
+      (s.isAfter = function (e, t) {
         return (
           (e = K(e) ? e : k(e)),
           !(!this.isValid() || !e.isValid()) &&
             ('millisecond' === (t = o(t) || 'millisecond')
               ? this.valueOf() > e.valueOf()
-              : e.valueOf() <
-                this.clone()
-                  .startOf(t)
-                  .valueOf())
+              : e.valueOf() < this.clone().startOf(t).valueOf())
         );
       }),
-      (s.isBefore = function(e, t) {
+      (s.isBefore = function (e, t) {
         return (
           (e = K(e) ? e : k(e)),
           !(!this.isValid() || !e.isValid()) &&
             ('millisecond' === (t = o(t) || 'millisecond')
               ? this.valueOf() < e.valueOf()
-              : this.clone()
-                  .endOf(t)
-                  .valueOf() < e.valueOf())
+              : this.clone().endOf(t).valueOf() < e.valueOf())
         );
       }),
-      (s.isBetween = function(e, t, i, n) {
+      (s.isBetween = function (e, t, i, n) {
         return (
           (e = K(e) ? e : k(e)),
           (t = K(t) ? t : k(t)),
@@ -23976,29 +23982,24 @@
             (')' === n[1] ? this.isBefore(t, i) : !this.isAfter(t, i))
         );
       }),
-      (s.isSame = function(e, t) {
+      (s.isSame = function (e, t) {
         e = K(e) ? e : k(e);
         return (
           !(!this.isValid() || !e.isValid()) &&
           ('millisecond' === (t = o(t) || 'millisecond')
             ? this.valueOf() === e.valueOf()
             : ((e = e.valueOf()),
-              this.clone()
-                .startOf(t)
-                .valueOf() <= e &&
-                e <=
-                  this.clone()
-                    .endOf(t)
-                    .valueOf()))
+              this.clone().startOf(t).valueOf() <= e &&
+                e <= this.clone().endOf(t).valueOf()))
         );
       }),
-      (s.isSameOrAfter = function(e, t) {
+      (s.isSameOrAfter = function (e, t) {
         return this.isSame(e, t) || this.isAfter(e, t);
       }),
-      (s.isSameOrBefore = function(e, t) {
+      (s.isSameOrBefore = function (e, t) {
         return this.isSame(e, t) || this.isBefore(e, t);
       }),
-      (s.isValid = function() {
+      (s.isValid = function () {
         return B(this);
       }),
       (s.lang = st),
@@ -24006,18 +24007,18 @@
       (s.localeData = ni),
       (s.max = m),
       (s.min = h),
-      (s.parsingFlags = function() {
+      (s.parsingFlags = function () {
         return R({}, g(this));
       }),
-      (s.set = function(e, t) {
+      (s.set = function (e, t) {
         if ('object' == typeof e)
           for (
-            var i = (function(e) {
+            var i = (function (e) {
                 var t,
                   i = [];
                 for (t in e) _(e, t) && i.push({ unit: t, priority: fe[t] });
                 return (
-                  i.sort(function(e, t) {
+                  i.sort(function (e, t) {
                     return e.priority - t.priority;
                   }),
                   i
@@ -24032,7 +24033,7 @@
         else if (ie(this[(e = o(e))])) return this[e](t);
         return this;
       }),
-      (s.startOf = function(e) {
+      (s.startOf = function (e) {
         var t, i;
         if (void 0 !== (e = o(e)) && 'millisecond' !== e && this.isValid()) {
           switch (((i = this._isUTC ? ri : ai), e)) {
@@ -24074,7 +24075,7 @@
         return this;
       }),
       (s.subtract = it),
-      (s.toArray = function() {
+      (s.toArray = function () {
         return [
           this.year(),
           this.month(),
@@ -24082,10 +24083,10 @@
           this.hour(),
           this.minute(),
           this.second(),
-          this.millisecond()
+          this.millisecond(),
         ];
       }),
-      (s.toObject = function() {
+      (s.toObject = function () {
         return {
           years: this.year(),
           months: this.month(),
@@ -24093,13 +24094,13 @@
           hours: this.hours(),
           minutes: this.minutes(),
           seconds: this.seconds(),
-          milliseconds: this.milliseconds()
+          milliseconds: this.milliseconds(),
         };
       }),
-      (s.toDate = function() {
+      (s.toDate = function () {
         return new Date(this.valueOf());
       }),
-      (s.toISOString = function(e) {
+      (s.toISOString = function (e) {
         var t;
         return this.isValid()
           ? (t = (e = !0 !== e) ? this.clone().utc() : this).year() < 0 ||
@@ -24124,7 +24125,7 @@
               )
           : null;
       }),
-      (s.inspect = function() {
+      (s.inspect = function () {
         var e, t, i;
         return this.isValid()
           ? ((t = 'moment'),
@@ -24139,42 +24140,40 @@
       }),
       'undefined' != typeof Symbol &&
         null != Symbol.for &&
-        (s[Symbol.for('nodejs.util.inspect.custom')] = function() {
+        (s[Symbol.for('nodejs.util.inspect.custom')] = function () {
           return 'Moment<' + this.format() + '>';
         }),
-      (s.toJSON = function() {
+      (s.toJSON = function () {
         return this.isValid() ? this.toISOString() : null;
       }),
-      (s.toString = function() {
+      (s.toString = function () {
         return this.clone()
           .locale('en')
           .format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
       }),
-      (s.unix = function() {
+      (s.unix = function () {
         return Math.floor(this.valueOf() / 1e3);
       }),
-      (s.valueOf = function() {
+      (s.valueOf = function () {
         return this._d.valueOf() - 6e4 * (this._offset || 0);
       }),
-      (s.creationData = function() {
+      (s.creationData = function () {
         return {
           input: this._i,
           format: this._f,
           locale: this._locale,
           isUTC: this._isUTC,
-          strict: this._strict
+          strict: this._strict,
         };
       }),
-      (s.eraName = function() {
+      (s.eraName = function () {
         for (
           var e, t = this.localeData().eras(), i = 0, n = t.length;
           i < n;
           ++i
         ) {
           if (
-            ((e = this.clone()
-              .startOf('day')
-              .valueOf()),
+            ((e = this.clone().startOf('day').valueOf()),
             t[i].since <= e && e <= t[i].until)
           )
             return t[i].name;
@@ -24182,16 +24181,14 @@
         }
         return '';
       }),
-      (s.eraNarrow = function() {
+      (s.eraNarrow = function () {
         for (
           var e, t = this.localeData().eras(), i = 0, n = t.length;
           i < n;
           ++i
         ) {
           if (
-            ((e = this.clone()
-              .startOf('day')
-              .valueOf()),
+            ((e = this.clone().startOf('day').valueOf()),
             t[i].since <= e && e <= t[i].until)
           )
             return t[i].narrow;
@@ -24199,16 +24196,14 @@
         }
         return '';
       }),
-      (s.eraAbbr = function() {
+      (s.eraAbbr = function () {
         for (
           var e, t = this.localeData().eras(), i = 0, n = t.length;
           i < n;
           ++i
         ) {
           if (
-            ((e = this.clone()
-              .startOf('day')
-              .valueOf()),
+            ((e = this.clone().startOf('day').valueOf()),
             t[i].since <= e && e <= t[i].until)
           )
             return t[i].abbr;
@@ -24216,7 +24211,7 @@
         }
         return '';
       }),
-      (s.eraYear = function() {
+      (s.eraYear = function () {
         for (
           var e, t, i = this.localeData().eras(), n = 0, s = i.length;
           n < s;
@@ -24224,9 +24219,7 @@
         )
           if (
             ((e = i[n].since <= i[n].until ? 1 : -1),
-            (t = this.clone()
-              .startOf('day')
-              .valueOf()),
+            (t = this.clone().startOf('day').valueOf()),
             (i[n].since <= t && t <= i[n].until) ||
               (i[n].until <= t && t <= i[n].since))
           )
@@ -24234,10 +24227,10 @@
         return this.year();
       }),
       (s.year = Xe),
-      (s.isLeapYear = function() {
+      (s.isLeapYear = function () {
         return _e(this.year());
       }),
-      (s.weekYear = function(e) {
+      (s.weekYear = function (e) {
         return ui.call(
           this,
           e,
@@ -24247,63 +24240,67 @@
           this.localeData()._week.doy
         );
       }),
-      (s.isoWeekYear = function(e) {
+      (s.isoWeekYear = function (e) {
         return ui.call(this, e, this.isoWeek(), this.isoWeekday(), 1, 4);
       }),
-      (s.quarter = s.quarters = function(e) {
-        return null == e
-          ? Math.ceil((this.month() + 1) / 3)
-          : this.month(3 * (e - 1) + (this.month() % 3));
-      }),
+      (s.quarter = s.quarters =
+        function (e) {
+          return null == e
+            ? Math.ceil((this.month() + 1) / 3)
+            : this.month(3 * (e - 1) + (this.month() % 3));
+        }),
       (s.month = Be),
-      (s.daysInMonth = function() {
+      (s.daysInMonth = function () {
         return We(this.year(), this.month());
       }),
-      (s.week = s.weeks = function(e) {
-        var t = this.localeData().week(this);
-        return null == e ? t : this.add(7 * (e - t), 'd');
-      }),
-      (s.isoWeek = s.isoWeeks = function(e) {
-        var t = Ze(this, 1, 4).week;
-        return null == e ? t : this.add(7 * (e - t), 'd');
-      }),
-      (s.weeksInYear = function() {
+      (s.week = s.weeks =
+        function (e) {
+          var t = this.localeData().week(this);
+          return null == e ? t : this.add(7 * (e - t), 'd');
+        }),
+      (s.isoWeek = s.isoWeeks =
+        function (e) {
+          var t = Ze(this, 1, 4).week;
+          return null == e ? t : this.add(7 * (e - t), 'd');
+        }),
+      (s.weeksInYear = function () {
         var e = this.localeData()._week;
         return et(this.year(), e.dow, e.doy);
       }),
-      (s.weeksInWeekYear = function() {
+      (s.weeksInWeekYear = function () {
         var e = this.localeData()._week;
         return et(this.weekYear(), e.dow, e.doy);
       }),
-      (s.isoWeeksInYear = function() {
+      (s.isoWeeksInYear = function () {
         return et(this.year(), 1, 4);
       }),
-      (s.isoWeeksInISOWeekYear = function() {
+      (s.isoWeeksInISOWeekYear = function () {
         return et(this.isoWeekYear(), 1, 4);
       }),
       (s.date = Le),
-      (s.day = s.days = function(e) {
-        var t, i, n;
-        return this.isValid()
-          ? ((n = this._isUTC ? this._d.getUTCDay() : this._d.getDay()),
-            null != e
-              ? ((t = e),
-                (i = this.localeData()),
-                (e =
-                  'string' != typeof t
-                    ? t
-                    : isNaN(t)
-                    ? 'number' == typeof (t = i.weekdaysParse(t))
+      (s.day = s.days =
+        function (e) {
+          var t, i, n;
+          return this.isValid()
+            ? ((n = this._isUTC ? this._d.getUTCDay() : this._d.getDay()),
+              null != e
+                ? ((t = e),
+                  (i = this.localeData()),
+                  (e =
+                    'string' != typeof t
                       ? t
-                      : null
-                    : parseInt(t, 10)),
-                this.add(e - n, 'd'))
-              : n)
-          : null != e
-          ? this
-          : NaN;
-      }),
-      (s.weekday = function(e) {
+                      : isNaN(t)
+                      ? 'number' == typeof (t = i.weekdaysParse(t))
+                        ? t
+                        : null
+                      : parseInt(t, 10)),
+                  this.add(e - n, 'd'))
+                : n)
+            : null != e
+            ? this
+            : NaN;
+        }),
+      (s.weekday = function (e) {
         var t;
         return this.isValid()
           ? ((t = (this.day() + 7 - this.localeData()._week.dow) % 7),
@@ -24312,7 +24309,7 @@
           ? this
           : NaN;
       }),
-      (s.isoWeekday = function(e) {
+      (s.isoWeekday = function (e) {
         return this.isValid()
           ? null != e
             ? ((t = e),
@@ -24330,7 +24327,7 @@
           : NaN;
         var t, i;
       }),
-      (s.dayOfYear = function(e) {
+      (s.dayOfYear = function (e) {
         var t =
           Math.round(
             (this.clone().startOf('day') - this.clone().startOf('year')) / 864e5
@@ -24341,7 +24338,7 @@
       (s.minute = s.minutes = be),
       (s.second = s.seconds = p),
       (s.millisecond = s.milliseconds = l),
-      (s.utcOffset = function(e, t, i) {
+      (s.utcOffset = function (e, t, i) {
         var n,
           s = this._offset || 0;
         if (!this.isValid()) return null != e ? this : NaN;
@@ -24364,10 +24361,10 @@
           this
         );
       }),
-      (s.utc = function(e) {
+      (s.utc = function (e) {
         return this.utcOffset(0, e);
       }),
-      (s.local = function(e) {
+      (s.local = function (e) {
         return (
           this._isUTC &&
             (this.utcOffset(0, e), (this._isUTC = !1), e) &&
@@ -24375,7 +24372,7 @@
           this
         );
       }),
-      (s.parseZone = function() {
+      (s.parseZone = function () {
         var e;
         return (
           null != this._tzm
@@ -24387,36 +24384,30 @@
           this
         );
       }),
-      (s.hasAlignedHourOffset = function(e) {
+      (s.hasAlignedHourOffset = function (e) {
         return (
           !!this.isValid() &&
           ((e = e ? k(e).utcOffset() : 0), (this.utcOffset() - e) % 60 == 0)
         );
       }),
-      (s.isDST = function() {
+      (s.isDST = function () {
         return (
-          this.utcOffset() >
-            this.clone()
-              .month(0)
-              .utcOffset() ||
-          this.utcOffset() >
-            this.clone()
-              .month(5)
-              .utcOffset()
+          this.utcOffset() > this.clone().month(0).utcOffset() ||
+          this.utcOffset() > this.clone().month(5).utcOffset()
         );
       }),
-      (s.isLocal = function() {
+      (s.isLocal = function () {
         return !!this.isValid() && !this._isUTC;
       }),
-      (s.isUtcOffset = function() {
+      (s.isUtcOffset = function () {
         return !!this.isValid() && this._isUTC;
       }),
       (s.isUtc = Vt),
       (s.isUTC = Vt),
-      (s.zoneAbbr = function() {
+      (s.zoneAbbr = function () {
         return this._isUTC ? 'UTC' : '';
       }),
-      (s.zoneName = function() {
+      (s.zoneName = function () {
         return this._isUTC ? 'Coordinated Universal Time' : '';
       }),
       (s.dates = e('dates accessor is deprecated. Use date instead.', Le)),
@@ -24424,7 +24415,7 @@
       (s.years = e('years accessor is deprecated. Use year instead', Xe)),
       (s.zone = e(
         'moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/',
-        function(e, t) {
+        function (e, t) {
           return null != e
             ? (this.utcOffset((e = 'string' != typeof e ? -e : e), t), this)
             : -this.utcOffset();
@@ -24432,7 +24423,7 @@
       )),
       (s.isDSTShifted = e(
         'isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information',
-        function() {
+        function () {
           var e, t;
           return (
             r(this._isDSTShifted) &&
@@ -24442,7 +24433,7 @@
                   (this._isDSTShifted =
                     this.isValid() &&
                     0 <
-                      (function(e, t) {
+                      (function (e, t) {
                         for (
                           var i = Math.min(e.length, t.length),
                             n = Math.abs(e.length - t.length),
@@ -24459,19 +24450,19 @@
           );
         }
       )),
-      ((a = se.prototype).calendar = function(e, t, i) {
+      ((a = se.prototype).calendar = function (e, t, i) {
         return ie((e = this._calendar[e] || this._calendar.sameElse))
           ? e.call(t, i)
           : e;
       }),
-      (a.longDateFormat = function(e) {
+      (a.longDateFormat = function (e) {
         var t = this._longDateFormat[e],
           i = this._longDateFormat[e.toUpperCase()];
         return t || !i
           ? t
           : ((this._longDateFormat[e] = i
               .match(oe)
-              .map(function(e) {
+              .map(function (e) {
                 return 'MMMM' === e || 'MM' === e || 'DD' === e || 'dddd' === e
                   ? e.slice(1)
                   : e;
@@ -24479,24 +24470,24 @@
               .join('')),
             this._longDateFormat[e]);
       }),
-      (a.invalidDate = function() {
+      (a.invalidDate = function () {
         return this._invalidDate;
       }),
-      (a.ordinal = function(e) {
+      (a.ordinal = function (e) {
         return this._ordinal.replace('%d', e);
       }),
       (a.preparse = mi),
       (a.postformat = mi),
-      (a.relativeTime = function(e, t, i, n) {
+      (a.relativeTime = function (e, t, i, n) {
         var s = this._relativeTime[i];
         return ie(s) ? s(e, t, i, n) : s.replace(/%d/i, e);
       }),
-      (a.pastFuture = function(e, t) {
+      (a.pastFuture = function (e, t) {
         return ie((e = this._relativeTime[0 < e ? 'future' : 'past']))
           ? e(t)
           : e.replace(/%s/i, t);
       }),
-      (a.set = function(e) {
+      (a.set = function (e) {
         var t, i;
         for (i in e)
           _(e, i) && (ie((t = e[i])) ? (this[i] = t) : (this['_' + i] = t));
@@ -24507,7 +24498,7 @@
               /\d{1,2}/.source
           ));
       }),
-      (a.eras = function(e, t) {
+      (a.eras = function (e, t) {
         for (
           var i, n = this._eras || vt('en')._eras, s = 0, a = n.length;
           s < a;
@@ -24522,14 +24513,12 @@
               n[s].until = 1 / 0;
               break;
             case 'string':
-              (i = f(n[s].until)
-                .startOf('day')
-                .valueOf()),
+              (i = f(n[s].until).startOf('day').valueOf()),
                 (n[s].until = i.valueOf());
           }
         return n;
       }),
-      (a.erasParse = function(e, t, i) {
+      (a.erasParse = function (e, t, i) {
         var n,
           s,
           a,
@@ -24557,31 +24546,31 @@
             }
           else if (0 <= [a, r, o].indexOf(e)) return l[n];
       }),
-      (a.erasConvertYear = function(e, t) {
+      (a.erasConvertYear = function (e, t) {
         var i = e.since <= e.until ? 1 : -1;
         return void 0 === t
           ? f(e.since).year()
           : f(e.since).year() + (t - e.offset) * i;
       }),
-      (a.erasAbbrRegex = function(e) {
+      (a.erasAbbrRegex = function (e) {
         return (
           _(this, '_erasAbbrRegex') || li.call(this),
           e ? this._erasAbbrRegex : this._erasRegex
         );
       }),
-      (a.erasNameRegex = function(e) {
+      (a.erasNameRegex = function (e) {
         return (
           _(this, '_erasNameRegex') || li.call(this),
           e ? this._erasNameRegex : this._erasRegex
         );
       }),
-      (a.erasNarrowRegex = function(e) {
+      (a.erasNarrowRegex = function (e) {
         return (
           _(this, '_erasNarrowRegex') || li.call(this),
           e ? this._erasNarrowRegex : this._erasRegex
         );
       }),
-      (a.months = function(e, t) {
+      (a.months = function (e, t) {
         return e
           ? ($(this._months)
               ? this._months
@@ -24594,7 +24583,7 @@
           ? this._months
           : this._months.standalone;
       }),
-      (a.monthsShort = function(e, t) {
+      (a.monthsShort = function (e, t) {
         return e
           ? ($(this._monthsShort)
               ? this._monthsShort
@@ -24605,10 +24594,10 @@
           ? this._monthsShort
           : this._monthsShort.standalone;
       }),
-      (a.monthsParse = function(e, t, i) {
+      (a.monthsParse = function (e, t, i) {
         var n, s;
         if (this._monthsParseExact)
-          return function(e, t, i) {
+          return function (e, t, i) {
             var n,
               s,
               a,
@@ -24681,7 +24670,7 @@
           if (!i && this._monthsParse[n].test(e)) return n;
         }
       }),
-      (a.monthsRegex = function(e) {
+      (a.monthsRegex = function (e) {
         return this._monthsParseExact
           ? (_(this, '_monthsRegex') || Ve.call(this),
             e ? this._monthsStrictRegex : this._monthsRegex)
@@ -24690,7 +24679,7 @@
               ? this._monthsStrictRegex
               : this._monthsRegex);
       }),
-      (a.monthsShortRegex = function(e) {
+      (a.monthsShortRegex = function (e) {
         return this._monthsParseExact
           ? (_(this, '_monthsRegex') || Ve.call(this),
             e ? this._monthsShortStrictRegex : this._monthsShortRegex)
@@ -24699,16 +24688,16 @@
               ? this._monthsShortStrictRegex
               : this._monthsShortRegex);
       }),
-      (a.week = function(e) {
+      (a.week = function (e) {
         return Ze(e, this._week.dow, this._week.doy).week;
       }),
-      (a.firstDayOfYear = function() {
+      (a.firstDayOfYear = function () {
         return this._week.doy;
       }),
-      (a.firstDayOfWeek = function() {
+      (a.firstDayOfWeek = function () {
         return this._week.dow;
       }),
-      (a.weekdays = function(e, t) {
+      (a.weekdays = function (e, t) {
         return (
           (t = $(this._weekdays)
             ? this._weekdays
@@ -24720,24 +24709,24 @@
           !0 === e ? tt(t, this._week.dow) : e ? t[e.day()] : t
         );
       }),
-      (a.weekdaysMin = function(e) {
+      (a.weekdaysMin = function (e) {
         return !0 === e
           ? tt(this._weekdaysMin, this._week.dow)
           : e
           ? this._weekdaysMin[e.day()]
           : this._weekdaysMin;
       }),
-      (a.weekdaysShort = function(e) {
+      (a.weekdaysShort = function (e) {
         return !0 === e
           ? tt(this._weekdaysShort, this._week.dow)
           : e
           ? this._weekdaysShort[e.day()]
           : this._weekdaysShort;
       }),
-      (a.weekdaysParse = function(e, t, i) {
+      (a.weekdaysParse = function (e, t, i) {
         var n, s;
         if (this._weekdaysParseExact)
-          return function(e, t, i) {
+          return function (e, t, i) {
             var n,
               s,
               a,
@@ -24837,7 +24826,7 @@
           if (!i && this._weekdaysParse[n].test(e)) return n;
         }
       }),
-      (a.weekdaysRegex = function(e) {
+      (a.weekdaysRegex = function (e) {
         return this._weekdaysParseExact
           ? (_(this, '_weekdaysRegex') || lt.call(this),
             e ? this._weekdaysStrictRegex : this._weekdaysRegex)
@@ -24846,7 +24835,7 @@
               ? this._weekdaysStrictRegex
               : this._weekdaysRegex);
       }),
-      (a.weekdaysShortRegex = function(e) {
+      (a.weekdaysShortRegex = function (e) {
         return this._weekdaysParseExact
           ? (_(this, '_weekdaysRegex') || lt.call(this),
             e ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex)
@@ -24855,7 +24844,7 @@
               ? this._weekdaysShortStrictRegex
               : this._weekdaysShortRegex);
       }),
-      (a.weekdaysMinRegex = function(e) {
+      (a.weekdaysMinRegex = function (e) {
         return this._weekdaysParseExact
           ? (_(this, '_weekdaysRegex') || lt.call(this),
             e ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex)
@@ -24864,10 +24853,10 @@
               ? this._weekdaysMinStrictRegex
               : this._weekdaysMinRegex);
       }),
-      (a.isPM = function(e) {
+      (a.isPM = function (e) {
         return 'p' === (e + '').toLowerCase().charAt(0);
       }),
-      (a.meridiem = function(e, t, i) {
+      (a.meridiem = function (e, t, i) {
         return 11 < e ? (i ? 'pm' : 'PM') : i ? 'am' : 'AM';
       }),
       gt('en', {
@@ -24878,7 +24867,7 @@
             offset: 1,
             name: 'Anno Domini',
             narrow: 'AD',
-            abbr: 'AD'
+            abbr: 'AD',
           },
           {
             since: '0000-12-31',
@@ -24886,11 +24875,11 @@
             offset: 1,
             name: 'Before Christ',
             narrow: 'BC',
-            abbr: 'BC'
-          }
+            abbr: 'BC',
+          },
         ],
         dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -24904,7 +24893,7 @@
               ? 'rd'
               : 'th')
           );
-        }
+        },
       }),
       (f.lang = e('moment.lang is deprecated. Use moment.locale instead.', gt)),
       (f.langData = e(
@@ -24931,12 +24920,12 @@
       return (146097 * e) / 4800;
     }
     function wi(e) {
-      return function() {
+      return function () {
         return this.as(e);
       };
     }
     function Li(e) {
-      return function() {
+      return function () {
         return this.isValid() ? this._data[e] : NaN;
       };
     }
@@ -25005,7 +24994,7 @@
         : 5;
     }
     function D(r) {
-      return function(e, t, i, n) {
+      return function (e, t, i, n) {
         var s = Hi(e),
           a = Oi[r][Hi(e)];
         return (a = 2 === s ? a[t ? 0 : 1] : a).replace(/%d/i, e);
@@ -25025,7 +25014,7 @@
         : 5;
     }
     function x(r) {
-      return function(e, t, i, n) {
+      return function (e, t, i, n) {
         var s = ji(e),
           a = $i[r][ji(e)];
         return (a = 2 === s ? a[t ? 0 : 1] : a).replace(/%d/i, e);
@@ -25045,16 +25034,16 @@
         : 5;
     }
     function S(r) {
-      return function(e, t, i, n) {
+      return function (e, t, i, n) {
         var s = Pi(e),
           a = Fi[r][Pi(e)];
         return (a = 2 === s ? a[t ? 0 : 1] : a).replace(/%d/i, e);
       };
     }
-    ((C = Wt.prototype).isValid = function() {
+    ((C = Wt.prototype).isValid = function () {
       return this._isValid;
     }),
-      (C.abs = function() {
+      (C.abs = function () {
         var e = this._data;
         return (
           (this._milliseconds = gi(this._milliseconds)),
@@ -25069,13 +25058,13 @@
           this
         );
       }),
-      (C.add = function(e, t) {
+      (C.add = function (e, t) {
         return yi(this, e, t, 1);
       }),
-      (C.subtract = function(e, t) {
+      (C.subtract = function (e, t) {
         return yi(this, e, t, -1);
       }),
-      (C.as = function(e) {
+      (C.as = function (e) {
         if (!this.isValid()) return NaN;
         var t,
           i,
@@ -25118,7 +25107,7 @@
       (C.asMonths = y),
       (C.asQuarters = be),
       (C.asYears = p),
-      (C.valueOf = function() {
+      (C.valueOf = function () {
         return this.isValid()
           ? this._milliseconds +
               864e5 * this._days +
@@ -25126,7 +25115,7 @@
               31536e6 * u(this._months / 12)
           : NaN;
       }),
-      (C._bubble = function() {
+      (C._bubble = function () {
         var e = this._milliseconds,
           t = this._days,
           i = this._months,
@@ -25153,10 +25142,10 @@
           this
         );
       }),
-      (C.clone = function() {
+      (C.clone = function () {
         return Ut(this);
       }),
-      (C.get = function(e) {
+      (C.get = function (e) {
         return (e = o(e)), this.isValid() ? this[e + 's']() : NaN;
       }),
       (C.milliseconds = l),
@@ -25164,12 +25153,12 @@
       (C.minutes = Xe),
       (C.hours = a),
       (C.days = Ti),
-      (C.weeks = function() {
+      (C.weeks = function () {
         return c(this.days() / 7);
       }),
       (C.months = Yi),
       (C.years = ki),
-      (C.humanize = function(e, t) {
+      (C.humanize = function (e, t) {
         var i, n, s, a, r, o, l, d, u, c, h, m;
         return this.isValid()
           ? ((i = !1),
@@ -25206,7 +25195,7 @@
               (o <= 1 ? ['y'] : ['yy', o]))[2] = s),
             (l[3] = 0 < +n),
             (l[4] = r),
-            (t = function(e, t, i, n, s) {
+            (t = function (e, t, i, n, s) {
               return s.relativeTime(t || 1, !!i, e, n);
             }.apply(null, l)),
             i && (t = e.pastFuture(+this, t)),
@@ -25227,29 +25216,29 @@
       n('x', 0, 0, 'valueOf'),
       v('x', Ye),
       v('X', /[+-]?\d+(\.\d{1,3})?/),
-      b('X', function(e, t, i) {
+      b('X', function (e, t, i) {
         i._d = new Date(1e3 * parseFloat(e));
       }),
-      b('x', function(e, t, i) {
+      b('x', function (e, t, i) {
         i._d = new Date(u(e));
       }),
       (f.version = '2.29.4'),
       (A = k),
       (f.fn = s),
-      (f.min = function() {
+      (f.min = function () {
         return At('isBefore', [].slice.call(arguments, 0));
       }),
-      (f.max = function() {
+      (f.max = function () {
         return At('isAfter', [].slice.call(arguments, 0));
       }),
-      (f.now = function() {
+      (f.now = function () {
         return Date.now ? Date.now() : +new Date();
       }),
       (f.utc = q),
-      (f.unix = function(e) {
+      (f.unix = function (e) {
         return k(1e3 * e);
       }),
-      (f.months = function(e, t) {
+      (f.months = function (e, t) {
         return fi(e, t, 'months');
       }),
       (f.isDate = z),
@@ -25257,22 +25246,22 @@
       (f.invalid = V),
       (f.duration = Ut),
       (f.isMoment = K),
-      (f.weekdays = function(e, t, i) {
+      (f.weekdays = function (e, t, i) {
         return _i(e, t, i, 'weekdays');
       }),
-      (f.parseZone = function() {
+      (f.parseZone = function () {
         return k.apply(null, arguments).parseZone();
       }),
       (f.localeData = vt),
       (f.isDuration = Nt),
-      (f.monthsShort = function(e, t) {
+      (f.monthsShort = function (e, t) {
         return fi(e, t, 'monthsShort');
       }),
-      (f.weekdaysMin = function(e, t, i) {
+      (f.weekdaysMin = function (e, t, i) {
         return _i(e, t, i, 'weekdaysMin');
       }),
       (f.defineLocale = yt),
-      (f.updateLocale = function(e, t) {
+      (f.updateLocale = function (e, t) {
         var i, n;
         return (
           null != t
@@ -25291,17 +25280,17 @@
           Y[e]
         );
       }),
-      (f.locales = function() {
+      (f.locales = function () {
         return ae(Y);
       }),
-      (f.weekdaysShort = function(e, t, i) {
+      (f.weekdaysShort = function (e, t, i) {
         return _i(e, t, i, 'weekdaysShort');
       }),
       (f.normalizeUnits = o),
-      (f.relativeTimeRounding = function(e) {
+      (f.relativeTimeRounding = function (e) {
         return void 0 === e ? Di : 'function' == typeof e && ((Di = e), !0);
       }),
-      (f.relativeTimeThreshold = function(e, t) {
+      (f.relativeTimeThreshold = function (e, t) {
         return (
           void 0 !== xi[e] &&
           (void 0 === t
@@ -25309,7 +25298,7 @@
             : ((xi[e] = t), 's' === e && (xi.ss = t - 1), !0))
         );
       }),
-      (f.calendarFormat = function(e, t) {
+      (f.calendarFormat = function (e, t) {
         return (e = e.diff(t, 'days', !0)) < -6
           ? 'sameElse'
           : e < -1
@@ -25334,25 +25323,27 @@
         TIME_SECONDS: 'HH:mm:ss',
         TIME_MS: 'HH:mm:ss.SSS',
         WEEK: 'GGGG-[W]WW',
-        MONTH: 'YYYY-MM'
+        MONTH: 'YYYY-MM',
       }),
       f.defineLocale('af', {
-        months: 'Januarie_Februarie_Maart_April_Mei_Junie_Julie_Augustus_September_Oktober_November_Desember'.split(
-          '_'
-        ),
+        months:
+          'Januarie_Februarie_Maart_April_Mei_Junie_Julie_Augustus_September_Oktober_November_Desember'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mrt_Apr_Mei_Jun_Jul_Aug_Sep_Okt_Nov_Des'.split(
           '_'
         ),
-        weekdays: 'Sondag_Maandag_Dinsdag_Woensdag_Donderdag_Vrydag_Saterdag'.split(
-          '_'
-        ),
+        weekdays:
+          'Sondag_Maandag_Dinsdag_Woensdag_Donderdag_Vrydag_Saterdag'.split(
+            '_'
+          ),
         weekdaysShort: 'Son_Maa_Din_Woe_Don_Vry_Sat'.split('_'),
         weekdaysMin: 'So_Ma_Di_Wo_Do_Vr_Sa'.split('_'),
         meridiemParse: /vm|nm/i,
-        isPM: function(e) {
+        isPM: function (e) {
           return /^nm$/i.test(e);
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? (i ? 'vm' : 'VM') : i ? 'nm' : 'NM';
         },
         longDateFormat: {
@@ -25361,7 +25352,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Vandag om] LT',
@@ -25369,7 +25360,7 @@
           nextWeek: 'dddd [om] LT',
           lastDay: '[Gister om] LT',
           lastWeek: '[Laas] dddd [om] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'oor %s',
@@ -25385,13 +25376,13 @@
           M: "'n maand",
           MM: '%d maande',
           y: "'n jaar",
-          yy: '%d jaar'
+          yy: '%d jaar',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(ste|de)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return e + (1 === e || 8 === e || 20 <= e ? 'ste' : 'de');
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       });
     var Oi = {
         s: [
@@ -25400,7 +25391,7 @@
           ['ثانيتان', 'ثانيتين'],
           '%d ثوان',
           '%d ثانية',
-          '%d ثانية'
+          '%d ثانية',
         ],
         m: [
           'أقل من دقيقة',
@@ -25408,7 +25399,7 @@
           ['دقيقتان', 'دقيقتين'],
           '%d دقائق',
           '%d دقيقة',
-          '%d دقيقة'
+          '%d دقيقة',
         ],
         h: [
           'أقل من ساعة',
@@ -25416,7 +25407,7 @@
           ['ساعتان', 'ساعتين'],
           '%d ساعات',
           '%d ساعة',
-          '%d ساعة'
+          '%d ساعة',
         ],
         d: [
           'أقل من يوم',
@@ -25424,7 +25415,7 @@
           ['يومان', 'يومين'],
           '%d أيام',
           '%d يومًا',
-          '%d يوم'
+          '%d يوم',
         ],
         M: [
           'أقل من شهر',
@@ -25432,7 +25423,7 @@
           ['شهران', 'شهرين'],
           '%d أشهر',
           '%d شهرا',
-          '%d شهر'
+          '%d شهر',
         ],
         y: [
           'أقل من عام',
@@ -25440,8 +25431,8 @@
           ['عامان', 'عامين'],
           '%d أعوام',
           '%d عامًا',
-          '%d عام'
-        ]
+          '%d عام',
+        ],
       },
       Ai =
         (f.defineLocale('ar-dz', {
@@ -25457,7 +25448,7 @@
             'سبتمبر',
             'أكتوبر',
             'نوفمبر',
-            'ديسمبر'
+            'ديسمبر',
           ]),
           monthsShort: we,
           weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split(
@@ -25472,13 +25463,13 @@
             L: 'D/‏M/‏YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           meridiemParse: /\u0635|\u0645/,
-          isPM: function(e) {
+          isPM: function (e) {
             return 'م' === e;
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'ص' : 'م';
           },
           calendar: {
@@ -25487,7 +25478,7 @@
             nextWeek: 'dddd [عند الساعة] LT',
             lastDay: '[أمس عند الساعة] LT',
             lastWeek: 'dddd [عند الساعة] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'بعد %s',
@@ -25503,20 +25494,22 @@
             M: D('M'),
             MM: D('M'),
             y: D('y'),
-            yy: D('y')
+            yy: D('y'),
           },
-          postformat: function(e) {
+          postformat: function (e) {
             return e.replace(/,/g, '،');
           },
-          week: { dow: 0, doy: 4 }
+          week: { dow: 0, doy: 4 },
         }),
         f.defineLocale('ar-kw', {
-          months: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
-            '_'
-          ),
-          monthsShort: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
-            '_'
-          ),
+          months:
+            'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
+              '_'
+            ),
+          monthsShort:
+            'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
+              '_'
+            ),
           weekdays: 'الأحد_الإتنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split(
             '_'
           ),
@@ -25529,7 +25522,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[اليوم على الساعة] LT',
@@ -25537,7 +25530,7 @@
             nextWeek: 'dddd [على الساعة] LT',
             lastDay: '[أمس على الساعة] LT',
             lastWeek: 'dddd [على الساعة] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'في %s',
@@ -25553,9 +25546,9 @@
             M: 'شهر',
             MM: '%d أشهر',
             y: 'سنة',
-            yy: '%d سنوات'
+            yy: '%d سنوات',
           },
-          week: { dow: 0, doy: 12 }
+          week: { dow: 0, doy: 12 },
         }),
         {
           1: '1',
@@ -25567,7 +25560,7 @@
           7: '7',
           8: '8',
           9: '9',
-          0: '0'
+          0: '0',
         }),
       $i = {
         s: [
@@ -25576,7 +25569,7 @@
           ['ثانيتان', 'ثانيتين'],
           '%d ثوان',
           '%d ثانية',
-          '%d ثانية'
+          '%d ثانية',
         ],
         m: [
           'أقل من دقيقة',
@@ -25584,7 +25577,7 @@
           ['دقيقتان', 'دقيقتين'],
           '%d دقائق',
           '%d دقيقة',
-          '%d دقيقة'
+          '%d دقيقة',
         ],
         h: [
           'أقل من ساعة',
@@ -25592,7 +25585,7 @@
           ['ساعتان', 'ساعتين'],
           '%d ساعات',
           '%d ساعة',
-          '%d ساعة'
+          '%d ساعة',
         ],
         d: [
           'أقل من يوم',
@@ -25600,7 +25593,7 @@
           ['يومان', 'يومين'],
           '%d أيام',
           '%d يومًا',
-          '%d يوم'
+          '%d يوم',
         ],
         M: [
           'أقل من شهر',
@@ -25608,7 +25601,7 @@
           ['شهران', 'شهرين'],
           '%d أشهر',
           '%d شهرا',
-          '%d شهر'
+          '%d شهر',
         ],
         y: [
           'أقل من عام',
@@ -25616,8 +25609,8 @@
           ['عامان', 'عامين'],
           '%d أعوام',
           '%d عامًا',
-          '%d عام'
-        ]
+          '%d عام',
+        ],
       },
       Wi =
         (f.defineLocale('ar-ly', {
@@ -25633,7 +25626,7 @@
             'سبتمبر',
             'أكتوبر',
             'نوفمبر',
-            'ديسمبر'
+            'ديسمبر',
           ]),
           monthsShort: Me,
           weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split(
@@ -25648,13 +25641,13 @@
             L: 'D/‏M/‏YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           meridiemParse: /\u0635|\u0645/,
-          isPM: function(e) {
+          isPM: function (e) {
             return 'م' === e;
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'ص' : 'م';
           },
           calendar: {
@@ -25663,7 +25656,7 @@
             nextWeek: 'dddd [عند الساعة] LT',
             lastDay: '[أمس عند الساعة] LT',
             lastWeek: 'dddd [عند الساعة] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'بعد %s',
@@ -25679,27 +25672,29 @@
             M: x('M'),
             MM: x('M'),
             y: x('y'),
-            yy: x('y')
+            yy: x('y'),
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(/\u060c/g, ',');
           },
-          postformat: function(e) {
+          postformat: function (e) {
             return e
-              .replace(/\d/g, function(e) {
+              .replace(/\d/g, function (e) {
                 return Ai[e];
               })
               .replace(/,/g, '،');
           },
-          week: { dow: 6, doy: 12 }
+          week: { dow: 6, doy: 12 },
         }),
         f.defineLocale('ar-ma', {
-          months: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
-            '_'
-          ),
-          monthsShort: 'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
-            '_'
-          ),
+          months:
+            'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
+              '_'
+            ),
+          monthsShort:
+            'يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر'.split(
+              '_'
+            ),
           weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split(
             '_'
           ),
@@ -25712,7 +25707,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[اليوم على الساعة] LT',
@@ -25720,7 +25715,7 @@
             nextWeek: 'dddd [على الساعة] LT',
             lastDay: '[أمس على الساعة] LT',
             lastWeek: 'dddd [على الساعة] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'في %s',
@@ -25736,9 +25731,9 @@
             M: 'شهر',
             MM: '%d أشهر',
             y: 'سنة',
-            yy: '%d سنوات'
+            yy: '%d سنوات',
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         {
           1: '١',
@@ -25750,7 +25745,7 @@
           7: '٧',
           8: '٨',
           9: '٩',
-          0: '٠'
+          0: '٠',
         }),
       Ni = {
         '١': '1',
@@ -25762,16 +25757,18 @@
         '٧': '7',
         '٨': '8',
         '٩': '9',
-        '٠': '0'
+        '٠': '0',
       },
       Ii =
         (f.defineLocale('ar-sa', {
-          months: 'يناير_فبراير_مارس_أبريل_مايو_يونيو_يوليو_أغسطس_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
-            '_'
-          ),
-          monthsShort: 'يناير_فبراير_مارس_أبريل_مايو_يونيو_يوليو_أغسطس_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
-            '_'
-          ),
+          months:
+            'يناير_فبراير_مارس_أبريل_مايو_يونيو_يوليو_أغسطس_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
+              '_'
+            ),
+          monthsShort:
+            'يناير_فبراير_مارس_أبريل_مايو_يونيو_يوليو_أغسطس_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
+              '_'
+            ),
           weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split(
             '_'
           ),
@@ -25784,13 +25781,13 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           meridiemParse: /\u0635|\u0645/,
-          isPM: function(e) {
+          isPM: function (e) {
             return 'م' === e;
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'ص' : 'م';
           },
           calendar: {
@@ -25799,7 +25796,7 @@
             nextWeek: 'dddd [على الساعة] LT',
             lastDay: '[أمس على الساعة] LT',
             lastWeek: 'dddd [على الساعة] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'في %s',
@@ -25815,34 +25812,36 @@
             M: 'شهر',
             MM: '%d أشهر',
             y: 'سنة',
-            yy: '%d سنوات'
+            yy: '%d سنوات',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e
               .replace(
                 /[\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669\u0660]/g,
-                function(e) {
+                function (e) {
                   return Ni[e];
                 }
               )
               .replace(/\u060c/g, ',');
           },
-          postformat: function(e) {
+          postformat: function (e) {
             return e
-              .replace(/\d/g, function(e) {
+              .replace(/\d/g, function (e) {
                 return Wi[e];
               })
               .replace(/,/g, '،');
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         f.defineLocale('ar-tn', {
-          months: 'جانفي_فيفري_مارس_أفريل_ماي_جوان_جويلية_أوت_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
-            '_'
-          ),
-          monthsShort: 'جانفي_فيفري_مارس_أفريل_ماي_جوان_جويلية_أوت_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
-            '_'
-          ),
+          months:
+            'جانفي_فيفري_مارس_أفريل_ماي_جوان_جويلية_أوت_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
+              '_'
+            ),
+          monthsShort:
+            'جانفي_فيفري_مارس_أفريل_ماي_جوان_جويلية_أوت_سبتمبر_أكتوبر_نوفمبر_ديسمبر'.split(
+              '_'
+            ),
           weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split(
             '_'
           ),
@@ -25855,7 +25854,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[اليوم على الساعة] LT',
@@ -25863,7 +25862,7 @@
             nextWeek: 'dddd [على الساعة] LT',
             lastDay: '[أمس على الساعة] LT',
             lastWeek: 'dddd [على الساعة] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'في %s',
@@ -25879,9 +25878,9 @@
             M: 'شهر',
             MM: '%d أشهر',
             y: 'سنة',
-            yy: '%d سنوات'
+            yy: '%d سنوات',
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         {
           1: '١',
@@ -25893,7 +25892,7 @@
           7: '٧',
           8: '٨',
           9: '٩',
-          0: '٠'
+          0: '٠',
         }),
       zi = {
         '١': '1',
@@ -25905,7 +25904,7 @@
         '٧': '7',
         '٨': '8',
         '٩': '9',
-        '٠': '0'
+        '٠': '0',
       },
       Fi = {
         s: [
@@ -25914,7 +25913,7 @@
           ['ثانيتان', 'ثانيتين'],
           '%d ثوان',
           '%d ثانية',
-          '%d ثانية'
+          '%d ثانية',
         ],
         m: [
           'أقل من دقيقة',
@@ -25922,7 +25921,7 @@
           ['دقيقتان', 'دقيقتين'],
           '%d دقائق',
           '%d دقيقة',
-          '%d دقيقة'
+          '%d دقيقة',
         ],
         h: [
           'أقل من ساعة',
@@ -25930,7 +25929,7 @@
           ['ساعتان', 'ساعتين'],
           '%d ساعات',
           '%d ساعة',
-          '%d ساعة'
+          '%d ساعة',
         ],
         d: [
           'أقل من يوم',
@@ -25938,7 +25937,7 @@
           ['يومان', 'يومين'],
           '%d أيام',
           '%d يومًا',
-          '%d يوم'
+          '%d يوم',
         ],
         M: [
           'أقل من شهر',
@@ -25946,7 +25945,7 @@
           ['شهران', 'شهرين'],
           '%d أشهر',
           '%d شهرا',
-          '%d شهر'
+          '%d شهر',
         ],
         y: [
           'أقل من عام',
@@ -25954,8 +25953,8 @@
           ['عامان', 'عامين'],
           '%d أعوام',
           '%d عامًا',
-          '%d عام'
-        ]
+          '%d عام',
+        ],
       },
       Ri =
         (f.defineLocale('ar', {
@@ -25971,7 +25970,7 @@
             'سبتمبر',
             'أكتوبر',
             'نوفمبر',
-            'ديسمبر'
+            'ديسمبر',
           ]),
           monthsShort: Ne,
           weekdays: 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split(
@@ -25986,13 +25985,13 @@
             L: 'D/‏M/‏YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           meridiemParse: /\u0635|\u0645/,
-          isPM: function(e) {
+          isPM: function (e) {
             return 'م' === e;
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'ص' : 'م';
           },
           calendar: {
@@ -26001,7 +26000,7 @@
             nextWeek: 'dddd [عند الساعة] LT',
             lastDay: '[أمس عند الساعة] LT',
             lastWeek: 'dddd [عند الساعة] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'بعد %s',
@@ -26017,26 +26016,26 @@
             M: S('M'),
             MM: S('M'),
             y: S('y'),
-            yy: S('y')
+            yy: S('y'),
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e
               .replace(
                 /[\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669\u0660]/g,
-                function(e) {
+                function (e) {
                   return zi[e];
                 }
               )
               .replace(/\u060c/g, ',');
           },
-          postformat: function(e) {
+          postformat: function (e) {
             return e
-              .replace(/\d/g, function(e) {
+              .replace(/\d/g, function (e) {
                 return Ii[e];
               })
               .replace(/,/g, '،');
           },
-          week: { dow: 6, doy: 12 }
+          week: { dow: 6, doy: 12 },
         }),
         {
           1: '-inci',
@@ -26056,7 +26055,7 @@
           10: '-uncu',
           30: '-uncu',
           60: '-ıncı',
-          90: '-ıncı'
+          90: '-ıncı',
         });
     function qi(e, t, i) {
       return 'm' === i
@@ -26076,7 +26075,7 @@
             hh: t ? 'гадзіна_гадзіны_гадзін' : 'гадзіну_гадзіны_гадзін',
             dd: 'дзень_дні_дзён',
             MM: 'месяц_месяцы_месяцаў',
-            yy: 'год_гады_гадоў'
+            yy: 'год_гады_гадоў',
           }[i]).split('_')),
           e % 10 == 1 && e % 100 != 11
             ? t[0]
@@ -26085,13 +26084,15 @@
             : t[2]);
     }
     f.defineLocale('az', {
-      months: 'yanvar_fevral_mart_aprel_may_iyun_iyul_avqust_sentyabr_oktyabr_noyabr_dekabr'.split(
-        '_'
-      ),
+      months:
+        'yanvar_fevral_mart_aprel_may_iyun_iyul_avqust_sentyabr_oktyabr_noyabr_dekabr'.split(
+          '_'
+        ),
       monthsShort: 'yan_fev_mar_apr_may_iyn_iyl_avq_sen_okt_noy_dek'.split('_'),
-      weekdays: 'Bazar_Bazar ertəsi_Çərşənbə axşamı_Çərşənbə_Cümə axşamı_Cümə_Şənbə'.split(
-        '_'
-      ),
+      weekdays:
+        'Bazar_Bazar ertəsi_Çərşənbə axşamı_Çərşənbə_Cümə axşamı_Cümə_Şənbə'.split(
+          '_'
+        ),
       weekdaysShort: 'Baz_BzE_ÇAx_Çər_CAx_Cüm_Şən'.split('_'),
       weekdaysMin: 'Bz_BE_ÇA_Çə_CA_Cü_Şə'.split('_'),
       weekdaysParseExact: !0,
@@ -26101,7 +26102,7 @@
         L: 'DD.MM.YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY HH:mm',
-        LLLL: 'dddd, D MMMM YYYY HH:mm'
+        LLLL: 'dddd, D MMMM YYYY HH:mm',
       },
       calendar: {
         sameDay: '[bugün saat] LT',
@@ -26109,7 +26110,7 @@
         nextWeek: '[gələn həftə] dddd [saat] LT',
         lastDay: '[dünən] LT',
         lastWeek: '[keçən həftə] dddd [saat] LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: '%s sonra',
@@ -26125,17 +26126,18 @@
         M: 'bir ay',
         MM: '%d ay',
         y: 'bir il',
-        yy: '%d il'
+        yy: '%d il',
       },
       meridiemParse: /gec\u0259|s\u0259h\u0259r|g\xfcnd\xfcz|ax\u015fam/,
-      isPM: function(e) {
+      isPM: function (e) {
         return /^(g\xfcnd\xfcz|ax\u015fam)$/.test(e);
       },
-      meridiem: function(e, t, i) {
+      meridiem: function (e, t, i) {
         return e < 4 ? 'gecə' : e < 12 ? 'səhər' : e < 17 ? 'gündüz' : 'axşam';
       },
-      dayOfMonthOrdinalParse: /\d{1,2}-(\u0131nc\u0131|inci|nci|\xfcnc\xfc|nc\u0131|uncu)/,
-      ordinal: function(e) {
+      dayOfMonthOrdinalParse:
+        /\d{1,2}-(\u0131nc\u0131|inci|nci|\xfcnc\xfc|nc\u0131|uncu)/,
+      ordinal: function (e) {
         var t;
         return 0 === e
           ? e + '-ıncı'
@@ -26144,28 +26146,32 @@
                 Ri[(e % 100) - t] ||
                 Ri[100 <= e ? 100 : null]);
       },
-      week: { dow: 1, doy: 7 }
+      week: { dow: 1, doy: 7 },
     }),
       f.defineLocale('be', {
         months: {
-          format: 'студзеня_лютага_сакавіка_красавіка_траўня_чэрвеня_ліпеня_жніўня_верасня_кастрычніка_лістапада_снежня'.split(
-            '_'
-          ),
-          standalone: 'студзень_люты_сакавік_красавік_травень_чэрвень_ліпень_жнівень_верасень_кастрычнік_лістапад_снежань'.split(
-            '_'
-          )
+          format:
+            'студзеня_лютага_сакавіка_красавіка_траўня_чэрвеня_ліпеня_жніўня_верасня_кастрычніка_лістапада_снежня'.split(
+              '_'
+            ),
+          standalone:
+            'студзень_люты_сакавік_красавік_травень_чэрвень_ліпень_жнівень_верасень_кастрычнік_лістапад_снежань'.split(
+              '_'
+            ),
         },
-        monthsShort: 'студ_лют_сак_крас_трав_чэрв_ліп_жнів_вер_каст_ліст_снеж'.split(
-          '_'
-        ),
+        monthsShort:
+          'студ_лют_сак_крас_трав_чэрв_ліп_жнів_вер_каст_ліст_снеж'.split('_'),
         weekdays: {
-          format: 'нядзелю_панядзелак_аўторак_сераду_чацвер_пятніцу_суботу'.split(
-            '_'
-          ),
-          standalone: 'нядзеля_панядзелак_аўторак_серада_чацвер_пятніца_субота'.split(
-            '_'
-          ),
-          isFormat: /\[ ?[\u0423\u0443\u045e] ?(?:\u043c\u0456\u043d\u0443\u043b\u0443\u044e|\u043d\u0430\u0441\u0442\u0443\u043f\u043d\u0443\u044e)? ?\] ?dddd/
+          format:
+            'нядзелю_панядзелак_аўторак_сераду_чацвер_пятніцу_суботу'.split(
+              '_'
+            ),
+          standalone:
+            'нядзеля_панядзелак_аўторак_серада_чацвер_пятніца_субота'.split(
+              '_'
+            ),
+          isFormat:
+            /\[ ?[\u0423\u0443\u045e] ?(?:\u043c\u0456\u043d\u0443\u043b\u0443\u044e|\u043d\u0430\u0441\u0442\u0443\u043f\u043d\u0443\u044e)? ?\] ?dddd/,
         },
         weekdaysShort: 'нд_пн_ат_ср_чц_пт_сб'.split('_'),
         weekdaysMin: 'нд_пн_ат_ср_чц_пт_сб'.split('_'),
@@ -26175,16 +26181,16 @@
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY г.',
           LLL: 'D MMMM YYYY г., HH:mm',
-          LLLL: 'dddd, D MMMM YYYY г., HH:mm'
+          LLLL: 'dddd, D MMMM YYYY г., HH:mm',
         },
         calendar: {
           sameDay: '[Сёння ў] LT',
           nextDay: '[Заўтра ў] LT',
           lastDay: '[Учора ў] LT',
-          nextWeek: function() {
+          nextWeek: function () {
             return '[У] dddd [ў] LT';
           },
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
               case 3:
@@ -26197,7 +26203,7 @@
                 return '[У мінулы] dddd [ў] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'праз %s',
@@ -26212,19 +26218,20 @@
           M: 'месяц',
           MM: qi,
           y: 'год',
-          yy: qi
+          yy: qi,
         },
-        meridiemParse: /\u043d\u043e\u0447\u044b|\u0440\u0430\u043d\u0456\u0446\u044b|\u0434\u043d\u044f|\u0432\u0435\u0447\u0430\u0440\u0430/,
-        isPM: function(e) {
+        meridiemParse:
+          /\u043d\u043e\u0447\u044b|\u0440\u0430\u043d\u0456\u0446\u044b|\u0434\u043d\u044f|\u0432\u0435\u0447\u0430\u0440\u0430/,
+        isPM: function (e) {
           return /^(\u0434\u043d\u044f|\u0432\u0435\u0447\u0430\u0440\u0430)$/.test(
             e
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 4 ? 'ночы' : e < 12 ? 'раніцы' : e < 17 ? 'дня' : 'вечара';
         },
         dayOfMonthOrdinalParse: /\d{1,2}-(\u0456|\u044b|\u0433\u0430)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'M':
             case 'd':
@@ -26242,18 +26249,18 @@
               return e;
           }
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('bg', {
-        months: 'януари_февруари_март_април_май_юни_юли_август_септември_октомври_ноември_декември'.split(
-          '_'
-        ),
+        months:
+          'януари_февруари_март_април_май_юни_юли_август_септември_октомври_ноември_декември'.split(
+            '_'
+          ),
         monthsShort: 'яну_фев_мар_апр_май_юни_юли_авг_сеп_окт_ное_дек'.split(
           '_'
         ),
-        weekdays: 'неделя_понеделник_вторник_сряда_четвъртък_петък_събота'.split(
-          '_'
-        ),
+        weekdays:
+          'неделя_понеделник_вторник_сряда_четвъртък_петък_събота'.split('_'),
         weekdaysShort: 'нед_пон_вто_сря_чет_пет_съб'.split('_'),
         weekdaysMin: 'нд_пн_вт_ср_чт_пт_сб'.split('_'),
         longDateFormat: {
@@ -26262,14 +26269,14 @@
           L: 'D.MM.YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY H:mm',
-          LLLL: 'dddd, D MMMM YYYY H:mm'
+          LLLL: 'dddd, D MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[Днес в] LT',
           nextDay: '[Утре в] LT',
           nextWeek: 'dddd [в] LT',
           lastDay: '[Вчера в] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
               case 3:
@@ -26282,7 +26289,7 @@
                 return '[Миналия] dddd [в] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'след %s',
@@ -26300,10 +26307,11 @@
           M: 'месец',
           MM: '%d месеца',
           y: 'година',
-          yy: '%d години'
+          yy: '%d години',
         },
-        dayOfMonthOrdinalParse: /\d{1,2}-(\u0435\u0432|\u0435\u043d|\u0442\u0438|\u0432\u0438|\u0440\u0438|\u043c\u0438)/,
-        ordinal: function(e) {
+        dayOfMonthOrdinalParse:
+          /\d{1,2}-(\u0435\u0432|\u0435\u043d|\u0442\u0438|\u0432\u0438|\u0440\u0438|\u043c\u0438)/,
+        ordinal: function (e) {
           var t = e % 10,
             i = e % 100;
           return 0 === e
@@ -26320,12 +26328,13 @@
             ? e + '-ми'
             : e + '-ти';
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('bm', {
-        months: 'Zanwuyekalo_Fewuruyekalo_Marisikalo_Awirilikalo_Mɛkalo_Zuwɛnkalo_Zuluyekalo_Utikalo_Sɛtanburukalo_ɔkutɔburukalo_Nowanburukalo_Desanburukalo'.split(
-          '_'
-        ),
+        months:
+          'Zanwuyekalo_Fewuruyekalo_Marisikalo_Awirilikalo_Mɛkalo_Zuwɛnkalo_Zuluyekalo_Utikalo_Sɛtanburukalo_ɔkutɔburukalo_Nowanburukalo_Desanburukalo'.split(
+            '_'
+          ),
         monthsShort: 'Zan_Few_Mar_Awi_Mɛ_Zuw_Zul_Uti_Sɛt_ɔku_Now_Des'.split(
           '_'
         ),
@@ -26338,7 +26347,7 @@
           L: 'DD/MM/YYYY',
           LL: 'MMMM [tile] D [san] YYYY',
           LLL: 'MMMM [tile] D [san] YYYY [lɛrɛ] HH:mm',
-          LLLL: 'dddd MMMM [tile] D [san] YYYY [lɛrɛ] HH:mm'
+          LLLL: 'dddd MMMM [tile] D [san] YYYY [lɛrɛ] HH:mm',
         },
         calendar: {
           sameDay: '[Bi lɛrɛ] LT',
@@ -26346,7 +26355,7 @@
           nextWeek: 'dddd [don lɛrɛ] LT',
           lastDay: '[Kunu lɛrɛ] LT',
           lastWeek: 'dddd [tɛmɛnen lɛrɛ] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s kɔnɔ',
@@ -26362,9 +26371,9 @@
           M: 'kalo kelen',
           MM: 'kalo %d',
           y: 'san kelen',
-          yy: 'san %d'
+          yy: 'san %d',
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       });
     var Bi = {
         1: '১',
@@ -26376,7 +26385,7 @@
         7: '৭',
         8: '৮',
         9: '৯',
-        0: '০'
+        0: '০',
       },
       Vi = {
         '১': '1',
@@ -26388,19 +26397,22 @@
         '৭': '7',
         '৮': '8',
         '৯': '9',
-        '০': '0'
+        '০': '0',
       },
       Gi =
         (f.defineLocale('bn-bd', {
-          months: 'জানুয়ারি_ফেব্রুয়ারি_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্টেম্বর_অক্টোবর_নভেম্বর_ডিসেম্বর'.split(
-            '_'
-          ),
-          monthsShort: 'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
-            '_'
-          ),
-          weekdays: 'রবিবার_সোমবার_মঙ্গলবার_বুধবার_বৃহস্পতিবার_শুক্রবার_শনিবার'.split(
-            '_'
-          ),
+          months:
+            'জানুয়ারি_ফেব্রুয়ারি_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্টেম্বর_অক্টোবর_নভেম্বর_ডিসেম্বর'.split(
+              '_'
+            ),
+          monthsShort:
+            'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
+              '_'
+            ),
+          weekdays:
+            'রবিবার_সোমবার_মঙ্গলবার_বুধবার_বৃহস্পতিবার_শুক্রবার_শনিবার'.split(
+              '_'
+            ),
           weekdaysShort: 'রবি_সোম_মঙ্গল_বুধ_বৃহস্পতি_শুক্র_শনি'.split('_'),
           weekdaysMin: 'রবি_সোম_মঙ্গল_বুধ_বৃহ_শুক্র_শনি'.split('_'),
           longDateFormat: {
@@ -26409,7 +26421,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, A h:mm সময়',
-            LLLL: 'dddd, D MMMM YYYY, A h:mm সময়'
+            LLLL: 'dddd, D MMMM YYYY, A h:mm সময়',
           },
           calendar: {
             sameDay: '[আজ] LT',
@@ -26417,7 +26429,7 @@
             nextWeek: 'dddd, LT',
             lastDay: '[গতকাল] LT',
             lastWeek: '[গত] dddd, LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s পরে',
@@ -26433,23 +26445,24 @@
             M: 'এক মাস',
             MM: '%d মাস',
             y: 'এক বছর',
-            yy: '%d বছর'
+            yy: '%d বছর',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u09e7\u09e8\u09e9\u09ea\u09eb\u09ec\u09ed\u09ee\u09ef\u09e6]/g,
-              function(e) {
+              function (e) {
                 return Vi[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return Bi[e];
             });
           },
-          meridiemParse: /\u09b0\u09be\u09a4|\u09ad\u09cb\u09b0|\u09b8\u0995\u09be\u09b2|\u09a6\u09c1\u09aa\u09c1\u09b0|\u09ac\u09bf\u0995\u09be\u09b2|\u09b8\u09a8\u09cd\u09a7\u09cd\u09af\u09be|\u09b0\u09be\u09a4/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u09b0\u09be\u09a4|\u09ad\u09cb\u09b0|\u09b8\u0995\u09be\u09b2|\u09a6\u09c1\u09aa\u09c1\u09b0|\u09ac\u09bf\u0995\u09be\u09b2|\u09b8\u09a8\u09cd\u09a7\u09cd\u09af\u09be|\u09b0\u09be\u09a4/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'রাত' === t
@@ -26467,7 +26480,7 @@
                 : void 0
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 4
               ? 'রাত'
               : e < 6
@@ -26482,7 +26495,7 @@
               ? 'সন্ধ্যা'
               : 'রাত';
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         {
           1: '১',
@@ -26494,7 +26507,7 @@
           7: '৭',
           8: '৮',
           9: '৯',
-          0: '০'
+          0: '০',
         }),
       Xi = {
         '১': '1',
@@ -26506,19 +26519,22 @@
         '৭': '7',
         '৮': '8',
         '৯': '9',
-        '০': '0'
+        '০': '0',
       },
       Ui =
         (f.defineLocale('bn', {
-          months: 'জানুয়ারি_ফেব্রুয়ারি_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্টেম্বর_অক্টোবর_নভেম্বর_ডিসেম্বর'.split(
-            '_'
-          ),
-          monthsShort: 'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
-            '_'
-          ),
-          weekdays: 'রবিবার_সোমবার_মঙ্গলবার_বুধবার_বৃহস্পতিবার_শুক্রবার_শনিবার'.split(
-            '_'
-          ),
+          months:
+            'জানুয়ারি_ফেব্রুয়ারি_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্টেম্বর_অক্টোবর_নভেম্বর_ডিসেম্বর'.split(
+              '_'
+            ),
+          monthsShort:
+            'জানু_ফেব্রু_মার্চ_এপ্রিল_মে_জুন_জুলাই_আগস্ট_সেপ্ট_অক্টো_নভে_ডিসে'.split(
+              '_'
+            ),
+          weekdays:
+            'রবিবার_সোমবার_মঙ্গলবার_বুধবার_বৃহস্পতিবার_শুক্রবার_শনিবার'.split(
+              '_'
+            ),
           weekdaysShort: 'রবি_সোম_মঙ্গল_বুধ_বৃহস্পতি_শুক্র_শনি'.split('_'),
           weekdaysMin: 'রবি_সোম_মঙ্গল_বুধ_বৃহ_শুক্র_শনি'.split('_'),
           longDateFormat: {
@@ -26527,7 +26543,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, A h:mm সময়',
-            LLLL: 'dddd, D MMMM YYYY, A h:mm সময়'
+            LLLL: 'dddd, D MMMM YYYY, A h:mm সময়',
           },
           calendar: {
             sameDay: '[আজ] LT',
@@ -26535,7 +26551,7 @@
             nextWeek: 'dddd, LT',
             lastDay: '[গতকাল] LT',
             lastWeek: '[গত] dddd, LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s পরে',
@@ -26551,23 +26567,24 @@
             M: 'এক মাস',
             MM: '%d মাস',
             y: 'এক বছর',
-            yy: '%d বছর'
+            yy: '%d বছর',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u09e7\u09e8\u09e9\u09ea\u09eb\u09ec\u09ed\u09ee\u09ef\u09e6]/g,
-              function(e) {
+              function (e) {
                 return Xi[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return Gi[e];
             });
           },
-          meridiemParse: /\u09b0\u09be\u09a4|\u09b8\u0995\u09be\u09b2|\u09a6\u09c1\u09aa\u09c1\u09b0|\u09ac\u09bf\u0995\u09be\u09b2|\u09b0\u09be\u09a4/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u09b0\u09be\u09a4|\u09b8\u0995\u09be\u09b2|\u09a6\u09c1\u09aa\u09c1\u09b0|\u09ac\u09bf\u0995\u09be\u09b2|\u09b0\u09be\u09a4/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               ('রাত' === t && 4 <= e) ||
@@ -26577,7 +26594,7 @@
                 : e
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 4
               ? 'রাত'
               : e < 10
@@ -26588,7 +26605,7 @@
               ? 'বিকাল'
               : 'রাত';
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         {
           1: '༡',
@@ -26600,7 +26617,7 @@
           7: '༧',
           8: '༨',
           9: '༩',
-          0: '༠'
+          0: '༠',
         }),
       Ji = {
         '༡': '1',
@@ -26612,7 +26629,7 @@
         '༧': '7',
         '༨': '8',
         '༩': '9',
-        '༠': '0'
+        '༠': '0',
       };
     function Qi(e, t, i) {
       return (
@@ -26711,7 +26728,7 @@
           M: ['ein Monat', 'einem Monat'],
           MM: [e + ' Monate', e + ' Monaten'],
           y: ['ein Jahr', 'einem Jahr'],
-          yy: [e + ' Jahre', e + ' Jahren']
+          yy: [e + ' Jahre', e + ' Jahren'],
         }),
         t ? e[i][0] : e[i][1]
       );
@@ -26727,7 +26744,7 @@
           M: ['ein Monat', 'einem Monat'],
           MM: [e + ' Monate', e + ' Monaten'],
           y: ['ein Jahr', 'einem Jahr'],
-          yy: [e + ' Jahre', e + ' Jahren']
+          yy: [e + ' Jahre', e + ' Jahren'],
         }),
         t ? e[i][0] : e[i][1]
       );
@@ -26743,23 +26760,26 @@
           M: ['ein Monat', 'einem Monat'],
           MM: [e + ' Monate', e + ' Monaten'],
           y: ['ein Jahr', 'einem Jahr'],
-          yy: [e + ' Jahre', e + ' Jahren']
+          yy: [e + ' Jahre', e + ' Jahren'],
         }),
         t ? e[i][0] : e[i][1]
       );
     }
     f.defineLocale('bo', {
-      months: 'ཟླ་བ་དང་པོ_ཟླ་བ་གཉིས་པ_ཟླ་བ་གསུམ་པ_ཟླ་བ་བཞི་པ_ཟླ་བ་ལྔ་པ_ཟླ་བ་དྲུག་པ_ཟླ་བ་བདུན་པ_ཟླ་བ་བརྒྱད་པ_ཟླ་བ་དགུ་པ_ཟླ་བ་བཅུ་པ_ཟླ་བ་བཅུ་གཅིག་པ_ཟླ་བ་བཅུ་གཉིས་པ'.split(
-        '_'
-      ),
-      monthsShort: 'ཟླ་1_ཟླ་2_ཟླ་3_ཟླ་4_ཟླ་5_ཟླ་6_ཟླ་7_ཟླ་8_ཟླ་9_ཟླ་10_ཟླ་11_ཟླ་12'.split(
-        '_'
-      ),
+      months:
+        'ཟླ་བ་དང་པོ_ཟླ་བ་གཉིས་པ_ཟླ་བ་གསུམ་པ_ཟླ་བ་བཞི་པ_ཟླ་བ་ལྔ་པ_ཟླ་བ་དྲུག་པ_ཟླ་བ་བདུན་པ_ཟླ་བ་བརྒྱད་པ_ཟླ་བ་དགུ་པ_ཟླ་བ་བཅུ་པ_ཟླ་བ་བཅུ་གཅིག་པ_ཟླ་བ་བཅུ་གཉིས་པ'.split(
+          '_'
+        ),
+      monthsShort:
+        'ཟླ་1_ཟླ་2_ཟླ་3_ཟླ་4_ཟླ་5_ཟླ་6_ཟླ་7_ཟླ་8_ཟླ་9_ཟླ་10_ཟླ་11_ཟླ་12'.split(
+          '_'
+        ),
       monthsShortRegex: /^(\u0f5f\u0fb3\u0f0b\d{1,2})/,
       monthsParseExact: !0,
-      weekdays: 'གཟའ་ཉི་མ་_གཟའ་ཟླ་བ་_གཟའ་མིག་དམར་_གཟའ་ལྷག་པ་_གཟའ་ཕུར་བུ_གཟའ་པ་སངས་_གཟའ་སྤེན་པ་'.split(
-        '_'
-      ),
+      weekdays:
+        'གཟའ་ཉི་མ་_གཟའ་ཟླ་བ་_གཟའ་མིག་དམར་_གཟའ་ལྷག་པ་_གཟའ་ཕུར་བུ_གཟའ་པ་སངས་_གཟའ་སྤེན་པ་'.split(
+          '_'
+        ),
       weekdaysShort: 'ཉི་མ་_ཟླ་བ་_མིག་དམར་_ལྷག་པ་_ཕུར་བུ_པ་སངས་_སྤེན་པ་'.split(
         '_'
       ),
@@ -26770,7 +26790,7 @@
         L: 'DD/MM/YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY, A h:mm',
-        LLLL: 'dddd, D MMMM YYYY, A h:mm'
+        LLLL: 'dddd, D MMMM YYYY, A h:mm',
       },
       calendar: {
         sameDay: '[དི་རིང] LT',
@@ -26778,7 +26798,7 @@
         nextWeek: '[བདུན་ཕྲག་རྗེས་མ], LT',
         lastDay: '[ཁ་སང] LT',
         lastWeek: '[བདུན་ཕྲག་མཐའ་མ] dddd, LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: '%s ལ་',
@@ -26794,23 +26814,24 @@
         M: 'ཟླ་བ་གཅིག',
         MM: '%d ཟླ་བ',
         y: 'ལོ་གཅིག',
-        yy: '%d ལོ'
+        yy: '%d ལོ',
       },
-      preparse: function(e) {
+      preparse: function (e) {
         return e.replace(
           /[\u0f21\u0f22\u0f23\u0f24\u0f25\u0f26\u0f27\u0f28\u0f29\u0f20]/g,
-          function(e) {
+          function (e) {
             return Ji[e];
           }
         );
       },
-      postformat: function(e) {
-        return e.replace(/\d/g, function(e) {
+      postformat: function (e) {
+        return e.replace(/\d/g, function (e) {
           return Ui[e];
         });
       },
-      meridiemParse: /\u0f58\u0f5a\u0f53\u0f0b\u0f58\u0f7c|\u0f5e\u0f7c\u0f42\u0f66\u0f0b\u0f40\u0f66|\u0f49\u0f72\u0f53\u0f0b\u0f42\u0f74\u0f44|\u0f51\u0f42\u0f7c\u0f44\u0f0b\u0f51\u0f42|\u0f58\u0f5a\u0f53\u0f0b\u0f58\u0f7c/,
-      meridiemHour: function(e, t) {
+      meridiemParse:
+        /\u0f58\u0f5a\u0f53\u0f0b\u0f58\u0f7c|\u0f5e\u0f7c\u0f42\u0f66\u0f0b\u0f40\u0f66|\u0f49\u0f72\u0f53\u0f0b\u0f42\u0f74\u0f44|\u0f51\u0f42\u0f7c\u0f44\u0f0b\u0f51\u0f42|\u0f58\u0f5a\u0f53\u0f0b\u0f58\u0f7c/,
+      meridiemHour: function (e, t) {
         return (
           12 === e && (e = 0),
           ('མཚན་མོ' === t && 4 <= e) ||
@@ -26820,7 +26841,7 @@
             : e
         );
       },
-      meridiem: function(e, t, i) {
+      meridiem: function (e, t, i) {
         return e < 4
           ? 'མཚན་མོ'
           : e < 10
@@ -26831,7 +26852,7 @@
           ? 'དགོང་དག'
           : 'མཚན་མོ';
       },
-      week: { dow: 0, doy: 6 }
+      week: { dow: 0, doy: 6 },
     }),
       (m = [
         /^gen/i,
@@ -26845,14 +26866,16 @@
         /^gwe/i,
         /^her/i,
         /^du/i,
-        /^ker/i
+        /^ker/i,
       ]),
-      (h = /^(genver|c[\u02bc\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu|gen|c[\u02bc\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i),
+      (h =
+        /^(genver|c[\u02bc\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu|gen|c[\u02bc\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i),
       (it = [/^Su/i, /^Lu/i, /^Me([^r]|$)/i, /^Mer/i, /^Ya/i, /^Gw/i, /^Sa/i]),
       f.defineLocale('br', {
-        months: 'Genver_Cʼhwevrer_Meurzh_Ebrel_Mae_Mezheven_Gouere_Eost_Gwengolo_Here_Du_Kerzu'.split(
-          '_'
-        ),
+        months:
+          'Genver_Cʼhwevrer_Meurzh_Ebrel_Mae_Mezheven_Gouere_Eost_Gwengolo_Here_Du_Kerzu'.split(
+            '_'
+          ),
         monthsShort: 'Gen_Cʼhwe_Meu_Ebr_Mae_Eve_Gou_Eos_Gwe_Her_Du_Ker'.split(
           '_'
         ),
@@ -26867,7 +26890,7 @@
           /^merc[\u02bc\']her/i,
           /^yaou/i,
           /^gwener/i,
-          /^sadorn/i
+          /^sadorn/i,
         ],
         shortWeekdaysParse: [
           /^Sul/i,
@@ -26876,13 +26899,15 @@
           /^Mer/i,
           /^Yao/i,
           /^Gwe/i,
-          /^Sad/i
+          /^Sad/i,
         ],
         minWeekdaysParse: it,
         monthsRegex: h,
         monthsShortRegex: h,
-        monthsStrictRegex: /^(genver|c[\u02bc\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu)/i,
-        monthsShortStrictRegex: /^(gen|c[\u02bc\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i,
+        monthsStrictRegex:
+          /^(genver|c[\u02bc\']hwevrer|meurzh|ebrel|mae|mezheven|gouere|eost|gwengolo|here|du|kerzu)/i,
+        monthsShortStrictRegex:
+          /^(gen|c[\u02bc\']hwe|meu|ebr|mae|eve|gou|eos|gwe|her|du|ker)/i,
         monthsParse: m,
         longMonthsParse: m,
         shortMonthsParse: m,
@@ -26892,7 +26917,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D [a viz] MMMM YYYY',
           LLL: 'D [a viz] MMMM YYYY HH:mm',
-          LLLL: 'dddd, D [a viz] MMMM YYYY HH:mm'
+          LLLL: 'dddd, D [a viz] MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Hiziv da] LT',
@@ -26900,7 +26925,7 @@
           nextWeek: 'dddd [da] LT',
           lastDay: '[Decʼh da] LT',
           lastWeek: 'dddd [paset da] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'a-benn %s',
@@ -26916,7 +26941,7 @@
           M: 'ur miz',
           MM: Qi,
           y: 'ur bloaz',
-          yy: function(e) {
+          yy: function (e) {
             switch (
               (function e(t) {
                 return 9 < t ? e(t % 10) : t;
@@ -26931,32 +26956,35 @@
               default:
                 return e + ' vloaz';
             }
-          }
+          },
         },
         dayOfMonthOrdinalParse: /\d{1,2}(a\xf1|vet)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return e + (1 === e ? 'añ' : 'vet');
         },
         week: { dow: 1, doy: 4 },
         meridiemParse: /a.m.|g.m./,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'g.m.' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? 'a.m.' : 'g.m.';
-        }
+        },
       }),
       f.defineLocale('bs', {
-        months: 'januar_februar_mart_april_maj_juni_juli_august_septembar_oktobar_novembar_decembar'.split(
-          '_'
-        ),
-        monthsShort: 'jan._feb._mar._apr._maj._jun._jul._aug._sep._okt._nov._dec.'.split(
-          '_'
-        ),
+        months:
+          'januar_februar_mart_april_maj_juni_juli_august_septembar_oktobar_novembar_decembar'.split(
+            '_'
+          ),
+        monthsShort:
+          'jan._feb._mar._apr._maj._jun._jul._aug._sep._okt._nov._dec.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
-          '_'
-        ),
+        weekdays:
+          'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
+            '_'
+          ),
         weekdaysShort: 'ned._pon._uto._sri._čet._pet._sub.'.split('_'),
         weekdaysMin: 'ne_po_ut_sr_če_pe_su'.split('_'),
         weekdaysParseExact: !0,
@@ -26966,12 +26994,12 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY H:mm',
-          LLLL: 'dddd, D. MMMM YYYY H:mm'
+          LLLL: 'dddd, D. MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[danas u] LT',
           nextDay: '[sutra u] LT',
-          nextWeek: function() {
+          nextWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[u] [nedjelju] [u] LT';
@@ -26987,7 +27015,7 @@
             }
           },
           lastDay: '[jučer u] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
               case 3:
@@ -27001,7 +27029,7 @@
                 return '[prošli] dddd [u] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'za %s',
@@ -27017,29 +27045,33 @@
           M: 'mjesec',
           MM: Ki,
           y: 'godinu',
-          yy: Ki
+          yy: Ki,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('ca', {
         months: {
-          standalone: 'gener_febrer_març_abril_maig_juny_juliol_agost_setembre_octubre_novembre_desembre'.split(
-            '_'
-          ),
-          format: "de gener_de febrer_de març_d'abril_de maig_de juny_de juliol_d'agost_de setembre_d'octubre_de novembre_de desembre".split(
-            '_'
-          ),
-          isFormat: /D[oD]?(\s)+MMMM/
+          standalone:
+            'gener_febrer_març_abril_maig_juny_juliol_agost_setembre_octubre_novembre_desembre'.split(
+              '_'
+            ),
+          format:
+            "de gener_de febrer_de març_d'abril_de maig_de juny_de juliol_d'agost_de setembre_d'octubre_de novembre_de desembre".split(
+              '_'
+            ),
+          isFormat: /D[oD]?(\s)+MMMM/,
         },
-        monthsShort: 'gen._febr._març_abr._maig_juny_jul._ag._set._oct._nov._des.'.split(
-          '_'
-        ),
+        monthsShort:
+          'gen._febr._març_abr._maig_juny_jul._ag._set._oct._nov._des.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'diumenge_dilluns_dimarts_dimecres_dijous_divendres_dissabte'.split(
-          '_'
-        ),
+        weekdays:
+          'diumenge_dilluns_dimarts_dimecres_dijous_divendres_dissabte'.split(
+            '_'
+          ),
         weekdaysShort: 'dg._dl._dt._dc._dj._dv._ds.'.split('_'),
         weekdaysMin: 'dg_dl_dt_dc_dj_dv_ds'.split('_'),
         weekdaysParseExact: !0,
@@ -27052,29 +27084,29 @@
           LLL: 'D MMMM [de] YYYY [a les] H:mm',
           lll: 'D MMM YYYY, H:mm',
           LLLL: 'dddd D MMMM [de] YYYY [a les] H:mm',
-          llll: 'ddd D MMM YYYY, H:mm'
+          llll: 'ddd D MMM YYYY, H:mm',
         },
         calendar: {
-          sameDay: function() {
+          sameDay: function () {
             return '[avui a ' + (1 !== this.hours() ? 'les' : 'la') + '] LT';
           },
-          nextDay: function() {
+          nextDay: function () {
             return '[demà a ' + (1 !== this.hours() ? 'les' : 'la') + '] LT';
           },
-          nextWeek: function() {
+          nextWeek: function () {
             return 'dddd [a ' + (1 !== this.hours() ? 'les' : 'la') + '] LT';
           },
-          lastDay: function() {
+          lastDay: function () {
             return '[ahir a ' + (1 !== this.hours() ? 'les' : 'la') + '] LT';
           },
-          lastWeek: function() {
+          lastWeek: function () {
             return (
               '[el] dddd [passat a ' +
               (1 !== this.hours() ? 'les' : 'la') +
               '] LT'
             );
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: "d'aquí %s",
@@ -27090,10 +27122,10 @@
           M: 'un mes',
           MM: '%d mesos',
           y: 'un any',
-          yy: '%d anys'
+          yy: '%d anys',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(r|n|t|\xe8|a)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           return (
             e +
             ('w' !== t && 'W' !== t
@@ -27109,24 +27141,29 @@
               : 'a')
           );
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       (y = {
-        format: 'leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split(
-          '_'
-        ),
-        standalone: 'ledna_února_března_dubna_května_června_července_srpna_září_října_listopadu_prosince'.split(
-          '_'
-        )
+        format:
+          'leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split(
+            '_'
+          ),
+        standalone:
+          'ledna_února_března_dubna_května_června_července_srpna_září_října_listopadu_prosince'.split(
+            '_'
+          ),
       }),
       (be = 'led_úno_bře_dub_kvě_čvn_čvc_srp_zář_říj_lis_pro'.split('_')),
       f.defineLocale('cs', {
         months: y,
         monthsShort: be,
-        monthsRegex: (l = /^(leden|\xfanor|b\u0159ezen|duben|kv\u011bten|\u010dervenec|\u010dervence|\u010derven|\u010dervna|srpen|z\xe1\u0159\xed|\u0159\xedjen|listopad|prosinec|led|\xfano|b\u0159e|dub|kv\u011b|\u010dvn|\u010dvc|srp|z\xe1\u0159|\u0159\xedj|lis|pro)/i),
+        monthsRegex: (l =
+          /^(leden|\xfanor|b\u0159ezen|duben|kv\u011bten|\u010dervenec|\u010dervence|\u010derven|\u010dervna|srpen|z\xe1\u0159\xed|\u0159\xedjen|listopad|prosinec|led|\xfano|b\u0159e|dub|kv\u011b|\u010dvn|\u010dvc|srp|z\xe1\u0159|\u0159\xedj|lis|pro)/i),
         monthsShortRegex: l,
-        monthsStrictRegex: /^(leden|ledna|\xfanora|\xfanor|b\u0159ezen|b\u0159ezna|duben|dubna|kv\u011bten|kv\u011btna|\u010dervenec|\u010dervence|\u010derven|\u010dervna|srpen|srpna|z\xe1\u0159\xed|\u0159\xedjen|\u0159\xedjna|listopadu|listopad|prosinec|prosince)/i,
-        monthsShortStrictRegex: /^(led|\xfano|b\u0159e|dub|kv\u011b|\u010dvn|\u010dvc|srp|z\xe1\u0159|\u0159\xedj|lis|pro)/i,
+        monthsStrictRegex:
+          /^(leden|ledna|\xfanora|\xfanor|b\u0159ezen|b\u0159ezna|duben|dubna|kv\u011bten|kv\u011btna|\u010dervenec|\u010dervence|\u010derven|\u010dervna|srpen|srpna|z\xe1\u0159\xed|\u0159\xedjen|\u0159\xedjna|listopadu|listopad|prosinec|prosince)/i,
+        monthsShortStrictRegex:
+          /^(led|\xfano|b\u0159e|dub|kv\u011b|\u010dvn|\u010dvc|srp|z\xe1\u0159|\u0159\xedj|lis|pro)/i,
         monthsParse: (p = [
           /^led/i,
           /^\xfano/i,
@@ -27139,7 +27176,7 @@
           /^z\xe1\u0159/i,
           /^\u0159\xedj/i,
           /^lis/i,
-          /^pro/i
+          /^pro/i,
         ]),
         longMonthsParse: p,
         shortMonthsParse: p,
@@ -27153,12 +27190,12 @@
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY H:mm',
           LLLL: 'dddd D. MMMM YYYY H:mm',
-          l: 'D. M. YYYY'
+          l: 'D. M. YYYY',
         },
         calendar: {
           sameDay: '[dnes v] LT',
           nextDay: '[zítra v] LT',
-          nextWeek: function() {
+          nextWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[v neděli v] LT';
@@ -27176,7 +27213,7 @@
             }
           },
           lastDay: '[včera v] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[minulou neděli v] LT';
@@ -27192,7 +27229,7 @@
                 return '[minulou sobotu v] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'za %s',
@@ -27208,22 +27245,24 @@
           M: E,
           MM: E,
           y: E,
-          yy: E
+          yy: E,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('cv', {
-        months: 'кӑрлач_нарӑс_пуш_ака_май_ҫӗртме_утӑ_ҫурла_авӑн_юпа_чӳк_раштав'.split(
-          '_'
-        ),
+        months:
+          'кӑрлач_нарӑс_пуш_ака_май_ҫӗртме_утӑ_ҫурла_авӑн_юпа_чӳк_раштав'.split(
+            '_'
+          ),
         monthsShort: 'кӑр_нар_пуш_ака_май_ҫӗр_утӑ_ҫур_авн_юпа_чӳк_раш'.split(
           '_'
         ),
-        weekdays: 'вырсарникун_тунтикун_ытларикун_юнкун_кӗҫнерникун_эрнекун_шӑматкун'.split(
-          '_'
-        ),
+        weekdays:
+          'вырсарникун_тунтикун_ытларикун_юнкун_кӗҫнерникун_эрнекун_шӑматкун'.split(
+            '_'
+          ),
         weekdaysShort: 'выр_тун_ытл_юн_кӗҫ_эрн_шӑм'.split('_'),
         weekdaysMin: 'вр_тн_ыт_юн_кҫ_эр_шм'.split('_'),
         longDateFormat: {
@@ -27232,7 +27271,7 @@
           L: 'DD-MM-YYYY',
           LL: 'YYYY [ҫулхи] MMMM [уйӑхӗн] D[-мӗшӗ]',
           LLL: 'YYYY [ҫулхи] MMMM [уйӑхӗн] D[-мӗшӗ], HH:mm',
-          LLLL: 'dddd, YYYY [ҫулхи] MMMM [уйӑхӗн] D[-мӗшӗ], HH:mm'
+          LLLL: 'dddd, YYYY [ҫулхи] MMMM [уйӑхӗн] D[-мӗшӗ], HH:mm',
         },
         calendar: {
           sameDay: '[Паян] LT [сехетре]',
@@ -27240,10 +27279,10 @@
           lastDay: '[Ӗнер] LT [сехетре]',
           nextWeek: '[Ҫитес] dddd LT [сехетре]',
           lastWeek: '[Иртнӗ] dddd LT [сехетре]',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
-          future: function(e) {
+          future: function (e) {
             return (
               e +
               (/\u0441\u0435\u0445\u0435\u0442$/i.exec(e)
@@ -27265,22 +27304,24 @@
           M: 'пӗр уйӑх',
           MM: '%d уйӑх',
           y: 'пӗр ҫул',
-          yy: '%d ҫул'
+          yy: '%d ҫул',
         },
         dayOfMonthOrdinalParse: /\d{1,2}-\u043c\u04d7\u0448/,
         ordinal: '%d-мӗш',
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('cy', {
-        months: 'Ionawr_Chwefror_Mawrth_Ebrill_Mai_Mehefin_Gorffennaf_Awst_Medi_Hydref_Tachwedd_Rhagfyr'.split(
-          '_'
-        ),
+        months:
+          'Ionawr_Chwefror_Mawrth_Ebrill_Mai_Mehefin_Gorffennaf_Awst_Medi_Hydref_Tachwedd_Rhagfyr'.split(
+            '_'
+          ),
         monthsShort: 'Ion_Chwe_Maw_Ebr_Mai_Meh_Gor_Aws_Med_Hyd_Tach_Rhag'.split(
           '_'
         ),
-        weekdays: 'Dydd Sul_Dydd Llun_Dydd Mawrth_Dydd Mercher_Dydd Iau_Dydd Gwener_Dydd Sadwrn'.split(
-          '_'
-        ),
+        weekdays:
+          'Dydd Sul_Dydd Llun_Dydd Mawrth_Dydd Mercher_Dydd Iau_Dydd Gwener_Dydd Sadwrn'.split(
+            '_'
+          ),
         weekdaysShort: 'Sul_Llun_Maw_Mer_Iau_Gwe_Sad'.split('_'),
         weekdaysMin: 'Su_Ll_Ma_Me_Ia_Gw_Sa'.split('_'),
         weekdaysParseExact: !0,
@@ -27290,7 +27331,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Heddiw am] LT',
@@ -27298,7 +27339,7 @@
           nextWeek: 'dddd [am] LT',
           lastDay: '[Ddoe am] LT',
           lastWeek: 'dddd [diwethaf am] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'mewn %s',
@@ -27314,10 +27355,10 @@
           M: 'mis',
           MM: '%d mis',
           y: 'blwyddyn',
-          yy: '%d flynedd'
+          yy: '%d flynedd',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(fed|ain|af|il|ydd|ed|eg)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = '';
           return (
             20 < e
@@ -27347,17 +27388,18 @@
                   'eg',
                   'fed',
                   'eg',
-                  'fed'
+                  'fed',
                 ][e]),
             e + t
           );
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('da', {
-        months: 'januar_februar_marts_april_maj_juni_juli_august_september_oktober_november_december'.split(
-          '_'
-        ),
+        months:
+          'januar_februar_marts_april_maj_juni_juli_august_september_oktober_november_december'.split(
+            '_'
+          ),
         monthsShort: 'jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec'.split(
           '_'
         ),
@@ -27372,7 +27414,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY HH:mm',
-          LLLL: 'dddd [d.] D. MMMM YYYY [kl.] HH:mm'
+          LLLL: 'dddd [d.] D. MMMM YYYY [kl.] HH:mm',
         },
         calendar: {
           sameDay: '[i dag kl.] LT',
@@ -27380,7 +27422,7 @@
           nextWeek: 'på dddd [kl.] LT',
           lastDay: '[i går kl.] LT',
           lastWeek: '[i] dddd[s kl.] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'om %s',
@@ -27396,23 +27438,26 @@
           M: 'en måned',
           MM: '%d måneder',
           y: 'et år',
-          yy: '%d år'
+          yy: '%d år',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('de-at', {
-        months: 'Jänner_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
-          '_'
-        ),
-        monthsShort: 'Jän._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
-          '_'
-        ),
+        months:
+          'Jänner_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
+            '_'
+          ),
+        monthsShort:
+          'Jän._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
-          '_'
-        ),
+        weekdays:
+          'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
+            '_'
+          ),
         weekdaysShort: 'So._Mo._Di._Mi._Do._Fr._Sa.'.split('_'),
         weekdaysMin: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: !0,
@@ -27422,7 +27467,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY HH:mm',
-          LLLL: 'dddd, D. MMMM YYYY HH:mm'
+          LLLL: 'dddd, D. MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[heute um] LT [Uhr]',
@@ -27430,7 +27475,7 @@
           nextDay: '[morgen um] LT [Uhr]',
           nextWeek: 'dddd [um] LT [Uhr]',
           lastDay: '[gestern um] LT [Uhr]',
-          lastWeek: '[letzten] dddd [um] LT [Uhr]'
+          lastWeek: '[letzten] dddd [um] LT [Uhr]',
         },
         relativeTime: {
           future: 'in %s',
@@ -27448,23 +27493,26 @@
           M: en,
           MM: en,
           y: en,
-          yy: en
+          yy: en,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('de-ch', {
-        months: 'Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
-          '_'
-        ),
-        monthsShort: 'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
-          '_'
-        ),
+        months:
+          'Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
+            '_'
+          ),
+        monthsShort:
+          'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
-          '_'
-        ),
+        weekdays:
+          'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
+            '_'
+          ),
         weekdaysShort: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysMin: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: !0,
@@ -27474,7 +27522,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY HH:mm',
-          LLLL: 'dddd, D. MMMM YYYY HH:mm'
+          LLLL: 'dddd, D. MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[heute um] LT [Uhr]',
@@ -27482,7 +27530,7 @@
           nextDay: '[morgen um] LT [Uhr]',
           nextWeek: 'dddd [um] LT [Uhr]',
           lastDay: '[gestern um] LT [Uhr]',
-          lastWeek: '[letzten] dddd [um] LT [Uhr]'
+          lastWeek: '[letzten] dddd [um] LT [Uhr]',
         },
         relativeTime: {
           future: 'in %s',
@@ -27500,23 +27548,26 @@
           M: tn,
           MM: tn,
           y: tn,
-          yy: tn
+          yy: tn,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('de', {
-        months: 'Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
-          '_'
-        ),
-        monthsShort: 'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
-          '_'
-        ),
+        months:
+          'Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
+            '_'
+          ),
+        monthsShort:
+          'Jan._Feb._März_Apr._Mai_Juni_Juli_Aug._Sep._Okt._Nov._Dez.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
-          '_'
-        ),
+        weekdays:
+          'Sonntag_Montag_Dienstag_Mittwoch_Donnerstag_Freitag_Samstag'.split(
+            '_'
+          ),
         weekdaysShort: 'So._Mo._Di._Mi._Do._Fr._Sa.'.split('_'),
         weekdaysMin: 'So_Mo_Di_Mi_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: !0,
@@ -27526,7 +27577,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY HH:mm',
-          LLLL: 'dddd, D. MMMM YYYY HH:mm'
+          LLLL: 'dddd, D. MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[heute um] LT [Uhr]',
@@ -27534,7 +27585,7 @@
           nextDay: '[morgen um] LT [Uhr]',
           nextWeek: 'dddd [um] LT [Uhr]',
           lastDay: '[gestern um] LT [Uhr]',
-          lastWeek: '[letzten] dddd [um] LT [Uhr]'
+          lastWeek: '[letzten] dddd [um] LT [Uhr]',
         },
         relativeTime: {
           future: 'in %s',
@@ -27552,11 +27603,11 @@
           M: nn,
           MM: nn,
           y: nn,
-          yy: nn
+          yy: nn,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('dv', {
         months: (Le = [
@@ -27571,7 +27622,7 @@
           'ސެޕްޓެމްބަރު',
           'އޮކްޓޯބަރު',
           'ނޮވެމްބަރު',
-          'ޑިސެމްބަރު'
+          'ޑިސެމްބަރު',
         ]),
         monthsShort: Le,
         weekdays: (Xe = [
@@ -27581,7 +27632,7 @@
           'ބުދަ',
           'ބުރާސްފަތި',
           'ހުކުރު',
-          'ހޮނިހިރު'
+          'ހޮނިހިރު',
         ]),
         weekdaysShort: Xe,
         weekdaysMin: 'އާދި_ހޯމަ_އަން_ބުދަ_ބުރާ_ހުކު_ހޮނި'.split('_'),
@@ -27591,13 +27642,13 @@
           L: 'D/M/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         meridiemParse: /\u0789\u0786|\u0789\u078a/,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'މފ' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? 'މކ' : 'މފ';
         },
         calendar: {
@@ -27606,7 +27657,7 @@
           nextWeek: 'dddd LT',
           lastDay: '[އިއްޔެ] LT',
           lastWeek: '[ފާއިތުވި] dddd LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'ތެރޭގައި %s',
@@ -27622,24 +27673,26 @@
           M: 'މަހެއް',
           MM: 'މަސް %d',
           y: 'އަހަރެއް',
-          yy: 'އަހަރު %d'
+          yy: 'އަހަރު %d',
         },
-        preparse: function(e) {
+        preparse: function (e) {
           return e.replace(/\u060c/g, ',');
         },
-        postformat: function(e) {
+        postformat: function (e) {
           return e.replace(/,/g, '،');
         },
-        week: { dow: 7, doy: 12 }
+        week: { dow: 7, doy: 12 },
       }),
       f.defineLocale('el', {
-        monthsNominativeEl: 'Ιανουάριος_Φεβρουάριος_Μάρτιος_Απρίλιος_Μάιος_Ιούνιος_Ιούλιος_Αύγουστος_Σεπτέμβριος_Οκτώβριος_Νοέμβριος_Δεκέμβριος'.split(
-          '_'
-        ),
-        monthsGenitiveEl: 'Ιανουαρίου_Φεβρουαρίου_Μαρτίου_Απριλίου_Μαΐου_Ιουνίου_Ιουλίου_Αυγούστου_Σεπτεμβρίου_Οκτωβρίου_Νοεμβρίου_Δεκεμβρίου'.split(
-          '_'
-        ),
-        months: function(e, t) {
+        monthsNominativeEl:
+          'Ιανουάριος_Φεβρουάριος_Μάρτιος_Απρίλιος_Μάιος_Ιούνιος_Ιούλιος_Αύγουστος_Σεπτέμβριος_Οκτώβριος_Νοέμβριος_Δεκέμβριος'.split(
+            '_'
+          ),
+        monthsGenitiveEl:
+          'Ιανουαρίου_Φεβρουαρίου_Μαρτίου_Απριλίου_Μαΐου_Ιουνίου_Ιουλίου_Αυγούστου_Σεπτεμβρίου_Οκτωβρίου_Νοεμβρίου_Δεκεμβρίου'.split(
+            '_'
+          ),
+        months: function (e, t) {
           return e
             ? ('string' == typeof t &&
               /D/.test(t.substring(0, t.indexOf('MMMM')))
@@ -27650,15 +27703,14 @@
         monthsShort: 'Ιαν_Φεβ_Μαρ_Απρ_Μαϊ_Ιουν_Ιουλ_Αυγ_Σεπ_Οκτ_Νοε_Δεκ'.split(
           '_'
         ),
-        weekdays: 'Κυριακή_Δευτέρα_Τρίτη_Τετάρτη_Πέμπτη_Παρασκευή_Σάββατο'.split(
-          '_'
-        ),
+        weekdays:
+          'Κυριακή_Δευτέρα_Τρίτη_Τετάρτη_Πέμπτη_Παρασκευή_Σάββατο'.split('_'),
         weekdaysShort: 'Κυρ_Δευ_Τρι_Τετ_Πεμ_Παρ_Σαβ'.split('_'),
         weekdaysMin: 'Κυ_Δε_Τρ_Τε_Πε_Πα_Σα'.split('_'),
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return 11 < e ? (i ? 'μμ' : 'ΜΜ') : i ? 'πμ' : 'ΠΜ';
         },
-        isPM: function(e) {
+        isPM: function (e) {
           return 'μ' === (e + '').toLowerCase()[0];
         },
         meridiemParse: /[\u03a0\u039c]\.?\u039c?\.?/i,
@@ -27668,21 +27720,21 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY h:mm A',
-          LLLL: 'dddd, D MMMM YYYY h:mm A'
+          LLLL: 'dddd, D MMMM YYYY h:mm A',
         },
         calendarEl: {
           sameDay: '[Σήμερα {}] LT',
           nextDay: '[Αύριο {}] LT',
           nextWeek: 'dddd [{}] LT',
           lastDay: '[Χθες {}] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             return 6 !== this.day()
               ? '[την προηγούμενη] dddd [{}] LT'
               : '[το προηγούμενο] dddd [{}] LT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
-        calendar: function(e, t) {
+        calendar: function (e, t) {
           var e = this._calendarEl[e],
             i = t && t.hours(),
             n = e;
@@ -27706,22 +27758,22 @@
           M: 'ένας μήνας',
           MM: '%d μήνες',
           y: 'ένας χρόνος',
-          yy: '%d χρόνια'
+          yy: '%d χρόνια',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\u03b7/,
         ordinal: '%dη',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('en-au', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -27730,7 +27782,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY h:mm A',
-          LLLL: 'dddd, D MMMM YYYY h:mm A'
+          LLLL: 'dddd, D MMMM YYYY h:mm A',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -27738,7 +27790,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -27754,10 +27806,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -27772,18 +27824,18 @@
               : 'th')
           );
         },
-        week: { dow: 0, doy: 4 }
+        week: { dow: 0, doy: 4 },
       }),
       f.defineLocale('en-ca', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -27792,7 +27844,7 @@
           L: 'YYYY-MM-DD',
           LL: 'MMMM D, YYYY',
           LLL: 'MMMM D, YYYY h:mm A',
-          LLLL: 'dddd, MMMM D, YYYY h:mm A'
+          LLLL: 'dddd, MMMM D, YYYY h:mm A',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -27800,7 +27852,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -27816,10 +27868,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -27833,18 +27885,18 @@
               ? 'rd'
               : 'th')
           );
-        }
+        },
       }),
       f.defineLocale('en-gb', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -27853,7 +27905,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -27861,7 +27913,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -27877,10 +27929,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -27895,18 +27947,18 @@
               : 'th')
           );
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('en-ie', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -27915,7 +27967,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -27923,7 +27975,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -27939,10 +27991,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -27957,18 +28009,18 @@
               : 'th')
           );
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('en-il', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -27977,7 +28029,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -27985,7 +28037,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -28001,10 +28053,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -28018,18 +28070,18 @@
               ? 'rd'
               : 'th')
           );
-        }
+        },
       }),
       f.defineLocale('en-in', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -28038,7 +28090,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY h:mm A',
-          LLLL: 'dddd, D MMMM YYYY h:mm A'
+          LLLL: 'dddd, D MMMM YYYY h:mm A',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -28046,7 +28098,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -28062,10 +28114,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -28080,18 +28132,18 @@
               : 'th')
           );
         },
-        week: { dow: 0, doy: 6 }
+        week: { dow: 0, doy: 6 },
       }),
       f.defineLocale('en-nz', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -28100,7 +28152,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY h:mm A',
-          LLLL: 'dddd, D MMMM YYYY h:mm A'
+          LLLL: 'dddd, D MMMM YYYY h:mm A',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -28108,7 +28160,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -28124,10 +28176,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -28142,18 +28194,18 @@
               : 'th')
           );
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('en-sg', {
-        months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split(
-          '_'
-        ),
+        months:
+          'January_February_March_April_May_June_July_August_September_October_November_December'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split(
           '_'
         ),
-        weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split(
-          '_'
-        ),
+        weekdays:
+          'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
         weekdaysShort: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         weekdaysMin: 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
         longDateFormat: {
@@ -28162,7 +28214,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Today at] LT',
@@ -28170,7 +28222,7 @@
           nextWeek: 'dddd [at] LT',
           lastDay: '[Yesterday at] LT',
           lastWeek: '[Last] dddd [at] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'in %s',
@@ -28186,10 +28238,10 @@
           M: 'a month',
           MM: '%d months',
           y: 'a year',
-          yy: '%d years'
+          yy: '%d years',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -28204,12 +28256,13 @@
               : 'th')
           );
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('eo', {
-        months: 'januaro_februaro_marto_aprilo_majo_junio_julio_aŭgusto_septembro_oktobro_novembro_decembro'.split(
-          '_'
-        ),
+        months:
+          'januaro_februaro_marto_aprilo_majo_junio_julio_aŭgusto_septembro_oktobro_novembro_decembro'.split(
+            '_'
+          ),
         monthsShort: 'jan_feb_mart_apr_maj_jun_jul_aŭg_sept_okt_nov_dec'.split(
           '_'
         ),
@@ -28225,13 +28278,13 @@
           LL: '[la] D[-an de] MMMM, YYYY',
           LLL: '[la] D[-an de] MMMM, YYYY HH:mm',
           LLLL: 'dddd[n], [la] D[-an de] MMMM, YYYY HH:mm',
-          llll: 'ddd, [la] D[-an de] MMM, YYYY HH:mm'
+          llll: 'ddd, [la] D[-an de] MMM, YYYY HH:mm',
         },
         meridiemParse: /[ap]\.t\.m/i,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'p' === e.charAt(0).toLowerCase();
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return 11 < e ? (i ? 'p.t.m.' : 'P.T.M.') : i ? 'a.t.m.' : 'A.T.M.';
         },
         calendar: {
@@ -28240,7 +28293,7 @@
           nextWeek: 'dddd[n je] LT',
           lastDay: '[Hieraŭ je] LT',
           lastWeek: '[pasintan] dddd[n je] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'post %s',
@@ -28256,15 +28309,16 @@
           M: 'unu monato',
           MM: '%d monatoj',
           y: 'unu jaro',
-          yy: '%d jaroj'
+          yy: '%d jaroj',
         },
         dayOfMonthOrdinalParse: /\d{1,2}a/,
         ordinal: '%da',
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       });
-    var sn = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-        '_'
-      ),
+    var sn =
+        'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
+          '_'
+        ),
       an = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
       a = [
         /^ene/i,
@@ -28278,27 +28332,30 @@
         /^sep/i,
         /^oct/i,
         /^nov/i,
-        /^dic/i
+        /^dic/i,
       ],
-      Ti = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+      Ti =
+        /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
       rn =
         (f.defineLocale('es-do', {
-          months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
-            '_'
-          ),
-          monthsShort: function(e, t) {
+          months:
+            'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
+              '_'
+            ),
+          monthsShort: function (e, t) {
             return e ? (/-MMM-/.test(t) ? an : sn)[e.month()] : sn;
           },
           monthsRegex: Ti,
           monthsShortRegex: Ti,
-          monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-          monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+          monthsStrictRegex:
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+          monthsShortStrictRegex:
+            /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
           monthsParse: a,
           longMonthsParse: a,
           shortMonthsParse: a,
-          weekdays: 'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split(
-            '_'
-          ),
+          weekdays:
+            'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split('_'),
           weekdaysShort: 'dom._lun._mar._mié._jue._vie._sáb.'.split('_'),
           weekdaysMin: 'do_lu_ma_mi_ju_vi_sá'.split('_'),
           weekdaysParseExact: !0,
@@ -28308,29 +28365,29 @@
             L: 'DD/MM/YYYY',
             LL: 'D [de] MMMM [de] YYYY',
             LLL: 'D [de] MMMM [de] YYYY h:mm A',
-            LLLL: 'dddd, D [de] MMMM [de] YYYY h:mm A'
+            LLLL: 'dddd, D [de] MMMM [de] YYYY h:mm A',
           },
           calendar: {
-            sameDay: function() {
+            sameDay: function () {
               return '[hoy a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            nextDay: function() {
+            nextDay: function () {
               return '[mañana a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            nextWeek: function() {
+            nextWeek: function () {
               return 'dddd [a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            lastDay: function() {
+            lastDay: function () {
               return '[ayer a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            lastWeek: function() {
+            lastWeek: function () {
               return (
                 '[el] dddd [pasado a la' +
                 (1 !== this.hours() ? 's' : '') +
                 '] LT'
               );
             },
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'en %s',
@@ -28348,11 +28405,11 @@
             M: 'un mes',
             MM: '%d meses',
             y: 'un año',
-            yy: '%d años'
+            yy: '%d años',
           },
           dayOfMonthOrdinalParse: /\d{1,2}\xba/,
           ordinal: '%dº',
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
           '_'
@@ -28370,27 +28427,30 @@
         /^sep/i,
         /^oct/i,
         /^nov/i,
-        /^dic/i
+        /^dic/i,
       ],
-      ki = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+      ki =
+        /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
       ln =
         (f.defineLocale('es-mx', {
-          months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
-            '_'
-          ),
-          monthsShort: function(e, t) {
+          months:
+            'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
+              '_'
+            ),
+          monthsShort: function (e, t) {
             return e ? (/-MMM-/.test(t) ? on : rn)[e.month()] : rn;
           },
           monthsRegex: ki,
           monthsShortRegex: ki,
-          monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-          monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+          monthsStrictRegex:
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+          monthsShortStrictRegex:
+            /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
           monthsParse: Yi,
           longMonthsParse: Yi,
           shortMonthsParse: Yi,
-          weekdays: 'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split(
-            '_'
-          ),
+          weekdays:
+            'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split('_'),
           weekdaysShort: 'dom._lun._mar._mié._jue._vie._sáb.'.split('_'),
           weekdaysMin: 'do_lu_ma_mi_ju_vi_sá'.split('_'),
           weekdaysParseExact: !0,
@@ -28400,29 +28460,29 @@
             L: 'DD/MM/YYYY',
             LL: 'D [de] MMMM [de] YYYY',
             LLL: 'D [de] MMMM [de] YYYY H:mm',
-            LLLL: 'dddd, D [de] MMMM [de] YYYY H:mm'
+            LLLL: 'dddd, D [de] MMMM [de] YYYY H:mm',
           },
           calendar: {
-            sameDay: function() {
+            sameDay: function () {
               return '[hoy a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            nextDay: function() {
+            nextDay: function () {
               return '[mañana a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            nextWeek: function() {
+            nextWeek: function () {
               return 'dddd [a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            lastDay: function() {
+            lastDay: function () {
               return '[ayer a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            lastWeek: function() {
+            lastWeek: function () {
               return (
                 '[el] dddd [pasado a la' +
                 (1 !== this.hours() ? 's' : '') +
                 '] LT'
               );
             },
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'en %s',
@@ -28440,12 +28500,12 @@
             M: 'un mes',
             MM: '%d meses',
             y: 'un año',
-            yy: '%d años'
+            yy: '%d años',
           },
           dayOfMonthOrdinalParse: /\d{1,2}\xba/,
           ordinal: '%dº',
           week: { dow: 0, doy: 4 },
-          invalidDate: 'Fecha inválida'
+          invalidDate: 'Fecha inválida',
         }),
         'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
           '_'
@@ -28463,27 +28523,30 @@
         /^sep/i,
         /^oct/i,
         /^nov/i,
-        /^dic/i
+        /^dic/i,
       ],
-      st = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+      st =
+        /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
       un =
         (f.defineLocale('es-us', {
-          months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
-            '_'
-          ),
-          monthsShort: function(e, t) {
+          months:
+            'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
+              '_'
+            ),
+          monthsShort: function (e, t) {
             return e ? (/-MMM-/.test(t) ? dn : ln)[e.month()] : ln;
           },
           monthsRegex: st,
           monthsShortRegex: st,
-          monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-          monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+          monthsStrictRegex:
+            /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+          monthsShortStrictRegex:
+            /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
           monthsParse: C,
           longMonthsParse: C,
           shortMonthsParse: C,
-          weekdays: 'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split(
-            '_'
-          ),
+          weekdays:
+            'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split('_'),
           weekdaysShort: 'dom._lun._mar._mié._jue._vie._sáb.'.split('_'),
           weekdaysMin: 'do_lu_ma_mi_ju_vi_sá'.split('_'),
           weekdaysParseExact: !0,
@@ -28493,29 +28556,29 @@
             L: 'MM/DD/YYYY',
             LL: 'D [de] MMMM [de] YYYY',
             LLL: 'D [de] MMMM [de] YYYY h:mm A',
-            LLLL: 'dddd, D [de] MMMM [de] YYYY h:mm A'
+            LLLL: 'dddd, D [de] MMMM [de] YYYY h:mm A',
           },
           calendar: {
-            sameDay: function() {
+            sameDay: function () {
               return '[hoy a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            nextDay: function() {
+            nextDay: function () {
               return '[mañana a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            nextWeek: function() {
+            nextWeek: function () {
               return 'dddd [a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            lastDay: function() {
+            lastDay: function () {
               return '[ayer a la' + (1 !== this.hours() ? 's' : '') + '] LT';
             },
-            lastWeek: function() {
+            lastWeek: function () {
               return (
                 '[el] dddd [pasado a la' +
                 (1 !== this.hours() ? 's' : '') +
                 '] LT'
               );
             },
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'en %s',
@@ -28533,11 +28596,11 @@
             M: 'un mes',
             MM: '%d meses',
             y: 'un año',
-            yy: '%d años'
+            yy: '%d años',
           },
           dayOfMonthOrdinalParse: /\d{1,2}\xba/,
           ordinal: '%dº',
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
           '_'
@@ -28555,9 +28618,10 @@
         /^sep/i,
         /^oct/i,
         /^nov/i,
-        /^dic/i
+        /^dic/i,
       ],
-      s = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
+      s =
+        /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
     function hn(e, t, i, n) {
       return (
         (e = {
@@ -28571,22 +28635,25 @@
           M: ['kuu aja', 'kuu aega', 'üks kuu'],
           MM: [e + ' kuu', e + ' kuud'],
           y: ['ühe aasta', 'aasta', 'üks aasta'],
-          yy: [e + ' aasta', e + ' aastat']
+          yy: [e + ' aasta', e + ' aastat'],
         }),
         t ? e[i][2] || e[i][1] : n ? e[i][0] : e[i][1]
       );
     }
     f.defineLocale('es', {
-      months: 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
-        '_'
-      ),
-      monthsShort: function(e, t) {
+      months:
+        'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split(
+          '_'
+        ),
+      monthsShort: function (e, t) {
         return e ? (/-MMM-/.test(t) ? cn : un)[e.month()] : un;
       },
       monthsRegex: s,
       monthsShortRegex: s,
-      monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
-      monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+      monthsStrictRegex:
+        /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+      monthsShortStrictRegex:
+        /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
       monthsParse: Ye,
       longMonthsParse: Ye,
       shortMonthsParse: Ye,
@@ -28602,27 +28669,27 @@
         L: 'DD/MM/YYYY',
         LL: 'D [de] MMMM [de] YYYY',
         LLL: 'D [de] MMMM [de] YYYY H:mm',
-        LLLL: 'dddd, D [de] MMMM [de] YYYY H:mm'
+        LLLL: 'dddd, D [de] MMMM [de] YYYY H:mm',
       },
       calendar: {
-        sameDay: function() {
+        sameDay: function () {
           return '[hoy a la' + (1 !== this.hours() ? 's' : '') + '] LT';
         },
-        nextDay: function() {
+        nextDay: function () {
           return '[mañana a la' + (1 !== this.hours() ? 's' : '') + '] LT';
         },
-        nextWeek: function() {
+        nextWeek: function () {
           return 'dddd [a la' + (1 !== this.hours() ? 's' : '') + '] LT';
         },
-        lastDay: function() {
+        lastDay: function () {
           return '[ayer a la' + (1 !== this.hours() ? 's' : '') + '] LT';
         },
-        lastWeek: function() {
+        lastWeek: function () {
           return (
             '[el] dddd [pasado a la' + (1 !== this.hours() ? 's' : '') + '] LT'
           );
         },
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: 'en %s',
@@ -28640,23 +28707,26 @@
         M: 'un mes',
         MM: '%d meses',
         y: 'un año',
-        yy: '%d años'
+        yy: '%d años',
       },
       dayOfMonthOrdinalParse: /\d{1,2}\xba/,
       ordinal: '%dº',
       week: { dow: 1, doy: 4 },
-      invalidDate: 'Fecha inválida'
+      invalidDate: 'Fecha inválida',
     }),
       f.defineLocale('et', {
-        months: 'jaanuar_veebruar_märts_aprill_mai_juuni_juuli_august_september_oktoober_november_detsember'.split(
-          '_'
-        ),
-        monthsShort: 'jaan_veebr_märts_apr_mai_juuni_juuli_aug_sept_okt_nov_dets'.split(
-          '_'
-        ),
-        weekdays: 'pühapäev_esmaspäev_teisipäev_kolmapäev_neljapäev_reede_laupäev'.split(
-          '_'
-        ),
+        months:
+          'jaanuar_veebruar_märts_aprill_mai_juuni_juuli_august_september_oktoober_november_detsember'.split(
+            '_'
+          ),
+        monthsShort:
+          'jaan_veebr_märts_apr_mai_juuni_juuli_aug_sept_okt_nov_dets'.split(
+            '_'
+          ),
+        weekdays:
+          'pühapäev_esmaspäev_teisipäev_kolmapäev_neljapäev_reede_laupäev'.split(
+            '_'
+          ),
         weekdaysShort: 'P_E_T_K_N_R_L'.split('_'),
         weekdaysMin: 'P_E_T_K_N_R_L'.split('_'),
         longDateFormat: {
@@ -28665,7 +28735,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY H:mm',
-          LLLL: 'dddd, D. MMMM YYYY H:mm'
+          LLLL: 'dddd, D. MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[Täna,] LT',
@@ -28673,7 +28743,7 @@
           nextWeek: '[Järgmine] dddd LT',
           lastDay: '[Eile,] LT',
           lastWeek: '[Eelmine] dddd LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s pärast',
@@ -28689,23 +28759,26 @@
           M: hn,
           MM: hn,
           y: hn,
-          yy: hn
+          yy: hn,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('eu', {
-        months: 'urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua'.split(
-          '_'
-        ),
-        monthsShort: 'urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.'.split(
-          '_'
-        ),
+        months:
+          'urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua'.split(
+            '_'
+          ),
+        monthsShort:
+          'urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'igandea_astelehena_asteartea_asteazkena_osteguna_ostirala_larunbata'.split(
-          '_'
-        ),
+        weekdays:
+          'igandea_astelehena_asteartea_asteazkena_osteguna_ostirala_larunbata'.split(
+            '_'
+          ),
         weekdaysShort: 'ig._al._ar._az._og._ol._lr.'.split('_'),
         weekdaysMin: 'ig_al_ar_az_og_ol_lr'.split('_'),
         weekdaysParseExact: !0,
@@ -28719,7 +28792,7 @@
           l: 'YYYY-M-D',
           ll: 'YYYY[ko] MMM D[a]',
           lll: 'YYYY[ko] MMM D[a] HH:mm',
-          llll: 'ddd, YYYY[ko] MMM D[a] HH:mm'
+          llll: 'ddd, YYYY[ko] MMM D[a] HH:mm',
         },
         calendar: {
           sameDay: '[gaur] LT[etan]',
@@ -28727,7 +28800,7 @@
           nextWeek: 'dddd LT[etan]',
           lastDay: '[atzo] LT[etan]',
           lastWeek: '[aurreko] dddd LT[etan]',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s barru',
@@ -28743,11 +28816,11 @@
           M: 'hilabete bat',
           MM: '%d hilabete',
           y: 'urte bat',
-          yy: '%d urte'
+          yy: '%d urte',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       });
     var mn = {
         1: '۱',
@@ -28759,7 +28832,7 @@
         7: '۷',
         8: '۸',
         9: '۹',
-        0: '۰'
+        0: '۰',
       },
       pn = {
         '۱': '1',
@@ -28771,22 +28844,23 @@
         '۷': '7',
         '۸': '8',
         '۹': '9',
-        '۰': '0'
+        '۰': '0',
       },
       fn =
         (f.defineLocale('fa', {
-          months: 'ژانویه_فوریه_مارس_آوریل_مه_ژوئن_ژوئیه_اوت_سپتامبر_اکتبر_نوامبر_دسامبر'.split(
-            '_'
-          ),
-          monthsShort: 'ژانویه_فوریه_مارس_آوریل_مه_ژوئن_ژوئیه_اوت_سپتامبر_اکتبر_نوامبر_دسامبر'.split(
-            '_'
-          ),
+          months:
+            'ژانویه_فوریه_مارس_آوریل_مه_ژوئن_ژوئیه_اوت_سپتامبر_اکتبر_نوامبر_دسامبر'.split(
+              '_'
+            ),
+          monthsShort:
+            'ژانویه_فوریه_مارس_آوریل_مه_ژوئن_ژوئیه_اوت_سپتامبر_اکتبر_نوامبر_دسامبر'.split(
+              '_'
+            ),
           weekdays: 'یک‌شنبه_دوشنبه_سه‌شنبه_چهارشنبه_پنج‌شنبه_جمعه_شنبه'.split(
             '_'
           ),
-          weekdaysShort: 'یک‌شنبه_دوشنبه_سه‌شنبه_چهارشنبه_پنج‌شنبه_جمعه_شنبه'.split(
-            '_'
-          ),
+          weekdaysShort:
+            'یک‌شنبه_دوشنبه_سه‌شنبه_چهارشنبه_پنج‌شنبه_جمعه_شنبه'.split('_'),
           weekdaysMin: 'ی_د_س_چ_پ_ج_ش'.split('_'),
           weekdaysParseExact: !0,
           longDateFormat: {
@@ -28795,13 +28869,14 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
-          meridiemParse: /\u0642\u0628\u0644 \u0627\u0632 \u0638\u0647\u0631|\u0628\u0639\u062f \u0627\u0632 \u0638\u0647\u0631/,
-          isPM: function(e) {
+          meridiemParse:
+            /\u0642\u0628\u0644 \u0627\u0632 \u0638\u0647\u0631|\u0628\u0639\u062f \u0627\u0632 \u0638\u0647\u0631/,
+          isPM: function (e) {
             return /\u0628\u0639\u062f \u0627\u0632 \u0638\u0647\u0631/.test(e);
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'قبل از ظهر' : 'بعد از ظهر';
           },
           calendar: {
@@ -28810,7 +28885,7 @@
             nextWeek: 'dddd [ساعت] LT',
             lastDay: '[دیروز ساعت] LT',
             lastWeek: 'dddd [پیش] [ساعت] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'در %s',
@@ -28826,25 +28901,25 @@
             M: 'یک ماه',
             MM: '%d ماه',
             y: 'یک سال',
-            yy: '%d سال'
+            yy: '%d سال',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e
-              .replace(/[\u06f0-\u06f9]/g, function(e) {
+              .replace(/[\u06f0-\u06f9]/g, function (e) {
                 return pn[e];
               })
               .replace(/\u060c/g, ',');
           },
-          postformat: function(e) {
+          postformat: function (e) {
             return e
-              .replace(/\d/g, function(e) {
+              .replace(/\d/g, function (e) {
                 return mn[e];
               })
               .replace(/,/g, '،');
           },
           dayOfMonthOrdinalParse: /\d{1,2}\u0645/,
           ordinal: '%dم',
-          week: { dow: 6, doy: 12 }
+          week: { dow: 6, doy: 12 },
         }),
         'nolla yksi kaksi kolme neljä viisi kuusi seitsemän kahdeksan yhdeksän'.split(
           ' '
@@ -28859,7 +28934,7 @@
         'kuuden',
         fn[7],
         fn[8],
-        fn[9]
+        fn[9],
       ];
     function H(e, t, i, n) {
       var s = '';
@@ -28897,15 +28972,18 @@
       return (i = n), (e < 10 ? (i ? _n : fn)[e] : e) + ' ' + s;
     }
     f.defineLocale('fi', {
-      months: 'tammikuu_helmikuu_maaliskuu_huhtikuu_toukokuu_kesäkuu_heinäkuu_elokuu_syyskuu_lokakuu_marraskuu_joulukuu'.split(
-        '_'
-      ),
-      monthsShort: 'tammi_helmi_maalis_huhti_touko_kesä_heinä_elo_syys_loka_marras_joulu'.split(
-        '_'
-      ),
-      weekdays: 'sunnuntai_maanantai_tiistai_keskiviikko_torstai_perjantai_lauantai'.split(
-        '_'
-      ),
+      months:
+        'tammikuu_helmikuu_maaliskuu_huhtikuu_toukokuu_kesäkuu_heinäkuu_elokuu_syyskuu_lokakuu_marraskuu_joulukuu'.split(
+          '_'
+        ),
+      monthsShort:
+        'tammi_helmi_maalis_huhti_touko_kesä_heinä_elo_syys_loka_marras_joulu'.split(
+          '_'
+        ),
+      weekdays:
+        'sunnuntai_maanantai_tiistai_keskiviikko_torstai_perjantai_lauantai'.split(
+          '_'
+        ),
       weekdaysShort: 'su_ma_ti_ke_to_pe_la'.split('_'),
       weekdaysMin: 'su_ma_ti_ke_to_pe_la'.split('_'),
       longDateFormat: {
@@ -28918,7 +28996,7 @@
         l: 'D.M.YYYY',
         ll: 'Do MMM YYYY',
         lll: 'Do MMM YYYY, [klo] HH.mm',
-        llll: 'ddd, Do MMM YYYY, [klo] HH.mm'
+        llll: 'ddd, Do MMM YYYY, [klo] HH.mm',
       },
       calendar: {
         sameDay: '[tänään] [klo] LT',
@@ -28926,7 +29004,7 @@
         nextWeek: 'dddd [klo] LT',
         lastDay: '[eilen] [klo] LT',
         lastWeek: '[viime] dddd[na] [klo] LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: '%s päästä',
@@ -28942,22 +29020,22 @@
         M: H,
         MM: H,
         y: H,
-        yy: H
+        yy: H,
       },
       dayOfMonthOrdinalParse: /\d{1,2}\./,
       ordinal: '%d.',
-      week: { dow: 1, doy: 4 }
+      week: { dow: 1, doy: 4 },
     }),
       f.defineLocale('fil', {
-        months: 'Enero_Pebrero_Marso_Abril_Mayo_Hunyo_Hulyo_Agosto_Setyembre_Oktubre_Nobyembre_Disyembre'.split(
-          '_'
-        ),
+        months:
+          'Enero_Pebrero_Marso_Abril_Mayo_Hunyo_Hulyo_Agosto_Setyembre_Oktubre_Nobyembre_Disyembre'.split(
+            '_'
+          ),
         monthsShort: 'Ene_Peb_Mar_Abr_May_Hun_Hul_Ago_Set_Okt_Nob_Dis'.split(
           '_'
         ),
-        weekdays: 'Linggo_Lunes_Martes_Miyerkules_Huwebes_Biyernes_Sabado'.split(
-          '_'
-        ),
+        weekdays:
+          'Linggo_Lunes_Martes_Miyerkules_Huwebes_Biyernes_Sabado'.split('_'),
         weekdaysShort: 'Lin_Lun_Mar_Miy_Huw_Biy_Sab'.split('_'),
         weekdaysMin: 'Li_Lu_Ma_Mi_Hu_Bi_Sab'.split('_'),
         longDateFormat: {
@@ -28966,7 +29044,7 @@
           L: 'MM/D/YYYY',
           LL: 'MMMM D, YYYY',
           LLL: 'MMMM D, YYYY HH:mm',
-          LLLL: 'dddd, MMMM DD, YYYY HH:mm'
+          LLLL: 'dddd, MMMM DD, YYYY HH:mm',
         },
         calendar: {
           sameDay: 'LT [ngayong araw]',
@@ -28974,7 +29052,7 @@
           nextWeek: 'LT [sa susunod na] dddd',
           lastDay: 'LT [kahapon]',
           lastWeek: 'LT [noong nakaraang] dddd',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'sa loob ng %s',
@@ -28990,24 +29068,26 @@
           M: 'isang buwan',
           MM: '%d buwan',
           y: 'isang taon',
-          yy: '%d taon'
+          yy: '%d taon',
         },
         dayOfMonthOrdinalParse: /\d{1,2}/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return e;
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('fo', {
-        months: 'januar_februar_mars_apríl_mai_juni_juli_august_september_oktober_november_desember'.split(
-          '_'
-        ),
+        months:
+          'januar_februar_mars_apríl_mai_juni_juli_august_september_oktober_november_desember'.split(
+            '_'
+          ),
         monthsShort: 'jan_feb_mar_apr_mai_jun_jul_aug_sep_okt_nov_des'.split(
           '_'
         ),
-        weekdays: 'sunnudagur_mánadagur_týsdagur_mikudagur_hósdagur_fríggjadagur_leygardagur'.split(
-          '_'
-        ),
+        weekdays:
+          'sunnudagur_mánadagur_týsdagur_mikudagur_hósdagur_fríggjadagur_leygardagur'.split(
+            '_'
+          ),
         weekdaysShort: 'sun_mán_týs_mik_hós_frí_ley'.split('_'),
         weekdaysMin: 'su_má_tý_mi_hó_fr_le'.split('_'),
         longDateFormat: {
@@ -29016,7 +29096,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D. MMMM, YYYY HH:mm'
+          LLLL: 'dddd D. MMMM, YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Í dag kl.] LT',
@@ -29024,7 +29104,7 @@
           nextWeek: 'dddd [kl.] LT',
           lastDay: '[Í gjár kl.] LT',
           lastWeek: '[síðstu] dddd [kl] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'um %s',
@@ -29040,19 +29120,21 @@
           M: 'ein mánaður',
           MM: '%d mánaðir',
           y: 'eitt ár',
-          yy: '%d ár'
+          yy: '%d ár',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('fr-ca', {
-        months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
-          '_'
-        ),
-        monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
-          '_'
-        ),
+        months:
+          'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
+            '_'
+          ),
+        monthsShort:
+          'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split(
           '_'
@@ -29066,7 +29148,7 @@
           L: 'YYYY-MM-DD',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Aujourd’hui à] LT',
@@ -29074,7 +29156,7 @@
           nextWeek: 'dddd [à] LT',
           lastDay: '[Hier à] LT',
           lastWeek: 'dddd [dernier à] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'dans %s',
@@ -29090,10 +29172,10 @@
           M: 'un mois',
           MM: '%d mois',
           y: 'un an',
-          yy: '%d ans'
+          yy: '%d ans',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(er|e)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             default:
             case 'M':
@@ -29106,15 +29188,17 @@
             case 'W':
               return e + (1 === e ? 're' : 'e');
           }
-        }
+        },
       }),
       f.defineLocale('fr-ch', {
-        months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
-          '_'
-        ),
-        monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
-          '_'
-        ),
+        months:
+          'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
+            '_'
+          ),
+        monthsShort:
+          'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split(
           '_'
@@ -29128,7 +29212,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Aujourd’hui à] LT',
@@ -29136,7 +29220,7 @@
           nextWeek: 'dddd [à] LT',
           lastDay: '[Hier à] LT',
           lastWeek: 'dddd [dernier à] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'dans %s',
@@ -29152,10 +29236,10 @@
           M: 'un mois',
           MM: '%d mois',
           y: 'un an',
-          yy: '%d ans'
+          yy: '%d ans',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(er|e)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             default:
             case 'M':
@@ -29169,9 +29253,10 @@
               return e + (1 === e ? 're' : 'e');
           }
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       });
-    var we = /(janv\.?|f\xe9vr\.?|mars|avr\.?|mai|juin|juil\.?|ao\xfbt|sept\.?|oct\.?|nov\.?|d\xe9c\.?|janvier|f\xe9vrier|mars|avril|mai|juin|juillet|ao\xfbt|septembre|octobre|novembre|d\xe9cembre)/i,
+    var we =
+        /(janv\.?|f\xe9vr\.?|mars|avr\.?|mai|juin|juil\.?|ao\xfbt|sept\.?|oct\.?|nov\.?|d\xe9c\.?|janvier|f\xe9vrier|mars|avril|mai|juin|juillet|ao\xfbt|septembre|octobre|novembre|d\xe9cembre)/i,
       Me = [
         /^janv/i,
         /^f\xe9vr/i,
@@ -29184,20 +29269,24 @@
         /^sept/i,
         /^oct/i,
         /^nov/i,
-        /^d\xe9c/i
+        /^d\xe9c/i,
       ],
       gn =
         (f.defineLocale('fr', {
-          months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
-            '_'
-          ),
-          monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
-            '_'
-          ),
+          months:
+            'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
+              '_'
+            ),
+          monthsShort:
+            'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
+              '_'
+            ),
           monthsRegex: we,
           monthsShortRegex: we,
-          monthsStrictRegex: /^(janvier|f\xe9vrier|mars|avril|mai|juin|juillet|ao\xfbt|septembre|octobre|novembre|d\xe9cembre)/i,
-          monthsShortStrictRegex: /(janv\.?|f\xe9vr\.?|mars|avr\.?|mai|juin|juil\.?|ao\xfbt|sept\.?|oct\.?|nov\.?|d\xe9c\.?)/i,
+          monthsStrictRegex:
+            /^(janvier|f\xe9vrier|mars|avril|mai|juin|juillet|ao\xfbt|septembre|octobre|novembre|d\xe9cembre)/i,
+          monthsShortStrictRegex:
+            /(janv\.?|f\xe9vr\.?|mars|avr\.?|mai|juin|juil\.?|ao\xfbt|sept\.?|oct\.?|nov\.?|d\xe9c\.?)/i,
           monthsParse: Me,
           longMonthsParse: Me,
           shortMonthsParse: Me,
@@ -29213,7 +29302,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[Aujourd’hui à] LT',
@@ -29221,7 +29310,7 @@
             nextWeek: 'dddd [à] LT',
             lastDay: '[Hier à] LT',
             lastWeek: 'dddd [dernier à] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'dans %s',
@@ -29239,10 +29328,10 @@
             M: 'un mois',
             MM: '%d mois',
             y: 'un an',
-            yy: '%d ans'
+            yy: '%d ans',
           },
           dayOfMonthOrdinalParse: /\d{1,2}(er|)/,
-          ordinal: function(e, t) {
+          ordinal: function (e, t) {
             switch (t) {
               case 'D':
                 return e + (1 === e ? 'er' : '');
@@ -29257,7 +29346,7 @@
                 return e + (1 === e ? 're' : 'e');
             }
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         'jan._feb._mrt._apr._mai_jun._jul._aug._sep._okt._nov._des.'.split(
           '_'
@@ -29277,7 +29366,7 @@
           M: ['एका म्हयन्यान', 'एक म्हयनो'],
           MM: [e + ' म्हयन्यानी', e + ' म्हयने'],
           y: ['एका वर्सान', 'एक वर्स'],
-          yy: [e + ' वर्सांनी', e + ' वर्सां']
+          yy: [e + ' वर्सांनी', e + ' वर्सां'],
         }),
         n ? e[i][0] : e[i][1]
       );
@@ -29296,16 +29385,17 @@
           M: ['eka mhoinean', 'ek mhoino'],
           MM: [e + ' mhoineamni', e + ' mhoine'],
           y: ['eka vorsan', 'ek voros'],
-          yy: [e + ' vorsamni', e + ' vorsam']
+          yy: [e + ' vorsamni', e + ' vorsam'],
         }),
         n ? e[i][0] : e[i][1]
       );
     }
     f.defineLocale('fy', {
-      months: 'jannewaris_febrewaris_maart_april_maaie_juny_july_augustus_septimber_oktober_novimber_desimber'.split(
-        '_'
-      ),
-      monthsShort: function(e, t) {
+      months:
+        'jannewaris_febrewaris_maart_april_maaie_juny_july_augustus_septimber_oktober_novimber_desimber'.split(
+          '_'
+        ),
+      monthsShort: function (e, t) {
         return e ? (/-MMM-/.test(t) ? yn : gn)[e.month()] : gn;
       },
       monthsParseExact: !0,
@@ -29321,7 +29411,7 @@
         L: 'DD-MM-YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY HH:mm',
-        LLLL: 'dddd D MMMM YYYY HH:mm'
+        LLLL: 'dddd D MMMM YYYY HH:mm',
       },
       calendar: {
         sameDay: '[hjoed om] LT',
@@ -29329,7 +29419,7 @@
         nextWeek: 'dddd [om] LT',
         lastDay: '[juster om] LT',
         lastWeek: '[ôfrûne] dddd [om] LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: 'oer %s',
@@ -29345,13 +29435,13 @@
         M: 'ien moanne',
         MM: '%d moannen',
         y: 'ien jier',
-        yy: '%d jierren'
+        yy: '%d jierren',
       },
       dayOfMonthOrdinalParse: /\d{1,2}(ste|de)/,
-      ordinal: function(e) {
+      ordinal: function (e) {
         return e + (1 === e || 8 === e || 20 <= e ? 'ste' : 'de');
       },
-      week: { dow: 1, doy: 4 }
+      week: { dow: 1, doy: 4 },
     }),
       f.defineLocale('ga', {
         months: [
@@ -29366,7 +29456,7 @@
           'Meán Fómhair',
           'Deireadh Fómhair',
           'Samhain',
-          'Nollaig'
+          'Nollaig',
         ],
         monthsShort: [
           'Ean',
@@ -29380,7 +29470,7 @@
           'M.F.',
           'D.F.',
           'Samh',
-          'Noll'
+          'Noll',
         ],
         monthsParseExact: !0,
         weekdays: [
@@ -29390,7 +29480,7 @@
           'Dé Céadaoin',
           'Déardaoin',
           'Dé hAoine',
-          'Dé Sathairn'
+          'Dé Sathairn',
         ],
         weekdaysShort: [
           'Domh',
@@ -29399,7 +29489,7 @@
           'Céad',
           'Déar',
           'Aoine',
-          'Sath'
+          'Sath',
         ],
         weekdaysMin: ['Do', 'Lu', 'Má', 'Cé', 'Dé', 'A', 'Sa'],
         longDateFormat: {
@@ -29408,7 +29498,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Inniu ag] LT',
@@ -29416,7 +29506,7 @@
           nextWeek: 'dddd [ag] LT',
           lastDay: '[Inné ag] LT',
           lastWeek: 'dddd [seo caite] [ag] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'i %s',
@@ -29432,13 +29522,13 @@
           M: 'mí',
           MM: '%d míonna',
           y: 'bliain',
-          yy: '%d bliain'
+          yy: '%d bliain',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(d|na|mh)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return e + (1 === e ? 'd' : e % 10 == 2 ? 'na' : 'mh');
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('gd', {
         months: [
@@ -29453,7 +29543,7 @@
           'An t-Sultain',
           'An Dàmhair',
           'An t-Samhain',
-          'An Dùbhlachd'
+          'An Dùbhlachd',
         ],
         monthsShort: [
           'Faoi',
@@ -29467,7 +29557,7 @@
           'Sult',
           'Dàmh',
           'Samh',
-          'Dùbh'
+          'Dùbh',
         ],
         monthsParseExact: !0,
         weekdays: [
@@ -29477,7 +29567,7 @@
           'Diciadain',
           'Diardaoin',
           'Dihaoine',
-          'Disathairne'
+          'Disathairne',
         ],
         weekdaysShort: ['Did', 'Dil', 'Dim', 'Dic', 'Dia', 'Dih', 'Dis'],
         weekdaysMin: ['Dò', 'Lu', 'Mà', 'Ci', 'Ar', 'Ha', 'Sa'],
@@ -29487,7 +29577,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[An-diugh aig] LT',
@@ -29495,7 +29585,7 @@
           nextWeek: 'dddd [aig] LT',
           lastDay: '[An-dè aig] LT',
           lastWeek: 'dddd [seo chaidh] [aig] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'ann an %s',
@@ -29511,21 +29601,23 @@
           M: 'mìos',
           MM: '%d mìosan',
           y: 'bliadhna',
-          yy: '%d bliadhna'
+          yy: '%d bliadhna',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(d|na|mh)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return e + (1 === e ? 'd' : e % 10 == 2 ? 'na' : 'mh');
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('gl', {
-        months: 'xaneiro_febreiro_marzo_abril_maio_xuño_xullo_agosto_setembro_outubro_novembro_decembro'.split(
-          '_'
-        ),
-        monthsShort: 'xan._feb._mar._abr._mai._xuñ._xul._ago._set._out._nov._dec.'.split(
-          '_'
-        ),
+        months:
+          'xaneiro_febreiro_marzo_abril_maio_xuño_xullo_agosto_setembro_outubro_novembro_decembro'.split(
+            '_'
+          ),
+        monthsShort:
+          'xan._feb._mar._abr._mai._xuñ._xul._ago._set._out._nov._dec.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: 'domingo_luns_martes_mércores_xoves_venres_sábado'.split('_'),
         weekdaysShort: 'dom._lun._mar._mér._xov._ven._sáb.'.split('_'),
@@ -29537,30 +29629,30 @@
           L: 'DD/MM/YYYY',
           LL: 'D [de] MMMM [de] YYYY',
           LLL: 'D [de] MMMM [de] YYYY H:mm',
-          LLLL: 'dddd, D [de] MMMM [de] YYYY H:mm'
+          LLLL: 'dddd, D [de] MMMM [de] YYYY H:mm',
         },
         calendar: {
-          sameDay: function() {
+          sameDay: function () {
             return '[hoxe ' + (1 !== this.hours() ? 'ás' : 'á') + '] LT';
           },
-          nextDay: function() {
+          nextDay: function () {
             return '[mañá ' + (1 !== this.hours() ? 'ás' : 'á') + '] LT';
           },
-          nextWeek: function() {
+          nextWeek: function () {
             return 'dddd [' + (1 !== this.hours() ? 'ás' : 'a') + '] LT';
           },
-          lastDay: function() {
+          lastDay: function () {
             return '[onte ' + (1 !== this.hours() ? 'á' : 'a') + '] LT';
           },
-          lastWeek: function() {
+          lastWeek: function () {
             return (
               '[o] dddd [pasado ' + (1 !== this.hours() ? 'ás' : 'a') + '] LT'
             );
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
-          future: function(e) {
+          future: function (e) {
             return 0 === e.indexOf('un') ? 'n' + e : 'en ' + e;
           },
           past: 'hai %s',
@@ -29575,25 +29667,28 @@
           M: 'un mes',
           MM: '%d meses',
           y: 'un ano',
-          yy: '%d anos'
+          yy: '%d anos',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: '%dº',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('gom-deva', {
         months: {
-          standalone: 'जानेवारी_फेब्रुवारी_मार्च_एप्रील_मे_जून_जुलय_ऑगस्ट_सप्टेंबर_ऑक्टोबर_नोव्हेंबर_डिसेंबर'.split(
-            '_'
-          ),
-          format: 'जानेवारीच्या_फेब्रुवारीच्या_मार्चाच्या_एप्रीलाच्या_मेयाच्या_जूनाच्या_जुलयाच्या_ऑगस्टाच्या_सप्टेंबराच्या_ऑक्टोबराच्या_नोव्हेंबराच्या_डिसेंबराच्या'.split(
-            '_'
-          ),
-          isFormat: /MMMM(\s)+D[oD]?/
+          standalone:
+            'जानेवारी_फेब्रुवारी_मार्च_एप्रील_मे_जून_जुलय_ऑगस्ट_सप्टेंबर_ऑक्टोबर_नोव्हेंबर_डिसेंबर'.split(
+              '_'
+            ),
+          format:
+            'जानेवारीच्या_फेब्रुवारीच्या_मार्चाच्या_एप्रीलाच्या_मेयाच्या_जूनाच्या_जुलयाच्या_ऑगस्टाच्या_सप्टेंबराच्या_ऑक्टोबराच्या_नोव्हेंबराच्या_डिसेंबराच्या'.split(
+              '_'
+            ),
+          isFormat: /MMMM(\s)+D[oD]?/,
         },
-        monthsShort: 'जाने._फेब्रु._मार्च_एप्री._मे_जून_जुल._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
-          '_'
-        ),
+        monthsShort:
+          'जाने._फेब्रु._मार्च_एप्री._मे_जून_जुल._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: 'आयतार_सोमार_मंगळार_बुधवार_बिरेस्तार_सुक्रार_शेनवार'.split(
           '_'
@@ -29608,7 +29703,7 @@
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY A h:mm [वाजतां]',
           LLLL: 'dddd, MMMM Do, YYYY, A h:mm [वाजतां]',
-          llll: 'ddd, D MMM YYYY, A h:mm [वाजतां]'
+          llll: 'ddd, D MMM YYYY, A h:mm [वाजतां]',
         },
         calendar: {
           sameDay: '[आयज] LT',
@@ -29616,7 +29711,7 @@
           nextWeek: '[फुडलो] dddd[,] LT',
           lastDay: '[काल] LT',
           lastWeek: '[फाटलो] dddd[,] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s',
@@ -29632,10 +29727,10 @@
           M: j,
           MM: j,
           y: j,
-          yy: j
+          yy: j,
         },
         dayOfMonthOrdinalParse: /\d{1,2}(\u0935\u0947\u0930)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'D':
               return e + 'वेर';
@@ -29650,8 +29745,9 @@
           }
         },
         week: { dow: 0, doy: 3 },
-        meridiemParse: /\u0930\u093e\u0924\u0940|\u0938\u0915\u093e\u0933\u0940\u0902|\u0926\u0928\u092a\u093e\u0930\u093e\u0902|\u0938\u093e\u0902\u091c\u0947/,
-        meridiemHour: function(e, t) {
+        meridiemParse:
+          /\u0930\u093e\u0924\u0940|\u0938\u0915\u093e\u0933\u0940\u0902|\u0926\u0928\u092a\u093e\u0930\u093e\u0902|\u0938\u093e\u0902\u091c\u0947/,
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             'राती' === t
@@ -29669,7 +29765,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 4
             ? 'राती'
             : e < 12
@@ -29679,21 +29775,24 @@
             : e < 20
             ? 'सांजे'
             : 'राती';
-        }
+        },
       }),
       f.defineLocale('gom-latn', {
         months: {
-          standalone: 'Janer_Febrer_Mars_Abril_Mai_Jun_Julai_Agost_Setembr_Otubr_Novembr_Dezembr'.split(
-            '_'
-          ),
-          format: 'Janerachea_Febrerachea_Marsachea_Abrilachea_Maiachea_Junachea_Julaiachea_Agostachea_Setembrachea_Otubrachea_Novembrachea_Dezembrachea'.split(
-            '_'
-          ),
-          isFormat: /MMMM(\s)+D[oD]?/
+          standalone:
+            'Janer_Febrer_Mars_Abril_Mai_Jun_Julai_Agost_Setembr_Otubr_Novembr_Dezembr'.split(
+              '_'
+            ),
+          format:
+            'Janerachea_Febrerachea_Marsachea_Abrilachea_Maiachea_Junachea_Julaiachea_Agostachea_Setembrachea_Otubrachea_Novembrachea_Dezembrachea'.split(
+              '_'
+            ),
+          isFormat: /MMMM(\s)+D[oD]?/,
         },
-        monthsShort: 'Jan._Feb._Mars_Abr._Mai_Jun_Jul._Ago._Set._Otu._Nov._Dez.'.split(
-          '_'
-        ),
+        monthsShort:
+          'Jan._Feb._Mars_Abr._Mai_Jun_Jul._Ago._Set._Otu._Nov._Dez.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: "Aitar_Somar_Mongllar_Budhvar_Birestar_Sukrar_Son'var".split(
           '_'
@@ -29708,7 +29807,7 @@
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY A h:mm [vazta]',
           LLLL: 'dddd, MMMM Do, YYYY, A h:mm [vazta]',
-          llll: 'ddd, D MMM YYYY, A h:mm [vazta]'
+          llll: 'ddd, D MMM YYYY, A h:mm [vazta]',
         },
         calendar: {
           sameDay: '[Aiz] LT',
@@ -29716,7 +29815,7 @@
           nextWeek: '[Fuddlo] dddd[,] LT',
           lastDay: '[Kal] LT',
           lastWeek: '[Fattlo] dddd[,] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s',
@@ -29732,10 +29831,10 @@
           M: vn,
           MM: vn,
           y: vn,
-          yy: vn
+          yy: vn,
         },
         dayOfMonthOrdinalParse: /\d{1,2}(er)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'D':
               return e + 'er';
@@ -29751,7 +29850,7 @@
         },
         week: { dow: 0, doy: 3 },
         meridiemParse: /rati|sokallim|donparam|sanje/,
-        meridiemHour: function(e, t) {
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             'rati' === t
@@ -29769,7 +29868,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 4
             ? 'rati'
             : e < 12
@@ -29779,7 +29878,7 @@
             : e < 20
             ? 'sanje'
             : 'rati';
-        }
+        },
       });
     var Mn = {
         1: '૧',
@@ -29791,7 +29890,7 @@
         7: '૭',
         8: '૮',
         9: '૯',
-        0: '૦'
+        0: '૦',
       },
       bn = {
         '૧': '1',
@@ -29803,20 +29902,21 @@
         '૭': '7',
         '૮': '8',
         '૯': '9',
-        '૦': '0'
+        '૦': '0',
       },
       wn =
         (f.defineLocale('gu', {
-          months: 'જાન્યુઆરી_ફેબ્રુઆરી_માર્ચ_એપ્રિલ_મે_જૂન_જુલાઈ_ઑગસ્ટ_સપ્ટેમ્બર_ઑક્ટ્બર_નવેમ્બર_ડિસેમ્બર'.split(
-            '_'
-          ),
-          monthsShort: 'જાન્યુ._ફેબ્રુ._માર્ચ_એપ્રિ._મે_જૂન_જુલા._ઑગ._સપ્ટે._ઑક્ટ્._નવે._ડિસે.'.split(
-            '_'
-          ),
+          months:
+            'જાન્યુઆરી_ફેબ્રુઆરી_માર્ચ_એપ્રિલ_મે_જૂન_જુલાઈ_ઑગસ્ટ_સપ્ટેમ્બર_ઑક્ટ્બર_નવેમ્બર_ડિસેમ્બર'.split(
+              '_'
+            ),
+          monthsShort:
+            'જાન્યુ._ફેબ્રુ._માર્ચ_એપ્રિ._મે_જૂન_જુલા._ઑગ._સપ્ટે._ઑક્ટ્._નવે._ડિસે.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
-          weekdays: 'રવિવાર_સોમવાર_મંગળવાર_બુધ્વાર_ગુરુવાર_શુક્રવાર_શનિવાર'.split(
-            '_'
-          ),
+          weekdays:
+            'રવિવાર_સોમવાર_મંગળવાર_બુધ્વાર_ગુરુવાર_શુક્રવાર_શનિવાર'.split('_'),
           weekdaysShort: 'રવિ_સોમ_મંગળ_બુધ્_ગુરુ_શુક્ર_શનિ'.split('_'),
           weekdaysMin: 'ર_સો_મં_બુ_ગુ_શુ_શ'.split('_'),
           longDateFormat: {
@@ -29825,7 +29925,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, A h:mm વાગ્યે',
-            LLLL: 'dddd, D MMMM YYYY, A h:mm વાગ્યે'
+            LLLL: 'dddd, D MMMM YYYY, A h:mm વાગ્યે',
           },
           calendar: {
             sameDay: '[આજ] LT',
@@ -29833,7 +29933,7 @@
             nextWeek: 'dddd, LT',
             lastDay: '[ગઇકાલે] LT',
             lastWeek: '[પાછલા] dddd, LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s મા',
@@ -29849,23 +29949,24 @@
             M: 'એક મહિનો',
             MM: '%d મહિનો',
             y: 'એક વર્ષ',
-            yy: '%d વર્ષ'
+            yy: '%d વર્ષ',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u0ae7\u0ae8\u0ae9\u0aea\u0aeb\u0aec\u0aed\u0aee\u0aef\u0ae6]/g,
-              function(e) {
+              function (e) {
                 return bn[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return Mn[e];
             });
           },
-          meridiemParse: /\u0ab0\u0abe\u0aa4|\u0aac\u0aaa\u0acb\u0ab0|\u0ab8\u0ab5\u0abe\u0ab0|\u0ab8\u0abe\u0a82\u0a9c/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u0ab0\u0abe\u0aa4|\u0aac\u0aaa\u0acb\u0ab0|\u0ab8\u0ab5\u0abe\u0ab0|\u0ab8\u0abe\u0a82\u0a9c/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'રાત' === t
@@ -29883,7 +29984,7 @@
                 : void 0
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 4
               ? 'રાત'
               : e < 10
@@ -29894,15 +29995,17 @@
               ? 'સાંજ'
               : 'રાત';
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         f.defineLocale('he', {
-          months: 'ינואר_פברואר_מרץ_אפריל_מאי_יוני_יולי_אוגוסט_ספטמבר_אוקטובר_נובמבר_דצמבר'.split(
-            '_'
-          ),
-          monthsShort: 'ינו׳_פבר׳_מרץ_אפר׳_מאי_יוני_יולי_אוג׳_ספט׳_אוק׳_נוב׳_דצמ׳'.split(
-            '_'
-          ),
+          months:
+            'ינואר_פברואר_מרץ_אפריל_מאי_יוני_יולי_אוגוסט_ספטמבר_אוקטובר_נובמבר_דצמבר'.split(
+              '_'
+            ),
+          monthsShort:
+            'ינו׳_פבר׳_מרץ_אפר׳_מאי_יוני_יולי_אוג׳_ספט׳_אוק׳_נוב׳_דצמ׳'.split(
+              '_'
+            ),
           weekdays: 'ראשון_שני_שלישי_רביעי_חמישי_שישי_שבת'.split('_'),
           weekdaysShort: 'א׳_ב׳_ג׳_ד׳_ה׳_ו׳_ש׳'.split('_'),
           weekdaysMin: 'א_ב_ג_ד_ה_ו_ש'.split('_'),
@@ -29916,7 +30019,7 @@
             l: 'D/M/YYYY',
             ll: 'D MMM YYYY',
             lll: 'D MMM YYYY HH:mm',
-            llll: 'ddd, D MMM YYYY HH:mm'
+            llll: 'ddd, D MMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[היום ב־]LT',
@@ -29924,7 +30027,7 @@
             nextWeek: 'dddd [בשעה] LT',
             lastDay: '[אתמול ב־]LT',
             lastWeek: '[ביום] dddd [האחרון בשעה] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'בעוד %s',
@@ -29934,33 +30037,34 @@
             m: 'דקה',
             mm: '%d דקות',
             h: 'שעה',
-            hh: function(e) {
+            hh: function (e) {
               return 2 === e ? 'שעתיים' : e + ' שעות';
             },
             d: 'יום',
-            dd: function(e) {
+            dd: function (e) {
               return 2 === e ? 'יומיים' : e + ' ימים';
             },
             M: 'חודש',
-            MM: function(e) {
+            MM: function (e) {
               return 2 === e ? 'חודשיים' : e + ' חודשים';
             },
             y: 'שנה',
-            yy: function(e) {
+            yy: function (e) {
               return 2 === e
                 ? 'שנתיים'
                 : e % 10 == 0 && 10 !== e
                 ? e + ' שנה'
                 : e + ' שנים';
-            }
+            },
           },
-          meridiemParse: /\u05d0\u05d7\u05d4"\u05e6|\u05dc\u05e4\u05e0\u05d4"\u05e6|\u05d0\u05d7\u05e8\u05d9 \u05d4\u05e6\u05d4\u05e8\u05d9\u05d9\u05dd|\u05dc\u05e4\u05e0\u05d9 \u05d4\u05e6\u05d4\u05e8\u05d9\u05d9\u05dd|\u05dc\u05e4\u05e0\u05d5\u05ea \u05d1\u05d5\u05e7\u05e8|\u05d1\u05d1\u05d5\u05e7\u05e8|\u05d1\u05e2\u05e8\u05d1/i,
-          isPM: function(e) {
+          meridiemParse:
+            /\u05d0\u05d7\u05d4"\u05e6|\u05dc\u05e4\u05e0\u05d4"\u05e6|\u05d0\u05d7\u05e8\u05d9 \u05d4\u05e6\u05d4\u05e8\u05d9\u05d9\u05dd|\u05dc\u05e4\u05e0\u05d9 \u05d4\u05e6\u05d4\u05e8\u05d9\u05d9\u05dd|\u05dc\u05e4\u05e0\u05d5\u05ea \u05d1\u05d5\u05e7\u05e8|\u05d1\u05d1\u05d5\u05e7\u05e8|\u05d1\u05e2\u05e8\u05d1/i,
+          isPM: function (e) {
             return /^(\u05d0\u05d7\u05d4"\u05e6|\u05d0\u05d7\u05e8\u05d9 \u05d4\u05e6\u05d4\u05e8\u05d9\u05d9\u05dd|\u05d1\u05e2\u05e8\u05d1)$/.test(
               e
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 5
               ? 'לפנות בוקר'
               : e < 10
@@ -29974,7 +30078,7 @@
                 ? 'אחה"צ'
                 : 'אחרי הצהריים'
               : 'בערב';
-          }
+          },
         }),
         {
           1: '१',
@@ -29986,7 +30090,7 @@
           7: '७',
           8: '८',
           9: '९',
-          0: '०'
+          0: '०',
         }),
       Ln = {
         '१': '1',
@@ -29998,7 +30102,7 @@
         '७': '7',
         '८': '8',
         '९': '9',
-        '०': '0'
+        '०': '0',
       },
       Ne = [
         /^\u091c\u0928/i,
@@ -30012,7 +30116,7 @@
         /^\u0938\u093f\u0924\u0902|\u0938\u093f\u0924/i,
         /^\u0905\u0915\u094d\u091f\u0942/i,
         /^\u0928\u0935|\u0928\u0935\u0902/i,
-        /^\u0926\u093f\u0938\u0902|\u0926\u093f\u0938/i
+        /^\u0926\u093f\u0938\u0902|\u0926\u093f\u0938/i,
       ];
     function Tn(e, t, i) {
       var n = e + ' ';
@@ -30060,16 +30164,17 @@
     }
     f.defineLocale('hi', {
       months: {
-        format: 'जनवरी_फ़रवरी_मार्च_अप्रैल_मई_जून_जुलाई_अगस्त_सितम्बर_अक्टूबर_नवम्बर_दिसम्बर'.split(
-          '_'
-        ),
-        standalone: 'जनवरी_फरवरी_मार्च_अप्रैल_मई_जून_जुलाई_अगस्त_सितंबर_अक्टूबर_नवंबर_दिसंबर'.split(
-          '_'
-        )
+        format:
+          'जनवरी_फ़रवरी_मार्च_अप्रैल_मई_जून_जुलाई_अगस्त_सितम्बर_अक्टूबर_नवम्बर_दिसम्बर'.split(
+            '_'
+          ),
+        standalone:
+          'जनवरी_फरवरी_मार्च_अप्रैल_मई_जून_जुलाई_अगस्त_सितंबर_अक्टूबर_नवंबर_दिसंबर'.split(
+            '_'
+          ),
       },
-      monthsShort: 'जन._फ़र._मार्च_अप्रै._मई_जून_जुल._अग._सित._अक्टू._नव._दिस.'.split(
-        '_'
-      ),
+      monthsShort:
+        'जन._फ़र._मार्च_अप्रै._मई_जून_जुल._अग._सित._अक्टू._नव._दिस.'.split('_'),
       weekdays: 'रविवार_सोमवार_मंगलवार_बुधवार_गुरूवार_शुक्रवार_शनिवार'.split(
         '_'
       ),
@@ -30081,7 +30186,7 @@
         L: 'DD/MM/YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY, A h:mm बजे',
-        LLLL: 'dddd, D MMMM YYYY, A h:mm बजे'
+        LLLL: 'dddd, D MMMM YYYY, A h:mm बजे',
       },
       monthsParse: Ne,
       longMonthsParse: Ne,
@@ -30097,19 +30202,23 @@
         /^\u0938\u093f\u0924/i,
         /^\u0905\u0915\u094d\u091f\u0942/i,
         /^\u0928\u0935/i,
-        /^\u0926\u093f\u0938/i
+        /^\u0926\u093f\u0938/i,
       ],
-      monthsRegex: /^(\u091c\u0928\u0935\u0930\u0940|\u091c\u0928\.?|\u092b\u093c\u0930\u0935\u0930\u0940|\u092b\u0930\u0935\u0930\u0940|\u092b\u093c\u0930\.?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\u0932|\u0905\u092a\u094d\u0930\u0948\.?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\u093e\u0908|\u091c\u0941\u0932\.?|\u0905\u0917\u0938\u094d\u0924|\u0905\u0917\.?|\u0938\u093f\u0924\u092e\u094d\u092c\u0930|\u0938\u093f\u0924\u0902\u092c\u0930|\u0938\u093f\u0924\.?|\u0905\u0915\u094d\u091f\u0942\u092c\u0930|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\u092e\u094d\u092c\u0930|\u0928\u0935\u0902\u092c\u0930|\u0928\u0935\.?|\u0926\u093f\u0938\u092e\u094d\u092c\u0930|\u0926\u093f\u0938\u0902\u092c\u0930|\u0926\u093f\u0938\.?)/i,
-      monthsShortRegex: /^(\u091c\u0928\u0935\u0930\u0940|\u091c\u0928\.?|\u092b\u093c\u0930\u0935\u0930\u0940|\u092b\u0930\u0935\u0930\u0940|\u092b\u093c\u0930\.?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\u0932|\u0905\u092a\u094d\u0930\u0948\.?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\u093e\u0908|\u091c\u0941\u0932\.?|\u0905\u0917\u0938\u094d\u0924|\u0905\u0917\.?|\u0938\u093f\u0924\u092e\u094d\u092c\u0930|\u0938\u093f\u0924\u0902\u092c\u0930|\u0938\u093f\u0924\.?|\u0905\u0915\u094d\u091f\u0942\u092c\u0930|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\u092e\u094d\u092c\u0930|\u0928\u0935\u0902\u092c\u0930|\u0928\u0935\.?|\u0926\u093f\u0938\u092e\u094d\u092c\u0930|\u0926\u093f\u0938\u0902\u092c\u0930|\u0926\u093f\u0938\.?)/i,
-      monthsStrictRegex: /^(\u091c\u0928\u0935\u0930\u0940?|\u092b\u093c\u0930\u0935\u0930\u0940|\u092b\u0930\u0935\u0930\u0940?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\u0932?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\u093e\u0908?|\u0905\u0917\u0938\u094d\u0924?|\u0938\u093f\u0924\u092e\u094d\u092c\u0930|\u0938\u093f\u0924\u0902\u092c\u0930|\u0938\u093f\u0924?\.?|\u0905\u0915\u094d\u091f\u0942\u092c\u0930|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\u092e\u094d\u092c\u0930|\u0928\u0935\u0902\u092c\u0930?|\u0926\u093f\u0938\u092e\u094d\u092c\u0930|\u0926\u093f\u0938\u0902\u092c\u0930?)/i,
-      monthsShortStrictRegex: /^(\u091c\u0928\.?|\u092b\u093c\u0930\.?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\.?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\.?|\u0905\u0917\.?|\u0938\u093f\u0924\.?|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\.?|\u0926\u093f\u0938\.?)/i,
+      monthsRegex:
+        /^(\u091c\u0928\u0935\u0930\u0940|\u091c\u0928\.?|\u092b\u093c\u0930\u0935\u0930\u0940|\u092b\u0930\u0935\u0930\u0940|\u092b\u093c\u0930\.?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\u0932|\u0905\u092a\u094d\u0930\u0948\.?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\u093e\u0908|\u091c\u0941\u0932\.?|\u0905\u0917\u0938\u094d\u0924|\u0905\u0917\.?|\u0938\u093f\u0924\u092e\u094d\u092c\u0930|\u0938\u093f\u0924\u0902\u092c\u0930|\u0938\u093f\u0924\.?|\u0905\u0915\u094d\u091f\u0942\u092c\u0930|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\u092e\u094d\u092c\u0930|\u0928\u0935\u0902\u092c\u0930|\u0928\u0935\.?|\u0926\u093f\u0938\u092e\u094d\u092c\u0930|\u0926\u093f\u0938\u0902\u092c\u0930|\u0926\u093f\u0938\.?)/i,
+      monthsShortRegex:
+        /^(\u091c\u0928\u0935\u0930\u0940|\u091c\u0928\.?|\u092b\u093c\u0930\u0935\u0930\u0940|\u092b\u0930\u0935\u0930\u0940|\u092b\u093c\u0930\.?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\u0932|\u0905\u092a\u094d\u0930\u0948\.?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\u093e\u0908|\u091c\u0941\u0932\.?|\u0905\u0917\u0938\u094d\u0924|\u0905\u0917\.?|\u0938\u093f\u0924\u092e\u094d\u092c\u0930|\u0938\u093f\u0924\u0902\u092c\u0930|\u0938\u093f\u0924\.?|\u0905\u0915\u094d\u091f\u0942\u092c\u0930|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\u092e\u094d\u092c\u0930|\u0928\u0935\u0902\u092c\u0930|\u0928\u0935\.?|\u0926\u093f\u0938\u092e\u094d\u092c\u0930|\u0926\u093f\u0938\u0902\u092c\u0930|\u0926\u093f\u0938\.?)/i,
+      monthsStrictRegex:
+        /^(\u091c\u0928\u0935\u0930\u0940?|\u092b\u093c\u0930\u0935\u0930\u0940|\u092b\u0930\u0935\u0930\u0940?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\u0932?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\u093e\u0908?|\u0905\u0917\u0938\u094d\u0924?|\u0938\u093f\u0924\u092e\u094d\u092c\u0930|\u0938\u093f\u0924\u0902\u092c\u0930|\u0938\u093f\u0924?\.?|\u0905\u0915\u094d\u091f\u0942\u092c\u0930|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\u092e\u094d\u092c\u0930|\u0928\u0935\u0902\u092c\u0930?|\u0926\u093f\u0938\u092e\u094d\u092c\u0930|\u0926\u093f\u0938\u0902\u092c\u0930?)/i,
+      monthsShortStrictRegex:
+        /^(\u091c\u0928\.?|\u092b\u093c\u0930\.?|\u092e\u093e\u0930\u094d\u091a?|\u0905\u092a\u094d\u0930\u0948\.?|\u092e\u0908?|\u091c\u0942\u0928?|\u091c\u0941\u0932\.?|\u0905\u0917\.?|\u0938\u093f\u0924\.?|\u0905\u0915\u094d\u091f\u0942\.?|\u0928\u0935\.?|\u0926\u093f\u0938\.?)/i,
       calendar: {
         sameDay: '[आज] LT',
         nextDay: '[कल] LT',
         nextWeek: 'dddd, LT',
         lastDay: '[कल] LT',
         lastWeek: '[पिछले] dddd, LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: '%s में',
@@ -30125,23 +30234,24 @@
         M: 'एक महीने',
         MM: '%d महीने',
         y: 'एक वर्ष',
-        yy: '%d वर्ष'
+        yy: '%d वर्ष',
       },
-      preparse: function(e) {
+      preparse: function (e) {
         return e.replace(
           /[\u0967\u0968\u0969\u096a\u096b\u096c\u096d\u096e\u096f\u0966]/g,
-          function(e) {
+          function (e) {
             return Ln[e];
           }
         );
       },
-      postformat: function(e) {
-        return e.replace(/\d/g, function(e) {
+      postformat: function (e) {
+        return e.replace(/\d/g, function (e) {
           return wn[e];
         });
       },
-      meridiemParse: /\u0930\u093e\u0924|\u0938\u0941\u092c\u0939|\u0926\u094b\u092a\u0939\u0930|\u0936\u093e\u092e/,
-      meridiemHour: function(e, t) {
+      meridiemParse:
+        /\u0930\u093e\u0924|\u0938\u0941\u092c\u0939|\u0926\u094b\u092a\u0939\u0930|\u0936\u093e\u092e/,
+      meridiemHour: function (e, t) {
         return (
           12 === e && (e = 0),
           'रात' === t
@@ -30159,7 +30269,7 @@
             : void 0
         );
       },
-      meridiem: function(e, t, i) {
+      meridiem: function (e, t, i) {
         return e < 4
           ? 'रात'
           : e < 10
@@ -30170,24 +30280,28 @@
           ? 'शाम'
           : 'रात';
       },
-      week: { dow: 0, doy: 6 }
+      week: { dow: 0, doy: 6 },
     }),
       f.defineLocale('hr', {
         months: {
-          format: 'siječnja_veljače_ožujka_travnja_svibnja_lipnja_srpnja_kolovoza_rujna_listopada_studenoga_prosinca'.split(
+          format:
+            'siječnja_veljače_ožujka_travnja_svibnja_lipnja_srpnja_kolovoza_rujna_listopada_studenoga_prosinca'.split(
+              '_'
+            ),
+          standalone:
+            'siječanj_veljača_ožujak_travanj_svibanj_lipanj_srpanj_kolovoz_rujan_listopad_studeni_prosinac'.split(
+              '_'
+            ),
+        },
+        monthsShort:
+          'sij._velj._ožu._tra._svi._lip._srp._kol._ruj._lis._stu._pro.'.split(
             '_'
           ),
-          standalone: 'siječanj_veljača_ožujak_travanj_svibanj_lipanj_srpanj_kolovoz_rujan_listopad_studeni_prosinac'.split(
-            '_'
-          )
-        },
-        monthsShort: 'sij._velj._ožu._tra._svi._lip._srp._kol._ruj._lis._stu._pro.'.split(
-          '_'
-        ),
         monthsParseExact: !0,
-        weekdays: 'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
-          '_'
-        ),
+        weekdays:
+          'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
+            '_'
+          ),
         weekdaysShort: 'ned._pon._uto._sri._čet._pet._sub.'.split('_'),
         weekdaysMin: 'ne_po_ut_sr_če_pe_su'.split('_'),
         weekdaysParseExact: !0,
@@ -30197,12 +30311,12 @@
           L: 'DD.MM.YYYY',
           LL: 'Do MMMM YYYY',
           LLL: 'Do MMMM YYYY H:mm',
-          LLLL: 'dddd, Do MMMM YYYY H:mm'
+          LLLL: 'dddd, Do MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[danas u] LT',
           nextDay: '[sutra u] LT',
-          nextWeek: function() {
+          nextWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[u] [nedjelju] [u] LT';
@@ -30218,7 +30332,7 @@
             }
           },
           lastDay: '[jučer u] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[prošlu] [nedjelju] [u] LT';
@@ -30233,7 +30347,7 @@
                 return '[prošli] dddd [u] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'za %s',
@@ -30249,15 +30363,16 @@
           M: 'mjesec',
           MM: Tn,
           y: 'godinu',
-          yy: Tn
+          yy: Tn,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       });
-    var Yn = 'vasárnap hétfőn kedden szerdán csütörtökön pénteken szombaton'.split(
-      ' '
-    );
+    var Yn =
+      'vasárnap hétfőn kedden szerdán csütörtökön pénteken szombaton'.split(
+        ' '
+      );
     function kn(e, t, i, n) {
       var s = e;
       switch (i) {
@@ -30342,12 +30457,14 @@
       }
     }
     f.defineLocale('hu', {
-      months: 'január_február_március_április_május_június_július_augusztus_szeptember_október_november_december'.split(
-        '_'
-      ),
-      monthsShort: 'jan._feb._márc._ápr._máj._jún._júl._aug._szept._okt._nov._dec.'.split(
-        '_'
-      ),
+      months:
+        'január_február_március_április_május_június_július_augusztus_szeptember_október_november_december'.split(
+          '_'
+        ),
+      monthsShort:
+        'jan._feb._márc._ápr._máj._jún._júl._aug._szept._okt._nov._dec.'.split(
+          '_'
+        ),
       monthsParseExact: !0,
       weekdays: 'vasárnap_hétfő_kedd_szerda_csütörtök_péntek_szombat'.split(
         '_'
@@ -30360,26 +30477,26 @@
         L: 'YYYY.MM.DD.',
         LL: 'YYYY. MMMM D.',
         LLL: 'YYYY. MMMM D. H:mm',
-        LLLL: 'YYYY. MMMM D., dddd H:mm'
+        LLLL: 'YYYY. MMMM D., dddd H:mm',
       },
       meridiemParse: /de|du/i,
-      isPM: function(e) {
+      isPM: function (e) {
         return 'u' === e.charAt(1).toLowerCase();
       },
-      meridiem: function(e, t, i) {
+      meridiem: function (e, t, i) {
         return e < 12 ? (!0 === i ? 'de' : 'DE') : !0 === i ? 'du' : 'DU';
       },
       calendar: {
         sameDay: '[ma] LT[-kor]',
         nextDay: '[holnap] LT[-kor]',
-        nextWeek: function() {
+        nextWeek: function () {
           return Dn.call(this, !0);
         },
         lastDay: '[tegnap] LT[-kor]',
-        lastWeek: function() {
+        lastWeek: function () {
           return Dn.call(this, !1);
         },
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: '%s múlva',
@@ -30395,27 +30512,30 @@
         M: kn,
         MM: kn,
         y: kn,
-        yy: kn
+        yy: kn,
       },
       dayOfMonthOrdinalParse: /\d{1,2}\./,
       ordinal: '%d.',
-      week: { dow: 1, doy: 4 }
+      week: { dow: 1, doy: 4 },
     }),
       f.defineLocale('hy-am', {
         months: {
-          format: 'հունվարի_փետրվարի_մարտի_ապրիլի_մայիսի_հունիսի_հուլիսի_օգոստոսի_սեպտեմբերի_հոկտեմբերի_նոյեմբերի_դեկտեմբերի'.split(
-            '_'
-          ),
-          standalone: 'հունվար_փետրվար_մարտ_ապրիլ_մայիս_հունիս_հուլիս_օգոստոս_սեպտեմբեր_հոկտեմբեր_նոյեմբեր_դեկտեմբեր'.split(
-            '_'
-          )
+          format:
+            'հունվարի_փետրվարի_մարտի_ապրիլի_մայիսի_հունիսի_հուլիսի_օգոստոսի_սեպտեմբերի_հոկտեմբերի_նոյեմբերի_դեկտեմբերի'.split(
+              '_'
+            ),
+          standalone:
+            'հունվար_փետրվար_մարտ_ապրիլ_մայիս_հունիս_հուլիս_օգոստոս_սեպտեմբեր_հոկտեմբեր_նոյեմբեր_դեկտեմբեր'.split(
+              '_'
+            ),
         },
         monthsShort: 'հնվ_փտր_մրտ_ապր_մյս_հնս_հլս_օգս_սպտ_հկտ_նմբ_դկտ'.split(
           '_'
         ),
-        weekdays: 'կիրակի_երկուշաբթի_երեքշաբթի_չորեքշաբթի_հինգշաբթի_ուրբաթ_շաբաթ'.split(
-          '_'
-        ),
+        weekdays:
+          'կիրակի_երկուշաբթի_երեքշաբթի_չորեքշաբթի_հինգշաբթի_ուրբաթ_շաբաթ'.split(
+            '_'
+          ),
         weekdaysShort: 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),
         weekdaysMin: 'կրկ_երկ_երք_չրք_հնգ_ուրբ_շբթ'.split('_'),
         longDateFormat: {
@@ -30424,19 +30544,19 @@
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY թ.',
           LLL: 'D MMMM YYYY թ., HH:mm',
-          LLLL: 'dddd, D MMMM YYYY թ., HH:mm'
+          LLLL: 'dddd, D MMMM YYYY թ., HH:mm',
         },
         calendar: {
           sameDay: '[այսօր] LT',
           nextDay: '[վաղը] LT',
           lastDay: '[երեկ] LT',
-          nextWeek: function() {
+          nextWeek: function () {
             return 'dddd [օրը ժամը] LT';
           },
-          lastWeek: function() {
+          lastWeek: function () {
             return '[անցած] dddd [օրը ժամը] LT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s հետո',
@@ -30452,15 +30572,16 @@
           M: 'ամիս',
           MM: '%d ամիս',
           y: 'տարի',
-          yy: '%d տարի'
+          yy: '%d տարի',
         },
-        meridiemParse: /\u0563\u056b\u0577\u0565\u0580\u057e\u0561|\u0561\u057c\u0561\u057e\u0578\u057f\u057e\u0561|\u0581\u0565\u0580\u0565\u056f\u057e\u0561|\u0565\u0580\u0565\u056f\u0578\u0575\u0561\u0576/,
-        isPM: function(e) {
+        meridiemParse:
+          /\u0563\u056b\u0577\u0565\u0580\u057e\u0561|\u0561\u057c\u0561\u057e\u0578\u057f\u057e\u0561|\u0581\u0565\u0580\u0565\u056f\u057e\u0561|\u0565\u0580\u0565\u056f\u0578\u0575\u0561\u0576/,
+        isPM: function (e) {
           return /^(\u0581\u0565\u0580\u0565\u056f\u057e\u0561|\u0565\u0580\u0565\u056f\u0578\u0575\u0561\u0576)$/.test(
             e
           );
         },
-        meridiem: function(e) {
+        meridiem: function (e) {
           return e < 4
             ? 'գիշերվա'
             : e < 12
@@ -30470,7 +30591,7 @@
             : 'երեկոյան';
         },
         dayOfMonthOrdinalParse: /\d{1,2}|\d{1,2}-(\u056b\u0576|\u0580\u0564)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'DDD':
             case 'w':
@@ -30481,12 +30602,13 @@
               return e;
           }
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('id', {
-        months: 'Januari_Februari_Maret_April_Mei_Juni_Juli_Agustus_September_Oktober_November_Desember'.split(
-          '_'
-        ),
+        months:
+          'Januari_Februari_Maret_April_Mei_Juni_Juli_Agustus_September_Oktober_November_Desember'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_Mei_Jun_Jul_Agt_Sep_Okt_Nov_Des'.split(
           '_'
         ),
@@ -30499,10 +30621,10 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY [pukul] HH.mm',
-          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm'
+          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm',
         },
         meridiemParse: /pagi|siang|sore|malam/,
-        meridiemHour: function(e, t) {
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             'pagi' === t
@@ -30516,7 +30638,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 11 ? 'pagi' : e < 15 ? 'siang' : e < 19 ? 'sore' : 'malam';
         },
         calendar: {
@@ -30525,7 +30647,7 @@
           nextWeek: 'dddd [pukul] LT',
           lastDay: '[Kemarin pukul] LT',
           lastWeek: 'dddd [lalu pukul] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'dalam %s',
@@ -30541,20 +30663,22 @@
           M: 'sebulan',
           MM: '%d bulan',
           y: 'setahun',
-          yy: '%d tahun'
+          yy: '%d tahun',
         },
-        week: { dow: 0, doy: 6 }
+        week: { dow: 0, doy: 6 },
       }),
       f.defineLocale('is', {
-        months: 'janúar_febrúar_mars_apríl_maí_júní_júlí_ágúst_september_október_nóvember_desember'.split(
-          '_'
-        ),
+        months:
+          'janúar_febrúar_mars_apríl_maí_júní_júlí_ágúst_september_október_nóvember_desember'.split(
+            '_'
+          ),
         monthsShort: 'jan_feb_mar_apr_maí_jún_júl_ágú_sep_okt_nóv_des'.split(
           '_'
         ),
-        weekdays: 'sunnudagur_mánudagur_þriðjudagur_miðvikudagur_fimmtudagur_föstudagur_laugardagur'.split(
-          '_'
-        ),
+        weekdays:
+          'sunnudagur_mánudagur_þriðjudagur_miðvikudagur_fimmtudagur_föstudagur_laugardagur'.split(
+            '_'
+          ),
         weekdaysShort: 'sun_mán_þri_mið_fim_fös_lau'.split('_'),
         weekdaysMin: 'Su_Má_Þr_Mi_Fi_Fö_La'.split('_'),
         longDateFormat: {
@@ -30563,7 +30687,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY [kl.] H:mm',
-          LLLL: 'dddd, D. MMMM YYYY [kl.] H:mm'
+          LLLL: 'dddd, D. MMMM YYYY [kl.] H:mm',
         },
         calendar: {
           sameDay: '[í dag kl.] LT',
@@ -30571,7 +30695,7 @@
           nextWeek: 'dddd [kl.] LT',
           lastDay: '[í gær kl.] LT',
           lastWeek: '[síðasta] dddd [kl.] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'eftir %s',
@@ -30587,22 +30711,22 @@
           M: Sn,
           MM: Sn,
           y: Sn,
-          yy: Sn
+          yy: Sn,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('it-ch', {
-        months: 'gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre'.split(
-          '_'
-        ),
+        months:
+          'gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre'.split(
+            '_'
+          ),
         monthsShort: 'gen_feb_mar_apr_mag_giu_lug_ago_set_ott_nov_dic'.split(
           '_'
         ),
-        weekdays: 'domenica_lunedì_martedì_mercoledì_giovedì_venerdì_sabato'.split(
-          '_'
-        ),
+        weekdays:
+          'domenica_lunedì_martedì_mercoledì_giovedì_venerdì_sabato'.split('_'),
         weekdaysShort: 'dom_lun_mar_mer_gio_ven_sab'.split('_'),
         weekdaysMin: 'do_lu_ma_me_gi_ve_sa'.split('_'),
         longDateFormat: {
@@ -30611,22 +30735,22 @@
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Oggi alle] LT',
           nextDay: '[Domani alle] LT',
           nextWeek: 'dddd [alle] LT',
           lastDay: '[Ieri alle] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             return 0 !== this.day()
               ? '[lo scorso] dddd [alle] LT'
               : '[la scorsa] dddd [alle] LT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
-          future: function(e) {
+          future: function (e) {
             return (/^[0-9].+$/.test(e) ? 'tra' : 'in') + ' ' + e;
           },
           past: '%s fa',
@@ -30641,22 +30765,22 @@
           M: 'un mese',
           MM: '%d mesi',
           y: 'un anno',
-          yy: '%d anni'
+          yy: '%d anni',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: '%dº',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('it', {
-        months: 'gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre'.split(
-          '_'
-        ),
+        months:
+          'gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre'.split(
+            '_'
+          ),
         monthsShort: 'gen_feb_mar_apr_mag_giu_lug_ago_set_ott_nov_dic'.split(
           '_'
         ),
-        weekdays: 'domenica_lunedì_martedì_mercoledì_giovedì_venerdì_sabato'.split(
-          '_'
-        ),
+        weekdays:
+          'domenica_lunedì_martedì_mercoledì_giovedì_venerdì_sabato'.split('_'),
         weekdaysShort: 'dom_lun_mar_mer_gio_ven_sab'.split('_'),
         weekdaysMin: 'do_lu_ma_me_gi_ve_sa'.split('_'),
         longDateFormat: {
@@ -30665,38 +30789,38 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
-          sameDay: function() {
+          sameDay: function () {
             return (
               '[Oggi a' +
               (1 < this.hours() ? 'lle ' : 0 === this.hours() ? ' ' : "ll'") +
               ']LT'
             );
           },
-          nextDay: function() {
+          nextDay: function () {
             return (
               '[Domani a' +
               (1 < this.hours() ? 'lle ' : 0 === this.hours() ? ' ' : "ll'") +
               ']LT'
             );
           },
-          nextWeek: function() {
+          nextWeek: function () {
             return (
               'dddd [a' +
               (1 < this.hours() ? 'lle ' : 0 === this.hours() ? ' ' : "ll'") +
               ']LT'
             );
           },
-          lastDay: function() {
+          lastDay: function () {
             return (
               '[Ieri a' +
               (1 < this.hours() ? 'lle ' : 0 === this.hours() ? ' ' : "ll'") +
               ']LT'
             );
           },
-          lastWeek: function() {
+          lastWeek: function () {
             return 0 !== this.day()
               ? '[Lo scorso] dddd [a' +
                   (1 < this.hours()
@@ -30713,7 +30837,7 @@
                     : "ll'") +
                   ']LT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'tra %s',
@@ -30731,11 +30855,11 @@
           M: 'un mese',
           MM: '%d mesi',
           y: 'un anno',
-          yy: '%d anni'
+          yy: '%d anni',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: '%dº',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('ja', {
         eras: [
@@ -30744,7 +30868,7 @@
             offset: 1,
             name: '令和',
             narrow: '㋿',
-            abbr: 'R'
+            abbr: 'R',
           },
           {
             since: '1989-01-08',
@@ -30752,7 +30876,7 @@
             offset: 1,
             name: '平成',
             narrow: '㍻',
-            abbr: 'H'
+            abbr: 'H',
           },
           {
             since: '1926-12-25',
@@ -30760,7 +30884,7 @@
             offset: 1,
             name: '昭和',
             narrow: '㍼',
-            abbr: 'S'
+            abbr: 'S',
           },
           {
             since: '1912-07-30',
@@ -30768,7 +30892,7 @@
             offset: 1,
             name: '大正',
             narrow: '㍽',
-            abbr: 'T'
+            abbr: 'T',
           },
           {
             since: '1873-01-01',
@@ -30776,7 +30900,7 @@
             offset: 6,
             name: '明治',
             narrow: '㍾',
-            abbr: 'M'
+            abbr: 'M',
           },
           {
             since: '0001-01-01',
@@ -30784,7 +30908,7 @@
             offset: 1,
             name: '西暦',
             narrow: 'AD',
-            abbr: 'AD'
+            abbr: 'AD',
           },
           {
             since: '0000-12-31',
@@ -30792,11 +30916,11 @@
             offset: 1,
             name: '紀元前',
             narrow: 'BC',
-            abbr: 'BC'
-          }
+            abbr: 'BC',
+          },
         ],
         eraYearOrdinalRegex: /(\u5143|\d+)\u5e74/,
-        eraYearOrdinalParse: function(e, t) {
+        eraYearOrdinalParse: function (e, t) {
           return '元' === t[1] ? 1 : parseInt(t[1] || e, 10);
         },
         months: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
@@ -30816,29 +30940,29 @@
           l: 'YYYY/MM/DD',
           ll: 'YYYY年M月D日',
           lll: 'YYYY年M月D日 HH:mm',
-          llll: 'YYYY年M月D日(ddd) HH:mm'
+          llll: 'YYYY年M月D日(ddd) HH:mm',
         },
         meridiemParse: /\u5348\u524d|\u5348\u5f8c/i,
-        isPM: function(e) {
+        isPM: function (e) {
           return '午後' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? '午前' : '午後';
         },
         calendar: {
           sameDay: '[今日] LT',
           nextDay: '[明日] LT',
-          nextWeek: function(e) {
+          nextWeek: function (e) {
             return e.week() !== this.week() ? '[来週]dddd LT' : 'dddd LT';
           },
           lastDay: '[昨日] LT',
-          lastWeek: function(e) {
+          lastWeek: function (e) {
             return this.week() !== e.week() ? '[先週]dddd LT' : 'dddd LT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\u65e5/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'y':
               return 1 === e ? '元年' : e + '年';
@@ -30864,13 +30988,14 @@
           M: '1ヶ月',
           MM: '%dヶ月',
           y: '1年',
-          yy: '%d年'
-        }
+          yy: '%d年',
+        },
       }),
       f.defineLocale('jv', {
-        months: 'Januari_Februari_Maret_April_Mei_Juni_Juli_Agustus_September_Oktober_Nopember_Desember'.split(
-          '_'
-        ),
+        months:
+          'Januari_Februari_Maret_April_Mei_Juni_Juli_Agustus_September_Oktober_Nopember_Desember'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mar_Apr_Mei_Jun_Jul_Ags_Sep_Okt_Nop_Des'.split(
           '_'
         ),
@@ -30883,10 +31008,10 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY [pukul] HH.mm',
-          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm'
+          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm',
         },
         meridiemParse: /enjing|siyang|sonten|ndalu/,
-        meridiemHour: function(e, t) {
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             'enjing' === t
@@ -30900,7 +31025,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 11
             ? 'enjing'
             : e < 15
@@ -30915,7 +31040,7 @@
           nextWeek: 'dddd [pukul] LT',
           lastDay: '[Kala wingi pukul] LT',
           lastWeek: 'dddd [kepengker pukul] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'wonten ing %s',
@@ -30931,25 +31056,29 @@
           M: 'sewulan',
           MM: '%d wulan',
           y: 'setaun',
-          yy: '%d taun'
+          yy: '%d taun',
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('ka', {
-        months: 'იანვარი_თებერვალი_მარტი_აპრილი_მაისი_ივნისი_ივლისი_აგვისტო_სექტემბერი_ოქტომბერი_ნოემბერი_დეკემბერი'.split(
-          '_'
-        ),
+        months:
+          'იანვარი_თებერვალი_მარტი_აპრილი_მაისი_ივნისი_ივლისი_აგვისტო_სექტემბერი_ოქტომბერი_ნოემბერი_დეკემბერი'.split(
+            '_'
+          ),
         monthsShort: 'იან_თებ_მარ_აპრ_მაი_ივნ_ივლ_აგვ_სექ_ოქტ_ნოე_დეკ'.split(
           '_'
         ),
         weekdays: {
-          standalone: 'კვირა_ორშაბათი_სამშაბათი_ოთხშაბათი_ხუთშაბათი_პარასკევი_შაბათი'.split(
-            '_'
-          ),
-          format: 'კვირას_ორშაბათს_სამშაბათს_ოთხშაბათს_ხუთშაბათს_პარასკევს_შაბათს'.split(
-            '_'
-          ),
-          isFormat: /(\u10ec\u10d8\u10dc\u10d0|\u10e8\u10d4\u10db\u10d3\u10d4\u10d2)/
+          standalone:
+            'კვირა_ორშაბათი_სამშაბათი_ოთხშაბათი_ხუთშაბათი_პარასკევი_შაბათი'.split(
+              '_'
+            ),
+          format:
+            'კვირას_ორშაბათს_სამშაბათს_ოთხშაბათს_ხუთშაბათს_პარასკევს_შაბათს'.split(
+              '_'
+            ),
+          isFormat:
+            /(\u10ec\u10d8\u10dc\u10d0|\u10e8\u10d4\u10db\u10d3\u10d4\u10d2)/,
         },
         weekdaysShort: 'კვი_ორშ_სამ_ოთხ_ხუთ_პარ_შაბ'.split('_'),
         weekdaysMin: 'კვ_ორ_სა_ოთ_ხუ_პა_შა'.split('_'),
@@ -30959,7 +31088,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[დღეს] LT[-ზე]',
@@ -30967,18 +31096,18 @@
           lastDay: '[გუშინ] LT[-ზე]',
           nextWeek: '[შემდეგ] dddd LT[-ზე]',
           lastWeek: '[წინა] dddd LT-ზე',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
-          future: function(e) {
+          future: function (e) {
             return e.replace(
               /(\u10ec\u10d0\u10db|\u10ec\u10e3\u10d7|\u10e1\u10d0\u10d0\u10d7|\u10ec\u10d4\u10da|\u10d3\u10e6|\u10d7\u10d5)(\u10d8|\u10d4)/,
-              function(e, t, i) {
+              function (e, t, i) {
                 return 'ი' === i ? t + 'ში' : t + i + 'ში';
               }
             );
           },
-          past: function(e) {
+          past: function (e) {
             return /(\u10ec\u10d0\u10db\u10d8|\u10ec\u10e3\u10d7\u10d8|\u10e1\u10d0\u10d0\u10d7\u10d8|\u10d3\u10e6\u10d4|\u10d7\u10d5\u10d4)/.test(
               e
             )
@@ -30998,10 +31127,11 @@
           M: 'თვე',
           MM: '%d თვე',
           y: 'წელი',
-          yy: '%d წელი'
+          yy: '%d წელი',
         },
-        dayOfMonthOrdinalParse: /0|1-\u10da\u10d8|\u10db\u10d4-\d{1,2}|\d{1,2}-\u10d4/,
-        ordinal: function(e) {
+        dayOfMonthOrdinalParse:
+          /0|1-\u10da\u10d8|\u10db\u10d4-\d{1,2}|\d{1,2}-\u10d4/,
+        ordinal: function (e) {
           return 0 === e
             ? e
             : 1 === e
@@ -31010,7 +31140,7 @@
             ? 'მე-' + e
             : e + '-ე';
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       });
     var En = {
         0: '-ші',
@@ -31032,19 +31162,21 @@
         70: '-ші',
         80: '-ші',
         90: '-шы',
-        100: '-ші'
+        100: '-ші',
       },
       Cn =
         (f.defineLocale('kk', {
-          months: 'қаңтар_ақпан_наурыз_сәуір_мамыр_маусым_шілде_тамыз_қыркүйек_қазан_қараша_желтоқсан'.split(
-            '_'
-          ),
+          months:
+            'қаңтар_ақпан_наурыз_сәуір_мамыр_маусым_шілде_тамыз_қыркүйек_қазан_қараша_желтоқсан'.split(
+              '_'
+            ),
           monthsShort: 'қаң_ақп_нау_сәу_мам_мау_шіл_там_қыр_қаз_қар_жел'.split(
             '_'
           ),
-          weekdays: 'жексенбі_дүйсенбі_сейсенбі_сәрсенбі_бейсенбі_жұма_сенбі'.split(
-            '_'
-          ),
+          weekdays:
+            'жексенбі_дүйсенбі_сейсенбі_сәрсенбі_бейсенбі_жұма_сенбі'.split(
+              '_'
+            ),
           weekdaysShort: 'жек_дүй_сей_сәр_бей_жұм_сен'.split('_'),
           weekdaysMin: 'жк_дй_сй_ср_бй_жм_сн'.split('_'),
           longDateFormat: {
@@ -31053,7 +31185,7 @@
             L: 'DD.MM.YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[Бүгін сағат] LT',
@@ -31061,7 +31193,7 @@
             nextWeek: 'dddd [сағат] LT',
             lastDay: '[Кеше сағат] LT',
             lastWeek: '[Өткен аптаның] dddd [сағат] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s ішінде',
@@ -31077,13 +31209,13 @@
             M: 'бір ай',
             MM: '%d ай',
             y: 'бір жыл',
-            yy: '%d жыл'
+            yy: '%d жыл',
           },
           dayOfMonthOrdinalParse: /\d{1,2}-(\u0448\u0456|\u0448\u044b)/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             return e + (En[e] || En[e % 10] || En[100 <= e ? 100 : null]);
           },
-          week: { dow: 1, doy: 7 }
+          week: { dow: 1, doy: 7 },
         }),
         {
           1: '១',
@@ -31095,7 +31227,7 @@
           7: '៧',
           8: '៨',
           9: '៩',
-          0: '០'
+          0: '០',
         }),
       Hn = {
         '១': '1',
@@ -31107,16 +31239,18 @@
         '៧': '7',
         '៨': '8',
         '៩': '9',
-        '០': '0'
+        '០': '0',
       },
       jn =
         (f.defineLocale('km', {
-          months: 'មករា_កុម្ភៈ_មីនា_មេសា_ឧសភា_មិថុនា_កក្កដា_សីហា_កញ្ញា_តុលា_វិច្ឆិកា_ធ្នូ'.split(
-            '_'
-          ),
-          monthsShort: 'មករា_កុម្ភៈ_មីនា_មេសា_ឧសភា_មិថុនា_កក្កដា_សីហា_កញ្ញា_តុលា_វិច្ឆិកា_ធ្នូ'.split(
-            '_'
-          ),
+          months:
+            'មករា_កុម្ភៈ_មីនា_មេសា_ឧសភា_មិថុនា_កក្កដា_សីហា_កញ្ញា_តុលា_វិច្ឆិកា_ធ្នូ'.split(
+              '_'
+            ),
+          monthsShort:
+            'មករា_កុម្ភៈ_មីនា_មេសា_ឧសភា_មិថុនា_កក្កដា_សីហា_កញ្ញា_តុលា_វិច្ឆិកា_ធ្នូ'.split(
+              '_'
+            ),
           weekdays: 'អាទិត្យ_ច័ន្ទ_អង្គារ_ពុធ_ព្រហស្បតិ៍_សុក្រ_សៅរ៍'.split('_'),
           weekdaysShort: 'អា_ច_អ_ព_ព្រ_សុ_ស'.split('_'),
           weekdaysMin: 'អា_ច_អ_ព_ព្រ_សុ_ស'.split('_'),
@@ -31127,13 +31261,14 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
-          meridiemParse: /\u1796\u17d2\u179a\u17b9\u1780|\u179b\u17d2\u1784\u17b6\u1785/,
-          isPM: function(e) {
+          meridiemParse:
+            /\u1796\u17d2\u179a\u17b9\u1780|\u179b\u17d2\u1784\u17b6\u1785/,
+          isPM: function (e) {
             return 'ល្ងាច' === e;
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'ព្រឹក' : 'ល្ងាច';
           },
           calendar: {
@@ -31142,7 +31277,7 @@
             nextWeek: 'dddd [ម៉ោង] LT',
             lastDay: '[ម្សិលមិញ ម៉ោង] LT',
             lastWeek: 'dddd [សប្តាហ៍មុន] [ម៉ោង] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%sទៀត',
@@ -31158,24 +31293,24 @@
             M: 'មួយខែ',
             MM: '%d ខែ',
             y: 'មួយឆ្នាំ',
-            yy: '%d ឆ្នាំ'
+            yy: '%d ឆ្នាំ',
           },
           dayOfMonthOrdinalParse: /\u1791\u17b8\d{1,2}/,
           ordinal: 'ទី%d',
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u17e1\u17e2\u17e3\u17e4\u17e5\u17e6\u17e7\u17e8\u17e9\u17e0]/g,
-              function(e) {
+              function (e) {
                 return Hn[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return Cn[e];
             });
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         {
           1: '೧',
@@ -31187,7 +31322,7 @@
           7: '೭',
           8: '೮',
           9: '೯',
-          0: '೦'
+          0: '೦',
         }),
       Pn = {
         '೧': '1',
@@ -31199,20 +31334,23 @@
         '೭': '7',
         '೮': '8',
         '೯': '9',
-        '೦': '0'
+        '೦': '0',
       },
       On =
         (f.defineLocale('kn', {
-          months: 'ಜನವರಿ_ಫೆಬ್ರವರಿ_ಮಾರ್ಚ್_ಏಪ್ರಿಲ್_ಮೇ_ಜೂನ್_ಜುಲೈ_ಆಗಸ್ಟ್_ಸೆಪ್ಟೆಂಬರ್_ಅಕ್ಟೋಬರ್_ನವೆಂಬರ್_ಡಿಸೆಂಬರ್'.split(
-            '_'
-          ),
-          monthsShort: 'ಜನ_ಫೆಬ್ರ_ಮಾರ್ಚ್_ಏಪ್ರಿಲ್_ಮೇ_ಜೂನ್_ಜುಲೈ_ಆಗಸ್ಟ್_ಸೆಪ್ಟೆಂ_ಅಕ್ಟೋ_ನವೆಂ_ಡಿಸೆಂ'.split(
-            '_'
-          ),
+          months:
+            'ಜನವರಿ_ಫೆಬ್ರವರಿ_ಮಾರ್ಚ್_ಏಪ್ರಿಲ್_ಮೇ_ಜೂನ್_ಜುಲೈ_ಆಗಸ್ಟ್_ಸೆಪ್ಟೆಂಬರ್_ಅಕ್ಟೋಬರ್_ನವೆಂಬರ್_ಡಿಸೆಂಬರ್'.split(
+              '_'
+            ),
+          monthsShort:
+            'ಜನ_ಫೆಬ್ರ_ಮಾರ್ಚ್_ಏಪ್ರಿಲ್_ಮೇ_ಜೂನ್_ಜುಲೈ_ಆಗಸ್ಟ್_ಸೆಪ್ಟೆಂ_ಅಕ್ಟೋ_ನವೆಂ_ಡಿಸೆಂ'.split(
+              '_'
+            ),
           monthsParseExact: !0,
-          weekdays: 'ಭಾನುವಾರ_ಸೋಮವಾರ_ಮಂಗಳವಾರ_ಬುಧವಾರ_ಗುರುವಾರ_ಶುಕ್ರವಾರ_ಶನಿವಾರ'.split(
-            '_'
-          ),
+          weekdays:
+            'ಭಾನುವಾರ_ಸೋಮವಾರ_ಮಂಗಳವಾರ_ಬುಧವಾರ_ಗುರುವಾರ_ಶುಕ್ರವಾರ_ಶನಿವಾರ'.split(
+              '_'
+            ),
           weekdaysShort: 'ಭಾನು_ಸೋಮ_ಮಂಗಳ_ಬುಧ_ಗುರು_ಶುಕ್ರ_ಶನಿ'.split('_'),
           weekdaysMin: 'ಭಾ_ಸೋ_ಮಂ_ಬು_ಗು_ಶು_ಶ'.split('_'),
           longDateFormat: {
@@ -31221,7 +31359,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, A h:mm',
-            LLLL: 'dddd, D MMMM YYYY, A h:mm'
+            LLLL: 'dddd, D MMMM YYYY, A h:mm',
           },
           calendar: {
             sameDay: '[ಇಂದು] LT',
@@ -31229,7 +31367,7 @@
             nextWeek: 'dddd, LT',
             lastDay: '[ನಿನ್ನೆ] LT',
             lastWeek: '[ಕೊನೆಯ] dddd, LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s ನಂತರ',
@@ -31245,23 +31383,24 @@
             M: 'ಒಂದು ತಿಂಗಳು',
             MM: '%d ತಿಂಗಳು',
             y: 'ಒಂದು ವರ್ಷ',
-            yy: '%d ವರ್ಷ'
+            yy: '%d ವರ್ಷ',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u0ce7\u0ce8\u0ce9\u0cea\u0ceb\u0cec\u0ced\u0cee\u0cef\u0ce6]/g,
-              function(e) {
+              function (e) {
                 return Pn[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return jn[e];
             });
           },
-          meridiemParse: /\u0cb0\u0cbe\u0ca4\u0ccd\u0cb0\u0cbf|\u0cac\u0cc6\u0cb3\u0cbf\u0c97\u0ccd\u0c97\u0cc6|\u0cae\u0ca7\u0ccd\u0caf\u0cbe\u0cb9\u0ccd\u0ca8|\u0cb8\u0c82\u0c9c\u0cc6/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u0cb0\u0cbe\u0ca4\u0ccd\u0cb0\u0cbf|\u0cac\u0cc6\u0cb3\u0cbf\u0c97\u0ccd\u0c97\u0cc6|\u0cae\u0ca7\u0ccd\u0caf\u0cbe\u0cb9\u0ccd\u0ca8|\u0cb8\u0c82\u0c9c\u0cc6/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'ರಾತ್ರಿ' === t
@@ -31279,7 +31418,7 @@
                 : void 0
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 4
               ? 'ರಾತ್ರಿ'
               : e < 10
@@ -31291,18 +31430,17 @@
               : 'ರಾತ್ರಿ';
           },
           dayOfMonthOrdinalParse: /\d{1,2}(\u0ca8\u0cc6\u0cd5)/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             return e + 'ನೇ';
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         f.defineLocale('ko', {
           months: '1월_2월_3월_4월_5월_6월_7월_8월_9월_10월_11월_12월'.split(
             '_'
           ),
-          monthsShort: '1월_2월_3월_4월_5월_6월_7월_8월_9월_10월_11월_12월'.split(
-            '_'
-          ),
+          monthsShort:
+            '1월_2월_3월_4월_5월_6월_7월_8월_9월_10월_11월_12월'.split('_'),
           weekdays: '일요일_월요일_화요일_수요일_목요일_금요일_토요일'.split(
             '_'
           ),
@@ -31318,7 +31456,7 @@
             l: 'YYYY.MM.DD.',
             ll: 'YYYY년 MMMM D일',
             lll: 'YYYY년 MMMM D일 A h:mm',
-            llll: 'YYYY년 MMMM D일 dddd A h:mm'
+            llll: 'YYYY년 MMMM D일 dddd A h:mm',
           },
           calendar: {
             sameDay: '오늘 LT',
@@ -31326,7 +31464,7 @@
             nextWeek: 'dddd LT',
             lastDay: '어제 LT',
             lastWeek: '지난주 dddd LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s 후',
@@ -31342,10 +31480,10 @@
             M: '한 달',
             MM: '%d달',
             y: '일 년',
-            yy: '%d년'
+            yy: '%d년',
           },
           dayOfMonthOrdinalParse: /\d{1,2}(\uc77c|\uc6d4|\uc8fc)/,
-          ordinal: function(e, t) {
+          ordinal: function (e, t) {
             switch (t) {
               case 'd':
               case 'D':
@@ -31361,12 +31499,12 @@
             }
           },
           meridiemParse: /\uc624\uc804|\uc624\ud6c4/,
-          isPM: function(e) {
+          isPM: function (e) {
             return '오후' === e;
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? '오전' : '오후';
-          }
+          },
         }),
         {
           1: '١',
@@ -31378,7 +31516,7 @@
           7: '٧',
           8: '٨',
           9: '٩',
-          0: '٠'
+          0: '٠',
         }),
       An = {
         '١': '1',
@@ -31390,7 +31528,7 @@
         '٧': '7',
         '٨': '8',
         '٩': '9',
-        '٠': '0'
+        '٠': '0',
       },
       $n =
         (f.defineLocale('ku', {
@@ -31406,15 +31544,17 @@
             'ئەیلوول',
             'تشرینی یەكەم',
             'تشرینی دووەم',
-            'كانونی یەکەم'
+            'كانونی یەکەم',
           ]),
           monthsShort: it,
-          weekdays: 'یه‌كشه‌ممه‌_دووشه‌ممه‌_سێشه‌ممه‌_چوارشه‌ممه‌_پێنجشه‌ممه‌_هه‌ینی_شه‌ممه‌'.split(
-            '_'
-          ),
-          weekdaysShort: 'یه‌كشه‌م_دووشه‌م_سێشه‌م_چوارشه‌م_پێنجشه‌م_هه‌ینی_شه‌ممه‌'.split(
-            '_'
-          ),
+          weekdays:
+            'یه‌كشه‌ممه‌_دووشه‌ممه‌_سێشه‌ممه‌_چوارشه‌ممه‌_پێنجشه‌ممه‌_هه‌ینی_شه‌ممه‌'.split(
+              '_'
+            ),
+          weekdaysShort:
+            'یه‌كشه‌م_دووشه‌م_سێشه‌م_چوارشه‌م_پێنجشه‌م_هه‌ینی_شه‌ممه‌'.split(
+              '_'
+            ),
           weekdaysMin: 'ی_د_س_چ_پ_ه_ش'.split('_'),
           weekdaysParseExact: !0,
           longDateFormat: {
@@ -31423,13 +31563,14 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
-          meridiemParse: /\u0626\u06ce\u0648\u0627\u0631\u0647\u200c|\u0628\u0647\u200c\u06cc\u0627\u0646\u06cc/,
-          isPM: function(e) {
+          meridiemParse:
+            /\u0626\u06ce\u0648\u0627\u0631\u0647\u200c|\u0628\u0647\u200c\u06cc\u0627\u0646\u06cc/,
+          isPM: function (e) {
             return /\u0626\u06ce\u0648\u0627\u0631\u0647\u200c/.test(e);
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'به‌یانی' : 'ئێواره‌';
           },
           calendar: {
@@ -31438,7 +31579,7 @@
             nextWeek: 'dddd [كاتژمێر] LT',
             lastDay: '[دوێنێ كاتژمێر] LT',
             lastWeek: 'dddd [كاتژمێر] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'له‌ %s',
@@ -31454,26 +31595,26 @@
             M: 'یه‌ك مانگ',
             MM: '%d مانگ',
             y: 'یه‌ك ساڵ',
-            yy: '%d ساڵ'
+            yy: '%d ساڵ',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e
               .replace(
                 /[\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669\u0660]/g,
-                function(e) {
+                function (e) {
                   return An[e];
                 }
               )
               .replace(/\u060c/g, ',');
           },
-          postformat: function(e) {
+          postformat: function (e) {
             return e
-              .replace(/\d/g, function(e) {
+              .replace(/\d/g, function (e) {
                 return On[e];
               })
               .replace(/,/g, '،');
           },
-          week: { dow: 6, doy: 12 }
+          week: { dow: 6, doy: 12 },
         }),
         {
           0: '-чү',
@@ -31495,7 +31636,7 @@
           70: '-чи',
           80: '-чи',
           90: '-чу',
-          100: '-чү'
+          100: '-чү',
         });
     function Wn(e, t, i, n) {
       var s = {
@@ -31503,7 +31644,7 @@
         h: ['eng Stonn', 'enger Stonn'],
         d: ['een Dag', 'engem Dag'],
         M: ['ee Mount', 'engem Mount'],
-        y: ['ee Joer', 'engem Joer']
+        y: ['ee Joer', 'engem Joer'],
       };
       return t ? s[i][0] : s[i][1];
     }
@@ -31520,15 +31661,15 @@
       return Nn((e /= 1e3));
     }
     f.defineLocale('ky', {
-      months: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split(
-        '_'
-      ),
+      months:
+        'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split(
+          '_'
+        ),
       monthsShort: 'янв_фев_март_апр_май_июнь_июль_авг_сен_окт_ноя_дек'.split(
         '_'
       ),
-      weekdays: 'Жекшемби_Дүйшөмбү_Шейшемби_Шаршемби_Бейшемби_Жума_Ишемби'.split(
-        '_'
-      ),
+      weekdays:
+        'Жекшемби_Дүйшөмбү_Шейшемби_Шаршемби_Бейшемби_Жума_Ишемби'.split('_'),
       weekdaysShort: 'Жек_Дүй_Шей_Шар_Бей_Жум_Ише'.split('_'),
       weekdaysMin: 'Жк_Дй_Шй_Шр_Бй_Жм_Иш'.split('_'),
       longDateFormat: {
@@ -31537,7 +31678,7 @@
         L: 'DD.MM.YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY HH:mm',
-        LLLL: 'dddd, D MMMM YYYY HH:mm'
+        LLLL: 'dddd, D MMMM YYYY HH:mm',
       },
       calendar: {
         sameDay: '[Бүгүн саат] LT',
@@ -31545,7 +31686,7 @@
         nextWeek: 'dddd [саат] LT',
         lastDay: '[Кечээ саат] LT',
         lastWeek: '[Өткөн аптанын] dddd [күнү] [саат] LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: '%s ичинде',
@@ -31561,25 +31702,29 @@
         M: 'бир ай',
         MM: '%d ай',
         y: 'бир жыл',
-        yy: '%d жыл'
+        yy: '%d жыл',
       },
-      dayOfMonthOrdinalParse: /\d{1,2}-(\u0447\u0438|\u0447\u044b|\u0447\u04af|\u0447\u0443)/,
-      ordinal: function(e) {
+      dayOfMonthOrdinalParse:
+        /\d{1,2}-(\u0447\u0438|\u0447\u044b|\u0447\u04af|\u0447\u0443)/,
+      ordinal: function (e) {
         return e + ($n[e] || $n[e % 10] || $n[100 <= e ? 100 : null]);
       },
-      week: { dow: 1, doy: 7 }
+      week: { dow: 1, doy: 7 },
     }),
       f.defineLocale('lb', {
-        months: 'Januar_Februar_Mäerz_Abrëll_Mee_Juni_Juli_August_September_Oktober_November_Dezember'.split(
-          '_'
-        ),
-        monthsShort: 'Jan._Febr._Mrz._Abr._Mee_Jun._Jul._Aug._Sept._Okt._Nov._Dez.'.split(
-          '_'
-        ),
+        months:
+          'Januar_Februar_Mäerz_Abrëll_Mee_Juni_Juli_August_September_Oktober_November_Dezember'.split(
+            '_'
+          ),
+        monthsShort:
+          'Jan._Febr._Mrz._Abr._Mee_Jun._Jul._Aug._Sept._Okt._Nov._Dez.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'Sonndeg_Méindeg_Dënschdeg_Mëttwoch_Donneschdeg_Freideg_Samschdeg'.split(
-          '_'
-        ),
+        weekdays:
+          'Sonndeg_Méindeg_Dënschdeg_Mëttwoch_Donneschdeg_Freideg_Samschdeg'.split(
+            '_'
+          ),
         weekdaysShort: 'So._Mé._Dë._Më._Do._Fr._Sa.'.split('_'),
         weekdaysMin: 'So_Mé_Dë_Më_Do_Fr_Sa'.split('_'),
         weekdaysParseExact: !0,
@@ -31589,7 +31734,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY H:mm [Auer]',
-          LLLL: 'dddd, D. MMMM YYYY H:mm [Auer]'
+          LLLL: 'dddd, D. MMMM YYYY H:mm [Auer]',
         },
         calendar: {
           sameDay: '[Haut um] LT',
@@ -31597,7 +31742,7 @@
           nextDay: '[Muer um] LT',
           nextWeek: 'dddd [um] LT',
           lastDay: '[Gëschter um] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 2:
               case 4:
@@ -31605,13 +31750,13 @@
               default:
                 return '[Leschte] dddd [um] LT';
             }
-          }
+          },
         },
         relativeTime: {
-          future: function(e) {
+          future: function (e) {
             return Nn(e.substr(0, e.indexOf(' '))) ? 'a ' + e : 'an ' + e;
           },
-          past: function(e) {
+          past: function (e) {
             return Nn(e.substr(0, e.indexOf(' '))) ? 'viru ' + e : 'virun ' + e;
           },
           s: 'e puer Sekonnen',
@@ -31625,19 +31770,21 @@
           M: Wn,
           MM: '%d Méint',
           y: Wn,
-          yy: '%d Joer'
+          yy: '%d Joer',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('lo', {
-        months: 'ມັງກອນ_ກຸມພາ_ມີນາ_ເມສາ_ພຶດສະພາ_ມິຖຸນາ_ກໍລະກົດ_ສິງຫາ_ກັນຍາ_ຕຸລາ_ພະຈິກ_ທັນວາ'.split(
-          '_'
-        ),
-        monthsShort: 'ມັງກອນ_ກຸມພາ_ມີນາ_ເມສາ_ພຶດສະພາ_ມິຖຸນາ_ກໍລະກົດ_ສິງຫາ_ກັນຍາ_ຕຸລາ_ພະຈິກ_ທັນວາ'.split(
-          '_'
-        ),
+        months:
+          'ມັງກອນ_ກຸມພາ_ມີນາ_ເມສາ_ພຶດສະພາ_ມິຖຸນາ_ກໍລະກົດ_ສິງຫາ_ກັນຍາ_ຕຸລາ_ພະຈິກ_ທັນວາ'.split(
+            '_'
+          ),
+        monthsShort:
+          'ມັງກອນ_ກຸມພາ_ມີນາ_ເມສາ_ພຶດສະພາ_ມິຖຸນາ_ກໍລະກົດ_ສິງຫາ_ກັນຍາ_ຕຸລາ_ພະຈິກ_ທັນວາ'.split(
+            '_'
+          ),
         weekdays: 'ອາທິດ_ຈັນ_ອັງຄານ_ພຸດ_ພະຫັດ_ສຸກ_ເສົາ'.split('_'),
         weekdaysShort: 'ທິດ_ຈັນ_ອັງຄານ_ພຸດ_ພະຫັດ_ສຸກ_ເສົາ'.split('_'),
         weekdaysMin: 'ທ_ຈ_ອຄ_ພ_ພຫ_ສກ_ສ'.split('_'),
@@ -31648,13 +31795,14 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'ວັນdddd D MMMM YYYY HH:mm'
+          LLLL: 'ວັນdddd D MMMM YYYY HH:mm',
         },
-        meridiemParse: /\u0e95\u0ead\u0e99\u0ec0\u0e8a\u0ebb\u0ec9\u0eb2|\u0e95\u0ead\u0e99\u0ec1\u0ea5\u0e87/,
-        isPM: function(e) {
+        meridiemParse:
+          /\u0e95\u0ead\u0e99\u0ec0\u0e8a\u0ebb\u0ec9\u0eb2|\u0e95\u0ead\u0e99\u0ec1\u0ea5\u0e87/,
+        isPM: function (e) {
           return 'ຕອນແລງ' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? 'ຕອນເຊົ້າ' : 'ຕອນແລງ';
         },
         calendar: {
@@ -31663,7 +31811,7 @@
           nextWeek: '[ວັນ]dddd[ໜ້າເວລາ] LT',
           lastDay: '[ມື້ວານນີ້ເວລາ] LT',
           lastWeek: '[ວັນ]dddd[ແລ້ວນີ້ເວລາ] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'ອີກ %s',
@@ -31679,12 +31827,12 @@
           M: '1 ເດືອນ',
           MM: '%d ເດືອນ',
           y: '1 ປີ',
-          yy: '%d ປີ'
+          yy: '%d ປີ',
         },
         dayOfMonthOrdinalParse: /(\u0e97\u0eb5\u0ec8)\d{1,2}/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return 'ທີ່' + e;
-        }
+        },
       });
     var In = {
       ss: 'sekundė_sekundžių_sekundes',
@@ -31697,7 +31845,7 @@
       M: 'mėnuo_mėnesio_mėnesį',
       MM: 'mėnesiai_mėnesių_mėnesius',
       y: 'metai_metų_metus',
-      yy: 'metai_metų_metus'
+      yy: 'metai_metų_metus',
     };
     function zn(e, t, i, n) {
       return t ? Rn(i)[0] : n ? Rn(i)[1] : Rn(i)[2];
@@ -31720,23 +31868,27 @@
     }
     f.defineLocale('lt', {
       months: {
-        format: 'sausio_vasario_kovo_balandžio_gegužės_birželio_liepos_rugpjūčio_rugsėjo_spalio_lapkričio_gruodžio'.split(
-          '_'
-        ),
-        standalone: 'sausis_vasaris_kovas_balandis_gegužė_birželis_liepa_rugpjūtis_rugsėjis_spalis_lapkritis_gruodis'.split(
-          '_'
-        ),
-        isFormat: /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?|MMMM?(\[[^\[\]]*\]|\s)+D[oD]?/
+        format:
+          'sausio_vasario_kovo_balandžio_gegužės_birželio_liepos_rugpjūčio_rugsėjo_spalio_lapkričio_gruodžio'.split(
+            '_'
+          ),
+        standalone:
+          'sausis_vasaris_kovas_balandis_gegužė_birželis_liepa_rugpjūtis_rugsėjis_spalis_lapkritis_gruodis'.split(
+            '_'
+          ),
+        isFormat: /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?|MMMM?(\[[^\[\]]*\]|\s)+D[oD]?/,
       },
       monthsShort: 'sau_vas_kov_bal_geg_bir_lie_rgp_rgs_spa_lap_grd'.split('_'),
       weekdays: {
-        format: 'sekmadienį_pirmadienį_antradienį_trečiadienį_ketvirtadienį_penktadienį_šeštadienį'.split(
-          '_'
-        ),
-        standalone: 'sekmadienis_pirmadienis_antradienis_trečiadienis_ketvirtadienis_penktadienis_šeštadienis'.split(
-          '_'
-        ),
-        isFormat: /dddd HH:mm/
+        format:
+          'sekmadienį_pirmadienį_antradienį_trečiadienį_ketvirtadienį_penktadienį_šeštadienį'.split(
+            '_'
+          ),
+        standalone:
+          'sekmadienis_pirmadienis_antradienis_trečiadienis_ketvirtadienis_penktadienis_šeštadienis'.split(
+            '_'
+          ),
+        isFormat: /dddd HH:mm/,
       },
       weekdaysShort: 'Sek_Pir_Ant_Tre_Ket_Pen_Šeš'.split('_'),
       weekdaysMin: 'S_P_A_T_K_Pn_Š'.split('_'),
@@ -31751,7 +31903,7 @@
         l: 'YYYY-MM-DD',
         ll: 'YYYY [m.] MMMM D [d.]',
         lll: 'YYYY [m.] MMMM D [d.], HH:mm [val.]',
-        llll: 'YYYY [m.] MMMM D [d.], ddd, HH:mm [val.]'
+        llll: 'YYYY [m.] MMMM D [d.], ddd, HH:mm [val.]',
       },
       calendar: {
         sameDay: '[Šiandien] LT',
@@ -31759,12 +31911,12 @@
         nextWeek: 'dddd LT',
         lastDay: '[Vakar] LT',
         lastWeek: '[Praėjusį] dddd LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: 'po %s',
         past: 'prieš %s',
-        s: function(e, t, i, n) {
+        s: function (e, t, i, n) {
           return t
             ? 'kelios sekundės'
             : n
@@ -31781,13 +31933,13 @@
         M: zn,
         MM: qn,
         y: zn,
-        yy: qn
+        yy: qn,
       },
       dayOfMonthOrdinalParse: /\d{1,2}-oji/,
-      ordinal: function(e) {
+      ordinal: function (e) {
         return e + '-oji';
       },
-      week: { dow: 1, doy: 4 }
+      week: { dow: 1, doy: 4 },
     });
     var Bn = {
       ss: 'sekundes_sekundēm_sekunde_sekundes'.split('_'),
@@ -31800,7 +31952,7 @@
       M: 'mēneša_mēnešiem_mēnesis_mēneši'.split('_'),
       MM: 'mēneša_mēnešiem_mēnesis_mēneši'.split('_'),
       y: 'gada_gadiem_gads_gadi'.split('_'),
-      yy: 'gada_gadiem_gads_gadi'.split('_')
+      yy: 'gada_gadiem_gads_gadi'.split('_'),
     };
     function Vn(e, t, i) {
       return i
@@ -31818,13 +31970,15 @@
       return Vn(Bn[i], e, t);
     }
     f.defineLocale('lv', {
-      months: 'janvāris_februāris_marts_aprīlis_maijs_jūnijs_jūlijs_augusts_septembris_oktobris_novembris_decembris'.split(
-        '_'
-      ),
+      months:
+        'janvāris_februāris_marts_aprīlis_maijs_jūnijs_jūlijs_augusts_septembris_oktobris_novembris_decembris'.split(
+          '_'
+        ),
       monthsShort: 'jan_feb_mar_apr_mai_jūn_jūl_aug_sep_okt_nov_dec'.split('_'),
-      weekdays: 'svētdiena_pirmdiena_otrdiena_trešdiena_ceturtdiena_piektdiena_sestdiena'.split(
-        '_'
-      ),
+      weekdays:
+        'svētdiena_pirmdiena_otrdiena_trešdiena_ceturtdiena_piektdiena_sestdiena'.split(
+          '_'
+        ),
       weekdaysShort: 'Sv_P_O_T_C_Pk_S'.split('_'),
       weekdaysMin: 'Sv_P_O_T_C_Pk_S'.split('_'),
       weekdaysParseExact: !0,
@@ -31834,7 +31988,7 @@
         L: 'DD.MM.YYYY.',
         LL: 'YYYY. [gada] D. MMMM',
         LLL: 'YYYY. [gada] D. MMMM, HH:mm',
-        LLLL: 'YYYY. [gada] D. MMMM, dddd, HH:mm'
+        LLLL: 'YYYY. [gada] D. MMMM, dddd, HH:mm',
       },
       calendar: {
         sameDay: '[Šodien pulksten] LT',
@@ -31842,12 +31996,12 @@
         nextWeek: 'dddd [pulksten] LT',
         lastDay: '[Vakar pulksten] LT',
         lastWeek: '[Pagājušā] dddd [pulksten] LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: 'pēc %s',
         past: 'pirms %s',
-        s: function(e, t) {
+        s: function (e, t) {
           return t ? 'dažas sekundes' : 'dažām sekundēm';
         },
         ss: Gn,
@@ -31860,11 +32014,11 @@
         M: Xn,
         MM: Gn,
         y: Xn,
-        yy: Gn
+        yy: Gn,
       },
       dayOfMonthOrdinalParse: /\d{1,2}\./,
       ordinal: '%d.',
-      week: { dow: 1, doy: 4 }
+      week: { dow: 1, doy: 4 },
     });
     var Un = {
       words: {
@@ -31875,19 +32029,19 @@
         hh: ['sat', 'sata', 'sati'],
         dd: ['dan', 'dana', 'dana'],
         MM: ['mjesec', 'mjeseca', 'mjeseci'],
-        yy: ['godina', 'godine', 'godina']
+        yy: ['godina', 'godine', 'godina'],
       },
-      correctGrammaticalCase: function(e, t) {
+      correctGrammaticalCase: function (e, t) {
         return 1 === e ? t[0] : 2 <= e && e <= 4 ? t[1] : t[2];
       },
-      translate: function(e, t, i) {
+      translate: function (e, t, i) {
         var n = Un.words[i];
         return 1 === i.length
           ? t
             ? n[0]
             : n[1]
           : e + ' ' + Un.correctGrammaticalCase(e, n);
-      }
+      },
     };
     function Jn(e, t, i, n) {
       switch (i) {
@@ -31915,16 +32069,15 @@
       }
     }
     f.defineLocale('me', {
-      months: 'januar_februar_mart_april_maj_jun_jul_avgust_septembar_oktobar_novembar_decembar'.split(
-        '_'
-      ),
-      monthsShort: 'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split(
-        '_'
-      ),
+      months:
+        'januar_februar_mart_april_maj_jun_jul_avgust_septembar_oktobar_novembar_decembar'.split(
+          '_'
+        ),
+      monthsShort:
+        'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split('_'),
       monthsParseExact: !0,
-      weekdays: 'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split(
-        '_'
-      ),
+      weekdays:
+        'nedjelja_ponedjeljak_utorak_srijeda_četvrtak_petak_subota'.split('_'),
       weekdaysShort: 'ned._pon._uto._sri._čet._pet._sub.'.split('_'),
       weekdaysMin: 'ne_po_ut_sr_če_pe_su'.split('_'),
       weekdaysParseExact: !0,
@@ -31934,12 +32087,12 @@
         L: 'DD.MM.YYYY',
         LL: 'D. MMMM YYYY',
         LLL: 'D. MMMM YYYY H:mm',
-        LLLL: 'dddd, D. MMMM YYYY H:mm'
+        LLLL: 'dddd, D. MMMM YYYY H:mm',
       },
       calendar: {
         sameDay: '[danas u] LT',
         nextDay: '[sjutra u] LT',
-        nextWeek: function() {
+        nextWeek: function () {
           switch (this.day()) {
             case 0:
               return '[u] [nedjelju] [u] LT';
@@ -31955,7 +32108,7 @@
           }
         },
         lastDay: '[juče u] LT',
-        lastWeek: function() {
+        lastWeek: function () {
           return [
             '[prošle] [nedjelje] [u] LT',
             '[prošlog] [ponedjeljka] [u] LT',
@@ -31963,10 +32116,10 @@
             '[prošle] [srijede] [u] LT',
             '[prošlog] [četvrtka] [u] LT',
             '[prošlog] [petka] [u] LT',
-            '[prošle] [subote] [u] LT'
+            '[prošle] [subote] [u] LT',
           ][this.day()];
         },
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: 'za %s',
@@ -31982,19 +32135,21 @@
         M: 'mjesec',
         MM: Un.translate,
         y: 'godinu',
-        yy: Un.translate
+        yy: Un.translate,
       },
       dayOfMonthOrdinalParse: /\d{1,2}\./,
       ordinal: '%d.',
-      week: { dow: 1, doy: 7 }
+      week: { dow: 1, doy: 7 },
     }),
       f.defineLocale('mi', {
-        months: 'Kohi-tāte_Hui-tanguru_Poutū-te-rangi_Paenga-whāwhā_Haratua_Pipiri_Hōngoingoi_Here-turi-kōkā_Mahuru_Whiringa-ā-nuku_Whiringa-ā-rangi_Hakihea'.split(
-          '_'
-        ),
-        monthsShort: 'Kohi_Hui_Pou_Pae_Hara_Pipi_Hōngoi_Here_Mahu_Whi-nu_Whi-ra_Haki'.split(
-          '_'
-        ),
+        months:
+          'Kohi-tāte_Hui-tanguru_Poutū-te-rangi_Paenga-whāwhā_Haratua_Pipiri_Hōngoingoi_Here-turi-kōkā_Mahuru_Whiringa-ā-nuku_Whiringa-ā-rangi_Hakihea'.split(
+            '_'
+          ),
+        monthsShort:
+          'Kohi_Hui_Pou_Pae_Hara_Pipi_Hōngoi_Here_Mahu_Whi-nu_Whi-ra_Haki'.split(
+            '_'
+          ),
         monthsRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
         monthsStrictRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
         monthsShortRegex: /(?:['a-z\u0101\u014D\u016B]+\-?){1,3}/i,
@@ -32008,7 +32163,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY [i] HH:mm',
-          LLLL: 'dddd, D MMMM YYYY [i] HH:mm'
+          LLLL: 'dddd, D MMMM YYYY [i] HH:mm',
         },
         calendar: {
           sameDay: '[i teie mahana, i] LT',
@@ -32016,7 +32171,7 @@
           nextWeek: 'dddd [i] LT',
           lastDay: '[inanahi i] LT',
           lastWeek: 'dddd [whakamutunga i] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'i roto i %s',
@@ -32032,16 +32187,17 @@
           M: 'he marama',
           MM: '%d marama',
           y: 'he tau',
-          yy: '%d tau'
+          yy: '%d tau',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: '%dº',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('mk', {
-        months: 'јануари_февруари_март_април_мај_јуни_јули_август_септември_октомври_ноември_декември'.split(
-          '_'
-        ),
+        months:
+          'јануари_февруари_март_април_мај_јуни_јули_август_септември_октомври_ноември_декември'.split(
+            '_'
+          ),
         monthsShort: 'јан_фев_мар_апр_мај_јун_јул_авг_сеп_окт_ное_дек'.split(
           '_'
         ),
@@ -32056,14 +32212,14 @@
           L: 'D.MM.YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY H:mm',
-          LLLL: 'dddd, D MMMM YYYY H:mm'
+          LLLL: 'dddd, D MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[Денес во] LT',
           nextDay: '[Утре во] LT',
           nextWeek: '[Во] dddd [во] LT',
           lastDay: '[Вчера во] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
               case 3:
@@ -32076,7 +32232,7 @@
                 return '[Изминатиот] dddd [во] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'за %s',
@@ -32092,10 +32248,11 @@
           M: 'еден месец',
           MM: '%d месеци',
           y: 'една година',
-          yy: '%d години'
+          yy: '%d години',
         },
-        dayOfMonthOrdinalParse: /\d{1,2}-(\u0435\u0432|\u0435\u043d|\u0442\u0438|\u0432\u0438|\u0440\u0438|\u043c\u0438)/,
-        ordinal: function(e) {
+        dayOfMonthOrdinalParse:
+          /\d{1,2}-(\u0435\u0432|\u0435\u043d|\u0442\u0438|\u0432\u0438|\u0440\u0438|\u043c\u0438)/,
+        ordinal: function (e) {
           var t = e % 10,
             i = e % 100;
           return 0 === e
@@ -32112,19 +32269,22 @@
             ? e + '-ми'
             : e + '-ти';
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('ml', {
-        months: 'ജനുവരി_ഫെബ്രുവരി_മാർച്ച്_ഏപ്രിൽ_മേയ്_ജൂൺ_ജൂലൈ_ഓഗസ്റ്റ്_സെപ്റ്റംബർ_ഒക്ടോബർ_നവംബർ_ഡിസംബർ'.split(
-          '_'
-        ),
-        monthsShort: 'ജനു._ഫെബ്രു._മാർ._ഏപ്രി._മേയ്_ജൂൺ_ജൂലൈ._ഓഗ._സെപ്റ്റ._ഒക്ടോ._നവം._ഡിസം.'.split(
-          '_'
-        ),
+        months:
+          'ജനുവരി_ഫെബ്രുവരി_മാർച്ച്_ഏപ്രിൽ_മേയ്_ജൂൺ_ജൂലൈ_ഓഗസ്റ്റ്_സെപ്റ്റംബർ_ഒക്ടോബർ_നവംബർ_ഡിസംബർ'.split(
+            '_'
+          ),
+        monthsShort:
+          'ജനു._ഫെബ്രു._മാർ._ഏപ്രി._മേയ്_ജൂൺ_ജൂലൈ._ഓഗ._സെപ്റ്റ._ഒക്ടോ._നവം._ഡിസം.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'ഞായറാഴ്ച_തിങ്കളാഴ്ച_ചൊവ്വാഴ്ച_ബുധനാഴ്ച_വ്യാഴാഴ്ച_വെള്ളിയാഴ്ച_ശനിയാഴ്ച'.split(
-          '_'
-        ),
+        weekdays:
+          'ഞായറാഴ്ച_തിങ്കളാഴ്ച_ചൊവ്വാഴ്ച_ബുധനാഴ്ച_വ്യാഴാഴ്ച_വെള്ളിയാഴ്ച_ശനിയാഴ്ച'.split(
+            '_'
+          ),
         weekdaysShort: 'ഞായർ_തിങ്കൾ_ചൊവ്വ_ബുധൻ_വ്യാഴം_വെള്ളി_ശനി'.split('_'),
         weekdaysMin: 'ഞാ_തി_ചൊ_ബു_വ്യാ_വെ_ശ'.split('_'),
         longDateFormat: {
@@ -32133,7 +32293,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY, A h:mm -നു',
-          LLLL: 'dddd, D MMMM YYYY, A h:mm -നു'
+          LLLL: 'dddd, D MMMM YYYY, A h:mm -നു',
         },
         calendar: {
           sameDay: '[ഇന്ന്] LT',
@@ -32141,7 +32301,7 @@
           nextWeek: 'dddd, LT',
           lastDay: '[ഇന്നലെ] LT',
           lastWeek: '[കഴിഞ്ഞ] dddd, LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s കഴിഞ്ഞ്',
@@ -32157,10 +32317,11 @@
           M: 'ഒരു മാസം',
           MM: '%d മാസം',
           y: 'ഒരു വർഷം',
-          yy: '%d വർഷം'
+          yy: '%d വർഷം',
         },
-        meridiemParse: /\u0d30\u0d3e\u0d24\u0d4d\u0d30\u0d3f|\u0d30\u0d3e\u0d35\u0d3f\u0d32\u0d46|\u0d09\u0d1a\u0d4d\u0d1a \u0d15\u0d34\u0d3f\u0d1e\u0d4d\u0d1e\u0d4d|\u0d35\u0d48\u0d15\u0d41\u0d28\u0d4d\u0d28\u0d47\u0d30\u0d02|\u0d30\u0d3e\u0d24\u0d4d\u0d30\u0d3f/i,
-        meridiemHour: function(e, t) {
+        meridiemParse:
+          /\u0d30\u0d3e\u0d24\u0d4d\u0d30\u0d3f|\u0d30\u0d3e\u0d35\u0d3f\u0d32\u0d46|\u0d09\u0d1a\u0d4d\u0d1a \u0d15\u0d34\u0d3f\u0d1e\u0d4d\u0d1e\u0d4d|\u0d35\u0d48\u0d15\u0d41\u0d28\u0d4d\u0d28\u0d47\u0d30\u0d02|\u0d30\u0d3e\u0d24\u0d4d\u0d30\u0d3f/i,
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             ('രാത്രി' === t && 4 <= e) ||
@@ -32170,7 +32331,7 @@
               : e
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 4
             ? 'രാത്രി'
             : e < 12
@@ -32180,15 +32341,17 @@
             : e < 20
             ? 'വൈകുന്നേരം'
             : 'രാത്രി';
-        }
+        },
       }),
       f.defineLocale('mn', {
-        months: 'Нэгдүгээр сар_Хоёрдугаар сар_Гуравдугаар сар_Дөрөвдүгээр сар_Тавдугаар сар_Зургадугаар сар_Долдугаар сар_Наймдугаар сар_Есдүгээр сар_Аравдугаар сар_Арван нэгдүгээр сар_Арван хоёрдугаар сар'.split(
-          '_'
-        ),
-        monthsShort: '1 сар_2 сар_3 сар_4 сар_5 сар_6 сар_7 сар_8 сар_9 сар_10 сар_11 сар_12 сар'.split(
-          '_'
-        ),
+        months:
+          'Нэгдүгээр сар_Хоёрдугаар сар_Гуравдугаар сар_Дөрөвдүгээр сар_Тавдугаар сар_Зургадугаар сар_Долдугаар сар_Наймдугаар сар_Есдүгээр сар_Аравдугаар сар_Арван нэгдүгээр сар_Арван хоёрдугаар сар'.split(
+            '_'
+          ),
+        monthsShort:
+          '1 сар_2 сар_3 сар_4 сар_5 сар_6 сар_7 сар_8 сар_9 сар_10 сар_11 сар_12 сар'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: 'Ням_Даваа_Мягмар_Лхагва_Пүрэв_Баасан_Бямба'.split('_'),
         weekdaysShort: 'Ням_Дав_Мяг_Лха_Пүр_Баа_Бям'.split('_'),
@@ -32200,13 +32363,13 @@
           L: 'YYYY-MM-DD',
           LL: 'YYYY оны MMMMын D',
           LLL: 'YYYY оны MMMMын D HH:mm',
-          LLLL: 'dddd, YYYY оны MMMMын D HH:mm'
+          LLLL: 'dddd, YYYY оны MMMMын D HH:mm',
         },
         meridiemParse: /\u04ae\u04e8|\u04ae\u0425/i,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'ҮХ' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? 'ҮӨ' : 'ҮХ';
         },
         calendar: {
@@ -32215,7 +32378,7 @@
           nextWeek: '[Ирэх] dddd LT',
           lastDay: '[Өчигдөр] LT',
           lastWeek: '[Өнгөрсөн] dddd LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s дараа',
@@ -32231,10 +32394,10 @@
           M: Jn,
           MM: Jn,
           y: Jn,
-          yy: Jn
+          yy: Jn,
         },
         dayOfMonthOrdinalParse: /\d{1,2} \u04e9\u0434\u04e9\u0440/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'd':
             case 'D':
@@ -32243,7 +32406,7 @@
             default:
               return e;
           }
-        }
+        },
       });
     var Qn = {
         1: '१',
@@ -32255,7 +32418,7 @@
         7: '७',
         8: '८',
         9: '९',
-        0: '०'
+        0: '०',
       },
       Kn = {
         '१': '1',
@@ -32267,7 +32430,7 @@
         '७': '7',
         '८': '8',
         '९': '9',
-        '०': '0'
+        '०': '0',
       };
     function Zn(e, t, i, n) {
       var s = '';
@@ -32350,12 +32513,14 @@
       return s.replace(/%d/i, e);
     }
     f.defineLocale('mr', {
-      months: 'जानेवारी_फेब्रुवारी_मार्च_एप्रिल_मे_जून_जुलै_ऑगस्ट_सप्टेंबर_ऑक्टोबर_नोव्हेंबर_डिसेंबर'.split(
-        '_'
-      ),
-      monthsShort: 'जाने._फेब्रु._मार्च._एप्रि._मे._जून._जुलै._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
-        '_'
-      ),
+      months:
+        'जानेवारी_फेब्रुवारी_मार्च_एप्रिल_मे_जून_जुलै_ऑगस्ट_सप्टेंबर_ऑक्टोबर_नोव्हेंबर_डिसेंबर'.split(
+          '_'
+        ),
+      monthsShort:
+        'जाने._फेब्रु._मार्च._एप्रि._मे._जून._जुलै._ऑग._सप्टें._ऑक्टो._नोव्हें._डिसें.'.split(
+          '_'
+        ),
       monthsParseExact: !0,
       weekdays: 'रविवार_सोमवार_मंगळवार_बुधवार_गुरूवार_शुक्रवार_शनिवार'.split(
         '_'
@@ -32368,7 +32533,7 @@
         L: 'DD/MM/YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY, A h:mm वाजता',
-        LLLL: 'dddd, D MMMM YYYY, A h:mm वाजता'
+        LLLL: 'dddd, D MMMM YYYY, A h:mm वाजता',
       },
       calendar: {
         sameDay: '[आज] LT',
@@ -32376,7 +32541,7 @@
         nextWeek: 'dddd, LT',
         lastDay: '[काल] LT',
         lastWeek: '[मागील] dddd, LT',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: '%sमध्ये',
@@ -32392,23 +32557,24 @@
         M: Zn,
         MM: Zn,
         y: Zn,
-        yy: Zn
+        yy: Zn,
       },
-      preparse: function(e) {
+      preparse: function (e) {
         return e.replace(
           /[\u0967\u0968\u0969\u096a\u096b\u096c\u096d\u096e\u096f\u0966]/g,
-          function(e) {
+          function (e) {
             return Kn[e];
           }
         );
       },
-      postformat: function(e) {
-        return e.replace(/\d/g, function(e) {
+      postformat: function (e) {
+        return e.replace(/\d/g, function (e) {
           return Qn[e];
         });
       },
-      meridiemParse: /\u092a\u0939\u093e\u091f\u0947|\u0938\u0915\u093e\u0933\u0940|\u0926\u0941\u092a\u093e\u0930\u0940|\u0938\u093e\u092f\u0902\u0915\u093e\u0933\u0940|\u0930\u093e\u0924\u094d\u0930\u0940/,
-      meridiemHour: function(e, t) {
+      meridiemParse:
+        /\u092a\u0939\u093e\u091f\u0947|\u0938\u0915\u093e\u0933\u0940|\u0926\u0941\u092a\u093e\u0930\u0940|\u0938\u093e\u092f\u0902\u0915\u093e\u0933\u0940|\u0930\u093e\u0924\u094d\u0930\u0940/,
+      meridiemHour: function (e, t) {
         return (
           12 === e && (e = 0),
           'पहाटे' === t || 'सकाळी' === t
@@ -32420,7 +32586,7 @@
             : void 0
         );
       },
-      meridiem: function(e, t, i) {
+      meridiem: function (e, t, i) {
         return 0 <= e && e < 6
           ? 'पहाटे'
           : e < 12
@@ -32431,12 +32597,13 @@
           ? 'सायंकाळी'
           : 'रात्री';
       },
-      week: { dow: 0, doy: 6 }
+      week: { dow: 0, doy: 6 },
     }),
       f.defineLocale('ms-my', {
-        months: 'Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember'.split(
-          '_'
-        ),
+        months:
+          'Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ogs_Sep_Okt_Nov_Dis'.split(
           '_'
         ),
@@ -32449,10 +32616,10 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY [pukul] HH.mm',
-          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm'
+          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm',
         },
         meridiemParse: /pagi|tengahari|petang|malam/,
-        meridiemHour: function(e, t) {
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             'pagi' === t
@@ -32466,7 +32633,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 11
             ? 'pagi'
             : e < 15
@@ -32481,7 +32648,7 @@
           nextWeek: 'dddd [pukul] LT',
           lastDay: '[Kelmarin pukul] LT',
           lastWeek: 'dddd [lepas pukul] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'dalam %s',
@@ -32497,14 +32664,15 @@
           M: 'sebulan',
           MM: '%d bulan',
           y: 'setahun',
-          yy: '%d tahun'
+          yy: '%d tahun',
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('ms', {
-        months: 'Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember'.split(
-          '_'
-        ),
+        months:
+          'Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ogs_Sep_Okt_Nov_Dis'.split(
           '_'
         ),
@@ -32517,10 +32685,10 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY [pukul] HH.mm',
-          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm'
+          LLLL: 'dddd, D MMMM YYYY [pukul] HH.mm',
         },
         meridiemParse: /pagi|tengahari|petang|malam/,
-        meridiemHour: function(e, t) {
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             'pagi' === t
@@ -32534,7 +32702,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 11
             ? 'pagi'
             : e < 15
@@ -32549,7 +32717,7 @@
           nextWeek: 'dddd [pukul] LT',
           lastDay: '[Kelmarin pukul] LT',
           lastWeek: 'dddd [lepas pukul] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'dalam %s',
@@ -32565,20 +32733,22 @@
           M: 'sebulan',
           MM: '%d bulan',
           y: 'setahun',
-          yy: '%d tahun'
+          yy: '%d tahun',
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('mt', {
-        months: 'Jannar_Frar_Marzu_April_Mejju_Ġunju_Lulju_Awwissu_Settembru_Ottubru_Novembru_Diċembru'.split(
-          '_'
-        ),
+        months:
+          'Jannar_Frar_Marzu_April_Mejju_Ġunju_Lulju_Awwissu_Settembru_Ottubru_Novembru_Diċembru'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Fra_Mar_Apr_Mej_Ġun_Lul_Aww_Set_Ott_Nov_Diċ'.split(
           '_'
         ),
-        weekdays: 'Il-Ħadd_It-Tnejn_It-Tlieta_L-Erbgħa_Il-Ħamis_Il-Ġimgħa_Is-Sibt'.split(
-          '_'
-        ),
+        weekdays:
+          'Il-Ħadd_It-Tnejn_It-Tlieta_L-Erbgħa_Il-Ħamis_Il-Ġimgħa_Is-Sibt'.split(
+            '_'
+          ),
         weekdaysShort: 'Ħad_Tne_Tli_Erb_Ħam_Ġim_Sib'.split('_'),
         weekdaysMin: 'Ħa_Tn_Tl_Er_Ħa_Ġi_Si'.split('_'),
         longDateFormat: {
@@ -32587,7 +32757,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Illum fil-]LT',
@@ -32595,7 +32765,7 @@
           nextWeek: 'dddd [fil-]LT',
           lastDay: '[Il-bieraħ fil-]LT',
           lastWeek: 'dddd [li għadda] [fil-]LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'f’ %s',
@@ -32611,11 +32781,11 @@
           M: 'xahar',
           MM: '%d xhur',
           y: 'sena',
-          yy: '%d sni'
+          yy: '%d sni',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: '%dº',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       });
     var es = {
         1: '၁',
@@ -32627,7 +32797,7 @@
         7: '၇',
         8: '၈',
         9: '၉',
-        0: '၀'
+        0: '၀',
       },
       ts = {
         '၁': '1',
@@ -32639,19 +32809,19 @@
         '၇': '7',
         '၈': '8',
         '၉': '9',
-        '၀': '0'
+        '၀': '0',
       },
       is =
         (f.defineLocale('my', {
-          months: 'ဇန်နဝါရီ_ဖေဖော်ဝါရီ_မတ်_ဧပြီ_မေ_ဇွန်_ဇူလိုင်_သြဂုတ်_စက်တင်ဘာ_အောက်တိုဘာ_နိုဝင်ဘာ_ဒီဇင်ဘာ'.split(
-            '_'
-          ),
+          months:
+            'ဇန်နဝါရီ_ဖေဖော်ဝါရီ_မတ်_ဧပြီ_မေ_ဇွန်_ဇူလိုင်_သြဂုတ်_စက်တင်ဘာ_အောက်တိုဘာ_နိုဝင်ဘာ_ဒီဇင်ဘာ'.split(
+              '_'
+            ),
           monthsShort: 'ဇန်_ဖေ_မတ်_ပြီ_မေ_ဇွန်_လိုင်_သြ_စက်_အောက်_နို_ဒီ'.split(
             '_'
           ),
-          weekdays: 'တနင်္ဂနွေ_တနင်္လာ_အင်္ဂါ_ဗုဒ္ဓဟူး_ကြာသပတေး_သောကြာ_စနေ'.split(
-            '_'
-          ),
+          weekdays:
+            'တနင်္ဂနွေ_တနင်္လာ_အင်္ဂါ_ဗုဒ္ဓဟူး_ကြာသပတေး_သောကြာ_စနေ'.split('_'),
           weekdaysShort: 'နွေ_လာ_ဂါ_ဟူး_ကြာ_သော_နေ'.split('_'),
           weekdaysMin: 'နွေ_လာ_ဂါ_ဟူး_ကြာ_သော_နေ'.split('_'),
           longDateFormat: {
@@ -32660,7 +32830,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[ယနေ.] LT [မှာ]',
@@ -32668,7 +32838,7 @@
             nextWeek: 'dddd LT [မှာ]',
             lastDay: '[မနေ.က] LT [မှာ]',
             lastWeek: '[ပြီးခဲ့သော] dddd LT [မှာ]',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'လာမည့် %s မှာ',
@@ -32684,30 +32854,32 @@
             M: 'တစ်လ',
             MM: '%d လ',
             y: 'တစ်နှစ်',
-            yy: '%d နှစ်'
+            yy: '%d နှစ်',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u1041\u1042\u1043\u1044\u1045\u1046\u1047\u1048\u1049\u1040]/g,
-              function(e) {
+              function (e) {
                 return ts[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return es[e];
             });
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         f.defineLocale('nb', {
-          months: 'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split(
-            '_'
-          ),
-          monthsShort: 'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split(
-            '_'
-          ),
+          months:
+            'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split(
+              '_'
+            ),
+          monthsShort:
+            'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
           weekdays: 'søndag_mandag_tirsdag_onsdag_torsdag_fredag_lørdag'.split(
             '_'
@@ -32721,7 +32893,7 @@
             L: 'DD.MM.YYYY',
             LL: 'D. MMMM YYYY',
             LLL: 'D. MMMM YYYY [kl.] HH:mm',
-            LLLL: 'dddd D. MMMM YYYY [kl.] HH:mm'
+            LLLL: 'dddd D. MMMM YYYY [kl.] HH:mm',
           },
           calendar: {
             sameDay: '[i dag kl.] LT',
@@ -32729,7 +32901,7 @@
             nextWeek: 'dddd [kl.] LT',
             lastDay: '[i går kl.] LT',
             lastWeek: '[forrige] dddd [kl.] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'om %s',
@@ -32747,11 +32919,11 @@
             M: 'en måned',
             MM: '%d måneder',
             y: 'ett år',
-            yy: '%d år'
+            yy: '%d år',
           },
           dayOfMonthOrdinalParse: /\d{1,2}\./,
           ordinal: '%d.',
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         {
           1: '१',
@@ -32763,7 +32935,7 @@
           7: '७',
           8: '८',
           9: '९',
-          0: '०'
+          0: '०',
         }),
       ns = {
         '१': '1',
@@ -32775,20 +32947,21 @@
         '७': '7',
         '८': '8',
         '९': '9',
-        '०': '0'
+        '०': '0',
       },
       ss =
         (f.defineLocale('ne', {
-          months: 'जनवरी_फेब्रुवरी_मार्च_अप्रिल_मई_जुन_जुलाई_अगष्ट_सेप्टेम्बर_अक्टोबर_नोभेम्बर_डिसेम्बर'.split(
-            '_'
-          ),
-          monthsShort: 'जन._फेब्रु._मार्च_अप्रि._मई_जुन_जुलाई._अग._सेप्ट._अक्टो._नोभे._डिसे.'.split(
-            '_'
-          ),
+          months:
+            'जनवरी_फेब्रुवरी_मार्च_अप्रिल_मई_जुन_जुलाई_अगष्ट_सेप्टेम्बर_अक्टोबर_नोभेम्बर_डिसेम्बर'.split(
+              '_'
+            ),
+          monthsShort:
+            'जन._फेब्रु._मार्च_अप्रि._मई_जुन_जुलाई._अग._सेप्ट._अक्टो._नोभे._डिसे.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
-          weekdays: 'आइतबार_सोमबार_मङ्गलबार_बुधबार_बिहिबार_शुक्रबार_शनिबार'.split(
-            '_'
-          ),
+          weekdays:
+            'आइतबार_सोमबार_मङ्गलबार_बुधबार_बिहिबार_शुक्रबार_शनिबार'.split('_'),
           weekdaysShort: 'आइत._सोम._मङ्गल._बुध._बिहि._शुक्र._शनि.'.split('_'),
           weekdaysMin: 'आ._सो._मं._बु._बि._शु._श.'.split('_'),
           weekdaysParseExact: !0,
@@ -32798,23 +32971,24 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, Aको h:mm बजे',
-            LLLL: 'dddd, D MMMM YYYY, Aको h:mm बजे'
+            LLLL: 'dddd, D MMMM YYYY, Aको h:mm बजे',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u0967\u0968\u0969\u096a\u096b\u096c\u096d\u096e\u096f\u0966]/g,
-              function(e) {
+              function (e) {
                 return ns[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return is[e];
             });
           },
-          meridiemParse: /\u0930\u093e\u0924\u093f|\u092c\u093f\u0939\u093e\u0928|\u0926\u093f\u0909\u0901\u0938\u094b|\u0938\u093e\u0901\u091d/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u0930\u093e\u0924\u093f|\u092c\u093f\u0939\u093e\u0928|\u0926\u093f\u0909\u0901\u0938\u094b|\u0938\u093e\u0901\u091d/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'राति' === t
@@ -32832,7 +33006,7 @@
                 : void 0
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 3
               ? 'राति'
               : e < 12
@@ -32849,7 +33023,7 @@
             nextWeek: '[आउँदो] dddd[,] LT',
             lastDay: '[हिजो] LT',
             lastWeek: '[गएको] dddd[,] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%sमा',
@@ -32865,9 +33039,9 @@
             M: 'एक महिना',
             MM: '%d महिना',
             y: 'एक बर्ष',
-            yy: '%d बर्ष'
+            yy: '%d बर्ष',
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split(
           '_'
@@ -32885,27 +33059,32 @@
         /^sep/i,
         /^okt/i,
         /^nov/i,
-        /^dec/i
+        /^dec/i,
       ],
-      m = /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
+      m =
+        /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
       rs =
         (f.defineLocale('nl-be', {
-          months: 'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split(
-            '_'
-          ),
-          monthsShort: function(e, t) {
+          months:
+            'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split(
+              '_'
+            ),
+          monthsShort: function (e, t) {
             return e ? (/-MMM-/.test(t) ? as : ss)[e.month()] : ss;
           },
           monthsRegex: m,
           monthsShortRegex: m,
-          monthsStrictRegex: /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
-          monthsShortStrictRegex: /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
+          monthsStrictRegex:
+            /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
+          monthsShortStrictRegex:
+            /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
           monthsParse: h,
           longMonthsParse: h,
           shortMonthsParse: h,
-          weekdays: 'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split(
-            '_'
-          ),
+          weekdays:
+            'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split(
+              '_'
+            ),
           weekdaysShort: 'zo._ma._di._wo._do._vr._za.'.split('_'),
           weekdaysMin: 'zo_ma_di_wo_do_vr_za'.split('_'),
           weekdaysParseExact: !0,
@@ -32915,7 +33094,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[vandaag om] LT',
@@ -32923,7 +33102,7 @@
             nextWeek: 'dddd [om] LT',
             lastDay: '[gisteren om] LT',
             lastWeek: '[afgelopen] dddd [om] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'over %s',
@@ -32939,13 +33118,13 @@
             M: 'één maand',
             MM: '%d maanden',
             y: 'één jaar',
-            yy: '%d jaar'
+            yy: '%d jaar',
           },
           dayOfMonthOrdinalParse: /\d{1,2}(ste|de)/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             return e + (1 === e || 8 === e || 20 <= e ? 'ste' : 'de');
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split(
           '_'
@@ -32963,27 +33142,32 @@
         /^sep/i,
         /^okt/i,
         /^nov/i,
-        /^dec/i
+        /^dec/i,
       ],
-      be = /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
+      be =
+        /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
       ls =
         (f.defineLocale('nl', {
-          months: 'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split(
-            '_'
-          ),
-          monthsShort: function(e, t) {
+          months:
+            'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split(
+              '_'
+            ),
+          monthsShort: function (e, t) {
             return e ? (/-MMM-/.test(t) ? os : rs)[e.month()] : rs;
           },
           monthsRegex: be,
           monthsShortRegex: be,
-          monthsStrictRegex: /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
-          monthsShortStrictRegex: /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
+          monthsStrictRegex:
+            /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
+          monthsShortStrictRegex:
+            /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
           monthsParse: y,
           longMonthsParse: y,
           shortMonthsParse: y,
-          weekdays: 'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split(
-            '_'
-          ),
+          weekdays:
+            'zondag_maandag_dinsdag_woensdag_donderdag_vrijdag_zaterdag'.split(
+              '_'
+            ),
           weekdaysShort: 'zo._ma._di._wo._do._vr._za.'.split('_'),
           weekdaysMin: 'zo_ma_di_wo_do_vr_za'.split('_'),
           weekdaysParseExact: !0,
@@ -32993,7 +33177,7 @@
             L: 'DD-MM-YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm'
+            LLLL: 'dddd D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[vandaag om] LT',
@@ -33001,7 +33185,7 @@
             nextWeek: 'dddd [om] LT',
             lastDay: '[gisteren om] LT',
             lastWeek: '[afgelopen] dddd [om] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'over %s',
@@ -33019,21 +33203,23 @@
             M: 'één maand',
             MM: '%d maanden',
             y: 'één jaar',
-            yy: '%d jaar'
+            yy: '%d jaar',
           },
           dayOfMonthOrdinalParse: /\d{1,2}(ste|de)/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             return e + (1 === e || 8 === e || 20 <= e ? 'ste' : 'de');
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         f.defineLocale('nn', {
-          months: 'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split(
-            '_'
-          ),
-          monthsShort: 'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split(
-            '_'
-          ),
+          months:
+            'januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember'.split(
+              '_'
+            ),
+          monthsShort:
+            'jan._feb._mars_apr._mai_juni_juli_aug._sep._okt._nov._des.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
           weekdays: 'sundag_måndag_tysdag_onsdag_torsdag_fredag_laurdag'.split(
             '_'
@@ -33047,7 +33233,7 @@
             L: 'DD.MM.YYYY',
             LL: 'D. MMMM YYYY',
             LLL: 'D. MMMM YYYY [kl.] H:mm',
-            LLLL: 'dddd D. MMMM YYYY [kl.] HH:mm'
+            LLLL: 'dddd D. MMMM YYYY [kl.] HH:mm',
           },
           calendar: {
             sameDay: '[I dag klokka] LT',
@@ -33055,7 +33241,7 @@
             nextWeek: 'dddd [klokka] LT',
             lastDay: '[I går klokka] LT',
             lastWeek: '[Føregåande] dddd [klokka] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'om %s',
@@ -33073,29 +33259,33 @@
             M: 'ein månad',
             MM: '%d månader',
             y: 'eit år',
-            yy: '%d år'
+            yy: '%d år',
           },
           dayOfMonthOrdinalParse: /\d{1,2}\./,
           ordinal: '%d.',
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         f.defineLocale('oc-lnc', {
           months: {
-            standalone: 'genièr_febrièr_març_abril_mai_junh_julhet_agost_setembre_octòbre_novembre_decembre'.split(
-              '_'
-            ),
-            format: "de genièr_de febrièr_de març_d'abril_de mai_de junh_de julhet_d'agost_de setembre_d'octòbre_de novembre_de decembre".split(
-              '_'
-            ),
-            isFormat: /D[oD]?(\s)+MMMM/
+            standalone:
+              'genièr_febrièr_març_abril_mai_junh_julhet_agost_setembre_octòbre_novembre_decembre'.split(
+                '_'
+              ),
+            format:
+              "de genièr_de febrièr_de març_d'abril_de mai_de junh_de julhet_d'agost_de setembre_d'octòbre_de novembre_de decembre".split(
+                '_'
+              ),
+            isFormat: /D[oD]?(\s)+MMMM/,
           },
-          monthsShort: 'gen._febr._març_abr._mai_junh_julh._ago._set._oct._nov._dec.'.split(
-            '_'
-          ),
+          monthsShort:
+            'gen._febr._març_abr._mai_junh_julh._ago._set._oct._nov._dec.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
-          weekdays: 'dimenge_diluns_dimars_dimècres_dijòus_divendres_dissabte'.split(
-            '_'
-          ),
+          weekdays:
+            'dimenge_diluns_dimars_dimècres_dijòus_divendres_dissabte'.split(
+              '_'
+            ),
           weekdaysShort: 'dg._dl._dm._dc._dj._dv._ds.'.split('_'),
           weekdaysMin: 'dg_dl_dm_dc_dj_dv_ds'.split('_'),
           weekdaysParseExact: !0,
@@ -33108,7 +33298,7 @@
             LLL: 'D MMMM [de] YYYY [a] H:mm',
             lll: 'D MMM YYYY, H:mm',
             LLLL: 'dddd D MMMM [de] YYYY [a] H:mm',
-            llll: 'ddd D MMM YYYY, H:mm'
+            llll: 'ddd D MMM YYYY, H:mm',
           },
           calendar: {
             sameDay: '[uèi a] LT',
@@ -33116,7 +33306,7 @@
             nextWeek: 'dddd [a] LT',
             lastDay: '[ièr a] LT',
             lastWeek: 'dddd [passat a] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: "d'aquí %s",
@@ -33132,10 +33322,10 @@
             M: 'un mes',
             MM: '%d meses',
             y: 'un an',
-            yy: '%d ans'
+            yy: '%d ans',
           },
           dayOfMonthOrdinalParse: /\d{1,2}(r|n|t|\xe8|a)/,
-          ordinal: function(e, t) {
+          ordinal: function (e, t) {
             return (
               e +
               ('w' !== t && 'W' !== t
@@ -33151,7 +33341,7 @@
                 : 'a')
             );
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         {
           1: '੧',
@@ -33163,7 +33353,7 @@
           7: '੭',
           8: '੮',
           9: '੯',
-          0: '੦'
+          0: '੦',
         }),
       ds = {
         '੧': '1',
@@ -33175,19 +33365,20 @@
         '੭': '7',
         '੮': '8',
         '੯': '9',
-        '੦': '0'
+        '੦': '0',
       },
       us =
         (f.defineLocale('pa-in', {
-          months: 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split(
-            '_'
-          ),
-          monthsShort: 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split(
-            '_'
-          ),
-          weekdays: 'ਐਤਵਾਰ_ਸੋਮਵਾਰ_ਮੰਗਲਵਾਰ_ਬੁਧਵਾਰ_ਵੀਰਵਾਰ_ਸ਼ੁੱਕਰਵਾਰ_ਸ਼ਨੀਚਰਵਾਰ'.split(
-            '_'
-          ),
+          months:
+            'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split(
+              '_'
+            ),
+          monthsShort:
+            'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split(
+              '_'
+            ),
+          weekdays:
+            'ਐਤਵਾਰ_ਸੋਮਵਾਰ_ਮੰਗਲਵਾਰ_ਬੁਧਵਾਰ_ਵੀਰਵਾਰ_ਸ਼ੁੱਕਰਵਾਰ_ਸ਼ਨੀਚਰਵਾਰ'.split('_'),
           weekdaysShort: 'ਐਤ_ਸੋਮ_ਮੰਗਲ_ਬੁਧ_ਵੀਰ_ਸ਼ੁਕਰ_ਸ਼ਨੀ'.split('_'),
           weekdaysMin: 'ਐਤ_ਸੋਮ_ਮੰਗਲ_ਬੁਧ_ਵੀਰ_ਸ਼ੁਕਰ_ਸ਼ਨੀ'.split('_'),
           longDateFormat: {
@@ -33196,7 +33387,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, A h:mm ਵਜੇ',
-            LLLL: 'dddd, D MMMM YYYY, A h:mm ਵਜੇ'
+            LLLL: 'dddd, D MMMM YYYY, A h:mm ਵਜੇ',
           },
           calendar: {
             sameDay: '[ਅਜ] LT',
@@ -33204,7 +33395,7 @@
             nextWeek: '[ਅਗਲਾ] dddd, LT',
             lastDay: '[ਕਲ] LT',
             lastWeek: '[ਪਿਛਲੇ] dddd, LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s ਵਿੱਚ',
@@ -33220,23 +33411,24 @@
             M: 'ਇੱਕ ਮਹੀਨਾ',
             MM: '%d ਮਹੀਨੇ',
             y: 'ਇੱਕ ਸਾਲ',
-            yy: '%d ਸਾਲ'
+            yy: '%d ਸਾਲ',
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u0a67\u0a68\u0a69\u0a6a\u0a6b\u0a6c\u0a6d\u0a6e\u0a6f\u0a66]/g,
-              function(e) {
+              function (e) {
                 return ds[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return ls[e];
             });
           },
-          meridiemParse: /\u0a30\u0a3e\u0a24|\u0a38\u0a35\u0a47\u0a30|\u0a26\u0a41\u0a2a\u0a39\u0a3f\u0a30|\u0a38\u0a3c\u0a3e\u0a2e/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u0a30\u0a3e\u0a24|\u0a38\u0a35\u0a47\u0a30|\u0a26\u0a41\u0a2a\u0a39\u0a3f\u0a30|\u0a38\u0a3c\u0a3e\u0a2e/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'ਰਾਤ' === t
@@ -33254,7 +33446,7 @@
                 : void 0
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 4
               ? 'ਰਾਤ'
               : e < 10
@@ -33265,14 +33457,15 @@
               ? 'ਸ਼ਾਮ'
               : 'ਰਾਤ';
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
           '_'
         )),
-      cs = 'stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia'.split(
-        '_'
-      ),
+      cs =
+        'stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia'.split(
+          '_'
+        ),
       l = [
         /^sty/i,
         /^lut/i,
@@ -33285,7 +33478,7 @@
         /^wrz/i,
         /^pa\u017a/i,
         /^lis/i,
-        /^gru/i
+        /^gru/i,
       ];
     function hs(e) {
       return e % 10 < 5 && 1 < e % 10 && ~~(e / 10) % 10 != 1;
@@ -33322,7 +33515,7 @@
           dd: 'zile',
           ww: 'săptămâni',
           MM: 'luni',
-          yy: 'ani'
+          yy: 'ani',
         }[i]
       );
     }
@@ -33341,7 +33534,7 @@
               dd: 'день_дня_дней',
               ww: 'неделя_недели_недель',
               MM: 'месяц_месяца_месяцев',
-              yy: 'год_года_лет'
+              yy: 'год_года_лет',
             }[i]).split('_')),
             e % 10 == 1 && e % 100 != 11
               ? t[0]
@@ -33507,16 +33700,15 @@
       }
     }
     f.defineLocale('pl', {
-      months: function(e, t) {
+      months: function (e, t) {
         return e ? (/D MMMM/.test(t) ? cs : us)[e.month()] : us;
       },
       monthsShort: 'sty_lut_mar_kwi_maj_cze_lip_sie_wrz_paź_lis_gru'.split('_'),
       monthsParse: l,
       longMonthsParse: l,
       shortMonthsParse: l,
-      weekdays: 'niedziela_poniedziałek_wtorek_środa_czwartek_piątek_sobota'.split(
-        '_'
-      ),
+      weekdays:
+        'niedziela_poniedziałek_wtorek_środa_czwartek_piątek_sobota'.split('_'),
       weekdaysShort: 'ndz_pon_wt_śr_czw_pt_sob'.split('_'),
       weekdaysMin: 'Nd_Pn_Wt_Śr_Cz_Pt_So'.split('_'),
       longDateFormat: {
@@ -33525,12 +33717,12 @@
         L: 'DD.MM.YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY HH:mm',
-        LLLL: 'dddd, D MMMM YYYY HH:mm'
+        LLLL: 'dddd, D MMMM YYYY HH:mm',
       },
       calendar: {
         sameDay: '[Dziś o] LT',
         nextDay: '[Jutro o] LT',
-        nextWeek: function() {
+        nextWeek: function () {
           switch (this.day()) {
             case 0:
               return '[W niedzielę o] LT';
@@ -33545,7 +33737,7 @@
           }
         },
         lastDay: '[Wczoraj o] LT',
-        lastWeek: function() {
+        lastWeek: function () {
           switch (this.day()) {
             case 0:
               return '[W zeszłą niedzielę o] LT';
@@ -33557,7 +33749,7 @@
               return '[W zeszły] dddd [o] LT';
           }
         },
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
         future: 'za %s',
@@ -33575,22 +33767,24 @@
         M: 'miesiąc',
         MM: ms,
         y: 'rok',
-        yy: ms
+        yy: ms,
       },
       dayOfMonthOrdinalParse: /\d{1,2}\./,
       ordinal: '%d.',
-      week: { dow: 1, doy: 4 }
+      week: { dow: 1, doy: 4 },
     }),
       f.defineLocale('pt-br', {
-        months: 'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split(
-          '_'
-        ),
+        months:
+          'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split(
+            '_'
+          ),
         monthsShort: 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split(
           '_'
         ),
-        weekdays: 'domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado'.split(
-          '_'
-        ),
+        weekdays:
+          'domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado'.split(
+            '_'
+          ),
         weekdaysShort: 'dom_seg_ter_qua_qui_sex_sáb'.split('_'),
         weekdaysMin: 'do_2ª_3ª_4ª_5ª_6ª_sá'.split('_'),
         weekdaysParseExact: !0,
@@ -33600,19 +33794,19 @@
           L: 'DD/MM/YYYY',
           LL: 'D [de] MMMM [de] YYYY',
           LLL: 'D [de] MMMM [de] YYYY [às] HH:mm',
-          LLLL: 'dddd, D [de] MMMM [de] YYYY [às] HH:mm'
+          LLLL: 'dddd, D [de] MMMM [de] YYYY [às] HH:mm',
         },
         calendar: {
           sameDay: '[Hoje às] LT',
           nextDay: '[Amanhã às] LT',
           nextWeek: 'dddd [às] LT',
           lastDay: '[Ontem às] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             return 0 === this.day() || 6 === this.day()
               ? '[Último] dddd [às] LT'
               : '[Última] dddd [às] LT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'em %s',
@@ -33628,22 +33822,24 @@
           M: 'um mês',
           MM: '%d meses',
           y: 'um ano',
-          yy: '%d anos'
+          yy: '%d anos',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: '%dº',
-        invalidDate: 'Data inválida'
+        invalidDate: 'Data inválida',
       }),
       f.defineLocale('pt', {
-        months: 'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split(
-          '_'
-        ),
+        months:
+          'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split(
+            '_'
+          ),
         monthsShort: 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split(
           '_'
         ),
-        weekdays: 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split(
-          '_'
-        ),
+        weekdays:
+          'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split(
+            '_'
+          ),
         weekdaysShort: 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
         weekdaysMin: 'Do_2ª_3ª_4ª_5ª_6ª_Sá'.split('_'),
         weekdaysParseExact: !0,
@@ -33653,19 +33849,19 @@
           L: 'DD/MM/YYYY',
           LL: 'D [de] MMMM [de] YYYY',
           LLL: 'D [de] MMMM [de] YYYY HH:mm',
-          LLLL: 'dddd, D [de] MMMM [de] YYYY HH:mm'
+          LLLL: 'dddd, D [de] MMMM [de] YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Hoje às] LT',
           nextDay: '[Amanhã às] LT',
           nextWeek: 'dddd [às] LT',
           lastDay: '[Ontem às] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             return 0 === this.day() || 6 === this.day()
               ? '[Último] dddd [às] LT'
               : '[Última] dddd [às] LT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'em %s',
@@ -33683,19 +33879,21 @@
           M: 'um mês',
           MM: '%d meses',
           y: 'um ano',
-          yy: '%d anos'
+          yy: '%d anos',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: '%dº',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('ro', {
-        months: 'ianuarie_februarie_martie_aprilie_mai_iunie_iulie_august_septembrie_octombrie_noiembrie_decembrie'.split(
-          '_'
-        ),
-        monthsShort: 'ian._feb._mart._apr._mai_iun._iul._aug._sept._oct._nov._dec.'.split(
-          '_'
-        ),
+        months:
+          'ianuarie_februarie_martie_aprilie_mai_iunie_iulie_august_septembrie_octombrie_noiembrie_decembrie'.split(
+            '_'
+          ),
+        monthsShort:
+          'ian._feb._mart._apr._mai_iun._iul._aug._sept._oct._nov._dec.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: 'duminică_luni_marți_miercuri_joi_vineri_sâmbătă'.split('_'),
         weekdaysShort: 'Dum_Lun_Mar_Mie_Joi_Vin_Sâm'.split('_'),
@@ -33706,7 +33904,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY H:mm',
-          LLLL: 'dddd, D MMMM YYYY H:mm'
+          LLLL: 'dddd, D MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[azi la] LT',
@@ -33714,7 +33912,7 @@
           nextWeek: 'dddd [la] LT',
           lastDay: '[ieri la] LT',
           lastWeek: '[fosta] dddd [la] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'peste %s',
@@ -33732,9 +33930,9 @@
           M: 'o lună',
           MM: ps,
           y: 'un an',
-          yy: ps
+          yy: ps,
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       (p = [
         /^\u044f\u043d\u0432/i,
@@ -33748,56 +33946,67 @@
         /^\u0441\u0435\u043d/i,
         /^\u043e\u043a\u0442/i,
         /^\u043d\u043e\u044f/i,
-        /^\u0434\u0435\u043a/i
+        /^\u0434\u0435\u043a/i,
       ]),
       f.defineLocale('ru', {
         months: {
-          format: 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split(
-            '_'
-          ),
-          standalone: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split(
-            '_'
-          )
+          format:
+            'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split(
+              '_'
+            ),
+          standalone:
+            'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split(
+              '_'
+            ),
         },
         monthsShort: {
-          format: 'янв._февр._мар._апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split(
-            '_'
-          ),
-          standalone: 'янв._февр._март_апр._май_июнь_июль_авг._сент._окт._нояб._дек.'.split(
-            '_'
-          )
+          format:
+            'янв._февр._мар._апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split(
+              '_'
+            ),
+          standalone:
+            'янв._февр._март_апр._май_июнь_июль_авг._сент._окт._нояб._дек.'.split(
+              '_'
+            ),
         },
         weekdays: {
-          standalone: 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split(
-            '_'
-          ),
-          format: 'воскресенье_понедельник_вторник_среду_четверг_пятницу_субботу'.split(
-            '_'
-          ),
-          isFormat: /\[ ?[\u0412\u0432] ?(?:\u043f\u0440\u043e\u0448\u043b\u0443\u044e|\u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0443\u044e|\u044d\u0442\u0443)? ?] ?dddd/
+          standalone:
+            'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split(
+              '_'
+            ),
+          format:
+            'воскресенье_понедельник_вторник_среду_четверг_пятницу_субботу'.split(
+              '_'
+            ),
+          isFormat:
+            /\[ ?[\u0412\u0432] ?(?:\u043f\u0440\u043e\u0448\u043b\u0443\u044e|\u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0443\u044e|\u044d\u0442\u0443)? ?] ?dddd/,
         },
         weekdaysShort: 'вс_пн_вт_ср_чт_пт_сб'.split('_'),
         weekdaysMin: 'вс_пн_вт_ср_чт_пт_сб'.split('_'),
         monthsParse: p,
         longMonthsParse: p,
         shortMonthsParse: p,
-        monthsRegex: /^(\u044f\u043d\u0432\u0430\u0440[\u044c\u044f]|\u044f\u043d\u0432\.?|\u0444\u0435\u0432\u0440\u0430\u043b[\u044c\u044f]|\u0444\u0435\u0432\u0440?\.?|\u043c\u0430\u0440\u0442\u0430?|\u043c\u0430\u0440\.?|\u0430\u043f\u0440\u0435\u043b[\u044c\u044f]|\u0430\u043f\u0440\.?|\u043c\u0430[\u0439\u044f]|\u0438\u044e\u043d[\u044c\u044f]|\u0438\u044e\u043d\.?|\u0438\u044e\u043b[\u044c\u044f]|\u0438\u044e\u043b\.?|\u0430\u0432\u0433\u0443\u0441\u0442\u0430?|\u0430\u0432\u0433\.?|\u0441\u0435\u043d\u0442\u044f\u0431\u0440[\u044c\u044f]|\u0441\u0435\u043d\u0442?\.?|\u043e\u043a\u0442\u044f\u0431\u0440[\u044c\u044f]|\u043e\u043a\u0442\.?|\u043d\u043e\u044f\u0431\u0440[\u044c\u044f]|\u043d\u043e\u044f\u0431?\.?|\u0434\u0435\u043a\u0430\u0431\u0440[\u044c\u044f]|\u0434\u0435\u043a\.?)/i,
-        monthsShortRegex: /^(\u044f\u043d\u0432\u0430\u0440[\u044c\u044f]|\u044f\u043d\u0432\.?|\u0444\u0435\u0432\u0440\u0430\u043b[\u044c\u044f]|\u0444\u0435\u0432\u0440?\.?|\u043c\u0430\u0440\u0442\u0430?|\u043c\u0430\u0440\.?|\u0430\u043f\u0440\u0435\u043b[\u044c\u044f]|\u0430\u043f\u0440\.?|\u043c\u0430[\u0439\u044f]|\u0438\u044e\u043d[\u044c\u044f]|\u0438\u044e\u043d\.?|\u0438\u044e\u043b[\u044c\u044f]|\u0438\u044e\u043b\.?|\u0430\u0432\u0433\u0443\u0441\u0442\u0430?|\u0430\u0432\u0433\.?|\u0441\u0435\u043d\u0442\u044f\u0431\u0440[\u044c\u044f]|\u0441\u0435\u043d\u0442?\.?|\u043e\u043a\u0442\u044f\u0431\u0440[\u044c\u044f]|\u043e\u043a\u0442\.?|\u043d\u043e\u044f\u0431\u0440[\u044c\u044f]|\u043d\u043e\u044f\u0431?\.?|\u0434\u0435\u043a\u0430\u0431\u0440[\u044c\u044f]|\u0434\u0435\u043a\.?)/i,
-        monthsStrictRegex: /^(\u044f\u043d\u0432\u0430\u0440[\u044f\u044c]|\u0444\u0435\u0432\u0440\u0430\u043b[\u044f\u044c]|\u043c\u0430\u0440\u0442\u0430?|\u0430\u043f\u0440\u0435\u043b[\u044f\u044c]|\u043c\u0430[\u044f\u0439]|\u0438\u044e\u043d[\u044f\u044c]|\u0438\u044e\u043b[\u044f\u044c]|\u0430\u0432\u0433\u0443\u0441\u0442\u0430?|\u0441\u0435\u043d\u0442\u044f\u0431\u0440[\u044f\u044c]|\u043e\u043a\u0442\u044f\u0431\u0440[\u044f\u044c]|\u043d\u043e\u044f\u0431\u0440[\u044f\u044c]|\u0434\u0435\u043a\u0430\u0431\u0440[\u044f\u044c])/i,
-        monthsShortStrictRegex: /^(\u044f\u043d\u0432\.|\u0444\u0435\u0432\u0440?\.|\u043c\u0430\u0440[\u0442.]|\u0430\u043f\u0440\.|\u043c\u0430[\u044f\u0439]|\u0438\u044e\u043d[\u044c\u044f.]|\u0438\u044e\u043b[\u044c\u044f.]|\u0430\u0432\u0433\.|\u0441\u0435\u043d\u0442?\.|\u043e\u043a\u0442\.|\u043d\u043e\u044f\u0431?\.|\u0434\u0435\u043a\.)/i,
+        monthsRegex:
+          /^(\u044f\u043d\u0432\u0430\u0440[\u044c\u044f]|\u044f\u043d\u0432\.?|\u0444\u0435\u0432\u0440\u0430\u043b[\u044c\u044f]|\u0444\u0435\u0432\u0440?\.?|\u043c\u0430\u0440\u0442\u0430?|\u043c\u0430\u0440\.?|\u0430\u043f\u0440\u0435\u043b[\u044c\u044f]|\u0430\u043f\u0440\.?|\u043c\u0430[\u0439\u044f]|\u0438\u044e\u043d[\u044c\u044f]|\u0438\u044e\u043d\.?|\u0438\u044e\u043b[\u044c\u044f]|\u0438\u044e\u043b\.?|\u0430\u0432\u0433\u0443\u0441\u0442\u0430?|\u0430\u0432\u0433\.?|\u0441\u0435\u043d\u0442\u044f\u0431\u0440[\u044c\u044f]|\u0441\u0435\u043d\u0442?\.?|\u043e\u043a\u0442\u044f\u0431\u0440[\u044c\u044f]|\u043e\u043a\u0442\.?|\u043d\u043e\u044f\u0431\u0440[\u044c\u044f]|\u043d\u043e\u044f\u0431?\.?|\u0434\u0435\u043a\u0430\u0431\u0440[\u044c\u044f]|\u0434\u0435\u043a\.?)/i,
+        monthsShortRegex:
+          /^(\u044f\u043d\u0432\u0430\u0440[\u044c\u044f]|\u044f\u043d\u0432\.?|\u0444\u0435\u0432\u0440\u0430\u043b[\u044c\u044f]|\u0444\u0435\u0432\u0440?\.?|\u043c\u0430\u0440\u0442\u0430?|\u043c\u0430\u0440\.?|\u0430\u043f\u0440\u0435\u043b[\u044c\u044f]|\u0430\u043f\u0440\.?|\u043c\u0430[\u0439\u044f]|\u0438\u044e\u043d[\u044c\u044f]|\u0438\u044e\u043d\.?|\u0438\u044e\u043b[\u044c\u044f]|\u0438\u044e\u043b\.?|\u0430\u0432\u0433\u0443\u0441\u0442\u0430?|\u0430\u0432\u0433\.?|\u0441\u0435\u043d\u0442\u044f\u0431\u0440[\u044c\u044f]|\u0441\u0435\u043d\u0442?\.?|\u043e\u043a\u0442\u044f\u0431\u0440[\u044c\u044f]|\u043e\u043a\u0442\.?|\u043d\u043e\u044f\u0431\u0440[\u044c\u044f]|\u043d\u043e\u044f\u0431?\.?|\u0434\u0435\u043a\u0430\u0431\u0440[\u044c\u044f]|\u0434\u0435\u043a\.?)/i,
+        monthsStrictRegex:
+          /^(\u044f\u043d\u0432\u0430\u0440[\u044f\u044c]|\u0444\u0435\u0432\u0440\u0430\u043b[\u044f\u044c]|\u043c\u0430\u0440\u0442\u0430?|\u0430\u043f\u0440\u0435\u043b[\u044f\u044c]|\u043c\u0430[\u044f\u0439]|\u0438\u044e\u043d[\u044f\u044c]|\u0438\u044e\u043b[\u044f\u044c]|\u0430\u0432\u0433\u0443\u0441\u0442\u0430?|\u0441\u0435\u043d\u0442\u044f\u0431\u0440[\u044f\u044c]|\u043e\u043a\u0442\u044f\u0431\u0440[\u044f\u044c]|\u043d\u043e\u044f\u0431\u0440[\u044f\u044c]|\u0434\u0435\u043a\u0430\u0431\u0440[\u044f\u044c])/i,
+        monthsShortStrictRegex:
+          /^(\u044f\u043d\u0432\.|\u0444\u0435\u0432\u0440?\.|\u043c\u0430\u0440[\u0442.]|\u0430\u043f\u0440\.|\u043c\u0430[\u044f\u0439]|\u0438\u044e\u043d[\u044c\u044f.]|\u0438\u044e\u043b[\u044c\u044f.]|\u0430\u0432\u0433\.|\u0441\u0435\u043d\u0442?\.|\u043e\u043a\u0442\.|\u043d\u043e\u044f\u0431?\.|\u0434\u0435\u043a\.)/i,
         longDateFormat: {
           LT: 'H:mm',
           LTS: 'H:mm:ss',
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY г.',
           LLL: 'D MMMM YYYY г., H:mm',
-          LLLL: 'dddd, D MMMM YYYY г., H:mm'
+          LLLL: 'dddd, D MMMM YYYY г., H:mm',
         },
         calendar: {
           sameDay: '[Сегодня, в] LT',
           nextDay: '[Завтра, в] LT',
           lastDay: '[Вчера, в] LT',
-          nextWeek: function(e) {
+          nextWeek: function (e) {
             if (e.week() === this.week())
               return 2 === this.day()
                 ? '[Во] dddd, [в] LT'
@@ -33815,7 +34024,7 @@
                 return '[В следующую] dddd, [в] LT';
             }
           },
-          lastWeek: function(e) {
+          lastWeek: function (e) {
             if (e.week() === this.week())
               return 2 === this.day()
                 ? '[Во] dddd, [в] LT'
@@ -33833,7 +34042,7 @@
                 return '[В прошлую] dddd, [в] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'через %s',
@@ -33851,19 +34060,20 @@
           M: 'месяц',
           MM: fs,
           y: 'год',
-          yy: fs
+          yy: fs,
         },
-        meridiemParse: /\u043d\u043e\u0447\u0438|\u0443\u0442\u0440\u0430|\u0434\u043d\u044f|\u0432\u0435\u0447\u0435\u0440\u0430/i,
-        isPM: function(e) {
+        meridiemParse:
+          /\u043d\u043e\u0447\u0438|\u0443\u0442\u0440\u0430|\u0434\u043d\u044f|\u0432\u0435\u0447\u0435\u0440\u0430/i,
+        isPM: function (e) {
           return /^(\u0434\u043d\u044f|\u0432\u0435\u0447\u0435\u0440\u0430)$/.test(
             e
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 4 ? 'ночи' : e < 12 ? 'утра' : e < 17 ? 'дня' : 'вечера';
         },
         dayOfMonthOrdinalParse: /\d{1,2}-(\u0439|\u0433\u043e|\u044f)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'M':
             case 'd':
@@ -33878,7 +34088,7 @@
               return e;
           }
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('sd', {
         months: (Le = [
@@ -33893,7 +34103,7 @@
           'سيپٽمبر',
           'آڪٽوبر',
           'نومبر',
-          'ڊسمبر'
+          'ڊسمبر',
         ]),
         monthsShort: Le,
         weekdays: (Xe = [
@@ -33903,7 +34113,7 @@
           'اربع',
           'خميس',
           'جمع',
-          'ڇنڇر'
+          'ڇنڇر',
         ]),
         weekdaysShort: Xe,
         weekdaysMin: Xe,
@@ -33913,13 +34123,13 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd، D MMMM YYYY HH:mm'
+          LLLL: 'dddd، D MMMM YYYY HH:mm',
         },
         meridiemParse: /\u0635\u0628\u062d|\u0634\u0627\u0645/,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'شام' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? 'صبح' : 'شام';
         },
         calendar: {
@@ -33928,7 +34138,7 @@
           nextWeek: 'dddd [اڳين هفتي تي] LT',
           lastDay: '[ڪالهه] LT',
           lastWeek: '[گزريل هفتي] dddd [تي] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s پوء',
@@ -33944,26 +34154,29 @@
           M: 'هڪ مهينو',
           MM: '%d مهينا',
           y: 'هڪ سال',
-          yy: '%d سال'
+          yy: '%d سال',
         },
-        preparse: function(e) {
+        preparse: function (e) {
           return e.replace(/\u060c/g, ',');
         },
-        postformat: function(e) {
+        postformat: function (e) {
           return e.replace(/,/g, '،');
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('se', {
-        months: 'ođđajagemánnu_guovvamánnu_njukčamánnu_cuoŋománnu_miessemánnu_geassemánnu_suoidnemánnu_borgemánnu_čakčamánnu_golggotmánnu_skábmamánnu_juovlamánnu'.split(
-          '_'
-        ),
-        monthsShort: 'ođđj_guov_njuk_cuo_mies_geas_suoi_borg_čakč_golg_skáb_juov'.split(
-          '_'
-        ),
-        weekdays: 'sotnabeaivi_vuossárga_maŋŋebárga_gaskavahkku_duorastat_bearjadat_lávvardat'.split(
-          '_'
-        ),
+        months:
+          'ođđajagemánnu_guovvamánnu_njukčamánnu_cuoŋománnu_miessemánnu_geassemánnu_suoidnemánnu_borgemánnu_čakčamánnu_golggotmánnu_skábmamánnu_juovlamánnu'.split(
+            '_'
+          ),
+        monthsShort:
+          'ođđj_guov_njuk_cuo_mies_geas_suoi_borg_čakč_golg_skáb_juov'.split(
+            '_'
+          ),
+        weekdays:
+          'sotnabeaivi_vuossárga_maŋŋebárga_gaskavahkku_duorastat_bearjadat_lávvardat'.split(
+            '_'
+          ),
         weekdaysShort: 'sotn_vuos_maŋ_gask_duor_bear_láv'.split('_'),
         weekdaysMin: 's_v_m_g_d_b_L'.split('_'),
         longDateFormat: {
@@ -33972,7 +34185,7 @@
           L: 'DD.MM.YYYY',
           LL: 'MMMM D. [b.] YYYY',
           LLL: 'MMMM D. [b.] YYYY [ti.] HH:mm',
-          LLLL: 'dddd, MMMM D. [b.] YYYY [ti.] HH:mm'
+          LLLL: 'dddd, MMMM D. [b.] YYYY [ti.] HH:mm',
         },
         calendar: {
           sameDay: '[otne ti] LT',
@@ -33980,7 +34193,7 @@
           nextWeek: 'dddd [ti] LT',
           lastDay: '[ikte ti] LT',
           lastWeek: '[ovddit] dddd [ti] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s geažes',
@@ -33996,22 +34209,23 @@
           M: 'okta mánnu',
           MM: '%d mánut',
           y: 'okta jahki',
-          yy: '%d jagit'
+          yy: '%d jagit',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('si', {
-        months: 'ජනවාරි_පෙබරවාරි_මාර්තු_අප්‍රේල්_මැයි_ජූනි_ජූලි_අගෝස්තු_සැප්තැම්බර්_ඔක්තෝබර්_නොවැම්බර්_දෙසැම්බර්'.split(
-          '_'
-        ),
-        monthsShort: 'ජන_පෙබ_මාර්_අප්_මැයි_ජූනි_ජූලි_අගෝ_සැප්_ඔක්_නොවැ_දෙසැ'.split(
-          '_'
-        ),
-        weekdays: 'ඉරිදා_සඳුදා_අඟහරුවාදා_බදාදා_බ්‍රහස්පතින්දා_සිකුරාදා_සෙනසුරාදා'.split(
-          '_'
-        ),
+        months:
+          'ජනවාරි_පෙබරවාරි_මාර්තු_අප්‍රේල්_මැයි_ජූනි_ජූලි_අගෝස්තු_සැප්තැම්බර්_ඔක්තෝබර්_නොවැම්බර්_දෙසැම්බර්'.split(
+            '_'
+          ),
+        monthsShort:
+          'ජන_පෙබ_මාර්_අප්_මැයි_ජූනි_ජූලි_අගෝ_සැප්_ඔක්_නොවැ_දෙසැ'.split('_'),
+        weekdays:
+          'ඉරිදා_සඳුදා_අඟහරුවාදා_බදාදා_බ්‍රහස්පතින්දා_සිකුරාදා_සෙනසුරාදා'.split(
+            '_'
+          ),
         weekdaysShort: 'ඉරි_සඳු_අඟ_බදා_බ්‍රහ_සිකු_සෙන'.split('_'),
         weekdaysMin: 'ඉ_ස_අ_බ_බ්‍ර_සි_සෙ'.split('_'),
         weekdaysParseExact: !0,
@@ -34021,7 +34235,7 @@
           L: 'YYYY/MM/DD',
           LL: 'YYYY MMMM D',
           LLL: 'YYYY MMMM D, a h:mm',
-          LLLL: 'YYYY MMMM D [වැනි] dddd, a h:mm:ss'
+          LLLL: 'YYYY MMMM D [වැනි] dddd, a h:mm:ss',
         },
         calendar: {
           sameDay: '[අද] LT[ට]',
@@ -34029,7 +34243,7 @@
           nextWeek: 'dddd LT[ට]',
           lastDay: '[ඊයේ] LT[ට]',
           lastWeek: '[පසුගිය] dddd LT[ට]',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%sකින්',
@@ -34045,23 +34259,25 @@
           M: 'මාසය',
           MM: 'මාස %d',
           y: 'වසර',
-          yy: 'වසර %d'
+          yy: 'වසර %d',
         },
         dayOfMonthOrdinalParse: /\d{1,2} \u0dc0\u0dd0\u0db1\u0dd2/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return e + ' වැනි';
         },
-        meridiemParse: /\u0db4\u0dd9\u0dbb \u0dc0\u0dbb\u0dd4|\u0db4\u0dc3\u0dca \u0dc0\u0dbb\u0dd4|\u0db4\u0dd9.\u0dc0|\u0db4.\u0dc0./,
-        isPM: function(e) {
+        meridiemParse:
+          /\u0db4\u0dd9\u0dbb \u0dc0\u0dbb\u0dd4|\u0db4\u0dc3\u0dca \u0dc0\u0dbb\u0dd4|\u0db4\u0dd9.\u0dc0|\u0db4.\u0dc0./,
+        isPM: function (e) {
           return 'ප.ව.' === e || 'පස් වරු' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return 11 < e ? (i ? 'ප.ව.' : 'පස් වරු') : i ? 'පෙ.ව.' : 'පෙර වරු';
-        }
+        },
       }),
-      (Ti = 'január_február_marec_apríl_máj_jún_júl_august_september_október_november_december'.split(
-        '_'
-      )),
+      (Ti =
+        'január_február_marec_apríl_máj_jún_júl_august_september_október_november_december'.split(
+          '_'
+        )),
       (a = 'jan_feb_mar_apr_máj_jún_júl_aug_sep_okt_nov_dec'.split('_')),
       f.defineLocale('sk', {
         months: Ti,
@@ -34077,12 +34293,12 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY H:mm',
-          LLLL: 'dddd D. MMMM YYYY H:mm'
+          LLLL: 'dddd D. MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[dnes o] LT',
           nextDay: '[zajtra o] LT',
-          nextWeek: function() {
+          nextWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[v nedeľu o] LT';
@@ -34100,7 +34316,7 @@
             }
           },
           lastDay: '[včera o] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[minulú nedeľu o] LT';
@@ -34116,7 +34332,7 @@
                 return '[minulú sobotu o] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'za %s',
@@ -34132,19 +34348,21 @@
           M: gs,
           MM: gs,
           y: gs,
-          yy: gs
+          yy: gs,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('sl', {
-        months: 'januar_februar_marec_april_maj_junij_julij_avgust_september_oktober_november_december'.split(
-          '_'
-        ),
-        monthsShort: 'jan._feb._mar._apr._maj._jun._jul._avg._sep._okt._nov._dec.'.split(
-          '_'
-        ),
+        months:
+          'januar_februar_marec_april_maj_junij_julij_avgust_september_oktober_november_december'.split(
+            '_'
+          ),
+        monthsShort:
+          'jan._feb._mar._apr._maj._jun._jul._avg._sep._okt._nov._dec.'.split(
+            '_'
+          ),
         monthsParseExact: !0,
         weekdays: 'nedelja_ponedeljek_torek_sreda_četrtek_petek_sobota'.split(
           '_'
@@ -34158,12 +34376,12 @@
           L: 'DD. MM. YYYY',
           LL: 'D. MMMM YYYY',
           LLL: 'D. MMMM YYYY H:mm',
-          LLLL: 'dddd, D. MMMM YYYY H:mm'
+          LLLL: 'dddd, D. MMMM YYYY H:mm',
         },
         calendar: {
           sameDay: '[danes ob] LT',
           nextDay: '[jutri ob] LT',
-          nextWeek: function() {
+          nextWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[v] [nedeljo] [ob] LT';
@@ -34179,7 +34397,7 @@
             }
           },
           lastDay: '[včeraj ob] LT',
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
                 return '[prejšnjo] [nedeljo] [ob] LT';
@@ -34194,7 +34412,7 @@
                 return '[prejšnji] dddd [ob] LT';
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'čez %s',
@@ -34210,30 +34428,32 @@
           M: ys,
           MM: ys,
           y: ys,
-          yy: ys
+          yy: ys,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('sq', {
-        months: 'Janar_Shkurt_Mars_Prill_Maj_Qershor_Korrik_Gusht_Shtator_Tetor_Nëntor_Dhjetor'.split(
-          '_'
-        ),
+        months:
+          'Janar_Shkurt_Mars_Prill_Maj_Qershor_Korrik_Gusht_Shtator_Tetor_Nëntor_Dhjetor'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Shk_Mar_Pri_Maj_Qer_Kor_Gus_Sht_Tet_Nën_Dhj'.split(
           '_'
         ),
-        weekdays: 'E Diel_E Hënë_E Martë_E Mërkurë_E Enjte_E Premte_E Shtunë'.split(
-          '_'
-        ),
+        weekdays:
+          'E Diel_E Hënë_E Martë_E Mërkurë_E Enjte_E Premte_E Shtunë'.split(
+            '_'
+          ),
         weekdaysShort: 'Die_Hën_Mar_Mër_Enj_Pre_Sht'.split('_'),
         weekdaysMin: 'D_H_Ma_Më_E_P_Sh'.split('_'),
         weekdaysParseExact: !0,
         meridiemParse: /PD|MD/,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'M' === e.charAt(0);
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? 'PD' : 'MD';
         },
         longDateFormat: {
@@ -34242,7 +34462,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Sot në] LT',
@@ -34250,7 +34470,7 @@
           nextWeek: 'dddd [në] LT',
           lastDay: '[Dje në] LT',
           lastWeek: 'dddd [e kaluar në] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'në %s',
@@ -34266,11 +34486,11 @@
           M: 'një muaj',
           MM: '%d muaj',
           y: 'një vit',
-          yy: '%d vite'
+          yy: '%d vite',
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       });
     var P = {
         words: {
@@ -34284,16 +34504,16 @@
           M: ['један месец', 'једног месеца'],
           MM: ['месец', 'месеца', 'месеци'],
           y: ['једну годину', 'једне године'],
-          yy: ['годину', 'године', 'година']
+          yy: ['годину', 'године', 'година'],
         },
-        correctGrammaticalCase: function(e, t) {
+        correctGrammaticalCase: function (e, t) {
           return 1 <= e % 10 && e % 10 <= 4 && (e % 100 < 10 || 20 <= e % 100)
             ? e % 10 == 1
               ? t[0]
               : t[1]
             : t[2];
         },
-        translate: function(e, t, i, n) {
+        translate: function (e, t, i, n) {
           var s = P.words[i];
           return 1 === i.length
             ? 'y' === i && t
@@ -34303,16 +34523,18 @@
               : s[1]
             : ((n = P.correctGrammaticalCase(e, s)),
               'yy' === i && t && 'годину' === n ? e + ' година' : e + ' ' + n);
-        }
+        },
       },
       O =
         (f.defineLocale('sr-cyrl', {
-          months: 'јануар_фебруар_март_април_мај_јун_јул_август_септембар_октобар_новембар_децембар'.split(
-            '_'
-          ),
-          monthsShort: 'јан._феб._мар._апр._мај_јун_јул_авг._сеп._окт._нов._дец.'.split(
-            '_'
-          ),
+          months:
+            'јануар_фебруар_март_април_мај_јун_јул_август_септембар_октобар_новембар_децембар'.split(
+              '_'
+            ),
+          monthsShort:
+            'јан._феб._мар._апр._мај_јун_јул_авг._сеп._окт._нов._дец.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
           weekdays: 'недеља_понедељак_уторак_среда_четвртак_петак_субота'.split(
             '_'
@@ -34326,12 +34548,12 @@
             L: 'D. M. YYYY.',
             LL: 'D. MMMM YYYY.',
             LLL: 'D. MMMM YYYY. H:mm',
-            LLLL: 'dddd, D. MMMM YYYY. H:mm'
+            LLLL: 'dddd, D. MMMM YYYY. H:mm',
           },
           calendar: {
             sameDay: '[данас у] LT',
             nextDay: '[сутра у] LT',
-            nextWeek: function() {
+            nextWeek: function () {
               switch (this.day()) {
                 case 0:
                   return '[у] [недељу] [у] LT';
@@ -34347,7 +34569,7 @@
               }
             },
             lastDay: '[јуче у] LT',
-            lastWeek: function() {
+            lastWeek: function () {
               return [
                 '[прошле] [недеље] [у] LT',
                 '[прошлог] [понедељка] [у] LT',
@@ -34355,10 +34577,10 @@
                 '[прошле] [среде] [у] LT',
                 '[прошлог] [четвртка] [у] LT',
                 '[прошлог] [петка] [у] LT',
-                '[прошле] [суботе] [у] LT'
+                '[прошле] [суботе] [у] LT',
               ][this.day()];
             },
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'за %s',
@@ -34374,11 +34596,11 @@
             M: P.translate,
             MM: P.translate,
             y: P.translate,
-            yy: P.translate
+            yy: P.translate,
           },
           dayOfMonthOrdinalParse: /\d{1,2}\./,
           ordinal: '%d.',
-          week: { dow: 1, doy: 7 }
+          week: { dow: 1, doy: 7 },
         }),
         {
           words: {
@@ -34392,16 +34614,16 @@
             M: ['jedan mesec', 'jednog meseca'],
             MM: ['mesec', 'meseca', 'meseci'],
             y: ['jednu godinu', 'jedne godine'],
-            yy: ['godinu', 'godine', 'godina']
+            yy: ['godinu', 'godine', 'godina'],
           },
-          correctGrammaticalCase: function(e, t) {
+          correctGrammaticalCase: function (e, t) {
             return 1 <= e % 10 && e % 10 <= 4 && (e % 100 < 10 || 20 <= e % 100)
               ? e % 10 == 1
                 ? t[0]
                 : t[1]
               : t[2];
           },
-          translate: function(e, t, i, n) {
+          translate: function (e, t, i, n) {
             var s = O.words[i];
             return 1 === i.length
               ? 'y' === i && t
@@ -34413,20 +34635,21 @@
                 'yy' === i && t && 'godinu' === n
                   ? e + ' godina'
                   : e + ' ' + n);
-          }
+          },
         }),
       vs =
         (f.defineLocale('sr', {
-          months: 'januar_februar_mart_april_maj_jun_jul_avgust_septembar_oktobar_novembar_decembar'.split(
-            '_'
-          ),
-          monthsShort: 'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split(
-            '_'
-          ),
+          months:
+            'januar_februar_mart_april_maj_jun_jul_avgust_septembar_oktobar_novembar_decembar'.split(
+              '_'
+            ),
+          monthsShort:
+            'jan._feb._mar._apr._maj_jun_jul_avg._sep._okt._nov._dec.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
-          weekdays: 'nedelja_ponedeljak_utorak_sreda_četvrtak_petak_subota'.split(
-            '_'
-          ),
+          weekdays:
+            'nedelja_ponedeljak_utorak_sreda_četvrtak_petak_subota'.split('_'),
           weekdaysShort: 'ned._pon._uto._sre._čet._pet._sub.'.split('_'),
           weekdaysMin: 'ne_po_ut_sr_če_pe_su'.split('_'),
           weekdaysParseExact: !0,
@@ -34436,12 +34659,12 @@
             L: 'D. M. YYYY.',
             LL: 'D. MMMM YYYY.',
             LLL: 'D. MMMM YYYY. H:mm',
-            LLLL: 'dddd, D. MMMM YYYY. H:mm'
+            LLLL: 'dddd, D. MMMM YYYY. H:mm',
           },
           calendar: {
             sameDay: '[danas u] LT',
             nextDay: '[sutra u] LT',
-            nextWeek: function() {
+            nextWeek: function () {
               switch (this.day()) {
                 case 0:
                   return '[u] [nedelju] [u] LT';
@@ -34457,7 +34680,7 @@
               }
             },
             lastDay: '[juče u] LT',
-            lastWeek: function() {
+            lastWeek: function () {
               return [
                 '[prošle] [nedelje] [u] LT',
                 '[prošlog] [ponedeljka] [u] LT',
@@ -34465,10 +34688,10 @@
                 '[prošle] [srede] [u] LT',
                 '[prošlog] [četvrtka] [u] LT',
                 '[prošlog] [petka] [u] LT',
-                '[prošle] [subote] [u] LT'
+                '[prošle] [subote] [u] LT',
               ][this.day()];
             },
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'za %s',
@@ -34484,22 +34707,24 @@
             M: O.translate,
             MM: O.translate,
             y: O.translate,
-            yy: O.translate
+            yy: O.translate,
           },
           dayOfMonthOrdinalParse: /\d{1,2}\./,
           ordinal: '%d.',
-          week: { dow: 1, doy: 7 }
+          week: { dow: 1, doy: 7 },
         }),
         f.defineLocale('ss', {
-          months: "Bhimbidvwane_Indlovana_Indlov'lenkhulu_Mabasa_Inkhwekhweti_Inhlaba_Kholwane_Ingci_Inyoni_Imphala_Lweti_Ingongoni".split(
-            '_'
-          ),
+          months:
+            "Bhimbidvwane_Indlovana_Indlov'lenkhulu_Mabasa_Inkhwekhweti_Inhlaba_Kholwane_Ingci_Inyoni_Imphala_Lweti_Ingongoni".split(
+              '_'
+            ),
           monthsShort: 'Bhi_Ina_Inu_Mab_Ink_Inh_Kho_Igc_Iny_Imp_Lwe_Igo'.split(
             '_'
           ),
-          weekdays: 'Lisontfo_Umsombuluko_Lesibili_Lesitsatfu_Lesine_Lesihlanu_Umgcibelo'.split(
-            '_'
-          ),
+          weekdays:
+            'Lisontfo_Umsombuluko_Lesibili_Lesitsatfu_Lesine_Lesihlanu_Umgcibelo'.split(
+              '_'
+            ),
           weekdaysShort: 'Lis_Umb_Lsb_Les_Lsi_Lsh_Umg'.split('_'),
           weekdaysMin: 'Li_Us_Lb_Lt_Ls_Lh_Ug'.split('_'),
           weekdaysParseExact: !0,
@@ -34509,7 +34734,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY h:mm A',
-            LLLL: 'dddd, D MMMM YYYY h:mm A'
+            LLLL: 'dddd, D MMMM YYYY h:mm A',
           },
           calendar: {
             sameDay: '[Namuhla nga] LT',
@@ -34517,7 +34742,7 @@
             nextWeek: 'dddd [nga] LT',
             lastDay: '[Itolo nga] LT',
             lastWeek: 'dddd [leliphelile] [nga] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'nga %s',
@@ -34533,10 +34758,10 @@
             M: 'inyanga',
             MM: '%d tinyanga',
             y: 'umnyaka',
-            yy: '%d iminyaka'
+            yy: '%d iminyaka',
           },
           meridiemParse: /ekuseni|emini|entsambama|ebusuku/,
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 11
               ? 'ekuseni'
               : e < 15
@@ -34545,7 +34770,7 @@
               ? 'entsambama'
               : 'ebusuku';
           },
-          meridiemHour: function(e, t) {
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'ekuseni' === t
@@ -34563,12 +34788,13 @@
           },
           dayOfMonthOrdinalParse: /\d{1,2}/,
           ordinal: '%d',
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         f.defineLocale('sv', {
-          months: 'januari_februari_mars_april_maj_juni_juli_augusti_september_oktober_november_december'.split(
-            '_'
-          ),
+          months:
+            'januari_februari_mars_april_maj_juni_juli_augusti_september_oktober_november_december'.split(
+              '_'
+            ),
           monthsShort: 'jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec'.split(
             '_'
           ),
@@ -34585,7 +34811,7 @@
             LLL: 'D MMMM YYYY [kl.] HH:mm',
             LLLL: 'dddd D MMMM YYYY [kl.] HH:mm',
             lll: 'D MMM YYYY HH:mm',
-            llll: 'ddd D MMM YYYY HH:mm'
+            llll: 'ddd D MMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[Idag] LT',
@@ -34593,7 +34819,7 @@
             lastDay: '[Igår] LT',
             nextWeek: '[På] dddd LT',
             lastWeek: '[I] dddd[s] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'om %s',
@@ -34609,27 +34835,29 @@
             M: 'en månad',
             MM: '%d månader',
             y: 'ett år',
-            yy: '%d år'
+            yy: '%d år',
           },
           dayOfMonthOrdinalParse: /\d{1,2}(\:e|\:a)/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             var t = e % 10;
             return (
               e + (1 == ~~((e % 100) / 10) || (1 != t && 2 != t) ? ':e' : ':a')
             );
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         f.defineLocale('sw', {
-          months: 'Januari_Februari_Machi_Aprili_Mei_Juni_Julai_Agosti_Septemba_Oktoba_Novemba_Desemba'.split(
-            '_'
-          ),
+          months:
+            'Januari_Februari_Machi_Aprili_Mei_Juni_Julai_Agosti_Septemba_Oktoba_Novemba_Desemba'.split(
+              '_'
+            ),
           monthsShort: 'Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ago_Sep_Okt_Nov_Des'.split(
             '_'
           ),
-          weekdays: 'Jumapili_Jumatatu_Jumanne_Jumatano_Alhamisi_Ijumaa_Jumamosi'.split(
-            '_'
-          ),
+          weekdays:
+            'Jumapili_Jumatatu_Jumanne_Jumatano_Alhamisi_Ijumaa_Jumamosi'.split(
+              '_'
+            ),
           weekdaysShort: 'Jpl_Jtat_Jnne_Jtan_Alh_Ijm_Jmos'.split('_'),
           weekdaysMin: 'J2_J3_J4_J5_Al_Ij_J1'.split('_'),
           weekdaysParseExact: !0,
@@ -34639,7 +34867,7 @@
             L: 'DD.MM.YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[leo saa] LT',
@@ -34647,7 +34875,7 @@
             nextWeek: '[wiki ijayo] dddd [saat] LT',
             lastDay: '[jana] LT',
             lastWeek: '[wiki iliyopita] dddd [saat] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s baadaye',
@@ -34663,9 +34891,9 @@
             M: 'mwezi mmoja',
             MM: 'miezi %d',
             y: 'mwaka mmoja',
-            yy: 'miaka %d'
+            yy: 'miaka %d',
           },
-          week: { dow: 1, doy: 7 }
+          week: { dow: 1, doy: 7 },
         }),
         {
           1: '௧',
@@ -34677,7 +34905,7 @@
           7: '௭',
           8: '௮',
           9: '௯',
-          0: '௦'
+          0: '௦',
         }),
       Ms = {
         '௧': '1',
@@ -34689,22 +34917,24 @@
         '௭': '7',
         '௮': '8',
         '௯': '9',
-        '௦': '0'
+        '௦': '0',
       },
       bs =
         (f.defineLocale('ta', {
-          months: 'ஜனவரி_பிப்ரவரி_மார்ச்_ஏப்ரல்_மே_ஜூன்_ஜூலை_ஆகஸ்ட்_செப்டெம்பர்_அக்டோபர்_நவம்பர்_டிசம்பர்'.split(
-            '_'
-          ),
-          monthsShort: 'ஜனவரி_பிப்ரவரி_மார்ச்_ஏப்ரல்_மே_ஜூன்_ஜூலை_ஆகஸ்ட்_செப்டெம்பர்_அக்டோபர்_நவம்பர்_டிசம்பர்'.split(
-            '_'
-          ),
-          weekdays: 'ஞாயிற்றுக்கிழமை_திங்கட்கிழமை_செவ்வாய்கிழமை_புதன்கிழமை_வியாழக்கிழமை_வெள்ளிக்கிழமை_சனிக்கிழமை'.split(
-            '_'
-          ),
-          weekdaysShort: 'ஞாயிறு_திங்கள்_செவ்வாய்_புதன்_வியாழன்_வெள்ளி_சனி'.split(
-            '_'
-          ),
+          months:
+            'ஜனவரி_பிப்ரவரி_மார்ச்_ஏப்ரல்_மே_ஜூன்_ஜூலை_ஆகஸ்ட்_செப்டெம்பர்_அக்டோபர்_நவம்பர்_டிசம்பர்'.split(
+              '_'
+            ),
+          monthsShort:
+            'ஜனவரி_பிப்ரவரி_மார்ச்_ஏப்ரல்_மே_ஜூன்_ஜூலை_ஆகஸ்ட்_செப்டெம்பர்_அக்டோபர்_நவம்பர்_டிசம்பர்'.split(
+              '_'
+            ),
+          weekdays:
+            'ஞாயிற்றுக்கிழமை_திங்கட்கிழமை_செவ்வாய்கிழமை_புதன்கிழமை_வியாழக்கிழமை_வெள்ளிக்கிழமை_சனிக்கிழமை'.split(
+              '_'
+            ),
+          weekdaysShort:
+            'ஞாயிறு_திங்கள்_செவ்வாய்_புதன்_வியாழன்_வெள்ளி_சனி'.split('_'),
           weekdaysMin: 'ஞா_தி_செ_பு_வி_வெ_ச'.split('_'),
           longDateFormat: {
             LT: 'HH:mm',
@@ -34712,7 +34942,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, HH:mm',
-            LLLL: 'dddd, D MMMM YYYY, HH:mm'
+            LLLL: 'dddd, D MMMM YYYY, HH:mm',
           },
           calendar: {
             sameDay: '[இன்று] LT',
@@ -34720,7 +34950,7 @@
             nextWeek: 'dddd, LT',
             lastDay: '[நேற்று] LT',
             lastWeek: '[கடந்த வாரம்] dddd, LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s இல்',
@@ -34736,27 +34966,28 @@
             M: 'ஒரு மாதம்',
             MM: '%d மாதங்கள்',
             y: 'ஒரு வருடம்',
-            yy: '%d ஆண்டுகள்'
+            yy: '%d ஆண்டுகள்',
           },
           dayOfMonthOrdinalParse: /\d{1,2}\u0bb5\u0ba4\u0bc1/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             return e + 'வது';
           },
-          preparse: function(e) {
+          preparse: function (e) {
             return e.replace(
               /[\u0be7\u0be8\u0be9\u0bea\u0beb\u0bec\u0bed\u0bee\u0bef\u0be6]/g,
-              function(e) {
+              function (e) {
                 return Ms[e];
               }
             );
           },
-          postformat: function(e) {
-            return e.replace(/\d/g, function(e) {
+          postformat: function (e) {
+            return e.replace(/\d/g, function (e) {
               return vs[e];
             });
           },
-          meridiemParse: /\u0baf\u0bbe\u0bae\u0bae\u0bcd|\u0bb5\u0bc8\u0b95\u0bb1\u0bc8|\u0b95\u0bbe\u0bb2\u0bc8|\u0ba8\u0ba3\u0bcd\u0baa\u0b95\u0bb2\u0bcd|\u0b8e\u0bb1\u0bcd\u0baa\u0bbe\u0b9f\u0bc1|\u0bae\u0bbe\u0bb2\u0bc8/,
-          meridiem: function(e, t, i) {
+          meridiemParse:
+            /\u0baf\u0bbe\u0bae\u0bae\u0bcd|\u0bb5\u0bc8\u0b95\u0bb1\u0bc8|\u0b95\u0bbe\u0bb2\u0bc8|\u0ba8\u0ba3\u0bcd\u0baa\u0b95\u0bb2\u0bcd|\u0b8e\u0bb1\u0bcd\u0baa\u0bbe\u0b9f\u0bc1|\u0bae\u0bbe\u0bb2\u0bc8/,
+          meridiem: function (e, t, i) {
             return e < 2
               ? ' யாமம்'
               : e < 6
@@ -34771,7 +35002,7 @@
               ? ' மாலை'
               : ' யாமம்';
           },
-          meridiemHour: function(e, t) {
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'யாமம்' === t
@@ -34783,19 +35014,22 @@
                 : e + 12
             );
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         f.defineLocale('te', {
-          months: 'జనవరి_ఫిబ్రవరి_మార్చి_ఏప్రిల్_మే_జూన్_జులై_ఆగస్టు_సెప్టెంబర్_అక్టోబర్_నవంబర్_డిసెంబర్'.split(
-            '_'
-          ),
-          monthsShort: 'జన._ఫిబ్ర._మార్చి_ఏప్రి._మే_జూన్_జులై_ఆగ._సెప్._అక్టో._నవ._డిసె.'.split(
-            '_'
-          ),
+          months:
+            'జనవరి_ఫిబ్రవరి_మార్చి_ఏప్రిల్_మే_జూన్_జులై_ఆగస్టు_సెప్టెంబర్_అక్టోబర్_నవంబర్_డిసెంబర్'.split(
+              '_'
+            ),
+          monthsShort:
+            'జన._ఫిబ్ర._మార్చి_ఏప్రి._మే_జూన్_జులై_ఆగ._సెప్._అక్టో._నవ._డిసె.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
-          weekdays: 'ఆదివారం_సోమవారం_మంగళవారం_బుధవారం_గురువారం_శుక్రవారం_శనివారం'.split(
-            '_'
-          ),
+          weekdays:
+            'ఆదివారం_సోమవారం_మంగళవారం_బుధవారం_గురువారం_శుక్రవారం_శనివారం'.split(
+              '_'
+            ),
           weekdaysShort: 'ఆది_సోమ_మంగళ_బుధ_గురు_శుక్ర_శని'.split('_'),
           weekdaysMin: 'ఆ_సో_మం_బు_గు_శు_శ'.split('_'),
           longDateFormat: {
@@ -34804,7 +35038,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY, A h:mm',
-            LLLL: 'dddd, D MMMM YYYY, A h:mm'
+            LLLL: 'dddd, D MMMM YYYY, A h:mm',
           },
           calendar: {
             sameDay: '[నేడు] LT',
@@ -34812,7 +35046,7 @@
             nextWeek: 'dddd, LT',
             lastDay: '[నిన్న] LT',
             lastWeek: '[గత] dddd, LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s లో',
@@ -34828,12 +35062,13 @@
             M: 'ఒక నెల',
             MM: '%d నెలలు',
             y: 'ఒక సంవత్సరం',
-            yy: '%d సంవత్సరాలు'
+            yy: '%d సంవత్సరాలు',
           },
           dayOfMonthOrdinalParse: /\d{1,2}\u0c35/,
           ordinal: '%dవ',
-          meridiemParse: /\u0c30\u0c3e\u0c24\u0c4d\u0c30\u0c3f|\u0c09\u0c26\u0c2f\u0c02|\u0c2e\u0c27\u0c4d\u0c2f\u0c3e\u0c39\u0c4d\u0c28\u0c02|\u0c38\u0c3e\u0c2f\u0c02\u0c24\u0c4d\u0c30\u0c02/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u0c30\u0c3e\u0c24\u0c4d\u0c30\u0c3f|\u0c09\u0c26\u0c2f\u0c02|\u0c2e\u0c27\u0c4d\u0c2f\u0c3e\u0c39\u0c4d\u0c28\u0c02|\u0c38\u0c3e\u0c2f\u0c02\u0c24\u0c4d\u0c30\u0c02/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'రాత్రి' === t
@@ -34851,7 +35086,7 @@
                 : void 0
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 4
               ? 'రాత్రి'
               : e < 10
@@ -34862,12 +35097,13 @@
               ? 'సాయంత్రం'
               : 'రాత్రి';
           },
-          week: { dow: 0, doy: 6 }
+          week: { dow: 0, doy: 6 },
         }),
         f.defineLocale('tet', {
-          months: 'Janeiru_Fevereiru_Marsu_Abril_Maiu_Juñu_Jullu_Agustu_Setembru_Outubru_Novembru_Dezembru'.split(
-            '_'
-          ),
+          months:
+            'Janeiru_Fevereiru_Marsu_Abril_Maiu_Juñu_Jullu_Agustu_Setembru_Outubru_Novembru_Dezembru'.split(
+              '_'
+            ),
           monthsShort: 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split(
             '_'
           ),
@@ -34882,7 +35118,7 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[Ohin iha] LT',
@@ -34890,7 +35126,7 @@
             nextWeek: 'dddd [iha] LT',
             lastDay: '[Horiseik iha] LT',
             lastWeek: 'dddd [semana kotuk] [iha] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'iha %s',
@@ -34906,10 +35142,10 @@
             M: 'fulan ida',
             MM: 'fulan %d',
             y: 'tinan ida',
-            yy: 'tinan %d'
+            yy: 'tinan %d',
           },
           dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             var t = e % 10;
             return (
               e +
@@ -34924,7 +35160,7 @@
                 : 'th')
             );
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         {
           0: '-ум',
@@ -34948,24 +35184,25 @@
           70: '-ум',
           80: '-ум',
           90: '-ум',
-          100: '-ум'
+          100: '-ум',
         }),
       ws =
         (f.defineLocale('tg', {
           months: {
-            format: 'январи_феврали_марти_апрели_майи_июни_июли_августи_сентябри_октябри_ноябри_декабри'.split(
-              '_'
-            ),
-            standalone: 'январ_феврал_март_апрел_май_июн_июл_август_сентябр_октябр_ноябр_декабр'.split(
-              '_'
-            )
+            format:
+              'январи_феврали_марти_апрели_майи_июни_июли_августи_сентябри_октябри_ноябри_декабри'.split(
+                '_'
+              ),
+            standalone:
+              'январ_феврал_март_апрел_май_июн_июл_август_сентябр_октябр_ноябр_декабр'.split(
+                '_'
+              ),
           },
           monthsShort: 'янв_фев_мар_апр_май_июн_июл_авг_сен_окт_ноя_дек'.split(
             '_'
           ),
-          weekdays: 'якшанбе_душанбе_сешанбе_чоршанбе_панҷшанбе_ҷумъа_шанбе'.split(
-            '_'
-          ),
+          weekdays:
+            'якшанбе_душанбе_сешанбе_чоршанбе_панҷшанбе_ҷумъа_шанбе'.split('_'),
           weekdaysShort: 'яшб_дшб_сшб_чшб_пшб_ҷум_шнб'.split('_'),
           weekdaysMin: 'яш_дш_сш_чш_пш_ҷм_шб'.split('_'),
           longDateFormat: {
@@ -34974,7 +35211,7 @@
             L: 'DD.MM.YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[Имрӯз соати] LT',
@@ -34982,7 +35219,7 @@
             lastDay: '[Дирӯз соати] LT',
             nextWeek: 'dddd[и] [ҳафтаи оянда соати] LT',
             lastWeek: 'dddd[и] [ҳафтаи гузашта соати] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'баъди %s',
@@ -34997,10 +35234,11 @@
             M: 'як моҳ',
             MM: '%d моҳ',
             y: 'як сол',
-            yy: '%d сол'
+            yy: '%d сол',
           },
-          meridiemParse: /\u0448\u0430\u0431|\u0441\u0443\u0431\u04b3|\u0440\u04ef\u0437|\u0431\u0435\u0433\u043e\u04b3/,
-          meridiemHour: function(e, t) {
+          meridiemParse:
+            /\u0448\u0430\u0431|\u0441\u0443\u0431\u04b3|\u0440\u04ef\u0437|\u0431\u0435\u0433\u043e\u04b3/,
+          meridiemHour: function (e, t) {
             return (
               12 === e && (e = 0),
               'шаб' === t
@@ -35018,7 +35256,7 @@
                 : void 0
             );
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 4
               ? 'шаб'
               : e < 11
@@ -35030,18 +35268,20 @@
               : 'шаб';
           },
           dayOfMonthOrdinalParse: /\d{1,2}-(\u0443\u043c|\u044e\u043c)/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             return e + (bs[e] || bs[e % 10] || bs[100 <= e ? 100 : null]);
           },
-          week: { dow: 1, doy: 7 }
+          week: { dow: 1, doy: 7 },
         }),
         f.defineLocale('th', {
-          months: 'มกราคม_กุมภาพันธ์_มีนาคม_เมษายน_พฤษภาคม_มิถุนายน_กรกฎาคม_สิงหาคม_กันยายน_ตุลาคม_พฤศจิกายน_ธันวาคม'.split(
-            '_'
-          ),
-          monthsShort: 'ม.ค._ก.พ._มี.ค._เม.ย._พ.ค._มิ.ย._ก.ค._ส.ค._ก.ย._ต.ค._พ.ย._ธ.ค.'.split(
-            '_'
-          ),
+          months:
+            'มกราคม_กุมภาพันธ์_มีนาคม_เมษายน_พฤษภาคม_มิถุนายน_กรกฎาคม_สิงหาคม_กันยายน_ตุลาคม_พฤศจิกายน_ธันวาคม'.split(
+              '_'
+            ),
+          monthsShort:
+            'ม.ค._ก.พ._มี.ค._เม.ย._พ.ค._มิ.ย._ก.ค._ส.ค._ก.ย._ต.ค._พ.ย._ธ.ค.'.split(
+              '_'
+            ),
           monthsParseExact: !0,
           weekdays: 'อาทิตย์_จันทร์_อังคาร_พุธ_พฤหัสบดี_ศุกร์_เสาร์'.split('_'),
           weekdaysShort: 'อาทิตย์_จันทร์_อังคาร_พุธ_พฤหัส_ศุกร์_เสาร์'.split(
@@ -35055,13 +35295,14 @@
             L: 'DD/MM/YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY เวลา H:mm',
-            LLLL: 'วันddddที่ D MMMM YYYY เวลา H:mm'
+            LLLL: 'วันddddที่ D MMMM YYYY เวลา H:mm',
           },
-          meridiemParse: /\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e17\u0e35\u0e48\u0e22\u0e07|\u0e2b\u0e25\u0e31\u0e07\u0e40\u0e17\u0e35\u0e48\u0e22\u0e07/,
-          isPM: function(e) {
+          meridiemParse:
+            /\u0e01\u0e48\u0e2d\u0e19\u0e40\u0e17\u0e35\u0e48\u0e22\u0e07|\u0e2b\u0e25\u0e31\u0e07\u0e40\u0e17\u0e35\u0e48\u0e22\u0e07/,
+          isPM: function (e) {
             return 'หลังเที่ยง' === e;
           },
-          meridiem: function(e, t, i) {
+          meridiem: function (e, t, i) {
             return e < 12 ? 'ก่อนเที่ยง' : 'หลังเที่ยง';
           },
           calendar: {
@@ -35070,7 +35311,7 @@
             nextWeek: 'dddd[หน้า เวลา] LT',
             lastDay: '[เมื่อวานนี้ เวลา] LT',
             lastWeek: '[วัน]dddd[ที่แล้ว เวลา] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'อีก %s',
@@ -35088,8 +35329,8 @@
             M: '1 เดือน',
             MM: '%d เดือน',
             y: '1 ปี',
-            yy: '%d ปี'
-          }
+            yy: '%d ปี',
+          },
         }),
         {
           1: "'inji",
@@ -35109,19 +35350,19 @@
           10: "'unjy",
           30: "'unjy",
           60: "'ynjy",
-          90: "'ynjy"
+          90: "'ynjy",
         }),
       Ls =
         (f.defineLocale('tk', {
-          months: 'Ýanwar_Fewral_Mart_Aprel_Maý_Iýun_Iýul_Awgust_Sentýabr_Oktýabr_Noýabr_Dekabr'.split(
-            '_'
-          ),
+          months:
+            'Ýanwar_Fewral_Mart_Aprel_Maý_Iýun_Iýul_Awgust_Sentýabr_Oktýabr_Noýabr_Dekabr'.split(
+              '_'
+            ),
           monthsShort: 'Ýan_Few_Mar_Apr_Maý_Iýn_Iýl_Awg_Sen_Okt_Noý_Dek'.split(
             '_'
           ),
-          weekdays: 'Ýekşenbe_Duşenbe_Sişenbe_Çarşenbe_Penşenbe_Anna_Şenbe'.split(
-            '_'
-          ),
+          weekdays:
+            'Ýekşenbe_Duşenbe_Sişenbe_Çarşenbe_Penşenbe_Anna_Şenbe'.split('_'),
           weekdaysShort: 'Ýek_Duş_Siş_Çar_Pen_Ann_Şen'.split('_'),
           weekdaysMin: 'Ýk_Dş_Sş_Çr_Pn_An_Şn'.split('_'),
           longDateFormat: {
@@ -35130,7 +35371,7 @@
             L: 'DD.MM.YYYY',
             LL: 'D MMMM YYYY',
             LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm'
+            LLLL: 'dddd, D MMMM YYYY HH:mm',
           },
           calendar: {
             sameDay: '[bugün sagat] LT',
@@ -35138,7 +35379,7 @@
             nextWeek: '[indiki] dddd [sagat] LT',
             lastDay: '[düýn] LT',
             lastWeek: '[geçen] dddd [sagat] LT',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: '%s soň',
@@ -35153,9 +35394,9 @@
             M: 'bir aý',
             MM: '%d aý',
             y: 'bir ýyl',
-            yy: '%d ýyl'
+            yy: '%d ýyl',
           },
-          ordinal: function(e, t) {
+          ordinal: function (e, t) {
             switch (t) {
               case 'd':
               case 'D':
@@ -35172,18 +35413,18 @@
                         ws[100 <= e ? 100 : null]);
             }
           },
-          week: { dow: 1, doy: 7 }
+          week: { dow: 1, doy: 7 },
         }),
         f.defineLocale('tl-ph', {
-          months: 'Enero_Pebrero_Marso_Abril_Mayo_Hunyo_Hulyo_Agosto_Setyembre_Oktubre_Nobyembre_Disyembre'.split(
-            '_'
-          ),
+          months:
+            'Enero_Pebrero_Marso_Abril_Mayo_Hunyo_Hulyo_Agosto_Setyembre_Oktubre_Nobyembre_Disyembre'.split(
+              '_'
+            ),
           monthsShort: 'Ene_Peb_Mar_Abr_May_Hun_Hul_Ago_Set_Okt_Nob_Dis'.split(
             '_'
           ),
-          weekdays: 'Linggo_Lunes_Martes_Miyerkules_Huwebes_Biyernes_Sabado'.split(
-            '_'
-          ),
+          weekdays:
+            'Linggo_Lunes_Martes_Miyerkules_Huwebes_Biyernes_Sabado'.split('_'),
           weekdaysShort: 'Lin_Lun_Mar_Miy_Huw_Biy_Sab'.split('_'),
           weekdaysMin: 'Li_Lu_Ma_Mi_Hu_Bi_Sab'.split('_'),
           longDateFormat: {
@@ -35192,7 +35433,7 @@
             L: 'MM/D/YYYY',
             LL: 'MMMM D, YYYY',
             LLL: 'MMMM D, YYYY HH:mm',
-            LLLL: 'dddd, MMMM DD, YYYY HH:mm'
+            LLLL: 'dddd, MMMM DD, YYYY HH:mm',
           },
           calendar: {
             sameDay: 'LT [ngayong araw]',
@@ -35200,7 +35441,7 @@
             nextWeek: 'LT [sa susunod na] dddd',
             lastDay: 'LT [kahapon]',
             lastWeek: 'LT [noong nakaraang] dddd',
-            sameElse: 'L'
+            sameElse: 'L',
           },
           relativeTime: {
             future: 'sa loob ng %s',
@@ -35216,13 +35457,13 @@
             M: 'isang buwan',
             MM: '%d buwan',
             y: 'isang taon',
-            yy: '%d taon'
+            yy: '%d taon',
           },
           dayOfMonthOrdinalParse: /\d{1,2}/,
-          ordinal: function(e) {
+          ordinal: function (e) {
             return e;
           },
-          week: { dow: 1, doy: 4 }
+          week: { dow: 1, doy: 4 },
         }),
         'pagh_wa’_cha’_wej_loS_vagh_jav_Soch_chorgh_Hut'.split('_'));
     function Ts(e, t, i, n) {
@@ -35253,29 +35494,28 @@
       }
     }
     f.defineLocale('tlh', {
-      months: 'tera’ jar wa’_tera’ jar cha’_tera’ jar wej_tera’ jar loS_tera’ jar vagh_tera’ jar jav_tera’ jar Soch_tera’ jar chorgh_tera’ jar Hut_tera’ jar wa’maH_tera’ jar wa’maH wa’_tera’ jar wa’maH cha’'.split(
-        '_'
-      ),
-      monthsShort: 'jar wa’_jar cha’_jar wej_jar loS_jar vagh_jar jav_jar Soch_jar chorgh_jar Hut_jar wa’maH_jar wa’maH wa’_jar wa’maH cha’'.split(
-        '_'
-      ),
+      months:
+        'tera’ jar wa’_tera’ jar cha’_tera’ jar wej_tera’ jar loS_tera’ jar vagh_tera’ jar jav_tera’ jar Soch_tera’ jar chorgh_tera’ jar Hut_tera’ jar wa’maH_tera’ jar wa’maH wa’_tera’ jar wa’maH cha’'.split(
+          '_'
+        ),
+      monthsShort:
+        'jar wa’_jar cha’_jar wej_jar loS_jar vagh_jar jav_jar Soch_jar chorgh_jar Hut_jar wa’maH_jar wa’maH wa’_jar wa’maH cha’'.split(
+          '_'
+        ),
       monthsParseExact: !0,
-      weekdays: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-        '_'
-      ),
-      weekdaysShort: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-        '_'
-      ),
-      weekdaysMin: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-        '_'
-      ),
+      weekdays:
+        'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split('_'),
+      weekdaysShort:
+        'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split('_'),
+      weekdaysMin:
+        'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split('_'),
       longDateFormat: {
         LT: 'HH:mm',
         LTS: 'HH:mm:ss',
         L: 'DD.MM.YYYY',
         LL: 'D MMMM YYYY',
         LLL: 'D MMMM YYYY HH:mm',
-        LLLL: 'dddd, D MMMM YYYY HH:mm'
+        LLLL: 'dddd, D MMMM YYYY HH:mm',
       },
       calendar: {
         sameDay: '[DaHjaj] LT',
@@ -35283,10 +35523,10 @@
         nextWeek: 'LLL',
         lastDay: '[wa’Hu’] LT',
         lastWeek: 'LLL',
-        sameElse: 'L'
+        sameElse: 'L',
       },
       relativeTime: {
-        future: function(e) {
+        future: function (e) {
           var t = e;
           return -1 !== e.indexOf('jaj')
             ? t.slice(0, -3) + 'leS'
@@ -35296,7 +35536,7 @@
             ? t.slice(0, -3) + 'nem'
             : t + ' pIq';
         },
-        past: function(e) {
+        past: function (e) {
           var t = e;
           return -1 !== e.indexOf('jaj')
             ? t.slice(0, -3) + 'Hu’'
@@ -35317,11 +35557,11 @@
         M: 'wa’ jar',
         MM: Ts,
         y: 'wa’ DIS',
-        yy: Ts
+        yy: Ts,
       },
       dayOfMonthOrdinalParse: /\d{1,2}\./,
       ordinal: '%d.',
-      week: { dow: 1, doy: 4 }
+      week: { dow: 1, doy: 4 },
     });
     var Ys = {
       1: "'inci",
@@ -35341,7 +35581,7 @@
       10: "'uncu",
       30: "'uncu",
       60: "'ıncı",
-      90: "'ıncı"
+      90: "'ıncı",
     };
     function ks(e, t, i, n) {
       return (
@@ -35357,7 +35597,7 @@
           M: ["'n mes", "'iens mes"],
           MM: [e + ' mesen', e + ' mesen'],
           y: ["'n ar", "'iens ar"],
-          yy: [e + ' ars', e + ' ars']
+          yy: [e + ' ars', e + ' ars'],
         }),
         n || t ? e[i][0] : e[i][1]
       );
@@ -35380,7 +35620,7 @@
             hh: t ? 'година_години_годин' : 'годину_години_годин',
             dd: 'день_дні_днів',
             MM: 'місяць_місяці_місяців',
-            yy: 'рік_роки_років'
+            yy: 'рік_роки_років',
           }[i]).split('_')),
           e % 10 == 1 && e % 100 != 11
             ? t[0]
@@ -35389,15 +35629,16 @@
             : t[2]);
     }
     function xs(e) {
-      return function() {
+      return function () {
         return e + 'о' + (11 === this.hours() ? 'б' : '') + '] LT';
       };
     }
     return (
       f.defineLocale('tr', {
-        months: 'Ocak_Şubat_Mart_Nisan_Mayıs_Haziran_Temmuz_Ağustos_Eylül_Ekim_Kasım_Aralık'.split(
-          '_'
-        ),
+        months:
+          'Ocak_Şubat_Mart_Nisan_Mayıs_Haziran_Temmuz_Ağustos_Eylül_Ekim_Kasım_Aralık'.split(
+            '_'
+          ),
         monthsShort: 'Oca_Şub_Mar_Nis_May_Haz_Tem_Ağu_Eyl_Eki_Kas_Ara'.split(
           '_'
         ),
@@ -35406,11 +35647,11 @@
         ),
         weekdaysShort: 'Paz_Pzt_Sal_Çar_Per_Cum_Cmt'.split('_'),
         weekdaysMin: 'Pz_Pt_Sa_Ça_Pe_Cu_Ct'.split('_'),
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? (i ? 'öö' : 'ÖÖ') : i ? 'ös' : 'ÖS';
         },
         meridiemParse: /\xf6\xf6|\xd6\xd6|\xf6s|\xd6S/,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'ös' === e || 'ÖS' === e;
         },
         longDateFormat: {
@@ -35419,7 +35660,7 @@
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[bugün saat] LT',
@@ -35427,7 +35668,7 @@
           nextWeek: '[gelecek] dddd [saat] LT',
           lastDay: '[dün] LT',
           lastWeek: '[geçen] dddd [saat] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s sonra',
@@ -35445,9 +35686,9 @@
           M: 'bir ay',
           MM: '%d ay',
           y: 'bir yıl',
-          yy: '%d yıl'
+          yy: '%d yıl',
         },
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'd':
             case 'D':
@@ -35464,12 +35705,13 @@
                       Ys[100 <= e ? 100 : null]);
           }
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('tzl', {
-        months: 'Januar_Fevraglh_Març_Avrïu_Mai_Gün_Julia_Guscht_Setemvar_Listopäts_Noemvar_Zecemvar'.split(
-          '_'
-        ),
+        months:
+          'Januar_Fevraglh_Març_Avrïu_Mai_Gün_Julia_Guscht_Setemvar_Listopäts_Noemvar_Zecemvar'.split(
+            '_'
+          ),
         monthsShort: 'Jan_Fev_Mar_Avr_Mai_Gün_Jul_Gus_Set_Lis_Noe_Zec'.split(
           '_'
         ),
@@ -35484,13 +35726,13 @@
           L: 'DD.MM.YYYY',
           LL: 'D. MMMM [dallas] YYYY',
           LLL: 'D. MMMM [dallas] YYYY HH.mm',
-          LLLL: 'dddd, [li] D. MMMM [dallas] YYYY HH.mm'
+          LLLL: 'dddd, [li] D. MMMM [dallas] YYYY HH.mm',
         },
         meridiemParse: /d\'o|d\'a/i,
-        isPM: function(e) {
+        isPM: function (e) {
           return "d'o" === e.toLowerCase();
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return 11 < e ? (i ? "d'o" : "D'O") : i ? "d'a" : "D'A";
         },
         calendar: {
@@ -35499,7 +35741,7 @@
           nextWeek: 'dddd [à] LT',
           lastDay: '[ieiri à] LT',
           lastWeek: '[sür el] dddd [lasteu à] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'osprei %s',
@@ -35515,19 +35757,21 @@
           M: ks,
           MM: ks,
           y: ks,
-          yy: ks
+          yy: ks,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: '%d.',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('tzm-latn', {
-        months: 'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
-          '_'
-        ),
-        monthsShort: 'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
-          '_'
-        ),
+        months:
+          'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
+            '_'
+          ),
+        monthsShort:
+          'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
+            '_'
+          ),
         weekdays: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split('_'),
         weekdaysShort: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split(
           '_'
@@ -35541,7 +35785,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[asdkh g] LT',
@@ -35549,7 +35793,7 @@
           nextWeek: 'dddd [g] LT',
           lastDay: '[assant g] LT',
           lastWeek: 'dddd [g] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'dadkh s yan %s',
@@ -35565,17 +35809,19 @@
           M: 'ayowr',
           MM: '%d iyyirn',
           y: 'asgas',
-          yy: '%d isgasn'
+          yy: '%d isgasn',
         },
-        week: { dow: 6, doy: 12 }
+        week: { dow: 6, doy: 12 },
       }),
       f.defineLocale('tzm', {
-        months: 'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
-          '_'
-        ),
-        monthsShort: 'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
-          '_'
-        ),
+        months:
+          'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
+            '_'
+          ),
+        monthsShort:
+          'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
+            '_'
+          ),
         weekdays: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split('_'),
         weekdaysShort: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split(
           '_'
@@ -35589,7 +35835,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd D MMMM YYYY HH:mm'
+          LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[ⴰⵙⴷⵅ ⴴ] LT',
@@ -35597,7 +35843,7 @@
           nextWeek: 'dddd [ⴴ] LT',
           lastDay: '[ⴰⵚⴰⵏⵜ ⴴ] LT',
           lastWeek: 'dddd [ⴴ] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'ⴷⴰⴷⵅ ⵙ ⵢⴰⵏ %s',
@@ -35613,20 +35859,21 @@
           M: 'ⴰⵢoⵓⵔ',
           MM: '%d ⵉⵢⵢⵉⵔⵏ',
           y: 'ⴰⵙⴳⴰⵙ',
-          yy: '%d ⵉⵙⴳⴰⵙⵏ'
+          yy: '%d ⵉⵙⴳⴰⵙⵏ',
         },
-        week: { dow: 6, doy: 12 }
+        week: { dow: 6, doy: 12 },
       }),
       f.defineLocale('ug-cn', {
-        months: 'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
-          '_'
-        ),
-        monthsShort: 'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
-          '_'
-        ),
-        weekdays: 'يەكشەنبە_دۈشەنبە_سەيشەنبە_چارشەنبە_پەيشەنبە_جۈمە_شەنبە'.split(
-          '_'
-        ),
+        months:
+          'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
+            '_'
+          ),
+        monthsShort:
+          'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
+            '_'
+          ),
+        weekdays:
+          'يەكشەنبە_دۈشەنبە_سەيشەنبە_چارشەنبە_پەيشەنبە_جۈمە_شەنبە'.split('_'),
         weekdaysShort: 'يە_دۈ_سە_چا_پە_جۈ_شە'.split('_'),
         weekdaysMin: 'يە_دۈ_سە_چا_پە_جۈ_شە'.split('_'),
         longDateFormat: {
@@ -35635,10 +35882,11 @@
           L: 'YYYY-MM-DD',
           LL: 'YYYY-يىلىM-ئاينىڭD-كۈنى',
           LLL: 'YYYY-يىلىM-ئاينىڭD-كۈنى، HH:mm',
-          LLLL: 'dddd، YYYY-يىلىM-ئاينىڭD-كۈنى، HH:mm'
+          LLLL: 'dddd، YYYY-يىلىM-ئاينىڭD-كۈنى، HH:mm',
         },
-        meridiemParse: /\u064a\u06d0\u0631\u0649\u0645 \u0643\u06d0\u0686\u06d5|\u0633\u06d5\u06be\u06d5\u0631|\u0686\u06c8\u0634\u062a\u0649\u0646 \u0628\u06c7\u0631\u06c7\u0646|\u0686\u06c8\u0634|\u0686\u06c8\u0634\u062a\u0649\u0646 \u0643\u06d0\u064a\u0649\u0646|\u0643\u06d5\u0686/,
-        meridiemHour: function(e, t) {
+        meridiemParse:
+          /\u064a\u06d0\u0631\u0649\u0645 \u0643\u06d0\u0686\u06d5|\u0633\u06d5\u06be\u06d5\u0631|\u0686\u06c8\u0634\u062a\u0649\u0646 \u0628\u06c7\u0631\u06c7\u0646|\u0686\u06c8\u0634|\u0686\u06c8\u0634\u062a\u0649\u0646 \u0643\u06d0\u064a\u0649\u0646|\u0643\u06d5\u0686/,
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             'يېرىم كېچە' === t ||
@@ -35649,7 +35897,7 @@
               : e + 12
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return (e = 100 * e + t) < 600
             ? 'يېرىم كېچە'
             : e < 900
@@ -35668,7 +35916,7 @@
           nextWeek: '[كېلەركى] dddd [سائەت] LT',
           lastDay: '[تۆنۈگۈن] LT',
           lastWeek: '[ئالدىنقى] dddd [سائەت] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s كېيىن',
@@ -35684,10 +35932,11 @@
           M: 'بىر ئاي',
           MM: '%d ئاي',
           y: 'بىر يىل',
-          yy: '%d يىل'
+          yy: '%d يىل',
         },
-        dayOfMonthOrdinalParse: /\d{1,2}(-\u0643\u06c8\u0646\u0649|-\u0626\u0627\u064a|-\u06be\u06d5\u067e\u062a\u06d5)/,
-        ordinal: function(e, t) {
+        dayOfMonthOrdinalParse:
+          /\d{1,2}(-\u0643\u06c8\u0646\u0649|-\u0626\u0627\u064a|-\u06be\u06d5\u067e\u062a\u06d5)/,
+        ordinal: function (e, t) {
           switch (t) {
             case 'd':
             case 'D':
@@ -35700,37 +35949,41 @@
               return e;
           }
         },
-        preparse: function(e) {
+        preparse: function (e) {
           return e.replace(/\u060c/g, ',');
         },
-        postformat: function(e) {
+        postformat: function (e) {
           return e.replace(/,/g, '،');
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('uk', {
         months: {
-          format: 'січня_лютого_березня_квітня_травня_червня_липня_серпня_вересня_жовтня_листопада_грудня'.split(
-            '_'
-          ),
-          standalone: 'січень_лютий_березень_квітень_травень_червень_липень_серпень_вересень_жовтень_листопад_грудень'.split(
-            '_'
-          )
+          format:
+            'січня_лютого_березня_квітня_травня_червня_липня_серпня_вересня_жовтня_листопада_грудня'.split(
+              '_'
+            ),
+          standalone:
+            'січень_лютий_березень_квітень_травень_червень_липень_серпень_вересень_жовтень_листопад_грудень'.split(
+              '_'
+            ),
         },
-        monthsShort: 'січ_лют_бер_квіт_трав_черв_лип_серп_вер_жовт_лист_груд'.split(
-          '_'
-        ),
-        weekdays: function(e, t) {
+        monthsShort:
+          'січ_лют_бер_квіт_трав_черв_лип_серп_вер_жовт_лист_груд'.split('_'),
+        weekdays: function (e, t) {
           var i = {
-            nominative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
-              '_'
-            ),
-            accusative: 'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
-              '_'
-            ),
-            genitive: 'неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи'.split(
-              '_'
-            )
+            nominative:
+              'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
+                '_'
+              ),
+            accusative:
+              'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
+                '_'
+              ),
+            genitive:
+              'неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи'.split(
+                '_'
+              ),
           };
           return !0 === e
             ? i.nominative.slice(1, 7).concat(i.nominative.slice(0, 1))
@@ -35754,14 +36007,14 @@
           L: 'DD.MM.YYYY',
           LL: 'D MMMM YYYY р.',
           LLL: 'D MMMM YYYY р., HH:mm',
-          LLLL: 'dddd, D MMMM YYYY р., HH:mm'
+          LLLL: 'dddd, D MMMM YYYY р., HH:mm',
         },
         calendar: {
           sameDay: xs('[Сьогодні '),
           nextDay: xs('[Завтра '),
           lastDay: xs('[Вчора '),
           nextWeek: xs('[У] dddd ['),
-          lastWeek: function() {
+          lastWeek: function () {
             switch (this.day()) {
               case 0:
               case 3:
@@ -35774,7 +36027,7 @@
                 return xs('[Минулого] dddd [').call(this);
             }
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'за %s',
@@ -35790,19 +36043,20 @@
           M: 'місяць',
           MM: Ds,
           y: 'рік',
-          yy: Ds
+          yy: Ds,
         },
-        meridiemParse: /\u043d\u043e\u0447\u0456|\u0440\u0430\u043d\u043a\u0443|\u0434\u043d\u044f|\u0432\u0435\u0447\u043e\u0440\u0430/,
-        isPM: function(e) {
+        meridiemParse:
+          /\u043d\u043e\u0447\u0456|\u0440\u0430\u043d\u043a\u0443|\u0434\u043d\u044f|\u0432\u0435\u0447\u043e\u0440\u0430/,
+        isPM: function (e) {
           return /^(\u0434\u043d\u044f|\u0432\u0435\u0447\u043e\u0440\u0430)$/.test(
             e
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 4 ? 'ночі' : e < 12 ? 'ранку' : e < 17 ? 'дня' : 'вечора';
         },
         dayOfMonthOrdinalParse: /\d{1,2}-(\u0439|\u0433\u043e)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'M':
             case 'd':
@@ -35816,7 +36070,7 @@
               return e;
           }
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('ur', {
         months: (ki = [
@@ -35831,7 +36085,7 @@
           'ستمبر',
           'اکتوبر',
           'نومبر',
-          'دسمبر'
+          'دسمبر',
         ]),
         monthsShort: ki,
         weekdays: (Yi = [
@@ -35841,7 +36095,7 @@
           'بدھ',
           'جمعرات',
           'جمعہ',
-          'ہفتہ'
+          'ہفتہ',
         ]),
         weekdaysShort: Yi,
         weekdaysMin: Yi,
@@ -35851,13 +36105,13 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd، D MMMM YYYY HH:mm'
+          LLLL: 'dddd، D MMMM YYYY HH:mm',
         },
         meridiemParse: /\u0635\u0628\u062d|\u0634\u0627\u0645/,
-        isPM: function(e) {
+        isPM: function (e) {
           return 'شام' === e;
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? 'صبح' : 'شام';
         },
         calendar: {
@@ -35866,7 +36120,7 @@
           nextWeek: 'dddd [بوقت] LT',
           lastDay: '[گذشتہ روز بوقت] LT',
           lastWeek: '[گذشتہ] dddd [بوقت] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s بعد',
@@ -35882,26 +36136,28 @@
           M: 'ایک ماہ',
           MM: '%d ماہ',
           y: 'ایک سال',
-          yy: '%d سال'
+          yy: '%d سال',
         },
-        preparse: function(e) {
+        preparse: function (e) {
           return e.replace(/\u060c/g, ',');
         },
-        postformat: function(e) {
+        postformat: function (e) {
           return e.replace(/,/g, '،');
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('uz-latn', {
-        months: 'Yanvar_Fevral_Mart_Aprel_May_Iyun_Iyul_Avgust_Sentabr_Oktabr_Noyabr_Dekabr'.split(
-          '_'
-        ),
+        months:
+          'Yanvar_Fevral_Mart_Aprel_May_Iyun_Iyul_Avgust_Sentabr_Oktabr_Noyabr_Dekabr'.split(
+            '_'
+          ),
         monthsShort: 'Yan_Fev_Mar_Apr_May_Iyun_Iyul_Avg_Sen_Okt_Noy_Dek'.split(
           '_'
         ),
-        weekdays: 'Yakshanba_Dushanba_Seshanba_Chorshanba_Payshanba_Juma_Shanba'.split(
-          '_'
-        ),
+        weekdays:
+          'Yakshanba_Dushanba_Seshanba_Chorshanba_Payshanba_Juma_Shanba'.split(
+            '_'
+          ),
         weekdaysShort: 'Yak_Dush_Sesh_Chor_Pay_Jum_Shan'.split('_'),
         weekdaysMin: 'Ya_Du_Se_Cho_Pa_Ju_Sha'.split('_'),
         longDateFormat: {
@@ -35910,7 +36166,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'D MMMM YYYY, dddd HH:mm'
+          LLLL: 'D MMMM YYYY, dddd HH:mm',
         },
         calendar: {
           sameDay: '[Bugun soat] LT [da]',
@@ -35918,7 +36174,7 @@
           nextWeek: 'dddd [kuni soat] LT [da]',
           lastDay: '[Kecha soat] LT [da]',
           lastWeek: "[O'tgan] dddd [kuni soat] LT [da]",
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'Yaqin %s ichida',
@@ -35934,14 +36190,15 @@
           M: 'bir oy',
           MM: '%d oy',
           y: 'bir yil',
-          yy: '%d yil'
+          yy: '%d yil',
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('uz', {
-        months: 'январ_феврал_март_апрел_май_июн_июл_август_сентябр_октябр_ноябр_декабр'.split(
-          '_'
-        ),
+        months:
+          'январ_феврал_март_апрел_май_июн_июл_август_сентябр_октябр_ноябр_декабр'.split(
+            '_'
+          ),
         monthsShort: 'янв_фев_мар_апр_май_июн_июл_авг_сен_окт_ноя_дек'.split(
           '_'
         ),
@@ -35956,7 +36213,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'D MMMM YYYY, dddd HH:mm'
+          LLLL: 'D MMMM YYYY, dddd HH:mm',
         },
         calendar: {
           sameDay: '[Бугун соат] LT [да]',
@@ -35964,7 +36221,7 @@
           nextWeek: 'dddd [куни соат] LT [да]',
           lastDay: '[Кеча соат] LT [да]',
           lastWeek: '[Утган] dddd [куни соат] LT [да]',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'Якин %s ичида',
@@ -35980,29 +36237,30 @@
           M: 'бир ой',
           MM: '%d ой',
           y: 'бир йил',
-          yy: '%d йил'
+          yy: '%d йил',
         },
-        week: { dow: 1, doy: 7 }
+        week: { dow: 1, doy: 7 },
       }),
       f.defineLocale('vi', {
-        months: 'tháng 1_tháng 2_tháng 3_tháng 4_tháng 5_tháng 6_tháng 7_tháng 8_tháng 9_tháng 10_tháng 11_tháng 12'.split(
-          '_'
-        ),
-        monthsShort: 'Thg 01_Thg 02_Thg 03_Thg 04_Thg 05_Thg 06_Thg 07_Thg 08_Thg 09_Thg 10_Thg 11_Thg 12'.split(
-          '_'
-        ),
+        months:
+          'tháng 1_tháng 2_tháng 3_tháng 4_tháng 5_tháng 6_tháng 7_tháng 8_tháng 9_tháng 10_tháng 11_tháng 12'.split(
+            '_'
+          ),
+        monthsShort:
+          'Thg 01_Thg 02_Thg 03_Thg 04_Thg 05_Thg 06_Thg 07_Thg 08_Thg 09_Thg 10_Thg 11_Thg 12'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'chủ nhật_thứ hai_thứ ba_thứ tư_thứ năm_thứ sáu_thứ bảy'.split(
-          '_'
-        ),
+        weekdays:
+          'chủ nhật_thứ hai_thứ ba_thứ tư_thứ năm_thứ sáu_thứ bảy'.split('_'),
         weekdaysShort: 'CN_T2_T3_T4_T5_T6_T7'.split('_'),
         weekdaysMin: 'CN_T2_T3_T4_T5_T6_T7'.split('_'),
         weekdaysParseExact: !0,
         meridiemParse: /sa|ch/i,
-        isPM: function(e) {
+        isPM: function (e) {
           return /^ch$/i.test(e);
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return e < 12 ? (i ? 'sa' : 'SA') : i ? 'ch' : 'CH';
         },
         longDateFormat: {
@@ -36015,7 +36273,7 @@
           l: 'DD/M/YYYY',
           ll: 'D MMM YYYY',
           lll: 'D MMM YYYY HH:mm',
-          llll: 'ddd, D MMM YYYY HH:mm'
+          llll: 'ddd, D MMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[Hôm nay lúc] LT',
@@ -36023,7 +36281,7 @@
           nextWeek: 'dddd [tuần tới lúc] LT',
           lastDay: '[Hôm qua lúc] LT',
           lastWeek: 'dddd [tuần trước lúc] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: '%s tới',
@@ -36041,25 +36299,28 @@
           M: 'một tháng',
           MM: '%d tháng',
           y: 'một năm',
-          yy: '%d năm'
+          yy: '%d năm',
         },
         dayOfMonthOrdinalParse: /\d{1,2}/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           return e;
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('x-pseudo', {
-        months: 'J~áñúá~rý_F~ébrú~árý_~Márc~h_Áp~ríl_~Máý_~Júñé~_Júl~ý_Áú~gúst~_Sép~témb~ér_Ó~ctób~ér_Ñ~óvém~bér_~Décé~mbér'.split(
-          '_'
-        ),
-        monthsShort: 'J~áñ_~Féb_~Már_~Ápr_~Máý_~Júñ_~Júl_~Áúg_~Sép_~Óct_~Ñóv_~Déc'.split(
-          '_'
-        ),
+        months:
+          'J~áñúá~rý_F~ébrú~árý_~Márc~h_Áp~ríl_~Máý_~Júñé~_Júl~ý_Áú~gúst~_Sép~témb~ér_Ó~ctób~ér_Ñ~óvém~bér_~Décé~mbér'.split(
+            '_'
+          ),
+        monthsShort:
+          'J~áñ_~Féb_~Már_~Ápr_~Máý_~Júñ_~Júl_~Áúg_~Sép_~Óct_~Ñóv_~Déc'.split(
+            '_'
+          ),
         monthsParseExact: !0,
-        weekdays: 'S~úñdá~ý_Mó~ñdáý~_Túé~sdáý~_Wéd~ñésd~áý_T~húrs~dáý_~Fríd~áý_S~átúr~dáý'.split(
-          '_'
-        ),
+        weekdays:
+          'S~úñdá~ý_Mó~ñdáý~_Túé~sdáý~_Wéd~ñésd~áý_T~húrs~dáý_~Fríd~áý_S~átúr~dáý'.split(
+            '_'
+          ),
         weekdaysShort: 'S~úñ_~Móñ_~Túé_~Wéd_~Thú_~Frí_~Sát'.split('_'),
         weekdaysMin: 'S~ú_Mó~_Tú_~Wé_T~h_Fr~_Sá'.split('_'),
         weekdaysParseExact: !0,
@@ -36068,7 +36329,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY HH:mm',
-          LLLL: 'dddd, D MMMM YYYY HH:mm'
+          LLLL: 'dddd, D MMMM YYYY HH:mm',
         },
         calendar: {
           sameDay: '[T~ódá~ý át] LT',
@@ -36076,7 +36337,7 @@
           nextWeek: 'dddd [át] LT',
           lastDay: '[Ý~ést~érdá~ý át] LT',
           lastWeek: '[L~ást] dddd [át] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'í~ñ %s',
@@ -36092,10 +36353,10 @@
           M: 'á ~móñ~th',
           MM: '%d m~óñt~hs',
           y: 'á ~ýéár',
-          yy: '%d ý~éárs'
+          yy: '%d ý~éárs',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
-        ordinal: function(e) {
+        ordinal: function (e) {
           var t = e % 10;
           return (
             e +
@@ -36110,12 +36371,13 @@
               : 'th')
           );
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('yo', {
-        months: 'Sẹ́rẹ́_Èrèlè_Ẹrẹ̀nà_Ìgbé_Èbibi_Òkùdu_Agẹmo_Ògún_Owewe_Ọ̀wàrà_Bélú_Ọ̀pẹ̀̀'.split(
-          '_'
-        ),
+        months:
+          'Sẹ́rẹ́_Èrèlè_Ẹrẹ̀nà_Ìgbé_Èbibi_Òkùdu_Agẹmo_Ògún_Owewe_Ọ̀wàrà_Bélú_Ọ̀pẹ̀̀'.split(
+            '_'
+          ),
         monthsShort: 'Sẹ́r_Èrl_Ẹrn_Ìgb_Èbi_Òkù_Agẹ_Ògú_Owe_Ọ̀wà_Bél_Ọ̀pẹ̀̀'.split(
           '_'
         ),
@@ -36128,7 +36390,7 @@
           L: 'DD/MM/YYYY',
           LL: 'D MMMM YYYY',
           LLL: 'D MMMM YYYY h:mm A',
-          LLLL: 'dddd, D MMMM YYYY h:mm A'
+          LLLL: 'dddd, D MMMM YYYY h:mm A',
         },
         calendar: {
           sameDay: '[Ònì ni] LT',
@@ -36136,7 +36398,7 @@
           nextWeek: "dddd [Ọsẹ̀ tón'bọ] [ni] LT",
           lastDay: '[Àna ni] LT',
           lastWeek: 'dddd [Ọsẹ̀ tólọ́] [ni] LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         relativeTime: {
           future: 'ní %s',
@@ -36152,16 +36414,17 @@
           M: 'osù kan',
           MM: 'osù %d',
           y: 'ọdún kan',
-          yy: 'ọdún %d'
+          yy: 'ọdún %d',
         },
         dayOfMonthOrdinalParse: /\u1ecdj\u1ecd\u0301\s\d{1,2}/,
         ordinal: 'ọjọ́ %d',
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('zh-cn', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-          '_'
-        ),
+        months:
+          '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
+            '_'
+          ),
         monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
           '_'
         ),
@@ -36178,10 +36441,11 @@
           l: 'YYYY/M/D',
           ll: 'YYYY年M月D日',
           lll: 'YYYY年M月D日 HH:mm',
-          llll: 'YYYY年M月D日dddd HH:mm'
+          llll: 'YYYY年M月D日dddd HH:mm',
         },
-        meridiemParse: /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
-        meridiemHour: function(e, t) {
+        meridiemParse:
+          /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             '凌晨' === t ||
@@ -36192,7 +36456,7 @@
               : e + 12
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return (e = 100 * e + t) < 600
             ? '凌晨'
             : e < 900
@@ -36208,17 +36472,17 @@
         calendar: {
           sameDay: '[今天]LT',
           nextDay: '[明天]LT',
-          nextWeek: function(e) {
+          nextWeek: function (e) {
             return e.week() !== this.week() ? '[下]dddLT' : '[本]dddLT';
           },
           lastDay: '[昨天]LT',
-          lastWeek: function(e) {
+          lastWeek: function (e) {
             return this.week() !== e.week() ? '[上]dddLT' : '[本]dddLT';
           },
-          sameElse: 'L'
+          sameElse: 'L',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(\u65e5|\u6708|\u5468)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'd':
             case 'D':
@@ -36249,14 +36513,15 @@
           M: '1 个月',
           MM: '%d 个月',
           y: '1 年',
-          yy: '%d 年'
+          yy: '%d 年',
         },
-        week: { dow: 1, doy: 4 }
+        week: { dow: 1, doy: 4 },
       }),
       f.defineLocale('zh-hk', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-          '_'
-        ),
+        months:
+          '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
+            '_'
+          ),
         monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
           '_'
         ),
@@ -36273,10 +36538,11 @@
           l: 'YYYY/M/D',
           ll: 'YYYY年M月D日',
           lll: 'YYYY年M月D日 HH:mm',
-          llll: 'YYYY年M月D日dddd HH:mm'
+          llll: 'YYYY年M月D日dddd HH:mm',
         },
-        meridiemParse: /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
-        meridiemHour: function(e, t) {
+        meridiemParse:
+          /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             '凌晨' === t || '早上' === t || '上午' === t
@@ -36290,7 +36556,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return (e = 100 * e + t) < 600
             ? '凌晨'
             : e < 900
@@ -36309,10 +36575,10 @@
           nextWeek: '[下]ddddLT',
           lastDay: '[昨天]LT',
           lastWeek: '[上]ddddLT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(\u65e5|\u6708|\u9031)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'd':
             case 'D':
@@ -36341,13 +36607,14 @@
           M: '1 個月',
           MM: '%d 個月',
           y: '1 年',
-          yy: '%d 年'
-        }
+          yy: '%d 年',
+        },
       }),
       f.defineLocale('zh-mo', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-          '_'
-        ),
+        months:
+          '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
+            '_'
+          ),
         monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
           '_'
         ),
@@ -36364,10 +36631,11 @@
           l: 'D/M/YYYY',
           ll: 'YYYY年M月D日',
           lll: 'YYYY年M月D日 HH:mm',
-          llll: 'YYYY年M月D日dddd HH:mm'
+          llll: 'YYYY年M月D日dddd HH:mm',
         },
-        meridiemParse: /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
-        meridiemHour: function(e, t) {
+        meridiemParse:
+          /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             '凌晨' === t || '早上' === t || '上午' === t
@@ -36381,7 +36649,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return (e = 100 * e + t) < 600
             ? '凌晨'
             : e < 900
@@ -36400,10 +36668,10 @@
           nextWeek: '[下]dddd LT',
           lastDay: '[昨天] LT',
           lastWeek: '[上]dddd LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(\u65e5|\u6708|\u9031)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'd':
             case 'D':
@@ -36432,13 +36700,14 @@
           M: '1 個月',
           MM: '%d 個月',
           y: '1 年',
-          yy: '%d 年'
-        }
+          yy: '%d 年',
+        },
       }),
       f.defineLocale('zh-tw', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-          '_'
-        ),
+        months:
+          '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
+            '_'
+          ),
         monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
           '_'
         ),
@@ -36455,10 +36724,11 @@
           l: 'YYYY/M/D',
           ll: 'YYYY年M月D日',
           lll: 'YYYY年M月D日 HH:mm',
-          llll: 'YYYY年M月D日dddd HH:mm'
+          llll: 'YYYY年M月D日dddd HH:mm',
         },
-        meridiemParse: /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
-        meridiemHour: function(e, t) {
+        meridiemParse:
+          /\u51cc\u6668|\u65e9\u4e0a|\u4e0a\u5348|\u4e2d\u5348|\u4e0b\u5348|\u665a\u4e0a/,
+        meridiemHour: function (e, t) {
           return (
             12 === e && (e = 0),
             '凌晨' === t || '早上' === t || '上午' === t
@@ -36472,7 +36742,7 @@
               : void 0
           );
         },
-        meridiem: function(e, t, i) {
+        meridiem: function (e, t, i) {
           return (e = 100 * e + t) < 600
             ? '凌晨'
             : e < 900
@@ -36491,10 +36761,10 @@
           nextWeek: '[下]dddd LT',
           lastDay: '[昨天] LT',
           lastWeek: '[上]dddd LT',
-          sameElse: 'L'
+          sameElse: 'L',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(\u65e5|\u6708|\u9031)/,
-        ordinal: function(e, t) {
+        ordinal: function (e, t) {
           switch (t) {
             case 'd':
             case 'D':
@@ -36523,14 +36793,14 @@
           M: '1 個月',
           MM: '%d 個月',
           y: '1 年',
-          yy: '%d 年'
-        }
+          yy: '%d 年',
+        },
       }),
       f.locale('en'),
       f
     );
   }),
-  (function(r, l) {
+  (function (r, l) {
     var e = 'bootstrapMaterialDatePicker',
       i = 'plugin_' + e;
     function n(e, t) {
@@ -36560,7 +36830,7 @@
           switchOnClick: !1,
           triggerEvent: 'focus',
           monthPicker: !1,
-          year: !0
+          year: !0,
         }),
         (this.params = r.fn.extend(this.params, t)),
         (this.name = 'dtp_' + this.setName()),
@@ -36569,9 +36839,9 @@
         this.init();
     }
     l.locale('en'),
-      (r.fn[e] = function(e, t) {
+      (r.fn[e] = function (e, t) {
         return (
-          this.each(function() {
+          this.each(function () {
             r.data(this, i)
               ? ('function' == typeof r.data(this, i)[e] &&
                   r.data(this, i)[e](t),
@@ -36582,7 +36852,7 @@
         );
       }),
       (n.prototype = {
-        init: function() {
+        init: function () {
           this.initDays(),
             this.initDates(),
             this.initTemplate(),
@@ -36609,12 +36879,12 @@
               this._fireCalendar.bind(this)
             );
         },
-        initDays: function() {
+        initDays: function () {
           this.days = [];
           for (var e = this.params.weekStart; this.days.length < 7; e++)
             this.days.push((e = 6 < e ? 0 : e).toString());
         },
-        initDates: function() {
+        initDates: function () {
           var e;
           0 < this.$element.val().length
             ? void 0 !== this.params.format && null !== this.params.format
@@ -36692,7 +36962,7 @@
             this.isBeforeMaxDate(this.currentDate) ||
               (this.currentDate = l(this.maxDate));
         },
-        initTemplate: function() {
+        initTemplate: function () {
           for (
             var e = '', t = this.currentDate.year(), i = t - 3;
             i < t + 4;
@@ -36728,7 +36998,7 @@
               this && (this.dtpElement = r('body').find('#' + this.name)),
               (this.$dtpElement = r(this.dtpElement)));
         },
-        initButtons: function() {
+        initButtons: function () {
           this._attachEvent(
             this.$dtpElement.find('.dtp-btn-cancel'),
             'click',
@@ -36807,7 +37077,7 @@
                   )
                   .addClass('btn-sm');
         },
-        initMeridienButtons: function() {
+        initMeridienButtons: function () {
           this.$dtpElement
             .find('a.dtp-meridien-am')
             .off('click')
@@ -36817,7 +37087,7 @@
               .off('click')
               .on('click', this._onSelectPM.bind(this));
         },
-        initDate: function(e) {
+        initDate: function (e) {
           (this.currentView = 0),
             !1 === this.params.monthPicker &&
               this.$dtpElement
@@ -36842,7 +37112,7 @@
             this._centerBox(),
             this.showDate(t);
         },
-        initHours: function() {
+        initHours: function () {
           (this.currentView = 1),
             this.showTime(this.currentDate),
             this.initMeridienButtons(),
@@ -36877,7 +37147,7 @@
                 cx: n,
                 cy: s,
                 fill: a,
-                'data-hour': i
+                'data-hour': i,
               });
             ((l = this.createSVGElement('text', {
               id: 'th-' + i,
@@ -36889,7 +37159,7 @@
               x: n,
               y: s + 7,
               fill: r,
-              'data-hour': i
+              'data-hour': i,
             })).textContent = 0 === i && this.params.shortTime ? 12 : i),
               this.toggleTime(i, !0)
                 ? (o.addEventListener('click', this._onSelectHour.bind(this)),
@@ -36918,7 +37188,7 @@
                   cx: n,
                   cy: s,
                   fill: a,
-                  'data-hour': i + 12
+                  'data-hour': i + 12,
                 });
               ((l = this.createSVGElement('text', {
                 id: 'th-' + (i + 12),
@@ -36930,7 +37200,7 @@
                 x: n,
                 y: s + 7,
                 fill: r,
-                'data-hour': i + 12
+                'data-hour': i + 12,
               })).textContent = i + 12),
                 this.toggleTime(i + 12, !0)
                   ? (o.addEventListener('click', this._onSelectHour.bind(this)),
@@ -36946,7 +37216,7 @@
           }
           this._centerBox();
         },
-        initMinutes: function() {
+        initMinutes: function () {
           (this.currentView = 2),
             this.showTime(this.currentDate),
             this.initMeridienButtons(),
@@ -36971,7 +37241,7 @@
                 cx: s,
                 cy: a,
                 fill: r,
-                'data-minute': t
+                'data-minute': t,
               });
             this.toggleTime(t, !1)
               ? i.addEventListener('click', this._onSelectMinute.bind(this))
@@ -36993,7 +37263,7 @@
                 x: s,
                 y: a + 7,
                 fill: r,
-                'data-minute': t
+                'data-minute': t,
               })).textContent = t),
               this.toggleTime(t, !1)
                 ? o.addEventListener('click', this._onSelectMinute.bind(this))
@@ -37002,7 +37272,7 @@
               e.appendChild(o));
           this._centerBox();
         },
-        animateHands: function() {
+        animateHands: function () {
           var e = this.currentDate.hour(),
             t = this.currentDate.minute();
           this.$dtpElement
@@ -37012,22 +37282,22 @@
               .find('.minute-hand')[0]
               .setAttribute('transform', 'rotate(' + (360 * t) / 60 + ')');
         },
-        createSVGClock: function(e) {
+        createSVGClock: function (e) {
           var t,
             i,
             n = this.params.shortTime ? -120 : -90,
             s = this.createSVGElement('svg', {
               class: 'svg-clock',
-              viewBox: '0,0,400,400'
+              viewBox: '0,0,400,400',
             }),
             a = this.createSVGElement('g', {
-              transform: 'translate(200,200) '
+              transform: 'translate(200,200) ',
             }),
             r = this.createSVGElement('circle', {
               r: '192',
               fill: '#eee',
               stroke: '#bdbdbd',
-              'stroke-width': 2
+              'stroke-width': 2,
             }),
             o = this.createSVGElement('circle', { r: '15', fill: '#757575' });
           return (
@@ -37040,7 +37310,7 @@
                   x2: 0,
                   y2: -150,
                   stroke: '#bdbdbd',
-                  'stroke-width': 2
+                  'stroke-width': 2,
                 })),
                 (i = this.createSVGElement('line', {
                   class: 'hour-hand',
@@ -37049,7 +37319,7 @@
                   x2: 0,
                   y2: n,
                   stroke: '#7B50F0',
-                  'stroke-width': 8
+                  'stroke-width': 8,
                 })),
                 a.appendChild(t),
                 a.appendChild(i))
@@ -37060,7 +37330,7 @@
                   x2: 0,
                   y2: -150,
                   stroke: '#7B50F0',
-                  'stroke-width': 2
+                  'stroke-width': 2,
                 })),
                 (i = this.createSVGElement('line', {
                   class: 'hour-hand',
@@ -37069,7 +37339,7 @@
                   x2: 0,
                   y2: n,
                   stroke: '#bdbdbd',
-                  'stroke-width': 8
+                  'stroke-width': 8,
                 })),
                 a.appendChild(i),
                 a.appendChild(t)),
@@ -37081,13 +37351,13 @@
             a
           );
         },
-        createSVGElement: function(e, t) {
+        createSVGElement: function (e, t) {
           var i,
             n = document.createElementNS('http://www.w3.org/2000/svg', e);
           for (i in t) n.setAttribute(i, t[i]);
           return n;
         },
-        isAfterMinDate: function(e, t, i) {
+        isAfterMinDate: function (e, t, i) {
           var n,
             s = !0;
           return (
@@ -37106,7 +37376,7 @@
             s
           );
         },
-        isBeforeMaxDate: function(e, t, i) {
+        isBeforeMaxDate: function (e, t, i) {
           var n,
             s = !0;
           return (
@@ -37125,23 +37395,20 @@
             s
           );
         },
-        rotateElement: function(e, t) {
+        rotateElement: function (e, t) {
           r(e).css({
             WebkitTransform: 'rotate(' + t + 'deg)',
-            '-moz-transform': 'rotate(' + t + 'deg)'
+            '-moz-transform': 'rotate(' + t + 'deg)',
           });
         },
-        showDate: function(e) {
+        showDate: function (e) {
           e &&
             (this.$dtpElement
               .find('.dtp-actual-day')
               .html(e.locale(this.params.lang).format('dddd')),
-            this.$dtpElement.find('.dtp-actual-month').html(
-              e
-                .locale(this.params.lang)
-                .format('MMM')
-                .toUpperCase()
-            ),
+            this.$dtpElement
+              .find('.dtp-actual-month')
+              .html(e.locale(this.params.lang).format('MMM').toUpperCase()),
             this.$dtpElement
               .find('.dtp-actual-num')
               .html(e.locale(this.params.lang).format('DD')),
@@ -37149,7 +37416,7 @@
               .find('.dtp-actual-year')
               .html(e.locale(this.params.lang).format('YYYY')));
         },
-        showTime: function(e) {
+        showTime: function (e) {
           var t;
           e &&
             ((t = e.minute()),
@@ -37166,21 +37433,17 @@
                 this.$dtpElement.find('.dtp-actual-maxtime'))
             ).html(t));
         },
-        selectDate: function(e) {
+        selectDate: function (e) {
           e &&
             (this.currentDate.date(e),
             this.showDate(this.currentDate),
             this.$element.trigger('dateSelected', this.currentDate));
         },
-        generateCalendar: function(e) {
+        generateCalendar: function (e) {
           var t = {};
           if (null !== e) {
-            var i = l(e)
-                .locale(this.params.lang)
-                .startOf('month'),
-              n = l(e)
-                .locale(this.params.lang)
-                .endOf('month'),
+            var i = l(e).locale(this.params.lang).startOf('month'),
+              n = l(e).locale(this.params.lang).endOf('month'),
               s = i.format('d');
             (t.week = this.days), (t.days = []);
             for (var a = i.date(); a <= n.date(); a++) {
@@ -37188,16 +37451,12 @@
                 var r = t.week.indexOf(s.toString());
                 if (0 < r) for (var o = 0; o < r; o++) t.days.push(0);
               }
-              t.days.push(
-                l(i)
-                  .locale(this.params.lang)
-                  .date(a)
-              );
+              t.days.push(l(i).locale(this.params.lang).date(a));
             }
           }
           return t;
         },
-        constructHTMLCalendar: function(e, t) {
+        constructHTMLCalendar: function (e, t) {
           for (
             var i =
                 (i = '') +
@@ -37221,9 +37480,7 @@
             n % 7 == 0 && (i += '</tr><tr>'),
               (i +=
                 '<td data-date="' +
-                l(t.days[n])
-                  .locale(this.params.lang)
-                  .format('D') +
+                l(t.days[n]).locale(this.params.lang).format('D') +
                 '">'),
               0 != t.days[n] &&
                 (!1 === this.isBeforeMaxDate(l(t.days[n]), !1, !1) ||
@@ -37231,32 +37488,22 @@
                 -1 !== this.params.disabledDays.indexOf(t.days[n].isoWeekday())
                   ? (i +=
                       '<span class="dtp-select-day">' +
-                      l(t.days[n])
-                        .locale(this.params.lang)
-                        .format('DD') +
+                      l(t.days[n]).locale(this.params.lang).format('DD') +
                       '</span>')
-                  : l(t.days[n])
-                      .locale(this.params.lang)
-                      .format('DD') ===
-                    l(this.currentDate)
-                      .locale(this.params.lang)
-                      .format('DD')
+                  : l(t.days[n]).locale(this.params.lang).format('DD') ===
+                    l(this.currentDate).locale(this.params.lang).format('DD')
                   ? (i +=
                       '<a href="javascript:void(0);" class="dtp-select-day selected">' +
-                      l(t.days[n])
-                        .locale(this.params.lang)
-                        .format('DD') +
+                      l(t.days[n]).locale(this.params.lang).format('DD') +
                       '</a>')
                   : (i +=
                       '<a href="javascript:void(0);" class="dtp-select-day">' +
-                      l(t.days[n])
-                        .locale(this.params.lang)
-                        .format('DD') +
+                      l(t.days[n]).locale(this.params.lang).format('DD') +
                       '</a>'),
                 (i += '</td>'));
           return (i += '</tr></tbody></table>');
         },
-        setName: function() {
+        setName: function () {
           for (
             var e = '',
               t =
@@ -37268,12 +37515,12 @@
             e += t.charAt(Math.floor(Math.random() * t.length));
           return e;
         },
-        isPM: function() {
+        isPM: function () {
           return this.$dtpElement
             .find('a.dtp-meridien-pm')
             .hasClass('selected');
         },
-        setElementValue: function() {
+        setElementValue: function () {
           this.$element.trigger('beforeChange', this.currentDate),
             void 0 !== r.material && this.$element.removeClass('empty'),
             this.$element.val(
@@ -37283,16 +37530,12 @@
             ),
             this.$element.trigger('change', this.currentDate);
         },
-        toggleButtons: function(e) {
+        toggleButtons: function (e) {
           var t, i;
           e &&
             e.isValid() &&
-            ((t = l(e)
-              .locale(this.params.lang)
-              .startOf('month')),
-            (i = l(e)
-              .locale(this.params.lang)
-              .endOf('month')),
+            ((t = l(e).locale(this.params.lang).startOf('month')),
+            (i = l(e).locale(this.params.lang).endOf('month')),
             this.isAfterMinDate(t, !1, !1)
               ? this.$dtpElement
                   .find('a.dtp-select-month-before')
@@ -37307,12 +37550,8 @@
               : this.$dtpElement
                   .find('a.dtp-select-month-after')
                   .addClass('invisible'),
-            (t = l(e)
-              .locale(this.params.lang)
-              .startOf('year')),
-            (i = l(e)
-              .locale(this.params.lang)
-              .endOf('year')),
+            (t = l(e).locale(this.params.lang).startOf('year')),
+            (i = l(e).locale(this.params.lang).endOf('year')),
             this.isAfterMinDate(t, !1, !1)
               ? this.$dtpElement
                   .find('a.dtp-select-year-before')
@@ -37328,7 +37567,7 @@
                   .find('a.dtp-select-year-after')
                   .addClass('invisible'));
         },
-        toggleTime: function(e, t) {
+        toggleTime: function (e, t) {
           var i;
           return t
             ? ((i = l(this.currentDate))
@@ -37345,10 +37584,10 @@
                 !1 === this.isBeforeMaxDate(i, !0, !0)
               ));
         },
-        _attachEvent: function(e, t, i) {
+        _attachEvent: function (e, t, i) {
           e.on(t, null, null, i), this._attachedEvents.push([e, t, i]);
         },
-        _detachEvents: function() {
+        _detachEvents: function () {
           for (var e = this._attachedEvents.length - 1; 0 <= e; e--)
             this._attachedEvents[e][0].off(
               this._attachedEvents[e][1],
@@ -37356,7 +37595,7 @@
             ),
               this._attachedEvents.splice(e, 1);
         },
-        _fireCalendar: function() {
+        _fireCalendar: function () {
           (this.currentView = 0),
             this.$element.blur(),
             this.initDates(),
@@ -37368,19 +37607,19 @@
                 (this.$dtpElement.find('.dtp-time').removeClass('hidden'),
                 this.initHours());
         },
-        _onBackgroundClick: function(e) {
+        _onBackgroundClick: function (e) {
           e.stopPropagation(), this.hide();
         },
-        _onElementClick: function(e) {
+        _onElementClick: function (e) {
           e.stopPropagation();
         },
-        _onKeydown: function(e) {
+        _onKeydown: function (e) {
           27 === e.which && this.hide();
         },
-        _onCloseClick: function() {
+        _onCloseClick: function () {
           this.hide();
         },
-        _onClearClick: function() {
+        _onClearClick: function () {
           (this.currentDate = null),
             this.$element.trigger('beforeChange', this.currentDate),
             this.hide(),
@@ -37388,7 +37627,7 @@
             this.$element.val(''),
             this.$element.trigger('change', this.currentDate);
         },
-        _onNowClick: function() {
+        _onNowClick: function () {
           if (
             ((this.currentDate = l()),
             !0 === this.params.date &&
@@ -37406,7 +37645,7 @@
             this.animateHands();
           }
         },
-        _onOKClick: function() {
+        _onOKClick: function () {
           switch (this.currentView) {
             case 0:
               !0 === this.params.time
@@ -37420,7 +37659,7 @@
               this.setElementValue(), this.hide();
           }
         },
-        _onCancelClick: function() {
+        _onCancelClick: function () {
           if (this.params.time)
             switch (this.currentView) {
               case 0:
@@ -37434,27 +37673,27 @@
             }
           else this.hide();
         },
-        _onMonthBeforeClick: function() {
+        _onMonthBeforeClick: function () {
           this.currentDate.subtract(1, 'months'),
             this.initDate(this.currentDate),
             this._closeYearPicker();
         },
-        _onMonthAfterClick: function() {
+        _onMonthAfterClick: function () {
           this.currentDate.add(1, 'months'),
             this.initDate(this.currentDate),
             this._closeYearPicker();
         },
-        _onYearBeforeClick: function() {
+        _onYearBeforeClick: function () {
           this.currentDate.subtract(1, 'years'),
             this.initDate(this.currentDate),
             this._closeYearPicker();
         },
-        _onYearAfterClick: function() {
+        _onYearAfterClick: function () {
           this.currentDate.add(1, 'years'),
             this.initDate(this.currentDate),
             this._closeYearPicker();
         },
-        refreshYearItems: function() {
+        refreshYearItems: function () {
           var i = this.currentDate.year(),
             n = this.midYear,
             s = 1850,
@@ -37469,12 +37708,9 @@
             this.$dtpElement
               .find('.dtp-picker-year .invisible')
               .removeClass('invisible'),
-            this.$dtpElement.find('.year-picker-item').each(function(e, t) {
+            this.$dtpElement.find('.year-picker-item').each(function (e, t) {
               e = n - 3 + e;
-              r(t)
-                .attr('data-year', e)
-                .text(e)
-                .data('year', e),
+              r(t).attr('data-year', e).text(e).data('year', e),
                 i == e ? r(t).addClass('active') : r(t).removeClass('active'),
                 (e < s || a < e) && r(t).addClass('invisible');
             }),
@@ -37488,7 +37724,7 @@
                 .addClass('invisible'),
             this.$dtpElement.find('.dtp-select-year-range').data('mid', n);
         },
-        _onActualYearClick: function() {
+        _onActualYearClick: function () {
           this.params.year &&
             (0 < this.$dtpElement.find('.dtp-picker-year.hidden').length
               ? (this.$dtpElement
@@ -37502,13 +37738,13 @@
                 this.refreshYearItems())
               : this._closeYearPicker());
         },
-        _onYearRangeBeforeClick: function() {
+        _onYearRangeBeforeClick: function () {
           (this.midYear -= 7), this.refreshYearItems();
         },
-        _onYearRangeAfterClick: function() {
+        _onYearRangeAfterClick: function () {
           (this.midYear += 7), this.refreshYearItems();
         },
-        _onYearItemClick: function(e) {
+        _onYearItemClick: function (e) {
           var e = r(e.currentTarget).data('year'),
             t = this.currentDate.year();
           this.currentDate.add(e - t, 'years'),
@@ -37516,27 +37752,23 @@
             this._closeYearPicker(),
             this.$element.trigger('yearSelected', this.currentDate);
         },
-        _closeYearPicker: function() {
+        _closeYearPicker: function () {
           this.$dtpElement.find('.dtp-picker-calendar').removeClass('hidden'),
             this.$dtpElement.find('.dtp-picker-year').addClass('hidden');
         },
-        enableYearPicker: function() {
+        enableYearPicker: function () {
           (this.params.year = !0),
             this.$dtpElement.find('.dtp-actual-year').reomveClass('disabled');
         },
-        disableYearPicker: function() {
+        disableYearPicker: function () {
           (this.params.year = !1),
             this.$dtpElement.find('.dtp-actual-year').addClass('disabled'),
             this._closeYearPicker();
         },
-        _onSelectDate: function(e) {
+        _onSelectDate: function (e) {
           this.$dtpElement.find('a.dtp-select-day').removeClass('selected'),
             r(e.currentTarget).addClass('selected'),
-            this.selectDate(
-              r(e.currentTarget)
-                .parent()
-                .data('date')
-            ),
+            this.selectDate(r(e.currentTarget).parent().data('date')),
             !0 === this.params.switchOnClick &&
               !0 === this.params.time &&
               setTimeout(this.initHours.bind(this), 200),
@@ -37544,7 +37776,7 @@
               !1 === this.params.time &&
               setTimeout(this._onOKClick.bind(this), 200);
         },
-        _onSelectHour: function(e) {
+        _onSelectHour: function (e) {
           if (!r(e.target).hasClass('disabled')) {
             for (
               var t = r(e.target).data('hour'),
@@ -37573,7 +37805,7 @@
                 setTimeout(this.initMinutes.bind(this), 200);
           }
         },
-        _onSelectMinute: function(e) {
+        _onSelectMinute: function (e) {
           if (!r(e.target).hasClass('disabled')) {
             for (
               var t = r(e.target).data('minute'),
@@ -37597,68 +37829,64 @@
               this.animateHands(),
               !0 === this.params.switchOnClick &&
                 setTimeout(
-                  function() {
+                  function () {
                     this.setElementValue(), this.hide();
                   }.bind(this),
                   200
                 );
           }
         },
-        _onSelectAM: function(e) {
-          r('.dtp-actual-meridien')
-            .find('a')
-            .removeClass('selected'),
+        _onSelectAM: function (e) {
+          r('.dtp-actual-meridien').find('a').removeClass('selected'),
             r(e.currentTarget).addClass('selected'),
             12 <= this.currentDate.hour() &&
               this.currentDate.subtract(12, 'hours') &&
               this.showTime(this.currentDate),
             this.toggleTime(1 === this.currentView);
         },
-        _onSelectPM: function(e) {
-          r('.dtp-actual-meridien')
-            .find('a')
-            .removeClass('selected'),
+        _onSelectPM: function (e) {
+          r('.dtp-actual-meridien').find('a').removeClass('selected'),
             r(e.currentTarget).addClass('selected'),
             this.currentDate.hour() < 12 &&
               this.currentDate.add(12, 'hours') &&
               this.showTime(this.currentDate),
             this.toggleTime(1 === this.currentView);
         },
-        _hideCalendar: function() {
+        _hideCalendar: function () {
           this.$dtpElement.find('.dtp-picker-calendar').addClass('hidden');
         },
-        convertHours: function(e) {
+        convertHours: function (e) {
           var t = e;
           return (
             !0 === this.params.shortTime && e < 12 && this.isPM() && (t += 12),
             t
           );
         },
-        setDate: function(e) {
+        setDate: function (e) {
           (this.params.currentDate = e), this.initDates();
         },
-        setMinDate: function(e) {
+        setMinDate: function (e) {
           (this.params.minDate = e), this.initDates();
         },
-        setMaxDate: function(e) {
+        setMaxDate: function (e) {
           (this.params.maxDate = e), this.initDates();
         },
-        destroy: function() {
+        destroy: function () {
           this._detachEvents(), this.$dtpElement.remove();
         },
-        show: function() {
+        show: function () {
           this.$dtpElement.removeClass('hidden'),
             this._attachEvent(r(window), 'keydown', this._onKeydown.bind(this)),
             this._centerBox(),
             this.$element.trigger('open'),
             !0 === this.params.monthPicker && this._hideCalendar();
         },
-        hide: function() {
+        hide: function () {
           r(window).off('keydown', null, null, this._onKeydown.bind(this)),
             this.$dtpElement.addClass('hidden'),
             this.$element.trigger('close');
         },
-        _centerBox: function() {
+        _centerBox: function () {
           var e =
             (this.$dtpElement.height() -
               this.$dtpElement.find('.dtp-content').height()) /
@@ -37671,21 +37899,21 @@
             ),
             this.$dtpElement.find('.dtp-content').css('top', e + 'px');
         },
-        enableDays: function() {
+        enableDays: function () {
           var e = this.params.enableDays;
           e &&
-            r('.dtp-picker-days tbody tr td').each(function() {
+            r('.dtp-picker-days tbody tr td').each(function () {
               0 <= r.inArray(r(this).index(), e) ||
                 r(this)
                   .find('a')
                   .css({
                     background: '#e3e3e3',
                     cursor: 'no-drop',
-                    opacity: '0.5'
+                    opacity: '0.5',
                   })
                   .off('click');
             });
-        }
+        },
       });
   })(jQuery, moment);
 var forgotRecaptcha,
@@ -37709,7 +37937,7 @@ const currentUrl = new URL(window.location.href);
 function getLatestNotification() {
   isLoggedIn &&
     $('.hr-notifications .tab-content').is(':empty') &&
-    $.get('/ajax/notification/latest', function(e) {
+    $.get('/ajax/notification/latest', function (e) {
       e &&
         ($('#noti-loading').hide(),
         $('.hr-notifications .tab-content').html(e.html));
@@ -37717,16 +37945,14 @@ function getLatestNotification() {
 }
 function getNotificationPanel() {
   isLoggedIn &&
-    $.get('/ajax/notification/panel', function(e) {
+    $.get('/ajax/notification/panel', function (e) {
       e && $('.hr-notifications').html(e.html);
     });
 }
 function getLatestComment() {
-  var e = $('#new-comment .swiper-slide')
-    .first()
-    .data('id');
+  var e = $('#new-comment .swiper-slide').first().data('id');
   e &&
-    $.get('/ajax/comment/latest?o_id=' + e, function(e) {
+    $.get('/ajax/comment/latest?o_id=' + e, function (e) {
       e &&
         e.status &&
         ($(e.html)
@@ -37738,7 +37964,7 @@ function getLatestComment() {
 }
 function getCommentWidgetHome() {
   0 < $('#comment-widget').length &&
-    $.get('/ajax/comment/widget-home', function(e) {
+    $.get('/ajax/comment/widget-home', function (e) {
       'object' != typeof e && (e = JSON.parse(e)),
         $('#comment-widget').html(e.html);
     });
@@ -37746,7 +37972,7 @@ function getCommentWidgetHome() {
 function getContinueWatchingHome() {
   isLoggedIn &&
     0 < $('#widget-continue-watching').length &&
-    $.get('/ajax/continue-watch/home', function(e) {
+    $.get('/ajax/continue-watch/home', function (e) {
       e && $('#widget-continue-watching').html(e.html);
     });
 }
@@ -37761,16 +37987,16 @@ function activeSettings() {
           public_watch_list: 0,
           enable_dub: 0,
           anime_name: 'en',
-          play_original_audio: 0
+          play_original_audio: 0,
         }),
         Cookies.set('userSettings', JSON.stringify(userSettings), {
           path: '/',
-          expires: 365
+          expires: 365,
         }))
       : (userSettings = JSON.parse(Cookies.get('userSettings')))
     : Cookies.set('userSettings', JSON.stringify(userSettings), {
         path: '/',
-        expires: 365
+        expires: 365,
       }),
     'en' !== userSettings.anime_name
       ? $('.select-anime-name').addClass('off') && toggleAnimeName('movie')
@@ -37791,25 +38017,19 @@ function checkLogin() {
 }
 function paginationGetData(e) {
   var t = $(e).attr('data-container');
-  $(t)
-    .find('.loading-relative')
-    .show(),
-    $.get($(e).attr('data-url'), function(e) {
-      e &&
-        ($(t).html(e.html),
-        $(t)
-          .find('.loading-relative')
-          .hide());
+  $(t).find('.loading-relative').show(),
+    $.get($(e).attr('data-url'), function (e) {
+      e && ($(t).html(e.html), $(t).find('.loading-relative').hide());
     });
 }
 function toggleAnimeName(e) {
   var t = $('.dynamic-name, .e-dynamic-name');
   'episode' === e && (t = $('.e-dynamic-name')),
-    (t = 'movie' === e ? $('.dynamic-name') : t).each(function() {
+    (t = 'movie' === e ? $('.dynamic-name') : t).each(function () {
       var e = $(this).text(),
         t = $(this).data('jname'),
         i = $(this);
-      i.animate({ opacity: 0 }, 200, function() {
+      i.animate({ opacity: 0 }, 200, function () {
         0 < t.toString().length &&
           (i.text(t).animate({ opacity: 1 }, 200), i.data('jname', e));
       });
@@ -37818,7 +38038,7 @@ function toggleAnimeName(e) {
 function watchListSubmit(t) {
   isLoading ||
     ((isLoading = !0),
-    $.post('/ajax/watch-list/add', t, function(e) {
+    $.post('/ajax/watch-list/add', t, function (e) {
       e &&
         (e.redirectTo && (window.location.href = e.redirectTo),
         e.status
@@ -37835,7 +38055,7 @@ function watchListSubmit(t) {
 function voteSubmit(e) {
   isLoading ||
     ((isLoading = !0),
-    $.post('/ajax/vote/submit', e, function(e) {
+    $.post('/ajax/vote/submit', e, function (e) {
       e &&
         ($('#vote-loading').hide(),
         e.redirectTo && (window.location.href = e.redirectTo),
@@ -37852,7 +38072,7 @@ function quickSettings(t, e) {
       ? $.post(
           '/ajax/user/settings?action=quick',
           { option: t, value: e },
-          function(e) {
+          function (e) {
             e &&
               (e.status
                 ? toastr.success(e.msg, '', { timeOut: 5e3 })
@@ -37864,7 +38084,7 @@ function quickSettings(t, e) {
         )
       : (Cookies.set('userSettings', JSON.stringify(userSettings), {
           path: '/',
-          expires: 365
+          expires: 365,
         }),
         'enable_dub' === t && window.location.reload());
 }
@@ -37874,7 +38094,7 @@ function isInViewport(e) {
   return 0 <= e && e <= 1;
 }
 function importSubmit(e) {
-  $.post('/ajax/user/mal-import', e, function(e) {
+  $.post('/ajax/user/mal-import', e, function (e) {
     e &&
       ((isLoading = !1),
       $('#import-loading').hide(),
@@ -37886,37 +38106,37 @@ function importSubmit(e) {
 grecaptcha.ready(() => {
   (forgotRecaptcha = grecaptcha.render('forgot-recaptcha', {
     sitekey: recaptchaV2SiteKey,
-    callback: function() {
+    callback: function () {
       $('#forgot-form').addClass('recaptcha-clicked');
-    }
+    },
   })),
     (verifyRecaptcha = grecaptcha.render('verify-recaptcha', {
       sitekey: recaptchaV2SiteKey,
-      callback: function() {
+      callback: function () {
         $('#verify-form').addClass('recaptcha-clicked');
-      }
+      },
     })),
     (registerRecaptcha = grecaptcha.render('register-recaptcha', {
       sitekey: recaptchaV2SiteKey,
-      callback: function() {
+      callback: function () {
         $('#register-form').addClass('recaptcha-clicked');
-      }
+      },
     })),
     (loginRecaptcha = grecaptcha.render('login-recaptcha', {
       sitekey: recaptchaV2SiteKey,
-      callback: function() {
+      callback: function () {
         $('#login-form').addClass('recaptcha-clicked');
-      }
+      },
     })),
     0 < $('#request-recaptcha').length &&
       (requestRecaptcha = grecaptcha.render('request-recaptcha', {
         sitekey: recaptchaV2SiteKey,
-        callback: function() {
+        callback: function () {
           $('#request-form').addClass('recaptcha-clicked');
-        }
+        },
       }));
 }),
-  $.get('/ajax/login-state', function(e) {
+  $.get('/ajax/login-state', function (e) {
     e &&
       ((isLoggedIn = e.is_login),
       (loggedInfo = e.info),
@@ -37926,21 +38146,21 @@ grecaptcha.ready(() => {
       $('#header_right').html(e.html),
       $('#actionModal').html(e.htmlModalAc));
   }),
-  $(document).on('click', '.hrn-icon', function() {
+  $(document).on('click', '.hrn-icon', function () {
     getLatestNotification();
   }),
-  $('#display-comment').click(function(e) {
+  $('#display-comment').click(function (e) {
     $('#discussion').toggleClass('ds-hide');
     var t = $(this).hasClass('off') ? 1 : 0;
     quickSettings('show_comments_at_home', t),
       Cookies.set('showCommentsAtHome', t, { path: '/', expires: 365 }),
       1 == t && getCommentWidgetHome();
   }),
-  $(document).ready(function() {
-    $('.toggle-onoff').click(function(e) {
+  $(document).ready(function () {
+    $('.toggle-onoff').click(function (e) {
       $(this).toggleClass('off');
     }),
-      $('#login-form').submit(function(e) {
+      $('#login-form').submit(function (e) {
         e.preventDefault(),
           $(this).hasClass('recaptcha-clicked')
             ? isLoading ||
@@ -37948,7 +38168,7 @@ grecaptcha.ready(() => {
               $('#login-loading').show(),
               $('#login-error').hide(),
               (e = $(this).serializeArray()),
-              $.post('/ajax/login', e, function(e) {
+              $.post('/ajax/login', e, function (e) {
                 e &&
                   ($('#login-loading').hide(),
                   (isLoading = !1),
@@ -37957,7 +38177,7 @@ grecaptcha.ready(() => {
                       window.location.reload())
                     : ($('#login-error').html(e.msg),
                       $('#login-error').show(),
-                      setTimeout(function() {
+                      setTimeout(function () {
                         $('#login-error').hide();
                       }, 6e3),
                       grecaptcha.reset(loginRecaptcha),
@@ -37965,11 +38185,11 @@ grecaptcha.ready(() => {
               }))
             : ($('#login-error').html(`Please click "I'm not a robot"`),
               $('#login-error').show(),
-              setTimeout(function() {
+              setTimeout(function () {
                 $('#login-error').hide();
               }, 6e3));
       }),
-      $('#register-form').submit(function(e) {
+      $('#register-form').submit(function (e) {
         e.preventDefault(),
           $(this).hasClass('recaptcha-clicked')
             ? isLoading ||
@@ -37977,7 +38197,7 @@ grecaptcha.ready(() => {
               $('#register-loading').show(),
               $('#register-error').hide(),
               (e = $(this).serializeArray()),
-              $.post('/ajax/register', e, function(e) {
+              $.post('/ajax/register', e, function (e) {
                 var t;
                 e &&
                   ($('#register-loading').hide(),
@@ -37989,13 +38209,13 @@ grecaptcha.ready(() => {
                         : $('#register-success').show())
                     : (e.errors
                         ? ((t = ''),
-                          e.errors.forEach(function(e) {
+                          e.errors.forEach(function (e) {
                             t += `- ${e}<br>`;
                           }),
                           $('#register-error').html(t))
                         : $('#register-error').html(e.msg),
                       $('#register-error').show(),
-                      setTimeout(function() {
+                      setTimeout(function () {
                         $('#register-error').hide();
                       }, 6e3)),
                   grecaptcha.reset(registerRecaptcha),
@@ -38003,11 +38223,11 @@ grecaptcha.ready(() => {
               }))
             : ($('#register-error').html(`Please click "I'm not a robot"`),
               $('#register-error').show(),
-              setTimeout(function() {
+              setTimeout(function () {
                 $('#register-error').hide();
               }, 6e3));
       }),
-      $('#forgot-form').submit(function(e) {
+      $('#forgot-form').submit(function (e) {
         e.preventDefault(),
           $(this).hasClass('recaptcha-clicked')
             ? isLoading ||
@@ -38015,7 +38235,7 @@ grecaptcha.ready(() => {
               $('#forgot-error').hide(),
               $('#forgot-success').hide(),
               (e = $(this).serializeArray()),
-              $.post('/ajax/reset-password', e, function(e) {
+              $.post('/ajax/reset-password', e, function (e) {
                 e &&
                   ($('#forgot-loading').hide(),
                   (isLoading = !1),
@@ -38025,18 +38245,18 @@ grecaptcha.ready(() => {
                       $('#forgot-success'))
                     : ($('#forgot-error').html(e.msg), $('#forgot-error'))
                   ).show(),
-                  setTimeout(function() {
+                  setTimeout(function () {
                     $('#forgot-error').hide(), $('#forgot-success').hide();
                   }, 6e3),
                   grecaptcha.reset(forgotRecaptcha));
               }))
             : ($('#forgot-error').html(`Please click "I'm not a robot"`),
               $('#forgot-error').show(),
-              setTimeout(function() {
+              setTimeout(function () {
                 $('#forgot-error').hide();
               }, 6e3));
       }),
-      $('#verify-form').submit(function(e) {
+      $('#verify-form').submit(function (e) {
         e.preventDefault(),
           $(this).hasClass('recaptcha-clicked')
             ? isLoading ||
@@ -38044,7 +38264,7 @@ grecaptcha.ready(() => {
               $('#verify-error').hide(),
               $('#verify-success').hide(),
               (e = $(this).serializeArray()),
-              $.post('/ajax/send-verification-email', e, function(e) {
+              $.post('/ajax/send-verification-email', e, function (e) {
                 e &&
                   ($('#verify-loading').hide(),
                   (isLoading = !1),
@@ -38054,14 +38274,14 @@ grecaptcha.ready(() => {
                       $('#verify-success'))
                     : ($('#verify-error').html(e.msg), $('#verify-error'))
                   ).show(),
-                  setTimeout(function() {
+                  setTimeout(function () {
                     $('#verify-error').hide(), $('#verify-success').hide();
                   }, 6e3),
                   grecaptcha.reset(verifyRecaptcha));
               }))
             : ($('#verify-error').html(`Please click "I'm not a robot"`),
               $('#verify-error').show(),
-              setTimeout(function() {
+              setTimeout(function () {
                 $('#verify-error').hide();
               }, 6e3));
       }),
@@ -38069,11 +38289,11 @@ grecaptcha.ready(() => {
         new Swiper('#slider', {
           navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
+            prevEl: '.swiper-button-prev',
           },
           pagination: { el: '#slider .swiper-pagination', clickable: !0 },
           loop: !0,
-          autoplay: { delay: 3e3 }
+          autoplay: { delay: 3e3 },
         }),
       0 < $('#trending-home .swiper-container').length &&
         ((e = new Swiper('#trending-home .swiper-container', {
@@ -38081,107 +38301,104 @@ grecaptcha.ready(() => {
           spaceBetween: 30,
           navigation: {
             nextEl: '.trending-navi .navi-next',
-            prevEl: '.trending-navi .navi-prev'
+            prevEl: '.trending-navi .navi-prev',
           },
           breakpoints: {
             320: { slidesPerView: 3, spaceBetween: 2 },
             480: { slidesPerView: 3, spaceBetween: 15 },
             900: { slidesPerView: 4, spaceBetween: 20 },
             1320: { slidesPerView: 6, spaceBetween: 20 },
-            1880: { slidesPerView: 8, spaceBetween: 20 }
+            1880: { slidesPerView: 8, spaceBetween: 20 },
           },
-          autoplay: 2e3
+          autoplay: 2e3,
         })),
         $('#trending-home').fadeIn(),
         e.update()),
       0 < $('#schedule-block').length &&
         ((e = new Date().getTimezoneOffset()),
-        $.get('/ajax/schedule/widget?tzOffset=' + e, function(e) {
+        $.get('/ajax/schedule/widget?tzOffset=' + e, function (e) {
           e && $('#schedule-block').html(e.html);
         })),
-      $('.btn-more-desc').click(function(e) {
+      $('.btn-more-desc').click(function (e) {
         $('.film-description .text').toggleClass('text-full'),
           $(this).toggleClass('active');
       }),
-      $('#mobile_search').click(function() {
+      $('#mobile_search').click(function () {
         $('#mobile_search, #search').toggleClass('active');
       }),
-      $('.cbox-collapse .btn-showmore').click(function(e) {
-        $(this)
-          .parent()
-          .find('.anif-block-ul')
-          .toggleClass('no-limit'),
+      $('.cbox-collapse .btn-showmore').click(function (e) {
+        $(this).parent().find('.anif-block-ul').toggleClass('no-limit'),
           $(this).toggleClass('active');
       }),
-      $('#media-resize').click(function(e) {
+      $('#media-resize').click(function (e) {
         $('.anis-watch-wrap').toggleClass('extend'),
           $('.anis-watch-wrap').hasClass('extend')
             ? $(this).html('<i class="fas fa-compress mr-1"></i>Collapse')
             : $(this).html('<i class="fas fa-expand mr-1"></i>Expand');
       }),
-      $('.register-tab-link').click(function(e) {
+      $('.register-tab-link').click(function (e) {
         $('#modal-tab-register').addClass('active show'),
           $('#modal-tab-login').removeClass('active show');
       }),
-      $('.verify-tab-link').click(function(e) {
+      $('.verify-tab-link').click(function (e) {
         $('#modal-tab-verify').addClass('active show'),
           $('#modal-tab-login').removeClass('active show');
       }),
-      $('.forgot-tab-link').click(function(e) {
+      $('.forgot-tab-link').click(function (e) {
         $('#modal-tab-forgot').addClass('active show'),
           $('#modal-tab-login').removeClass('active show');
       }),
-      $('.login-tab-link').click(function(e) {
+      $('.login-tab-link').click(function (e) {
         $('#modal-tab-login').addClass('active show'),
           $(
             '#modal-tab-register, #modal-tab-forgot, #modal-tab-verify'
           ).removeClass('active show');
       }),
-      $('#mobile_menu').click(function(e) {
+      $('#mobile_menu').click(function (e) {
         $('#sidebar_menu, #mobile_menu').toggleClass('active'),
           $('#sidebar_menu_bg').addClass('active'),
           $('#search-toggle, #search, #header').removeClass('active'),
           $('body').toggleClass('body-hidden');
       }),
-      $('.toggle-sidebar, #sidebar_menu_bg').click(function(e) {
+      $('.toggle-sidebar, #sidebar_menu_bg').click(function (e) {
         $(
           '#sidebar_menu, #mobile_menu, #sidebar_menu_bg, #search-toggle, #search, #header'
         ).removeClass('active'),
           $('body').removeClass('body-hidden');
       }),
-      $('#search-toggle').click(function(e) {
+      $('#search-toggle').click(function (e) {
         $('#search, #search-toggle, #sidebar_menu_bg, #header').toggleClass(
           'active'
         ),
           $('body').toggleClass('body-hidden');
       }),
-      $('.nav-more .nav-link').click(function(e) {
+      $('.nav-more .nav-link').click(function (e) {
         $('#sidebar_menu .sidebar_menu-list > .nav-item .nav').toggleClass(
           'active'
         );
       }),
-      $('.detail-extend-toggle').click(function(e) {
+      $('.detail-extend-toggle').click(function (e) {
         $('.detail-extend').toggleClass('active');
       }),
-      $('.cbox-genres .btn-showmore').click(function(e) {
+      $('.cbox-genres .btn-showmore').click(function (e) {
         $('.cbox-genres').toggleClass('active');
       }),
-      $('#more-sv').click(function(e) {
+      $('#more-sv').click(function (e) {
         $('.film-servers').toggleClass('active');
       }),
-      $('.pc-zoom').click(function(e) {
+      $('.pc-zoom').click(function (e) {
         $('.anis-watch-wrap').toggleClass('minimize');
       }),
-      $('.pc-zoomtv').click(function(e) {
+      $('.pc-zoomtv').click(function (e) {
         $('.anis-watch-wrap').toggleClass('tvminimize');
       }),
-      $('.pc-fav').click(function(e) {
+      $('.pc-fav').click(function (e) {
         $(this).toggleClass('active');
       }),
       $('a[href*="#"].smoothlink')
         .not('[href="#"]')
         .not('[href="#0"]')
-        .click(function(e) {
+        .click(function (e) {
           var t;
           location.pathname.replace(/^\//, '') ==
             this.pathname.replace(/^\//, '') &&
@@ -38193,48 +38410,49 @@ grecaptcha.ready(() => {
             $('html, body').animate(
               { scrollTop: t.offset().top },
               300,
-              function() {
+              function () {
                 var e = $(t);
                 if ((e.focus(), e.is(':focus'))) return !1;
                 e.attr('tabindex', '-1'), e.focus();
               }
             ));
         }),
-      $('.select-anime-name').click(function() {
+      $('.select-anime-name').click(function () {
         $('.select-anime-name').toggleClass('off'),
           quickSettings('anime_name', $(this).hasClass('off') ? 'jp' : 'en'),
           toggleAnimeName('all');
       }),
-      $('.select-play-dub').click(function() {
+      $('.select-play-dub').click(function () {
         $('.select-play-dub').toggleClass('active'),
           quickSettings('enable_dub', $(this).hasClass('active') ? 1 : 0);
       }),
-      $('#text-home-expand').click(function(e) {
+      $('#text-home-expand').click(function (e) {
         $('.text-home').toggleClass('thm-expand');
       }),
       $('[data-toggle="tooltip"]').tooltip(),
-      $('.toggle-basic').click(function(e) {
+      $('.toggle-basic').click(function (e) {
         $(this).toggleClass('off');
       }),
-      $('#turn-off-light').click(function(e) {
+      $('#turn-off-light').click(function (e) {
         $('#mask-overlay, .anis-watch-wrap').toggleClass('active');
       }),
-      $('#mask-overlay').click(function(e) {
+      $('#mask-overlay').click(function (e) {
         $('#mask-overlay, .anis-watch-wrap').removeClass('active'),
           $('#turn-off-light').removeClass('off');
       }),
       movieId &&
-        ($.get('/ajax/vote/info/' + movieId, function(e) {
+        ($.get('/ajax/vote/info/' + movieId, function (e) {
           e &&
             ($('#vote-loading').hide(), e.status) &&
             $('#vote-info').html(e.html);
         }),
-        $.get('/ajax/watch-list/info/' + movieId + '?page=' + page, function(
-          e
-        ) {
-          e && e.status && $('#watch-list-content').html(e.html);
-        }),
-        $.get('/ajax/character/list/' + movieId, function(e) {
+        $.get(
+          '/ajax/watch-list/info/' + movieId + '?page=' + page,
+          function (e) {
+            e && e.status && $('#watch-list-content').html(e.html);
+          }
+        ),
+        $.get('/ajax/character/list/' + movieId, function (e) {
           e && e.status && $('#characters-content').html(e.html);
         }));
     var e,
@@ -38242,27 +38460,25 @@ grecaptcha.ready(() => {
       i,
       n = !0,
       s =
-        ($('#search-suggest').mouseover(function() {
+        ($('#search-suggest').mouseover(function () {
           n = !1;
         }),
-        $('#search-suggest').mouseout(function() {
+        $('#search-suggest').mouseout(function () {
           n = !0;
         }),
         null),
       a =
-        ($('.search-input').keyup(function(e) {
+        ($('.search-input').keyup(function (e) {
           e = e.keyCode || e.which;
           [13, 32].indexOf(e) < 0 &&
             (null != s && clearTimeout(s),
-            (s = setTimeout(function() {
+            (s = setTimeout(function () {
               s = null;
-              var e = $('.search-input')
-                .val()
-                .trim();
+              var e = $('.search-input').val().trim();
               1 < e.length
                 ? ($('#search-suggest').show(),
                   $('#search-loading').show(),
-                  $.get('/ajax/search/suggest?keyword=' + e, function(e) {
+                  $.get('/ajax/search/suggest?keyword=' + e, function (e) {
                     e &&
                       ($('#search-suggest .result').html(e.html),
                       $('#search-suggest .result').slideUp('fast'),
@@ -38272,13 +38488,13 @@ grecaptcha.ready(() => {
                 : $('#search-suggest .result').empty();
             }, 500)));
         }),
-        $('.search-input').blur(function() {
+        $('.search-input').blur(function () {
           n && $('#search-suggest').slideUp('fast');
         }),
-        $('.search-input').focus(function() {
+        $('.search-input').focus(function () {
           $('#search-suggest').slideDown('fast');
         }),
-        $(document).on('click', '.wl-item', function() {
+        $(document).on('click', '.wl-item', function () {
           var t, i, n;
           checkLogin() &&
             ((t = $(this).data('type')),
@@ -38287,17 +38503,17 @@ grecaptcha.ready(() => {
             'undefined' != typeof grecaptcha
               ? grecaptcha
                   .execute(recaptchaSiteKey, { action: 'watch_list' })
-                  .then(function(e) {
+                  .then(function (e) {
                     watchListSubmit({
                       movieId: i,
                       type: t,
                       page: n,
-                      _token: e
+                      _token: e,
                     });
                   })
               : watchListSubmit({ movieId: i, type: t, page: n, _token: '' }));
         }),
-        $(document).on('click', '.btn-vote', function() {
+        $(document).on('click', '.btn-vote', function () {
           var t;
           checkLogin() &&
             ($('#vote-loading').show(),
@@ -38305,16 +38521,16 @@ grecaptcha.ready(() => {
             'undefined' != typeof grecaptcha
               ? grecaptcha
                   .execute(recaptchaSiteKey, { action: 'vote' })
-                  .then(function(e) {
+                  .then(function (e) {
                     voteSubmit({ movieId: movieId, mark: t, _token: e });
                   })
               : voteSubmit({ movieId: movieId, mark: t, _token: '' }));
         }),
-        $(document).on('click touchstart', '.remove-cw', function() {
+        $(document).on('click touchstart', '.remove-cw', function () {
           var e = $(this).data('movieid');
           const t = $(this).parent();
           t.addClass('load-item removing'),
-            $.post('/ajax/continue-watch/remove', { movieId: e }, function(e) {
+            $.post('/ajax/continue-watch/remove', { movieId: e }, function (e) {
               e &&
                 (e.status
                   ? ('/home' === window.location.pathname
@@ -38325,13 +38541,13 @@ grecaptcha.ready(() => {
                     t.removeClass('load-item removing')));
             });
         }),
-        $('.quick-settings').click(function() {
+        $('.quick-settings').click(function () {
           quickSettings(
             $(this).data('option'),
             $(this).hasClass('off') ? 0 : 1
           );
         }),
-        $('.quick-settings-toggle').click(function() {
+        $('.quick-settings-toggle').click(function () {
           $(this).toggleClass('active'),
             quickSettings(
               $(this).data('option'),
@@ -38341,11 +38557,11 @@ grecaptcha.ready(() => {
         $(document).on(
           'click',
           '.dropdown-menu-noti,.dropdown-menu-right,.dropdown-menu-emo,.mute-options',
-          function(e) {
+          function (e) {
             e.stopPropagation();
           }
         ),
-        $(document).on('keyup', '#search-ep', function(e) {
+        $(document).on('keyup', '#search-ep', function (e) {
           e.preventDefault();
           var t,
             i = e.target.value;
@@ -38357,44 +38573,40 @@ grecaptcha.ready(() => {
                 13 === e.keyCode
                   ? ($(e.target).val(''), i.click())
                   : i.addClass('highlight'))
-              : ((t = $('.ep-item.active')
-                  .parent()
-                  .data('page')),
+              : ((t = $('.ep-item.active').parent().data('page')),
                 $('.ep-page-item[data-page=' + t + ']').click());
         }),
         []);
     function r() {
-      $('.f-genre-item').each(function() {
+      $('.f-genre-item').each(function () {
         const t = $(this).data('id');
         $(this).hasClass('active')
           ? a.push(t)
-          : (a = a.filter(function(e) {
+          : (a = a.filter(function (e) {
               return parseInt(e) !== parseInt(t);
             }));
       }),
         (a = [...new Set(a)]),
         $('#f-genre-ids').val(a.join(','));
     }
-    $('.f-genre-item').click(function() {
+    $('.f-genre-item').click(function () {
       $(this).toggleClass('active'), r();
     }),
       0 < $('.f-genre-item').length && r(),
-      $('#filter-form').submit(function(e) {
+      $('#filter-form').submit(function (e) {
         e.preventDefault();
         var t,
           i,
           n = {};
         for ([t, i] of new URLSearchParams($(this).serialize()))
           i && (n[t] = i);
-        window.location.href =
-          location.pathname + '?' + new URLSearchParams(n).toString();
       }),
-      $(document).on('click', '.btn-noti-maar', function(e) {
+      $(document).on('click', '.btn-noti-maar', function (e) {
         const t = $('.notify-type.active'),
           i = $('.notify-type').not('.active');
         var n = $(this).data('position'),
           s = t.data('type');
-        $.post('/ajax/notification/seen-all?type=' + s, function(e) {
+        $.post('/ajax/notification/seen-all?type=' + s, function (e) {
           e &&
             (e.status
               ? 'dropdown' === n
@@ -38422,7 +38634,7 @@ grecaptcha.ready(() => {
           t.substring(0, 300) +
           '...<span class="btn-more-desc more">+ More</span>'),
         300 < t.length && $('.film-description .text').html(i),
-        $(document).on('click', '.btn-more-desc', function() {
+        $(document).on('click', '.btn-more-desc', function () {
           $(this).hasClass('more')
             ? $('.film-description .text').html(
                 t + '<span class="btn-more-desc less">- Less</span>'
@@ -38432,7 +38644,7 @@ grecaptcha.ready(() => {
       $('.item-qtip').qtip({
         prerender: !0,
         content: {
-          text: function(e, i) {
+          text: function (e, i) {
             var t = i.elements.target;
             return (
               t.hasClass('loaded') ||
@@ -38440,31 +38652,31 @@ grecaptcha.ready(() => {
                 $.ajax({
                   url: '/ajax/movie/qtip/' + t.attr('data-id'),
                   type: 'GET',
-                  success: function(e, t) {
+                  success: function (e, t) {
                     i.set('content.text', e);
-                  }
+                  },
                 })),
               '<div class="loading-relative"><div class="loading"><div class="span1"></div><div class="span2"></div><div class="span3"></div></div></div>'
             );
-          }
+          },
         },
         show: {
           solo: !0,
-          effect: function(e) {
+          effect: function (e) {
             $(this).fadeIn(100);
-          }
+          },
         },
         hide: {
           fixed: !0,
-          effect: function(e) {
+          effect: function (e) {
             $(this).fadeOut(100);
-          }
+          },
         },
         position: { viewport: $(window), at: 'center', effect: !1 },
-        style: { width: 300, tip: { corner: !1 } }
+        style: { width: 300, tip: { corner: !1 } },
       });
   }),
-  $('#import-form').submit(function(e) {
+  $('#import-form').submit(function (e) {
     var t;
     e.preventDefault(),
       isLoading ||
@@ -38474,10 +38686,10 @@ grecaptcha.ready(() => {
         'undefined' != typeof grecaptcha
           ? grecaptcha
               .execute(recaptchaSiteKey, { action: 'mal_import' })
-              .then(function(e) {
+              .then(function (e) {
                 t.push({
                   name: 'erase_list',
-                  value: $('#sw-erase-list').hasClass('off') ? 0 : 1
+                  value: $('#sw-erase-list').hasClass('off') ? 0 : 1,
                 }),
                   t.push({ name: '_token', value: e }),
                   importSubmit(t);
@@ -38503,33 +38715,33 @@ grecaptcha.ready(() => {
     1 === parseInt(enableDub) && $('#sw-enable-dub').removeClass('off'),
     1 === parseInt(playOriginalAudio) &&
       $('#sw-play-original-audio').removeClass('off'),
-    $('#sw-auto-next').click(function() {
+    $('#sw-auto-next').click(function () {
       $('input[name=auto_next]').val($(this).hasClass('off') ? 1 : 0);
     }),
-    $('#sw-auto-play').click(function() {
+    $('#sw-auto-play').click(function () {
       $('input[name=auto_play]').val($(this).hasClass('off') ? 1 : 0);
     }),
-    $('#sw-auto-skip-intro').click(function() {
+    $('#sw-auto-skip-intro').click(function () {
       $('input[name=auto_skip_intro]').val($(this).hasClass('off') ? 1 : 0);
     }),
-    $('#sw-enable-dub').click(function() {
+    $('#sw-enable-dub').click(function () {
       $('input[name=enable_dub]').val($(this).hasClass('off') ? 1 : 0);
     }),
-    $('#sw-show-comments-at-home').click(function() {
+    $('#sw-show-comments-at-home').click(function () {
       $('input[name=show_comments_at_home]').val(
         $(this).hasClass('off') ? 1 : 0
       );
     }),
-    $('#sw-public-watch-list').click(function() {
+    $('#sw-public-watch-list').click(function () {
       $('input[name=public_watch_list]').val($(this).hasClass('off') ? 1 : 0);
     }),
-    $('#sw-play-original-audio').click(function() {
+    $('#sw-play-original-audio').click(function () {
       $('input[name=play_original_audio]').val($(this).hasClass('off') ? 1 : 0);
     }),
-    $('#settings-form').submit(function(e) {
+    $('#settings-form').submit(function (e) {
       e.preventDefault(), $('#settings-loading').show();
       e = $(this).serialize();
-      $.post('/ajax/user/settings', e, function(e) {
+      $.post('/ajax/user/settings', e, function (e) {
         e &&
           ($('#settings-loading').hide(),
           e.status
@@ -38537,7 +38749,7 @@ grecaptcha.ready(() => {
             : toastr.error(e.msg, '', { timeOut: 5e3 }));
       });
     })),
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     var e = $('#header'),
       t = $(window).scrollTop();
     10 <= t ? e.addClass('fixed') : e.removeClass('fixed'),
@@ -38545,11 +38757,11 @@ grecaptcha.ready(() => {
         ? $('#totop').addClass('active')
         : $('#totop').removeClass('active');
   }),
-  $('#totop').click(function() {
+  $('#totop').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 'slow');
   });
 var type,
-  activeSettingsInterval = setInterval(function() {
+  activeSettingsInterval = setInterval(function () {
     checkedLogin &&
       !setActiveSettings &&
       (activeSettings(),
@@ -38557,7 +38769,7 @@ var type,
       clearInterval(activeSettingsInterval));
   }, 300);
 function handleScrollToBottom(e) {
-  window.onscroll = function() {
+  window.onscroll = function () {
     window.innerHeight + window.scrollY >= document.body.offsetHeight - 400 &&
       e();
   };
@@ -38579,15 +38791,18 @@ function getNotifications() {
     !loading &&
     ((loading = !0),
     $('#loading-data').show(),
-    $.get(`/ajax/notification/list?type=${type}&cursor=` + cursor, function(e) {
-      e.html && $('#empty-notification').hide(),
-        (hasMore = e.hasMore),
-        (cursor = e.nextCursor),
-        $('.inbox-item-list').append(e.html),
-        $('#loading-data').hide(),
-        (loading = !1),
-        handleScrollToBottom(getNotifications);
-    }));
+    $.get(
+      `/ajax/notification/list?type=${type}&cursor=` + cursor,
+      function (e) {
+        e.html && $('#empty-notification').hide(),
+          (hasMore = e.hasMore),
+          (cursor = e.nextCursor),
+          $('.inbox-item-list').append(e.html),
+          $('#loading-data').hide(),
+          (loading = !1),
+          handleScrollToBottom(getNotifications);
+      }
+    ));
 }
 function localStorageGet(e) {
   try {
@@ -38605,30 +38820,30 @@ function localStorageSet(e, t) {
   }
   return !1;
 }
-$('.get-mangas').click(function() {
-  $.get('/ajax/movie/mangas/' + $(this).data('id'), function(e) {
+$('.get-mangas').click(function () {
+  $.get('/ajax/movie/mangas/' + $(this).data('id'), function (e) {
     $('#manga-list').html(e);
   });
 }),
-  $(document).on('click', '.ac-user', function() {
+  $(document).on('click', '.ac-user', function () {
     var e = $(this).data('user-id');
     $('#action-form input[name=user_id]').val(e);
   }),
-  $(document).on('click', '.user-action', function() {
+  $(document).on('click', '.user-action', function () {
     var e = $(this),
       t = e.data('user-id'),
       e = e.data('action');
-    $.post('/ajax/user/update', { action: e, user_id: t }, function(e) {
+    $.post('/ajax/user/update', { action: e, user_id: t }, function (e) {
       e && e.status
         ? (toastr.success(e.msg, '', { timeOut: 6e3 }),
           window.location.reload())
         : toastr.error(e.msg, '', { timeOut: 6e3 });
     });
   }),
-  $(document).on('submit', '#action-form', function(e) {
+  $(document).on('submit', '#action-form', function (e) {
     e.preventDefault(), $('#action-loading').show();
     e = $(this).serializeArray();
-    $.post('/ajax/user/blacklist', e, function(e) {
+    $.post('/ajax/user/blacklist', e, function (e) {
       $('#action-loading').hide(),
         $('#actionModal').modal('hide'),
         e && e.status
@@ -38642,11 +38857,11 @@ $('.get-mangas').click(function() {
     ((loading = !(hasMore = !(cursor = ''))),
     (type = $('.notify-type.active').data('type')),
     getNotifications(),
-    $(document).on('click', '.btn-clear-noti', function(e) {
+    $(document).on('click', '.btn-clear-noti', function (e) {
       var t;
       confirm('Are you sure clear all notifications?') &&
         ((t = $('.inbox-list .notify-type.active').data('type')),
-        $.post('/ajax/notification/clear-all?type=' + t, function(e) {
+        $.post('/ajax/notification/clear-all?type=' + t, function (e) {
           e &&
             (e.status
               ? window.location.reload()
@@ -38658,13 +38873,11 @@ $('.get-mangas').click(function() {
 var postRecaptcha,
   postVoteLoading = !1,
   hasMore =
-    ($('.tags-item').click(function() {
+    ($('.tags-item').click(function () {
       $('.tags-item').removeClass('active'),
         $('.tags-item .active-icon').hide(),
         $(this).addClass('active'),
-        $(this)
-          .find('.active-icon')
-          .show(),
+        $(this).find('.active-icon').show(),
         $('#selected-tags').text($(this).text()),
         $('input[name=tags_id]').val($(this).data('id'));
     }),
@@ -38672,17 +38885,17 @@ var postRecaptcha,
       0 < $('#post-recaptcha').length &&
         (postRecaptcha = grecaptcha.render('post-recaptcha', {
           sitekey: recaptchaV2SiteKey,
-          callback: function() {
+          callback: function () {
             $('#post-form').addClass('recaptcha-clicked');
-          }
+          },
         }));
     }),
-    $('#post-form').submit(function(e) {
+    $('#post-form').submit(function (e) {
       if ((e.preventDefault(), !$(this).hasClass('recaptcha-clicked')))
         return (
           $('#post-error').html(`Please click "I'm not a robot"`),
           $('#post-error').show(),
-          setTimeout(function() {
+          setTimeout(function () {
             $('#login-error').hide();
           }, 6e3),
           !1
@@ -38692,7 +38905,7 @@ var postRecaptcha,
         $('#post-loading').show(),
         $('#post-error').hide(),
         (e = $(this).serializeArray()),
-        $.post('/ajax/post/create', e, function(e) {
+        $.post('/ajax/post/create', e, function (e) {
           var t;
           $('#post-loading').hide(),
             (isLoading = !1),
@@ -38707,14 +38920,14 @@ var postRecaptcha,
                   : (t = e.msg),
                 $('#post-error').html(t),
                 $('#post-error').show(),
-                setTimeout(function() {
+                setTimeout(function () {
                   $('#post-error').hide();
                 }, 6e3),
                 grecaptcha.reset(postRecaptcha),
                 $('#post-form').removeClass('recaptcha-clicked'));
         }));
     }),
-    $(document).on('click', '.p-btn-vote', function() {
+    $(document).on('click', '.p-btn-vote', function () {
       var e, t, i, n;
       checkLogin() &&
         !postVoteLoading &&
@@ -38734,11 +38947,11 @@ var postRecaptcha,
               : n - 1
             : 1),
         e.find('.value').text(0 < n ? n : ''),
-        $.post('/ajax/post/vote', { id: post.id, type: t }, function(e) {
+        $.post('/ajax/post/vote', { id: post.id, type: t }, function (e) {
           postVoteLoading = !1;
         }));
     }),
-    $(document).on('click', '.lp-btn-vote', function() {
+    $(document).on('click', '.lp-btn-vote', function () {
       var e, t, i, n, s;
       checkLogin() &&
         !postVoteLoading &&
@@ -38767,14 +38980,14 @@ var postRecaptcha,
               : s - 1
             : 1),
         n.text(0 < s ? s : 0),
-        $.post('/ajax/post/vote', { id: i, type: t }, function(e) {
+        $.post('/ajax/post/vote', { id: i, type: t }, function (e) {
           postVoteLoading = !1;
         }));
     }),
-    $(document).on('click', '.post-action', function() {
+    $(document).on('click', '.post-action', function () {
       var e = $(this).data('action'),
         t = $(this).data('id');
-      $.post('/ajax/post/update', { id: t, action: e }, function(e) {
+      $.post('/ajax/post/update', { id: t, action: e }, function (e) {
         e &&
           (e.status && toastr.success(e.msg, '', { timeOut: 6e3 }),
           e.status || toastr.error(e.msg, '', { timeOut: 6e3 }));
@@ -38792,7 +39005,7 @@ function getPosts(e = 'all') {
     (loading = !0),
     $.get(
       `/ajax/post/list?type=${e}&cursor=${cursor}&tags=${tags}&sort=` + sort,
-      function(e) {
+      function (e) {
         (hasMore = e.hasMore),
           (cursor = e.nextCursor),
           $('.post-list').append(e.html),
@@ -38806,7 +39019,7 @@ var gifPage = 1,
 function trendingGifs() {
   $.get(
     `https://api.giphy.com/v1/gifs/trending?api_key=${giphyApiKey}&limit=48&rating=g`,
-    function(e) {
+    function (e) {
       e.data &&
         e.data.forEach(e => {
           $('#tab-sticker .sticker-list').append(
@@ -38818,9 +39031,10 @@ function trendingGifs() {
 }
 function searchGifs(e) {
   $.get(
-    `https://api.giphy.com/v1/gifs/search?api_key=${giphyApiKey}&q=${e}&limit=30&offset=${30 *
-      (gifPage - 1)}&rating=r&lang=en`,
-    function(e) {
+    `https://api.giphy.com/v1/gifs/search?api_key=${giphyApiKey}&q=${e}&limit=30&offset=${
+      30 * (gifPage - 1)
+    }&rating=r&lang=en`,
+    function (e) {
       e.data &&
         e.data.forEach(e => {
           $('#tab-sticker .sticker-list').append(
@@ -38845,7 +39059,7 @@ if (
     commentLoading = !1,
     commentLoaded = !1;
   function getReplies(t, i = null) {
-    $.get('/ajax/post-comment/replies/' + t, function(e) {
+    $.get('/ajax/post-comment/replies/' + t, function (e) {
       $('#replies-' + t).html(e.html),
         $('#replies-' + t).slideToggle(200),
         i &&
@@ -38854,13 +39068,13 @@ if (
           $(window).scrollTo($('#cm-' + i).prev(), { duration: 300 }));
     });
   }
-  $(document).on('click', '#cm-view-more', function() {
+  $(document).on('click', '#cm-view-more', function () {
     if (!commentLoading && post) {
       commentLoading = !0;
       const t = $(this);
       var e = $(this).data('page'),
         e = `/ajax/post-comment/list/${post.id}?page=${e}&sort=` + cmSort;
-      $.get(e, function(e) {
+      $.get(e, function (e) {
         (commentLoading = !1),
           e &&
             e.status &&
@@ -38869,64 +39083,61 @@ if (
       });
     }
   }),
-    $(document).on('click', '.cm-report', function() {
+    $(document).on('click', '.cm-report', function () {
       var e, t;
       checkLogin() &&
         !commentLoading &&
         ((commentLoading = !0),
         (e = $(this).data('id')),
         (t = $(this).data('type')),
-        $.post('/ajax/post-comment/report', { id: e, type: t }, function(e) {
+        $.post('/ajax/post-comment/report', { id: e, type: t }, function (e) {
           (commentLoading = !1), toastr.success(e.msg, '', { timeOut: 5e3 });
         }));
     }),
-    $(document).on('click', '.cm-sort', function() {
+    $(document).on('click', '.cm-sort', function () {
       (cmSort = $(this).data('value')), getCommentWidget();
     }),
-    $(document).on('click', '.btn-spoil', function() {
+    $(document).on('click', '.btn-spoil', function () {
       $(this).toggleClass('active');
     }),
-    $(document).on('click', '.cm-btn-show-rep', function() {
+    $(document).on('click', '.cm-btn-show-rep', function () {
       var e = $(this).data('id');
       $(this).toggleClass('active'),
         $(this).hasClass('active')
           ? getReplies(e)
           : $('#replies-' + e).slideToggle(200);
     }),
-    $(document).on('click', '.show-spoil', function() {
-      $(this).hide(),
-        $(this)
-          .parent()
-          .removeClass('is-spoil');
+    $(document).on('click', '.show-spoil', function () {
+      $(this).hide(), $(this).parent().removeClass('is-spoil');
     }),
-    $(document).on('click', '.ib-reply,.btn-close-reply', function() {
+    $(document).on('click', '.ib-reply,.btn-close-reply', function () {
       checkLogin() &&
         ($('#reply-' + $(this).data('id')).slideToggle(100),
         $('#reply-' + $(this).data('id'))
           .find('.comment-subject')
           .focus());
     }),
-    $(document).on('focus', '#df-cm-content', function() {
+    $(document).on('focus', '#df-cm-content', function () {
       checkLogin() && $('#df-cm-buttons').slideDown(100);
     }),
-    $(document).on('click', '#df-cm-close', function() {
+    $(document).on('click', '#df-cm-close', function () {
       $('#df-cm-buttons').slideUp(100);
     }),
-    $(document).on('click', '.post-cm-cp-link', function() {
+    $(document).on('click', '.post-cm-cp-link', function () {
       var e = $(this).data('id'),
         e = '' + currentUrl.origin + currentUrl.pathname + '?c_id=' + e;
       navigator.clipboard.writeText(e),
         toastr.success('Link Copied.', '', { timeOut: 6e3 });
     }),
-    $(document).on('click', '.cm-action', function() {
+    $(document).on('click', '.cm-action', function () {
       const t = $(this).data('action'),
         i = $(this).data('id');
-      $.post('/ajax/post-comment/update', { id: i, action: t }, function(e) {
+      $.post('/ajax/post-comment/update', { id: i, action: t }, function (e) {
         'hide' === t && $('#cm-' + i).remove(),
           toastr.success(e.msg, '', { timeOut: 5e3 });
       });
     }),
-    $(document).on('click', '.cm-btn-vote', function() {
+    $(document).on('click', '.cm-btn-vote', function () {
       var e, t, i, n, s;
       checkLogin() &&
         !commentLoading &&
@@ -38947,11 +39158,11 @@ if (
               : s - 1
             : 1),
         e.find('.value').text(0 < s ? s : ''),
-        $.post('/ajax/post-comment/vote', { id: i, type: t }, function(e) {
+        $.post('/ajax/post-comment/vote', { id: i, type: t }, function (e) {
           commentLoading = !1;
         }));
     }),
-    $(document).on('submit', '.post-comment-form', function(e) {
+    $(document).on('submit', '.post-comment-form', function (e) {
       if ((e.preventDefault(), !commentLoading && post)) {
         commentLoading = !0;
         const i = $(this),
@@ -38961,9 +39172,9 @@ if (
         t.push({ name: 'post_id', value: post.id }),
           grecaptcha
             .execute(recaptchaSiteKey, { action: 'add_post_comment' })
-            .then(function(e) {
+            .then(function (e) {
               t.push({ name: '_token', value: e }),
-                $.post('/ajax/post-comment/add', t, function(e) {
+                $.post('/ajax/post-comment/add', t, function (e) {
                   var t;
                   (commentLoading = !1),
                     n.hide(),
@@ -38984,14 +39195,14 @@ if (
                         i[0].reset())
                       : (i.find('.cm-error').text(e.msg),
                         i.find('.cm-error').show(),
-                        setTimeout(function() {
+                        setTimeout(function () {
                           i.find('.cm-error').hide();
                         }, 1e4));
                 });
             });
       }
     }),
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       isInViewport(document.getElementById('content-comments')) &&
         !commentLoaded &&
         (getCommentWidget(), (commentLoaded = !0));
@@ -39009,7 +39220,7 @@ if (
       ((commentLoading = !0),
       (e = `/ajax/post-comment/widget/${post.id}?sort=` + cmSort),
       cId && (e = e + '&cId=' + cId),
-      $.get(e, function(e) {
+      $.get(e, function (e) {
         var t;
         (commentLoading = !1),
           $('#content-comments').html(e.html),
@@ -39023,15 +39234,15 @@ if (
   }
 }
 '/community/my-zone' === window.location.pathname &&
-  ($.get('/ajax/community/activity/list', function(e) {
+  ($.get('/ajax/community/activity/list', function (e) {
     e && e.status && $('#activities-content').html(e.html);
   }),
-  $.get('/ajax/community/coin/history', function(e) {
+  $.get('/ajax/community/coin/history', function (e) {
     e && e.status && $('#coins-content').html(e.html);
   }));
 const regex = /\/community\/user\/(\d+)/g,
   found = regex.exec(window.location.pathname);
 found &&
-  $.get('/ajax/community/activity/latest/' + found[1], function(e) {
+  $.get('/ajax/community/activity/latest/' + found[1], function (e) {
     e && e.status && $('.maw-right').append(e.html);
   });

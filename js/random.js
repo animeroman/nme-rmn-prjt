@@ -1,19 +1,21 @@
 const endpoint = 'https://animeroman.github.io/Source/json/main-search.json';
 
-const searchDataEngine = [];
+const searchDataEngineRandom = [];
 fetch(endpoint)
   .then(blob => blob.json())
   .then(data => {
-    searchDataEngine.push(...data);
+    searchDataEngineRandom.push(...data);
 
-    // Function to get a random anime object from searchDataEngine
+    // Function to get a random anime object from searchDataEngineRandom
     function getRandomAnime() {
       let randomAnime;
 
       // Keep trying until a matching anime is found
       do {
         const randomAnimeId = Math.floor(Math.random() * 70000) + 1;
-        randomAnime = searchDataEngine.find(anime => anime.id == randomAnimeId);
+        randomAnime = searchDataEngineRandom.find(
+          anime => anime.id == randomAnimeId
+        );
       } while (!randomAnime); // Repeat until an anime is found
 
       return randomAnime;
