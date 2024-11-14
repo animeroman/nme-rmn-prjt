@@ -5,7 +5,8 @@ let filterLetter = ''; // Default filter by letter
 let filterCategory = { genres: [] }; // Default filter by category, including genres as an array
 let sortCriteria = { field: '', order: 'asc' }; // Default sorting by field and order
 
-const jsonDataUrl = 'https://animeroman.github.io/Source/json/main-search.json';
+const jsonDataUrl =
+  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
 const searchDataLister = [];
 
 fetch(jsonDataUrl)
@@ -179,8 +180,9 @@ function updatePagination(currentPage) {
   if (currentPage > 1) {
     paginationHTML += `
       <li class="page-item">
-        <a title="Previous" class="page-link" href="#" onclick="goToPage(${currentPage -
-          1})">&lsaquo;</a>
+        <a title="Previous" class="page-link" href="#" onclick="goToPage(${
+          currentPage - 1
+        })">&lsaquo;</a>
       </li>`;
   }
 
@@ -199,8 +201,9 @@ function updatePagination(currentPage) {
   if (currentPage < totalPages) {
     paginationHTML += `
       <li class="page-item">
-        <a title="Next" class="page-link" href="#" onclick="goToPage(${currentPage +
-          1})">&rsaquo;</a>
+        <a title="Next" class="page-link" href="#" onclick="goToPage(${
+          currentPage + 1
+        })">&rsaquo;</a>
       </li>`;
   }
 

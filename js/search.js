@@ -1,7 +1,8 @@
 ('use strict');
 
 // const endpoint = 'json/search.json';
-const endpoint_search = 'https://animeroman.github.io/Source/json/main-search.json';
+const endpoint_search =
+  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
 // const endpoint =
 //   'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 

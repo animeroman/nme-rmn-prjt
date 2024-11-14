@@ -1,6 +1,7 @@
 'use strict';
 // JSON data point
-const endpoint_Watch = 'https://animeroman.github.io/Source/json/search.json';
+const endpoint_Watch =
+  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
 
 // Store the selected server type globally to remember it across episodes
 let selectedServerType = localStorage.getItem('selectedServerType') || 'sub'; // Default to 'sub'
@@ -171,7 +172,7 @@ function createEpisodeList(data) {
     // Add click event listener to each episode link
     const episodeLinks = container.querySelectorAll('.ep-item');
     episodeLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         // Get server URLs from the clicked element's data attributes
         const subServer1 = this.getAttribute('data-subserver1');
         const subServer2 = this.getAttribute('data-subserver2');
@@ -215,7 +216,7 @@ function createEpisodeList(data) {
     const dropdownItems = document.querySelectorAll('.ep-page-item');
 
     dropdownItems.forEach((item, index) => {
-      item.addEventListener('click', function() {
+      item.addEventListener('click', function () {
         // Update the displayed text to match the clicked dropdown item
         const currentPageText = this.textContent.trim();
         document.getElementById('current-page').textContent = currentPageText;
@@ -349,7 +350,7 @@ function attachServerClickEvents() {
   const serverButtons = serversContent.querySelectorAll('.server-item a');
 
   serverButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       const serverItem = this.parentElement;
       const serverSrc = serverItem.getAttribute('data-src');
 
@@ -395,7 +396,7 @@ function selectDefaultServer() {
 }
 
 // Fetch the anime data from the endpoint and run the episode list creation
-window.onload = function() {
+window.onload = function () {
   // Step 1: Extract the "page" part from the URL (e.g., '0-firstsubfolder.html')
   const currentPage = window.location.pathname
     .split('/')

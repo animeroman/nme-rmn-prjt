@@ -1,4 +1,4 @@
-const endpoint = 'https://animeroman.github.io/Source/json/main-search.json';
+const endpoint = 'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
 
 const searchDataEngineRandom = [];
 fetch(endpoint)

@@ -5,7 +5,8 @@ let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 
 // const endpoint = 'json/search.json';
-const endpoint_engine = 'https://animeroman.github.io/Source/json/main-search.json';
+const endpoint_engine =
+  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
 
 const searchDataEngine = [];
 fetch(endpoint_engine)
@@ -193,8 +194,9 @@ function updatePagination(currentPage) {
     if (currentPage > 1) {
       paginationHTML += `
       <li class="page-item">
-        <a title="Previous" class="page-link" href="#" onclick="goToPage(${currentPage -
-          1})">&lsaquo;</a>
+        <a title="Previous" class="page-link" href="#" onclick="goToPage(${
+          currentPage - 1
+        })">&lsaquo;</a>
       </li>`;
     }
 
@@ -213,8 +215,9 @@ function updatePagination(currentPage) {
     if (currentPage < totalPages) {
       paginationHTML += `
       <li class="page-item">
-        <a title="Next" class="page-link" href="#" onclick="goToPage(${currentPage +
-          1})">&rsaquo;</a>
+        <a title="Next" class="page-link" href="#" onclick="goToPage(${
+          currentPage + 1
+        })">&rsaquo;</a>
       </li>`;
     }
 
@@ -246,7 +249,7 @@ function goToPage(page) {
 }
 
 // Initialize search with keyword from URL if present
-window.onload = function() {
+window.onload = function () {
   const keyword = getQueryParam('keyword'); // Get the keyword from the URL
   if (keyword) {
     displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
