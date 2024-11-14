@@ -25,46 +25,20 @@ with open(input_file_path, 'r') as infile:
         converted_entry = {
             "id": anime_id,
             "animeEnglish": anime["name"],
-            "animeOriginal": "Original Name",
-            "duration": "min.",
-            "type": "type",
-            "status": "status",
-            "rated": "R",
-            "score": "10",
-            "season": "season",
-            "language": "SUB & DUB",
-            "dateStart": "date",
-            "dateEnd": "date",
-            "poster": "link.jpg",
-            "page": "pagelink",
-            "subCount": "3",
-            "dubCount": "3",
-            "episodes": [
-                {
-                    "episodeNumber": 1,
-                    "title": "Episode 1 Title",
-                    "dubServer1": "#",
-                    "dubServer2": "#",
-                    "subServer1": "#",
-                    "subServer2": "#"
-                },
-                {
-                    "episodeNumber": 2,
-                    "title": "Episode 2 Title",
-                    "dubServer1": "#",
-                    "dubServer2": "#",
-                    "subServer1": "#",
-                    "subServer2": "#"
-                },
-                {
-                    "episodeNumber": 3,
-                    "title": "Episode 3 Title",
-                    "dubServer1": "#",
-                    "dubServer2": "#",
-                    "subServer1": "#",
-                    "subServer2": "#"
-                }
-            ]
+            "animeOriginal": "fixme",
+            "duration": "fixme",
+            "type": "fixme",
+            "status": "fixme",
+            "rated": "fixme",
+            "score": "fixme",
+            "season": "fixme",
+            "language": "fixme",
+            "dateStart": "fixme",
+            "dateEnd": "fixme",
+            "poster": "fixme",
+            "page": "fixme",
+            "subCount": "fixme",
+            "dubCount": "fixme"
         }
         
         # Append the converted entry to the list
