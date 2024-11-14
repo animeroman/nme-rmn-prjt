@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>
@@ -58,9 +58,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "G-R34F2GCSBW");
+      gtag('config', 'G-R34F2GCSBW');
     </script>
 
     <!-- <script type="application/ld+json">
@@ -290,18 +290,18 @@
       async="async"
     ></script>
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker.register("sw1f6b.js?v=0.5");
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw1f6b.js?v=0.5');
         });
       }
       $(document).ready(function () {
-        $("#xheader_browser").click(function (e) {
-          $("#xheader_menu, #xheader_browser").toggleClass("active");
+        $('#xheader_browser').click(function (e) {
+          $('#xheader_menu, #xheader_browser').toggleClass('active');
         });
-        $(".btn-search").click(function () {
-          if ($(".search-input").val().trim() !== "") {
-            $("#search-form").submit();
+        $('.btn-search').click(function () {
+          if ($('.search-input').val().trim() !== '') {
+            $('#search-form').submit();
           }
         });
       });

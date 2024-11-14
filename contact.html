@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>
@@ -58,9 +58,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "G-R34F2GCSBW");
+      gtag('config', 'G-R34F2GCSBW');
     </script>
 
     <script type="application/ld+json">
@@ -1136,8 +1136,8 @@
     </div>
 
     <script>
-      var recaptchaSiteKey = "6Lc7dH8pAAAAAIGw-BOEYDAZvcs3afxf6XHaLsQL",
-        recaptchaV2SiteKey = "6LdCdH8pAAAAAMV9Qy_K16Fvm4pWGYWrAEpjRjgD";
+      var recaptchaSiteKey = '6Lc7dH8pAAAAAIGw-BOEYDAZvcs3afxf6XHaLsQL',
+        recaptchaV2SiteKey = '6LdCdH8pAAAAAMV9Qy_K16Fvm4pWGYWrAEpjRjgD';
     </script>
     <script src="www.google.com/recaptcha/api4a96.js?render=6Lc7dH8pAAAAAIGw-BOEYDAZvcs3afxf6XHaLsQL&amp;hl=en"></script>
 
@@ -1153,35 +1153,35 @@
     ></script>
     <script type="text/javascript" src="js/app.minffaf.js?v=1.4"></script>
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker.register("sw1f6b.js?v=0.5");
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw1f6b.js?v=0.5');
         });
       }
-      $(".anime-request-link").click(function (e) {
+      $('.anime-request-link').click(function (e) {
         e.preventDefault();
         if (isLoggedIn) {
-          window.location.href = $(this).attr("href");
+          window.location.href = $(this).attr('href');
         } else {
-          $("#modallogin").modal("show");
+          $('#modallogin').modal('show');
         }
       });
     </script>
 
     <script>
-      $("#contact-form").submit(function (e) {
+      $('#contact-form').submit(function (e) {
         e.preventDefault();
 
         if (!loading) {
           loading = true;
-          $("#contact-loading").show();
-          $("#contact-error").hide();
+          $('#contact-loading').show();
+          $('#contact-error').hide();
           var data = $(this).serializeArray();
-          if (typeof grecaptcha !== "undefined") {
+          if (typeof grecaptcha !== 'undefined') {
             grecaptcha
-              .execute(recaptchaSiteKey, { action: "contact" })
+              .execute(recaptchaSiteKey, { action: 'contact' })
               .then(function (token) {
-                data.push({ name: "_token", value: token });
+                data.push({ name: '_token', value: token });
                 contact(data);
               });
           } else {
@@ -1191,14 +1191,14 @@
       });
 
       function contact(data) {
-        $.post("/ajax/contact", data, function (res) {
-          $("#contact-loading").hide();
+        $.post('/ajax/contact', data, function (res) {
+          $('#contact-loading').hide();
           loading = false;
           if (res.status) {
-            $("#contact-form")[0].reset();
-            toastr.success(res.msg, "", { timeout: 5000 });
+            $('#contact-form')[0].reset();
+            toastr.success(res.msg, '', { timeout: 5000 });
           } else {
-            toastr.error(res.msg, "", { timeout: 5000 });
+            toastr.error(res.msg, '', { timeout: 5000 });
           }
         });
       }
