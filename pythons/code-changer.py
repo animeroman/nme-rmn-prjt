@@ -3,15 +3,13 @@ import re
 
 # Değiştirmek istediğiniz HTML kodu
 eski_kod = '''
-              <a
-                href="../watch2gether.html"
-                class="hst-item"
-                data-toggle="tooltip"
-                title="Watch with friends"
-              >
-              </a>'''
+    </div>
+    <div
+      class="modal fade premodal premodal-login"'''
 
-yeni_kod = ''' '''
+yeni_kod = '''
+    <div
+      class="modal fade premodal premodal-login"'''
 
 # Klasör yolunu belirtin
 klasor_yolu = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
