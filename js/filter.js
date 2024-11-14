@@ -3,7 +3,7 @@
 // Add event listener for form submission
 document
   .querySelector('#filter-form')
-  .addEventListener('submit', function(event) {
+  .addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form submission
 
     // Get the search keyword from the input
@@ -44,8 +44,9 @@ document
     const ratedFilter = document.querySelector('select[name="rated"]').value;
     const genreFilter = document.querySelector('input#f-genre-ids').value; // Genres
     const seasonFilter = document.querySelector('select[name="season"]').value;
-    const languageFilter = document.querySelector('select[name="language"]')
-      .value;
+    const languageFilter = document.querySelector(
+      'select[name="language"]'
+    ).value;
     const scoreFilter = document.querySelector('select[name="score"]').value;
     const sortFilter = document.querySelector('select[name="sort"]').value;
 
@@ -93,7 +94,7 @@ document
 
 // Toggle 'active' class for genre buttons and update genre filters
 document.querySelectorAll('.f-genre-item').forEach(item => {
-  item.addEventListener('click', function() {
+  item.addEventListener('click', function () {
     // Toggle 'active' class
     this.classList.toggle('active');
 
@@ -316,6 +317,11 @@ function displayMatches(inputValue, page) {
       return `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
+          <div class="tick ltr">
+            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${anime.subCount}</div>
+            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${anime.dubCount}</div>
+            <div class="tick-item tick-eps">${anime.subCount}</div>
+          </div>
           <img data-src="${anime.poster}" class="film-poster-img lazyload" src="${anime.poster}" />
           <a href="watch/${anime.page}.html" class="film-poster-ahref"><i class="fas fa-play"></i></a>
         </div>
@@ -345,96 +351,96 @@ function getQueryParam(param) {
 
 function mapType(typeValue) {
   const typeMap = {
-    '1': 'Movie',
-    '2': 'TV',
-    '3': 'OVA',
-    '4': 'ONA',
-    '5': 'Special',
-    '6': 'Music'
+    1: 'Movie',
+    2: 'TV',
+    3: 'OVA',
+    4: 'ONA',
+    5: 'Special',
+    6: 'Music',
   };
   return typeMap[typeValue] || '';
 }
 
 function mapStatus(statusValue) {
   const statusMap = {
-    '1': 'Finished Airing',
-    '2': 'Currently Airing',
-    '3': 'Not yet aired'
+    1: 'Finished Airing',
+    2: 'Currently Airing',
+    3: 'Not yet aired',
   };
   return statusMap[statusValue] || '';
 }
 
 function mapRated(ratedValue) {
   const ratedMap = {
-    '1': 'G',
-    '2': 'PG',
-    '3': 'PG-13',
-    '4': 'R',
-    '5': 'R+',
-    '6': 'Rx'
+    1: 'G',
+    2: 'PG',
+    3: 'PG-13',
+    4: 'R',
+    5: 'R+',
+    6: 'Rx',
   };
   return ratedMap[ratedValue] || '';
 }
 
 function mapSeason(seasonValue) {
   const seasonMap = {
-    '1': 'Spring',
-    '2': 'Summer',
-    '3': 'Fall',
-    '4': 'Winter'
+    1: 'Spring',
+    2: 'Summer',
+    3: 'Fall',
+    4: 'Winter',
   };
   return seasonMap[seasonValue] || '';
 }
 
 function mapGenres(genreValue) {
   const genreMap = {
-    '1': 'Action',
-    '2': 'Adventure',
-    '3': 'Cars',
-    '4': 'Comedy',
-    '5': 'Dementia',
-    '6': 'Demons',
-    '7': 'Drama',
-    '9': 'Ecchi',
-    '10': 'Fantasy',
-    '11': 'Game',
-    '12': 'Harem',
-    '13': 'Historical',
-    '14': 'Horror',
-    '15': 'Isekai',
-    '16': 'Josei',
-    '17': 'Kids',
-    '18': 'Magic',
-    '19': 'Martial Arts',
-    '20': 'Mecha',
-    '21': 'Military',
-    '22': 'Music',
-    '23': 'Mystery',
-    '24': 'Parody',
-    '25': 'Police',
-    '26': 'Psychological',
-    '27': 'Romance',
-    '28': 'Samurai',
-    '29': 'School',
-    '30': 'Sci-Fi',
-    '31': 'Seinen',
-    '32': 'Shoujo',
-    '33': 'Shoujo Ai',
-    '34': 'Shounen',
-    '35': 'Shounen Ai',
-    '36': 'Slice of Life',
-    '37': 'Space',
-    '38': 'Sports',
-    '39': 'Super Power',
-    '40': 'Supernatural',
-    '41': 'Thriller',
-    '42': 'Vampire'
+    1: 'Action',
+    2: 'Adventure',
+    3: 'Cars',
+    4: 'Comedy',
+    5: 'Dementia',
+    6: 'Demons',
+    7: 'Drama',
+    9: 'Ecchi',
+    10: 'Fantasy',
+    11: 'Game',
+    12: 'Harem',
+    13: 'Historical',
+    14: 'Horror',
+    15: 'Isekai',
+    16: 'Josei',
+    17: 'Kids',
+    18: 'Magic',
+    19: 'Martial Arts',
+    20: 'Mecha',
+    21: 'Military',
+    22: 'Music',
+    23: 'Mystery',
+    24: 'Parody',
+    25: 'Police',
+    26: 'Psychological',
+    27: 'Romance',
+    28: 'Samurai',
+    29: 'School',
+    30: 'Sci-Fi',
+    31: 'Seinen',
+    32: 'Shoujo',
+    33: 'Shoujo Ai',
+    34: 'Shounen',
+    35: 'Shounen Ai',
+    36: 'Slice of Life',
+    37: 'Space',
+    38: 'Sports',
+    39: 'Super Power',
+    40: 'Supernatural',
+    41: 'Thriller',
+    42: 'Vampire',
   };
   return genreMap[genreValue] || genreValue; // Return the name or original value
 }
 
 function mapLanguage(languageValue) {
-  const languageMap = { '1': 'SUB', '2': 'DUB', '3': 'SUB & DUB' };
+  const languageMap = { 1: 'SUB', 2: 'DUB', 3: 'SUB & DUB' };
   return languageMap[languageValue] || '';
 }
 
