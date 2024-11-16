@@ -24,7 +24,7 @@
       line-height: 40px;
       font-size: 20px;
       font-weight: 600;
-      color: #badfff !important;
+      color: $color-primary !important;
     }
   }
   &_menu {
@@ -59,7 +59,7 @@
           letter-spacing: 1px;
 
           &:hover {
-            color: #badfff;
+            color: $color-primary;
           }
         }
       }
@@ -84,7 +84,7 @@
     }
 
     &.active .header-btn {
-      color: #badfff;
+      color: $color-primary;
     }
   }
 }

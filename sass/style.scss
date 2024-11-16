@@ -23,7 +23,7 @@ a {
   outline: 0;
   -moz-outline: none;
   &:hover {
-    color: #badfff;
+    color: $color-primary;
   }
 }
 
@@ -60,13 +60,13 @@ h6 {
 .btn-focus,
 .btn-primary,
 .btn-tab.active {
-  background: #badfff !important;
+  background: $color-primary !important;
   color: #000 !important;
-  border-color: #badfff !important;
+  border-color: $color-primary !important;
   box-shadow: none !important;
   &:hover {
-    background: #badfff !important;
-    border-color: #badfff !important;
+    background: $color-primary !important;
+    border-color: $color-primary !important;
   }
 }
 .btn-secondary,
@@ -213,7 +213,7 @@ div.detail .is-info > div {
   bottom: 0;
 }
 .highlight-text {
-  color: #badfff;
+  color: $color-primary;
 }
 .mat-icon {
   display: inline-flex;
@@ -291,7 +291,7 @@ div.detail .is-info > div {
 }
 #mobile_menu.active i,
 #mobile_search.active i {
-  color: #badfff;
+  color: $color-primary;
 }
 #mobile_search {
   float: right;
@@ -336,13 +336,13 @@ div.detail .is-info > div {
         text-transform: uppercase;
       }
       &:hover > a {
-        color: #badfff;
+        color: $color-primary;
       }
       &.active > a:before {
         content: '';
         width: 100%;
         height: 3px;
-        background: #badfff;
+        background: $color-primary;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -382,7 +382,7 @@ div.detail .is-info > div {
           text-overflow: ellipsis;
         }
         &:hover a {
-          background: #badfff;
+          background: $color-primary;
           color: #111 !important;
         }
       }
@@ -479,13 +479,13 @@ div.detail .is-info > div {
 }
 #header .btn-on-header:hover {
   background: 0 0;
-  color: #badfff !important;
+  color: $color-primary !important;
 }
 #header #search-toggle .btn-on-header {
   font-size: 20px;
 }
 #header #search-toggle.active .btn-on-header {
-  background: #badfff;
+  background: $color-primary;
   color: #111;
 }
 #pick_menu {
@@ -568,7 +568,7 @@ div.detail .is-info > div {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #badfff;
+  color: $color-primary;
 }
 .header_right-user.logged .dropdown-menu {
   width: 300px;
@@ -588,7 +588,7 @@ div.detail .is-info > div {
     padding: 1rem;
     background: 0 0 !important;
     &:hover {
-      color: #badfff !important;
+      color: $color-primary !important;
     }
     &-user {
       padding: 12px 15px;
@@ -642,7 +642,7 @@ div.detail .is-info > div {
     }
   }
   &.show .hrn-icon {
-    color: #badfff;
+    color: $color-primary;
   }
 }
 #user-slot {
@@ -670,7 +670,7 @@ div.detail .is-info > div {
   background-color: #4e4e6d;
   color: #fff;
   & i {
-    color: #badfff;
+    color: $color-primary;
   }
 }
 .sb-donate {
@@ -766,7 +766,7 @@ div.detail .is-info > div {
     top: 7px;
     z-index: 3;
     &:hover {
-      background: #badfff !important;
+      background: $color-primary !important;
       color: #000;
     }
   }
@@ -832,7 +832,7 @@ div.detail .is-info > div {
     }
     & .nav-bottom {
       padding: 15px;
-      background: #badfff !important;
+      background: $color-primary !important;
       font-size: 16px;
       color: #111;
       text-align: center;
@@ -873,13 +873,13 @@ div.detail .is-info > div {
   color: #ddd;
   border: 1px solid #4a4c55;
   &:hover {
-    color: #badfff;
+    color: $color-primary;
   }
 }
 .btn-sm.btn-filter-item.active {
-  border-color: #badfff;
+  border-color: $color-primary;
   background: #373646;
-  color: #badfff;
+  color: $color-primary;
 }
 .btn-sm.nl-item-btn {
   border: none;
@@ -900,7 +900,7 @@ div.detail .is-info > div {
       font-weight: 600;
       padding: 0;
       margin: 0;
-      color: #badfff;
+      color: $color-primary;
     }
     & .viewmore .btn {
       padding: 4px 0;
@@ -966,11 +966,11 @@ div.detail .is-info > div {
       border-radius: 0;
       border-bottom: 2px solid transparent;
       &:hover {
-        color: #badfff;
+        color: $color-primary;
       }
       &.active {
-        color: #badfff;
-        border-color: #badfff;
+        color: $color-primary;
+        border-color: $color-primary;
       }
     }
   }
@@ -988,7 +988,7 @@ div.detail .is-info > div {
         border-radius: 4px;
         &.active {
           color: #000 !important;
-          background: #badfff !important;
+          background: $color-primary !important;
         }
       }
     }
@@ -1010,7 +1010,7 @@ div.detail .is-info > div {
       line-height: 34px;
       padding: 0 12px;
       &.active {
-        background: #badfff;
+        background: $color-primary;
         color: #000;
       }
     }
@@ -1025,7 +1025,7 @@ div.detail .is-info > div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #badfff;
+  color: $color-primary;
 }
 .film_list {
   display: block;
@@ -1172,7 +1172,7 @@ div.detail .is-info > div {
     background: #fff;
     color: #111;
     &.tick-quality {
-      background: #badfff;
+      background: $color-primary;
       color: #111;
     }
     &.tick-eps {
@@ -1229,11 +1229,11 @@ div.detail .is-info > div {
     font-weight: 400;
     line-height: 1em;
     &:hover {
-      color: #badfff;
+      color: $color-primary;
     }
   }
   &.active .page-link {
-    background: #badfff;
+    background: $color-primary;
     color: #111;
     cursor: default;
   }
@@ -1293,7 +1293,7 @@ div.detail .is-info > div {
     text-shadow: none;
     &:hover {
       opacity: 1;
-      background: #badfff;
+      background: $color-primary;
       color: #111;
     }
   }
@@ -1349,8 +1349,8 @@ div.detail .is-info > div {
     display: inline-block;
   }
   &.is-yes .span-v {
-    color: #badfff;
-    border: 1px solid #badfff;
+    color: $color-primary;
+    border: 1px solid $color-primary;
     padding: 0.3rem 0.8rem;
     border-radius: 2rem;
     font-size: 12px;
@@ -1371,7 +1371,7 @@ div.detail .is-info > div {
   line-height: 1.5rem;
 }
 .link-highlight {
-  color: #badfff !important;
+  color: $color-primary !important;
   cursor: pointer;
 }
 .modal-logo {
@@ -1588,7 +1588,7 @@ ul.az-list {
 ul.az-list li a:hover,
 ul.az-list li.active a {
   color: #111;
-  background: #badfff;
+  background: $color-primary;
 }
 .main-az {
   margin-bottom: 20px;
@@ -1621,7 +1621,7 @@ ul.az-list li.active a {
   line-height: 1.3em;
   margin: 0 0 15px;
   font-weight: 400;
-  color: #badfff;
+  color: $color-primary;
 }
 .btn-xs {
   font-size: 12px;
@@ -1772,7 +1772,7 @@ ul.az-list li.active a {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   & a {
-    color: #badfff;
+    color: $color-primary;
   }
   & .btn-expand {
     display: none;
@@ -1859,7 +1859,7 @@ ul.az-list li.active a {
   }
   &.new .icon {
     opacity: 1;
-    color: #badfff;
+    color: $color-primary;
   }
   &.new {
     background: #fff;
@@ -1993,7 +1993,7 @@ ul.az-list li.active a {
       line-height: 1.3em;
       font-weight: 400;
       margin-bottom: 20px;
-      color: #badfff;
+      color: $color-primary;
     }
     & .desi-head-title {
       font-size: 3em;
@@ -2106,7 +2106,7 @@ ul.az-list li.active a {
   & .anif-block-header {
     font-size: 22px;
     font-weight: 600;
-    color: #badfff;
+    color: $color-primary;
     position: relative;
     margin-bottom: 1rem;
   }
@@ -2146,7 +2146,7 @@ ul.az-list li.active a {
       }
       & .film-fav.active,
       & .film-fav:hover {
-        color: #badfff;
+        color: $color-primary;
         opacity: 1;
       }
       & .film-play {
@@ -2154,7 +2154,7 @@ ul.az-list li.active a {
         color: #fff;
         font-size: 14px;
         &:hover {
-          color: #badfff;
+          color: $color-primary;
         }
       }
     }
@@ -2276,7 +2276,7 @@ ul.az-list li.active a {
         }
       }
       &.item-top .film-number span {
-        border-bottom: 3px solid #badfff;
+        border-bottom: 3px solid $color-primary;
         padding-bottom: 6px;
         color: #fff;
       }
@@ -2381,8 +2381,8 @@ ul.color-list li:nth-of-type(7n + 1) a {
   color: #d0e6a5;
 }
 ul.color-list li:nth-of-type(7n + 2) a {
-  border-color: #badfff;
-  color: #badfff;
+  border-color: $color-primary;
+  color: $color-primary;
 }
 ul.color-list li:nth-of-type(7n + 3) a {
   border-color: #fc887b;
@@ -2459,7 +2459,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     }
   }
   &:hover .film-detail .fd-play .btn-play {
-    background: #badfff;
+    background: $color-primary;
     color: #111;
   }
 }
@@ -2479,7 +2479,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   color: #111;
 }
 .table_schedule .table_schedule-list li:hover .time {
-  color: #badfff;
+  color: $color-primary;
 }
 .table_schedule .table_schedule-date {
   padding: 20px 30px;
@@ -2497,7 +2497,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       background: rgba(255, 255, 255, 0.1);
     }
     &.active {
-      background: #badfff;
+      background: $color-primary;
       color: #111;
       & .date {
         color: #111;
@@ -2521,7 +2521,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   margin-top: 1rem;
   text-align: left;
   &:hover {
-    color: #badfff !important;
+    color: $color-primary !important;
   }
 }
 .table_schedule-list.limit-8 li:nth-of-type(n + 8) {
@@ -2908,11 +2908,11 @@ ul.color-list li:nth-of-type(7n + 6) a {
     &.pc-comment {
       display: none;
       & .btn i {
-        color: #badfff;
+        color: $color-primary;
       }
       & .btn span {
         font-weight: 600;
-        color: #badfff;
+        color: $color-primary;
       }
     }
   }
@@ -2941,7 +2941,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     }
   }
   &.active .dt-status {
-    background: #badfff;
+    background: $color-primary;
     color: #111;
     &:before {
       content: 'ON';
@@ -3147,7 +3147,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     }
     & .btn-sm {
       border: none;
-      color: #badfff;
+      color: $color-primary;
       font-size: 12px;
       line-height: 1.1em;
       background: 0 0;
@@ -3218,7 +3218,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     left: 0;
     bottom: 0;
     width: 4px;
-    background: #badfff;
+    background: $color-primary;
   }
 }
 .ss-list .ssl-item .ssli-order {
@@ -3264,7 +3264,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
 }
 .ss-list .ssl-item.ssl-item-filler.active .ssli-order,
 .ss-list .ssl-item.ssl-item-filler:hover .ssli-order {
-  color: #badfff !important;
+  color: $color-primary !important;
 }
 .ss-list .ssl-item.ssl-item-filler:after {
   content: '';
@@ -3278,7 +3278,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
 }
 .ss-list .ssl-item.ssl-item-filler.active:before {
   content: '';
-  background: #badfff !important;
+  background: $color-primary !important;
   z-index: 3;
 }
 .ss-list .ssl-item.ssl-item-filler .ssli-detail .ep-name {
@@ -3297,15 +3297,15 @@ ul.color-list li:nth-of-type(7n + 6) a {
   border-radius: 4px;
 }
 .ss-list .ssl-item.ssl-item-filler:hover .ssli-filler {
-  color: #badfff !important;
-  border-color: #badfff;
+  color: $color-primary !important;
+  border-color: $color-primary;
   opacity: 1;
 }
 .ss-list .ssl-item.ssl-item-filler.active .ssli-filler {
   display: none;
 }
 .ss-list .ssl-item.ssl-item-filler.active .ssli-btn .btn.btn-circle {
-  background: #badfff;
+  background: $color-primary;
   color: #111;
 }
 .ss-list .ssl-item .ssli-btn,
@@ -3341,7 +3341,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
 }
 .ss-list .ssl-item.active .ssli-detail .ep-name,
 .ss-list .ssl-item:hover .ssli-detail .ep-name {
-  color: #badfff !important;
+  color: $color-primary !important;
 }
 .ss-list .ssl-item:visited .ssli-detail .ep-name {
   color: #777;
@@ -3350,12 +3350,12 @@ ul.color-list li:nth-of-type(7n + 6) a {
   color: #777;
 }
 .ss-list .ssl-item.active .ssli-order {
-  color: #badfff !important;
+  color: $color-primary !important;
 }
 .ss-list .ssl-item.active .ssli-btn {
   opacity: 1;
   & .btn.btn-circle {
-    background: #badfff;
+    background: $color-primary;
     color: #111;
   }
 }
@@ -3446,7 +3446,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       }
     }
     &.active {
-      background: #badfff !important;
+      background: $color-primary !important;
       &:before {
         display: none;
       }
@@ -3455,7 +3455,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       }
     }
     &.ssl-item-filler.active:after {
-      background: #badfff !important;
+      background: $color-primary !important;
     }
     &.ssl-item-filler.active .ssli-order {
       color: #fff !important;
@@ -3622,7 +3622,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   &.new {
     opacity: 1;
     & .highlight-text {
-      color: #badfff;
+      color: $color-primary;
     }
   }
 }
@@ -3698,7 +3698,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
 .nli-select .custom-select {
   font-size: 12px;
   cursor: pointer;
-  color: #badfff;
+  color: $color-primary;
   background-color: #373646;
   border: none;
   max-width: 140px;
@@ -3725,7 +3725,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   position: relative;
   cursor: pointer;
   & > span {
-    background: #badfff;
+    background: $color-primary;
     border-radius: 50%;
     width: 16px;
     height: 16px;
@@ -4011,7 +4011,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   margin: 0 0 50px;
   & .stx-title {
     margin: 0;
-    color: #badfff;
+    color: $color-primary;
   }
   & .description {
     margin: 20px auto 0;
@@ -4058,7 +4058,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
 .zr-news .item .zrn-title {
   color: #fff;
   &:hover {
-    color: #badfff;
+    color: $color-primary;
   }
   & .news-title {
     font-size: 14px;
@@ -4150,7 +4150,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     font-size: 2.5em !important;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #badfff;
+    color: $color-primary;
   }
   & .article-content h1 {
     font-size: 2em !important;
@@ -4266,7 +4266,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       background: rgba(255, 255, 255, 0.2);
       margin-top: 10px;
       & .progress-bar {
-        background-color: #badfff !important;
+        background-color: $color-primary !important;
       }
     }
     & .rr-mark strong {
@@ -4351,7 +4351,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     width: 60px;
     text-align: center;
     transform: translateY(-50%);
-    color: #badfff;
+    color: $color-primary;
   }
   &:before {
     content: '';
@@ -4449,7 +4449,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     & a {
       color: #fff;
       &.tag-name {
-        color: #badfff;
+        color: $color-primary;
       }
     }
   }
@@ -4474,10 +4474,10 @@ ul.color-list li:nth-of-type(7n + 6) a {
     padding: 0;
     font-size: 0.9em;
     &:hover {
-      color: #badfff;
+      color: $color-primary;
     }
     &.active {
-      color: #badfff;
+      color: $color-primary;
     }
   }
   &.ib-like .btn.active i::before {
@@ -4594,7 +4594,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   font-size: 11px;
 }
 .rep-more .btn {
-  color: #badfff;
+  color: $color-primary;
   font-size: 13px;
   font-weight: 600;
   padding: 0;
@@ -4731,7 +4731,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   font-size: 0;
 }
 .cb-li .btn.btn-spoil.active i {
-  background-color: #badfff;
+  background-color: $color-primary;
   color: #111;
   font-size: 10px;
 }
@@ -4747,7 +4747,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   cursor: pointer;
   line-height: 30px;
   & .tb-result {
-    color: #badfff;
+    color: $color-primary;
     font-weight: 500;
     margin-left: 3px;
     width: 19px;
@@ -4818,7 +4818,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
         width: 18px;
         height: 18px;
         left: calc(100% - 18px);
-        background: #badfff;
+        background: $color-primary;
       }
     }
     & .hst-icon {
@@ -4830,7 +4830,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       & i {
         font-size: 20px;
         line-height: 20px;
-        color: #badfff;
+        color: $color-primary;
       }
     }
   }
@@ -4852,7 +4852,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     display: block;
     float: left;
     &.en {
-      background: #badfff;
+      background: $color-primary;
       color: #111;
     }
   }
@@ -4861,7 +4861,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     color: #fff;
   }
   &.off > span.jp {
-    background: #badfff;
+    background: $color-primary;
     color: #111;
   }
 }
@@ -5012,7 +5012,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     color: #fff;
   }
   &.new strong.manga-name {
-    color: #badfff;
+    color: $color-primary;
   }
   & .time {
     display: block;
@@ -5025,7 +5025,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     background: #302f4a !important;
     color: #fff;
     &:hover {
-      color: #badfff;
+      color: $color-primary;
     }
   }
 }
@@ -5036,7 +5036,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   & .btn-xs {
     font-size: 12px;
     &:hover {
-      color: #badfff;
+      color: $color-primary;
     }
   }
 }
@@ -5072,7 +5072,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       top: auto;
     }
     &:hover {
-      background: #badfff !important;
+      background: $color-primary !important;
       color: #111;
     }
     & > i {
@@ -5117,7 +5117,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       font-size: 20px;
       line-height: 1em;
       text-align: center;
-      color: #badfff;
+      color: $color-primary;
       z-index: 9;
       left: 0;
       right: 0;
@@ -5176,7 +5176,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       & span {
         font-weight: 600;
         font-size: 14px;
-        color: #badfff;
+        color: $color-primary;
       }
     }
     & .addthis_inline_share_toolbox {
@@ -5718,14 +5718,14 @@ ul.color-list li:nth-of-type(7n + 6) a {
       color: #aaa;
     }
     &:hover .icon-play {
-      background: #badfff;
-      border-color: #badfff;
+      background: $color-primary;
+      border-color: $color-primary;
       & i {
         color: #111;
       }
     }
     &:hover .sii-title {
-      color: #badfff;
+      color: $color-primary;
     }
   }
 }
@@ -5821,7 +5821,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     background: rgba(255, 255, 255, 0.2);
   }
   & .block_area .block_area-header .bah-sort .bhs-item.active .bhsi-name {
-    background-color: #badfff;
+    background-color: $color-primary;
     color: #111;
   }
   &
@@ -5914,7 +5914,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
         width: 100%;
         & strong {
           font-weight: 600;
-          color: #badfff;
+          color: $color-primary;
           max-width: 110px;
           display: block;
           float: left;
@@ -6104,7 +6104,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     padding: 6px 8px;
     background: 0 0 !important;
     &.active {
-      background: #badfff !important;
+      background: $color-primary !important;
     }
   }
 }
@@ -6198,7 +6198,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     font-weight: 600;
     margin-bottom: 15px;
     & .ep-style {
-      color: #badfff;
+      color: $color-primary;
     }
   }
   & .film-stats {
@@ -6231,7 +6231,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       &.active {
         background: 0 0 !important;
         padding: 0;
-        color: #badfff !important;
+        color: $color-primary !important;
         & i:before {
           content: '\f058';
         }
@@ -6414,7 +6414,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     font-weight: 700;
     line-height: 1.4em;
     & .ep-style {
-      color: #badfff;
+      color: $color-primary;
     }
   }
   & .film-info .film-stats {
@@ -6484,9 +6484,9 @@ ul.color-list li:nth-of-type(7n + 6) a {
       }
       &.is-on {
         opacity: 1;
-        color: #badfff;
+        color: $color-primary;
         &:before {
-          background-color: #badfff;
+          background-color: $color-primary;
         }
       }
     }
@@ -6508,7 +6508,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       display: flex;
       align-items: center;
       &.item-online {
-        color: #badfff;
+        color: $color-primary;
         & span:after {
           content: ' viewers';
         }
@@ -6573,7 +6573,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       color: #fff;
     }
     & span {
-      color: #badfff;
+      color: $color-primary;
       font-weight: 500;
     }
   }
@@ -6778,7 +6778,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     padding: 0;
     margin-right: 20px;
     &.active {
-      border-bottom-color: #badfff !important;
+      border-bottom-color: $color-primary !important;
     }
   }
 }
@@ -6869,7 +6869,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     font-size: 3em;
     line-height: 1.2;
     font-weight: 700;
-    color: #badfff;
+    color: $color-primary;
   }
 }
 .ls___-player .pc-share {
@@ -6881,7 +6881,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
   border-radius: 40px;
   display: inline-block;
   & a {
-    color: #badfff;
+    color: $color-primary;
     font-weight: 600;
   }
   &.is-large {
@@ -7040,7 +7040,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
         }
       }
       &.active {
-        border-color: #badfff;
+        border-color: $color-primary;
         z-index: 2;
         opacity: 1;
         box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
@@ -7071,7 +7071,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     right: auto;
     width: 230px;
     border-radius: 6px 0 0 6px;
-    background: #badfff;
+    background: $color-primary;
     & .server-notice {
       position: absolute;
       top: 50%;
@@ -7128,7 +7128,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       & i {
         width: 16px;
         text-align: left;
-        color: #badfff;
+        color: $color-primary;
       }
     }
     & .small {
@@ -7137,7 +7137,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
       max-width: 400px;
       & strong {
         font-weight: 600;
-        color: #badfff;
+        color: $color-primary;
       }
     }
   }
@@ -7156,7 +7156,7 @@ ul.color-list li:nth-of-type(7n + 6) a {
     color: #ccc;
     border: none !important;
     &.active {
-      background: #badfff;
+      background: $color-primary;
       color: #111;
     }
   }
@@ -7252,7 +7252,7 @@ span#AddMalDiv {
   & #AddMal {
     font-size: 12px;
     font-weight: 600;
-    color: #badfff !important;
+    color: $color-primary !important;
   }
 }
 .fav-tabs {
@@ -7635,7 +7635,7 @@ span#AddMalDiv {
       line-height: 30px;
       text-align: center;
       border-radius: 50%;
-      background: #badfff;
+      background: $color-primary;
       color: #111;
       z-index: 2;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
@@ -7660,7 +7660,7 @@ span#AddMalDiv {
       min-width: auto;
       line-height: 18px !important;
       &.active {
-        color: #badfff !important;
+        color: $color-primary !important;
         background: 0 0 !important;
       }
     }
@@ -7692,7 +7692,7 @@ span#AddMalDiv {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
   &.toast-success {
-    background-color: #badfff !important;
+    background-color: $color-primary !important;
     color: #000 !important;
     background-image: none !important;
     &:before {
@@ -7734,7 +7734,7 @@ span#AddMalDiv {
     letter-spacing: 0.5px;
     font-weight: 500;
     & span {
-      color: #badfff;
+      color: $color-primary;
     }
   }
   & .zr-bar {
@@ -7749,7 +7749,7 @@ span#AddMalDiv {
       top: 0;
       bottom: 0;
       display: inline-block;
-      background: #badfff;
+      background: $color-primary;
     }
   }
 }
@@ -7904,8 +7904,8 @@ span#AddMalDiv {
         border: 1px solid transparent !important;
         border-radius: 20px;
         &.active {
-          color: #badfff !important;
-          border-color: #badfff !important;
+          color: $color-primary !important;
+          border-color: $color-primary !important;
         }
       }
     }
@@ -8030,7 +8030,7 @@ span#AddMalDiv {
       text-overflow: ellipsis;
       white-space: nowrap;
       & a {
-        color: #badfff;
+        color: $color-primary;
         font-weight: 500;
       }
     }
@@ -8172,7 +8172,7 @@ span#AddMalDiv {
         width: 50px;
         height: 3px;
         border-radius: 3px;
-        background-color: #badfff;
+        background-color: $color-primary;
         position: absolute;
         bottom: -15px;
         left: 50%;
@@ -8312,9 +8312,9 @@ span#AddMalDiv {
     & .earn {
       display: flex;
       align-items: center;
-      color: #badfff;
+      color: $color-primary;
       & strong {
-        color: #badfff;
+        color: $color-primary;
       }
       & .zrc-icon {
         width: 14px;
@@ -8431,7 +8431,7 @@ span#AddMalDiv {
     overflow: hidden;
   }
   & .item-user .latest-comment .iu-name {
-    color: #badfff;
+    color: $color-primary;
     font-weight: 500;
   }
   & .item-user .extra .user-name,
@@ -8486,9 +8486,9 @@ span#AddMalDiv {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: #badfff;
+  color: $color-primary;
   & a {
-    color: #badfff;
+    color: $color-primary;
   }
 }
 .wv-item .item-comment {
@@ -8743,7 +8743,7 @@ span#AddMalDiv {
   color: #fff;
 }
 .wideview-grid .grid-item .item:hover .btn-blank {
-  color: #badfff;
+  color: $color-primary;
 }
 .myzone-inner .page-title {
   margin-bottom: 30px;
@@ -8794,13 +8794,13 @@ span#AddMalDiv {
     margin-right: 1.5rem;
     color: #fff;
     &:hover {
-      color: #badfff;
+      color: $color-primary;
     }
     &.active i:before {
       font-weight: 900;
     }
     &.active.btn-upvote {
-      color: #badfff;
+      color: $color-primary;
     }
     &.active.btn-downvote {
       color: #ff6969;
@@ -9091,9 +9091,9 @@ span#AddMalDiv {
       background: url(../images/live-thumb.png) repeat;
     }
     &.active {
-      border: 1px solid #badfff;
+      border: 1px solid $color-primary;
       & .title {
-        color: #badfff;
+        color: $color-primary;
       }
     }
   }
@@ -9415,7 +9415,7 @@ span#AddMalDiv {
           & .pin-name {
             display: inline;
             font-weight: 600;
-            color: #badfff;
+            color: $color-primary;
           }
           & .unpin {
             display: inline;
@@ -9485,7 +9485,7 @@ span#AddMalDiv {
             line-height: 30px;
             text-align: center;
             padding: 0;
-            color: #badfff;
+            color: $color-primary;
             opacity: 0;
           }
           & .dropdown-menu-model {
@@ -9516,7 +9516,7 @@ span#AddMalDiv {
         }
         & .is-subject .reply {
           padding-left: 1rem;
-          border-left: 3px solid #badfff;
+          border-left: 3px solid $color-primary;
           margin-bottom: 0.75rem;
           margin-top: 0.5rem;
           cursor: pointer;
@@ -9599,7 +9599,7 @@ span#AddMalDiv {
         cursor: pointer;
       }
       &.show .cb-icon {
-        color: #badfff;
+        color: $color-primary;
       }
     }
     & .characters-left {
@@ -9618,7 +9618,7 @@ span#AddMalDiv {
       color: rgba(255, 255, 255, 0.7);
       & strong {
         font-weight: 600;
-        color: #badfff;
+        color: $color-primary;
       }
     }
   }
@@ -9673,7 +9673,7 @@ span#AddMalDiv {
     border-radius: 0.5rem;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
     & .is-icon {
-      color: #badfff;
+      color: $color-primary;
       font-size: 1.2em;
       margin-right: 1rem;
       flex-shrink: 0;
@@ -10009,7 +10009,7 @@ span#AddMalDiv {
       cursor: pointer;
     }
     & a:hover {
-      color: #badfff;
+      color: $color-primary;
     }
     &.is-vote-new .is-down,
     &.is-vote-new .is-up {
@@ -10027,7 +10027,7 @@ span#AddMalDiv {
     &.is-vote-new a.active,
     &.is-vote-new a:hover {
       background-color: rgba(255, 255, 255, 0.2);
-      color: #badfff;
+      color: $color-primary;
     }
     &.is-vote-new .is-point {
       margin: 0.25rem 0 1.25rem;
@@ -10041,7 +10041,7 @@ span#AddMalDiv {
     background-color: rgba(255, 255, 255, 0.2);
     & .is-pin {
       display: block;
-      background-color: #badfff;
+      background-color: $color-primary;
       color: #000;
       padding: 0.1rem 0.4rem;
       border-radius: 0.3rem;
@@ -10536,7 +10536,7 @@ span#AddMalDiv {
       border-radius: 4px !important;
       margin-right: 0;
       &-quality {
-        background: #badfff !important;
+        background: $color-primary !important;
         color: #000;
         font-weight: 600;
         border-radius: 5px !important;
@@ -10569,7 +10569,7 @@ span#AddMalDiv {
     &.btn-play {
       width: calc(100% - 48px);
       color: #111;
-      background: #badfff;
+      background: $color-primary;
     }
   }
   & .dr-tip-fav {
@@ -10675,7 +10675,7 @@ span#AddMalDiv {
     }
     & .scd-item .quality {
       display: inline-block;
-      background: #badfff;
+      background: $color-primary;
       padding: 3px 4px;
       color: #111;
       border-radius: 5px;
@@ -11225,7 +11225,7 @@ span#AddMalDiv {
   display: inline-block;
   margin: 3px 0;
   &:hover {
-    background: #badfff !important;
+    background: $color-primary !important;
     color: #111;
   }
 }
@@ -12341,8 +12341,8 @@ span#AddMalDiv {
         border-radius: 0.75rem;
         padding: 0.7rem;
         &:hover {
-          border-color: #badfff !important;
-          color: #badfff !important;
+          border-color: $color-primary !important;
+          color: $color-primary !important;
         }
       }
     }
@@ -12582,7 +12582,7 @@ span#AddMalDiv {
     border: none !important;
     line-height: normal;
     &.active {
-      background-color: #badfff !important;
+      background-color: $color-primary !important;
       color: #111 !important;
     }
   }
@@ -12824,7 +12824,7 @@ span#AddMalDiv {
     .bah-sort
     .bhs-item.active
     .bhsi-name {
-    color: #badfff;
+    color: $color-primary;
     background-color: transparent;
   }
   .bah-sort .bhs-item + .bhs-item {
@@ -12963,7 +12963,7 @@ span#AddMalDiv {
         & strong {
           margin-bottom: 5px;
           & b {
-            color: #badfff;
+            color: $color-primary;
             margin-top: 5px;
           }
         }

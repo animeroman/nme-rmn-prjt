@@ -22,7 +22,7 @@ a {
   -moz-outline: none;
   color: #aaa;
   &:hover {
-    color: #badfff;
+    color: $color-primary;
     text-decoration: none;
   }
 }
@@ -38,7 +38,7 @@ button,
   }
   &-highlight {
     font-weight: 600;
-    color: #badfff;
+    color: $color-primary;
     font-size: 1.2em;
     position: relative;
     padding-left: 50px;
@@ -126,7 +126,7 @@ button,
     font-size: 28px;
     font-weight: 700;
     text-align: center;
-    color: #badfff;
+    color: $color-primary;
     margin: 0 0 10px 0;
   }
   .mw-heading-second {
@@ -140,7 +140,7 @@ button,
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #badfff;
+      background: $color-primary;
       left: 0;
       position: absolute;
       top: 8px;
@@ -189,7 +189,7 @@ button,
     border-radius: 12px;
     padding: 15px 20px;
     font-weight: 600;
-    background: #badfff !important;
+    background: $color-primary !important;
     color: #111 !important;
     border: none !important;
     box-shadow: none !important;
@@ -234,7 +234,7 @@ button,
         cursor: pointer;
         display: inline-block;
         width: 50px;
-        background: #badfff;
+        background: $color-primary;
         border-radius: 12px;
         .search-icon i {
           color: #111;
@@ -248,7 +248,7 @@ button,
 
 .mw-buttons .btn-primary {
   font-weight: 600;
-  background: #badfff !important;
+  background: $color-primary !important;
   color: #111 !important;
   padding: 15px 30px;
   transition: all 0.2s ease 0s;
@@ -324,7 +324,7 @@ button,
     & .zrn-title {
       color: #fff;
       &:hover {
-        color: #badfff;
+        color: $color-primary;
       }
       & .news-title {
         font-size: 16px;
@@ -462,7 +462,7 @@ button,
       & span {
         font-weight: 600;
         font-size: 14px;
-        color: #badfff;
+        color: $color-primary;
       }
     }
     & .sbb-social {
@@ -531,7 +531,7 @@ button,
       color: #fff;
       font-size: 16px;
       &:hover {
-        color: #badfff;
+        color: $color-primary;
       }
     }
     &.active {
@@ -777,7 +777,7 @@ body.xmas-ui {
     background: #0c3d42;
     color: #5eadb5;
     &:hover {
-      color: #badfff;
+      color: $color-primary;
     }
   }
   & #mw-top {
