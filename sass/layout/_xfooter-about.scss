@@ -1,0 +1,22 @@
+/* footer */
+#xfooter-about {
+  padding: 0 0 40px;
+  margin-top: 80px;
+
+  @media screen and (max-width: 990px) {
+    margin-top: 50px;
+  }
+
+  .about-text {
+    max-width: 800px;
+    margin: 0 0 20px;
+    line-height: 1.6em;
+    font-size: 12px;
+    opacity: 0.4;
+  }
+
+  .copyright {
+    margin-bottom: 0 !important;
+    font-size: 13px;
+  }
+}

@@ -10,8 +10,16 @@
 @import 'base/utilities';
 
 // Components @import 'components/..';
+@import 'components/.scss';
 
 // Layout @import 'layout/..';
+@import 'layout/footer.scss';
+@import 'layout/main-wrapper.scss';
+@import 'layout/sidebar_menu.scss';
+@import 'layout/totop.scss';
+@import 'layout/wrapper.scss';
+@import 'layout/xfooter-about.scss';
+@import 'layout/xheader.scss';
 
 // Pages @import 'pages/..';
 @import 'pages/home';
