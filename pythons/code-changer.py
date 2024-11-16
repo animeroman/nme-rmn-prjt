@@ -2,12 +2,35 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = '''<script>
-      var recaptchaSiteKey = "6Lc7dH8pAAAAAIGw-BOEYDAZvcs3afxf6XHaLsQL",
-        recaptchaV2SiteKey = "6LdCdH8pAAAAAMV9Qy_K16Fvm4pWGYWrAEpjRjgD";
+old_code = '''<!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R34F2GCSBW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-R34F2GCSBW");
     </script>'''
 
-new_code = ''' '''
+new_code = '''<!-- Google tag (gtag.js) -->
+    <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R34F2GCSBW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-R34F2GCSBW");
+    </script> -->'''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
