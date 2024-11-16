@@ -1965,133 +1965,6 @@ ul.az-list li.active a {
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
 }
-.deslide {
-  width: 100%;
-  position: relative;
-  padding-bottom: 500px;
-  padding-top: 100px;
-  overflow: hidden;
-  &-wrap {
-    margin-top: -100px;
-  }
-  &-item {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    & .deslide-item-content {
-      max-width: 800px;
-      position: absolute;
-      bottom: 40px;
-      z-index: 3;
-    }
-    & .desi-sub-text {
-      font-size: 18px;
-      line-height: 1.3em;
-      font-weight: 400;
-      margin-bottom: 20px;
-      color: $color-primary;
-    }
-    & .desi-head-title {
-      font-size: 3em;
-      line-height: 1.3em;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    & .desi-description {
-      font-size: 0.95em;
-      line-height: 1.6;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    & .deslide-poster {
-      position: absolute;
-      right: 0;
-      width: calc(100% - 800px);
-      top: 0;
-      bottom: 0;
-      transform: rotate(20deg);
-      z-index: 1;
-      & .deslide-poster-wrap {
-        width: 600px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 20px solid #fff;
-      }
-    }
-    & .deslide-cover {
-      position: absolute;
-      top: 0;
-      left: 30%;
-      right: 0;
-      bottom: 0;
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(
-        270deg,
-        transparent 0,
-        rgb(32, 31, 49) 30%,
-        rgb(32, 31, 49) 70%,
-        transparent
-      );
-      mask-image: linear-gradient(
-        270deg,
-        transparent 0,
-        rgb(32, 31, 49) 30%,
-        rgb(32, 31, 49) 70%,
-        transparent
-      );
-      & .deslide-cover-img:after {
-        content: '';
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #0d1b2a;
-        background: -moz-linear-gradient(
-          0deg,
-          #0d1b2a 0,
-          rgba(32, 31, 49, 0) 50%,
-          #0d1b2a 100%
-        );
-        background: -webkit-linear-gradient(
-          0deg,
-          #0d1b2a 0,
-          rgba(32, 31, 49, 0) 50%,
-          #0d1b2a 100%
-        );
-        background: linear-gradient(
-          0deg,
-          #0d1b2a 0,
-          rgba(32, 31, 49, 0) 50%,
-          #0d1b2a 100%
-        );
-        z-index: 2;
-      }
-      & .deslide-cover-img img {
-        position: absolute;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        filter: blur(0px);
-      }
-    }
-  }
-}
 .swiper-notification,
 .swiper-pagination {
   display: none;
@@ -11268,12 +11141,6 @@ span#AddMalDiv {
     margin-left: 50px;
     margin-right: 20px;
   }
-  .deslide-wrap .container {
-    padding: 0;
-  }
-  .deslide-item .deslide-item-content {
-    padding-left: 40px;
-  }
   #ani_detail .anis-content {
     padding: 70px 25% 70px 0;
   }
@@ -11310,9 +11177,6 @@ span#AddMalDiv {
   }
   #search {
     width: 360px;
-  }
-  .deslide-wrap .swiper-navigation {
-    right: 15px;
   }
   #anime-event .event-block .event_-focus {
     width: 400px;
@@ -11414,13 +11278,6 @@ span#AddMalDiv {
     left: auto;
     top: auto;
     float: left;
-  }
-  .deslide-item .deslide-item-content {
-    width: 600px;
-  }
-  .deslide-item .desi-head-title {
-    font-size: 40px;
-    line-height: 1.2em;
   }
   #slider {
     padding-bottom: 450px;
@@ -11778,20 +11635,6 @@ span#AddMalDiv {
     margin-left: 50px;
     margin-right: 0;
   }
-  .deslide-wrap {
-    margin-top: -25px;
-  }
-  .deslide-item .desi-description {
-    -webkit-line-clamp: 2;
-  }
-  .deslide-item .desi-head-title {
-    font-size: 30px;
-    -webkit-line-clamp: 2;
-  }
-  .deslide-item .desi-sub-text {
-    font-size: 14px;
-    line-height: 1em;
-  }
   #slider {
     padding-top: 0;
   }
@@ -12083,9 +11926,6 @@ span#AddMalDiv {
   }
   .desi-buttons .btn {
     font-size: 14px;
-  }
-  .deslide-item .deslide-item-content {
-    width: 50%;
   }
   .anif-block {
     margin-bottom: 20px;
@@ -12383,9 +12223,6 @@ span#AddMalDiv {
     top: auto !important;
     left: auto !important;
   }
-  .deslide-item .deslide-cover {
-    left: 0;
-  }
 }
 @media screen and (max-width: 1023px) {
   .minimize .anis-watch,
@@ -12602,51 +12439,6 @@ span#AddMalDiv {
 @media screen and (max-width: 759px) {
   #slider {
     padding-bottom: 300px;
-  }
-  .deslide-item .deslide-item-content {
-    padding-left: 15px;
-    width: 100%;
-    padding-right: 100px;
-    top: auto;
-    transform: none;
-    bottom: 30px;
-  }
-  .deslide-item .desi-sub-text {
-    margin-bottom: 10px;
-  }
-  .deslide-item .deslide-poster {
-    transform: none;
-    & .deslide-poster-wrap {
-      width: 250px;
-      left: auto;
-      right: -35px;
-      top: -15px;
-      transform: none;
-      border-width: 10px;
-    }
-  }
-  .deslide-item .deslide-cover .deslide-cover-img:before,
-  .deslide-item .deslide-poster {
-    display: none;
-  }
-  .deslide-item .deslide-cover .deslide-cover-img img {
-    opacity: 0.6;
-  }
-  .deslide-item .deslide-cover .deslide-cover-img:after {
-    background: #0d1b2a;
-    background: -moz-linear-gradient(0deg, #0d1b2a 0, rgba(32, 31, 49, 0) 82%);
-    background: -webkit-linear-gradient(
-      0deg,
-      #0d1b2a 0,
-      rgba(32, 31, 49, 0) 82%
-    );
-    background: linear-gradient(0deg, #0d1b2a 0, rgba(32, 31, 49, 0) 82%);
-  }
-  .deslide-item .desi-head-title {
-    font-size: 20px;
-  }
-  .deslide-item .desi-description {
-    display: none;
   }
   .swiper-navigation {
     bottom: 30px;
@@ -13183,9 +12975,6 @@ span#AddMalDiv {
   }
   #search {
     top: 50px;
-  }
-  .deslide-wrap {
-    margin-top: -15px;
   }
   .premodal-filter .modal-header {
     padding: 20px !important;
@@ -13857,20 +13646,8 @@ span#AddMalDiv {
   .anif-block .anif-block-ul li {
     width: 100%;
   }
-  .deslide-item .deslide-poster .deslide-poster-wrap {
-    width: 200px;
-  }
-  .deslide-item .desi-description {
-    font-size: 11px;
-    line-height: 1.3em;
-    margin-bottom: 15px;
-  }
   .desi-buttons .btn {
     font-size: 12px;
-  }
-  .deslide-item .desi-sub-text {
-    font-size: 10px;
-    margin-bottom: 10px;
   }
   #slider {
     padding-bottom: 320px;
@@ -14076,12 +13853,6 @@ span#AddMalDiv {
       margin-left: 10px;
     }
   }
-  .deslide-item .desi-head-title {
-    font-size: 16px;
-  }
-  .deslide-item .deslide-poster .deslide-poster-wrap {
-    right: -45px;
-  }
   .footer-az {
     display: none;
   }
@@ -14210,9 +13981,6 @@ span#AddMalDiv {
   }
   .seasons-list {
     margin: 0 0 20px !important;
-  }
-  .deslide-item .deslide-item-content {
-    padding-right: 80px;
   }
   .anis-watch-detail .anis-content .anisc-detail .film-name {
     font-size: 16px;
@@ -14717,9 +14485,6 @@ span#AddMalDiv {
   }
 }
 @media screen and (max-width: 320px) {
-  .deslide-item .deslide-item-content {
-    padding-right: 60px;
-  }
   .share-buttons .share-buttons-block .sbb-title {
     display: none !important;
   }
