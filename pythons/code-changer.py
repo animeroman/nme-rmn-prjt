@@ -2,9 +2,12 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = '''from HiAnime.to website'''
+old_code = '''<script>
+      var recaptchaSiteKey = "6Lc7dH8pAAAAAIGw-BOEYDAZvcs3afxf6XHaLsQL",
+        recaptchaV2SiteKey = "6LdCdH8pAAAAAMV9Qy_K16Fvm4pWGYWrAEpjRjgD";
+    </script>'''
 
-new_code = '''from AnimeRoman website'''
+new_code = ''' '''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
