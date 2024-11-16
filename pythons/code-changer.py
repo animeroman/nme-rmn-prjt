@@ -2,31 +2,26 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-eski_kod = '''
-    </div>
-    <div
-      class="modal fade premodal premodal-login"'''
+old_code = '''from HiAnime.to website'''
 
-yeni_kod = '''
-    <div
-      class="modal fade premodal premodal-login"'''
+new_code = '''from AnimeRoman website'''
 
 # Klasör yolunu belirtin
-klasor_yolu = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
+folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
 
 # Boşluk karakterlerini ve çok satırlı içeriği ele almak için regex'i düzeltin
-eski_kod_regex = re.escape(eski_kod).replace(r'\ ', r'\s')
+old_code_regex = re.escape(old_code).replace(r'\ ', r'\s')
 
 # Klasör içinde dolaşarak dosyaları işleyin
-for klasor_yolu, alt_klasorler, dosya_listesi in os.walk(klasor_yolu):
-    for dosya in dosya_listesi:
+for folder_path, alt_folders, file_list in os.walk(folder_path):
+    for dosya in file_list:
         if dosya.endswith('.html'):  # Sadece HTML dosyalarını işle
-            dosya_yolu = os.path.join(klasor_yolu, dosya)
+            dosya_yolu = os.path.join(folder_path, dosya)
             with open(dosya_yolu, 'r', encoding='utf-8') as f:
                 icerik = f.read()
 
             # Eski kodu yeni koda değiştir
-            yeni_icerik = re.sub(eski_kod_regex, yeni_kod, icerik, flags=re.DOTALL)
+            yeni_icerik = re.sub(old_code_regex, new_code, icerik, flags=re.DOTALL)
 
             with open(dosya_yolu, 'w', encoding='utf-8') as f:
                 f.write(yeni_icerik)
