@@ -1,0 +1,112 @@
+.btn,
+button {
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.btn-sm {
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.btn-lg {
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+.btn-radius {
+  border-radius: 30px;
+}
+
+.btn-focus,
+.btn-primary,
+.btn-tab.active {
+  background: $color-primary !important;
+  color: #000 !important;
+  border-color: $color-primary !important;
+  box-shadow: none !important;
+
+  &:hover {
+    background: $color-primary !important;
+    border-color: $color-primary !important;
+  }
+}
+
+.btn-secondary,
+.btn-tab {
+  background: #3a3951 !important;
+  border-color: #3a3951 !important;
+  color: #fff;
+
+  &:hover {
+    background: #403f59 !important;
+    border-color: #403f59 !important;
+  }
+}
+
+.btn-blank {
+  background: 0 0;
+  color: #aaa;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+}
+
+.btn-tab {
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.btn-light {
+  background: #fff;
+  border-color: #fff;
+  color: #111 !important;
+}
+
+.btn-trans {
+  background: 0 0 !important;
+  color: #fff !important;
+}
+
+.btn-clear {
+  padding: 0 !important;
+  background: 0 0 !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.sbtn {
+  padding: 0.6rem 1rem;
+  font-size: 14px;
+  border-radius: 0.4rem;
+
+  &-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 13px;
+    border-radius: 0.3rem;
+  }
+}
