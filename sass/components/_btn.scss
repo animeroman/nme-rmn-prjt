@@ -4,11 +4,71 @@ button {
   font-size: 16px;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  border: none !important;
+
+  &-sm {
+    font-size: 12px;
+  }
+
+  &-radius {
+    border-radius: 30px;
+  }
+
+  &-highlight {
+    font-weight: 600;
+    color: $color-primary;
+    font-size: 1.2em;
+    position: relative;
+    padding-left: 50px;
+    display: inline-block;
+  }
+
+  &-highlight img {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  -webkit-appearance: none;
 }
 
 .btn-sm {
   font-size: 14px;
   border-radius: 6px;
+
+  &.btn-filter-item,
+  &.nl-item-btn {
+    min-width: 50px;
+    border-radius: 6px !important;
+    font-size: 12px;
+    line-height: 1em;
+    padding: 8px 10px;
+    float: left;
+    margin: 3px 6px 3px 0;
+    color: #ddd;
+    border: 1px solid #4a4c55;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &.btn-filter-item.active {
+    border-color: $color-primary;
+    background: #373646;
+    color: $color-primary;
+  }
+
+  &.nl-item-btn {
+    border: none;
+  }
 }
 
 .btn-lg {
@@ -60,6 +120,12 @@ h6 {
   }
 }
 
+.btn-quality,
+.btn-trailer {
+  border: 1px solid #fff !important;
+  color: #fff;
+}
+
 .btn-blank {
   background: 0 0;
   color: #aaa;
@@ -68,6 +134,10 @@ h6 {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
   }
+}
+
+.btn-rating {
+  position: relative;
 }
 
 .btn-tab {
@@ -97,6 +167,52 @@ h6 {
   &:hover {
     opacity: 0.8;
   }
+}
+
+.btn-showmore {
+  font-size: 0.9em;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  padding: 0.75rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+  box-shadow: none !important;
+
+  &.active:before {
+    content: 'Show less';
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &:before {
+    content: 'Show more';
+  }
+}
+
+.btn-xs {
+  font-size: 12px;
+  padding: 2px 4px;
+  line-height: 1em;
+  & i {
+    font-size: 12px;
+  }
+}
+
+.btn-wait {
+  cursor: default;
+  &:after {
+    content: '';
+    animation: text-wait 2s infinite;
+  }
+}
+
+.btn-in-headcat {
+  margin: 4px 0;
+  background: #71797d;
+  color: #fff;
+  border-color: #71797d;
 }
 
 .sbtn {

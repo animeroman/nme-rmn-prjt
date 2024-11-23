@@ -31,6 +31,9 @@
   transform: translateX(-100%);
   scrollbar-width: none;
   -ms-overflow-style: none;
+  transition: all 0.2s ease 0s;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
 
   @media screen and (max-width: 1400px) {
     z-index: 103;

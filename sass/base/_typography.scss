@@ -1,0 +1,8 @@
+.h2-heading {
+  font-size: 2em !important;
+  margin-bottom: 0;
+
+  @media screen and (max-width: 479px) {
+    font-size: 20px !important;
+  }
+}

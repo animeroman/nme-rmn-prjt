@@ -11,6 +11,10 @@
 
 // Components @import 'components/..';
 @import 'components/btn.scss';
+@import 'components/cantainer.scss';
+@import 'components/film_list.scss';
+@import 'components/nav.scss';
+@import 'components/_pick_menu.scss';
 
 // Layout @import 'layout/..';
 @import 'layout/anime-featured.scss';
@@ -20,6 +24,7 @@
 @import 'layout/main-wrapper.scss';
 @import 'layout/mask-overlay.scss';
 @import 'layout/sidebar_menu.scss';
+@import 'layout/toast-container.scss';
 @import 'layout/totop.scss';
 @import 'layout/wrapper.scss';
 @import 'layout/xfooter-about.scss';
