@@ -28,6 +28,7 @@ with open(input_file_path, 'r') as infile:
             "animeOriginal": "fixme",
             "duration": "fixme",
             "type": "fixme",
+            "genres": ["fixme"],
             "status": "fixme",
             "rated": "fixme",
             "score": "fixme",
@@ -37,8 +38,7 @@ with open(input_file_path, 'r') as infile:
             "dateEnd": "fixme",
             "poster": "fixme",
             "page": "fixme",
-            "subCount": "fixme",
-            "dubCount": "fixme"
+            "eposideCount": "fixme"
         }
         
         # Append the converted entry to the list

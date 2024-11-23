@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import ijson
-import json
+import pandas as pd
 import time
 
 # Base URL for fetching the anime page
@@ -29,7 +28,8 @@ def get_anime_details(anime_id):
         # Initialize variables for various fields
         poster_link, score, type_value = None, None, None
         status_value, duration_value, season_value = None, None, None
-        rating_value, anime_original_value, date_start, date_end = None, None, None, None
+        rating_value, anime_original_value, date_start, date_end, eposide_count = None, None, None, None, None
+        genres_list = []
 
         # Find details
         img_tag = soup.find('img', itemprop="image")
@@ -78,65 +78,67 @@ def get_anime_details(anime_id):
                         date_start = dates[0].strip()  # First date
                         date_end = dates[1].strip()  # Second date
 
+            # Handle eposideCount
+            span_tag_episodes = div.find('span', class_='dark_text', text="Episodes:")
+            if span_tag_episodes:
+                episodes_text = span_tag_episodes.next_sibling.strip() if span_tag_episodes.next_sibling else None
+                if episodes_text and episodes_text.isdigit():
+                    eposide_count = int(episodes_text)
+            
+            # Handle genres
+            span_tag_genres = div.find('span', class_='dark_text', text="Genres:")
+            if span_tag_genres:
+                genre_links = div.find_all('a')
+                genres_list = [genre.text.strip() for genre in genre_links if genre.text.strip()]
+
         title_tag = soup.find('h1', class_='title-name h1_bold_none')
         if title_tag:
             strong_tag = title_tag.find('strong')
             anime_original_value = strong_tag.text.strip() if strong_tag else None
 
-        return (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end)
+        return {
+            "poster": poster_link,
+            "score": score,
+            "type": type_value,
+            "status": status_value,
+            "duration": duration_value,
+            "season": season_value,
+            "rated": rating_value,
+            "animeOriginal": anime_original_value,
+            "dateStart": date_start,
+            "dateEnd": date_end,
+            "eposideCount": eposide_count,
+            "genres": genres_list
+        }
     except requests.HTTPError as http_err:
         print(f"HTTP error for ID {anime_id}: {http_err}")
     except Exception as e:
         print(f"Error fetching data for ID {anime_id}: {e}")
-    return (None, None, None, None, None, None, None, None, None, None)
+    return {}
 
-# Process the large JSON file
+# Process the large JSON file using pandas
 input_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_fixed.json'
 output_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_updated.json'
 
-updated_data = []
+# Load the JSON data into a pandas DataFrame
+data = pd.read_json(input_file_path)
 
-with open(input_file_path, 'r', encoding='utf-8') as file:
-    # Use ijson to load JSON objects incrementally
-    for entry in ijson.items(file, 'item'):
-        anime_id = entry.get('id', '')
-        if anime_id:
-            # Fetch the details for the anime
-            details = get_anime_details(anime_id)
+# Update each entry with the new details
+updated_entries = []
+for _, row in data.iterrows():
+    anime_id = row.get("id", "")
+    if anime_id:
+        details = get_anime_details(anime_id)
+        if details:
+            for key, value in details.items():
+                if value is not None:
+                    row[key] = value
+    updated_entries.append(row)
 
-            # Update the entry with fetched details
-            if details:
-                (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end) = details
+# Convert the updated entries back to a DataFrame
+updated_data = pd.DataFrame(updated_entries)
 
-                if poster_link:
-                    entry['poster'] = poster_link
-                if score:
-                    entry['score'] = score
-                if type_value:
-                    entry['type'] = type_value
-                if status_value:
-                    entry['status'] = status_value
-                if duration_value:
-                    entry['duration'] = duration_value
-                if season_value:
-                    entry['season'] = season_value
-                if rating_value:
-                    entry['rated'] = rating_value
-                if anime_original_value:
-                    entry['animeOriginal'] = anime_original_value
-                if date_start:
-                    entry['dateStart'] = date_start
-                if date_end:
-                    entry['dateEnd'] = date_end
+# Save the updated DataFrame to a new JSON file
+updated_data.to_json(output_file_path, orient='records', indent=4)
 
-                # Append the updated entry to the list
-                updated_data.append(entry)
-            
-            # Add a delay to avoid hitting the server too quickly
-            time.sleep(1)  # Adjust the delay as needed
-
-# Save the updated JSON data to a new file
-with open(output_file_path, 'w', encoding='utf-8') as file:
-    json.dump(updated_data, file, indent=4)
-
-print("JSON file updated with poster links, scores, types, statuses, durations, seasons, ratings, animeOriginal, dateStart, and dateEnd.")
+print("JSON file updated with all fields using pandas.")
