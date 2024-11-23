@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
+import pickle
+import os
 
 # Base URL for fetching the anime page
 base_url = "https://myanimelist.net/anime/"
@@ -119,20 +121,36 @@ def get_anime_details(anime_id):
 # Process the large JSON file using pandas
 input_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_fixed.json'
 output_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_updated.json'
+pickle_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/delete-after-finising/progress.pkl'
 
 # Load the JSON data into a pandas DataFrame
 data = pd.read_json(input_file_path)
+
+# Check if there is saved progress (from previous runs)
+if os.path.exists(pickle_file_path):
+    with open(pickle_file_path, 'rb') as f:
+        processed_ids = pickle.load(f)
+else:
+    processed_ids = set()
 
 # Update each entry with the new details
 updated_entries = []
 for _, row in data.iterrows():
     anime_id = row.get("id", "")
-    if anime_id:
+    
+    if anime_id and anime_id not in processed_ids:
         details = get_anime_details(anime_id)
         if details:
             for key, value in details.items():
                 if value is not None:
                     row[key] = value
+            processed_ids.add(anime_id)
+        
+        # Save progress every 20 entries
+        if len(processed_ids) % 20 == 0:
+            with open(pickle_file_path, 'wb') as f:
+                pickle.dump(processed_ids, f)
+
     updated_entries.append(row)
 
 # Convert the updated entries back to a DataFrame
@@ -141,4 +159,4 @@ updated_data = pd.DataFrame(updated_entries)
 # Save the updated DataFrame to a new JSON file
 updated_data.to_json(output_file_path, orient='records', indent=4)
 
-print("JSON file updated with all fields using pandas.")
+print("JSON file updated with all fields using pandas. Progress saved with pickle.")
