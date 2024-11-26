@@ -1,11 +1,15 @@
-[
-  {
+{
     "id": "5114",
     "animeEnglish": "Fullmetal Alchemist: Brotherhood",
     "animeOriginal": "Fullmetal Alchemist: Brotherhood",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
+    "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy"
+    ],
     "status": "Finished Airing",
     "rated": "R",
     "score": "9.09",
@@ -15,15 +19,533 @@
     "dateEnd": "Jul 4, 2010",
     "poster": "https://cdn.myanimelist.net/images/anime/1208/94745.jpg",
     "page": "fixme",
-    "eposideCount": 64
-  },
-  {
+    "eposideCount": 64,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 25,
+            "title": "Episode 25 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 26,
+            "title": "Episode 26 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 27,
+            "title": "Episode 27 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 28,
+            "title": "Episode 28 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 29,
+            "title": "Episode 29 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 30,
+            "title": "Episode 30 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 31,
+            "title": "Episode 31 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 32,
+            "title": "Episode 32 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 33,
+            "title": "Episode 33 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 34,
+            "title": "Episode 34 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 35,
+            "title": "Episode 35 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 36,
+            "title": "Episode 36 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 37,
+            "title": "Episode 37 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 38,
+            "title": "Episode 38 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 39,
+            "title": "Episode 39 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 40,
+            "title": "Episode 40 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 41,
+            "title": "Episode 41 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 42,
+            "title": "Episode 42 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 43,
+            "title": "Episode 43 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 44,
+            "title": "Episode 44 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 45,
+            "title": "Episode 45 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 46,
+            "title": "Episode 46 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 47,
+            "title": "Episode 47 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 48,
+            "title": "Episode 48 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 49,
+            "title": "Episode 49 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 50,
+            "title": "Episode 50 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 51,
+            "title": "Episode 51 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 52,
+            "title": "Episode 52 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 53,
+            "title": "Episode 53 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 54,
+            "title": "Episode 54 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 55,
+            "title": "Episode 55 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 56,
+            "title": "Episode 56 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 57,
+            "title": "Episode 57 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 58,
+            "title": "Episode 58 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 59,
+            "title": "Episode 59 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 60,
+            "title": "Episode 60 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 61,
+            "title": "Episode 61 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 62,
+            "title": "Episode 62 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 63,
+            "title": "Episode 63 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 64,
+            "title": "Episode 64 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "11061",
     "animeEnglish": "Hunter x Hunter",
     "animeOriginal": "Hunter x Hunter (2011)",
     "duration": "23 min.",
     "type": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "9.03",
@@ -33,15 +555,1205 @@
     "dateEnd": "Sep 24, 2014",
     "poster": "https://cdn.myanimelist.net/images/anime/1337/99013.jpg",
     "page": "fixme",
-    "eposideCount": 148
-  },
-  {
+    "eposideCount": 148,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 25,
+            "title": "Episode 25 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 26,
+            "title": "Episode 26 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 27,
+            "title": "Episode 27 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 28,
+            "title": "Episode 28 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 29,
+            "title": "Episode 29 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 30,
+            "title": "Episode 30 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 31,
+            "title": "Episode 31 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 32,
+            "title": "Episode 32 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 33,
+            "title": "Episode 33 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 34,
+            "title": "Episode 34 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 35,
+            "title": "Episode 35 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 36,
+            "title": "Episode 36 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 37,
+            "title": "Episode 37 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 38,
+            "title": "Episode 38 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 39,
+            "title": "Episode 39 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 40,
+            "title": "Episode 40 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 41,
+            "title": "Episode 41 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 42,
+            "title": "Episode 42 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 43,
+            "title": "Episode 43 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 44,
+            "title": "Episode 44 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 45,
+            "title": "Episode 45 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 46,
+            "title": "Episode 46 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 47,
+            "title": "Episode 47 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 48,
+            "title": "Episode 48 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 49,
+            "title": "Episode 49 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 50,
+            "title": "Episode 50 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 51,
+            "title": "Episode 51 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 52,
+            "title": "Episode 52 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 53,
+            "title": "Episode 53 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 54,
+            "title": "Episode 54 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 55,
+            "title": "Episode 55 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 56,
+            "title": "Episode 56 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 57,
+            "title": "Episode 57 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 58,
+            "title": "Episode 58 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 59,
+            "title": "Episode 59 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 60,
+            "title": "Episode 60 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 61,
+            "title": "Episode 61 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 62,
+            "title": "Episode 62 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 63,
+            "title": "Episode 63 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 64,
+            "title": "Episode 64 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 65,
+            "title": "Episode 65 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 66,
+            "title": "Episode 66 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 67,
+            "title": "Episode 67 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 68,
+            "title": "Episode 68 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 69,
+            "title": "Episode 69 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 70,
+            "title": "Episode 70 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 71,
+            "title": "Episode 71 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 72,
+            "title": "Episode 72 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 73,
+            "title": "Episode 73 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 74,
+            "title": "Episode 74 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 75,
+            "title": "Episode 75 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 76,
+            "title": "Episode 76 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 77,
+            "title": "Episode 77 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 78,
+            "title": "Episode 78 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 79,
+            "title": "Episode 79 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 80,
+            "title": "Episode 80 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 81,
+            "title": "Episode 81 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 82,
+            "title": "Episode 82 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 83,
+            "title": "Episode 83 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 84,
+            "title": "Episode 84 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 85,
+            "title": "Episode 85 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 86,
+            "title": "Episode 86 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 87,
+            "title": "Episode 87 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 88,
+            "title": "Episode 88 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 89,
+            "title": "Episode 89 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 90,
+            "title": "Episode 90 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 91,
+            "title": "Episode 91 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 92,
+            "title": "Episode 92 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 93,
+            "title": "Episode 93 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 94,
+            "title": "Episode 94 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 95,
+            "title": "Episode 95 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 96,
+            "title": "Episode 96 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 97,
+            "title": "Episode 97 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 98,
+            "title": "Episode 98 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 99,
+            "title": "Episode 99 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 100,
+            "title": "Episode 100 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 101,
+            "title": "Episode 101 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 102,
+            "title": "Episode 102 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 103,
+            "title": "Episode 103 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 104,
+            "title": "Episode 104 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 105,
+            "title": "Episode 105 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 106,
+            "title": "Episode 106 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 107,
+            "title": "Episode 107 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 108,
+            "title": "Episode 108 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 109,
+            "title": "Episode 109 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 110,
+            "title": "Episode 110 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 111,
+            "title": "Episode 111 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 112,
+            "title": "Episode 112 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 113,
+            "title": "Episode 113 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 114,
+            "title": "Episode 114 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 115,
+            "title": "Episode 115 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 116,
+            "title": "Episode 116 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 117,
+            "title": "Episode 117 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 118,
+            "title": "Episode 118 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 119,
+            "title": "Episode 119 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 120,
+            "title": "Episode 120 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 121,
+            "title": "Episode 121 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 122,
+            "title": "Episode 122 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 123,
+            "title": "Episode 123 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 124,
+            "title": "Episode 124 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 125,
+            "title": "Episode 125 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 126,
+            "title": "Episode 126 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 127,
+            "title": "Episode 127 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 128,
+            "title": "Episode 128 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 129,
+            "title": "Episode 129 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 130,
+            "title": "Episode 130 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 131,
+            "title": "Episode 131 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 132,
+            "title": "Episode 132 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 133,
+            "title": "Episode 133 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 134,
+            "title": "Episode 134 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 135,
+            "title": "Episode 135 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 136,
+            "title": "Episode 136 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 137,
+            "title": "Episode 137 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 138,
+            "title": "Episode 138 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 139,
+            "title": "Episode 139 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 140,
+            "title": "Episode 140 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 141,
+            "title": "Episode 141 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 142,
+            "title": "Episode 142 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 143,
+            "title": "Episode 143 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 144,
+            "title": "Episode 144 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 145,
+            "title": "Episode 145 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 146,
+            "title": "Episode 146 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 147,
+            "title": "Episode 147 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 148,
+            "title": "Episode 148 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "9253",
     "animeEnglish": "Steins;Gate",
     "animeOriginal": "Steins;Gate",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Drama", "Sci-Fi", "Suspense"],
+    "genres": [
+        "Drama",
+        "Sci-Fi",
+        "Suspense"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "9.07",
@@ -51,15 +1763,213 @@
     "dateEnd": "Sep 14, 2011",
     "poster": "https://cdn.myanimelist.net/images/anime/1935/127974.jpg",
     "page": "fixme",
-    "eposideCount": 24
-  },
-  {
+    "eposideCount": 24,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "28977",
     "animeEnglish": "Gintama Season 4",
     "animeOriginal": "Gintama\u00b0",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "9.05",
@@ -69,15 +1979,428 @@
     "dateEnd": "Mar 30, 2016",
     "poster": "https://cdn.myanimelist.net/images/anime/3/72078.jpg",
     "page": "fixme",
-    "eposideCount": 51
-  },
-  {
+    "eposideCount": 51,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 25,
+            "title": "Episode 25 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 26,
+            "title": "Episode 26 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 27,
+            "title": "Episode 27 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 28,
+            "title": "Episode 28 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 29,
+            "title": "Episode 29 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 30,
+            "title": "Episode 30 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 31,
+            "title": "Episode 31 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 32,
+            "title": "Episode 32 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 33,
+            "title": "Episode 33 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 34,
+            "title": "Episode 34 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 35,
+            "title": "Episode 35 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 36,
+            "title": "Episode 36 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 37,
+            "title": "Episode 37 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 38,
+            "title": "Episode 38 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 39,
+            "title": "Episode 39 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 40,
+            "title": "Episode 40 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 41,
+            "title": "Episode 41 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 42,
+            "title": "Episode 42 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 43,
+            "title": "Episode 43 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 44,
+            "title": "Episode 44 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 45,
+            "title": "Episode 45 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 46,
+            "title": "Episode 46 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 47,
+            "title": "Episode 47 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 48,
+            "title": "Episode 48 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 49,
+            "title": "Episode 49 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 50,
+            "title": "Episode 50 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 51,
+            "title": "Episode 51 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "820",
     "animeEnglish": "Legend of the Galactic Heroes",
     "animeOriginal": "Ginga Eiyuu Densetsu",
     "duration": "26 min.",
     "type": "OVA",
-    "genres": ["Drama", "Sci-Fi"],
+    "genres": [
+        "Drama",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "R",
     "score": "9.01",
@@ -87,15 +2410,901 @@
     "dateEnd": "Mar 17, 1997",
     "poster": "https://cdn.myanimelist.net/images/anime/1976/142016.jpg",
     "page": "fixme",
-    "eposideCount": 110
-  },
-  {
+    "eposideCount": 110,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 25,
+            "title": "Episode 25 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 26,
+            "title": "Episode 26 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 27,
+            "title": "Episode 27 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 28,
+            "title": "Episode 28 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 29,
+            "title": "Episode 29 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 30,
+            "title": "Episode 30 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 31,
+            "title": "Episode 31 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 32,
+            "title": "Episode 32 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 33,
+            "title": "Episode 33 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 34,
+            "title": "Episode 34 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 35,
+            "title": "Episode 35 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 36,
+            "title": "Episode 36 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 37,
+            "title": "Episode 37 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 38,
+            "title": "Episode 38 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 39,
+            "title": "Episode 39 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 40,
+            "title": "Episode 40 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 41,
+            "title": "Episode 41 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 42,
+            "title": "Episode 42 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 43,
+            "title": "Episode 43 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 44,
+            "title": "Episode 44 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 45,
+            "title": "Episode 45 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 46,
+            "title": "Episode 46 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 47,
+            "title": "Episode 47 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 48,
+            "title": "Episode 48 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 49,
+            "title": "Episode 49 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 50,
+            "title": "Episode 50 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 51,
+            "title": "Episode 51 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 52,
+            "title": "Episode 52 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 53,
+            "title": "Episode 53 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 54,
+            "title": "Episode 54 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 55,
+            "title": "Episode 55 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 56,
+            "title": "Episode 56 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 57,
+            "title": "Episode 57 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 58,
+            "title": "Episode 58 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 59,
+            "title": "Episode 59 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 60,
+            "title": "Episode 60 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 61,
+            "title": "Episode 61 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 62,
+            "title": "Episode 62 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 63,
+            "title": "Episode 63 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 64,
+            "title": "Episode 64 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 65,
+            "title": "Episode 65 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 66,
+            "title": "Episode 66 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 67,
+            "title": "Episode 67 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 68,
+            "title": "Episode 68 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 69,
+            "title": "Episode 69 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 70,
+            "title": "Episode 70 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 71,
+            "title": "Episode 71 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 72,
+            "title": "Episode 72 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 73,
+            "title": "Episode 73 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 74,
+            "title": "Episode 74 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 75,
+            "title": "Episode 75 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 76,
+            "title": "Episode 76 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 77,
+            "title": "Episode 77 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 78,
+            "title": "Episode 78 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 79,
+            "title": "Episode 79 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 80,
+            "title": "Episode 80 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 81,
+            "title": "Episode 81 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 82,
+            "title": "Episode 82 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 83,
+            "title": "Episode 83 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 84,
+            "title": "Episode 84 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 85,
+            "title": "Episode 85 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 86,
+            "title": "Episode 86 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 87,
+            "title": "Episode 87 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 88,
+            "title": "Episode 88 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 89,
+            "title": "Episode 89 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 90,
+            "title": "Episode 90 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 91,
+            "title": "Episode 91 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 92,
+            "title": "Episode 92 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 93,
+            "title": "Episode 93 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 94,
+            "title": "Episode 94 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 95,
+            "title": "Episode 95 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 96,
+            "title": "Episode 96 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 97,
+            "title": "Episode 97 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 98,
+            "title": "Episode 98 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 99,
+            "title": "Episode 99 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 100,
+            "title": "Episode 100 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 101,
+            "title": "Episode 101 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 102,
+            "title": "Episode 102 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 103,
+            "title": "Episode 103 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 104,
+            "title": "Episode 104 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 105,
+            "title": "Episode 105 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 106,
+            "title": "Episode 106 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 107,
+            "title": "Episode 107 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 108,
+            "title": "Episode 108 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 109,
+            "title": "Episode 109 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 110,
+            "title": "Episode 110 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "9969",
     "animeEnglish": "Gintama Season 2",
     "animeOriginal": "Gintama'",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "9.03",
@@ -105,15 +3314,429 @@
     "dateEnd": "Mar 26, 2012",
     "poster": "https://cdn.myanimelist.net/images/anime/4/50361.jpg",
     "page": "fixme",
-    "eposideCount": 51
-  },
-  {
+    "eposideCount": 51,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 25,
+            "title": "Episode 25 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 26,
+            "title": "Episode 26 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 27,
+            "title": "Episode 27 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 28,
+            "title": "Episode 28 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 29,
+            "title": "Episode 29 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 30,
+            "title": "Episode 30 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 31,
+            "title": "Episode 31 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 32,
+            "title": "Episode 32 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 33,
+            "title": "Episode 33 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 34,
+            "title": "Episode 34 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 35,
+            "title": "Episode 35 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 36,
+            "title": "Episode 36 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 37,
+            "title": "Episode 37 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 38,
+            "title": "Episode 38 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 39,
+            "title": "Episode 39 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 40,
+            "title": "Episode 40 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 41,
+            "title": "Episode 41 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 42,
+            "title": "Episode 42 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 43,
+            "title": "Episode 43 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 44,
+            "title": "Episode 44 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 45,
+            "title": "Episode 45 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 46,
+            "title": "Episode 46 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 47,
+            "title": "Episode 47 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 48,
+            "title": "Episode 48 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 49,
+            "title": "Episode 49 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 50,
+            "title": "Episode 50 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 51,
+            "title": "Episode 51 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "15417",
     "animeEnglish": "Gintama: Enchousen",
     "animeOriginal": "Gintama': Enchousen",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "9.02",
@@ -123,15 +3746,123 @@
     "dateEnd": "Mar 28, 2013",
     "poster": "https://cdn.myanimelist.net/images/anime/1452/123686.jpg",
     "page": "fixme",
-    "eposideCount": 13
-  },
-  {
+    "eposideCount": 13,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "35180",
     "animeEnglish": "March Comes In Like A Lion 2nd Season",
     "animeOriginal": "3-gatsu no Lion 2nd Season",
     "duration": "25 min.",
     "type": "TV",
-    "genres": ["fixme"],
+    "genres": [
+        "fixme"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.91",
@@ -141,15 +3872,196 @@
     "dateEnd": "Mar 31, 2018",
     "poster": "https://cdn.myanimelist.net/images/anime/3/88469.jpg",
     "page": "fixme",
-    "eposideCount": 22
-  },
-  {
+    "eposideCount": 22,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "32281",
     "animeEnglish": "Your Name",
     "animeOriginal": "Kimi no Na wa.",
     "duration": "1 hr.",
     "type": "Movie",
-    "genres": ["Award Winning", "Drama"],
+    "genres": [
+        "Award Winning",
+        "Drama"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.83",
@@ -159,15 +4071,28 @@
     "dateEnd": "fixme",
     "poster": "https://cdn.myanimelist.net/images/anime/5/87048.jpg",
     "page": "fixme",
-    "eposideCount": 1
-  },
-  {
+    "eposideCount": 1,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "28851",
     "animeEnglish": "A Silent Voice",
     "animeOriginal": "Koe no Katachi",
     "duration": "2 hr.",
     "type": "Movie",
-    "genres": ["Award Winning", "Drama"],
+    "genres": [
+        "Award Winning",
+        "Drama"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.93",
@@ -177,15 +4102,29 @@
     "dateEnd": "fixme",
     "poster": "https://cdn.myanimelist.net/images/anime/1122/96435.jpg",
     "page": "fixme",
-    "eposideCount": 1
-  },
-  {
+    "eposideCount": 1,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "34096",
     "animeEnglish": "Gintama Season 5",
     "animeOriginal": "Gintama.",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.98",
@@ -195,15 +4134,117 @@
     "dateEnd": "Mar 27, 2017",
     "poster": "https://cdn.myanimelist.net/images/anime/3/83528.jpg",
     "page": "fixme",
-    "eposideCount": 12
-  },
-  {
+    "eposideCount": 12,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "918",
     "animeEnglish": "Gintama",
     "animeOriginal": "Gintama",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.93",
@@ -213,15 +4254,1629 @@
     "dateEnd": "Mar 25, 2010",
     "poster": "https://cdn.myanimelist.net/images/anime/10/73274.jpg",
     "page": "fixme",
-    "eposideCount": 201
-  },
-  {
+    "eposideCount": 201,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 25,
+            "title": "Episode 25 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 26,
+            "title": "Episode 26 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 27,
+            "title": "Episode 27 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 28,
+            "title": "Episode 28 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 29,
+            "title": "Episode 29 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 30,
+            "title": "Episode 30 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 31,
+            "title": "Episode 31 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 32,
+            "title": "Episode 32 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 33,
+            "title": "Episode 33 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 34,
+            "title": "Episode 34 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 35,
+            "title": "Episode 35 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 36,
+            "title": "Episode 36 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 37,
+            "title": "Episode 37 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 38,
+            "title": "Episode 38 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 39,
+            "title": "Episode 39 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 40,
+            "title": "Episode 40 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 41,
+            "title": "Episode 41 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 42,
+            "title": "Episode 42 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 43,
+            "title": "Episode 43 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 44,
+            "title": "Episode 44 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 45,
+            "title": "Episode 45 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 46,
+            "title": "Episode 46 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 47,
+            "title": "Episode 47 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 48,
+            "title": "Episode 48 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 49,
+            "title": "Episode 49 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 50,
+            "title": "Episode 50 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 51,
+            "title": "Episode 51 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 52,
+            "title": "Episode 52 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 53,
+            "title": "Episode 53 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 54,
+            "title": "Episode 54 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 55,
+            "title": "Episode 55 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 56,
+            "title": "Episode 56 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 57,
+            "title": "Episode 57 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 58,
+            "title": "Episode 58 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 59,
+            "title": "Episode 59 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 60,
+            "title": "Episode 60 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 61,
+            "title": "Episode 61 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 62,
+            "title": "Episode 62 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 63,
+            "title": "Episode 63 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 64,
+            "title": "Episode 64 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 65,
+            "title": "Episode 65 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 66,
+            "title": "Episode 66 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 67,
+            "title": "Episode 67 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 68,
+            "title": "Episode 68 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 69,
+            "title": "Episode 69 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 70,
+            "title": "Episode 70 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 71,
+            "title": "Episode 71 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 72,
+            "title": "Episode 72 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 73,
+            "title": "Episode 73 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 74,
+            "title": "Episode 74 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 75,
+            "title": "Episode 75 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 76,
+            "title": "Episode 76 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 77,
+            "title": "Episode 77 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 78,
+            "title": "Episode 78 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 79,
+            "title": "Episode 79 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 80,
+            "title": "Episode 80 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 81,
+            "title": "Episode 81 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 82,
+            "title": "Episode 82 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 83,
+            "title": "Episode 83 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 84,
+            "title": "Episode 84 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 85,
+            "title": "Episode 85 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 86,
+            "title": "Episode 86 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 87,
+            "title": "Episode 87 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 88,
+            "title": "Episode 88 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 89,
+            "title": "Episode 89 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 90,
+            "title": "Episode 90 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 91,
+            "title": "Episode 91 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 92,
+            "title": "Episode 92 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 93,
+            "title": "Episode 93 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 94,
+            "title": "Episode 94 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 95,
+            "title": "Episode 95 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 96,
+            "title": "Episode 96 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 97,
+            "title": "Episode 97 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 98,
+            "title": "Episode 98 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 99,
+            "title": "Episode 99 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 100,
+            "title": "Episode 100 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 101,
+            "title": "Episode 101 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 102,
+            "title": "Episode 102 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 103,
+            "title": "Episode 103 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 104,
+            "title": "Episode 104 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 105,
+            "title": "Episode 105 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 106,
+            "title": "Episode 106 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 107,
+            "title": "Episode 107 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 108,
+            "title": "Episode 108 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 109,
+            "title": "Episode 109 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 110,
+            "title": "Episode 110 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 111,
+            "title": "Episode 111 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 112,
+            "title": "Episode 112 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 113,
+            "title": "Episode 113 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 114,
+            "title": "Episode 114 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 115,
+            "title": "Episode 115 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 116,
+            "title": "Episode 116 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 117,
+            "title": "Episode 117 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 118,
+            "title": "Episode 118 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 119,
+            "title": "Episode 119 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 120,
+            "title": "Episode 120 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 121,
+            "title": "Episode 121 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 122,
+            "title": "Episode 122 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 123,
+            "title": "Episode 123 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 124,
+            "title": "Episode 124 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 125,
+            "title": "Episode 125 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 126,
+            "title": "Episode 126 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 127,
+            "title": "Episode 127 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 128,
+            "title": "Episode 128 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 129,
+            "title": "Episode 129 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 130,
+            "title": "Episode 130 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 131,
+            "title": "Episode 131 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 132,
+            "title": "Episode 132 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 133,
+            "title": "Episode 133 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 134,
+            "title": "Episode 134 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 135,
+            "title": "Episode 135 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 136,
+            "title": "Episode 136 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 137,
+            "title": "Episode 137 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 138,
+            "title": "Episode 138 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 139,
+            "title": "Episode 139 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 140,
+            "title": "Episode 140 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 141,
+            "title": "Episode 141 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 142,
+            "title": "Episode 142 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 143,
+            "title": "Episode 143 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 144,
+            "title": "Episode 144 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 145,
+            "title": "Episode 145 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 146,
+            "title": "Episode 146 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 147,
+            "title": "Episode 147 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 148,
+            "title": "Episode 148 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 149,
+            "title": "Episode 149 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 150,
+            "title": "Episode 150 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 151,
+            "title": "Episode 151 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 152,
+            "title": "Episode 152 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 153,
+            "title": "Episode 153 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 154,
+            "title": "Episode 154 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 155,
+            "title": "Episode 155 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 156,
+            "title": "Episode 156 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 157,
+            "title": "Episode 157 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 158,
+            "title": "Episode 158 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 159,
+            "title": "Episode 159 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 160,
+            "title": "Episode 160 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 161,
+            "title": "Episode 161 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 162,
+            "title": "Episode 162 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 163,
+            "title": "Episode 163 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 164,
+            "title": "Episode 164 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 165,
+            "title": "Episode 165 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 166,
+            "title": "Episode 166 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 167,
+            "title": "Episode 167 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 168,
+            "title": "Episode 168 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 169,
+            "title": "Episode 169 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 170,
+            "title": "Episode 170 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 171,
+            "title": "Episode 171 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 172,
+            "title": "Episode 172 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 173,
+            "title": "Episode 173 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 174,
+            "title": "Episode 174 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 175,
+            "title": "Episode 175 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 176,
+            "title": "Episode 176 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 177,
+            "title": "Episode 177 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 178,
+            "title": "Episode 178 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 179,
+            "title": "Episode 179 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 180,
+            "title": "Episode 180 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 181,
+            "title": "Episode 181 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 182,
+            "title": "Episode 182 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 183,
+            "title": "Episode 183 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 184,
+            "title": "Episode 184 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 185,
+            "title": "Episode 185 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 186,
+            "title": "Episode 186 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 187,
+            "title": "Episode 187 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 188,
+            "title": "Episode 188 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 189,
+            "title": "Episode 189 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 190,
+            "title": "Episode 190 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 191,
+            "title": "Episode 191 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 192,
+            "title": "Episode 192 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 193,
+            "title": "Episode 193 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 194,
+            "title": "Episode 194 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 195,
+            "title": "Episode 195 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 196,
+            "title": "Episode 196 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 197,
+            "title": "Episode 197 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 198,
+            "title": "Episode 198 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 199,
+            "title": "Episode 199 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 200,
+            "title": "Episode 200 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 201,
+            "title": "Episode 201 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "15335",
     "animeEnglish": "Gintama Movie 2: The Final Chapter - Be Forever Yorozuya",
     "animeOriginal": "Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien Nare",
     "duration": "1 hr.",
     "type": "Movie",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.90",
@@ -231,15 +5886,28 @@
     "dateEnd": "fixme",
     "poster": "https://cdn.myanimelist.net/images/anime/10/51723.jpg",
     "page": "fixme",
-    "eposideCount": 1
-  },
-  {
+    "eposideCount": 1,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "4181",
     "animeEnglish": "Clannad ~After Story~",
     "animeOriginal": "Clannad: After Story",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+        "Drama",
+        "Romance"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.93",
@@ -249,15 +5917,213 @@
     "dateEnd": "Mar 27, 2009",
     "poster": "https://cdn.myanimelist.net/images/anime/1299/110774.jpg",
     "page": "fixme",
-    "eposideCount": 24
-  },
-  {
+    "eposideCount": 24,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "35247",
     "animeEnglish": "Owarimonogatari Second Season",
     "animeOriginal": "Owarimonogatari 2nd Season",
     "duration": "22 min.",
     "type": "TV Special",
-    "genres": ["Comedy", "Mystery", "Supernatural"],
+    "genres": [
+        "Comedy",
+        "Mystery",
+        "Supernatural"
+    ],
     "status": "Finished Airing",
     "rated": "R",
     "score": "8.87",
@@ -267,15 +6133,78 @@
     "dateEnd": "Aug 13, 2017",
     "poster": "https://cdn.myanimelist.net/images/anime/6/87322.jpg",
     "page": "fixme",
-    "eposideCount": 7
-  },
-  {
+    "eposideCount": 7,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "2904",
     "animeEnglish": "Code Geass: Lelouch of the Rebellion R2",
     "animeOriginal": "Code Geass: Hangyaku no Lelouch R2",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Award Winning", "Drama", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Award Winning",
+        "Drama",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "R",
     "score": "8.91",
@@ -285,15 +6214,219 @@
     "dateEnd": "Sep 28, 2008",
     "poster": "https://cdn.myanimelist.net/images/anime/1088/135089.jpg",
     "page": "fixme",
-    "eposideCount": 25
-  },
-  {
+    "eposideCount": 25,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 15,
+            "title": "Episode 15 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 16,
+            "title": "Episode 16 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 17,
+            "title": "Episode 17 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 18,
+            "title": "Episode 18 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 19,
+            "title": "Episode 19 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 20,
+            "title": "Episode 20 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 21,
+            "title": "Episode 21 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 22,
+            "title": "Episode 22 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 23,
+            "title": "Episode 23 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 24,
+            "title": "Episode 24 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 25,
+            "title": "Episode 25 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "32935",
     "animeEnglish": "Haikyu!! 3rd Season",
     "animeOriginal": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["fixme"],
+    "genres": [
+        "fixme"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.77",
@@ -303,15 +6436,101 @@
     "dateEnd": "Dec 10, 2016",
     "poster": "https://cdn.myanimelist.net/images/anime/7/81992.jpg",
     "page": "fixme",
-    "eposideCount": 10
-  },
-  {
+    "eposideCount": 10,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "37510",
     "animeEnglish": "Mob Psycho 100 II",
     "animeOriginal": "Mob Psycho 100 II",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Comedy", "Supernatural"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Supernatural"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.79",
@@ -321,15 +6540,125 @@
     "dateEnd": "Apr 1, 2019",
     "poster": "https://cdn.myanimelist.net/images/anime/1918/96303.jpg",
     "page": "fixme",
-    "eposideCount": 13
-  },
-  {
+    "eposideCount": 13,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "199",
     "animeEnglish": "Spirited Away",
     "animeOriginal": "Sen to Chihiro no Kamikakushi",
     "duration": "2 hr.",
     "type": "Movie",
-    "genres": ["Adventure", "Award Winning", "Fantasy"],
+    "genres": [
+        "Adventure",
+        "Award Winning",
+        "Fantasy"
+    ],
     "status": "Finished Airing",
     "rated": "PG",
     "score": "8.77",
@@ -339,15 +6668,29 @@
     "dateEnd": "fixme",
     "poster": "https://cdn.myanimelist.net/images/anime/6/79597.jpg",
     "page": "fixme",
-    "eposideCount": 1
-  },
-  {
+    "eposideCount": 1,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
+{
     "id": "37491",
     "animeEnglish": "Gintama.: Silver Soul Arc - Second Half War",
     "animeOriginal": "Gintama. Shirogane no Tamashii-hen - Kouhan-sen",
     "duration": "24 min.",
     "type": "TV",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+    ],
     "status": "Finished Airing",
     "rated": "PG-13",
     "score": "8.88",
@@ -357,6 +6700,119 @@
     "dateEnd": "Oct 8, 2018",
     "poster": "https://cdn.myanimelist.net/images/anime/1776/96566.jpg",
     "page": "fixme",
-    "eposideCount": 14
-  }
-]
+    "eposideCount": 14,
+    "episodes": [
+        {
+            "episodeNumber": 1,
+            "title": "Episode 1 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 2,
+            "title": "Episode 2 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 3,
+            "title": "Episode 3 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 4,
+            "title": "Episode 4 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 5,
+            "title": "Episode 5 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 6,
+            "title": "Episode 6 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 7,
+            "title": "Episode 7 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 8,
+            "title": "Episode 8 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 9,
+            "title": "Episode 9 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 10,
+            "title": "Episode 10 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 11,
+            "title": "Episode 11 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 12,
+            "title": "Episode 12 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 13,
+            "title": "Episode 13 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        },
+        {
+            "episodeNumber": 14,
+            "title": "Episode 14 Title",
+            "dubServer1": "#",
+            "dubServer2": "#",
+            "subServer1": "#",
+            "subServer2": "#"
+        }
+    ]
+}
