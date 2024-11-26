@@ -100,7 +100,14 @@ function findMatches(wordToMatch, searchDataEngine) {
 // Display matches for the search input with pagination
 function displayMatches(inputValue, page) {
   try {
-    const matchArray = findMatches(inputValue, searchDataEngine);
+    let matchArray;
+
+    // If inputValue is empty or only contains whitespace, show all results
+    if (inputValue.trim() === '') {
+      matchArray = searchDataEngine; // Use the entire dataset
+    } else {
+      matchArray = findMatches(inputValue, searchDataEngine);
+    }
 
     totalPages = Math.ceil(matchArray.length / resultsPerPage); // Calculate total pages
     const startIndex = (page - 1) * resultsPerPage;
@@ -151,12 +158,6 @@ function displayMatches(inputValue, page) {
       .join('');
 
     resultsContainerEngine.innerHTML = html;
-    console.log(pageDub);
-    console.log(pageSub);
-
-    if (inputValue === '') {
-      resultsContainerEngine.innerHTML = ''; // Clear the suggestions if input is empty
-    }
 
     updatePagination(page); // Update pagination controls
   } catch (err) {
@@ -252,8 +253,13 @@ function goToPage(page) {
 // Initialize search with keyword from URL if present
 window.onload = function () {
   const keyword = getQueryParam('keyword'); // Get the keyword from the URL
-  if (keyword) {
-    displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
+  if (keyword === null || keyword.trim() === '') {
+    // If no keyword, display all animes
+    currentPage = 1; // Reset to the first page
+    displayMatches('', currentPage);
+  } else {
+    // If there's a keyword, search as usual
+    displayMatches(keyword, currentPage);
   }
 };
 
