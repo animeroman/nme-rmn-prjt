@@ -79,6 +79,6 @@ function initializeResultCount() {
 document.addEventListener('DOMContentLoaded', initializeResultCount);
 
 // Backup: Ensure the script works even if content is loaded after window.onload
-window.onload = function () {
-  initializeResultCount();
-};
+// window.onload = function () {
+//   initializeResultCount();
+// };

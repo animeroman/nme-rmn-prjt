@@ -261,6 +261,8 @@ window.onload = function () {
     // If there's a keyword, search as usual
     displayMatches(keyword, currentPage);
   }
+
+  initializeResultCount();
 };
 
 // Event listeners for input changes
