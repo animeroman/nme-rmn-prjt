@@ -1,12 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
+import ijson
+import json
 import time
 import pickle
 import os
 
 # Base URL for fetching the anime page
 base_url = "https://myanimelist.net/anime/"
+
+# Path to save pickle progress
+pickle_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/delete-after-finising/progress.pkl'
 
 # Function to scrape anime details
 def get_anime_details(anime_id):
@@ -98,65 +102,90 @@ def get_anime_details(anime_id):
             strong_tag = title_tag.find('strong')
             anime_original_value = strong_tag.text.strip() if strong_tag else None
 
-        return {
-            "poster": poster_link,
-            "score": score,
-            "type": type_value,
-            "status": status_value,
-            "duration": duration_value,
-            "season": season_value,
-            "rated": rating_value,
-            "animeOriginal": anime_original_value,
-            "dateStart": date_start,
-            "dateEnd": date_end,
-            "eposideCount": eposide_count,
-            "genres": genres_list
-        }
+        return (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end, eposide_count, genres_list)
     except requests.HTTPError as http_err:
         print(f"HTTP error for ID {anime_id}: {http_err}")
     except Exception as e:
         print(f"Error fetching data for ID {anime_id}: {e}")
-    return {}
+    return (None, None, None, None, None, None, None, None, None, None, None, [])
 
-# Process the large JSON file using pandas
+# Process the large JSON file
 input_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_fixed.json'
 output_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_updated.json'
-pickle_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/delete-after-finising/progress.pkl'
 
-# Load the JSON data into a pandas DataFrame
-data = pd.read_json(input_file_path)
-
-# Check if there is saved progress (from previous runs)
+# Load progress if pickle file exists
 if os.path.exists(pickle_file_path):
-    with open(pickle_file_path, 'rb') as f:
-        processed_ids = pickle.load(f)
+    with open(pickle_file_path, 'rb') as pickle_file:
+        progress_data = pickle.load(pickle_file)
+        updated_data = progress_data.get('updated_data', [])
+        processed_ids = progress_data.get('processed_ids', set())
+        print(f"Resuming from saved progress: {len(processed_ids)} entries processed.")
 else:
+    updated_data = []
     processed_ids = set()
 
-# Update each entry with the new details
-updated_entries = []
-for _, row in data.iterrows():
-    anime_id = row.get("id", "")
-    
-    if anime_id and anime_id not in processed_ids:
-        details = get_anime_details(anime_id)
-        if details:
-            for key, value in details.items():
-                if value is not None:
-                    row[key] = value
-            processed_ids.add(anime_id)
+# Read the input JSON file and process
+with open(input_file_path, 'r', encoding='utf-8') as file:
+    entries = list(ijson.items(file, 'item'))
+    total_entries = len(entries)
+
+    for idx, entry in enumerate(entries):
+        anime_id = entry.get('id', '')
+        if anime_id in processed_ids:
+            continue  # Skip already processed entries
         
-        # Save progress every 20 entries
-        if len(processed_ids) % 20 == 0:
-            with open(pickle_file_path, 'wb') as f:
-                pickle.dump(processed_ids, f)
+        if anime_id:
+            # Fetch the details for the anime
+            details = get_anime_details(anime_id)
 
-    updated_entries.append(row)
+            # Update the entry with fetched details
+            if details:
+                (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end, eposide_count, genres_list) = details
 
-# Convert the updated entries back to a DataFrame
-updated_data = pd.DataFrame(updated_entries)
+                if poster_link:
+                    entry['poster'] = poster_link
+                if score:
+                    entry['score'] = score
+                if type_value:
+                    entry['type'] = type_value
+                if status_value:
+                    entry['status'] = status_value
+                if duration_value:
+                    entry['duration'] = duration_value
+                if season_value:
+                    entry['season'] = season_value
+                if rating_value:
+                    entry['rated'] = rating_value
+                if anime_original_value:
+                    entry['animeOriginal'] = anime_original_value
+                if date_start:
+                    entry['dateStart'] = date_start
+                if date_end:
+                    entry['dateEnd'] = date_end
+                if eposide_count:
+                    entry['eposideCount'] = eposide_count
+                if genres_list:
+                    entry['genres'] = genres_list
 
-# Save the updated DataFrame to a new JSON file
-updated_data.to_json(output_file_path, orient='records', indent=4)
+                # Append the updated entry to the list
+                updated_data.append(entry)
+                processed_ids.add(anime_id)
 
-print("JSON file updated with all fields using pandas. Progress saved with pickle.")
+        # Save progress at halfway or every 100 items
+        if idx % 100 == 0 or idx == total_entries // 2:
+            with open(pickle_file_path, 'wb') as pickle_file:
+                pickle.dump({'updated_data': updated_data, 'processed_ids': processed_ids}, pickle_file)
+            print(f"Progress saved at {idx}/{total_entries} entries.")
+
+        # Add a delay to avoid hitting the server too quickly
+        time.sleep(1)  # Adjust the delay as needed
+
+# Save the updated JSON data to a new file
+with open(output_file_path, 'w', encoding='utf-8') as file:
+    json.dump(updated_data, file, indent=4)
+
+# Remove pickle file after successful completion
+if os.path.exists(pickle_file_path):
+    os.remove(pickle_file_path)
+
+print("JSON file updated with poster links, scores, types, statuses, durations, seasons, ratings, animeOriginal, dateStart, dateEnd, eposideCount, and genres.")
