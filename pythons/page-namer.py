@@ -1,14 +1,18 @@
+import ijson
 import json
 import re
+import time
 
-# Make sure to use the correct path to your JSON file
-file_path = 'C:/Users/aydin_000/Desktop/hiRoman/json/export_updater.json'
+# Start timing the operation
+start_time = time.time()
 
-# Load the JSON data
-with open(file_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
+# Path to your input JSON file
+input_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export.json'
 
-# Function to process animeEnglish
+# Path to your output JSON file
+output_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export_with_names.json'
+
+# Function to process animeEnglish and generate the 'page' link
 def generate_page_link(anime_english):
     # Convert to lowercase
     anime_english = anime_english.lower()
@@ -18,16 +22,37 @@ def generate_page_link(anime_english):
     anime_english = re.sub(r'[\'.,/;:<>?\[\]{}\\|!@$#%^&*()]', '', anime_english)
     return anime_english
 
-# Update the 'page' field with the processed 'animeEnglish'
-for entry in data:
-    anime_english = entry.get('animeEnglish', '')
-    page_link = generate_page_link(anime_english)
-    entry['page'] = page_link
+# Process the JSON file incrementally
+def process_json(input_file, output_file):
+    with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8') as outfile:
+        # Incrementally parse each JSON object
+        parser = ijson.items(infile, 'item')  # Parse each JSON object from the file
 
-# Save the modified JSON back to a file
-output_file_path = 'C:/Users/aydin_000/Desktop/hiRoman/json/export_modified.json'
+        # Open the output file as a JSON array
+        outfile.write('[')
+        first_entry = True
 
-with open(output_file_path, 'w', encoding='utf-8') as file:
-    json.dump(data, file, indent=4)
+        for entry in parser:
+            # Skip malformed or non-dict entries
+            if not isinstance(entry, dict):
+                continue
 
-print("Processing complete. The modified JSON has been saved.")
+            # Process the 'animeEnglish' field and generate the 'page' link
+            anime_english = entry.get('animeEnglish', '')
+            entry['page'] = generate_page_link(anime_english)
+
+            # Write the entry to the output file
+            if not first_entry:
+                outfile.write(',\n')
+            json.dump(entry, outfile, indent=4)
+            first_entry = False
+
+        # Close the JSON array
+        outfile.write(']')
+
+# Call the processing function
+process_json(input_file_path, output_file_path)
+
+# Print operation time
+end_time = time.time()
+print(f"Processing complete. The modified JSON has been saved. Time taken: {end_time - start_time:.2f} seconds.")
