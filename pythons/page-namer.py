@@ -12,15 +12,16 @@ input_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export.json'
 # Path to your output JSON file
 output_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export_with_names.json'
 
-# Function to process animeEnglish and generate the 'page' link
-def generate_page_link(anime_english):
+# Function to process animeEnglish and generate the 'page' link, including the 'id'
+def generate_page_link(anime_english, anime_id):
     # Convert to lowercase
     anime_english = anime_english.lower()
     # Replace spaces with hyphens
     anime_english = anime_english.replace(' ', '-')
     # Remove special characters
     anime_english = re.sub(r'[\'.,/;:<>?\[\]{}\\|!@$#%^&*()]', '', anime_english)
-    return anime_english
+    # Append the ID to the page link
+    return f"{anime_english}-{anime_id}"
 
 # Process the JSON file incrementally
 def process_json(input_file, output_file):
@@ -39,7 +40,8 @@ def process_json(input_file, output_file):
 
             # Process the 'animeEnglish' field and generate the 'page' link
             anime_english = entry.get('animeEnglish', '')
-            entry['page'] = generate_page_link(anime_english)
+            anime_id = entry.get('id', '')
+            entry['page'] = generate_page_link(anime_english, anime_id)
 
             # Write the entry to the output file
             if not first_entry:
