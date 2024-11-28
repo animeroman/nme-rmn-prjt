@@ -11,54 +11,53 @@ let selectedDropdownPage = localStorage.getItem('selectedDropdownPage') || 1; //
 let selectedDropdownCurrentPage =
   localStorage.getItem('selectedDropdownCurrentPage') || `EPS: 001-100`; // Default dropdown text
 
-// Search.json example
-/*
-{
-    "animeEnglish": "Love, Chunibyo & Other Delusions!",
-    "animeOriginal": "Love, Chunibyo & Other Delusions!",
-    "duration": "24m",
-    "type": "TV",
-    "date": "Oct 4, 2012",
-    "poster": "https://cdn.noitatnemucod.net/thumbnail/300x400/100/45a469c51892b3a73268c6f4001759d8.jpg",
-    "page": "0-firstsubfolder",
-    "subCount": "5",
-    "dubCount": "5",
-    "episodes": [
-      {
-        "episodeNumber": 1,
-        "title": "Episode 1 Title",
-        "dubServer1": "#",
-        "dubServer2": "#",
-        "subServer1": "#",
-        "subServer2": "#"
-      },
-      {
-        "episodeNumber": 2,
-        "title": "Episode 2 Title",
-        "dubServer1": "#",
-        "dubServer2": "#",
-        "subServer1": "#",
-        "subServer2": "#"
-      },
-      {
-        "episodeNumber": 3,
-        "title": "Episode 3 Title",
-        "dubServer1": "#",
-        "dubServer2": "#",
-        "subServer1": "#",
-        "subServer2": "#"
-      },
-      {
-        "episodeNumber": 4,
-        "title": "Episode 4 Title",
-        "dubServer1": "#",
-        "dubServer2": "#",
-        "subServer1": "#",
-        "subServer2": "#"
-      },
-*/
 // Add this variable before the loop to track the count of episodes
 let totalEpisodes = 0;
+
+// Function to update the breadcrumb with the anime type, href, and text
+function updateBreadcrumb(animeData) {
+  // Define mapping between types and href links
+  const typeToHrefMap = {
+    Movie: '../movie.html',
+    TV: '../tv.html',
+    OVA: '../ova.html',
+    ONA: '../ona.html',
+    Special: '../special.html',
+    Music: '../music.html',
+  };
+
+  // Select the breadcrumb element
+  const breadcrumb = document.querySelector('ol.breadcrumb');
+  if (!breadcrumb) {
+    console.error('Breadcrumb element not found!');
+    return;
+  }
+
+  // Update the second breadcrumb item's href and text with the type
+  const secondBreadcrumbItem = breadcrumb.querySelectorAll('li')[1];
+  if (secondBreadcrumbItem) {
+    const link = secondBreadcrumbItem.querySelector('a');
+    if (link) {
+      link.textContent = animeData.type; // Replace text with "type"
+      if (typeToHrefMap[animeData.type]) {
+        link.setAttribute('href', typeToHrefMap[animeData.type]); // Update href
+      } else {
+        console.warn(`No href mapping found for type: ${animeData.type}`);
+      }
+    }
+  } else {
+    console.error('Second breadcrumb item not found!');
+  }
+
+  // Update the third breadcrumb item's text and 'data-jname'
+  const thirdBreadcrumbItem = breadcrumb.querySelectorAll('li')[2];
+  if (thirdBreadcrumbItem) {
+    thirdBreadcrumbItem.textContent = animeData.animeEnglish; // Replace text with "animeEnglish"
+    thirdBreadcrumbItem.setAttribute('data-jname', animeData.animeOriginal); // Replace data-jname with "animeOriginal"
+  } else {
+    console.error('Third breadcrumb item not found!');
+  }
+}
 
 // Function to create the episode list
 function createEpisodeList(data) {
@@ -397,12 +396,12 @@ function selectDefaultServer() {
 
 // Fetch the anime data from the endpoint and run the episode list creation
 window.onload = function () {
-  // Step 1: Extract the "page" part from the URL (e.g., '0-firstsubfolder.html')
+  // Step 1: Extract the "page" part from the URL (e.g., 'sgt-frog-516.html')
   const currentPage = window.location.pathname
     .split('/')
     .pop()
     .replace('.html', '');
-  console.log(`Current page: ${currentPage}`); // Result: '0-firstsubfolder'
+  console.log(`Current page: ${currentPage}`); // Result: 'sgt-frog-516'
 
   // Step 2: Fetch data from the JSON endpoint
   const anime = [];
@@ -415,20 +414,23 @@ window.onload = function () {
       const matchingAnime = findPathname(currentPage, anime);
 
       if (matchingAnime.length > 0) {
-        // Step 4: If a match is found, pass the anime data to createEpisodeList
-        createEpisodeList(matchingAnime[0]); // Pass the first match
+        console.log('Found matching anime:', matchingAnime[0]);
+
+        // Step 4: Update the breadcrumb with the matching anime type and text
+        updateBreadcrumb(matchingAnime[0]);
+
+        // Step 5: Create the episode list with the matched data
+        createEpisodeList(matchingAnime[0]);
       } else {
-        console.error('No matching anime found for the current page');
+        console.warn('No matching anime found for this page.');
       }
     })
     .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
+      console.error('Error fetching JSON:', error);
     });
-
-  function findPathname(pathToMatch, anime) {
-    return anime.filter(ani => {
-      const regex = new RegExp(pathToMatch, 'gi');
-      return ani.page.match(regex);
-    });
-  }
 };
+
+// Utility function to find the current anime in the JSON data
+function findPathname(currentPage, data) {
+  return data.filter(anime => anime.page === currentPage);
+}
