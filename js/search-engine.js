@@ -125,15 +125,15 @@ function displayMatches(inputValue, page) {
         let pageLink = place.page;
         let pageSub = place.subCount;
         let pageDub = place.dubCount;
-        let episodes = place.episodes;
+        let episode = place.eposideCount;
 
         return `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
           <div class="tick ltr">
-            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${pageSub}</div>
-            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${pageDub}</div>
-            <div class="tick-item tick-eps">${pageSub}</div>
+            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${episode}</div>
+            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${episode}</div>
+            <div class="tick-item tick-eps">${episode}</div>
           </div>
           <img data-src="${posterLink}" class="film-poster-img lazyload" src="${posterLink}" />
           <a href="watch/${pageLink}.html" class="film-poster-ahref item-qtip"><i class="fas fa-play"></i></a>

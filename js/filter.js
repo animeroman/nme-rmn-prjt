@@ -318,9 +318,9 @@ function displayMatches(inputValue, page) {
       <div class="flw-item flw-item-big">
         <div class="film-poster">
           <div class="tick ltr">
-            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${anime.subCount}</div>
-            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${anime.dubCount}</div>
-            <div class="tick-item tick-eps">${anime.subCount}</div>
+            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${anime.eposideCount}</div>
+            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${anime.eposideCount}</div>
+            <div class="tick-item tick-eps">${anime.eposideCount}</div>
           </div>
           <img data-src="${anime.poster}" class="film-poster-img lazyload" src="${anime.poster}" />
           <a href="watch/${anime.page}.html" class="film-poster-ahref"><i class="fas fa-play"></i></a>
