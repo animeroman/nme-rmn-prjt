@@ -2,35 +2,12 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = '''<!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-R34F2GCSBW"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+old_code = '''
+        <li class="nav-item">
+          <a class="nav-link" href="../events.html" title="Events">Events</a>
+        </li>'''
 
-      gtag("config", "G-R34F2GCSBW");
-    </script>'''
-
-new_code = '''<!-- Google tag (gtag.js) -->
-    <!-- <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-R34F2GCSBW"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-R34F2GCSBW");
-    </script> -->'''
+new_code = ''' '''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
