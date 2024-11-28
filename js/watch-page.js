@@ -26,11 +26,34 @@ function updateBreadcrumb(animeData) {
     Music: '../music.html',
   };
 
+  const seasonToHrefMap = {
+    Spring: '../season/spring.html',
+    Summer: '../season/summer.html',
+    Fall: '../season/fall.html',
+    Winter: '../season/winter.html',
+  };
+
   // Select the breadcrumb element
   const breadcrumb = document.querySelector('ol.breadcrumb');
   if (!breadcrumb) {
     console.error('Breadcrumb element not found!');
     return;
+  }
+
+  // Update the first breadcrumb item's href and text with the season
+  const fisrtBreadcrumbItem = breadcrumb.querySelectorAll('li')[0];
+  if (fisrtBreadcrumbItem) {
+    const link = fisrtBreadcrumbItem.querySelector('a');
+    if (link) {
+      link.textContent = animeData.season; // Replace text with "season"
+      if (seasonToHrefMap[animeData.season]) {
+        link.setAttribute('href', seasonToHrefMap[animeData.season]); // Update href
+      } else {
+        console.warn(`No href mapping found for season: ${animeData.season}`);
+      }
+    }
+  } else {
+    console.error('First breadcrumb item not found!');
   }
 
   // Update the second breadcrumb item's href and text with the type
