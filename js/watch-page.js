@@ -15,7 +15,7 @@ let selectedDropdownCurrentPage =
 let totalEpisodes = 0;
 
 // Function to update the breadcrumb with the anime type, href, and text
-function updateBreadcrumb(animeData) {
+function updateAniscDetail(animeData) {
   // Define mapping between types and href links
   const typeToHrefMap = {
     Movie: '../movie.html',
@@ -79,6 +79,21 @@ function updateBreadcrumb(animeData) {
     thirdBreadcrumbItem.setAttribute('data-jname', animeData.animeOriginal); // Replace data-jname with "animeOriginal"
   } else {
     console.error('Third breadcrumb item not found!');
+  }
+
+  // Update the film-name and anisc-detail content
+  const filmNameElement = document.querySelector('h2.film-name');
+  if (filmNameElement) {
+    filmNameElement.textContent = animeData.animeEnglish; // Update film-name
+  } else {
+    console.error('film-name element not found!');
+  }
+
+  const aniscDetailElement = document.querySelector('h2.film-name');
+  if (aniscDetailElement) {
+    aniscDetailElement.setAttribute('data-jname', animeData.animeOriginal); // Update data-jname
+  } else {
+    console.error('anisc-detail element not found!');
   }
 }
 
@@ -570,8 +585,8 @@ window.onload = function () {
       if (matchingAnime.length > 0) {
         console.log('Found matching anime:', matchingAnime[0]);
 
-        // Step 4: Update the breadcrumb with the matching anime type and text
-        updateBreadcrumb(matchingAnime[0]);
+        // Step 4: Update the anisc-detail section with film name and breadcrumb data
+        updateAniscDetail(matchingAnime[0]);
 
         // Step 5: Update the poster image source and alt attributes
         updatePosterImage(matchingAnime[0]);
