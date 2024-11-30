@@ -1,7 +1,7 @@
 'use strict';
 // JSON data point
 const endpoint_Watch =
-  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
+  'https://animeroman.github.io/nme-rmn-prjt/json/export2.json';
 
 // Store the selected server type globally to remember it across episodes
 let selectedServerType = localStorage.getItem('selectedServerType') || 'sub'; // Default to 'sub'
@@ -96,6 +96,73 @@ function updatePosterImage(animeData) {
 
   // Update the alt attribute with the animeEnglish from the animeData
   posterImage.setAttribute('alt', animeData.animeEnglish);
+}
+
+// Function to update anime information in the anisc-info section
+function updateAnimeInfo(animeData) {
+  const aniscInfo = document.querySelector('.anisc-info');
+  if (!aniscInfo) {
+    console.error('anisc-info container not found!');
+    return;
+  }
+
+  const items = aniscInfo.querySelectorAll('.item');
+
+  if (items[0]) {
+    const textDiv = items[0].querySelector('.text');
+    if (textDiv) textDiv.textContent = animeData.description;
+  }
+
+  if (items[1]) {
+    const nameSpan = items[1].querySelector('.name');
+    if (nameSpan) nameSpan.textContent = animeData.japanese;
+  }
+
+  if (items[2]) {
+    const nameSpan = items[2].querySelector('.name');
+    if (nameSpan) nameSpan.textContent = animeData.synonyms[0];
+  }
+
+  if (items[3]) {
+    const nameSpan = items[3].querySelector('.name');
+    if (nameSpan)
+      nameSpan.textContent = `${animeData.dateStart} to ${animeData.dateEnd}`;
+  }
+
+  if (items[4]) {
+    const nameSpan = items[4].querySelector('.name');
+    if (nameSpan) nameSpan.textContent = animeData.season;
+  }
+
+  if (items[5]) {
+    const nameSpan = items[5].querySelector('.name');
+    if (nameSpan) nameSpan.textContent = animeData.duration;
+  }
+
+  if (items[6]) {
+    const nameSpan = items[6].querySelector('.name');
+    if (nameSpan) nameSpan.textContent = animeData.status;
+  }
+
+  if (items[7]) {
+    const scoreSpan = items[7].querySelector('.name');
+    if (scoreSpan) scoreSpan.textContent = animeData.score;
+  }
+
+  if (items[8]) {
+    // Populate genres for the ninth item
+    const genreContainer = items[8];
+    genreContainer.innerHTML = `<span class="item-head">Genres:</span>`; // Clear existing content and add header
+
+    // Add each genre as a link
+    animeData.genres.forEach(genre => {
+      const genreLink = document.createElement('a');
+      genreLink.href = `genre/${genre.toLowerCase().replace(/\s+/g, '-')}.html`;
+      genreLink.title = genre;
+      genreLink.textContent = genre;
+      genreContainer.appendChild(genreLink);
+    });
+  }
 }
 
 // Function to create the episode list
@@ -461,7 +528,10 @@ window.onload = function () {
         // Step 5: Update the poster image source and alt attributes
         updatePosterImage(matchingAnime[0]);
 
-        // Step 6: Create the episode list with the matched data
+        // Step 6: Update anime information in the anisc-info section
+        updateAnimeInfo(matchingAnime[0]);
+
+        // Step 7: Create the episode list with the matched data
         createEpisodeList(matchingAnime[0]);
       } else {
         console.warn('No matching anime found for this page.');
