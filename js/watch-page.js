@@ -107,10 +107,16 @@ function updateAnimeInfo(animeData) {
   }
 
   const items = aniscInfo.querySelectorAll('.item');
+  const filmDes = document.querySelector('.film-description');
 
   if (items[0]) {
     const textDiv = items[0].querySelector('.text');
     if (textDiv) textDiv.textContent = animeData.description;
+
+    // Update the film-description div with the description
+    const filmDescriptionDiv = filmDes.querySelector('.text');
+    if (filmDescriptionDiv)
+      filmDescriptionDiv.textContent = animeData.description;
   }
 
   if (items[1]) {
@@ -145,7 +151,7 @@ function updateAnimeInfo(animeData) {
   }
 
   if (items[7]) {
-    const scoreSpan = items[7].querySelector('.name');
+    const scoreSpan = items[7].querySelector('span');
     if (scoreSpan) scoreSpan.textContent = animeData.score;
   }
 
@@ -161,6 +167,48 @@ function updateAnimeInfo(animeData) {
       genreLink.title = genre;
       genreLink.textContent = genre;
       genreContainer.appendChild(genreLink);
+    });
+  }
+
+  if (items[9]) {
+    // Populate studios for the tenth item
+    const studiosContainer = items[9];
+    studiosContainer.innerHTML = `<span class="item-head">Studios:</span>`; // Clear existing content and add header
+
+    // Add each studio as a link
+    animeData.studios.forEach(studio => {
+      const studioLink = document.createElement('a');
+      studioLink.classList.add('name');
+      studioLink.href = `producer/${studio
+        .toLowerCase()
+        .replace(/\s+/g, '-')}.html`;
+      studioLink.textContent = studio;
+
+      // Add a comma if it's not the last studio
+      studiosContainer.appendChild(studioLink);
+      if (studio !== animeData.studios[animeData.studios.length - 1]) {
+        studiosContainer.appendChild(document.createTextNode(', '));
+      }
+    });
+  }
+
+  if (items[10]) {
+    // Populate producers for the eleventh item
+    const producersContainer = items[10];
+    producersContainer.innerHTML = `<span class="item-head">Producers:</span>`; // Clear existing content and add header
+
+    animeData.producers.forEach(producer => {
+      const producerLink = document.createElement('a');
+      producerLink.classList.add('name');
+      producerLink.href = `producer/${producer
+        .toLowerCase()
+        .replace(/\s+/g, '-')}.html`;
+      producerLink.textContent = producer;
+
+      producersContainer.appendChild(producerLink);
+      if (producer !== animeData.producers[animeData.producers.length - 1]) {
+        producersContainer.appendChild(document.createTextNode(', '));
+      }
     });
   }
 }
