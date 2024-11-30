@@ -95,6 +95,67 @@ function updateAniscDetail(animeData) {
   } else {
     console.error('anisc-detail element not found!');
   }
+
+  // Update the tick-pg
+  const TickItemPg = document.querySelector('.tick-pg');
+  if (TickItemPg) {
+    TickItemPg.textContent = animeData.rated; // Update tick-pg
+  } else {
+    console.error('div.tick-pg element not found!');
+  }
+
+  // Update the tick-sub
+  const TickItemSub = document.querySelector('.tick-sub');
+  if (TickItemSub) {
+    TickItemSub.textContent = animeData.eposideCount; // Update tick-sub
+  } else {
+    console.error('div.tick-sub element not found!');
+  }
+
+  // Update the tick-dub
+  const TickItemDub = document.querySelector('.tick-dub');
+  if (TickItemDub) {
+    TickItemDub.textContent = animeData.eposideCount; // Update tick-dub
+  } else {
+    console.error('div.tick-dub element not found!');
+  }
+
+  // Update the tick-eps
+  const TickItemEps = document.querySelector('.tick-eps');
+  if (TickItemEps) {
+    TickItemEps.textContent = animeData.eposideCount; // Update tick-eps
+  } else {
+    console.error('div.tick-eps element not found!');
+  }
+
+  // Update the item-type
+  const ItemType = document.querySelector('.item-type');
+  if (ItemType) {
+    ItemType.textContent = animeData.type; // Update item-type
+  } else {
+    console.error('span.item-type element not found!');
+  }
+
+  // Update the item-duration
+  const ItemDuration = document.querySelector('.item-duration');
+  if (ItemDuration) {
+    ItemDuration.textContent = animeData.duration; // Update item-duration
+  } else {
+    console.error('span.item-duration element not found!');
+  }
+
+  // Update the film-buttons' href
+  const filmButtons = document.querySelector('.film-buttons a'); // Target the <a> tag inside .film-buttons
+  if (filmButtons) {
+    if (animeData && animeData.page) {
+      // Ensure animeData.page exists
+      filmButtons.setAttribute('href', `../watch/${animeData.page}.html`); // Update the href
+    } else {
+      console.error('animeData.page is missing or invalid!');
+    }
+  } else {
+    console.error('.film-buttons <a> element not found!');
+  }
 }
 
 // Function to update the poster image source and alt attributes
