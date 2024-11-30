@@ -183,14 +183,15 @@ function updateAnimeInfo(animeData) {
   }
 
   const items = aniscInfo.querySelectorAll('.item');
-  const filmDes = document.querySelector('.film-description');
 
   if (items[0]) {
     const textDiv = items[0].querySelector('.text');
     if (textDiv) textDiv.textContent = animeData.description;
 
     // Update the film-description div with the description
-    const filmDescriptionDiv = filmDes.querySelector('.text');
+    const filmDescriptionDiv = document
+      .querySelector('.film-description')
+      .querySelector('.text');
     if (filmDescriptionDiv)
       filmDescriptionDiv.textContent = animeData.description;
   }
