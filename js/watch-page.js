@@ -82,6 +82,22 @@ function updateBreadcrumb(animeData) {
   }
 }
 
+// Function to update the poster image source and alt attributes
+function updatePosterImage(animeData) {
+  // Select the img element with class 'film-poster-img'
+  const posterImage = document.querySelector('img.film-poster-img');
+  if (!posterImage) {
+    console.error('Poster image element not found!');
+    return;
+  }
+
+  // Update the src attribute with the poster URL from the animeData
+  posterImage.setAttribute('src', animeData.poster);
+
+  // Update the alt attribute with the animeEnglish from the animeData
+  posterImage.setAttribute('alt', animeData.animeEnglish);
+}
+
 // Function to create the episode list
 function createEpisodeList(data) {
   const detailInforContent = document.querySelector('.detail-infor-content');
@@ -442,7 +458,10 @@ window.onload = function () {
         // Step 4: Update the breadcrumb with the matching anime type and text
         updateBreadcrumb(matchingAnime[0]);
 
-        // Step 5: Create the episode list with the matched data
+        // Step 5: Update the poster image source and alt attributes
+        updatePosterImage(matchingAnime[0]);
+
+        // Step 6: Create the episode list with the matched data
         createEpisodeList(matchingAnime[0]);
       } else {
         console.warn('No matching anime found for this page.');
