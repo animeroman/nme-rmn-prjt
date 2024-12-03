@@ -665,6 +665,9 @@ window.onload = function () {
     .catch(error => {
       console.error('Error fetching JSON:', error);
     });
+
+  // window.onload for recommend.js: Fetch and display recommendations
+  fetchAndDisplayRecommendations(currentPage);
 };
 
 // Utility function to find the current anime in the JSON data

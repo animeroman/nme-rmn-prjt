@@ -2,7 +2,7 @@
 
 // JSON data endpoint for anime information
 const endpoint_Recommend =
-  'https://animeroman.github.io/nme-rmn-prjt/json/export2.json';
+  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
 
 // Function to fetch and display recommendations
 function fetchAndDisplayRecommendations(currentPage) {
@@ -20,7 +20,7 @@ function fetchAndDisplayRecommendations(currentPage) {
 
       console.log('Current Anime:', currentAnime);
 
-      // Find similar anime based on genres
+      // Find similar anime based on genres and score
       const similarAnime = findSimilarAnime(currentAnime, data);
 
       console.log('Similar Anime:', similarAnime);
@@ -33,15 +33,39 @@ function fetchAndDisplayRecommendations(currentPage) {
     });
 }
 
-// Function to find similar anime based on genres
+// Function to find similar anime based on genres and score
 function findSimilarAnime(currentAnime, allAnime) {
   return allAnime
-    .filter(anime => {
-      // Exclude the current anime from recommendations
-      if (anime.page === currentAnime.page) return false;
+    .filter(anime => anime.page !== currentAnime.page) // Exclude the current anime
+    .map(anime => {
+      // Calculate matching genres and unrelated categories
+      const matchingGenres = anime.genres.filter(genre =>
+        currentAnime.genres.includes(genre)
+      );
+      const unrelatedGenres = anime.genres.filter(
+        genre => !currentAnime.genres.includes(genre)
+      );
 
-      // Check for shared genres
-      return anime.genres.some(genre => currentAnime.genres.includes(genre));
+      return {
+        ...anime,
+        matchingGenresCount: matchingGenres.length,
+        unrelatedGenresCount: unrelatedGenres.length,
+        score: parseFloat(anime.score) || 0, // Ensure score is a number
+      };
+    })
+    .sort((a, b) => {
+      // Sort by the number of matching genres (descending)
+      if (b.matchingGenresCount !== a.matchingGenresCount) {
+        return b.matchingGenresCount - a.matchingGenresCount;
+      }
+
+      // Then sort by the number of unrelated genres (ascending)
+      if (a.unrelatedGenresCount !== b.unrelatedGenresCount) {
+        return a.unrelatedGenresCount - b.unrelatedGenresCount;
+      }
+
+      // Finally, sort by score (descending) as a tie-breaker
+      return b.score - a.score;
     })
     .slice(0, 18); // Limit to 18 recommendations
 }
@@ -59,9 +83,10 @@ function updateRecommendationsSection(similarAnime) {
   recommendationsContainer.innerHTML = '';
 
   // Populate with similar anime
-  similarAnime.forEach(anime => {
+  similarAnime.forEach((anime, index) => {
+    const isHighlighted = index === 0; // Highlight the first anime in the sorted list
     const recommendationHTML = `
-      <div class="flw-item">
+      <div class="flw-item ${isHighlighted ? 'highlight' : ''}">
         <div class="film-poster">
           <div class="tick tick-rate">18+</div>
           <div class="tick ltr">
@@ -102,6 +127,8 @@ function updateRecommendationsSection(similarAnime) {
             <span class="fdi-item">${anime.type}</span>
             <span class="dot"></span>
             <span class="fdi-item fdi-duration">${anime.duration}</span>
+            <span class="dot"></span>
+            <span class="fdi-item fdi-score">${anime.score.toFixed(2)}</span>
           </div>
         </div>
         <div class="clearfix"></div>
@@ -113,17 +140,3 @@ function updateRecommendationsSection(similarAnime) {
     );
   });
 }
-
-// Script initialization (mimicking watch-page.js style)
-window.onload = function () {
-  // Step 1: Extract the "page" part from the URL (e.g., 'sgt-frog-516.html')
-  const currentPage = window.location.pathname
-    .split('/')
-    .pop()
-    .replace('.html', '');
-
-  console.log(`Current page: ${currentPage}`); // Result: 'sgt-frog-516'
-
-  // Step 2: Fetch and display recommendations
-  fetchAndDisplayRecommendations(currentPage);
-};
