@@ -35,7 +35,10 @@ def get_anime_details(anime_id):
         poster_link, score, type_value = None, None, None
         status_value, duration_value, season_value = None, None, None
         rating_value, anime_original_value, date_start, date_end, eposide_count = None, None, None, None, None
-        genres_list = []
+        genres_list, synonyms_list, japanese = [], [], None
+        english, german, spanish, french = None, None, None, None
+        studios_list, producers_list = [], []
+        description = None
 
         # Find details
         img_tag = soup.find('img', itemprop="image")
@@ -97,17 +100,60 @@ def get_anime_details(anime_id):
                 genre_links = div.find_all('a')
                 genres_list = [genre.text.strip() for genre in genre_links if genre.text.strip()]
 
+            # Handle synonyms
+            span_tag_synonyms = div.find('span', class_='dark_text', text="Synonyms:")
+            if span_tag_synonyms:
+                synonyms_text = span_tag_synonyms.next_sibling.strip() if span_tag_synonyms.next_sibling else None
+                if synonyms_text:
+                    synonyms_list = [synonym.strip() for synonym in synonyms_text.split(',')]
+
+            # Handle japanese
+            span_tag_japanese = div.find('span', class_='dark_text', text="Japanese:")
+            if span_tag_japanese:
+                japanese = span_tag_japanese.next_sibling.strip() if span_tag_japanese.next_sibling else None
+
+            # Handle studios
+            span_tag_studios = div.find('span', class_='dark_text', text="Studios:")
+            if span_tag_studios:
+                studio_links = div.find_all('a')
+                studios_list = [studio.text.strip() for studio in studio_links if studio.text.strip()]
+
+            # Handle producers
+            span_tag_producers = div.find('span', class_='dark_text', text="Producers:")
+            if span_tag_producers:
+                producer_links = div.find_all('a')
+                producers_list = [producer.text.strip() for producer in producer_links if producer.text.strip()]
+
+        # Handle alternative titles: English, German, Spanish, French
+        alt_titles_div = soup.find('div', class_='js-alternative-titles')
+        if alt_titles_div:
+            alt_spaceit_divs = alt_titles_div.find_all('div', class_='spaceit_pad')
+            for div in alt_spaceit_divs:
+                if div.find('span', class_='dark_text', text="English:"):
+                    english = div.find('span', class_='dark_text', text="English:").next_sibling.strip()
+                elif div.find('span', class_='dark_text', text="German:"):
+                    german = div.find('span', class_='dark_text', text="German:").next_sibling.strip()
+                elif div.find('span', class_='dark_text', text="Spanish:"):
+                    spanish = div.find('span', class_='dark_text', text="Spanish:").next_sibling.strip()
+                elif div.find('span', class_='dark_text', text="French:"):
+                    french = div.find('span', class_='dark_text', text="French:").next_sibling.strip()
+
+        # Handle description
+        description_tag = soup.find('p', itemprop="description")
+        if description_tag:
+            description = ''.join(description_tag.stripped_strings)  # Skip <br> parts and join strings
+
         title_tag = soup.find('h1', class_='title-name h1_bold_none')
         if title_tag:
             strong_tag = title_tag.find('strong')
             anime_original_value = strong_tag.text.strip() if strong_tag else None
 
-        return (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end, eposide_count, genres_list)
+        return (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end, eposide_count, genres_list, synonyms_list, japanese, english, german, spanish, french, studios_list, producers_list, description)
     except requests.HTTPError as http_err:
         print(f"HTTP error for ID {anime_id}: {http_err}")
     except Exception as e:
         print(f"Error fetching data for ID {anime_id}: {e}")
-    return (None, None, None, None, None, None, None, None, None, None, None, [])
+    return (None, None, None, None, None, None, None, None, None, None, None, [], [], None, None, None, None, None, [], [], None)
 
 # Process the large JSON file
 input_file_path = '/content/drive/My Drive/Colab Notebooks/pythons/files/export_fixed.json'
@@ -140,7 +186,7 @@ with open(input_file_path, 'r', encoding='utf-8') as file:
 
             # Update the entry with fetched details
             if details:
-                (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end, eposide_count, genres_list) = details
+                (poster_link, score, type_value, status_value, duration_value, season_value, rating_value, anime_original_value, date_start, date_end, eposide_count, genres_list, synonyms_list, japanese, english, german, spanish, french, studios_list, producers_list, description) = details
 
                 if poster_link:
                     entry['poster'] = poster_link
@@ -166,6 +212,24 @@ with open(input_file_path, 'r', encoding='utf-8') as file:
                     entry['eposideCount'] = eposide_count
                 if genres_list:
                     entry['genres'] = genres_list
+                if synonyms_list:
+                    entry['synonyms'] = synonyms_list
+                if japanese:
+                    entry['japanese'] = japanese
+                if english:
+                    entry['english'] = english
+                if german:
+                    entry['german'] = german
+                if spanish:
+                    entry['spanish'] = spanish
+                if french:
+                    entry['french'] = french
+                if studios_list:
+                    entry['studios'] = studios_list
+                if producers_list:
+                    entry['producers'] = producers_list
+                if description:
+                    entry['description'] = description
 
                 # Append the updated entry to the list
                 updated_data.append(entry)
@@ -188,4 +252,4 @@ with open(output_file_path, 'w', encoding='utf-8') as file:
 if os.path.exists(pickle_file_path):
     os.remove(pickle_file_path)
 
-print("JSON file updated with poster links, scores, types, statuses, durations, seasons, ratings, animeOriginal, dateStart, dateEnd, eposideCount, and genres.")
+print("JSON file updated with poster links, scores, types, statuses, durations, seasons, ratings, animeOriginal, dateStart, dateEnd, eposideCount, genres, synonyms, japanese, english, german, spanish, french, studios, producers, and description.")

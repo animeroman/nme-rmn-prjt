@@ -6,10 +6,10 @@ import time
 start_time = time.time()
 
 # Path to your input JSON file (line-delimited JSON)
-input_file = "C:/Users/User1/projects/AnimeRoman/pythons/files/export.json"
+input_file = "/content/drive/My Drive/Colab Notebooks/pythons/files/export_named.json"
 
 # Path to your output JSON file (valid JSON array)
-output_file = "C:/Users/User1/projects/AnimeRoman/json/export.json"
+output_file = "/content/drive/My Drive/Colab Notebooks/pythons/files/export_episod_adder.json"
 
 # Function to process the JSON file and add episodes
 def process_large_json(input_file, output_file):
