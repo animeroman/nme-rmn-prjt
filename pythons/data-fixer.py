@@ -47,7 +47,8 @@ with open(input_file_path, 'r') as infile:
             "language": "fixme",
             "page": "fixme",
             "poster": "fixme",
-            "description": "fixme"
+            "description": "fixme",
+            "connections": [{"id": "fixid","type": "fixtype"}]
         }
         
         # Append the converted entry to the list
