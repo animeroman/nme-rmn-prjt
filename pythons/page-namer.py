@@ -7,10 +7,10 @@ import time
 start_time = time.time()
 
 # Path to your input JSON file
-input_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export.json'
+input_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export_cmerged.json'
 
 # Path to your output JSON file
-output_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export_with_names.json'
+output_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export_named.json'
 
 # Function to process animeEnglish and generate the 'page' link, including the 'id'
 def generate_page_link(anime_english, anime_id):

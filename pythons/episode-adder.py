@@ -9,7 +9,7 @@ start_time = time.time()
 input_file = "/content/drive/My Drive/Colab Notebooks/pythons/files/export_named.json"
 
 # Path to your output JSON file (valid JSON array)
-output_file = "/content/drive/My Drive/Colab Notebooks/pythons/files/export_episod_adder.json"
+output_file = "/content/drive/My Drive/Colab Notebooks/pythons/files/export_episoded.json"
 
 # Function to process the JSON file and add episodes
 def process_large_json(input_file, output_file):
