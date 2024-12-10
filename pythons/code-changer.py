@@ -2,93 +2,9 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = '''<!--<div class="header-group">
-            <div class="anw-group">
-              <div class="zrg-title">
-                <span class="top">Join now</span
-                ><span class="bottom">AnimeRoman Group</span>
-              </div>
-              <div class="zrg-list">
-                <div class="item">
-                  <a
-                    href="https://discord.gg/animeroman"
-                    target="_blank"
-                    class="zr-social-button dc-btn"
-                    ><i class="fab fa-discord"></i
-                  ></a>
-                </div>
-                <div class="item">
-                  <a
-                    href="https://tinyurl.com/2y2yy3ba"
-                    target="_blank"
-                    class="zr-social-button tl-btn"
-                    ><i class="fab fa-telegram-plane"></i
-                  ></a>
-                </div>
-                <div class="item">
-                  <a
-                    href="https://new.reddit.com/r/AnimeRomanZone/"
-                    target="_blank"
-                    class="zr-social-button rd-btn"
-                    ><i class="fab fa-reddit-alien"></i
-                  ></a>
-                </div>
-                <div class="item">
-                  <a
-                    href="https://twitter.com/AnimeRomanOfficial"
-                    target="_blank"
-                    class="zr-social-button tw-btn"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>-->
-        </div>'''
+old_code = ''' '''
 
-new_code = '''<!--<div class="header-group">
-            <div class="anw-group">
-              <div class="zrg-title">
-                <span class="top">Join now</span
-                ><span class="bottom">AnimeRoman Group</span>
-              </div>
-              <div class="zrg-list">
-                <div class="item">
-                  <a
-                    href="https://discord.gg/animeroman"
-                    target="_blank"
-                    class="zr-social-button dc-btn"
-                    ><i class="fab fa-discord"></i
-                  ></a>
-                </div>
-                <div class="item">
-                  <a
-                    href="https://tinyurl.com/2y2yy3ba"
-                    target="_blank"
-                    class="zr-social-button tl-btn"
-                    ><i class="fab fa-telegram-plane"></i
-                  ></a>
-                </div>
-                <div class="item">
-                  <a
-                    href="https://new.reddit.com/r/AnimeRomanZone/"
-                    target="_blank"
-                    class="zr-social-button rd-btn"
-                    ><i class="fab fa-reddit-alien"></i
-                  ></a>
-                </div>
-                <div class="item">
-                  <a
-                    href="https://twitter.com/AnimeRomanOfficial"
-                    target="_blank"
-                    class="zr-social-button tw-btn"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-        </div>-->'''
+new_code = ''' '''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu

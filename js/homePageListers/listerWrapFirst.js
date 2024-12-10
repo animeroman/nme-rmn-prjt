@@ -1,4 +1,4 @@
-const resultsPerPageFirst = 8; // Number of results per page
+const resultsPerPageFirst = 12; // Number of results per page
 let currentPageFirst = 1; // Keep track of the current page
 let totalPagesFirst = 0; // Total pages based on the number of results
 let filterLetterFirst = ''; // Default filter by letter
