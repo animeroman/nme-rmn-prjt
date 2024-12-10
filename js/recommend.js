@@ -72,7 +72,7 @@ function findSimilarAnime(currentAnime, allAnime) {
 
 // Function to update the recommendations section in the HTML
 function updateRecommendationsSection(similarAnime) {
-  const recommendationsContainer = document.querySelector('.film_list-wrap');
+  const recommendationsContainer = document.querySelector('.recommned-wrapper');
 
   if (!recommendationsContainer) {
     console.error('Recommendations container not found!');
