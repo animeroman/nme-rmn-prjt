@@ -144,6 +144,14 @@ function updateAniscDetail(animeData) {
     console.error('span.item-duration element not found!');
   }
 
+  // Update the film-description
+  const filmDescription = document.querySelector('.film-description .text');
+  if (filmDescription) {
+    filmDescription.textContent = animeData.description; // Update film-description
+  } else {
+    console.error('.film-description element not found!');
+  }
+
   // Update the film-buttons' href
   const filmButtons = document.querySelector('.film-buttons a'); // Target the <a> tag inside .film-buttons
   if (filmButtons) {
@@ -184,17 +192,17 @@ function updateAnimeInfo(animeData) {
 
   const items = aniscInfo.querySelectorAll('.item');
 
-  if (items[0]) {
-    const textDiv = items[0].querySelector('.text');
-    if (textDiv) textDiv.textContent = animeData.description;
+  //   if (items[0]) {
+  //     const textDiv = items[0].querySelector('.text');
+  //     if (textDiv) textDiv.textContent = animeData.description;
 
-    // Update the film-description div with the description
-    const filmDescriptionDiv = document
-      .querySelector('.film-description')
-      .querySelector('.text');
-    if (filmDescriptionDiv)
-      filmDescriptionDiv.textContent = animeData.description;
-  }
+  //     // Update the film-description div with the description
+  //     const filmDescriptionDiv = document
+  //       .querySelector('.film-description')
+  //       .querySelector('.text');
+  //     if (filmDescriptionDiv)
+  //       filmDescriptionDiv.textContent = animeData.description;
+  //   }
 
   if (items[1]) {
     const nameSpan = items[1].querySelector('.name');
@@ -228,7 +236,7 @@ function updateAnimeInfo(animeData) {
   }
 
   if (items[7]) {
-    const scoreSpan = items[7].querySelector('span');
+    const scoreSpan = items[7].querySelector('.name');
     if (scoreSpan) scoreSpan.textContent = animeData.score;
   }
 

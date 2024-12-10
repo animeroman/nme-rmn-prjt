@@ -144,17 +144,20 @@ function updateAniscDetail(animeData) {
     console.error('span.item-duration element not found!');
   }
 
-  // Update the film-buttons' href
-  const filmButtons = document.querySelector('.film-buttons a'); // Target the <a> tag inside .film-buttons
-  if (filmButtons) {
-    if (animeData && animeData.page) {
-      // Ensure animeData.page exists
-      filmButtons.setAttribute('href', `../watch/${animeData.page}.html`); // Update the href
-    } else {
-      console.error('animeData.page is missing or invalid!');
-    }
+  // Update the film-description
+  const filmDescription = document.querySelector('.film-description .text');
+  if (filmDescription) {
+    filmDescription.textContent = animeData.description; // Update film-description
   } else {
-    console.error('.film-buttons <a> element not found!');
+    console.error('.film-description element not found!');
+  }
+
+  // Update the film-description
+  const blockView = document.querySelector('.block a');
+  if (blockView) {
+    blockView.setAttribute('href', `../page/${animeData.page}.html`); // Update block a
+  } else {
+    console.error('.block a element not found!');
   }
 }
 
@@ -172,122 +175,6 @@ function updatePosterImage(animeData) {
 
   // Update the alt attribute with the animeEnglish from the animeData
   posterImage.setAttribute('alt', animeData.animeEnglish);
-}
-
-// Function to update anime information in the anisc-info section
-function updateAnimeInfo(animeData) {
-  const aniscInfo = document.querySelector('.anisc-info');
-  if (!aniscInfo) {
-    console.error('anisc-info container not found!');
-    return;
-  }
-
-  const items = aniscInfo.querySelectorAll('.item');
-
-  if (items[0]) {
-    const textDiv = items[0].querySelector('.text');
-    if (textDiv) textDiv.textContent = animeData.description;
-
-    // Update the film-description div with the description
-    const filmDescriptionDiv = document
-      .querySelector('.film-description')
-      .querySelector('.text');
-    if (filmDescriptionDiv)
-      filmDescriptionDiv.textContent = animeData.description;
-  }
-
-  if (items[1]) {
-    const nameSpan = items[1].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.japanese;
-  }
-
-  if (items[2]) {
-    const nameSpan = items[2].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.synonyms[0];
-  }
-
-  if (items[3]) {
-    const nameSpan = items[3].querySelector('.name');
-    if (nameSpan)
-      nameSpan.textContent = `${animeData.dateStart} to ${animeData.dateEnd}`;
-  }
-
-  if (items[4]) {
-    const nameSpan = items[4].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.season;
-  }
-
-  if (items[5]) {
-    const nameSpan = items[5].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.duration;
-  }
-
-  if (items[6]) {
-    const nameSpan = items[6].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.status;
-  }
-
-  if (items[7]) {
-    const scoreSpan = items[7].querySelector('span');
-    if (scoreSpan) scoreSpan.textContent = animeData.score;
-  }
-
-  if (items[8]) {
-    // Populate genres for the ninth item
-    const genreContainer = items[8];
-    genreContainer.innerHTML = `<span class="item-head">Genres:</span>`; // Clear existing content and add header
-
-    // Add each genre as a link
-    animeData.genres.forEach(genre => {
-      const genreLink = document.createElement('a');
-      genreLink.href = `genre/${genre.toLowerCase().replace(/\s+/g, '-')}.html`;
-      genreLink.title = genre;
-      genreLink.textContent = genre;
-      genreContainer.appendChild(genreLink);
-    });
-  }
-
-  if (items[9]) {
-    // Populate studios for the tenth item
-    const studiosContainer = items[9];
-    studiosContainer.innerHTML = `<span class="item-head">Studios:</span>`; // Clear existing content and add header
-
-    // Add each studio as a link
-    animeData.studios.forEach(studio => {
-      const studioLink = document.createElement('a');
-      studioLink.classList.add('name');
-      studioLink.href = `producer/${studio
-        .toLowerCase()
-        .replace(/\s+/g, '-')}.html`;
-      studioLink.textContent = studio;
-
-      // Add a comma if it's not the last studio
-      studiosContainer.appendChild(studioLink);
-      if (studio !== animeData.studios[animeData.studios.length - 1]) {
-        studiosContainer.appendChild(document.createTextNode(', '));
-      }
-    });
-  }
-
-  if (items[10]) {
-    // Populate producers for the eleventh item
-    const producersContainer = items[10];
-    producersContainer.innerHTML = `<span class="item-head">Producers:</span>`; // Clear existing content and add header
-
-    animeData.producers.forEach(producer => {
-      const producerLink = document.createElement('a');
-      producerLink.classList.add('name');
-      producerLink.href = `producer/${producer
-        .toLowerCase()
-        .replace(/\s+/g, '-')}.html`;
-      producerLink.textContent = producer;
-
-      producersContainer.appendChild(producerLink);
-      if (producer !== animeData.producers[animeData.producers.length - 1]) {
-        producersContainer.appendChild(document.createTextNode(', '));
-      }
-    });
-  }
 }
 
 // Function to create the episode list
@@ -715,13 +602,10 @@ window.onload = function () {
         // Step 5: Update the poster image source and alt attributes
         updatePosterImage(matchingAnime[0]);
 
-        // Step 6: Update anime information in the anisc-info section
-        updateAnimeInfo(matchingAnime[0]);
-
-        // Step 7: Create the episode list with the matched data
+        // Step 6: Create the episode list with the matched data
         createEpisodeList(matchingAnime[0]);
 
-        // Step 8: Update connections
+        // Step 7: Update connections
         if (
           matchingAnime[0].connections &&
           matchingAnime[0].connections.length > 0
