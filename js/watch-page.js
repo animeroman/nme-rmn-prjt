@@ -513,7 +513,7 @@ function selectDefaultServer() {
 }
 
 // Function to generate connection HTML and add it to the page
-function updateConnections(connections, allAnimeData) {
+function updateConnections(connections, allAnimeData, currentPage) {
   const connectionWrapper = document.querySelector('.connection-wrapper');
   if (!connectionWrapper) {
     console.error('Connection wrapper element not found!');
@@ -524,53 +524,79 @@ function updateConnections(connections, allAnimeData) {
   connectionWrapper.innerHTML = '';
 
   // Match connection ids with anime data
-  const matchedConnections = connections.map(conn =>
-    allAnimeData.find(anime => anime.id === conn.id)
-  );
+  let matchedConnections = connections
+    .map(conn => {
+      const animeMatch = allAnimeData.find(anime => anime.id === conn.id);
+      if (animeMatch) {
+        return { ...animeMatch, connectionType: conn.type };
+      }
+      return null;
+    })
+    .filter(Boolean);
+
+  // Sort by dateStart (oldest to newest)
+  matchedConnections.sort((a, b) => {
+    const dateA = new Date(a.dateStart);
+    const dateB = new Date(b.dateStart);
+    return dateA - dateB;
+  });
 
   // Generate HTML for each matched connection
   matchedConnections.forEach(connection => {
-    if (connection) {
-      const connectionHTML = `
-        <div class="flw-item">
-          <div class="film-poster">
-            <div class="tick tick-rate">18+</div>
+    // Apply "flw-item-active" if the connection's id matches the currentPage
+    const isActive = currentPage.includes(connection.id)
+      ? 'flw-item-active'
+      : '';
 
-              <div class="tick ltr">
-                <div class="tick-item tick-sub">
-                  <i class="fas fa-closed-captioning mr-1"></i>13
-                </div>
-
-                <div class="tick-item tick-dub">
-                  <i class="fas fa-microphone mr-1"></i>13
-                </div>
-
-              <div class="tick-item tick-eps">13</div>
+    const connectionHTML = `
+      <div class="flw-item ${isActive}">
+        <div class="film-poster">
+          <div class="tick tick-rate">18+</div>
+          <div class="tick ltr">
+            <div class="tick-item tick-sub">
+              <i class="fas fa-closed-captioning mr-1"></i>${
+                connection.eposideCount || 0
+              }
             </div>
-
-            <img data-src="${connection.poster}" src="${connection.poster}" class="film-poster-img lazyloaded" alt="${connection.animeEnglish}">
-            <a href="watch/${connection.page}" class="film-poster-ahref item-qtip" title="${connection.animeEnglish}">
-              <i class="fas fa-play"></i>
+            <div class="tick-item tick-dub">
+              <i class="fas fa-microphone mr-1"></i>${
+                connection.eposideCount || 0
+              }
+            </div>
+            <div class="tick-item tick-eps">${
+              connection.eposideCount || 0
+            }</div>
+          </div>
+          <img data-src="${connection.poster}" src="${
+      connection.poster
+    }" class="film-poster-img lazyloaded" alt="${connection.animeEnglish}">
+          <a href="watch/${
+            connection.page
+          }" class="film-poster-ahref item-qtip" title="${
+      connection.animeEnglish
+    }">
+            <i class="fas fa-play"></i>
+          </a>
+        </div>
+        <div class="film-detail">
+          <h3 class="film-name">
+            <a href="page/${connection.page}" title="${
+      connection.animeEnglish
+    }" class="dynamic-name" data-jname="${connection.animeOriginal}">
+              ${connection.animeEnglish}
             </a>
+          </h3>
+          <div class="fd-infor">
+            <span class="fdi-item">${connection.type}</span>
+            <span class="dot"></span>
+            <span class="fdi-item fdi-duration">${connection.duration}</span>
+            <span class="dot"></span>
+            <span class="fdi-item fdi-score">${connection.score}</span>
           </div>
-          <div class="film-detail">
-            <h3 class="film-name">
-              <a href="page/${connection.page}" title="${connection.animeEnglish}" class="dynamic-name" data-jname="${connection.animeOriginal}">
-                ${connection.animeEnglish}
-              </a>
-            </h3>
-            <div class="fd-infor">
-              <span class="fdi-item">${connection.type}</span>
-              <span class="dot"></span>
-              <span class="fdi-item fdi-duration">${connection.duration}</span>
-              <span class="dot"></span>
-              <span class="fdi-item fdi-score">${connection.score}</span>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>`;
-      connectionWrapper.insertAdjacentHTML('beforeend', connectionHTML);
-    }
+        </div>
+        <div class="clearfix"></div>
+      </div>`;
+    connectionWrapper.insertAdjacentHTML('beforeend', connectionHTML);
   });
 }
 
@@ -610,7 +636,7 @@ window.onload = function () {
           matchingAnime[0].connections &&
           matchingAnime[0].connections.length > 0
         ) {
-          updateConnections(matchingAnime[0].connections, anime);
+          updateConnections(matchingAnime[0].connections, anime, currentPage);
         }
       } else {
         console.warn('No matching anime found for this page.');
