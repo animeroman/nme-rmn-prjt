@@ -1,8 +1,7 @@
 'use strict';
 
 // JSON data endpoint for anime information
-const endpoint_Recommend =
-  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
+const endpoint_Recommend = 'https://romanapi.fly.dev/api/anime';
 
 // Function to fetch and display recommendations
 function fetchAndDisplayRecommendations(currentPage) {

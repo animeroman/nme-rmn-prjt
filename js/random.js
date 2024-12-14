@@ -1,4 +1,4 @@
-const endpoint = 'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
+const endpoint = 'https://romanapi.fly.dev/api/anime';
 
 const searchDataEngineRandom = [];
 fetch(endpoint)

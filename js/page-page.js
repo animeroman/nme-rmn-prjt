@@ -1,7 +1,6 @@
 'use strict';
 // JSON data point
-const endpoint_Watch =
-  'https://animeroman.github.io/nme-rmn-prjt/json/export2.json';
+const endpoint_Watch = 'https://romanapi.fly.dev/api/anime';
 
 // Store the selected server type globally to remember it across episodes
 let selectedServerType = localStorage.getItem('selectedServerType') || 'sub'; // Default to 'sub'

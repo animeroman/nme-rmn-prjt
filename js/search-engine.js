@@ -5,8 +5,7 @@ let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 
 // const endpoint = 'json/search.json';
-const endpoint_engine =
-  'https://animeroman.github.io/nme-rmn-prjt/json/export.json';
+const endpoint_engine = 'https://romanapi.fly.dev/api/anime';
 
 const searchDataEngine = [];
 fetch(endpoint_engine)

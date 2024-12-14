@@ -5,8 +5,7 @@ let filterLetterSecond = ''; // Default filter by letter
 let filterCategorySecond = { genres: [] }; // Default filter by category, including genres as an array
 let sortCriteriaSecond = { field: '', order: 'asc' }; // Default sorting by field and order
 
-const jsonDataUrlSecond =
-  'https://animeroman.github.io/Source/json/main-search.json';
+const jsonDataUrlSecond = 'https://romanapi.fly.dev/api/anime';
 const searchDataListerSecond = [];
 
 fetch(jsonDataUrlSecond)

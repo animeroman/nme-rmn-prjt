@@ -1,1 +1,1 @@
-export const endpoint = 'https://animeroman.github.io/Source/json/search.json';
+export const endpoint = 'https://romanapi.fly.dev/api/anime';
