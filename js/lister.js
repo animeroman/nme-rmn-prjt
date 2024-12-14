@@ -255,3 +255,8 @@ function setSort(field, order = 'asc') {
   currentPage = 1; // Reset to the first page
   displayMatches(searchDataLister, currentPage); // Update the results based on the new sorting
 }
+
+// Attach to the global window object
+window.setFilterLetter = setFilterLetter;
+window.setSort = setSort;
+window.goToPage = goToPage;
