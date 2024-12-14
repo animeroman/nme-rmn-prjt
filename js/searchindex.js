@@ -1,6 +1,5 @@
-('use strict');
-
-const endpoint = 'https://romanapi.fly.dev/api/anime';
+'use strict';
+import { endpoint } from './config.js';
 
 const searchData = [];
 fetch(endpoint)

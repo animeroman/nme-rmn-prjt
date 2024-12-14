@@ -1,14 +1,12 @@
-('use strict');
+'use strict';
+import { endpoint } from './config.js';
 
 const resultsPerPage = 36;
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 
-// const endpoint = 'json/search.json';
-const endpoint_engine = 'https://romanapi.fly.dev/api/anime';
-
 const searchDataEngine = [];
-fetch(endpoint_engine)
+fetch(endpoint)
   .then(blob => blob.json())
   .then(data => {
     searchDataEngine.push(...data);

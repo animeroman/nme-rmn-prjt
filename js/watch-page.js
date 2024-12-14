@@ -1,7 +1,5 @@
 'use strict';
-// JSON data point
-const endpoint_Watch =
-  'https://romanapi.fly.dev/api/anime';
+import { endpoint } from './config.js';
 
 // Store the selected server type globally to remember it across episodes
 let selectedServerType = localStorage.getItem('selectedServerType') || 'sub'; // Default to 'sub'
@@ -611,7 +609,7 @@ window.onload = function () {
 
   // Step 2: Fetch data from the JSON endpoint
   const anime = [];
-  fetch(endpoint_Watch)
+  fetch(endpoint)
     .then(blob => blob.json())
     .then(data => {
       anime.push(...data); // Push the fetched data into the 'anime' array

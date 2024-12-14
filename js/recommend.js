@@ -1,12 +1,10 @@
 'use strict';
-
-// JSON data endpoint for anime information
-const endpoint_Recommend = 'https://romanapi.fly.dev/api/anime';
+import { endpoint } from './config.js';
 
 // Function to fetch and display recommendations
 function fetchAndDisplayRecommendations(currentPage) {
   // Fetch data from the JSON endpoint
-  fetch(endpoint_Recommend)
+  fetch(endpoint)
     .then(response => response.json())
     .then(data => {
       // Find the current anime data

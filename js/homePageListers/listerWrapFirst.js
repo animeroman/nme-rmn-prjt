@@ -1,3 +1,5 @@
+import { endpoint } from '../config.js';
+
 const resultsPerPageFirst = 12; // Number of results per page
 let currentPageFirst = 1; // Keep track of the current page
 let totalPagesFirst = 0; // Total pages based on the number of results
@@ -5,10 +7,9 @@ let filterLetterFirst = ''; // Default filter by letter
 let filterCategoryFirst = { genres: [] }; // Default filter by category, including genres as an array
 let sortCriteriaFirst = { field: '', order: 'asc' }; // Default sorting by field and order
 
-const jsonDataUrlFirst = 'https://romanapi.fly.dev/api/anime';
 const searchDataListerFirst = [];
 
-fetch(jsonDataUrlFirst)
+fetch(endpoint)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
@@ -176,3 +177,6 @@ function setSortFirst(field, order = 'asc') {
   currentPageFirst = 1; // Reset to the first page
   displayMatchesFirst(searchDataListerFirst, currentPageFirst); // Update the results based on the new sorting
 }
+
+setFilterWrapFirst('a');
+setSortFirst('score', 'desc');

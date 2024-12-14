@@ -1,1 +1,2 @@
-export const endpoint = 'https://romanapi.fly.dev/api/anime';
+export const endpoint =
+  'https://animeroman.github.io/Source/json/main-search.json';

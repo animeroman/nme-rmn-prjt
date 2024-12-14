@@ -1,10 +1,8 @@
-('use strict');
-
-// const endpoint = 'json/search.json';
-const endpoint_search = 'https://romanapi.fly.dev/api/anime';
+'use strict';
+import { endpoint } from './config.js';
 
 const searchData = [];
-fetch(endpoint_search)
+fetch(endpoint)
   .then(blob => blob.json())
   .then(data => searchData.push(...data));
 

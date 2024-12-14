@@ -1,3 +1,5 @@
+import { endpoint } from './config.js';
+
 const resultsPerPage = 36; // Number of results per page
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
@@ -5,10 +7,9 @@ let filterLetter = ''; // Default filter by letter
 let filterCategory = { genres: [] }; // Default filter by category, including genres as an array
 let sortCriteria = { field: '', order: 'asc' }; // Default sorting by field and order
 
-const jsonDataUrl = 'https://romanapi.fly.dev/api/anime';
 const searchDataLister = [];
 
-fetch(jsonDataUrl)
+fetch(endpoint)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
