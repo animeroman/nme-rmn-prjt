@@ -2,7 +2,7 @@
 import { endpoint } from './config.js';
 
 // Function to fetch and display recommendations
-function fetchAndDisplayRecommendations(currentPage) {
+export function fetchAndDisplayRecommendations(currentPage) {
   // Fetch data from the JSON endpoint
   fetch(endpoint)
     .then(response => response.json())

@@ -1,5 +1,6 @@
 'use strict';
 import { endpoint } from './config.js';
+import { fetchAndDisplayRecommendations } from './recommend.js';
 
 // Store the selected server type globally to remember it across episodes
 let selectedServerType = localStorage.getItem('selectedServerType') || 'sub'; // Default to 'sub'
