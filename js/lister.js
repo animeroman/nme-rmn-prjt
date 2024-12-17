@@ -258,5 +258,6 @@ function setSort(field, order = 'asc') {
 
 // Attach to the global window object
 window.setFilterLetter = setFilterLetter;
+window.setFilter = setFilter;
 window.setSort = setSort;
 window.goToPage = goToPage;
