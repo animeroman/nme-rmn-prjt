@@ -398,9 +398,7 @@ function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
           <div class="content">
             <div class="server-notice">
               <strong>You are watching <b>Episode ${selectedEpisode}</b></strong>
-
-              If current server doesn't work please try other
-              servers beside.
+              If current server doesn't work please try other servers beside.
             </div>
           </div>
         </div>
@@ -409,22 +407,21 @@ function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
           <div class="ps__-title">
             <i class="fas fa-closed-captioning mr-2"></i>SUB:
           </div>
-
           <div class="ps__-list">
-            <div
-              class="item server-item"
-              data-src="${subServer1}"
-            >
-              <a href="javascript:;" class="btn" data-type="sub" data-index="1">SUB-1</a>
+            <div class="item server-item" data-src="${subServer1}">
+              ${
+                subServer1 === 'null'
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="sub" data-index="1">+ADD</a>`
+                  : `<a href="javascript:;" class="btn" data-type="sub" data-index="1">SUB-1</a>`
+              }
             </div>
-
-            <div
-              class="item server-item"
-              data-src="${subServer2}"
-            >
-              <a href="javascript:;" class="btn" data-type="sub" data-index="2">SUB-2</a>
+            <div class="item server-item" data-src="${subServer2}">
+              ${
+                subServer2 === 'null'
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="sub" data-index="2">+ADD</a>`
+                  : `<a href="javascript:;" class="btn" data-type="sub" data-index="2">SUB-2</a>`
+              }
             </div>
-
           </div>
           <div class="clearfix"></div>
         </div>
@@ -433,26 +430,26 @@ function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
           <div class="ps__-title">
             <i class="fas fa-microphone-alt mr-2"></i>DUB:
           </div>
-
           <div class="ps__-list">
-            <div
-              class="item server-item"
-              data-src="${dubServer1}"
-            >
-              <a href="javascript:;" class="btn" data-type="dub" data-index="1">DUB-1</a>
+            <div class="item server-item" data-src="${dubServer1}">
+              ${
+                dubServer1 === 'null'
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="dub" data-index="1">+ADD</a>`
+                  : `<a href="javascript:;" class="btn" data-type="dub" data-index="1">DUB-1</a>`
+              }
             </div>
-
-            <div
-              class="item server-item"
-              data-src="${dubServer2}"
-            >
-              <a href="javascript:;" class="btn" data-type="dub" data-index="2">DUB-2</a>
+            <div class="item server-item" data-src="${dubServer2}">
+              ${
+                dubServer2 === 'null'
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="dub" data-index="2">+ADD</a>`
+                  : `<a href="javascript:;" class="btn" data-type="dub" data-index="2">DUB-2</a>`
+              }
             </div>      
           </div>
           <div class="clearfix"></div>
         </div>
-      </div>
-          `;
+      </div>`;
+
   // Now attach event listeners to the dynamically inserted buttons
   attachServerClickEvents();
 
