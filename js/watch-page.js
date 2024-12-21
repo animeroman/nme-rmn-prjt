@@ -336,6 +336,9 @@ function createEpisodeList(data) {
         // Store the selected episode in localStorage
         localStorage.setItem('selectedEpisode', episodeNumber);
 
+        // Update the window location
+        history.pushState(null, '', `?episode=${episodeNumber}`);
+
         // Remove 'active' class from previously selected episode
         container.querySelectorAll('.ep-item').forEach(ep => {
           ep.classList.remove('active');
@@ -438,13 +441,11 @@ function updatePagination() {
 }
 
 // Modified createAndInsertModals function to include updatePagination
-function createAndInsertModals(
-  subServer1,
-  subServer2,
-  dubServer1,
-  dubServer2,
-  episodeNumber
-) {
+function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
+  // Extract the episode number from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const episodeNumber = urlParams.get('episode') || 1; // Default to 1 if no episode number is provided
+
   updatePagination(); // Clear old modals before creating new ones
 
   const footer = document.getElementById('modal-video');
