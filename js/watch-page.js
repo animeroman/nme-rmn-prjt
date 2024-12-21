@@ -236,7 +236,44 @@ function createEpisodeList(data) {
   }
 
   // Function to display episodes for the selected section
+
   function displayEpisodesForSection(episodes, start, end) {
+    const updateModals = () => {
+      // Refresh modal contents dynamically based on the selected episode
+      const selectedEpisodeElement = document.querySelector('.ep-item.active');
+      if (selectedEpisodeElement) {
+        const episodeNumber =
+          selectedEpisodeElement.getAttribute('data-number');
+        const subServer1 =
+          selectedEpisodeElement.getAttribute('data-subserver1');
+        const subServer2 =
+          selectedEpisodeElement.getAttribute('data-subserver2');
+        const dubServer1 =
+          selectedEpisodeElement.getAttribute('data-dubserver1');
+        const dubServer2 =
+          selectedEpisodeElement.getAttribute('data-dubserver2');
+
+        document.getElementById('episode-number-sub1').textContent =
+          episodeNumber;
+        document.getElementById('episode-number-sub2').textContent =
+          episodeNumber;
+        document.getElementById('episode-number-dub1').textContent =
+          episodeNumber;
+        document.getElementById('episode-number-dub2').textContent =
+          episodeNumber;
+
+        document.getElementById('link-sub1').value = subServer1 || '';
+        document.getElementById('link-sub2').value = subServer2 || '';
+        document.getElementById('link-dub1').value = dubServer1 || '';
+        document.getElementById('link-dub2').value = dubServer2 || '';
+      }
+    };
+
+    // Attach modal update logic to episode section changes
+    updateModals();
+
+    // Call the rest of the existing logic
+
     const container = document.querySelector('.ss-list');
     if (!container) {
       console.error('Episode container not found!');
@@ -388,9 +425,110 @@ function createEpisodeList(data) {
   initializeEpisodeDisplay(totalEpisodes, data.episodes);
 }
 
+// Function to update pagination and dynamically refresh modals
+function updatePagination() {
+  const footer = document.getElementById('modal-video');
+  if (footer) {
+    footer.innerHTML = ''; // Clear existing modals
+  }
+  const playerServers = document.querySelector('.player-servers');
+  if (playerServers) {
+    playerServers.innerHTML = ''; // Clear server content
+  }
+}
+
+// Modified createAndInsertModals function to include updatePagination
+function createAndInsertModals(
+  subServer1,
+  subServer2,
+  dubServer1,
+  dubServer2,
+  episodeNumber
+) {
+  updatePagination(); // Clear old modals before creating new ones
+
+  const footer = document.getElementById('modal-video');
+  if (!footer) {
+    console.error('Footer element not found!');
+    return;
+  }
+
+  const modalTemplates = [
+    {
+      id: 'modalcharacters-sub1',
+      title: `Embed link required (Episode ${episodeNumber}, sub. video 1)`,
+      inputId: 'link-sub1',
+      inputValue: subServer1 || '',
+    },
+    {
+      id: 'modalcharacters-sub2',
+      title: `Embed link required (Episode ${episodeNumber}, sub. video 2)`,
+      inputId: 'link-sub2',
+      inputValue: subServer2 || '',
+    },
+    {
+      id: 'modalcharacters-dub1',
+      title: `Embed link required (Episode ${episodeNumber}, dub. video 1)`,
+      inputId: 'link-dub1',
+      inputValue: dubServer1 || '',
+    },
+    {
+      id: 'modalcharacters-dub2',
+      title: `Embed link required (Episode ${episodeNumber}, dub. video 2)`,
+      inputId: 'link-dub2',
+      inputValue: dubServer2 || '',
+    },
+  ];
+
+  modalTemplates.forEach(template => {
+    const modalHTML = `
+      <div class="modal fade premodal premodal-characters" id="${template.id}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-left">${template.title}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="alert alert-danger mb-3" id="link-error" style="display: none;"></div>
+              <form class="preform" method="post">
+                <div class="form-group">
+                  <label class="prelabel" for="${template.inputId}">Add link (YouTube, Drive, Vimeo, etc.)</label>
+                  <input type="url" class="form-control" id="${template.inputId}" placeholder="https://example.com" name="link" value="${template.inputValue}" required="">
+                </div>
+                <div class="form-group link-btn mb-0">
+                  <button class="btn btn-primary btn-block">Submit</button>
+                  <div class="loading-relative" style="display: none;">
+                    <div class="loading">
+                      <div class="span1"></div>
+                      <div class="span2"></div>
+                      <div class="span3"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+    footer.insertAdjacentHTML('beforeend', modalHTML);
+  });
+}
+
 // Function to update the server list and handle server selection
 function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
-  // Alternatively, if you have a server list section, update that with the available servers
+  updatePagination(); // Clear old servers and modals
+  createAndInsertModals(
+    subServer1,
+    subServer2,
+    dubServer1,
+    dubServer2,
+    selectedEpisode
+  );
+
   const serversContent = document.querySelector('.player-servers');
   serversContent.innerHTML = `
       <div id="servers-content">
@@ -411,14 +549,14 @@ function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
             <div class="item server-item" data-src="${subServer1}">
               ${
                 subServer1 === 'null'
-                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="sub" data-index="1">+ADD</a>`
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters-sub1" data-type="sub" data-index="1">+ADD</a>`
                   : `<a href="javascript:;" class="btn" data-type="sub" data-index="1">SUB-1</a>`
               }
             </div>
             <div class="item server-item" data-src="${subServer2}">
               ${
                 subServer2 === 'null'
-                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="sub" data-index="2">+ADD</a>`
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters-sub2" data-type="sub" data-index="2">+ADD</a>`
                   : `<a href="javascript:;" class="btn" data-type="sub" data-index="2">SUB-2</a>`
               }
             </div>
@@ -426,7 +564,7 @@ function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
           <div class="clearfix"></div>
         </div>
 
-        <div class="ps_-block ps_-block-sub servers-dub">
+        <div class="ps_-block ps_-block-dub servers-dub">
           <div class="ps__-title">
             <i class="fas fa-microphone-alt mr-2"></i>DUB:
           </div>
@@ -434,17 +572,17 @@ function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
             <div class="item server-item" data-src="${dubServer1}">
               ${
                 dubServer1 === 'null'
-                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="dub" data-index="1">+ADD</a>`
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters-dub1" data-type="dub" data-index="1">+ADD</a>`
                   : `<a href="javascript:;" class="btn" data-type="dub" data-index="1">DUB-1</a>`
               }
             </div>
             <div class="item server-item" data-src="${dubServer2}">
               ${
                 dubServer2 === 'null'
-                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters" data-type="dub" data-index="2">+ADD</a>`
+                  ? `<a href="javascript:;" class="btn" data-toggle="modal" data-target="#modalcharacters-dub2" data-type="dub" data-index="2">+ADD</a>`
                   : `<a href="javascript:;" class="btn" data-type="dub" data-index="2">DUB-2</a>`
               }
-            </div>      
+            </div>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -610,30 +748,40 @@ window.onload = function () {
   fetch(endpoint)
     .then(blob => blob.json())
     .then(data => {
-      anime.push(...data); // Push the fetched data into the 'anime' array
-
-      // Step 3: Find the anime data that matches the current page after data is fetched
+      anime.push(...data);
       const matchingAnime = findPathname(currentPage, anime);
 
       if (matchingAnime.length > 0) {
         console.log('Found matching anime:', matchingAnime[0]);
 
-        // Step 4: Update the anisc-detail section with film name and breadcrumb data
-        updateAniscDetail(matchingAnime[0]);
+        const currentEpisode = localStorage.getItem('selectedEpisode') || 1;
+        const animeData = matchingAnime[0];
 
-        // Step 5: Update the poster image source and alt attributes
-        updatePosterImage(matchingAnime[0]);
+        // Step 3: Update the UI with the fetched data
+        updateAniscDetail(animeData); // Breadcrumb, film name, etc.
+        updatePosterImage(animeData); // Poster image
+        createEpisodeList(animeData); // Episodes and dropdown
 
-        // Step 6: Create the episode list with the matched data
-        createEpisodeList(matchingAnime[0]);
-
-        // Step 7: Update connections
-        if (
-          matchingAnime[0].connections &&
-          matchingAnime[0].connections.length > 0
-        ) {
-          updateConnections(matchingAnime[0].connections, anime, currentPage);
+        // Step 4: Update connections if available
+        if (animeData.connections && animeData.connections.length > 0) {
+          updateConnections(animeData.connections, anime, currentPage);
         }
+
+        // Step 5: Dynamically create modals and update server list
+        createAndInsertModals(
+          animeData.subServer1 || 'null',
+          animeData.subServer2 || 'null',
+          animeData.dubServer1 || 'null',
+          animeData.dubServer2 || 'null',
+          currentEpisode
+        );
+
+        updateServerList(
+          animeData.subServer1 || 'null',
+          animeData.subServer2 || 'null',
+          animeData.dubServer1 || 'null',
+          animeData.dubServer2 || 'null'
+        );
       } else {
         console.warn('No matching anime found for this page.');
       }
@@ -642,7 +790,7 @@ window.onload = function () {
       console.error('Error fetching JSON:', error);
     });
 
-  // window.onload for recommend.js: Fetch and display recommendations
+  // Step 6: Fetch and display recommendations
   fetchAndDisplayRecommendations(currentPage);
 };
 
