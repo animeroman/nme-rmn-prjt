@@ -1,10 +1,10 @@
-'use strict';
-import { endpoint } from './config.js';
+"use strict";
+import { endpoint } from "./config.js";
 
 const searchData = [];
 fetch(endpoint)
-  .then(blob => blob.json())
-  .then(data => searchData.push(...data));
+  .then((blob) => blob.json())
+  .then((data) => searchData.push(...data));
 
 function fuzzyMatch(input, target) {
   input = input.toLowerCase();
@@ -37,19 +37,19 @@ function transpositionMatch(input, target) {
 }
 
 function matchWords(inputWords, target) {
-  return inputWords.every(inputWord => {
+  return inputWords.every((inputWord) => {
     return target
-      .split(' ')
-      .some(targetWord => transpositionMatch(inputWord, targetWord));
+      .split(" ")
+      .some((targetWord) => transpositionMatch(inputWord, targetWord));
   });
 }
 
 function findMatches(wordToMatch, searchData) {
-  const inputWords = wordToMatch.toLowerCase().split(' ');
+  const inputWords = wordToMatch.toLowerCase().split(" ");
 
-  return searchData.filter(place => {
-    const animeEnglishWords = place.animeEnglish.toLowerCase().split(' ');
-    const animeOriginalWords = place.animeOriginal.toLowerCase().split(' ');
+  return searchData.filter((place) => {
+    const animeEnglishWords = place.animeEnglish.toLowerCase().split(" ");
+    const animeOriginalWords = place.animeOriginal.toLowerCase().split(" ");
 
     // Check if all input words match any part of the animeEnglish or animeOriginal
     return (
@@ -72,11 +72,11 @@ function findMatches(wordToMatch, searchData) {
 }*/
 
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function applyHighlighting(text, input) {
-  let highlightedText = '';
+  let highlightedText = "";
   let inputIndex = 0;
 
   for (let i = 0; i < text.length; i++) {
@@ -108,7 +108,7 @@ function displayMatches() {
   const inputValue = this.value.toLowerCase();
 
   const html = limitedResults
-    .map(place => {
+    .map((place) => {
       let animeEnglishName = place.animeEnglish;
       let animeOriginalName = place.animeOriginal;
       let animeDuration = place.duration;
@@ -139,19 +139,19 @@ function displayMatches() {
       </a>
     `;
     })
-    .join('');
+    .join("");
 
   resultsContainer.innerHTML = html;
 
-  if (this.value === '') {
-    resultsContainer.innerHTML = ''; // Clear the suggestions if input is empty
+  if (this.value === "") {
+    resultsContainer.innerHTML = ""; // Clear the suggestions if input is empty
     return;
   }
 }
 
-const searchInput = document.querySelector('.search-input');
-const resultsContainer = document.querySelector('.suggestion-place');
+const searchInput = document.querySelector(".search-input");
+const resultsContainer = document.querySelector(".suggestion-place");
 // const suggestions = document.querySelector('.filter-suggestions');
 
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEventListener("change", displayMatches);
+searchInput.addEventListener("keyup", displayMatches);

@@ -1,62 +1,62 @@
-import { endpoint } from '../config.js';
+import { endpoint } from "../config.js";
 
 const resultsPerPageSecond = 12; // Number of results per page
 let currentPageSecond = 1; // Keep track of the current page
 let totalPagesSecond = 0; // Total pages based on the number of results
-let filterLetterSecond = ''; // Default filter by letter
+let filterLetterSecond = ""; // Default filter by letter
 let filterCategorySecond = { genres: [] }; // Default filter by category, including genres as an array
-let sortCriteriaSecond = { field: '', order: 'asc' }; // Default sorting by field and order
+let sortCriteriaSecond = { field: "", order: "asc" }; // Default sorting by field and order
 
 const searchDataListerSecond = [];
 
 fetch(endpoint)
-  .then(response => {
+  .then((response) => {
     if (!response.ok) {
-      throw new Error('Network response was not ok ' + response.statusText);
+      throw new Error("Network response was not ok " + response.statusText);
     }
     return response.json(); // Parse the JSON
   })
-  .then(data => {
+  .then((data) => {
     searchDataListerSecond.push(...data); // Store the data
     displayMatchesSecond(searchDataListerSecond, currentPageSecond); // Display results for the first page
   })
-  .catch(error => {
-    console.error('Error fetching the anime data:', error);
+  .catch((error) => {
+    console.error("Error fetching the anime data:", error);
   });
 
 // Display matches for the current page with the filter applied
 function displayMatchesSecond(animeList, page) {
-  const filmListWrap = document.querySelector('#wrap-2');
+  const filmListWrap = document.querySelector("#wrap-2");
   if (!filmListWrap) {
     console.error("No element with class 'wrap-2' found.");
     return;
   }
 
   // Filter the animeList based on the filterLetterSecond and filterCategorySecond
-  let filteredAnimeList = animeList.filter(anime => {
+  let filteredAnimeList = animeList.filter((anime) => {
     const animeFirstChar = anime.animeEnglish
       ? anime.animeEnglish.charAt(0).toLowerCase()
-      : '';
+      : "";
 
     // Letter filter
     let letterMatch = true;
-    if (filterLetterSecond === '0-9') {
+    if (filterLetterSecond === "0-9") {
       letterMatch = /\d/.test(animeFirstChar); // Check if the first character is a number
-    } else if (filterLetterSecond === '#') {
+    } else if (filterLetterSecond === "#") {
       letterMatch = /[^a-z0-9]/i.test(animeFirstChar); // Check if the first character is a special character
-    } else if (filterLetterSecond !== 'all') {
+    } else if (filterLetterSecond !== "all") {
       letterMatch = animeFirstChar === filterLetterSecond.toLowerCase(); // Normal letter filter
     }
 
     // Category filter (based on filterCategorySecond object)
-    let categoryMatch = Object.keys(filterCategorySecond).every(key => {
-      if (key === 'genres') {
+    let categoryMatch = Object.keys(filterCategorySecond).every((key) => {
+      if (key === "genres") {
         // If genre filter is active, check if any genre matches
         if (filterCategorySecond.genres.length === 0) return true; // No genre filter applied
         return (
           anime.genres &&
-          filterCategorySecond.genres.some(genre =>
-            anime.genres.includes(genre)
+          filterCategorySecond.genres.some((genre) =>
+            anime.genres.includes(genre),
           )
         );
       } else {
@@ -75,18 +75,18 @@ function displayMatchesSecond(animeList, page) {
       let fieldA = a[sortCriteriaSecond.field];
       let fieldB = b[sortCriteriaSecond.field];
 
-      if (sortCriteriaSecond.field === 'animeEnglish') {
-        fieldA = fieldA ? fieldA.toLowerCase() : '';
-        fieldB = fieldB ? fieldB.toLowerCase() : '';
-      } else if (sortCriteriaSecond.field === 'dateStart') {
+      if (sortCriteriaSecond.field === "animeEnglish") {
+        fieldA = fieldA ? fieldA.toLowerCase() : "";
+        fieldB = fieldB ? fieldB.toLowerCase() : "";
+      } else if (sortCriteriaSecond.field === "dateStart") {
         fieldA = new Date(fieldA);
         fieldB = new Date(fieldB);
-      } else if (sortCriteriaSecond.field === 'score') {
+      } else if (sortCriteriaSecond.field === "score") {
         fieldA = parseFloat(fieldA);
         fieldB = parseFloat(fieldB);
       }
 
-      if (sortCriteriaSecond.order === 'asc') {
+      if (sortCriteriaSecond.order === "asc") {
         return fieldA < fieldB ? -1 : fieldA > fieldB ? 1 : 0;
       } else {
         return fieldA > fieldB ? -1 : fieldA < fieldB ? 1 : 0;
@@ -100,20 +100,20 @@ function displayMatchesSecond(animeList, page) {
   const endIndexSecond = startIndexSecond + resultsPerPageSecond;
   const paginatedResultsFirst = filteredAnimeList.slice(
     startIndexSecond,
-    endIndexSecond
+    endIndexSecond,
   ); // Get results for the current page
 
   // Clear previous content
-  filmListWrap.innerHTML = '';
+  filmListWrap.innerHTML = "";
 
   // Generate HTML for each anime
-  paginatedResultsFirst.map(anime => {
-    let animeEnglishName = anime.animeEnglish || 'Unknown Title';
-    let animeOriginalName = anime.animeOriginal || 'Unknown Title';
-    let animeDuration = anime.duration || 'Unknown Duration';
-    let animeType = anime.type || 'Unknown Type';
-    let posterLink = anime.poster || 'default-poster.png'; // Default image if no poster
-    let pageLink = anime.page || '#';
+  paginatedResultsFirst.map((anime) => {
+    let animeEnglishName = anime.animeEnglish || "Unknown Title";
+    let animeOriginalName = anime.animeOriginal || "Unknown Title";
+    let animeDuration = anime.duration || "Unknown Duration";
+    let animeType = anime.type || "Unknown Type";
+    let posterLink = anime.poster || "default-poster.png"; // Default image if no poster
+    let pageLink = anime.page || "#";
     let subCount = anime.subCount || 0; // Handle missing subtitle count
 
     // Append HTML for each anime
@@ -157,12 +157,12 @@ function setFilterWrapSecond(letter) {
 
 // Function to change the filter category dynamically
 function setFilter(category, value) {
-  if (category === 'genres') {
+  if (category === "genres") {
     if (!filterCategorySecond.genres.includes(value)) {
       filterCategorySecond.genres.push(value); // Add genre if not already present
     } else {
       filterCategorySecond.genres = filterCategorySecond.genres.filter(
-        genre => genre !== value
+        (genre) => genre !== value,
       ); // Remove genre if already present
     }
   } else {
@@ -173,12 +173,12 @@ function setFilter(category, value) {
 }
 
 // Function to set sorting criteria
-function setSortSecond(field, order = 'asc') {
+function setSortSecond(field, order = "asc") {
   sortCriteriaSecond.field = field;
   sortCriteriaSecond.order = order;
   currentPageSecond = 1; // Reset to the first page
   displayMatchesSecond(searchDataListerSecond, currentPageSecond); // Update the results based on the new sorting
 }
 
-setFilterWrapSecond('b');
-setSortSecond('score', 'desc');
+setFilterWrapSecond("b");
+setSortSecond("score", "desc");

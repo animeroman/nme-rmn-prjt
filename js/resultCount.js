@@ -2,7 +2,7 @@
 function countFlwItems() {
   try {
     // Get the 'film_list-wrap' container
-    const filmListWrap = document.querySelector('.film_list-wrap');
+    const filmListWrap = document.querySelector(".film_list-wrap");
 
     // Check if the container exists
     if (!filmListWrap) {
@@ -11,11 +11,11 @@ function countFlwItems() {
     }
 
     // Count the number of 'flw-item' elements inside the container
-    const flwItems = filmListWrap.querySelectorAll('.flw-item');
+    const flwItems = filmListWrap.querySelectorAll(".flw-item");
     const flwItemCount = flwItems.length;
 
     // Display the count in the 'bah-result' div (assuming it's a class)
-    const resultDiv = document.querySelector('.bah-result span');
+    const resultDiv = document.querySelector(".bah-result span");
 
     // Check if the resultDiv exists
     if (!resultDiv) {
@@ -29,14 +29,14 @@ function countFlwItems() {
     // Log the count for debugging purposes
     console.log(`${flwItemCount} results found`);
   } catch (error) {
-    console.error('Error in countFlwItems:', error);
+    console.error("Error in countFlwItems:", error);
   }
 }
 
 // Use MutationObserver to watch for changes in the DOM
 function observeFlwItems() {
   try {
-    const filmListWrap = document.querySelector('.film_list-wrap');
+    const filmListWrap = document.querySelector(".film_list-wrap");
 
     // Check if the container exists
     if (!filmListWrap) {
@@ -56,7 +56,7 @@ function observeFlwItems() {
     // Call countFlwItems initially in case the content is already loaded
     countFlwItems();
   } catch (error) {
-    console.error('Error in observeFlwItems:', error);
+    console.error("Error in observeFlwItems:", error);
   }
 }
 
@@ -64,7 +64,7 @@ function observeFlwItems() {
 function initializeResultCount() {
   // Use MutationObserver to trigger counting after DOM updates
   const waitForContent = setInterval(() => {
-    const firstAnimeItem = document.querySelector('.film_list-wrap .flw-item');
+    const firstAnimeItem = document.querySelector(".film_list-wrap .flw-item");
 
     // Check if the first anime item is available
     if (firstAnimeItem) {
@@ -76,7 +76,7 @@ function initializeResultCount() {
 }
 
 // Hybrid Initialization: Use both DOMContentLoaded and window.onload
-document.addEventListener('DOMContentLoaded', initializeResultCount);
+document.addEventListener("DOMContentLoaded", initializeResultCount);
 
 // Backup: Ensure the script works even if content is loaded after window.onload
 // window.onload = function () {

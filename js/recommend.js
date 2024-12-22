@@ -1,46 +1,46 @@
-'use strict';
-import { endpoint } from './config.js';
+"use strict";
+import { endpoint } from "./config.js";
 
 // Function to fetch and display recommendations
 export function fetchAndDisplayRecommendations(currentPage) {
   // Fetch data from the JSON endpoint
   fetch(endpoint)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       // Find the current anime data
-      const currentAnime = data.find(anime => anime.page === currentPage);
+      const currentAnime = data.find((anime) => anime.page === currentPage);
 
       if (!currentAnime) {
-        console.warn('No matching anime found for recommendations.');
+        console.warn("No matching anime found for recommendations.");
         return;
       }
 
-      console.log('Current Anime:', currentAnime);
+      console.log("Current Anime:", currentAnime);
 
       // Find similar anime based on genres and score
       const similarAnime = findSimilarAnime(currentAnime, data);
 
-      console.log('Similar Anime:', similarAnime);
+      console.log("Similar Anime:", similarAnime);
 
       // Update the "Recommended for you" section
       updateRecommendationsSection(similarAnime);
     })
-    .catch(error => {
-      console.error('Error fetching recommendations:', error);
+    .catch((error) => {
+      console.error("Error fetching recommendations:", error);
     });
 }
 
 // Function to find similar anime based on genres and score
 function findSimilarAnime(currentAnime, allAnime) {
   return allAnime
-    .filter(anime => anime.page !== currentAnime.page) // Exclude the current anime
-    .map(anime => {
+    .filter((anime) => anime.page !== currentAnime.page) // Exclude the current anime
+    .map((anime) => {
       // Calculate matching genres and unrelated categories
-      const matchingGenres = anime.genres.filter(genre =>
-        currentAnime.genres.includes(genre)
+      const matchingGenres = anime.genres.filter((genre) =>
+        currentAnime.genres.includes(genre),
       );
       const unrelatedGenres = anime.genres.filter(
-        genre => !currentAnime.genres.includes(genre)
+        (genre) => !currentAnime.genres.includes(genre),
       );
 
       return {
@@ -69,21 +69,21 @@ function findSimilarAnime(currentAnime, allAnime) {
 
 // Function to update the recommendations section in the HTML
 function updateRecommendationsSection(similarAnime) {
-  const recommendationsContainer = document.querySelector('.recommned-wrapper');
+  const recommendationsContainer = document.querySelector(".recommned-wrapper");
 
   if (!recommendationsContainer) {
-    console.error('Recommendations container not found!');
+    console.error("Recommendations container not found!");
     return;
   }
 
   // Clear previous content
-  recommendationsContainer.innerHTML = '';
+  recommendationsContainer.innerHTML = "";
 
   // Populate with similar anime
   similarAnime.forEach((anime, index) => {
     const isHighlighted = index === 0; // Highlight the first anime in the sorted list
     const recommendationHTML = `
-      <div class="flw-item ${isHighlighted ? 'highlight' : ''}">
+      <div class="flw-item ${isHighlighted ? "highlight" : ""}">
         <div class="film-poster">
           <div class="tick tick-rate">18+</div>
           <div class="tick ltr">
@@ -132,8 +132,8 @@ function updateRecommendationsSection(similarAnime) {
       </div>
     `;
     recommendationsContainer.insertAdjacentHTML(
-      'beforeend',
-      recommendationHTML
+      "beforeend",
+      recommendationHTML,
     );
   });
 }
