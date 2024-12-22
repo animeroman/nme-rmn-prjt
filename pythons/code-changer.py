@@ -2,11 +2,9 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = '''<script type="text/javascript" src="../js/random.js" async="async"></script>
-    <script type="text/javascript" src="../js/lister.js" async="async"></script>'''
+old_code = ''' '''
 
-new_code = '''<script type="module" src="../js/random.js" async="async"></script>
-    <script type="module" src="../js/lister.js" async="async"></script>'''
+new_code = ''' '''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
