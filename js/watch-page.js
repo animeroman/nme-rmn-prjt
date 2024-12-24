@@ -533,6 +533,42 @@ function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
   });
 }
 
+// Function to dynamically send data to the API on page load
+function sendDataToAPI(animeId, episodeNumber, server, linkValue) {
+  const updateData = {
+    id: animeId,
+    episodes: [
+      {
+        episodeNumber: parseInt(episodeNumber, 10),
+        [server]: linkValue,
+      },
+    ],
+  };
+
+  fetch(`${endpoint}/api/anime/update`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(updateData),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        console.error('API Error:', data.error);
+        alert(`Error: ${data.error}`);
+      } else {
+        console.log('Success:', data.message);
+        alert('Data updated successfully!');
+      }
+    })
+    .catch(error => {
+      console.error('Fetch Error:', error);
+      alert(`Error: ${error.message}`);
+    });
+}
+
 // Function to update the server list and handle server selection
 function updateServerList(subServer1, subServer2, dubServer1, dubServer2) {
   updatePagination(); // Clear old servers and modals
@@ -807,6 +843,25 @@ window.onload = function () {
 
   // Step 6: Fetch and display recommendations
   fetchAndDisplayRecommendations(currentPage);
+
+  const modalForms = document.querySelectorAll('.modal form');
+  modalForms.forEach(form => {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const animeId = form.querySelector('[name="anime-id"]').value;
+      const episodeNumber = form.querySelector('[name="episode"]').value;
+      const server = form.querySelector('[name="server"]').value;
+      const linkValue = form.querySelector('[name="link"]').value.trim();
+
+      if (!animeId || !episodeNumber || !server || !linkValue) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      sendDataToAPI(animeId, episodeNumber, server, linkValue);
+    });
+  });
 };
 
 // Utility function to find the current anime in the JSON data
