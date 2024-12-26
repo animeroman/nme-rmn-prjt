@@ -1199,19 +1199,18 @@
       </div>
     </div>
     <!--Begin: Modal-->
-    <div
+    <!-- <div
       class="modal fade premodal premodal-characters"
       id="modalcharacters"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="modalcharacterstitle"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title text-left" id="modalcharacterstitle">
-              Characters & Voice Actors
+            <h5 class="modal-title text-left">
+              Embed link required (Episode 8, dub. video 1)
             </h5>
             <button
               type="button"
@@ -1223,14 +1222,107 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="modal-characters">
-              <div id="characters-content"></div>
+            <div
+              class="alert alert-danger mb-3"
+              id="link-error"
+              style="display: none"
+            >
+              <p id="responseMessage">Mama ama kriminal</p>
             </div>
+            <form id="updateForm" class="preform" method="post">
+              <div class="form-group">
+                <label class="prelabel" for="link-dub1"
+                  >Add link (YouTube, Drive, Vimeo, etc.)</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="link-dub1"
+                  placeholder="https://example.com"
+                  name="link"
+                  anime-id="516"
+                  episode="8"
+                  server="dubServer1"
+                  required=""
+                />
+              </div>
+              <div class="form-group link-btn mb-0">
+                <button class="btn btn-primary btn-block">Submit</button>
+                <div class="loading-relative" style="display: none">
+                  <div class="loading">
+                    <div class="span1"></div>
+                    <div class="span2"></div>
+                    <div class="span3"></div>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--End: Modal-->
+
+    <!-- <script>
+      document
+        .getElementById('updateForm')
+        .addEventListener('submit', async function (event) {
+          event.preventDefault();
+
+          // Extract data from the input element
+          const linkInput = document.getElementById('link-dub1');
+          const animeId = linkInput.getAttribute('anime-id');
+          const episodeNumber = parseInt(linkInput.getAttribute('episode'), 10);
+          const server = linkInput.getAttribute('server');
+          const linkValue = linkInput.value.trim();
+          console.log(animeId, episodeNumber, server);
+
+          // Validate inputs
+          if (!animeId || isNaN(episodeNumber) || !server || !linkValue) {
+            document.getElementById('responseMessage').innerText =
+              'Error: Please fill in all fields.';
+            return;
+          }
+
+          const updateData = {
+            id: animeId,
+            episodes: [
+              {
+                episodeNumber,
+                [server]: linkValue,
+              },
+            ],
+          };
+          console.log(updateData);
+
+          try {
+            const response = await fetch(
+              'http://127.0.0.1:5000/api/anime/update',
+              {
+                method: 'PUT',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Authorization:
+                    'Bearer SkYCKXd3lZwgW7SDZZBcQOkHoCw4ggczeGFAmtbdUeJFTMWua3KYW9RDw36Esppx1c6Kp6wfy0fTh1YdvUTMF5faEyurPItvRwUKrkiZtT8DMO33yiHEppNcusg85dYC',
+                },
+                body: JSON.stringify(updateData),
+              }
+            );
+
+            const result = await response.json();
+            if (response.ok) {
+              document.getElementById('responseMessage').innerText =
+                result.message;
+            } else {
+              document.getElementById('responseMessage').innerText =
+                `Error: ${result.error}`;
+            }
+          } catch (error) {
+            document.getElementById('responseMessage').innerText =
+              'Error: ' + error.message;
+          }
+        });
+    </script> -->
 
     <script src="../www.google.com/recaptcha/api4a96.js?render=6Lc7dH8pAAAAAIGw-BOEYDAZvcs3afxf6XHaLsQL&amp;hl=en"></script>
 

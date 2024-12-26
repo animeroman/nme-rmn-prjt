@@ -440,6 +440,80 @@ function updatePagination() {
   }
 }
 
+// Attach the event listener after inserting modals
+function attachUpdateFormListener() {
+  document.querySelectorAll('.preform').forEach(form => {
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const linkInput = form.querySelector('input[name="link"]');
+      const animeId = linkInput.getAttribute('anime-id');
+      const episodeNumber = parseInt(linkInput.getAttribute('episode'), 10);
+      const server = linkInput.getAttribute('server');
+      const linkValue = linkInput.value.trim();
+
+      if (!animeId || isNaN(episodeNumber) || !server || !linkValue) {
+        form.querySelector('#responseMessage').innerText =
+          'Error: Please fill in all fields.';
+        return;
+      }
+
+      const updateData = {
+        id: animeId,
+        episodes: [
+          {
+            episodeNumber,
+            [server]: linkValue,
+          },
+        ],
+      };
+
+      try {
+        const response = await fetch(
+          `https://apiromanlast.fly.dev/api/anime/update`,
+          {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization:
+                'Bearer SkYCKXd3lZwgW7SDZZBcQOkHoCw4ggczeGFAmtbdUeJFTMWua3KYW9RDw36Esppx1c6Kp6wfy0fTh1YdvUTMF5faEyurPItvRwUKrkiZtT8DMO33yiHEppNcusg85dYC',
+            },
+            body: JSON.stringify(updateData),
+          }
+        );
+
+        const result = await response.json();
+        const responseMessage = form.querySelector('#responseMessage');
+
+        // Define the function to click the button
+        function clickButton(buttonId) {
+          // Get the button element by its ID
+          const button = document.getElementById(buttonId);
+          if (button) {
+            button.click();
+          } else {
+            console.error(`Button with ID "${buttonId}" not found.`);
+          }
+        }
+
+        if (response.ok) {
+          responseMessage.innerText = result.message;
+          if (result.message) {
+            clickButton('close-button');
+          } else {
+            document.getElementById('close-button').click();
+          }
+        } else {
+          responseMessage.innerText = `Error: ${result.error}`;
+        }
+      } catch (error) {
+        form.querySelector('#responseMessage').innerText =
+          'Error: ' + error.message;
+      }
+    });
+  });
+}
+
 // Modified createAndInsertModals function to include updatePagination
 function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
   // Extract the episode number from the URL
@@ -501,8 +575,8 @@ function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title text-left">${template.title}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type="button" class="close" id="close-button" data-dismiss="modal" aria-label="Close">
+              <span id="close-button" aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
@@ -541,6 +615,9 @@ function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
 
     footer.insertAdjacentHTML('beforeend', modalHTML);
   });
+
+  // Attach the event listener after inserting modals
+  attachUpdateFormListener();
 }
 
 // Function to update the server list and handle server selection

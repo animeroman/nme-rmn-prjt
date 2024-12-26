@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Data Viewer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      #anime-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .anime-item {
+        padding: 15px;
+      }
+
+      .anime-item h2 {
+        margin: 0 0 10px;
+        color: #2c3e50;
+      }
+
+      .anime-item p {
+        margin: 0 0 10px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .anime-item ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0;
+      }
+
+      .anime-item ul li {
+        background-color: #f4f4f4;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Anime List</h1>
+    <div id="anime-container">
+      <!-- Data from the API will be displayed here -->
+    </div>
+    <script type="module">
+      import { endpoint, apiKey } from '../js/config.js';
+
+      const animeContainer = document.getElementById('anime-container');
+
+      async function fetchAnimeData() {
+        try {
+          const response = await fetch(endpoint, {
+            headers: {
+              Authorization: `Bearer ${apiKey}`,
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error(`Failed to fetch: ${response.status}`);
+          }
+
+          const data = await response.json();
+          renderAnimeData(data);
+        } catch (error) {
+          console.error('Error fetching anime data:', error);
+          animeContainer.innerHTML = '<p>Failed to load anime data.</p>';
+        }
+      }
+
+      function renderAnimeData(data) {
+        if (!Array.isArray(data)) {
+          animeContainer.innerHTML = '<p>No anime data found.</p>';
+          return;
+        }
+
+        const html = data
+          .map(
+            anime => `
+          <div class="anime-item">
+            <h2>${anime.animeEnglish || 'Unknown Title'}</h2>
+            <p>ID: ${anime.id}</p>
+            <ul>
+              ${anime.episodes
+                .map(
+                  ep => `
+                  <li>
+                    <strong>Episode ${ep.episodeNumber || 'N/A'}</strong>
+                    <ul>
+                      <li>Dub Server 1: ${ep.dubServer1 || 'Not available'}</li>
+                      <li>Dub Server 2: ${ep.dubServer2 || 'Not available'}</li>
+                      <li>Sub Server 1: ${ep.subServer1 || 'Not available'}</li>
+                      <li>Sub Server 2: ${ep.subServer2 || 'Not available'}</li>
+                    </ul>
+                  </li>
+                `
+                )
+                .join('')}
+            </ul>
+          </div>
+          <hr>
+        `
+          )
+          .join('');
+        animeContainer.innerHTML = html;
+      }
+
+      fetchAnimeData();
+    </script>
+  </body>
+</html>
