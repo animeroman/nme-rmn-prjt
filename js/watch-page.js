@@ -507,7 +507,7 @@ function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
           </div>
           <div class="modal-body">
             <div class="alert alert-danger mb-3" id="link-error" style="display: none;"></div>
-            <form class="preform" method="post">
+            <form id="updateForm" class="preform" method="post">
               <div class="form-group">
                 <label class="prelabel" for="${template.inputId}">Add link (YouTube, Drive, Vimeo, etc.)</label>
                 <input 
@@ -524,6 +524,7 @@ function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
               </div>
               <div class="form-group link-btn mb-0">
                 <button class="btn btn-primary btn-block">Submit</button>
+                <p id="responseMessage"></p>
                 <div class="loading-relative" style="display: none;">
                   <div class="loading">
                     <div class="span1"></div>
