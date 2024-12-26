@@ -440,11 +440,20 @@ function updatePagination() {
   }
 }
 
-// Function to dynamically create and insert modals
+// Modified createAndInsertModals function to include updatePagination
 function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
+  // Extract the episode number from the URL
   const urlParams = new URLSearchParams(window.location.search);
-  const animeId = document.querySelector('#wrapper').getAttribute('data-id'); // Extract anime ID from page
-  const episodeNumber = urlParams.get('episode') || 1; // Default to 1 if no episode is provided
+  const episodeNumber = urlParams.get('episode') || 1; // Default to 1 if no episode number is provided
+
+  // Split the path to get the ID
+  const pathname = window.location.pathname;
+  const segments = pathname.split('/');
+  const lastSegment = segments[segments.length - 1];
+  const idPart = lastSegment.split('.')[0];
+  const animeId = idPart.match(/\d+$/)[0];
+
+  updatePagination(); // Clear old modals before creating new ones
 
   const footer = document.getElementById('modal-video');
   if (!footer) {
@@ -531,42 +540,6 @@ function createAndInsertModals(subServer1, subServer2, dubServer1, dubServer2) {
 
     footer.insertAdjacentHTML('beforeend', modalHTML);
   });
-}
-
-// Function to dynamically send data to the API on page load
-function sendDataToAPI(animeId, episodeNumber, server, linkValue) {
-  const updateData = {
-    id: animeId,
-    episodes: [
-      {
-        episodeNumber: parseInt(episodeNumber, 10),
-        [server]: linkValue,
-      },
-    ],
-  };
-
-  fetch(`${endpoint}/api/anime/update`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify(updateData),
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.error) {
-        console.error('API Error:', data.error);
-        alert(`Error: ${data.error}`);
-      } else {
-        console.log('Success:', data.message);
-        alert('Data updated successfully!');
-      }
-    })
-    .catch(error => {
-      console.error('Fetch Error:', error);
-      alert(`Error: ${error.message}`);
-    });
 }
 
 // Function to update the server list and handle server selection
@@ -843,25 +816,6 @@ window.onload = function () {
 
   // Step 6: Fetch and display recommendations
   fetchAndDisplayRecommendations(currentPage);
-
-  const modalForms = document.querySelectorAll('.modal form');
-  modalForms.forEach(form => {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const animeId = form.querySelector('[name="anime-id"]').value;
-      const episodeNumber = form.querySelector('[name="episode"]').value;
-      const server = form.querySelector('[name="server"]').value;
-      const linkValue = form.querySelector('[name="link"]').value.trim();
-
-      if (!animeId || !episodeNumber || !server || !linkValue) {
-        alert('Please fill in all fields.');
-        return;
-      }
-
-      sendDataToAPI(animeId, episodeNumber, server, linkValue);
-    });
-  });
 };
 
 // Utility function to find the current anime in the JSON data
