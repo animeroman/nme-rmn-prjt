@@ -1,10 +1,5 @@
-"use strict";
-import { endpoint } from "./config.js";
-
-const searchData = [];
-fetch(endpoint)
-  .then((blob) => blob.json())
-  .then((data) => searchData.push(...data));
+'use strict';
+import { jsonData } from './config.js';
 
 function fuzzyMatch(input, target) {
   input = input.toLowerCase();
@@ -37,19 +32,19 @@ function transpositionMatch(input, target) {
 }
 
 function matchWords(inputWords, target) {
-  return inputWords.every((inputWord) => {
+  return inputWords.every(inputWord => {
     return target
-      .split(" ")
-      .some((targetWord) => transpositionMatch(inputWord, targetWord));
+      .split(' ')
+      .some(targetWord => transpositionMatch(inputWord, targetWord));
   });
 }
 
-function findMatches(wordToMatch, searchData) {
-  const inputWords = wordToMatch.toLowerCase().split(" ");
+function findMatches(wordToMatch, jsonData) {
+  const inputWords = wordToMatch.toLowerCase().split(' ');
 
-  return searchData.filter((place) => {
-    const animeEnglishWords = place.animeEnglish.toLowerCase().split(" ");
-    const animeOriginalWords = place.animeOriginal.toLowerCase().split(" ");
+  return jsonData.filter(place => {
+    const animeEnglishWords = place.animeEnglish.toLowerCase().split(' ');
+    const animeOriginalWords = place.animeOriginal.toLowerCase().split(' ');
 
     // Check if all input words match any part of the animeEnglish or animeOriginal
     return (
@@ -59,8 +54,8 @@ function findMatches(wordToMatch, searchData) {
   });
 }
 // Old find matches
-/*function findMatches(wordToMatch, searchData) {
-  return searchData.filter(place => {
+/*function findMatches(wordToMatch, jsonData) {
+  return jsonData.filter(place => {
     // here we need to figure out if the animeEnglish or animeOriginal matches what was searched
     const regex = new RegExp(wordToMatch, 'gi');
     // return place.animeEnglish.match(regex) || place.animeOriginal.match(regex);
@@ -72,11 +67,11 @@ function findMatches(wordToMatch, searchData) {
 }*/
 
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 function applyHighlighting(text, input) {
-  let highlightedText = "";
+  let highlightedText = '';
   let inputIndex = 0;
 
   for (let i = 0; i < text.length; i++) {
@@ -103,12 +98,12 @@ function applyHighlighting(text, input) {
 }
 
 function displayMatches() {
-  const matchArray = findMatches(this.value, searchData);
+  const matchArray = findMatches(this.value, jsonData);
   const limitedResults = matchArray.slice(0, 5); // Limit results to 5
   const inputValue = this.value.toLowerCase();
 
   const html = limitedResults
-    .map((place) => {
+    .map(place => {
       let animeEnglishName = place.animeEnglish;
       let animeOriginalName = place.animeOriginal;
       let animeDuration = place.duration;
@@ -139,19 +134,19 @@ function displayMatches() {
       </a>
     `;
     })
-    .join("");
+    .join('');
 
   resultsContainer.innerHTML = html;
 
-  if (this.value === "") {
-    resultsContainer.innerHTML = ""; // Clear the suggestions if input is empty
+  if (this.value === '') {
+    resultsContainer.innerHTML = ''; // Clear the suggestions if input is empty
     return;
   }
 }
 
-const searchInput = document.querySelector(".search-input");
-const resultsContainer = document.querySelector(".suggestion-place");
+const searchInput = document.querySelector('.search-input');
+const resultsContainer = document.querySelector('.suggestion-place');
 // const suggestions = document.querySelector('.filter-suggestions');
 
-searchInput.addEventListener("change", displayMatches);
-searchInput.addEventListener("keyup", displayMatches);
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);

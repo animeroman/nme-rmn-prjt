@@ -1,20 +1,16 @@
-"use strict";
-import { endpoint } from "./config.js";
+'use strict';
+import { jsonData } from './config.js';
 
 const resultsPerPage = 36;
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 
-const searchDataEngine = [];
-fetch(endpoint)
-  .then((blob) => blob.json())
-  .then((data) => {
-    searchDataEngine.push(...data);
-    const keyword = getQueryParam("keyword");
-    if (keyword) {
-      displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
-    }
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  const keyword = getQueryParam('keyword');
+  if (keyword) {
+    displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
+  }
+});
 
 // Function to get query parameter from URL
 function getQueryParam(param) {
@@ -64,10 +60,10 @@ function transpositionMatch(input, target) {
 // Match words with transposition
 function matchWords(inputWords, target) {
   try {
-    return inputWords.every((inputWord) => {
+    return inputWords.every(inputWord => {
       return target
-        .split(" ")
-        .some((targetWord) => transpositionMatch(inputWord, targetWord));
+        .split(' ')
+        .some(targetWord => transpositionMatch(inputWord, targetWord));
     });
   } catch (err) {
     throw err;
@@ -75,13 +71,13 @@ function matchWords(inputWords, target) {
 }
 
 // Find matches based on the input word
-function findMatches(wordToMatch, searchDataEngine) {
+function findMatches(wordToMatch, jsonData) {
   try {
-    const inputWords = wordToMatch.toLowerCase().split(" ");
+    const inputWords = wordToMatch.toLowerCase().split(' ');
 
-    return searchDataEngine.filter((place) => {
-      const animeEnglishWords = place.animeEnglish.toLowerCase().split(" ");
-      const animeOriginalWords = place.animeOriginal.toLowerCase().split(" ");
+    return jsonData.filter(place => {
+      const animeEnglishWords = place.animeEnglish.toLowerCase().split(' ');
+      const animeOriginalWords = place.animeOriginal.toLowerCase().split(' ');
 
       // Check if all input words match any part of the animeEnglish or animeOriginal
       return (
@@ -100,10 +96,10 @@ function displayMatches(inputValue, page) {
     let matchArray;
 
     // If inputValue is empty or only contains whitespace, show all results
-    if (inputValue.trim() === "") {
-      matchArray = searchDataEngine; // Use the entire dataset
+    if (inputValue.trim() === '') {
+      matchArray = jsonData; // Use the entire dataset
     } else {
-      matchArray = findMatches(inputValue, searchDataEngine);
+      matchArray = findMatches(inputValue, jsonData);
     }
 
     totalPages = Math.ceil(matchArray.length / resultsPerPage); // Calculate total pages
@@ -112,7 +108,7 @@ function displayMatches(inputValue, page) {
     const paginatedResults = matchArray.slice(startIndex, endIndex); // Get results for the current page
 
     const html = paginatedResults
-      .map((place) => {
+      .map(place => {
         let animeEnglishName = place.animeEnglish;
         let animeOriginalName = place.animeOriginal;
         let animeDuration = place.duration;
@@ -152,7 +148,7 @@ function displayMatches(inputValue, page) {
       </div>
     `;
       })
-      .join("");
+      .join('');
 
     resultsContainerEngine.innerHTML = html;
 
@@ -165,8 +161,8 @@ function displayMatches(inputValue, page) {
 // Update pagination controls
 function updatePagination(currentPage) {
   try {
-    const paginationPlace = document.querySelector(".pagination-pages");
-    let paginationHTML = "";
+    const paginationPlace = document.querySelector('.pagination-pages');
+    let paginationHTML = '';
 
     // Calculate the starting and ending page numbers for pagination
     let startPage = Math.max(currentPage - 1, 1); // Start 1 page before current, minimum 1
@@ -238,7 +234,7 @@ function updatePagination(currentPage) {
 function goToPage(page) {
   try {
     currentPage = page;
-    const keyword = getQueryParam("keyword"); // Get the current search keyword
+    const keyword = getQueryParam('keyword'); // Get the current search keyword
     if (keyword) {
       displayMatches(keyword, page); // Display matches for the new page
     }
@@ -249,11 +245,11 @@ function goToPage(page) {
 
 // Initialize search with keyword from URL if present
 window.onload = function () {
-  const keyword = getQueryParam("keyword"); // Get the keyword from the URL
-  if (keyword === null || keyword.trim() === "") {
+  const keyword = getQueryParam('keyword'); // Get the keyword from the URL
+  if (keyword === null || keyword.trim() === '') {
     // If no keyword, display all animes
     currentPage = 1; // Reset to the first page
-    displayMatches("", currentPage);
+    displayMatches('', currentPage);
   } else {
     // If there's a keyword, search as usual
     displayMatches(keyword, currentPage);
@@ -266,7 +262,7 @@ window.onload = function () {
 /*
 const searchInput = document.querySelector('.search-input');
 */
-const resultsContainerEngine = document.querySelector(".film_list-wrap");
+const resultsContainerEngine = document.querySelector('.film_list-wrap');
 /*
 searchInput.addEventListener('change', function() {
   displayMatches(this.value, currentPage);
