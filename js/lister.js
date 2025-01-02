@@ -7,7 +7,8 @@ let filterLetter = ''; // Default filter by letter
 let filterCategory = { genres: [] }; // Default filter by category, including genres as an array
 let sortCriteria = { field: '', order: 'asc' }; // Default sorting by field and order
 
-document.addEventListener('DOMContentLoaded', function () {
+// Wait for the dataReady event to ensure jsonData is populated
+document.addEventListener('dataReady', () => {
   displayMatches(jsonData, currentPage); // Display results for the first page
 });
 

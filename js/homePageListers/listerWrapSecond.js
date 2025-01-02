@@ -1,4 +1,4 @@
-import { endpoint } from '../config.js';
+import { jsonData } from '../config.js';
 
 const resultsPerPageSecond = 24; // Number of results per page
 let currentPageSecond = 1; // Keep track of the current page
@@ -7,22 +7,11 @@ let filterLetterSecond = ''; // Default filter by letter
 let filterCategorySecond = { genres: [] }; // Default filter by category, including genres as an array
 let sortCriteriaSecond = { field: '', order: 'asc' }; // Default sorting by field and order
 
-const searchDataListerSecond = [];
-
-fetch(endpoint)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok ' + response.statusText);
-    }
-    return response.json(); // Parse the JSON
-  })
-  .then(data => {
-    searchDataListerSecond.push(...data); // Store the data
-    displayMatchesSecond(searchDataListerSecond, currentPageSecond); // Display results for the first page
-  })
-  .catch(error => {
-    console.error('Error fetching the anime data:', error);
-  });
+// Wait for the dataReady event to ensure jsonData is populated
+document.addEventListener('dataReady', () => {
+  console.log('Data is ready:', jsonData);
+  displayMatchesSecond(jsonData, currentPageSecond); // Display results for the first page
+});
 
 // Display matches for the current page with the filter applied
 function displayMatchesSecond(animeList, page) {
@@ -152,7 +141,7 @@ function displayMatchesSecond(animeList, page) {
 function setFilterWrapSecond(letter) {
   filterLetterSecond = letter;
   currentPageSecond = 1; // Reset to the first page
-  displayMatchesSecond(searchDataListerSecond, currentPageSecond); // Update the results based on the new filter
+  displayMatchesSecond(jsonData, currentPageSecond); // Update the results based on the new filter
 }
 
 // Function to change the filter category dynamically
@@ -169,7 +158,7 @@ function setFilter(category, value) {
     filterCategorySecond[category] = value; // Set other filters
   }
   currentPageSecond = 1; // Reset to the first page
-  displayMatchesSecond(searchDataListerSecond, currentPageSecond); // Update the results based on the new filter
+  displayMatchesSecond(jsonData, currentPageSecond); // Update the results based on the new filter
 }
 
 // Function to set sorting criteria
@@ -177,7 +166,7 @@ function setSortSecond(field, order = 'asc') {
   sortCriteriaSecond.field = field;
   sortCriteriaSecond.order = order;
   currentPageSecond = 1; // Reset to the first page
-  displayMatchesSecond(searchDataListerSecond, currentPageSecond); // Update the results based on the new sorting
+  displayMatchesSecond(jsonData, currentPageSecond); // Update the results based on the new sorting
 }
 
 setFilterWrapSecond('b');

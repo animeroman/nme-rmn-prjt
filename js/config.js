@@ -2,14 +2,15 @@
 // export const endpoint = 'https://animeroman.github.io/Source/json/main-search.json';
 // export const endpoint = 'http://127.0.0.1:5000/api/anime';
 export const endpoint = 'https://apiromanlast.fly.dev/api/anime';
+export const jsonData = []; // Global array to store data
+
 export const TIMEOUT_SEC = 10;
 export const RES_PER_PAGE = 10;
 export const apiKey =
   'SkYCKXd3lZwgW7SDZZBcQOkHoCw4ggczeGFAmtbdUeJFTMWua3KYW9RDw36Esppx1c6Kp6wfy0fTh1YdvUTMF5faEyurPItvRwUKrkiZtT8DMO33yiHEppNcusg85dYC'; // Use the same key as in the backend
 export const MODAL_CLOSE_SEC = 2.5;
 
-export const jsonData = []; // Global array to store data
-
+// Fetch data from the endpoint and populate jsonData
 fetch(endpoint)
   .then(response => {
     if (!response.ok) {
@@ -18,7 +19,8 @@ fetch(endpoint)
     return response.json(); // Parse the JSON
   })
   .then(data => {
-    jsonData.push(...data); // Store the data
+    jsonData.push(...data); // Populate jsonData
+    document.dispatchEvent(new Event('dataReady')); // Dispatch an event when data is ready
   })
   .catch(error => {
     console.error('Error fetching the anime data:', error);

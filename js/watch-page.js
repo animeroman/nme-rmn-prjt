@@ -1,5 +1,5 @@
 'use strict';
-import { endpoint } from './config.js';
+import { jsonData } from './config.js';
 import { fetchAndDisplayRecommendations } from './recommend.js';
 
 // Store the selected server type globally to remember it across episodes
@@ -838,61 +838,60 @@ function updateConnections(connections, allAnimeData, currentPage) {
 
 // Fetch the anime data from the endpoint and run the episode list creation
 window.onload = function () {
-  // Step 1: Extract the "page" part from the URL (e.g., 'sgt-frog-516.html')
+  // Extract the "page" part from the URL (e.g., 'sgt-frog-516.html')
   const currentPage = window.location.pathname
     .split('/')
     .pop()
     .replace('.html', '');
   console.log(`Current page: ${currentPage}`); // Result: 'sgt-frog-516'
 
-  // Step 2: Fetch data from the JSON endpoint
-  const anime = [];
-  fetch(endpoint)
-    .then(blob => blob.json())
-    .then(data => {
-      anime.push(...data);
-      const matchingAnime = findPathname(currentPage, anime);
+  // Wait for the dataReady event to ensure jsonData is populated
+  document.addEventListener('dataReady', () => {
+    console.log('Data is ready:', jsonData);
+    handleFetchedData(jsonData, currentPage);
+  });
 
-      if (matchingAnime.length > 0) {
-        console.log('Found matching anime:', matchingAnime[0]);
+  // Separate function to handle fetched data
+  function handleFetchedData(jsonData, currentPage) {
+    const matchingAnime = findPathname(currentPage, jsonData);
 
-        const currentEpisode = localStorage.getItem('selectedEpisode') || 1;
-        const animeData = matchingAnime[0];
+    if (matchingAnime.length > 0) {
+      console.log('Found matching anime:', matchingAnime[0]);
 
-        // Step 3: Update the UI with the fetched data
-        updateAniscDetail(animeData); // Breadcrumb, film name, etc.
-        updatePosterImage(animeData); // Poster image
-        createEpisodeList(animeData); // Episodes and dropdown
+      const currentEpisode = localStorage.getItem('selectedEpisode') || 1;
+      const animeData = matchingAnime[0];
 
-        // Step 4: Update connections if available
-        if (animeData.connections && animeData.connections.length > 0) {
-          updateConnections(animeData.connections, anime, currentPage);
-        }
+      // Update the UI with the fetched data
+      updateAniscDetail(animeData); // Breadcrumb, film name, etc.
+      updatePosterImage(animeData); // Poster image
+      createEpisodeList(animeData); // Episodes and dropdown
 
-        // Step 5: Dynamically create modals and update server list
-        createAndInsertModals(
-          animeData.subServer1 || 'null',
-          animeData.subServer2 || 'null',
-          animeData.dubServer1 || 'null',
-          animeData.dubServer2 || 'null',
-          currentEpisode
-        );
-
-        updateServerList(
-          animeData.subServer1 || 'null',
-          animeData.subServer2 || 'null',
-          animeData.dubServer1 || 'null',
-          animeData.dubServer2 || 'null'
-        );
-      } else {
-        console.warn('No matching anime found for this page.');
+      // Update connections if available
+      if (animeData.connections && animeData.connections.length > 0) {
+        updateConnections(animeData.connections, jsonData, currentPage);
       }
-    })
-    .catch(error => {
-      console.error('Error fetching JSON:', error);
-    });
 
-  // Step 6: Fetch and display recommendations
+      // Dynamically create modals and update server list
+      createAndInsertModals(
+        animeData.subServer1 || 'null',
+        animeData.subServer2 || 'null',
+        animeData.dubServer1 || 'null',
+        animeData.dubServer2 || 'null',
+        currentEpisode
+      );
+
+      updateServerList(
+        animeData.subServer1 || 'null',
+        animeData.subServer2 || 'null',
+        animeData.dubServer1 || 'null',
+        animeData.dubServer2 || 'null'
+      );
+    } else {
+      console.warn('No matching anime found for this page.');
+    }
+  }
+
+  // Fetch and display recommendations
   fetchAndDisplayRecommendations(currentPage);
 };
 

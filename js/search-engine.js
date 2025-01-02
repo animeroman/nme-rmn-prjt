@@ -1,11 +1,12 @@
 'use strict';
 import { jsonData } from './config.js';
 
-const resultsPerPage = 36;
+const resultsPerPage = 48;
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 
-document.addEventListener('DOMContentLoaded', function () {
+// Wait for the dataReady event to ensure jsonData is populated
+document.addEventListener('dataReady', () => {
   const keyword = getQueryParam('keyword');
   if (keyword) {
     displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
