@@ -3086,6 +3086,14 @@ ul.color-list li:nth-of-type(7n + 6) a {
   background: $color-secondary-black;
   position: relative;
   padding: 5px;
+
+  & > .player-item:first-child {
+    background: $color-secondary-black;
+    position: relative;
+    padding: 5px;
+    display: flex; /* Add flexbox */
+    align-items: center; /* Vertically center all children */
+  }
 }
 .player-controls .pc-item {
   float: left;
@@ -7375,6 +7383,28 @@ ul.color-list li:nth-of-type(7n + 6) a {
 .player-servers .ps_-block .small strong {
   font-weight: 600;
   color: $color-primary-light;
+}
+.player-item {
+  float: left;
+  margin-right: 7px;
+  display: inline-block; /* Inline-block to work with flexbox */
+
+  & .btn {
+    font-size: 13px;
+    box-shadow: none !important;
+    font-weight: 500;
+    padding: 0 10px;
+    line-height: 30px;
+    min-width: 80px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    border: none !important;
+
+    &.active {
+      background: $color-primary-light;
+      color: $color-black;
+    }
+  }
 }
 .ps__-list .item {
   float: left;
@@ -13403,6 +13433,13 @@ span#AddMalDiv #AddMal {
   }
   .schedule-alert .alert {
     border-radius: 0;
+  }
+  .player-item .item {
+    margin: 2px 7px 2px 0;
+
+    & .btn {
+      min-width: auto;
+    }
   }
   .ps__-list .item {
     margin: 2px 7px 2px 0;
