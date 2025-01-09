@@ -2052,12 +2052,21 @@
         tabindex="-1"
         role="dialog"
         aria-hidden="true"
+      ></div>
+      <!--End: Modal-->
+
+      <!-- <div
+        class="modal fade premodal premodal-characters show"
+        id="modalcharacters"
+        tabindex="-1"
+        role="dialog"
+        aria-modal="true"
       >
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title text-left">
-                Embed link required (Episode 8, dub. video 1)
+                Embed link required (Episode 7, sub. video 1)
               </h5>
               <button
                 type="button"
@@ -2065,7 +2074,7 @@
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true">×</span>
               </button>
             </div>
             <div class="modal-body">
@@ -2078,18 +2087,18 @@
               </div>
               <form id="updateForm" class="preform" method="post">
                 <div class="form-group">
-                  <label class="prelabel" for="link-dub1"
+                  <label class="prelabel" for="send-to"
                     >Add link (YouTube, Drive, Vimeo, etc.)</label
                   >
                   <input
                     type="url"
                     class="form-control"
-                    id="link-dub1"
+                    id="send-to"
                     placeholder="https://example.com"
                     name="link"
                     anime-id="516"
-                    episode="8"
-                    server="dubServer1"
+                    episode="7"
+                    server="subServer1"
                     required=""
                   />
                 </div>
@@ -2108,7 +2117,6 @@
           </div>
         </div>
       </div>
-      <!--End: Modal-->
 
       <script>
         document
@@ -2117,7 +2125,7 @@
             event.preventDefault();
 
             // Extract data from the input element
-            const linkInput = document.getElementById('link-dub1');
+            const linkInput = document.getElementById('send-to');
             const animeId = linkInput.getAttribute('anime-id');
             const episodeNumber = parseInt(
               linkInput.getAttribute('episode'),
@@ -2172,7 +2180,7 @@
                 'Error: ' + error.message;
             }
           });
-      </script>
+      </script> -->
 
       <script src="../www.google.com/recaptcha/api4a96.js"></script>
 

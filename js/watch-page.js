@@ -646,10 +646,11 @@ function updatePremodal() {
         <button
           type="button"
           class="close"
+          id="close-button"
           data-dismiss="modal"
           aria-label="Close"
         >
-          <span aria-hidden="true">&times;</span>
+          <span id="close-button" aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -658,7 +659,6 @@ function updatePremodal() {
           id="link-error"
           style="display: none"
         >
-          <p id="responseMessage">Mama ama kriminal</p>
         </div>
         <form id="updateForm" class="preform" method="post">
           <div class="form-group">
@@ -679,6 +679,7 @@ function updatePremodal() {
           </div>
           <div class="form-group link-btn mb-0">
             <button class="btn btn-primary btn-block">Submit</button>
+            <p id="responseMessage"></p>
             <div class="loading-relative" style="display: none">
               <div class="loading">
                 <div class="span1"></div>
@@ -776,72 +777,67 @@ function watchForChanges() {
 }
 
 function attachUpdateFormListener() {
-  document.querySelectorAll('.preform').forEach(form => {
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
+  // Ensure the form is dynamically attached after modals are added
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('.preform')) {
+      const form = event.target.closest('.preform');
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
 
-      const linkInput = form.querySelector('input[name="link"]');
-      const animeId = linkInput.getAttribute('anime-id');
-      const episodeNumber = parseInt(linkInput.getAttribute('episode'), 10);
-      const server = linkInput.getAttribute('server');
-      const linkValue = linkInput.value.trim();
+        const linkInput = form.querySelector('input[name="link"]');
+        const animeId = linkInput.getAttribute('anime-id');
+        const episodeNumber = parseInt(linkInput.getAttribute('episode'), 10);
+        const server = linkInput.getAttribute('server');
+        const linkValue = linkInput.value.trim();
 
-      if (!animeId || isNaN(episodeNumber) || !server || !linkValue) {
-        form.querySelector('#responseMessage').innerText =
-          'Error: Please fill in all fields.';
-        return;
-      }
-
-      const updateData = {
-        id: animeId,
-        episodes: [
-          {
-            episodeNumber,
-            [server]: linkValue,
-          },
-        ],
-      };
-
-      try {
-        const response = await fetch(`http://127.0.0.1:5000/api/anime/update`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization:
-              'Bearer SkYCKXd3lZwgW7SDZZBcQOkHoCw4ggczeGFAmtbdUeJFTMWua3KYW9RDw36Esppx1c6Kp6wfy0fTh1YdvUTMF5faEyurPItvRwUKrkiZtT8DMO33yiHEppNcusg85dYC',
-          },
-          body: JSON.stringify(updateData),
-        });
-
-        const result = await response.json();
-        const responseMessage = form.querySelector('#responseMessage');
-
-        // Define the function to click the button
-        function clickButton(buttonId) {
-          // Get the button element by its ID
-          const button = document.getElementById(buttonId);
-          if (button) {
-            button.click();
-          } else {
-            console.error(`Button with ID "${buttonId}" not found.`);
-          }
+        if (!animeId || isNaN(episodeNumber) || !server || !linkValue) {
+          form.querySelector('#responseMessage').innerText =
+            'Error: Please fill in all fields.';
+          return;
         }
 
-        if (response.ok) {
-          responseMessage.innerText = result.message;
-          if (result.message) {
-            clickButton('close-button');
+        const updateData = {
+          id: animeId,
+          episodes: [
+            {
+              episodeNumber,
+              [server]: linkValue,
+            },
+          ],
+        };
+
+        try {
+          const response = await fetch(
+            `https://apiromanlast.fly.dev/api/anime/update`,
+            {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization:
+                  'Bearer SkYCKXd3lZwgW7SDZZBcQOkHoCw4ggczeGFAmtbdUeJFTMWua3KYW9RDw36Esppx1c6Kp6wfy0fTh1YdvUTMF5faEyurPItvRwUKrkiZtT8DMO33yiHEppNcusg85dYC',
+              },
+              body: JSON.stringify(updateData),
+            }
+          );
+
+          const result = await response.json();
+          const responseMessage = form.querySelector('#responseMessage');
+
+          if (response.ok) {
+            responseMessage.innerText = result.message;
+            setTimeout(() => {
+              document.getElementById('close-button').click();
+            }, 2000);
+            window.location.reload();
           } else {
-            document.getElementById('close-button').click();
+            responseMessage.innerText = `Error: ${result.error}`;
           }
-        } else {
-          responseMessage.innerText = `Error: ${result.error}`;
+        } catch (error) {
+          form.querySelector('#responseMessage').innerText =
+            'Error: ' + error.message;
         }
-      } catch (error) {
-        form.querySelector('#responseMessage').innerText =
-          'Error: ' + error.message;
-      }
-    });
+      });
+    }
   });
 }
 
