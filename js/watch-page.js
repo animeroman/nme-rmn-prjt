@@ -489,6 +489,9 @@ function attachServerClickEvents() {
       selectedServerIndex = this.getAttribute('data-index');
       localStorage.setItem('selectedServerType', selectedServerType);
       localStorage.setItem('selectedServerIndex', selectedServerIndex);
+
+      // Trigger updatePlayerControls after server selection
+      updatePlayerControls();
     });
   });
 }
@@ -601,6 +604,247 @@ function updateConnections(connections, allAnimeData, currentPage) {
   });
 }
 
+function updatePremodal() {
+  // Extract the episode number from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const episodeNumber = urlParams.get('episode') || 1; // Default to 1 if no episode number is provided
+  console.log(`urlParams: ${urlParams}`, `episodeNumber: ${episodeNumber}`);
+
+  // Split the path to get the ID
+  const pathname = window.location.pathname;
+  const segments = pathname.split('/');
+  const lastSegment = segments[segments.length - 1];
+  const idPart = lastSegment.split('.')[0];
+  const animeId = idPart.match(/\d+$/)[0];
+  console.log(
+    `pathname ${pathname}`,
+    `segments: ${segments}`,
+    `lastSegment: ${lastSegment}`,
+    `idPart: ${idPart}`,
+    `animeId: ${animeId}`
+  );
+
+  // Making value for server attribute
+  const serverValue = `${selectedServerType}Server${selectedServerIndex}`;
+  console.log(`serverValue: ${serverValue}`);
+
+  const premodal = document.getElementById('modalcharacters');
+  if (!premodal) {
+    console.error('Premodal element not found!');
+    return;
+  }
+
+  premodal.innerHTML = ''; // Clear previous modals
+
+  const modalHTML = `
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-left">
+          Embed link required (Episode ${episodeNumber}, ${selectedServerType}. video ${selectedServerIndex})
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div
+          class="alert alert-danger mb-3"
+          id="link-error"
+          style="display: none"
+        >
+          <p id="responseMessage">Mama ama kriminal</p>
+        </div>
+        <form id="updateForm" class="preform" method="post">
+          <div class="form-group">
+            <label class="prelabel" for="send-to"
+              >Add link (YouTube, Drive, Vimeo, etc.)</label
+            >
+            <input
+              type="url"
+              class="form-control"
+              id="send-to"
+              placeholder="https://example.com"
+              name="link"
+              anime-id="${animeId}"
+              episode="${episodeNumber}"
+              server="${serverValue}"
+              required=""
+            />
+          </div>
+          <div class="form-group link-btn mb-0">
+            <button class="btn btn-primary btn-block">Submit</button>
+            <div class="loading-relative" style="display: none">
+              <div class="loading">
+                <div class="span1"></div>
+                <div class="span2"></div>
+                <div class="span3"></div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  `;
+
+  premodal.insertAdjacentHTML('beforeend', modalHTML);
+}
+
+function updatePlayerControls() {
+  // Ensure selectedEpisode has a valid value from localStorage or URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlEpisode = urlParams.get('episode');
+  selectedEpisode = urlEpisode || localStorage.getItem('selectedEpisode') || 1;
+
+  // Find the ssl-item div with the matching data-number attribute
+  const selectedItem = document.querySelector(
+    `.ssl-item[data-number="${selectedEpisode}"]`
+  );
+  if (!selectedItem) {
+    console.warn(
+      `No matching ssl-item found for episode ${selectedEpisode}. Retrying...`
+    );
+    setTimeout(updatePlayerControls, 2000); // Retry after 500ms in case elements are loaded later
+    return;
+  }
+
+  // Determine the active server attribute
+  const serverAttribute = `data-${selectedServerType}server${selectedServerIndex}`;
+  const serverText = selectedItem.getAttribute(serverAttribute);
+
+  // Find the player-controls div
+  const playerControls = document.querySelector('.player-controls');
+  if (!playerControls) {
+    console.error('player-controls element not found!');
+    return;
+  }
+
+  // Clear existing added content to avoid duplication
+  const existingPlayerItem = playerControls.querySelector('.player-item');
+  if (existingPlayerItem) existingPlayerItem.remove();
+
+  // Add appropriate content based on the server text
+  if (serverText === 'null-page') {
+    updatePremodal();
+    playerControls.insertAdjacentHTML(
+      'afterbegin',
+      `<div class="player-item">
+        <a class="btn" data-toggle="modal" data-target="#modalcharacters">Add Video</a>
+      </div>`
+    );
+  } else {
+    playerControls.insertAdjacentHTML(
+      'afterbegin',
+      `<div class="player-item">
+        <a class="btn" data-toggle="modal" data-target="#modalcharacters">Copy Embed</a>
+      </div>`
+    );
+  }
+}
+
+// Function to watch for changes in selectedEpisode, selectedServerType, and selectedServerIndex
+function watchForChanges() {
+  // Listen for changes to localStorage across the same tab or different tabs
+  window.addEventListener('storage', () => {
+    const newEpisode = localStorage.getItem('selectedEpisode');
+    const newServerType = localStorage.getItem('selectedServerType');
+    const newServerIndex = localStorage.getItem('selectedServerIndex');
+
+    if (
+      newEpisode !== selectedEpisode ||
+      newServerType !== selectedServerType ||
+      newServerIndex !== selectedServerIndex
+    ) {
+      selectedEpisode = newEpisode;
+      selectedServerType = newServerType;
+      selectedServerIndex = newServerIndex;
+      updatePlayerControls();
+    }
+  });
+
+  // Initial call to set up the player controls
+  updatePlayerControls();
+
+  // Attach the event listener after inserting modals
+  attachUpdateFormListener();
+}
+
+function attachUpdateFormListener() {
+  document.querySelectorAll('.preform').forEach(form => {
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const linkInput = form.querySelector('input[name="link"]');
+      const animeId = linkInput.getAttribute('anime-id');
+      const episodeNumber = parseInt(linkInput.getAttribute('episode'), 10);
+      const server = linkInput.getAttribute('server');
+      const linkValue = linkInput.value.trim();
+
+      if (!animeId || isNaN(episodeNumber) || !server || !linkValue) {
+        form.querySelector('#responseMessage').innerText =
+          'Error: Please fill in all fields.';
+        return;
+      }
+
+      const updateData = {
+        id: animeId,
+        episodes: [
+          {
+            episodeNumber,
+            [server]: linkValue,
+          },
+        ],
+      };
+
+      try {
+        const response = await fetch(`http://127.0.0.1:5000/api/anime/update`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization:
+              'Bearer SkYCKXd3lZwgW7SDZZBcQOkHoCw4ggczeGFAmtbdUeJFTMWua3KYW9RDw36Esppx1c6Kp6wfy0fTh1YdvUTMF5faEyurPItvRwUKrkiZtT8DMO33yiHEppNcusg85dYC',
+          },
+          body: JSON.stringify(updateData),
+        });
+
+        const result = await response.json();
+        const responseMessage = form.querySelector('#responseMessage');
+
+        // Define the function to click the button
+        function clickButton(buttonId) {
+          // Get the button element by its ID
+          const button = document.getElementById(buttonId);
+          if (button) {
+            button.click();
+          } else {
+            console.error(`Button with ID "${buttonId}" not found.`);
+          }
+        }
+
+        if (response.ok) {
+          responseMessage.innerText = result.message;
+          if (result.message) {
+            clickButton('close-button');
+          } else {
+            document.getElementById('close-button').click();
+          }
+        } else {
+          responseMessage.innerText = `Error: ${result.error}`;
+        }
+      } catch (error) {
+        form.querySelector('#responseMessage').innerText =
+          'Error: ' + error.message;
+      }
+    });
+  });
+}
+
 // Fetch the anime data from the endpoint and run the episode list creation
 window.onload = function () {
   // Extract the "page" part from the URL (e.g., 'sgt-frog-516.html')
@@ -642,9 +886,14 @@ window.onload = function () {
 
   // Fetch and display recommendations
   fetchAndDisplayRecommendations(currentPage);
+
+  // Run the watcher
+  watchForChanges();
 };
 
 // Utility function to find the current anime in the JSON data
 function findPathname(currentPage, data) {
   return data.filter(anime => anime.page === currentPage);
 }
+
+console.log('Selected episode:', selectedEpisode);
