@@ -1,6 +1,6 @@
 import { jsonData } from './config.js';
 
-const resultsPerPage = 36; // Number of results per page
+const resultsPerPage = 48; // Number of results per page
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 let filterLetter = ''; // Default filter by letter
@@ -11,6 +11,32 @@ let sortCriteria = { field: '', order: 'asc' }; // Default sorting by field and 
 document.addEventListener('dataReady', () => {
   displayMatches(jsonData, currentPage); // Display results for the first page
 });
+
+// Function to count episodes with valid sub links
+export const countEpisodes = function (data, type) {
+  let count = 0; // Initialize count to 0
+
+  // Iterate over the episodes array
+  if (type === 'sub') {
+    data.episodes.forEach(episode => {
+      // Check if either subServer1 or subServer2 has a link other than "#"
+      if (episode.subServer1 !== '#' || episode.subServer2 !== '#') {
+        count++;
+      }
+    });
+  }
+
+  if (type === 'dub') {
+    data.episodes.forEach(episode => {
+      // Check if either dubServer1 or dubServer2 has a link other than "#"
+      if (episode.dubServer1 !== '#' || episode.dubServer2 !== '#') {
+        count++;
+      }
+    });
+  }
+
+  return count; // Return the final count
+};
 
 // Display matches for the current page with the filter applied
 function displayMatches(animeList, page) {
@@ -97,16 +123,19 @@ function displayMatches(animeList, page) {
     let animeType = anime.type || 'Unknown Type';
     let posterLink = anime.poster || 'default-poster.png'; // Default image if no poster
     let pageLink = anime.page || '#';
-    let subCount = anime.subCount || 0; // Handle missing subtitle count
+    let eposideCount = anime.eposideCount || 0; // Handle missing subtitle count
+
+    const subCount = countEpisodes(anime, 'sub'); // Call the function to count sub links
+    const dubCount = countEpisodes(anime, 'dub'); // Call the function to count dub links
 
     // Append HTML for each anime
     filmListWrap.innerHTML += `
       <div class="flw-item">
         <div class="film-poster">
           <div class="tick ltr">
-            <div class="tick-item tick-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${subCount}
-            </div>
+            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${subCount}</div>
+            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${dubCount}</div>
+            <div class="tick-item tick-eps">${eposideCount}</div>
           </div>
           <img data-src="${posterLink}" class="film-poster-img lazyload" src="${posterLink}" alt="${animeEnglishName}" />
           <a href="watch/${pageLink}.html" class="film-poster-ahref item-qtip">

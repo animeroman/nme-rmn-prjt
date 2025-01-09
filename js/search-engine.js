@@ -1,5 +1,6 @@
 'use strict';
 import { jsonData } from './config.js';
+import { countEpisodes } from './lister.js';
 
 const resultsPerPage = 48;
 let currentPage = 1; // Keep track of the current page
@@ -114,19 +115,19 @@ function displayMatches(inputValue, page) {
         let animeOriginalName = place.animeOriginal;
         let animeDuration = place.duration;
         let animeType = place.type;
-        let animeDate = place.date;
         let posterLink = place.poster;
         let pageLink = place.page;
-        let pageSub = place.subCount;
-        let pageDub = place.dubCount;
         let episode = place.eposideCount;
+
+        const subCount = countEpisodes(place, 'sub'); // Call the function to count sub links
+        const dubCount = countEpisodes(place, 'dub'); // Call the function to count dub links
 
         return `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
           <div class="tick ltr">
-            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${episode}</div>
-            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${episode}</div>
+            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${subCount}</div>
+            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${dubCount}</div>
             <div class="tick-item tick-eps">${episode}</div>
           </div>
           <img data-src="${posterLink}" class="film-poster-img lazyload" src="${posterLink}" />

@@ -1,4 +1,5 @@
 import { jsonData } from '../config.js';
+import { countEpisodes } from '../lister.js';
 
 const resultsPerPageSecond = 24; // Number of results per page
 let currentPageSecond = 1; // Keep track of the current page
@@ -103,16 +104,19 @@ function displayMatchesSecond(animeList, page) {
     let animeType = anime.type || 'Unknown Type';
     let posterLink = anime.poster || 'default-poster.png'; // Default image if no poster
     let pageLink = anime.page || '#';
-    let subCount = anime.subCount || 0; // Handle missing subtitle count
+    let eposideCount = anime.eposideCount || 0; // Handle missing subtitle count
+
+    const subCount = countEpisodes(anime, 'sub'); // Call the function to count sub links
+    const dubCount = countEpisodes(anime, 'dub'); // Call the function to count dub links
 
     // Append HTML for each anime
     filmListWrap.innerHTML += `
       <div class="flw-item">
         <div class="film-poster">
           <div class="tick ltr">
-            <div class="tick-item tick-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${subCount}
-            </div>
+            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${subCount}</div>
+            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${dubCount}</div>
+            <div class="tick-item tick-eps">${eposideCount}</div>
           </div>
           <img data-src="${posterLink}" class="film-poster-img lazyload" src="${posterLink}" alt="${animeEnglishName}" />
           <a href="watch/${pageLink}.html" class="film-poster-ahref item-qtip">
