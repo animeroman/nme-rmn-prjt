@@ -69,21 +69,13 @@ function findMatches(wordToMatch, jsonData) {
     throw err;
   }
 }
-// Old find matches
-/*function findMatches(wordToMatch, jsonData) {
-  return jsonData.filter(place => {
-    // here we need to figure out if the animeEnglish or animeOriginal matches what was searched
-    const regex = new RegExp(wordToMatch, 'gi');
-    // return place.animeEnglish.match(regex) || place.animeOriginal.match(regex);
-    return (
-      transpositionMatch(wordToMatch, place.animeEnglish) ||
-      transpositionMatch(wordToMatch, place.animeOriginal)
-    );
-  });
-}*/
 
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  try {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function applyHighlighting(text, input) {

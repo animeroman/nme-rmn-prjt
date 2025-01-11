@@ -2,15 +2,19 @@ import { jsonData } from './config.js';
 
 // Function to get a random anime object from jsonData
 function getRandomAnime() {
-  let randomAnime;
+  try {
+    let randomAnime;
 
-  // Keep trying until a matching anime is found
-  do {
-    const randomAnimeId = Math.floor(Math.random() * 70000) + 1;
-    randomAnime = jsonData.find(anime => anime.id == randomAnimeId);
-  } while (!randomAnime); // Repeat until an anime is found
+    // Keep trying until a matching anime is found
+    do {
+      const randomAnimeId = Math.floor(Math.random() * 70000) + 1;
+      randomAnime = jsonData.find(anime => anime.id == randomAnimeId);
+    } while (!randomAnime); // Repeat until an anime is found
 
-  return randomAnime;
+    return randomAnime;
+  } catch (error) {
+    throw error;
+  }
 }
 
 // Select the anchor element by ID

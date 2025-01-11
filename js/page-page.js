@@ -15,325 +15,338 @@ let totalEpisodes = 0;
 
 // Function to update the breadcrumb with the anime type, href, and text
 function updateAniscDetail(animeData) {
-  // Define mapping between types and href links
-  const typeToHrefMap = {
-    Movie: '../movie.html',
-    TV: '../tv.html',
-    OVA: '../ova.html',
-    ONA: '../ona.html',
-    Special: '../special.html',
-    Music: '../music.html',
-  };
+  try {
+    // Define mapping between types and href links
+    const typeToHrefMap = {
+      Movie: '../movie.html',
+      TV: '../tv.html',
+      OVA: '../ova.html',
+      ONA: '../ona.html',
+      Special: '../special.html',
+      Music: '../music.html',
+    };
 
-  const seasonToHrefMap = {
-    Spring: '../season/spring.html',
-    Summer: '../season/summer.html',
-    Fall: '../season/fall.html',
-    Winter: '../season/winter.html',
-  };
+    const seasonToHrefMap = {
+      Spring: '../season/spring.html',
+      Summer: '../season/summer.html',
+      Fall: '../season/fall.html',
+      Winter: '../season/winter.html',
+    };
 
-  // Select the breadcrumb element
-  const breadcrumb = document.querySelector('ol.breadcrumb');
-  if (!breadcrumb) {
-    console.error('Breadcrumb element not found!');
-    return;
-  }
-
-  // Update the first breadcrumb item's href and text with the season
-  const fisrtBreadcrumbItem = breadcrumb.querySelectorAll('li')[0];
-  if (fisrtBreadcrumbItem) {
-    const link = fisrtBreadcrumbItem.querySelector('a');
-    if (link) {
-      link.textContent = animeData.season; // Replace text with "season"
-      if (seasonToHrefMap[animeData.season]) {
-        link.setAttribute('href', seasonToHrefMap[animeData.season]); // Update href
-      } else {
-        console.warn(`No href mapping found for season: ${animeData.season}`);
-      }
+    // Select the breadcrumb element
+    const breadcrumb = document.querySelector('ol.breadcrumb');
+    if (!breadcrumb) {
+      console.error('Breadcrumb element not found!');
+      return;
     }
-  } else {
-    console.error('First breadcrumb item not found!');
-  }
 
-  // Update the second breadcrumb item's href and text with the type
-  const secondBreadcrumbItem = breadcrumb.querySelectorAll('li')[1];
-  if (secondBreadcrumbItem) {
-    const link = secondBreadcrumbItem.querySelector('a');
-    if (link) {
-      link.textContent = animeData.type; // Replace text with "type"
-      if (typeToHrefMap[animeData.type]) {
-        link.setAttribute('href', typeToHrefMap[animeData.type]); // Update href
-      } else {
-        console.warn(`No href mapping found for type: ${animeData.type}`);
+    // Update the first breadcrumb item's href and text with the season
+    const fisrtBreadcrumbItem = breadcrumb.querySelectorAll('li')[0];
+    if (fisrtBreadcrumbItem) {
+      const link = fisrtBreadcrumbItem.querySelector('a');
+      if (link) {
+        link.textContent = animeData.season; // Replace text with "season"
+        if (seasonToHrefMap[animeData.season]) {
+          link.setAttribute('href', seasonToHrefMap[animeData.season]); // Update href
+        } else {
+          console.warn(`No href mapping found for season: ${animeData.season}`);
+        }
       }
-    }
-  } else {
-    console.error('Second breadcrumb item not found!');
-  }
-
-  // Update the third breadcrumb item's text and 'data-jname'
-  const thirdBreadcrumbItem = breadcrumb.querySelectorAll('li')[2];
-  if (thirdBreadcrumbItem) {
-    thirdBreadcrumbItem.textContent = animeData.animeEnglish; // Replace text with "animeEnglish"
-    thirdBreadcrumbItem.setAttribute('data-jname', animeData.animeOriginal); // Replace data-jname with "animeOriginal"
-  } else {
-    console.error('Third breadcrumb item not found!');
-  }
-
-  // Update the film-name and anisc-detail content
-  const filmNameElement = document.querySelector('h2.film-name');
-  if (filmNameElement) {
-    filmNameElement.textContent = animeData.animeEnglish; // Update film-name
-  } else {
-    console.error('film-name element not found!');
-  }
-
-  const aniscDetailElement = document.querySelector('h2.film-name');
-  if (aniscDetailElement) {
-    aniscDetailElement.setAttribute('data-jname', animeData.animeOriginal); // Update data-jname
-  } else {
-    console.error('anisc-detail element not found!');
-  }
-
-  // Update the tick-pg
-  const TickItemPg = document.querySelector('.tick-pg');
-  if (TickItemPg) {
-    TickItemPg.textContent = animeData.rated; // Update tick-pg
-  } else {
-    console.error('div.tick-pg element not found!');
-  }
-
-  // Update the tick-sub
-  const TickItemSub = document.querySelector('.tick-sub');
-  if (TickItemSub) {
-    TickItemSub.textContent = animeData.eposideCount; // Update tick-sub
-  } else {
-    console.error('div.tick-sub element not found!');
-  }
-
-  // Update the tick-dub
-  const TickItemDub = document.querySelector('.tick-dub');
-  if (TickItemDub) {
-    TickItemDub.textContent = animeData.eposideCount; // Update tick-dub
-  } else {
-    console.error('div.tick-dub element not found!');
-  }
-
-  // Update the tick-eps
-  const TickItemEps = document.querySelector('.tick-eps');
-  if (TickItemEps) {
-    TickItemEps.textContent = animeData.eposideCount; // Update tick-eps
-  } else {
-    console.error('div.tick-eps element not found!');
-  }
-
-  // Update the item-type
-  const ItemType = document.querySelector('.item-type');
-  if (ItemType) {
-    ItemType.textContent = animeData.type; // Update item-type
-  } else {
-    console.error('span.item-type element not found!');
-  }
-
-  // Update the item-duration
-  const ItemDuration = document.querySelector('.item-duration');
-  if (ItemDuration) {
-    ItemDuration.textContent = animeData.duration; // Update item-duration
-  } else {
-    console.error('span.item-duration element not found!');
-  }
-
-  // Update the film-description
-  const filmDescription = document.querySelector('.film-description .text');
-  if (filmDescription) {
-    filmDescription.textContent = animeData.description; // Update film-description
-  } else {
-    console.error('.film-description element not found!');
-  }
-
-  // Update the film-buttons' href
-  const filmButtons = document.querySelector('.film-buttons a'); // Target the <a> tag inside .film-buttons
-  if (filmButtons) {
-    if (animeData && animeData.page) {
-      // Ensure animeData.page exists
-      filmButtons.setAttribute('href', `../watch/${animeData.page}.html`); // Update the href
     } else {
-      console.error('animeData.page is missing or invalid!');
+      console.error('First breadcrumb item not found!');
     }
-  } else {
-    console.error('.film-buttons <a> element not found!');
+
+    // Update the second breadcrumb item's href and text with the type
+    const secondBreadcrumbItem = breadcrumb.querySelectorAll('li')[1];
+    if (secondBreadcrumbItem) {
+      const link = secondBreadcrumbItem.querySelector('a');
+      if (link) {
+        link.textContent = animeData.type; // Replace text with "type"
+        if (typeToHrefMap[animeData.type]) {
+          link.setAttribute('href', typeToHrefMap[animeData.type]); // Update href
+        } else {
+          console.warn(`No href mapping found for type: ${animeData.type}`);
+        }
+      }
+    } else {
+      console.error('Second breadcrumb item not found!');
+    }
+
+    // Update the third breadcrumb item's text and 'data-jname'
+    const thirdBreadcrumbItem = breadcrumb.querySelectorAll('li')[2];
+    if (thirdBreadcrumbItem) {
+      thirdBreadcrumbItem.textContent = animeData.animeEnglish; // Replace text with "animeEnglish"
+      thirdBreadcrumbItem.setAttribute('data-jname', animeData.animeOriginal); // Replace data-jname with "animeOriginal"
+    } else {
+      console.error('Third breadcrumb item not found!');
+    }
+
+    // Update the film-name and anisc-detail content
+    const filmNameElement = document.querySelector('h2.film-name');
+    if (filmNameElement) {
+      filmNameElement.textContent = animeData.animeEnglish; // Update film-name
+    } else {
+      console.error('film-name element not found!');
+    }
+
+    const aniscDetailElement = document.querySelector('h2.film-name');
+    if (aniscDetailElement) {
+      aniscDetailElement.setAttribute('data-jname', animeData.animeOriginal); // Update data-jname
+    } else {
+      console.error('anisc-detail element not found!');
+    }
+
+    // Update the tick-pg
+    const TickItemPg = document.querySelector('.tick-pg');
+    if (TickItemPg) {
+      TickItemPg.textContent = animeData.rated; // Update tick-pg
+    } else {
+      console.error('div.tick-pg element not found!');
+    }
+
+    // Update the tick-sub
+    const TickItemSub = document.querySelector('.tick-sub');
+    if (TickItemSub) {
+      TickItemSub.textContent = animeData.eposideCount; // Update tick-sub
+    } else {
+      console.error('div.tick-sub element not found!');
+    }
+
+    // Update the tick-dub
+    const TickItemDub = document.querySelector('.tick-dub');
+    if (TickItemDub) {
+      TickItemDub.textContent = animeData.eposideCount; // Update tick-dub
+    } else {
+      console.error('div.tick-dub element not found!');
+    }
+
+    // Update the tick-eps
+    const TickItemEps = document.querySelector('.tick-eps');
+    if (TickItemEps) {
+      TickItemEps.textContent = animeData.eposideCount; // Update tick-eps
+    } else {
+      console.error('div.tick-eps element not found!');
+    }
+
+    // Update the item-type
+    const ItemType = document.querySelector('.item-type');
+    if (ItemType) {
+      ItemType.textContent = animeData.type; // Update item-type
+    } else {
+      console.error('span.item-type element not found!');
+    }
+
+    // Update the item-duration
+    const ItemDuration = document.querySelector('.item-duration');
+    if (ItemDuration) {
+      ItemDuration.textContent = animeData.duration; // Update item-duration
+    } else {
+      console.error('span.item-duration element not found!');
+    }
+
+    // Update the film-description
+    const filmDescription = document.querySelector('.film-description .text');
+    if (filmDescription) {
+      filmDescription.textContent = animeData.description; // Update film-description
+    } else {
+      console.error('.film-description element not found!');
+    }
+
+    // Update the film-buttons' href
+    const filmButtons = document.querySelector('.film-buttons a'); // Target the <a> tag inside .film-buttons
+    if (filmButtons) {
+      if (animeData && animeData.page) {
+        // Ensure animeData.page exists
+        filmButtons.setAttribute('href', `../watch/${animeData.page}.html`); // Update the href
+      } else {
+        console.error('animeData.page is missing or invalid!');
+      }
+    } else {
+      console.error('.film-buttons <a> element not found!');
+    }
+  } catch (error) {
+    throw error;
   }
 }
 
 // Function to update the poster image source and alt attributes
 function updatePosterImage(animeData) {
-  // Select the img element with class 'film-poster-img'
-  const posterImage = document.querySelector('img.film-poster-img');
-  if (!posterImage) {
-    console.error('Poster image element not found!');
-    return;
+  try {
+    // Select the img element with class 'film-poster-img'
+    const posterImage = document.querySelector('img.film-poster-img');
+    if (!posterImage) {
+      console.error('Poster image element not found!');
+      return;
+    }
+
+    // Update the src attribute with the poster URL from the animeData
+    posterImage.setAttribute('src', animeData.poster);
+
+    // Update the alt attribute with the animeEnglish from the animeData
+    posterImage.setAttribute('alt', animeData.animeEnglish);
+  } catch (error) {
+    throw error;
   }
-
-  // Update the src attribute with the poster URL from the animeData
-  posterImage.setAttribute('src', animeData.poster);
-
-  // Update the alt attribute with the animeEnglish from the animeData
-  posterImage.setAttribute('alt', animeData.animeEnglish);
 }
 
 // Function to update anime information in the anisc-info section
 function updateAnimeInfo(animeData) {
-  const aniscInfo = document.querySelector('.anisc-info');
-  if (!aniscInfo) {
-    console.error('anisc-info container not found!');
-    return;
-  }
+  try {
+    const aniscInfo = document.querySelector('.anisc-info');
+    if (!aniscInfo) {
+      console.error('anisc-info container not found!');
+      return;
+    }
 
-  const items = aniscInfo.querySelectorAll('.item');
+    const items = aniscInfo.querySelectorAll('.item');
 
-  //   if (items[0]) {
-  //     const textDiv = items[0].querySelector('.text');
-  //     if (textDiv) textDiv.textContent = animeData.description;
+    //   if (items[0]) {
+    //     const textDiv = items[0].querySelector('.text');
+    //     if (textDiv) textDiv.textContent = animeData.description;
 
-  //     // Update the film-description div with the description
-  //     const filmDescriptionDiv = document
-  //       .querySelector('.film-description')
-  //       .querySelector('.text');
-  //     if (filmDescriptionDiv)
-  //       filmDescriptionDiv.textContent = animeData.description;
-  //   }
+    //     // Update the film-description div with the description
+    //     const filmDescriptionDiv = document
+    //       .querySelector('.film-description')
+    //       .querySelector('.text');
+    //     if (filmDescriptionDiv)
+    //       filmDescriptionDiv.textContent = animeData.description;
+    //   }
 
-  if (items[1]) {
-    const nameSpan = items[1].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.japanese;
-  }
+    if (items[1]) {
+      const nameSpan = items[1].querySelector('.name');
+      if (nameSpan) nameSpan.textContent = animeData.japanese;
+    }
 
-  if (items[2]) {
-    const nameSpan = items[2].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.synonyms[0];
-  }
+    if (items[2]) {
+      const nameSpan = items[2].querySelector('.name');
+      if (nameSpan) nameSpan.textContent = animeData.synonyms[0];
+    }
 
-  if (items[3]) {
-    const nameSpan = items[3].querySelector('.name');
-    if (nameSpan)
-      nameSpan.textContent = `${animeData.dateStart} to ${animeData.dateEnd}`;
-  }
+    if (items[3]) {
+      const nameSpan = items[3].querySelector('.name');
+      if (nameSpan)
+        nameSpan.textContent = `${animeData.dateStart} to ${animeData.dateEnd}`;
+    }
 
-  if (items[4]) {
-    const nameSpan = items[4].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.season;
-  }
+    if (items[4]) {
+      const nameSpan = items[4].querySelector('.name');
+      if (nameSpan) nameSpan.textContent = animeData.season;
+    }
 
-  if (items[5]) {
-    const nameSpan = items[5].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.duration;
-  }
+    if (items[5]) {
+      const nameSpan = items[5].querySelector('.name');
+      if (nameSpan) nameSpan.textContent = animeData.duration;
+    }
 
-  if (items[6]) {
-    const nameSpan = items[6].querySelector('.name');
-    if (nameSpan) nameSpan.textContent = animeData.status;
-  }
+    if (items[6]) {
+      const nameSpan = items[6].querySelector('.name');
+      if (nameSpan) nameSpan.textContent = animeData.status;
+    }
 
-  if (items[7]) {
-    const scoreSpan = items[7].querySelector('.name');
-    if (scoreSpan) scoreSpan.textContent = animeData.score;
-  }
+    if (items[7]) {
+      const scoreSpan = items[7].querySelector('.name');
+      if (scoreSpan) scoreSpan.textContent = animeData.score;
+    }
 
-  if (items[8]) {
-    // Populate genres for the ninth item
-    const genreContainer = items[8];
-    genreContainer.innerHTML = `<span class="item-head">Genres:</span>`; // Clear existing content and add header
+    if (items[8]) {
+      // Populate genres for the ninth item
+      const genreContainer = items[8];
+      genreContainer.innerHTML = `<span class="item-head">Genres:</span>`; // Clear existing content and add header
 
-    // Add each genre as a link
-    animeData.genres.forEach(genre => {
-      const genreLink = document.createElement('a');
-      genreLink.href = `genre/${genre.toLowerCase().replace(/\s+/g, '-')}.html`;
-      genreLink.title = genre;
-      genreLink.textContent = genre;
-      genreContainer.appendChild(genreLink);
-    });
-  }
+      // Add each genre as a link
+      animeData.genres.forEach(genre => {
+        const genreLink = document.createElement('a');
+        genreLink.href = `genre/${genre.toLowerCase().replace(/\s+/g, '-')}.html`;
+        genreLink.title = genre;
+        genreLink.textContent = genre;
+        genreContainer.appendChild(genreLink);
+      });
+    }
 
-  if (items[9]) {
-    // Populate studios for the tenth item
-    const studiosContainer = items[9];
-    studiosContainer.innerHTML = `<span class="item-head">Studios:</span>`; // Clear existing content and add header
+    if (items[9]) {
+      // Populate studios for the tenth item
+      const studiosContainer = items[9];
+      studiosContainer.innerHTML = `<span class="item-head">Studios:</span>`; // Clear existing content and add header
 
-    // Add each studio as a link
-    animeData.studios.forEach(studio => {
-      const studioLink = document.createElement('a');
-      studioLink.classList.add('name');
-      studioLink.href = `producer/${studio
-        .toLowerCase()
-        .replace(/\s+/g, '-')}.html`;
-      studioLink.textContent = studio;
+      // Add each studio as a link
+      animeData.studios.forEach(studio => {
+        const studioLink = document.createElement('a');
+        studioLink.classList.add('name');
+        studioLink.href = `producer/${studio
+          .toLowerCase()
+          .replace(/\s+/g, '-')}.html`;
+        studioLink.textContent = studio;
 
-      // Add a comma if it's not the last studio
-      studiosContainer.appendChild(studioLink);
-      if (studio !== animeData.studios[animeData.studios.length - 1]) {
-        studiosContainer.appendChild(document.createTextNode(', '));
-      }
-    });
-  }
+        // Add a comma if it's not the last studio
+        studiosContainer.appendChild(studioLink);
+        if (studio !== animeData.studios[animeData.studios.length - 1]) {
+          studiosContainer.appendChild(document.createTextNode(', '));
+        }
+      });
+    }
 
-  if (items[10]) {
-    // Populate producers for the eleventh item
-    const producersContainer = items[10];
-    producersContainer.innerHTML = `<span class="item-head">Producers:</span>`; // Clear existing content and add header
+    if (items[10]) {
+      // Populate producers for the eleventh item
+      const producersContainer = items[10];
+      producersContainer.innerHTML = `<span class="item-head">Producers:</span>`; // Clear existing content and add header
 
-    animeData.producers.forEach(producer => {
-      const producerLink = document.createElement('a');
-      producerLink.classList.add('name');
-      producerLink.href = `producer/${producer
-        .toLowerCase()
-        .replace(/\s+/g, '-')}.html`;
-      producerLink.textContent = producer;
+      animeData.producers.forEach(producer => {
+        const producerLink = document.createElement('a');
+        producerLink.classList.add('name');
+        producerLink.href = `producer/${producer
+          .toLowerCase()
+          .replace(/\s+/g, '-')}.html`;
+        producerLink.textContent = producer;
 
-      producersContainer.appendChild(producerLink);
-      if (producer !== animeData.producers[animeData.producers.length - 1]) {
-        producersContainer.appendChild(document.createTextNode(', '));
-      }
-    });
+        producersContainer.appendChild(producerLink);
+        if (producer !== animeData.producers[animeData.producers.length - 1]) {
+          producersContainer.appendChild(document.createTextNode(', '));
+        }
+      });
+    }
+  } catch (error) {
+    throw error;
   }
 }
 
 // Function to generate connection HTML and add it to the page
 function updateConnections(connections, allAnimeData, currentPage) {
-  const connectionWrapper = document.querySelector('.connection-wrapper');
-  if (!connectionWrapper) {
-    console.error('Connection wrapper element not found!');
-    return;
-  }
+  try {
+    const connectionWrapper = document.querySelector('.connection-wrapper');
+    if (!connectionWrapper) {
+      console.error('Connection wrapper element not found!');
+      return;
+    }
 
-  // Clear existing connections
-  connectionWrapper.innerHTML = '';
+    // Clear existing connections
+    connectionWrapper.innerHTML = '';
 
-  // Match connection ids with anime data
-  let matchedConnections = connections
-    .map(conn => {
-      const animeMatch = allAnimeData.find(anime => anime.id === conn.id);
-      if (animeMatch) {
-        return { ...animeMatch, connectionType: conn.type };
-      }
-      return null;
-    })
-    .filter(Boolean);
+    // Match connection ids with anime data
+    let matchedConnections = connections
+      .map(conn => {
+        const animeMatch = allAnimeData.find(anime => anime.id === conn.id);
+        if (animeMatch) {
+          return { ...animeMatch, connectionType: conn.type };
+        }
+        return null;
+      })
+      .filter(Boolean);
 
-  // Sort by dateStart (oldest to newest)
-  matchedConnections.sort((a, b) => {
-    const dateA = new Date(a.dateStart);
-    const dateB = new Date(b.dateStart);
-    return dateA - dateB;
-  });
+    // Sort by dateStart (oldest to newest)
+    matchedConnections.sort((a, b) => {
+      const dateA = new Date(a.dateStart);
+      const dateB = new Date(b.dateStart);
+      return dateA - dateB;
+    });
 
-  // Generate HTML for each matched connection
-  matchedConnections.forEach(connection => {
-    // Apply "flw-item-active" if the connection's id matches the currentPage
-    const isActive = currentPage.includes(connection.id)
-      ? 'flw-item-active'
-      : '';
+    // Generate HTML for each matched connection
+    matchedConnections.forEach(connection => {
+      // Apply "flw-item-active" if the connection's id matches the currentPage
+      const isActive = currentPage.includes(connection.id)
+        ? 'flw-item-active'
+        : '';
 
-    const connectionHTML = `
+      const connectionHTML = `
       <div class="flw-item ${isActive}">
         <div class="film-poster">
           <div class="tick tick-rate">18+</div>
@@ -381,8 +394,11 @@ function updateConnections(connections, allAnimeData, currentPage) {
         </div>
         <div class="clearfix"></div>
       </div>`;
-    connectionWrapper.insertAdjacentHTML('beforeend', connectionHTML);
-  });
+      connectionWrapper.insertAdjacentHTML('beforeend', connectionHTML);
+    });
+  } catch (error) {
+    throw error;
+  }
 }
 
 // Fetch the anime data from the endpoint and run the episode list creation

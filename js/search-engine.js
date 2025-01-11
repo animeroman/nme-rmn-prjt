@@ -8,16 +8,24 @@ let totalPages = 0; // Total pages based on the number of results
 
 // Wait for the dataReady event to ensure jsonData is populated
 document.addEventListener('dataReady', () => {
-  const keyword = getQueryParam('keyword');
-  if (keyword) {
-    displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
+  try {
+    const keyword = getQueryParam('keyword');
+    if (keyword) {
+      displayMatches(keyword, currentPage); // Trigger search with the keyword and current page
+    }
+  } catch (error) {
+    throw error;
   }
 });
 
 // Function to get query parameter from URL
 function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  } catch (error) {
+    throw error;
+  }
 }
 
 function fuzzyMatch(input, target) {
