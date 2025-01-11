@@ -4,6 +4,7 @@
   "description": "An Anime Stream Platform",
   "main": "index.js",
   "scripts": {
+    "homewatch:sass": "sass sass/home.scss css/home.css -w",
     "watch:sass": "sass sass/main.scss css/styles.css -w",
     "devserver": "npx live-server --browser=\"C:\\Program Files\\Google\\Chrome\\Application\\chrome-incognito.lnk\"",
     "start": "npm-run-all --parallel devserver watch:sass",
