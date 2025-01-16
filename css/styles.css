@@ -844,7 +844,7 @@ div.detail .is-info > div {
 #search {
   width: 400px;
   margin: 15px 0;
-  float: left;
+  float: right;
 }
 
 #search .form-group {
@@ -1668,10 +1668,8 @@ div.detail .is-info > div {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(31, 35, 49, 0.8);
+  background: rgb(31, 35, 49);
   z-index: 103;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   display: none;
 }
 
@@ -1682,61 +1680,62 @@ div.detail .is-info > div {
 #sidebar_menu {
   position: fixed;
   z-index: 1000200;
-  left: 0;
+  left: -400px;
   opacity: 0;
   top: 0;
   bottom: 0;
   overflow-y: auto;
-  width: 260px;
-  padding: 20px 0;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  width: 300px;
+  padding: 20px;
+  background: #111;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  color: #ccc;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  transform: translateX(-100%);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-#sidebar_menu::-webkit-scrollbar {
-  display: none;
 }
 
 #sidebar_menu.active {
+  left: 0;
   opacity: 1;
   z-index: 1000200;
-  transform: translateX(0);
+}
+
+#sidebar_menu a {
+  color: #ccc;
+}
+
+#sidebar_menu a:hover {
+  color: #fff;
 }
 
 #sidebar_menu .sidebar_menu-list {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 10px;
 }
 
 #sidebar_menu .sidebar_menu-list > .nav-item {
   display: block;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #222;
   position: relative;
 }
 
 #sidebar_menu .sidebar_menu-list > .nav-item > .nav-link {
   display: block;
-  padding: 15px;
-  font-weight: 600;
-}
-
-#sidebar_menu .sidebar_menu-list > .nav-item > a.nav-link:hover {
-  color: #badfff;
+  padding: 15px 0;
+  color: #fff;
 }
 
 #sidebar_menu .sidebar_menu-list > .nav-item > .toggle-submenu {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: -10px;
   padding: 10px;
   z-index: 3;
   cursor: pointer;
-  display: none;
+}
+
+#sidebar_menu .sidebar_menu-list > .nav-item > .toggle-submenu:hover {
+  color: #ffe400;
 }
 
 #sidebar_menu .sidebar_menu-list > .nav-item .nav {
@@ -1751,44 +1750,9 @@ div.detail .is-info > div {
 }
 
 #sidebar_menu .sidebar_menu-list > .nav-item .nav > .nav-item > .nav-link {
-  font-size: 12px;
-  padding: 6px 15px;
-}
-
-#sidebar_menu .sidebar_menu-list > .nav-item .nav > .nav-item.nav-more {
-  display: block !important;
-}
-
-#sidebar_menu .sidebar_menu-list > .nav-item .nav.active > .nav-item {
-  display: block !important;
-}
-
-#sidebar_menu .sidebar_menu-list > .nav-item .nav.active > .nav-item.nav-more {
-  display: none !important;
-}
-
-#sidebar_menu .sidebar_menu-list > .nav-item .nav > .nav-item:nth-of-type(n + 11) {
-  display: none;
-}
-
-#sidebar_menu .sidebar_menu-list > .nav-item .nav > .nav-item.nav-more .nav-link {
-  cursor: pointer;
-  font-weight: 400;
-  color: #fff;
-}
-
-#sidebar_menu .toggle-sidebar {
-  background: 0 0 !important;
-  color: #fff;
-  border: none !important;
-  line-height: 24px;
-  margin-left: 10px;
-}
-
-#sidebar_menu .with-icon i {
-  vertical-align: bottom;
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 14px;
+  padding: 10px 0;
+  color: #aaa;
 }
 
 .body-hidden {
@@ -2531,7 +2495,7 @@ ul.az-list li.active a {
 }
 
 #header.fixed {
-  background-color: rgba(31, 35, 49, 0.8) !important;
+  background-color: rgb(31, 35, 49) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
 }
@@ -13514,7 +13478,7 @@ span#AddMalDiv #AddMal {
     position: relative;
     left: auto;
     top: auto;
-    float: left;
+    float: right;
   }
   #sidebar_menu {
     z-index: 103;
@@ -13525,9 +13489,6 @@ span#AddMalDiv #AddMal {
   .deslide-item .desi-head-title {
     font-size: 40px;
     line-height: 1.2em;
-  }
-  #slider {
-    padding-bottom: 450px;
   }
   .news-anif-block-ul li {
     padding-left: 110px !important;
@@ -13684,18 +13645,6 @@ span#AddMalDiv #AddMal {
   }
   #wrapper {
     padding-top: 0;
-  }
-  #header {
-    text-align: center;
-    position: relative !important;
-    top: auto;
-    left: auto;
-    right: auto;
-    background: #1b263b !important;
-    margin-bottom: 25px;
-  }
-  #header.header-home {
-    background: #1b263b !important;
   }
   #header_menu ul.header_menu-list {
     display: none;
@@ -13889,7 +13838,7 @@ span#AddMalDiv #AddMal {
     margin-right: 0;
   }
   .deslide-wrap {
-    margin-top: -25px;
+    margin-top: 0px;
   }
   .deslide-item .desi-description {
     -webkit-line-clamp: 2;
@@ -13901,9 +13850,6 @@ span#AddMalDiv #AddMal {
   .deslide-item .desi-sub-text {
     font-size: 14px;
     line-height: 1em;
-  }
-  #slider {
-    padding-top: 0;
   }
   .block_area .block_area-header .cat-heading {
     font-size: 22px;

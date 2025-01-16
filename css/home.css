@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background: rgb(32, 31, 49);
+  background: #0d1b2a;
   font-family: "Poppins", Arial;
   color: #ccc;
   font-size: 14px;
@@ -73,35 +73,37 @@ button,
 }
 
 #xheader {
+  height: 60px;
   padding: 0;
-  margin-top: 60px;
   position: relative;
+  z-index: 99;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgb(31, 35, 49);
 }
 
 #xheader #xlogo {
-  display: block;
+  display: none;
   height: 40px;
   margin: 10px 0;
   float: left;
 }
-
 #xheader #xlogo img {
   height: 100%;
   width: auto;
   float: left;
   margin-right: 10px;
 }
-
 #xheader #xlogo span {
   line-height: 40px;
   font-size: 20px;
   font-weight: 600;
-  color: #badfff !important;
+  color: #fff !important;
 }
 
 #xheader_menu {
-  width: 100%;
-  border-radius: 30px 30px 0 0;
+  height: 60px;
+  margin: 0;
+  margin-left: 30px;
 }
 
 #xheader_menu .container {
@@ -111,53 +113,55 @@ button,
 #xheader_menu ul.header_menu-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 10px;
   display: block;
   text-align: center;
 }
 
 #xheader_menu ul.header_menu-list .nav-item {
   display: inline-block;
-  margin: 0 20px 0;
+  margin: 0 0 0 20px;
   position: relative;
 }
 
 #xheader_menu ul.header_menu-list .nav-item > a {
   height: 60px;
   line-height: 60px;
-  display: block;
+  display: inline-block;
   margin: 0;
-  padding: 0;
-  color: #fff;
+  padding: 0 10px;
+  color: #fff !important;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
 #xheader_menu ul.header_menu-list .nav-item > a:hover {
-  color: #badfff;
+  color: #badfff !important;
 }
 
 #xheader_browser {
-  float: left;
+  float: right;
+  height: 60px;
   position: relative;
-  margin: 0 20px 0 0;
+  margin: 0 0 0 20px;
   display: none;
 }
 
 #xheader_browser .header-btn {
-  height: 44px;
+  height: 34px;
   cursor: pointer;
   margin: 13px 0;
-  line-height: 44px;
+  line-height: 34px;
   padding: 0 12px;
-  font-size: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 12px;
   border-radius: 3px;
   color: #fff;
 }
 
 #xheader_browser.active .header-btn {
-  color: #badfff;
+  background: #888;
+  color: #fff;
 }
 
 /* footer */
@@ -185,14 +189,14 @@ button,
   margin: 0 0 40px 0;
   position: relative;
   z-index: 3;
+  background-color: rgb(31, 35, 49);
 }
-
 #mw-top .mwt-content {
   position: relative;
-  padding: 80px;
-  margin: 0 -80px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 40px;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  padding-top: 130px !important;
+  padding-bottom: 130px !important;
 }
 
 #mw-top .mwt-content .mwt-icon {
@@ -201,7 +205,6 @@ button,
   right: 0px;
   bottom: 0;
   width: 650px;
-  border-radius: 0 40px 40px 0;
   overflow: hidden;
 }
 
@@ -213,8 +216,20 @@ button,
   left: 0;
   bottom: 0;
   width: 400px;
-  background: rgb(43, 42, 60);
-  background: linear-gradient(90deg, rgb(43, 42, 60) 0%, rgba(43, 42, 60, 0) 100%);
+  background: rgb(31, 35, 49);
+  background: linear-gradient(90deg, #1f2331 0%, rgba(31, 35, 49, 0) 100%);
+}
+
+#mw-top .mwt-content .mwt-icon::after {
+  content: "";
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  background: rgb(31, 35, 49);
+  background: linear-gradient(-90deg, #1f2331 0%, rgba(31, 35, 49, 0) 20%, rgba(31, 35, 49, 0) 80%);
 }
 
 #mw-top .mwt-content .mwt-icon img {
@@ -227,6 +242,8 @@ button,
 
 #mw-top .mwh-logo {
   margin-bottom: 30px;
+  position: relative;
+  z-index: 4;
 }
 
 #mw-top .mwh-logo .mwh-logo-div {
@@ -318,7 +335,7 @@ button,
 
 #xsearch.home-search {
   display: block !important;
-  margin: 0;
+  margin: 10px 0 40px;
   padding: 0 !important;
   width: 100%;
   background: none !important;
@@ -350,7 +367,7 @@ button,
   bottom: 0;
   cursor: pointer;
   display: inline-block;
-  width: 50px;
+  width: 80px;
   background: #badfff;
   border-radius: 12px;
 }
@@ -609,10 +626,13 @@ button,
 }
 @media screen and (max-width: 1199px) {
   #xheader {
-    margin-top: 10px;
+    margin-top: 0;
   }
   #mw-top .mwt-content {
-    padding: 60px;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
   }
 }
 @media screen and (max-width: 990px) {
@@ -627,8 +647,27 @@ button,
   }
 }
 @media screen and (max-width: 780px) {
+  #mw-top .mwt-content {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+  }
   #mw-top .mwt-content .mwt-icon {
-    display: none;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #mw-top .mwt-content .mwt-icon img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0.5;
   }
   #xsearch.home-search {
     max-width: 100%;
@@ -639,19 +678,17 @@ button,
   #xheader_menu {
     display: none;
     position: absolute;
-    left: 15px;
-    width: auto;
+    width: 220px;
     top: 60px;
     right: 15px;
-    background: rgba(11, 11, 11, 0.98);
-    border-radius: 25px;
+    background: #000;
+    border-radius: 5px;
     height: auto;
     padding: 10px 0;
-    z-index: 99;
   }
   #xheader_menu .header_menu-list li.nav-item {
     display: block;
-    margin: 10px 0;
+    margin: 0;
     float: none;
     text-align: center;
   }
@@ -659,17 +696,25 @@ button,
     height: auto;
     line-height: normal;
     padding: 10px 20px;
-    color: #fff;
-    font-size: 16px;
+    color: #111;
   }
   #xheader_menu ul.header_menu-list .nav-item > a:hover {
-    color: #badfff;
+    color: #88a2ef;
   }
   #xheader_menu.active {
     display: block !important;
   }
   #mw-home {
     padding-top: 20px;
+  }
+  #xheader #xlogo {
+    height: 30px;
+    margin: 15px 0;
+    display: block;
+  }
+  #xheader #xlogo span {
+    line-height: 30px;
+    font-size: 16px;
   }
   .mw-heading,
   .heading-news {
@@ -678,6 +723,13 @@ button,
   }
   #action-button {
     margin-top: 30px;
+  }
+  #xsearch.home-search .search-input {
+    padding-left: 15px;
+    padding-right: 65px;
+  }
+  #xsearch.home-search .search-content .search-submit {
+    width: 80px;
   }
   #xsearch.home-search .search-content .search-submit .search-icon i {
     font-size: 16px;
@@ -691,15 +743,36 @@ button,
     padding: 12px 40px;
   }
 }
+@media screen and (max-width: 620px) {
+  #mw-top .mwt-content {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
 @media screen and (max-width: 520px) {
+  #mw-top .mwt-content .mwt-icon {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
   #mw-top .mwh-logo {
     text-align: center;
   }
-  #mw-top .mwh-logo .mwh-logo-div img {
-    height: 40px;
-  }
   #mw-top .mwt-content {
     margin: 0 -15px;
+  }
+  #mw-top .mwt-content .mwt-icon img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0.5;
   }
   .zr-news.zr-news-list .item .zr-news-thumb {
     width: 80px;
@@ -729,7 +802,10 @@ button,
     float: none;
   }
   #mw-top .mwt-content {
-    padding: 30px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 65px !important;
+    padding-bottom: 65px !important;
     border-radius: 0;
   }
   #action-button .btn {
@@ -738,6 +814,24 @@ button,
   }
   .home-search .xhashtag {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #mw-top .mwt-content {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    border-radius: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  #mw-top .mwt-content {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 35px !important;
+    padding-bottom: 35px !important;
+    border-radius: 0;
   }
 }
 .profile-avatar {

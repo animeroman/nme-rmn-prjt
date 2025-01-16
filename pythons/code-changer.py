@@ -2,7 +2,17 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = ''' '''
+old_code = '''
+      <div class="sb-donate">
+        <div class="hr-community">
+          <a
+            class="btn btn-sm"
+            href="../community/board.html"
+            title="AnimeRoman Connect"
+            ><i class="fas fa-comments mr-2"></i>Community</a
+          >
+        </div>
+      </div>'''
 
 new_code = ''' '''
 
