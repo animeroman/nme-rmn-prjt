@@ -97,14 +97,16 @@ function updateRecommendationsSection(similarAnime) {
       <div class="flw-item ${isHighlighted ? 'highlight' : ''}">
         <div class="film-poster">
           <div class="tick tick-rate">18+</div>
-          <div class="tick ltr">
-            <div class="tick-item tick-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${anime.eposideCount}
-            </div>
-            <div class="tick-item tick-dub">
+          <div class="stick-mask bottom-left">
+            <div class="item item-flex item-dub">
               <i class="fas fa-microphone mr-1"></i>${anime.eposideCount}
             </div>
-            <div class="tick-item tick-eps">${anime.eposideCount}</div> 
+            <div class="item item-flex item-sub">
+              <i class="fas fa-closed-captioning mr-1"></i>${anime.eposideCount}
+            </div>
+          </div>
+          <div class="stick-mask bottom-right">
+            <div class="tick-item tick-eps">EP: ${anime.eposideCount}</div>
           </div>
           <img
             data-src="${anime.poster}"

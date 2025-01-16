@@ -133,10 +133,16 @@ function displayMatches(inputValue, page) {
         return `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
-          <div class="tick ltr">
-            <div class="tick-item tick-sub"><i class="fas fa-closed-captioning mr-1"></i>${subCount}</div>
-            <div class="tick-item tick-dub"><i class="fas fa-microphone mr-1"></i>${dubCount}</div>
-            <div class="tick-item tick-eps">${episode}</div>
+          <div class="stick-mask bottom-left">
+            <div class="item item-flex item-dub">
+              <i class="fas fa-microphone mr-1"></i>${subCount}
+            </div>
+            <div class="item item-flex item-sub">
+              <i class="fas fa-closed-captioning mr-1"></i>${dubCount}
+            </div>
+          </div>
+          <div class="stick-mask bottom-right">
+            <div class="tick-item tick-eps">EP: ${episode}</div>
           </div>
           <img data-src="${posterLink}" class="film-poster-img lazyload" src="${posterLink}" />
           <a href="watch/${pageLink}.html" class="film-poster-ahref item-qtip"><i class="fas fa-play"></i></a>
