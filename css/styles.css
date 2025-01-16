@@ -863,7 +863,7 @@ div.detail .is-info > div {
   font-size: 14px;
   font-weight: 400;
   background: #fff;
-  border-radius: 0;
+  border: 1000 px;
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05) !important;
 }
@@ -1067,7 +1067,22 @@ div.detail .is-info > div {
   font-weight: 600;
   padding: 0;
   margin: 0;
-  color: #badfff;
+  color: #fff;
+}
+.block_area .block_area-header .cat-heading .entry-title__link {
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.block_area .block_area-header .cat-heading .entry-title__link:hover span {
+  transform: translateX(7px);
+}
+.block_area .block_area-header .cat-heading .entry-title__icon {
+  display: inline-block;
+  margin-left: 5px;
+  transition: -webkit-transform 0.1s ease-in;
+  transition: transform 0.1s ease-in;
+  transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in;
 }
 
 .block_area .block_area-header .viewmore .btn {

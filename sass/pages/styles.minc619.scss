@@ -739,7 +739,7 @@ div.detail .is-info > div {
   font-size: 14px;
   font-weight: 400;
   background: $color-white;
-  border-radius: 0;
+  border: 1000 px;
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05) !important;
 }
@@ -915,7 +915,27 @@ div.detail .is-info > div {
   font-weight: 600;
   padding: 0;
   margin: 0;
-  color: $color-primary-light;
+  color: $color-white;
+
+  & .entry-title__link {
+    display: inline-block;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover span {
+      transform: translateX(7px);
+    }
+  }
+
+  & .entry-title__icon {
+    display: inline-block;
+    margin-left: 5px;
+    transition: -webkit-transform 0.1s ease-in;
+    transition: transform 0.1s ease-in;
+    transition:
+      transform 0.1s ease-in,
+      -webkit-transform 0.1s ease-in;
+  }
 }
 .block_area .block_area-header .viewmore .btn {
   padding: 4px 0;

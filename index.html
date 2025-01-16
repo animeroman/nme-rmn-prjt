@@ -111,16 +111,18 @@
               </div>
               <div id="xsearch" class="home-search">
                 <div class="search-content">
-                  <form class="search-form">
+                  <form action="filter.html?keyword=+" class="search-form">
                     <div class="search-submit">
-                      <div class="search-icon">
+                      <button type="submit" class="search-icon btn-search">
                         <i class="fa fa-search"></i>
-                      </div>
+                      </button>
                     </div>
                     <input
                       type="text"
-                      placeholder="Search anime..."
                       class="form-control search-input"
+                      name="keyword"
+                      placeholder="Search anime..."
+                      required
                     />
                     <div class="suggestion-place"></div>
                     <div

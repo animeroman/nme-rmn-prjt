@@ -372,6 +372,11 @@ button,
   border-radius: 12px;
 }
 
+#xsearch.home-search .search-content .search-submit .search-icon {
+  background-color: transparent;
+  outline: none;
+}
+
 #xsearch.home-search .search-content .search-submit .search-icon i {
   color: #111;
   font-size: 20px;
