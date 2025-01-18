@@ -1282,9 +1282,7 @@ div.detail .is-info > div {
 }
 
 .stick-mask .item {
-  background-color: rgb($color-black, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgb($color-black, 0.6);
   padding: 0.2rem 0.6rem;
   border-radius: 1rem;
 
