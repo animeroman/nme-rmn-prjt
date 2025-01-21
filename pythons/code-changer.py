@@ -2,9 +2,9 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = ''' '''
+old_code = '''fa-random'''
 
-new_code = ''' '''
+new_code = '''fa-question'''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
