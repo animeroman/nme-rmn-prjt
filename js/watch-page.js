@@ -10,6 +10,9 @@ let selectedEpisode = localStorage.getItem('selectedEpisode') || 1; // Default t
 let selectedDropdownPage = localStorage.getItem('selectedDropdownPage') || 1; // Default to the first dropdown page
 let selectedDropdownCurrentPage =
   localStorage.getItem('selectedDropdownCurrentPage') || `EPS: 001-100`; // Default dropdown text
+const loadingPanelLr1 = document.querySelector('.lr-1');
+const loadingPanelLr2 = document.querySelector('.lr-2');
+const loadingPanelConnection = document.querySelector('.loading-connection');
 
 // Add this variable before the loop to track the count of episodes
 let totalEpisodes = 0;
@@ -274,8 +277,6 @@ function createEpisodeList(data) {
           return;
         }
 
-        container.innerHTML = ''; // Clear previous episodes
-
         // Filter episodes within the selected range and add them to the container
         const filteredEpisodes = episodes.filter(
           ep => ep.episodeNumber >= start && ep.episodeNumber <= end
@@ -315,7 +316,7 @@ function createEpisodeList(data) {
             <div class="clearfix"></div>
         </a>
         `;
-          container.insertAdjacentHTML('beforeend', episodeHTML);
+          container.insertAdjacentHTML('afterbegin', episodeHTML);
         });
 
         // Add click event listener to each episode link
@@ -592,9 +593,6 @@ function updateConnections(connections, allAnimeData, currentPage) {
       return;
     }
 
-    // Clear existing connections
-    connectionWrapper.innerHTML = '';
-
     // Match connection ids with anime data
     let matchedConnections = connections
       .map(conn => {
@@ -673,7 +671,7 @@ function updateConnections(connections, allAnimeData, currentPage) {
         </div>
         <div class="clearfix"></div>
       </div>`;
-      connectionWrapper.insertAdjacentHTML('beforeend', connectionHTML);
+      connectionWrapper.insertAdjacentHTML('afterbegin', connectionHTML);
     });
   } catch (error) {
     console.log(error);
@@ -945,8 +943,10 @@ window.onload = function () {
 
   // Wait for the dataReady event to ensure jsonData is populated
   document.addEventListener('dataReady', () => {
-    console.log('Data is ready:', jsonData);
     handleFetchedData(jsonData, currentPage);
+    loadingPanelLr1.style.display = 'none';
+    loadingPanelLr2.style.display = 'none';
+    loadingPanelConnection.style.display = 'none';
   });
 
   // Separate function to handle fetched data
