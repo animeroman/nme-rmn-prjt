@@ -61,7 +61,7 @@ function observeFlwItems() {
 }
 
 // Delayed initialization to ensure data is rendered
-function initializeResultCount() {
+export function initializeResultCount() {
   try {
     // Use MutationObserver to trigger counting after DOM updates
     const waitForContent = setInterval(() => {

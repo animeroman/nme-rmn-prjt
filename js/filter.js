@@ -1,4 +1,11 @@
 'use strict';
+import { jsonData } from './config.js';
+import {
+  resultsPerPage,
+  totalPages,
+  findMatches,
+  updatePagination,
+} from './search-engine.js';
 
 // Add event listener for form submission
 document
@@ -211,7 +218,7 @@ window.addEventListener('load', setFilterValuesFromURL);
 // Function to apply filtering and display results
 function displayMatches(inputValue, page) {
   try {
-    const matchArray = findMatches(inputValue, searchDataEngine); // Get matches
+    const matchArray = findMatches(inputValue, jsonData); // Get matches
 
     // Get filters from URL
     const typeFilter = getQueryParam('type');
@@ -317,7 +324,6 @@ function displayMatches(inputValue, page) {
     }
 
     // Pagination logic
-    totalPages = Math.ceil(filteredArray.length / resultsPerPage);
     const startIndex = (page - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
     const paginatedResults = filteredArray.slice(startIndex, endIndex);

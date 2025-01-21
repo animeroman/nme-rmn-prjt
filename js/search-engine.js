@@ -1,10 +1,11 @@
 'use strict';
 import { jsonData } from './config.js';
 import { countEpisodes } from './lister.js';
+import { initializeResultCount } from './resultCount.js';
 
-const resultsPerPage = 48;
+export const resultsPerPage = 48;
 let currentPage = 1; // Keep track of the current page
-let totalPages = 0; // Total pages based on the number of results
+export let totalPages = 0; // Total pages based on the number of results
 
 // Wait for the dataReady event to ensure jsonData is populated
 document.addEventListener('dataReady', () => {
@@ -81,7 +82,7 @@ function matchWords(inputWords, target) {
 }
 
 // Find matches based on the input word
-function findMatches(wordToMatch, jsonData) {
+export function findMatches(wordToMatch, jsonData) {
   try {
     const inputWords = wordToMatch.toLowerCase().split(' ');
 
@@ -175,7 +176,7 @@ function displayMatches(inputValue, page) {
 }
 
 // Update pagination controls
-function updatePagination(currentPage) {
+export function updatePagination(currentPage) {
   try {
     const paginationPlace = document.querySelector('.pagination-pages');
     let paginationHTML = '';
