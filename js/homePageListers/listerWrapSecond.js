@@ -111,11 +111,16 @@ function displayMatchesSecond(animeList, page) {
 
       const subCount = countEpisodes(anime, 'sub'); // Call the function to count sub links
       const dubCount = countEpisodes(anime, 'dub'); // Call the function to count dub links
+      const rMark =
+        anime.rated === 'R' || anime.rated === 'R+' || anime.rated === 'Rx'
+          ? `<div class="tick tick-rate">18+</div>`
+          : '';
 
       // Append HTML for each anime
       filmListWrap.innerHTML += `
       <div class="flw-item">
         <div class="film-poster">
+          ${rMark}
           <div class="stick-mask bottom-left">
             <div class="item item-flex item-dub">
               <i class="fas fa-microphone mr-1"></i>${subCount}

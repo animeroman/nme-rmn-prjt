@@ -130,10 +130,15 @@ function displayMatches(inputValue, page) {
 
         const subCount = countEpisodes(place, 'sub'); // Call the function to count sub links
         const dubCount = countEpisodes(place, 'dub'); // Call the function to count dub links
+        const rMark =
+          place.rated === 'R' || place.rated === 'R+' || place.rated === 'Rx'
+            ? `<div class="tick tick-rate">18+</div>`
+            : '';
 
         return `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
+          ${rMark}
           <div class="stick-mask bottom-left">
             <div class="item item-flex item-dub">
               <i class="fas fa-microphone mr-1"></i>${subCount}

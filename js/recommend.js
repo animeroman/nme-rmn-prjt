@@ -1,5 +1,6 @@
 'use strict';
 import { jsonData } from './config.js';
+import { countEpisodes } from './lister.js';
 
 // Function to fetch and display recommendations
 export async function fetchAndDisplayRecommendations(currentPage) {
@@ -93,16 +94,28 @@ function updateRecommendationsSection(similarAnime) {
     // Populate with similar anime
     similarAnime.forEach((anime, index) => {
       const isHighlighted = index === 0; // Highlight the first anime in the sorted list
+
+      // Calculate subCount and dubCount using the countEpisodes function
+      const subCount = countEpisodes(anime, 'sub');
+      const dubCount = countEpisodes(anime, 'dub');
+
+      // Determine rMark based on the rating
+      const rMark =
+        anime.rated === 'R' || anime.rated === 'R+' || anime.rated === 'Rx'
+          ? `<div class="tick tick-rate">18+</div>`
+          : '';
+
+      // Generate HTML for the anime
       const recommendationHTML = `
       <div class="flw-item ${isHighlighted ? 'highlight' : ''}">
         <div class="film-poster">
-          <div class="tick tick-rate">18+</div>
+          ${rMark}
           <div class="stick-mask bottom-left">
             <div class="item item-flex item-dub">
-              <i class="fas fa-microphone mr-1"></i>${anime.eposideCount}
+              <i class="fas fa-microphone mr-1"></i>${dubCount}
             </div>
             <div class="item item-flex item-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${anime.eposideCount}
+              <i class="fas fa-closed-captioning mr-1"></i>${subCount}
             </div>
           </div>
           <div class="stick-mask bottom-right">
@@ -144,12 +157,14 @@ function updateRecommendationsSection(similarAnime) {
         <div class="clearfix"></div>
       </div>
     `;
+
+      // Append the generated HTML to the container
       recommendationsContainer.insertAdjacentHTML(
         'beforeend',
         recommendationHTML
       );
     });
   } catch (error) {
-    throw error;
+    console.error('Error updating recommendations:', error);
   }
 }

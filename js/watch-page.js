@@ -1,5 +1,6 @@
 'use strict';
 import { jsonData } from './config.js';
+import { countEpisodes } from './lister.js';
 import { fetchAndDisplayRecommendations } from './recommend.js';
 
 // Store the selected server type globally to remember it across episodes
@@ -167,6 +168,22 @@ function updateAniscDetail(animeData) {
 // Function to update the poster image source and alt attributes
 function updatePosterImage(animeData) {
   try {
+    const rMark = `<div class="tick tick-rate">18+</div>`;
+    const allFilmPoster = document.querySelectorAll('.film-poster');
+    const firstFilmPoster = allFilmPoster[0];
+
+    if (
+      animeData.rated === 'R' ||
+      animeData.rated === 'R+' ||
+      animeData.rated === 'Rx'
+    ) {
+      firstFilmPoster.insertAdjacentHTML('afterbegin', rMark);
+    }
+
+    console.log(`Anime rated here: ${animeData.rated}`);
+    console.log(`Film Poster elements: ${allFilmPoster}`);
+    console.log(`First Film Poster element: ${firstFilmPoster}`);
+
     // Select the img element with class 'film-poster-img'
     const posterImage = document.querySelector('img.film-poster-img');
     if (!posterImage) {
@@ -603,16 +620,25 @@ function updateConnections(connections, allAnimeData, currentPage) {
         ? 'flw-item-active'
         : '';
 
+      const subCount = countEpisodes(connection, 'sub'); // Call the function to count sub links
+      const dubCount = countEpisodes(connection, 'dub'); // Call the function to count dub links
+      const rMark =
+        connection.rated === 'R' ||
+        connection.rated === 'R+' ||
+        connection.rated === 'Rx'
+          ? `<div class="tick tick-rate">18+</div>`
+          : '';
+
       const connectionHTML = `
       <div class="flw-item ${isActive}">
         <div class="film-poster">
-          <div class="tick tick-rate">18+</div>
+          ${rMark}
           <div class="stick-mask bottom-left">
             <div class="item item-flex item-dub">
-              <i class="fas fa-microphone mr-1"></i>${connection.eposideCount}
+              <i class="fas fa-microphone mr-1"></i>${dubCount}
             </div>
             <div class="item item-flex item-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${connection.eposideCount}
+              <i class="fas fa-closed-captioning mr-1"></i>${subCount}
             </div>
           </div>
           <div class="stick-mask bottom-right">

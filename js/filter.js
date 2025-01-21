@@ -1,5 +1,6 @@
 'use strict';
 import { jsonData } from './config.js';
+import { countEpisodes } from './lister.js';
 import {
   resultsPerPage,
   totalPages,
@@ -330,35 +331,56 @@ function displayMatches(inputValue, page) {
 
     // Render results
     const html = paginatedResults
-      .map(anime => {
+      .map(place => {
+        let animeEnglishName = place.animeEnglish;
+        let animeOriginalName = place.animeOriginal;
+        let animeDuration = place.duration;
+        let animeType = place.type;
+        let posterLink = place.poster;
+        let pageLink = place.page;
+        let episode = place.eposideCount;
+
+        const subCount = countEpisodes(place, 'sub'); // Call the function to count sub links
+        const dubCount = countEpisodes(place, 'dub'); // Call the function to count dub links
+        const rMark =
+          place.rated === 'R' || place.rated === 'R+' || place.rated === 'Rx'
+            ? `<div class="tick tick-rate">18+</div>`
+            : '';
+
         return `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
+          ${rMark}
           <div class="stick-mask bottom-left">
             <div class="item item-flex item-dub">
-              <i class="fas fa-microphone mr-1"></i>${anime.eposideCount}
+              <i class="fas fa-microphone mr-1"></i>${subCount}
             </div>
             <div class="item item-flex item-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${anime.eposideCount}
+              <i class="fas fa-closed-captioning mr-1"></i>${dubCount}
             </div>
           </div>
           <div class="stick-mask bottom-right">
-            <div class="tick-item tick-eps">EP: ${anime.eposideCount}</div>
+            <div class="tick-item tick-eps">EP: ${episode}</div>
           </div>
-          <img data-src="${anime.poster}" class="film-poster-img lazyload" src="${anime.poster}" />
-          <a href="watch/${anime.page}.html" class="film-poster-ahref"><i class="fas fa-play"></i></a>
+          <img data-src="${posterLink}" class="film-poster-img lazyload" src="${posterLink}" />
+          <a href="watch/${pageLink}.html" class="film-poster-ahref item-qtip"><i class="fas fa-play"></i></a>
         </div>
         <div class="film-detail">
           <h3 class="film-name">
-            <a href="watch/${anime.page}.html">${anime.animeEnglish}</a>
+            <a href="watch/${pageLink}.html" class="dynamic-name" data-jname="${animeOriginalName}">
+              ${animeEnglishName}
+            </a>
           </h3>
+          <div class="description"></div>
           <div class="fd-infor">
-            <span>${anime.type}</span>
+            <span class="fdi-item">${animeType}</span>
             <span class="dot"></span>
-            <span>${anime.duration}</span>
+            <span class="fdi-item fdi-duration">${animeDuration}</span>
           </div>
         </div>
-      </div>`;
+        <div class="clearfix"></div>
+      </div>
+    `;
       })
       .join('');
 

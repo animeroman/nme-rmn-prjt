@@ -1,7 +1,7 @@
 // prettier-ignore
 // export const endpoint = 'https://animeroman.github.io/Source/json/main-search.json';
-// export const endpoint = 'http://127.0.0.1:5000/api/anime';
-export const endpoint = 'https://apiromanlast.fly.dev/api/anime';
+export const endpoint = 'http://127.0.0.1:5000/api/anime';
+// export const endpoint = 'https://apiromanlast.fly.dev/api/anime';
 export const jsonData = []; // Global array to store data
 
 export const TIMEOUT_SEC = 10;
