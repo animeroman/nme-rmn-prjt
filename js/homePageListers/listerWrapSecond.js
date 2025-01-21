@@ -7,11 +7,12 @@ let totalPagesSecond = 0; // Total pages based on the number of results
 let filterLetterSecond = ''; // Default filter by letter
 let filterCategorySecond = { genres: [] }; // Default filter by category, including genres as an array
 let sortCriteriaSecond = { field: '', order: 'asc' }; // Default sorting by field and order
+const loadingPanel = document.querySelector('.loading-relative');
 
 // Wait for the dataReady event to ensure jsonData is populated
 document.addEventListener('dataReady', () => {
-  console.log('Data is ready:', jsonData);
   displayMatchesSecond(jsonData, currentPageSecond); // Display results for the first page
+  loadingPanel.style.display = 'none';
 });
 
 // Display matches for the current page with the filter applied
@@ -96,9 +97,6 @@ function displayMatchesSecond(animeList, page) {
       endIndexSecond
     ); // Get results for the current page
 
-    // Clear previous content
-    filmListWrap.innerHTML = '';
-
     // Generate HTML for each anime
     paginatedResultsFirst.map(anime => {
       let animeEnglishName = anime.animeEnglish || 'Unknown Title';
@@ -117,7 +115,9 @@ function displayMatchesSecond(animeList, page) {
           : '';
 
       // Append HTML for each anime
-      filmListWrap.innerHTML += `
+      filmListWrap.insertAdjacentHTML(
+        'afterbegin',
+        `
       <div class="flw-item">
         <div class="film-poster">
           ${rMark}
@@ -151,7 +151,8 @@ function displayMatchesSecond(animeList, page) {
         </div>
         <div class="clearfix"></div>
       </div>
-    `;
+    `
+      );
     });
   } catch (error) {
     throw error;

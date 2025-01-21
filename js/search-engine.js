@@ -135,7 +135,9 @@ function displayMatches(inputValue, page) {
             ? `<div class="tick tick-rate">18+</div>`
             : '';
 
-        return `
+        resultsContainerEngine.insertAdjacentHTML(
+          'afterbegin',
+          `
       <div class="flw-item flw-item-big">
         <div class="film-poster">
           ${rMark}
@@ -168,11 +170,10 @@ function displayMatches(inputValue, page) {
         </div>
         <div class="clearfix"></div>
       </div>
-    `;
+    `
+        );
       })
       .join('');
-
-    resultsContainerEngine.innerHTML = html;
 
     updatePagination(page); // Update pagination controls
   } catch (err) {
@@ -280,16 +281,4 @@ window.onload = function () {
   initializeResultCount();
 };
 
-// Event listeners for input changes
-/*
-const searchInput = document.querySelector('.search-input');
-*/
 const resultsContainerEngine = document.querySelector('.film_list-wrap');
-/*
-searchInput.addEventListener('change', function() {
-  displayMatches(this.value, currentPage);
-});
-searchInput.addEventListener('keyup', function() {
-  displayMatches(this.value, currentPage);
-});
-*/
