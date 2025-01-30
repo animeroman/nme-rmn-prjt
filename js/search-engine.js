@@ -143,10 +143,10 @@ function displayMatches(inputValue, page) {
           ${rMark}
           <div class="stick-mask bottom-left">
             <div class="item item-flex item-dub">
-              <i class="fas fa-microphone mr-1"></i>${subCount}
+              <i class="fas fa-microphone mr-1"></i>${dubCount}
             </div>
             <div class="item item-flex item-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${dubCount}
+              <i class="fas fa-closed-captioning mr-1"></i>${subCount}
             </div>
           </div>
           <div class="stick-mask bottom-right">
