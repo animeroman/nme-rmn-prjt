@@ -316,7 +316,7 @@ function createEpisodeList(data) {
             <div class="clearfix"></div>
         </a>
         `;
-          container.insertAdjacentHTML('afterbegin', episodeHTML);
+          container.insertAdjacentHTML('beforeend', episodeHTML);
         });
 
         // Add click event listener to each episode link
