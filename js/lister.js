@@ -4,7 +4,7 @@ const resultsPerPage = 48; // Number of results per page
 let currentPage = 1; // Keep track of the current page
 let totalPages = 0; // Total pages based on the number of results
 let filterLetter = ''; // Default filter by letter
-let filterCategory = { genres: [] }; // Default filter by category, including genres as an array
+let filterCategory = { genres: [], subDub: 'all' }; // Default filter, including genres and subDub
 let sortCriteria = { field: '', order: 'asc' }; // Default sorting by field and order
 const loadingPanel = document.querySelector('.loading-relative');
 
@@ -14,29 +14,25 @@ document.addEventListener('dataReady', () => {
   loadingPanel.style.display = 'none';
 });
 
-// Function to count episodes with valid sub links
-export const countEpisodes = function (data, type) {
+// Function to count episodes with valid sub or dub links
+export const countEpisodes = function (data, type = 'all') {
   try {
     let count = 0; // Initialize count to 0
 
-    // Iterate over the episodes array
-    if (type === 'sub') {
-      data.episodes.forEach(episode => {
-        // Check if either subServer1 or subServer2 has a link other than "#"
+    data.episodes.forEach(episode => {
+      if (type === 'sub' || type === 'all') {
+        // Check sub servers
         if (episode.subServer1 !== '#' || episode.subServer2 !== '#') {
           count++;
         }
-      });
-    }
-
-    if (type === 'dub') {
-      data.episodes.forEach(episode => {
-        // Check if either dubServer1 or dubServer2 has a link other than "#"
+      }
+      if (type === 'dub' || type === 'all') {
+        // Check dub servers
         if (episode.dubServer1 !== '#' || episode.dubServer2 !== '#') {
           count++;
         }
-      });
-    }
+      }
+    });
 
     return count; // Return the final count
   } catch (error) {
@@ -53,7 +49,7 @@ function displayMatches(animeList, page) {
       return;
     }
 
-    // Filter the animeList based on the filterLetter and filterCategory
+    // Filter the animeList based on the filterLetter, filterCategory, and subDub
     let filteredAnimeList = animeList.filter(anime => {
       const animeFirstChar = anime.animeEnglish
         ? anime.animeEnglish.charAt(0).toLowerCase()
@@ -78,6 +74,14 @@ function displayMatches(animeList, page) {
             anime.genres &&
             filterCategory.genres.some(genre => anime.genres.includes(genre))
           );
+        } else if (key === 'subDub') {
+          // Check sub/dub filter
+          if (filterCategory[key] === 'all') return true;
+          if (filterCategory[key] === 'sub')
+            return countEpisodes(anime, 'sub') > 0;
+          if (filterCategory[key] === 'dub')
+            return countEpisodes(anime, 'dub') > 0;
+          return false;
         } else {
           // Normal category filters
           if (!filterCategory[key]) return true; // Ignore empty filters
@@ -145,10 +149,10 @@ function displayMatches(animeList, page) {
           ${rMark}
           <div class="stick-mask bottom-left">
             <div class="item item-flex item-dub">
-              <i class="fas fa-microphone mr-1"></i>${subCount}
+              <i class="fas fa-microphone mr-1"></i>${dubCount}
             </div>
             <div class="item item-flex item-sub">
-              <i class="fas fa-closed-captioning mr-1"></i>${dubCount}
+              <i class="fas fa-closed-captioning mr-1"></i>${subCount}
             </div>
           </div>
           <div class="stick-mask bottom-right">
@@ -293,7 +297,7 @@ function setFilter(category, value) {
         ); // Remove genre if already present
       }
     } else {
-      filterCategory[category] = value; // Set other filters
+      filterCategory[category] = value; // Set other filters, including subDub
     }
     currentPage = 1; // Reset to the first page
     displayMatches(jsonData, currentPage); // Update the results based on the new filter
