@@ -939,12 +939,121 @@
                 <div
                   class="block_area-content block_area-list film_list film_list-grid"
                 >
-                  <div id="wrap-1" class="film_list-wrap">
-                    <div class="loading-relative">
-                      <div class="loading">
-                        <div class="span1"></div>
-                        <div class="span2"></div>
-                        <div class="span3"></div>
+                  <div id="filter-block">
+                    <button
+                      id="toggle-filter"
+                      class="btn btn-radius btn-sm btn-secondary"
+                    >
+                      <i class="fas fa-plus-circle mr-2"></i>Advanced search
+                    </button>
+                    <div id="cate-filter" class="category_filter">
+                      <div class="category_filter-content">
+                        <form method="get" id="filter-form">
+                          <input type="hidden" name="keyword" value="" />
+                          <div class="home-filter">
+                            <div class="cmb-item cmb-type">
+                              <div class="ni-head">Type</div>
+                              <div class="nl-item">
+                                <div class="nli-select">
+                                  <select class="custom-select" name="type">
+                                    <option value="">All</option>
+
+                                    <option value="1">Movie</option>
+
+                                    <option value="2">TV</option>
+
+                                    <option value="3">OVA</option>
+
+                                    <option value="4">ONA</option>
+
+                                    <option value="5">Special</option>
+
+                                    <option value="6">Music</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="clearfix"></div>
+                            </div>
+                            <div class="cmb-item cmb-rated">
+                              <div class="ni-head">Rated</div>
+                              <div class="nl-item">
+                                <div class="nli-select">
+                                  <select class="custom-select" name="rated">
+                                    <option value="">All</option>
+
+                                    <option value="1">G</option>
+
+                                    <option value="2">PG</option>
+
+                                    <option value="3">PG-13</option>
+
+                                    <option value="4">R</option>
+
+                                    <option value="5">R+</option>
+
+                                    <option value="6">Rx</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="clearfix"></div>
+                            </div>
+                            <div class="cmb-item">
+                              <div class="ni-head">Season</div>
+                              <div class="nl-item">
+                                <div class="nli-select">
+                                  <select class="custom-select" name="season">
+                                    <option value="">All</option>
+
+                                    <option value="1">Spring</option>
+
+                                    <option value="2">Summer</option>
+
+                                    <option value="3">Fall</option>
+
+                                    <option value="4">Winter</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="clearfix"></div>
+                            </div>
+                            <div class="cmb-item">
+                              <div class="ni-head">Sort</div>
+                              <div class="nl-item">
+                                <div class="nli-select">
+                                  <select class="custom-select" name="sort">
+                                    <option value="default">Default</option>
+                                    <option value="recently_added">
+                                      Recently Added
+                                    </option>
+                                    <option value="recently_updated">
+                                      Recently Updated
+                                    </option>
+                                    <option value="score">Score</option>
+                                    <option value="name_az">Name A-Z</option>
+                                    <option value="released_date">
+                                      Released Date
+                                    </option>
+                                    <option value="most_watched">
+                                      Most Watched
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </form>
+                        <div id="wrap-1" class="film_list-wrap">
+                          <div class="loading-relative">
+                            <div class="loading">
+                              <div class="span1"></div>
+                              <div class="span2"></div>
+                              <div class="span3"></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -2383,6 +2383,131 @@ ul.az-list li.active a {
   padding: 0;
 }
 
+.home-filter {
+  display: flex;
+  position: relative;
+  margin: 0;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 479px) {
+  .home-filter {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  }
+}
+.home-filter .cmb-item {
+  display: flex;
+  border: 1px solid #575a64;
+  border-radius: 6px;
+  padding: 0 6px 0 10px;
+  margin: 0 5px 5px 0;
+}
+@media screen and (max-width: 595px) {
+  .home-filter .cmb-item {
+    padding: 0 6px 0 10px;
+    margin: 0 5px 5px 0;
+  }
+}
+@media screen and (max-width: 490px) {
+  .home-filter .cmb-item {
+    padding: 0 3px 0 5px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .home-filter .cmb-item {
+    padding: 0 3px 0 5px;
+    margin: 0 0px 0px 0;
+  }
+}
+.home-filter .cmb-item .ni-head {
+  font-weight: 500;
+  margin-right: 5px;
+  float: left;
+  font-size: 12px;
+  width: auto;
+  display: block;
+  line-height: 32px;
+  align-items: center;
+}
+@media screen and (max-width: 616px) {
+  .home-filter .cmb-item .ni-head {
+    font-size: 10px;
+    line-height: unset;
+  }
+}
+@media screen and (max-width: 490px) {
+  .home-filter .cmb-item .ni-head {
+    font-size: 8px;
+    line-height: 26px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .home-filter .cmb-item-4 {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+.home-filter .cmb-item .btn-sm {
+  border: none;
+  color: #badfff;
+  font-size: 12px;
+  line-height: 1.1em;
+  background: 0 0;
+  padding: 6px 0;
+  padding-right: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+.home-filter .cmb-item .btn-sm i {
+  position: absolute;
+  right: 0;
+}
+.home-filter .cmb-item .nl-item {
+  display: block;
+  float: left;
+}
+.home-filter .nli-select {
+  float: left;
+}
+.home-filter .nli-select .custom-select {
+  font-size: 12px;
+  cursor: pointer;
+  color: #badfff;
+  background-color: #373646;
+  border: none;
+  max-width: 140px;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  line-height: unset;
+  box-shadow: none !important;
+  align-items: center;
+}
+@media screen and (max-width: 616px) {
+  .home-filter .nli-select .custom-select {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .home-filter .nli-select .custom-select {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .home-filter .nli-select .custom-select {
+    text-align: center;
+  }
+}
+.home-filter .cmb-rated .nli-select .custom-select {
+  max-width: 100px;
+}
+
 .row-select .ni-head {
   top: 10px !important;
 }
