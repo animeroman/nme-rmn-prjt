@@ -2,9 +2,12 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = '''© AnimeRoman.com, All Rights Reserved'''
+old_code = '''
+              <li class="nav-item">
+                <a class="nav-link" href="../genre/demons.html">Demons</a>
+              </li>'''
 
-new_code = '''© AnimeRoman.com, 2025'''
+new_code = ''' '''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
