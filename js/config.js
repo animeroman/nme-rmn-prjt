@@ -19,8 +19,16 @@ fetch(endpoint)
     return response.json(); // Parse the JSON
   })
   .then(data => {
-    jsonData.push(...data); // Populate jsonData
-    document.dispatchEvent(new Event('dataReady')); // Dispatch an event when data is ready
+    // Filter out items where "rated" is "Rx"
+    const filteredData = data.filter(
+      item => item.rated !== 'Rx' && item.rated !== 'R+' && item.rated !== 'R'
+    );
+
+    // Populate jsonData with the filtered results
+    jsonData.push(...filteredData);
+
+    // Dispatch an event when data is ready
+    document.dispatchEvent(new Event('dataReady'));
   })
   .catch(error => {
     console.error('Error fetching the anime data:', error);
