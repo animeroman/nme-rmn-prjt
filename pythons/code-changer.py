@@ -4,7 +4,7 @@ import re
 # Değiştirmek istediğiniz HTML kodu
 old_code = '''
               <li class="nav-item">
-                <a class="nav-link" href="../genre/demons.html">Demons</a>
+                <a class="nav-link" href="../genre/ecchi.html">Ecchi</a>
               </li>'''
 
 new_code = ''' '''
