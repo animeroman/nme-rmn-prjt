@@ -2400,6 +2400,8 @@ ul.az-list li.active a {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  height: 23rem; /* Adjust this based on item size */
+  align-items: flex-start;
   user-select: none; /* Standard syntax */
   -webkit-user-select: none; /* For Safari */
   -moz-user-select: none; /* For Firefox */
@@ -2572,10 +2574,20 @@ ul.az-list li.active a {
 }
 @media screen and (max-width: 479px) {
   .wrapper {
+    height: 23.5rem;
+  }
+}
+@media screen and (max-width: 455px) {
+  .wrapper {
     height: 23rem;
   }
 }
-@media screen and (max-width: 435px) {
+@media screen and (max-width: 440px) {
+  .wrapper {
+    height: 22rem;
+  }
+}
+@media screen and (max-width: 425px) {
   .wrapper {
     height: 21rem;
   }
@@ -2587,27 +2599,32 @@ ul.az-list li.active a {
 }
 @media screen and (max-width: 365px) {
   .wrapper {
+    height: 18.5rem;
+  }
+}
+@media screen and (max-width: 345px) {
+  .wrapper {
     height: 18rem;
   }
 }
 @media screen and (max-width: 339px) {
   .wrapper {
-    height: 17rem;
+    height: 17.3rem;
   }
 }
 @media screen and (max-width: 320px) {
   .wrapper {
-    height: 16rem;
+    height: 16.5rem;
   }
 }
 @media screen and (max-width: 305px) {
   .wrapper {
-    height: 15.5rem;
+    height: 15.75rem;
   }
 }
 @media screen and (max-width: 295px) {
   .wrapper {
-    height: 15rem;
+    height: 15.4rem;
   }
 }
 @media screen and (max-width: 275px) {
@@ -2677,7 +2694,7 @@ ul.az-list li.active a {
 @media screen and (max-width: 616px) {
   .home-filter .cmb-item .ni-head {
     font-size: 10px;
-    line-height: unset;
+    line-height: 30px;
   }
 }
 @media screen and (max-width: 490px) {

@@ -2069,8 +2069,8 @@ ul.az-list li.active a {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  // height: 23rem; /* Adjust this based on item size */
-  // align-items: flex-start;
+  height: 23rem; /* Adjust this based on item size */
+  align-items: flex-start;
   // display: flex;
   // flex-wrap: wrap;
   // flex-direction: row;
@@ -2179,28 +2179,37 @@ ul.az-list li.active a {
     height: 17.5rem;
   }
   @media screen and (max-width: 479px) {
+    height: 23.5rem;
+  }
+  @media screen and (max-width: 455px) {
     height: 23rem;
   }
-  @media screen and (max-width: 435px) {
+  @media screen and (max-width: 440px) {
+    height: 22rem;
+  }
+  @media screen and (max-width: 425px) {
     height: 21rem;
   }
   @media screen and (max-width: 395px) {
     height: 19.5rem;
   }
   @media screen and (max-width: 365px) {
+    height: 18.5rem;
+  }
+  @media screen and (max-width: 345px) {
     height: 18rem;
   }
   @media screen and (max-width: 339px) {
-    height: 17rem;
+    height: 17.3rem;
   }
   @media screen and (max-width: 320px) {
-    height: 16rem;
+    height: 16.5rem;
   }
   @media screen and (max-width: 305px) {
-    height: 15.5rem;
+    height: 15.75rem;
   }
   @media screen and (max-width: 295px) {
-    height: 15rem;
+    height: 15.4rem;
   }
   @media screen and (max-width: 275px) {
     height: 14rem;
@@ -2270,7 +2279,7 @@ ul.az-list li.active a {
 
     @media screen and (max-width: 616px) {
       font-size: 10px;
-      line-height: unset;
+      line-height: 30px;
     }
 
     @media screen and (max-width: 490px) {
