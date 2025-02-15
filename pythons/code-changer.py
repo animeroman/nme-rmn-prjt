@@ -2,12 +2,19 @@ import os
 import re
 
 # Değiştirmek istediğiniz HTML kodu
-old_code = '''
-              <li class="nav-item">
-                <a class="nav-link" href="../genre/shoujo-ai.html">Shoujo Ai</a>
-              </li>'''
+old_code = '''<div class="pagination-pages pagination pagination-lg">
+                          <li class="page-item active">
+                            <a title="Page 1" class="page-link" href="">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a title="Page 2" class="page-link" href="">2</a>
+                          </li>
+                          <li class="page-item">
+                            <a title="Page 3" class="page-link" href="">3</a>
+                          </li>
+                        </div>'''
 
-new_code = ''' '''
+new_code = '''<div class="pagination-pages pagination pagination-lg"></div>'''
 
 # Klasör yolunu belirtin
 folder_path = 'C:/Users/User1/projects/AnimeRoman'  # İlgili klasörün yolu
