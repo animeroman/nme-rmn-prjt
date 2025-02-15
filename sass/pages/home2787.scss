@@ -230,13 +230,13 @@ button,
   margin-bottom: 30px;
   position: relative;
   z-index: 4;
-}
-#mw-top .mwh-logo .mwh-logo-div {
-  display: inline-block;
-}
-#mw-top .mwh-logo .mwh-logo-div img {
-  height: 40px;
-  width: auto;
+  & .mwh-logo-div {
+    display: inline-block;
+  }
+  & .mwh-logo-div img {
+    height: 40px;
+    width: auto;
+  }
 }
 .mw-heading {
   font-size: 1.8em;
@@ -670,6 +670,12 @@ button,
   #xheader #xlogo span {
     line-height: 30px;
     font-size: 16px;
+  }
+  #mw-top .mwh-logo {
+    pointer-events: none;
+    & .mwh-logo-div img {
+      opacity: 0;
+    }
   }
   .mw-heading,
   .heading-news {

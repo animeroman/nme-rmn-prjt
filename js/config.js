@@ -1,5 +1,5 @@
 // prettier-ignore
-export const endpoint = 'https://animeroman.github.io/Source/json/main-search.json';
+export const endpoint = 'https://raw.githubusercontent.com/animeroman/RomanAPI/refs/heads/main/export.json';
 // export const endpoint = 'http://127.0.0.1:5000/api/anime';
 // export const endpoint = 'https://apiromanlast.fly.dev/api/anime';
 export const jsonData = []; // Global array to store data
