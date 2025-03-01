@@ -7,10 +7,10 @@ import time
 start_time = time.time()
 
 # Path to your input JSON file
-input_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export_cmerged.json'
+input_file_path = 'C:/Users/User1/projects/RomanAPI/export.json'
 
 # Path to your output JSON file
-output_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export_named.json'
+output_file_path = 'C:/Users/User1/projects/AnimeRoman/json/export.json'
 
 # Function to process animeEnglish and generate the 'page' link, including the 'id'
 def generate_page_link(anime_english, anime_id):
@@ -18,8 +18,8 @@ def generate_page_link(anime_english, anime_id):
     anime_english = anime_english.lower()
     # Replace spaces with hyphens
     anime_english = anime_english.replace(' ', '-')
-    # Remove special characters
-    anime_english = re.sub(r'[\'.,/;:<>?\[\]{}\\|!@$#%^&*()]', '', anime_english)
+    # Remove special characters (including Unicode symbols)
+    anime_english = re.sub(r'[^a-z0-9-]', '', anime_english)
     # Append the ID to the page link
     return f"{anime_english}-{anime_id}"
 
